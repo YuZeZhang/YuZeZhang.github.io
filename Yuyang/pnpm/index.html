@@ -13,18 +13,45 @@
     
     <!--- Seo Part-->
     
-    <link rel="canonical" href="http://example.com/archives/2024/06/"/>
+    <link rel="canonical" href="http://example.com/yuyang/pnpm/"/>
     <meta name="robots" content="index,follow">
     <meta name="googlebot" content="index,follow">
     <meta name="revisit-after" content="1 days">
     
-        <meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://example.com/archives/2024/06/index.html">
+        <meta name="description" content="node_modules的设计虽然能满足大部分的场景，但是其仍然存在着种种缺陷由于每个项目可能依赖成百上千个小模块，node_modules 目录的体积往往非常庞大，动辄几百MB甚至超过1GB。这不仅增加了存储负担，也影响了项目的克隆、备份和部署速度。  pnpm 的机制对于 yarn 和 npm 来说是降维打击。 包管理工具发展史，npm2 开始 npm2用 node 版本管理工具把 node">
+<meta property="og:type" content="article">
+<meta property="og:title" content="node_modules困境以及pnpm">
+<meta property="og:url" content="http://example.com/Yuyang/pnpm/index.html">
 <meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="node_modules的设计虽然能满足大部分的场景，但是其仍然存在着种种缺陷由于每个项目可能依赖成百上千个小模块，node_modules 目录的体积往往非常庞大，动辄几百MB甚至超过1GB。这不仅增加了存储负担，也影响了项目的克隆、备份和部署速度。  pnpm 的机制对于 yarn 和 npm 来说是降维打击。 包管理工具发展史，npm2 开始 npm2用 node 版本管理工具把 node">
 <meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://raw.githubusercontent.com/YuZeZhang/myImgslib/main/202406232217640.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/YuZeZhang/myImgslib/main/202406232247533.webp">
+<meta property="og:image" content="https://raw.githubusercontent.com/YuZeZhang/myImgslib/main/202406232247605.webp">
+<meta property="og:image" content="https://raw.githubusercontent.com/YuZeZhang/myImgslib/main/202406232247887.webp">
+<meta property="og:image" content="https://raw.githubusercontent.com/YuZeZhang/myImgslib/main/202406232247173.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/YuZeZhang/myImgslib/main/202406232247543.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/YuZeZhang/myImgslib/main/202406232247991.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/YuZeZhang/myImgslib/main/202406232247361.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/YuZeZhang/myImgslib/main/202406232248078.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/YuZeZhang/myImgslib/main/202406232248136.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/YuZeZhang/myImgslib/main/202406232248329.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/YuZeZhang/myImgslib/main/202406232248172.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/YuZeZhang/myImgslib/main/202406232248183.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/YuZeZhang/myImgslib/main/202406232249070.webp">
+<meta property="og:image" content="https://raw.githubusercontent.com/YuZeZhang/myImgslib/main/202406232249644.webp">
+<meta property="og:image" content="https://raw.githubusercontent.com/YuZeZhang/myImgslib/main/202406232249531.webp">
+<meta property="og:image" content="https://raw.githubusercontent.com/YuZeZhang/myImgslib/main/202406232249282.webp">
+<meta property="og:image" content="https://raw.githubusercontent.com/YuZeZhang/myImgslib/main/202406232249706.webp">
+<meta property="og:image" content="https://raw.githubusercontent.com/YuZeZhang/myImgslib/main/202406232249750.webp">
+<meta property="og:image" content="https://raw.githubusercontent.com/YuZeZhang/myImgslib/main/202406232249099.webp">
+<meta property="og:image" content="https://raw.githubusercontent.com/YuZeZhang/myImgslib/main/202406232249755.webp">
+<meta property="og:image" content="https://raw.githubusercontent.com/YuZeZhang/myImgslib/main/202406232250962.webp">
+<meta property="article:published_time" content="2024-06-23T14:27:05.569Z">
+<meta property="article:modified_time" content="2024-06-23T14:50:11.824Z">
 <meta property="article:author" content="Yuyang">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://raw.githubusercontent.com/YuZeZhang/myImgslib/main/202406232217640.png">
     
     
     <!--- Icon Part-->
@@ -36,7 +63,7 @@
     
     <title>
         
-            归档: 2024/6 -
+            node_modules困境以及pnpm -
         
         Welcome to Yuyang&#39;s Blog
     </title>
@@ -459,42 +486,318 @@
             <div class="main-content">
 
                 
-                    <div class="archive-container shadow-none hover:shadow-none sm:shadow-redefine sm:hover:shadow-redefine-hover">
-    
-<div class="archive-list-container">
-    
-        <section class="archive-item mb-spacing-unit last:mb-0">
-            <div class="archive-item-header flex flex-row items-center mb-2">
-                <span class="archive-year font-semibold text-3xl mr-2">2024</span>
-                <span class="archive-year-post-count text-xs md:text-sm font-bold rounded-small bg-third-background-color py-[2px] px-[10px] border border-border-color">2</span>
-            </div>
+                    <div class="post-page-container flex relative justify-between box-border w-full h-full">
+    <div class="article-content-container">
+
+        <div class="article-title relative w-full">
             
-            <ul class="article-list pl-0 md:pl-8 text-lg leading-[1.5]">
-                
-                    
-                    
-                         <!-- Close the previous LI if not the first item -->
-                        <li class="article-item space-y-2 px-6 pt-10 pb-2 text-xl relative border-l-2 border-border-color" date-is='06-23'>
-                    
-                    <a href="/Yuyang/pnpm/" class="block overflow-hidden w-fit">
-                        <span class="article-title my-0.5 text-2xl">node_modules困境以及pnpm</span>
-                    </a>
-                    
-                
-                    
-                    
-                    <a href="/Yuyang/cpolar/" class="block overflow-hidden w-fit">
-                        <span class="article-title my-0.5 text-2xl">MAC 内网穿透 cpolar</span>
-                    </a>
-                    
-                
-                </li> <!-- Ensure the last item is properly closed -->
-            </ul>
-        </section>
+                <div class="w-full flex items-center pt-6 justify-start">
+                    <h1 class="article-title-regular text-second-text-color tracking-tight text-4xl md:text-6xl font-semibold px-2 sm:px-6 md:px-8 py-3">node_modules困境以及pnpm</h1>
+                </div>
+            
+            </div>
+
+        
+            <div class="article-header flex flex-row gap-2 items-center px-2 sm:px-6 md:px-8">
+                <div class="avatar w-[46px] h-[46px] flex-shrink-0 rounded-medium border border-border-color p-[1px]">
+                    <img src="https://raw.githubusercontent.com/YuZeZhang/myImgslib/main/202406232019880.png">
+                </div>
+                <div class="info flex flex-col justify-between">
+                    <div class="author flex items-center">
+                        <span class="name text-default-text-color text-lg font-semibold">Yuyang</span>
+                        
+                            <span class="author-label ml-1.5 text-xs px-2 py-0.5 rounded-small text-third-text-color border border-shadow-color-1">前端小白🥬</span>
+                        
+                    </div>
+                    <div class="meta-info">
+                        <div class="article-meta-info">
+    <span class="article-date article-meta-item">
+        <i class="fa-regular fa-pen-fancy"></i>&nbsp;
+        <span class="desktop">2024-06-23 22:27:05</span>
+        <span class="mobile">2024-06-23 22:27:05</span>
+        <span class="hover-info">创建</span>
+    </span>
+    
+        <span class="article-date article-meta-item">
+            <i class="fa-regular fa-wrench"></i>&nbsp;
+            <span class="desktop">2024-06-23 22:50:11</span>
+            <span class="mobile">2024-06-23 22:50:11</span>
+            <span class="hover-info">更新</span>
+        </span>
+    
+
+    
+    
+
+    
+    
+    
+    
+        <span class="article-pv article-meta-item">
+            <i class="fa-regular fa-eye"></i>&nbsp;<span id="busuanzi_value_page_pv"></span>
+        </span>
     
 </div>
 
+                    </div>
+                </div>
+            </div>
+        
+
+        
+
+
+        <div class="article-content markdown-body px-2 sm:px-6 md:px-8 pb-8">
+            <p>node_modules的设计虽然能满足大部分的场景，但是其仍然存在着种种缺陷由于每个项目可能依赖成百上千个小模块，node_modules 目录的体积往往非常庞大，动辄几百MB甚至超过1GB。这不仅增加了存储负担，也影响了项目的克隆、备份和部署速度。</p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://raw.githubusercontent.com/YuZeZhang/myImgslib/main/202406232217640.png"
+                      alt="image.png"
+                ></p>
+<p>pnpm 的机制对于 yarn 和 npm 来说是降维打击。</p>
+<p>包管理工具发展史，npm2 开始</p>
+<h2 id="npm2"><a href="#npm2" class="headerlink" title="npm2"></a>npm2</h2><p>用 node 版本管理工具把 node 版本降到 4，那 npm 版本就是 2.x 了。</p>
+<p>然后找个目录，执行下 npm init -y，快速创建个 package.json。然后执行 npm install express，那么 express 包和它的依赖都会被下载下来：</p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://raw.githubusercontent.com/YuZeZhang/myImgslib/main/202406232247533.webp"
+                      alt="img"
+                ></p>
+<p>展开 express，它也有 node_modules：</p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://raw.githubusercontent.com/YuZeZhang/myImgslib/main/202406232247605.webp"
+                      alt="img"
+                ></p>
+<p>再展开几层，每个依赖都有自己的 node_modules：</p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://raw.githubusercontent.com/YuZeZhang/myImgslib/main/202406232247887.webp"
+                      alt="img"
+                ></p>
+<p>也就是说 npm2 的 node_modules 是嵌套的。</p>
+<p><strong>存在的缺陷：</strong></p>
+<ul>
+<li>嵌套深度问题：深层嵌套结构容易导致路径过长，特别是在 Windows 系统中，这可能导致系统路径长度限制问题。 windows 的文件路径最长是 260 多个字符，这样嵌套是会超过 windows 路径的长度限制的。</li>
+</ul>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://raw.githubusercontent.com/YuZeZhang/myImgslib/main/202406232247173.png"
+                      alt="img"
+                ></p>
+<ul>
+<li>重复的包：多层嵌套意味着大量重复的包实例，这无疑增加了磁盘空间的使用且影响安装速度。多个包之间难免会有公共的依赖，这样嵌套的话，同样的依赖会复制很多次，会占据比较大的磁盘空间。</li>
+</ul>
+<h2 id="YARN-NPM-3"><a href="#YARN-NPM-3" class="headerlink" title="YARN &amp; NPM@3"></a>YARN &amp; NPM@3</h2><p>yarn 是怎么解决依赖重复很多次，嵌套路径过长的问题的呢？</p>
+<p><strong>处理方式：</strong></p>
+<ul>
+<li>扁平化结构：大部分依赖被安装在顶层 node_modules 目录，减少了重复安装相同包的情况。</li>
+</ul>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://raw.githubusercontent.com/YuZeZhang/myImgslib/main/202406232247543.png"
+                      alt="img"
+                ></p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://raw.githubusercontent.com/YuZeZhang/myImgslib/main/202406232247991.png"
+                      alt="img"
+                ></p>
+<ul>
+<li>版本冲突处理：当两个包需要不同版本的同一个依赖时，无法被提升至顶层的依赖会被安装在需要它们的包的 node_modules 目录下。</li>
+</ul>
+<p><strong>存在的缺陷：</strong></p>
+<ul>
+<li>依赖结构的不确定性导致扁平化结果的不确定解决方法.lock 文件</li>
+</ul>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://raw.githubusercontent.com/YuZeZhang/myImgslib/main/202406232247361.png"
+                      alt="img"
+                ></p>
+<ul>
+<li>幽灵依赖：最主要的一个问题是幽灵依赖，也就是你明明没有声明在 dependencies 里的依赖，但在代码里却可以 require 进来。这个也很容易理解，因为都铺平了嘛，那依赖的依赖也是可以找到的。但是这样是有隐患的，因为没有显式依赖，万一有一天别的包不依赖这个包了，那你的代码也就不能跑了，因为你依赖这个包，但是现在不会被安装了。这就是幽灵依赖的问题。</li>
+</ul>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://raw.githubusercontent.com/YuZeZhang/myImgslib/main/202406232248078.png"
+                      alt="img"
+                ><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://raw.githubusercontent.com/YuZeZhang/myImgslib/main/202406232248136.png"
+                      alt="img"
+                ></p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://raw.githubusercontent.com/YuZeZhang/myImgslib/main/202406232248329.png"
+                      alt="img"
+                ></p>
+<ul>
+<li>包重复安装问题。提升机制仍然可能导致大量的依赖被重复安装。</li>
+</ul>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://raw.githubusercontent.com/YuZeZhang/myImgslib/main/202406232248172.png"
+                      alt="img"
+                ></p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://raw.githubusercontent.com/YuZeZhang/myImgslib/main/202406232248183.png"
+                      alt="img"
+                ></p>
+<p>扁平化处理：</p>
+<p>我们把 node_modules 删了，用 yarn 再重新安装下，执行 yarn add express：</p>
+<p>这时候 node_modules 就是这样了：</p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://raw.githubusercontent.com/YuZeZhang/myImgslib/main/202406232249070.webp"
+                      alt="img"
+                ></p>
+<p>全部铺平在了一层，展开下面的包大部分是没有二层 node_modules 的：</p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://raw.githubusercontent.com/YuZeZhang/myImgslib/main/202406232249644.webp"
+                      alt="img"
+                ></p>
+<p>当然也有的包还是有 node_modules 的，比如这样：</p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://raw.githubusercontent.com/YuZeZhang/myImgslib/main/202406232249531.webp"
+                      alt="img"
+                ></p>
+<p>为什么还有嵌套呢？</p>
+<p>因为一个包是可能有多个版本的，提升只能提升一个，所以后面再遇到相同包的不同版本，依然还是用嵌套的方式。</p>
+<p>npm 后来升级到 3 之后，也是采用这种铺平的方案了，和 yarn 很类似：</p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://raw.githubusercontent.com/YuZeZhang/myImgslib/main/202406232249282.webp"
+                      alt="img"
+                ></p>
+<p>当然，yarn 还实现了 yarn.lock 来锁定依赖版本的功能，不过这个 npm 也实现了。</p>
+<p>扁平化的方案也有相应的问题。而且还有一个问题，就是上面提到的依赖包有多个版本的时候，只会提升一个，那其余版本的包不还是复制了很多次么，依然有浪费磁盘空间的问题。</p>
+<p>那 pnpm 是怎么解决这俩问题的呢？</p>
+<h2 id="pnpm"><a href="#pnpm" class="headerlink" title="pnpm"></a>pnpm</h2><p><strong>pnpm：</strong>是一个更新的包管理工具，旨在提供比 npm 和 Yarn 更好的磁盘空间效率和更快的安装速度。</p>
+<p>pnpm 通过使用软硬链接解决这个问题。</p>
+<p>软链接：</p>
+<p>硬链接：</p>
+<p>这样不会有复制多次的磁盘空间浪费，而且也不会有路径过长的问题。因为路径过长的限制本质上是不能有太深的目录层级，现在都是各个位置的目录的 link，并不是同一个目录，所以也不会有长度限制。</p>
+<p>没错，pnpm 就是通过这种思路来实现的。</p>
+<p>再把 node_modules 删掉，然后用 pnpm 重新装一遍，执行 pnpm install。</p>
+<p>你会发现它打印了这样一句话：</p>
+<p>包是从全局 store 硬连接到虚拟 store 的，这里的虚拟 store 就是 node_modules&#x2F;.pnpm。</p>
+<p>我们打开 node_modules 看一下：</p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://raw.githubusercontent.com/YuZeZhang/myImgslib/main/202406232249706.webp"
+                      alt="img"
+                ></p>
+<p>确实不是扁平化的了，依赖了 express，那 node_modules 下就只有 express，没有幽灵依赖。</p>
+<p>展开 .pnpm 看一下：</p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://raw.githubusercontent.com/YuZeZhang/myImgslib/main/202406232249750.webp"
+                      alt="img"
+                ></p>
+<p>所有的依赖都在这里铺平了，都是从全局 store 硬连接过来的，然后包和包之间的依赖关系是通过软链接组织的。</p>
+<p>比如 .pnpm 下的 expresss，这些都是软链接，</p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://raw.githubusercontent.com/YuZeZhang/myImgslib/main/202406232249099.webp"
+                      alt="img"
+                ></p>
+<p>也就是说，所有的依赖都是从全局 store 硬连接到了 node_modules&#x2F;.pnpm 下，然后之间通过软链接来相互依赖。</p>
+<p>官方给了一张原理图，配合着看一下就明白了：</p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://raw.githubusercontent.com/YuZeZhang/myImgslib/main/202406232249755.webp"
+                      alt="img"
+                ></p>
+<p>这就是 pnpm 的实现原理。</p>
+<p>那么回过头来看一下，pnpm 为什么优秀呢？</p>
+<p>首先，最大的优点是节省磁盘空间呀，一个包全局只保存一份，剩下的都是软硬连接，这得节省多少磁盘空间呀。</p>
+<p>其次就是快，因为通过链接的方式而不是复制，自然会快。</p>
+<p>这也是它所标榜的优点：</p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://raw.githubusercontent.com/YuZeZhang/myImgslib/main/202406232250962.webp"
+                      alt="img"
+                ></p>
+<p>相比 npm2 的优点就是不会进行同样依赖的多次复制。</p>
+<p>相比 yarn 和 npm3+ 呢，那就是没有幽灵依赖，也不会有没有被提升的依赖依然复制多份的问题。</p>
+<p>这就已经足够优秀了，对 yarn 和 npm 可以说是降维打击。</p>
+<p>Reference：<a class="link"   target="_blank" rel="noopener" href="https://juejin.cn/post/7127295203177676837?searchId=20240623222554B51B38FF0362E0D545BE" >https://juejin.cn/post/7127295203177676837?searchId=20240623222554B51B38FF0362E0D545BE <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
+
+        </div>
+
+        
+
+        
+
+        
+
+        
+            <div class="article-nav my-8 flex justify-between items-center px-2 sm:px-6 md:px-8">
+                
+                
+                    <div class="article-next border-border-color shadow-redefine-flat shadow-shadow-color-2 rounded-medium px-4 py-2 hover:shadow-redefine-flat-hover hover:shadow-shadow-color-2">
+                        <a class="next"
+                        rel="next"
+                        href="/Yuyang/cpolar/"
+                        >
+                            <span class="title flex justify-center items-center">
+                                <span class="post-nav-title-item">MAC 内网穿透 cpolar</span>
+                                <span class="post-nav-item">下一篇</span>
+                            </span>
+                            <span class="right arrow-icon flex justify-center items-center">
+                                <i class="fa-solid fa-chevron-right"></i>
+                            </span>
+                        </a>
+                    </div>
+                
+            </div>
+        
+
+
+        
+    </div>
+
+    
+        <div class="toc-content-container">
+            <div class="post-toc-wrap">
+    <div class="post-toc">
+        <div class="toc-title">此页目录</div>
+        <div class="page-title">node_modules困境以及pnpm</div>
+        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#npm2"><span class="nav-text">npm2</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#YARN-NPM-3"><span class="nav-text">YARN &amp; NPM@3</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#pnpm"><span class="nav-text">pnpm</span></a></li></ol>
+
+    </div>
 </div>
+        </div>
+    
+</div>
+
+
 
                 
 
@@ -556,6 +859,23 @@
         </div>
     </div>
 
+    
+        <div class="post-tools">
+            <div class="post-tools-container">
+    <ul class="article-tools-list">
+        <!-- TOC aside toggle -->
+        
+            <li class="right-bottom-tools page-aside-toggle">
+                <i class="fa-regular fa-outdent"></i>
+            </li>
+        
+
+        <!-- go comment -->
+        
+    </ul>
+</div>
+
+        </div>
     
 
     <div class="right-side-tools-container">
