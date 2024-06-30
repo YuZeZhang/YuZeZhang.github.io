@@ -13,28 +13,22 @@
     
     <!--- Seo Part-->
     
-    <link rel="canonical" href="https://github.com/YuZeZhang/YuZeZhang.github.io/yuyang/eventtracking/"/>
+    <link rel="canonical" href="https://github.com/YuZeZhang/YuZeZhang.github.io/yuyang/hash_history/"/>
     <meta name="robots" content="index,follow">
     <meta name="googlebot" content="index,follow">
     <meta name="revisit-after" content="1 days">
     
-        <meta name="description" content="什么是埋点：​	前端埋点是一种用于收集用户在网站或应用程序上的行为数据的方法。这些数据可以帮助企业了解用户的行为模式、使用习惯，并对产品进行优化。 为什么要埋点： 流量监测（按时间空间维度分析，留存分析，转化分析）。 构建行为路径，获取用户的全链路信息获取，实现用户分群、人群洞察、行为细查等，构建用户画像。 通过对埋点数据的处理、分析、建模，判断产品的效果和未来走向。 为营销策略提供数据支持，分析">
+        <meta name="description" content="前端路由hash和history hash模式使用window.location.hash属性以及onhashchange事件，实现监听浏览器地址的hash值变化，执行相应的js切换网页    属性 含义 例子    location.href 完整的URL字符串 https:&#x2F;&#x2F;www.example.com:8080&#x2F;pathname&#x2F;?search&#x3D;test#hash    location">
 <meta property="og:type" content="article">
-<meta property="og:title" content="前端埋点与全链路">
-<meta property="og:url" content="https://github.com/YuZeZhang/YuZeZhang.github.io/Yuyang/eventTracking/index.html">
+<meta property="og:title" content="前端路由hash和history">
+<meta property="og:url" content="https://github.com/YuZeZhang/YuZeZhang.github.io/Yuyang/hash_history/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="什么是埋点：​	前端埋点是一种用于收集用户在网站或应用程序上的行为数据的方法。这些数据可以帮助企业了解用户的行为模式、使用习惯，并对产品进行优化。 为什么要埋点： 流量监测（按时间空间维度分析，留存分析，转化分析）。 构建行为路径，获取用户的全链路信息获取，实现用户分群、人群洞察、行为细查等，构建用户画像。 通过对埋点数据的处理、分析、建模，判断产品的效果和未来走向。 为营销策略提供数据支持，分析">
+<meta property="og:description" content="前端路由hash和history hash模式使用window.location.hash属性以及onhashchange事件，实现监听浏览器地址的hash值变化，执行相应的js切换网页    属性 含义 例子    location.href 完整的URL字符串 https:&#x2F;&#x2F;www.example.com:8080&#x2F;pathname&#x2F;?search&#x3D;test#hash    location">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://raw.githubusercontent.com/YuZeZhang/myImgslib/main/202406250013175.png">
-<meta property="og:image" content="https://raw.githubusercontent.com/YuZeZhang/myImgslib/main/202406250041129.png">
-<meta property="og:image" content="https://raw.githubusercontent.com/YuZeZhang/myImgslib/main/202406250047727.png">
-<meta property="og:image" content="https://raw.githubusercontent.com/YuZeZhang/myImgslib/main/202406250053185.png">
-<meta property="og:image" content="https://raw.githubusercontent.com/YuZeZhang/myImgslib/main/202406250115952.png">
-<meta property="article:published_time" content="2024-06-24T15:47:47.573Z">
-<meta property="article:modified_time" content="2024-06-24T17:25:05.390Z">
+<meta property="article:published_time" content="2024-06-30T13:45:35.000Z">
+<meta property="article:modified_time" content="2024-06-30T15:56:32.938Z">
 <meta property="article:author" content="Yuyang">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://raw.githubusercontent.com/YuZeZhang/myImgslib/main/202406250013175.png">
     
     
     <!--- Icon Part-->
@@ -46,7 +40,7 @@
     
     <title>
         
-            前端埋点与全链路 -
+            前端路由hash和history -
         
         Welcome to Yuyang&#39;s Blog
     </title>
@@ -475,7 +469,7 @@
         <div class="article-title relative w-full">
             
                 <div class="w-full flex items-center pt-6 justify-start">
-                    <h1 class="article-title-regular text-second-text-color tracking-tight text-4xl md:text-6xl font-semibold px-2 sm:px-6 md:px-8 py-3">前端埋点与全链路</h1>
+                    <h1 class="article-title-regular text-second-text-color tracking-tight text-4xl md:text-6xl font-semibold px-2 sm:px-6 md:px-8 py-3">前端路由hash和history</h1>
                 </div>
             
             </div>
@@ -496,15 +490,15 @@
                         <div class="article-meta-info">
     <span class="article-date article-meta-item">
         <i class="fa-regular fa-pen-fancy"></i>&nbsp;
-        <span class="desktop">2024-06-24 23:47:47</span>
-        <span class="mobile">2024-06-24 23:47:47</span>
+        <span class="desktop">2024-06-30 21:45:35</span>
+        <span class="mobile">2024-06-30 21:45:35</span>
         <span class="hover-info">创建</span>
     </span>
     
         <span class="article-date article-meta-item">
             <i class="fa-regular fa-wrench"></i>&nbsp;
-            <span class="desktop">2024-06-25 01:25:05</span>
-            <span class="mobile">2024-06-25 01:25:05</span>
+            <span class="desktop">2024-06-30 23:56:32</span>
+            <span class="mobile">2024-06-30 23:56:32</span>
             <span class="hover-info">更新</span>
         </span>
     
@@ -531,99 +525,140 @@
 
 
         <div class="article-content markdown-body px-2 sm:px-6 md:px-8 pb-8">
-            <h2 id="什么是埋点："><a href="#什么是埋点：" class="headerlink" title="什么是埋点："></a>什么是埋点：</h2><p>​	前端埋点是一种用于收集用户在网站或应用程序上的行为数据的方法。这些数据可以帮助企业了解用户的行为模式、使用习惯，并对产品进行优化。</p>
-<h2 id="为什么要埋点："><a href="#为什么要埋点：" class="headerlink" title="为什么要埋点："></a>为什么要埋点：</h2><ul>
-<li>流量监测（按时间空间维度分析，留存分析，转化分析）。</li>
-<li>构建行为路径，获取用户的全链路信息获取，实现用户分群、人群洞察、行为细查等，构建用户画像。</li>
-<li>通过对埋点数据的处理、分析、建模，判断产品的效果和未来走向。</li>
-<li>为营销策略提供数据支持，分析营销效果，提高渠道转化。</li>
-<li>热力分析，帮助判断访客热衷的区域，评估网页设计是否合理等。</li>
-<li>实施AB Test，持续优化产品，使产品在市场上更具有竞争力。</li>
-<li>用户行为异常监测以及问题快速定位与响应。</li>
-</ul>
-<h2 id="埋点的使用场景有哪些："><a href="#埋点的使用场景有哪些：" class="headerlink" title="埋点的使用场景有哪些："></a>埋点的使用场景有哪些：</h2><p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="https://raw.githubusercontent.com/YuZeZhang/myImgslib/main/202406250013175.png"
-                      alt="image-20240625001317104"
-                ></p>
-<h2 id="埋点方式："><a href="#埋点方式：" class="headerlink" title="埋点方式："></a>埋点方式：</h2><table>
+            <p>前端路由hash和history</p>
+<h2 id="hash模式"><a href="#hash模式" class="headerlink" title="hash模式"></a>hash模式</h2><p>使用window.location.hash属性以及onhashchange事件，实现监听浏览器地址的hash值变化，执行相应的js切换网页</p>
+<table>
 <thead>
 <tr>
-<th></th>
-<th>代码埋点</th>
-<th>全埋点</th>
-<th>可视化埋点</th>
+<th align="center">属性</th>
+<th align="center">含义</th>
+<th align="center">例子</th>
 </tr>
 </thead>
 <tbody><tr>
-<td>定义</td>
-<td><strong>代码埋点</strong>是指在前端代码中手动添加埋点代码，用于捕获特定用户行为事件。这种方法灵活且精确，适用于需要细粒度数据收集的场景。</td>
-<td><strong>全埋点</strong>是一种自动化的埋点方式，旨在捕获页面上的所有用户行为事件。通过全埋点，可以自动记录用户在页面上的所有操作，如点击、滑动、输入等，减少了手动添加埋点的工作量。</td>
-<td><strong>可视化埋点</strong>是通过可视化界面配置埋点，而不需要修改代码。通过可视化工具，非技术人员也可以方便地配置和管理埋点。</td>
+<td align="center">location.href</td>
+<td align="center">完整的URL字符串</td>
+<td align="center"><a class="link"   target="_blank" rel="noopener" href="https://www.example.com:8080/pathname/?search=test#hash" >https://www.example.com:8080/pathname/?search=test#hash <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></td>
 </tr>
 <tr>
-<td>优点</td>
-<td>•	精确控制埋点的位置和事件。	<br />•	可以收集详细的事件信息。</td>
-<td>•	覆盖全面，无需手动添加埋点代码。<br />•	能够捕获所有用户行为，数据更完整</td>
-<td>•	无需修改代码，配置方便。<br />•	非技术人员也可以配置和管理埋点。</td>
+<td align="center">location.protocol</td>
+<td align="center">协议部分</td>
+<td align="center">https:</td>
 </tr>
 <tr>
-<td>缺点</td>
-<td>•	手动维护埋点代码，工作量大，容易出错。<br />•	需要开发人员介入，维护成本高。</td>
-<td>•	数据量大，可能带来存储和处理的压力。<br />•	需要在数据清洗和分析阶段进行大量处理。</td>
-<td>•	可能无法满足所有细粒度的埋点需求。<br />•	配置不当可能导致数据不准确。</td>
+<td align="center">location.hostname</td>
+<td align="center">主机名</td>
+<td align="center"><a class="link"   target="_blank" rel="noopener" href="http://www.example.com/" >www.example.com <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></td>
+</tr>
+<tr>
+<td align="center">location.port</td>
+<td align="center">端口号</td>
+<td align="center">8080</td>
+</tr>
+<tr>
+<td align="center">location.host</td>
+<td align="center">主机名和端口号</td>
+<td align="center"><a class="link"   target="_blank" rel="noopener" href="http://www.example.com:8080/" >www.example.com:8080 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></td>
+</tr>
+<tr>
+<td align="center">location.pathname</td>
+<td align="center">路径部分</td>
+<td align="center">&#x2F;post&#x2F;6993840419041706014</td>
+</tr>
+<tr>
+<td align="center">location.search</td>
+<td align="center">查询字符串部分</td>
+<td align="center">?search&#x3D;test</td>
+</tr>
+<tr>
+<td align="center">location.hash</td>
+<td align="center">哈希值</td>
+<td align="center">#hash</td>
 </tr>
 </tbody></table>
-<h2 id="埋点例子："><a href="#埋点例子：" class="headerlink" title="埋点例子："></a>埋点例子：</h2><p>代码埋点例子：</p>
-<div class="highlight-container" data-rel="Javascript"><figure class="iseeu highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="string">&#x27;#button&#x27;</span>).<span class="title function_">on</span>(<span class="string">&#x27;click&#x27;</span>, <span class="keyword">function</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="comment">// 构建埋点数据</span></span><br><span class="line">    <span class="keyword">var</span> eventData = &#123;</span><br><span class="line">        <span class="attr">eventType</span>: <span class="string">&#x27;button_click&#x27;</span>,</span><br><span class="line">        <span class="attr">buttonId</span>: <span class="string">&#x27;button&#x27;</span>,</span><br><span class="line">        <span class="attr">timestamp</span>: <span class="keyword">new</span> <span class="title class_">Date</span>().<span class="title function_">toISOString</span>()</span><br><span class="line">    &#125;;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// 发送数据到服务器</span></span><br><span class="line">    $.<span class="title function_">ajax</span>(&#123;</span><br><span class="line">        <span class="attr">url</span>: <span class="string">&#x27;https://example.com/track&#x27;</span>,</span><br><span class="line">        <span class="attr">method</span>: <span class="string">&#x27;POST&#x27;</span>,</span><br><span class="line">        <span class="attr">contentType</span>: <span class="string">&#x27;application/json&#x27;</span>,</span><br><span class="line">        <span class="attr">data</span>: <span class="title class_">JSON</span>.<span class="title function_">stringify</span>(eventData),</span><br><span class="line">        <span class="attr">success</span>: <span class="keyword">function</span>(<span class="params">response</span>) &#123;</span><br><span class="line">            <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;埋点数据发送成功&#x27;</span>);</span><br><span class="line">        &#125;,</span><br><span class="line">        <span class="attr">error</span>: <span class="keyword">function</span>(<span class="params">error</span>) &#123;</span><br><span class="line">            <span class="variable language_">console</span>.<span class="title function_">error</span>(<span class="string">&#x27;埋点数据发送失败&#x27;</span>, error);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure></div>
+<p>window.location还提供了一些方法：</p>
+<table>
+<thead>
+<tr>
+<th align="center">方法</th>
+<th align="center">含义</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">location.assign(url)</td>
+<td align="center">加载指定的URL</td>
+</tr>
+<tr>
+<td align="center">location.replace(url)</td>
+<td align="center">替换当前的 URL，但不会在历史记录中创建新的条目。即用户无法通过浏览器的“后退”按钮返回到之前的页面。</td>
+</tr>
+<tr>
+<td align="center">location.reload(forceReload)</td>
+<td align="center">重新加载当前页面。forceReload 参数为 true 时会强制从服务器重新加载页面（而不是从缓存中加载）。</td>
+</tr>
+<tr>
+<td align="center">location.toString()</td>
+<td align="center">返回当前 URL 的字符串表示。</td>
+</tr>
+</tbody></table>
+<div class="highlight-container" data-rel="Javascript"><figure class="iseeu highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 获取当前 URL 的各种部分</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="variable language_">window</span>.<span class="property">location</span>.<span class="property">href</span>);      <span class="comment">// 输出完整的 URL</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="variable language_">window</span>.<span class="property">location</span>.<span class="property">protocol</span>);  <span class="comment">// 输出协议部分</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="variable language_">window</span>.<span class="property">location</span>.<span class="property">host</span>);      <span class="comment">// 输出主机和端口号</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="variable language_">window</span>.<span class="property">location</span>.<span class="property">hostname</span>);  <span class="comment">// 输出主机名</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="variable language_">window</span>.<span class="property">location</span>.<span class="property">port</span>);      <span class="comment">// 输出端口号</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="variable language_">window</span>.<span class="property">location</span>.<span class="property">pathname</span>);  <span class="comment">// 输出路径</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="variable language_">window</span>.<span class="property">location</span>.<span class="property">search</span>);    <span class="comment">// 输出查询字符串</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="variable language_">window</span>.<span class="property">location</span>.<span class="property">hash</span>);      <span class="comment">// 输出哈希</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="variable language_">window</span>.<span class="property">location</span>.<span class="property">origin</span>);    <span class="comment">// 输出源 URL</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 改变 URL 并重新加载页面</span></span><br><span class="line"><span class="variable language_">window</span>.<span class="property">location</span>.<span class="property">href</span> = <span class="string">&#x27;https://www.example.com&#x27;</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 替换当前 URL，不会在历史记录中创建新的条目</span></span><br><span class="line"><span class="variable language_">window</span>.<span class="property">location</span>.<span class="title function_">replace</span>(<span class="string">&#x27;https://www.example.com&#x27;</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 重新加载页面</span></span><br><span class="line"><span class="variable language_">window</span>.<span class="property">location</span>.<span class="title function_">reload</span>();     <span class="comment">// 从缓存中重新加载</span></span><br><span class="line"><span class="variable language_">window</span>.<span class="property">location</span>.<span class="title function_">reload</span>(<span class="literal">true</span>); <span class="comment">// 强制从服务器重新加载</span></span><br></pre></td></tr></table></figure></div>
 
-<p>全埋点例子：</p>
-<div class="highlight-container" data-rel="Javascript"><figure class="iseeu highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 全埋点脚本</span></span><br><span class="line">(<span class="keyword">function</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="comment">// 事件监听器</span></span><br><span class="line">    <span class="keyword">function</span> <span class="title function_">eventListener</span>(<span class="params">event</span>) &#123;</span><br><span class="line">        <span class="keyword">var</span> eventData = &#123;</span><br><span class="line">            <span class="attr">eventType</span>: event.<span class="property">type</span>,</span><br><span class="line">            <span class="attr">timestamp</span>: <span class="keyword">new</span> <span class="title class_">Date</span>().<span class="title function_">toISOString</span>(),</span><br><span class="line">            <span class="attr">element</span>: event.<span class="property">target</span>.<span class="property">tagName</span>,</span><br><span class="line">            <span class="attr">id</span>: event.<span class="property">target</span>.<span class="property">id</span>,</span><br><span class="line">            <span class="attr">className</span>: event.<span class="property">target</span>.<span class="property">className</span>,</span><br><span class="line">            <span class="attr">pageX</span>: event.<span class="property">pageX</span>,</span><br><span class="line">            <span class="attr">pageY</span>: event.<span class="property">pageY</span>,</span><br><span class="line">            <span class="attr">url</span>: <span class="variable language_">window</span>.<span class="property">location</span>.<span class="property">href</span></span><br><span class="line">        &#125;;</span><br><span class="line">        </span><br><span class="line">        <span class="comment">// 发送数据到服务器</span></span><br><span class="line">        <span class="keyword">var</span> xhr = <span class="keyword">new</span> <span class="title class_">XMLHttpRequest</span>();</span><br><span class="line">        xhr.<span class="title function_">open</span>(<span class="string">&quot;POST&quot;</span>, <span class="string">&quot;https://example.com/track&quot;</span>, <span class="literal">true</span>);</span><br><span class="line">        xhr.<span class="title function_">setRequestHeader</span>(<span class="string">&quot;Content-Type&quot;</span>, <span class="string">&quot;application/json;charset=UTF-8&quot;</span>);</span><br><span class="line">        xhr.<span class="title function_">send</span>(<span class="title class_">JSON</span>.<span class="title function_">stringify</span>(eventData));</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 监听点击事件</span></span><br><span class="line">    <span class="variable language_">document</span>.<span class="title function_">addEventListener</span>(<span class="string">&#x27;click&#x27;</span>, eventListener, <span class="literal">true</span>);</span><br><span class="line">    <span class="variable language_">document</span>.<span class="title function_">addEventListener</span>(<span class="string">&#x27;input&#x27;</span>, eventListener, <span class="literal">true</span>);</span><br><span class="line">    <span class="variable language_">document</span>.<span class="title function_">addEventListener</span>(<span class="string">&#x27;scroll&#x27;</span>, eventListener, <span class="literal">true</span>);</span><br><span class="line">&#125;)();</span><br></pre></td></tr></table></figure></div>
 
-<h2 id="埋点模型："><a href="#埋点模型：" class="headerlink" title="埋点模型："></a>埋点模型：</h2><blockquote>
-<p>埋点模型包含两个主要概念：<strong>事件(event)</strong> 、<strong>属性(params)</strong></p>
-<p><strong>事件</strong>：通过埋点定义的用户行为或业务操作，比如页面打开，页面离开，模块曝光，模块点击</p>
-<p><strong>属性</strong>：事件附带的各种维度信息，比如用户信息，网络信息，设备信息，事件具体维度信息等</p>
-</blockquote>
-<p>一个设计的相对完善的模型,一般包含用户行为五元素</p>
-<p>通过这个可以详细的分析是谁在什么地方什么时间，怎么样进行了什么操作</p>
-<p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="https://raw.githubusercontent.com/YuZeZhang/myImgslib/main/202406250041129.png"
-                      alt="image-20240625004123315"
-                ></p>
-<p>模型事件：</p>
-<p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="https://raw.githubusercontent.com/YuZeZhang/myImgslib/main/202406250047727.png"
-                      alt="image-20240625004727426"
-                ></p>
-<p>模型信息：</p>
-<p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="https://raw.githubusercontent.com/YuZeZhang/myImgslib/main/202406250053185.png"
-                      alt="image-20240625005335046"
-                ></p>
-<h2 id="埋点上报："><a href="#埋点上报：" class="headerlink" title="埋点上报："></a>埋点上报：</h2><p>数据队列处理：当需要上报的数据量逐渐变多时，就需要考虑进行批量上报和延迟上报，本质上都是为了不阻塞业务程序的执行，上报本来就是用户无感知的事情，用户不能为此耗时买单。</p>
-<p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="https://raw.githubusercontent.com/YuZeZhang/myImgslib/main/202406250115952.png"
-                      alt="image-20240625011532834"
-                ></p>
-<p>对于数据请求处理，主要考虑的有三个因素</p>
-<ul>
-<li>跨域的问题</li>
-<li>页面销毁时，如何保障还未成功上传的数据完成数据上传请求</li>
-<li>大数据量的上传</li>
-</ul>
-<p>较为标准的针对模块曝光的定义：窗口可视区域内 &amp;&amp; 组件矩形与视窗区域发生交集 &amp;&amp; 交集垂线距离 &gt;&#x3D; 1px &amp;&amp; 停留时间 &gt;&#x3D; XXms</p>
-<p>Reference：<a class="link"   target="_blank" rel="noopener" href="https://juejin.cn/post/7324334380373426227?searchId=202406242342178A14CCB0DE15106BCCCB" >https://juejin.cn/post/7324334380373426227?searchId=202406242342178A14CCB0DE15106BCCCB <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
-<p>备注：近几个月来看到👀过质量最高的文章！学到了！</p>
+
+<h2 id="history模式"><a href="#history模式" class="headerlink" title="history模式"></a>history模式</h2><p>History API是H5提供的新特性，允许开发者直接更改前端路由，即更新浏览器URL地址而不重新发起请求。它表示当前窗口的浏览历史。当发生改变时，只会改变页面的路径，不会刷新页面。 History 对象保存了当前窗口访问过的所有页面网址。通过 history.length 可以得出当前窗口一共访问过几个网址。 由于安全原因，浏览器不允许脚本读取这些地址，但是允许在地址之间导航。 浏览器工具栏的“前进”和“后退”按钮，其实就是对 History 对象进行操作。</p>
+<table>
+<thead>
+<tr>
+<th align="center">属性</th>
+<th align="center">含义</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">history.length</td>
+<td align="center">历史记录中的条目数</td>
+</tr>
+<tr>
+<td align="center">history.state</td>
+<td align="center">历史记录条目的状态对象</td>
+</tr>
+</tbody></table>
+<p>window.history 还提供了一些方法：</p>
+<table>
+<thead>
+<tr>
+<th align="center">方法</th>
+<th align="center">含义</th>
+<th>例子</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">history.pushState(state, title, url)</td>
+<td align="center">将一个状态对象添加到历史记录栈中</td>
+<td>window.history.pushState({ page: 1 }, “title 1”, “&#x2F;page1”);</td>
+</tr>
+<tr>
+<td align="center">history.replaceState(state, title, url)</td>
+<td align="center">修改当前历史记录条目的状态对象、标题和 URL</td>
+<td>window.history.replaceState({ page: 2 }, “title 2”, “&#x2F;page2”);</td>
+</tr>
+<tr>
+<td align="center">history.back()</td>
+<td align="center">加载历史记录列表中的前一个 URL，与用户点击浏览器的后退按钮相同。</td>
+<td>window.history.back();</td>
+</tr>
+<tr>
+<td align="center">history.forward()</td>
+<td align="center">加载历史记录列表中的下一个 URL，与用户点击浏览器的前进按钮相同。</td>
+<td>window.history.forward();</td>
+</tr>
+<tr>
+<td align="center">history.go(delta)</td>
+<td align="center">根据 delta 值加载历史记录中的特定页面。delta: 为正值时前进，为负值时后退。</td>
+<td>window.history.go(-1); &#x2F;&#x2F; 后退一页<br/>window.history.go(1);  &#x2F;&#x2F; 前进一页</td>
+</tr>
+</tbody></table>
+<h2 id="history代码实现"><a href="#history代码实现" class="headerlink" title="history代码实现"></a>history代码实现</h2><div class="highlight-container" data-rel="Javascript"><figure class="iseeu highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">CustomHistory</span> &#123;</span><br><span class="line">  <span class="title function_">constructor</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="variable language_">this</span>.<span class="property">stack</span> = [];</span><br><span class="line">    <span class="variable language_">this</span>.<span class="property">currentIndex</span> = -<span class="number">1</span>;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="title function_">pushState</span>(<span class="params">state, title, url</span>) &#123;</span><br><span class="line">    <span class="keyword">if</span> (<span class="variable language_">this</span>.<span class="property">currentIndex</span> &lt; <span class="variable language_">this</span>.<span class="property">stack</span>.<span class="property">length</span> - <span class="number">1</span>) &#123;</span><br><span class="line">      <span class="variable language_">this</span>.<span class="property">stack</span> = <span class="variable language_">this</span>.<span class="property">stack</span>.<span class="title function_">slice</span>(<span class="number">0</span>, <span class="variable language_">this</span>.<span class="property">currentIndex</span> + <span class="number">1</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="variable language_">this</span>.<span class="property">stack</span>.<span class="title function_">push</span>(&#123; state, title, url &#125;);</span><br><span class="line">    <span class="variable language_">this</span>.<span class="property">currentIndex</span>++;</span><br><span class="line">    <span class="variable language_">this</span>.<span class="title function_">updateUrl</span>(url);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="title function_">replaceState</span>(<span class="params">state, title, url</span>) &#123;</span><br><span class="line">    <span class="keyword">if</span>(<span class="variable language_">this</span>.<span class="property">currentIndex</span> &gt;= <span class="number">0</span>)&#123;</span><br><span class="line">      <span class="variable language_">this</span>.<span class="property">stack</span>[<span class="variable language_">this</span>.<span class="property">currentIndex</span>] = &#123; state, title, url &#125;;</span><br><span class="line">      <span class="variable language_">this</span>.<span class="title function_">updateUrl</span>(url);</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        <span class="variable language_">this</span>.<span class="title function_">pushState</span>(state, title, url);</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="title function_">go</span>(<span class="params">index</span>) &#123;</span><br><span class="line">    <span class="keyword">const</span> newIndex = <span class="variable language_">this</span>.<span class="property">currentIndex</span> + index;</span><br><span class="line">    <span class="keyword">if</span> (newIndex &gt;= <span class="number">0</span> &amp;&amp; newIndex &lt; <span class="variable language_">this</span>.<span class="property">stack</span>.<span class="property">length</span>) &#123;</span><br><span class="line">      <span class="variable language_">this</span>.<span class="property">currentIndex</span> = newIndex;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="title function_">back</span>(<span class="params"></span>)&#123;</span><br><span class="line">    <span class="keyword">if</span>(<span class="variable language_">this</span>.<span class="property">currentIndex</span> &gt; <span class="number">0</span>)&#123;</span><br><span class="line">      <span class="variable language_">this</span>.<span class="property">currentIndex</span>--;</span><br><span class="line">      <span class="variable language_">this</span>.<span class="title function_">applyState</span>();</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  </span><br><span class="line">  <span class="title function_">forward</span>(<span class="params"></span>)&#123;</span><br><span class="line">    <span class="keyword">if</span>(<span class="variable language_">this</span>.<span class="property">currentIndex</span> &lt; <span class="variable language_">this</span>.<span class="property">stack</span>.<span class="property">length</span> - <span class="number">1</span>)&#123;</span><br><span class="line">      <span class="variable language_">this</span>.<span class="property">currentIndex</span>++;</span><br><span class="line">      <span class="variable language_">this</span>.<span class="title function_">applyState</span>();</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="title function_">applyState</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="keyword">const</span> currentState = <span class="variable language_">this</span>.<span class="property">stack</span>[<span class="variable language_">this</span>.<span class="property">currentIndex</span>];</span><br><span class="line">    <span class="variable language_">this</span>.<span class="title function_">updateUrl</span>(currentState.<span class="property">url</span>);</span><br><span class="line">    <span class="comment">// this.dispatchPopStaet(currentState);</span></span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="title function_">updateUrl</span>(<span class="params">url</span>) &#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;🚀 ~ CustomHistory ~ updateUrl ~ url:&quot;</span>, url)</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="title function_">dispatchPopStaet</span>(<span class="params">state</span>)&#123;</span><br><span class="line">    <span class="keyword">const</span> event = <span class="keyword">new</span> <span class="title class_">CustomEvent</span>(<span class="string">&#x27;popstate&#x27;</span>, &#123; <span class="attr">detail</span>: state &#125;);</span><br><span class="line">    <span class="variable language_">window</span>.<span class="title function_">dispatchEvent</span>(event);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// Usage example:</span></span><br><span class="line"><span class="keyword">const</span> customHistory = <span class="keyword">new</span> <span class="title class_">CustomHistory</span>();</span><br><span class="line"></span><br><span class="line">customHistory.<span class="title function_">pushState</span>(&#123; <span class="attr">page</span>: <span class="number">1</span> &#125;, <span class="string">&quot;Title 1&quot;</span>, <span class="string">&quot;/page1&quot;</span>);</span><br><span class="line">customHistory.<span class="title function_">pushState</span>(&#123; <span class="attr">page</span>: <span class="number">2</span> &#125;, <span class="string">&quot;Title 2&quot;</span>, <span class="string">&quot;/page2&quot;</span>);</span><br><span class="line">customHistory.<span class="title function_">replaceState</span>(&#123; <span class="attr">page</span>: <span class="number">3</span> &#125;, <span class="string">&quot;Title 3&quot;</span>, <span class="string">&quot;/page3&quot;</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// window.addEventListener(&#x27;popstate&#x27;, (event) =&gt; &#123;</span></span><br><span class="line"><span class="comment">//     console.log(&#x27;Popstate event:&#x27;, event.detail);</span></span><br><span class="line"><span class="comment">// &#125;);</span></span><br><span class="line"></span><br><span class="line">customHistory.<span class="title function_">back</span>(); <span class="comment">// Navigating to: /page1</span></span><br><span class="line">customHistory.<span class="title function_">forward</span>(); <span class="comment">// Navigating to: /page3</span></span><br><span class="line">customHistory.<span class="title function_">go</span>(-<span class="number">1</span>); <span class="comment">// Navigating to: /page1</span></span><br></pre></td></tr></table></figure></div>
+
 
         </div>
 
@@ -636,29 +671,14 @@
         
             <div class="article-nav my-8 flex justify-between items-center px-2 sm:px-6 md:px-8">
                 
-                    <div class="article-prev border-border-color shadow-redefine-flat shadow-shadow-color-2 rounded-medium px-4 py-2 hover:shadow-redefine-flat-hover hover:shadow-shadow-color-2">
-                        <a class="prev"
-                        rel="prev"
-                        href="/Yuyang/hash_history/"
-                        >
-                            <span class="left arrow-icon flex justify-center items-center">
-                                <i class="fa-solid fa-chevron-left"></i>
-                            </span>
-                            <span class="title flex justify-center items-center">
-                                <span class="post-nav-title-item">前端路由hash和history</span>
-                                <span class="post-nav-item">上一篇</span>
-                            </span>
-                        </a>
-                    </div>
-                
                 
                     <div class="article-next border-border-color shadow-redefine-flat shadow-shadow-color-2 rounded-medium px-4 py-2 hover:shadow-redefine-flat-hover hover:shadow-shadow-color-2">
                         <a class="next"
                         rel="next"
-                        href="/Yuyang/pnpm/"
+                        href="/Yuyang/eventTracking/"
                         >
                             <span class="title flex justify-center items-center">
-                                <span class="post-nav-title-item">node_modules困境以及pnpm</span>
+                                <span class="post-nav-title-item">前端埋点与全链路</span>
                                 <span class="post-nav-item">下一篇</span>
                             </span>
                             <span class="right arrow-icon flex justify-center items-center">
@@ -679,8 +699,8 @@
             <div class="post-toc-wrap">
     <div class="post-toc">
         <div class="toc-title">此页目录</div>
-        <div class="page-title">前端埋点与全链路</div>
-        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BB%80%E4%B9%88%E6%98%AF%E5%9F%8B%E7%82%B9%EF%BC%9A"><span class="nav-text">什么是埋点：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%BA%E4%BB%80%E4%B9%88%E8%A6%81%E5%9F%8B%E7%82%B9%EF%BC%9A"><span class="nav-text">为什么要埋点：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9F%8B%E7%82%B9%E7%9A%84%E4%BD%BF%E7%94%A8%E5%9C%BA%E6%99%AF%E6%9C%89%E5%93%AA%E4%BA%9B%EF%BC%9A"><span class="nav-text">埋点的使用场景有哪些：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9F%8B%E7%82%B9%E6%96%B9%E5%BC%8F%EF%BC%9A"><span class="nav-text">埋点方式：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9F%8B%E7%82%B9%E4%BE%8B%E5%AD%90%EF%BC%9A"><span class="nav-text">埋点例子：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9F%8B%E7%82%B9%E6%A8%A1%E5%9E%8B%EF%BC%9A"><span class="nav-text">埋点模型：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9F%8B%E7%82%B9%E4%B8%8A%E6%8A%A5%EF%BC%9A"><span class="nav-text">埋点上报：</span></a></li></ol>
+        <div class="page-title">前端路由hash和history</div>
+        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#hash%E6%A8%A1%E5%BC%8F"><span class="nav-text">hash模式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#history%E6%A8%A1%E5%BC%8F"><span class="nav-text">history模式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#history%E4%BB%A3%E7%A0%81%E5%AE%9E%E7%8E%B0"><span class="nav-text">history代码实现</span></a></li></ol>
 
     </div>
 </div>
