@@ -1,80 +1,78 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>MAC 内网穿透 cpolar</title>
-    <url>/Yuyang/cpolar/</url>
-    <content><![CDATA[<blockquote>
-<p>介绍如何通过使用cpolar来完成将内网下的本地服务器通过安全隧道暴露至公网，完成公网正常访问内网服务。目前我的本地web服务只能在局域网内访问，使用cpolar内网穿透可以将本地服务映射到公网，实现公网用户也可以访问到本地服务，无需公网IP，也无需设置路由器。<br>cpolar官网：<a class="link"   href="https://www.cpolar.com/" >https://www.cpolar.com <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
-</blockquote>
-<h2 id="1、安装配置cpolar"><a href="#1、安装配置cpolar" class="headerlink" title="1、安装配置cpolar"></a>1、安装配置cpolar</h2><ul>
-<li>通过Homebrew包管理器安装cpolar</li>
-</ul>
-<div class="highlight-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="code"><pre><span class="line">brew tap probezy/core &amp;&amp; brew install cpolar</span><br></pre></td></tr></table></figure></div>
+    <title>强缓存和协商缓存</title>
+    <url>/Yuyang/cache/</url>
+    <content><![CDATA[<h2 id="缓存"><a href="#缓存" class="headerlink" title="缓存"></a>缓存</h2><p>为了减少资源请求次数，加快资源访问速度，浏览器会对资源文件如图片、css文件、js文件等进行缓存，而浏览器缓存策略又分为强缓存和协商缓存。</p>
+<h2 id="强缓存"><a href="#强缓存" class="headerlink" title="强缓存"></a>强缓存</h2><p>强缓存是指浏览器在缓存有效期内直接从本地缓存中读取资源，而不与服务器进行任何通信。强缓存的实现依赖于 HTTP 响应头中的 Expires 或 Cache-Control。</p>
+<h3 id="Expires"><a href="#Expires" class="headerlink" title="Expires"></a>Expires</h3><p><a class="link"   href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Expires" >https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Expires <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
+<p>一个绝对的过期时间（GMT 时间），在此时间之前，浏览器会认为缓存是有效的。</p>
+<div class="highlight-container" data-rel="Http"><figure class="iseeu highlight http"><table><tr><td class="code"><pre><span class="line"><span class="attribute">Expires</span><span class="punctuation">: </span>Wed, 21 Oct 2024 07:28:00 GMT</span><br></pre></td></tr></table></figure></div>
 
-<ul>
-<li>token认证：在cpolar官网后台的验证初复制自己的token</li>
-</ul>
-<p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="https://raw.githubusercontent.com/YuZeZhang/myImgslib/main/202406232255851.png"
-                      alt="img"
-                ></p>
-<p>cpolar authtoken xxx</p>
-<p>         xxx处用复制的token代替</p>
-<ul>
-<li><p>安装cpolar服务</p>
-<div class="highlight-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="code"><pre><span class="line">sudo cpolar service install</span><br></pre></td></tr></table></figure></div></li>
-</ul>
-<h2 id="2、使用cpolar"><a href="#2、使用cpolar" class="headerlink" title="2、使用cpolar"></a>2、使用cpolar</h2><ul>
-<li><p>启动服务</p>
-<div class="highlight-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="code"><pre><span class="line">sudo cpolar service start</span><br></pre></td></tr></table></figure></div>
-</li>
-<li><p>cpolar web UI管理界面</p>
-<p> 访问本地9200端口【<a class="link"   href="http://127.0.0.1:9200/%E3%80%91%EF%BC%8C%E4%BD%BF%E7%94%A8cpolar%E8%B4%A6%E5%8F%B7%E7%99%BB%E5%BD%95%E3%80%82" >http://127.0.0.1:9200/】，使用cpolar账号登录。 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
-</li>
-</ul>
-<p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="https://raw.githubusercontent.com/YuZeZhang/myImgslib/main/202406232257170.png"
-                      alt="img"
-                ></p>
-<p>         可在UI界面中查看自己的隧道信息 以及编辑、启动、停止和删除。其中状态列表下的的在线隧道列表显示了目前的公网地址和本地地址映射关系。</p>
-<p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="https://raw.githubusercontent.com/YuZeZhang/myImgslib/main/202406232257753.png"
-                      alt="img"
-                ></p>
-<ul>
-<li><p> 公网请求测试。</p>
-<p>     可借助APIFOX在线测试。官网地址：<a class="link"   href="https://apifox.com/" >https://apifox.com <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
-</li>
-</ul>
-<p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="https://raw.githubusercontent.com/YuZeZhang/myImgslib/main/202406232258155.png"
-                      alt="img"
-                ></p>
-<p> 根据自己情况填写。示例中的接口地址为&#x2F;model</p>
-<p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="https://raw.githubusercontent.com/YuZeZhang/myImgslib/main/202406232258116.png"
-                      alt="img"
-                ></p>
-<p>        请求成功🎉 </p>
-<ul>
-<li> 停止服务</li>
-</ul>
-<div class="highlight-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="code"><pre><span class="line">sudo cpolar service stop</span><br></pre></td></tr></table></figure></div>
+<h3 id="Cache-Control"><a href="#Cache-Control" class="headerlink" title="Cache-Control"></a>Cache-Control</h3><p>max-age代表缓存时间，单位为秒</p>
+<div class="highlight-container" data-rel="Http"><figure class="iseeu highlight http"><table><tr><td class="code"><pre><span class="line"><span class="attribute">Cache-Control</span><span class="punctuation">: </span>max-age=3600</span><br></pre></td></tr></table></figure></div>
 
-<blockquote>
-<p>注意⚠️：停止后再启动，免费版的域名会发生变化需要重新设置，及时更新。 </p>
-</blockquote>
-<p>Reference：<a class="link"   href="https://www.cpolar.com/blog/cpolar-quick-start-tutorial-macos-series" >https://www.cpolar.com/blog/cpolar-quick-start-tutorial-macos-series <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
+<p><a class="link"   href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Cache-Control" >https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Cache-Control <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://raw.githubusercontent.com/YuZeZhang/myImgslib/main/202407121558393.webp"
+                      alt="img"
+                ></p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://raw.githubusercontent.com/YuZeZhang/myImgslib/main/202407121558374.webp"
+                      alt="img"
+                ></p>
+<p>使用缓存的话，状态码200后面会标明情况。浏览器缓存资源的地方有两个：磁盘缓存（disk cache）和内存缓存（memory cache）。</p>
+<p>当缓存时间到期后再次访问时，状态码200后面便没有括号内的内容了。</p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://raw.githubusercontent.com/YuZeZhang/myImgslib/main/202407121558501.webp"
+                      alt="img"
+                ></p>
+<p>一般来说，浏览器会将较大的资源缓存到disk cache，而较小的资源则被缓存到memory cache里。内存缓存与磁盘缓存相比，访问速度要更快一些！</p>
+<p>Cache-Control除了max-age外，还可以设置其它属性值：</p>
+<ul>
+<li>no-cache: 不使用强缓存（但仍会使用协商缓存）。</li>
+<li>no-store: 不使用缓存（不使用强缓存也不使用协商缓存），每次都向服务器发送资源请求。</li>
+<li>private： 只允许客户端使用缓存，不允许其他代理服务器进行缓存。</li>
+<li>public: 客户端和代理服务器都可缓存。</li>
+<li>s-maxage: 与max-age类似，区别是s-maxage是设定代理服务器的缓存时间。</li>
+</ul>
+<p>另外，Cache-control的优先级要高于Expires，如果两者同时设置，会优先使用Cache-control而忽略掉Expires。</p>
+<h2 id="协商缓存"><a href="#协商缓存" class="headerlink" title="协商缓存"></a>协商缓存</h2><p><strong>在强缓存里，是否使用缓存是由浏览器来确定的，而协商缓存则是由服务器来告诉浏览器是否使用缓存资源，也就是浏览器每一次都要发送请求到服务器询问是否使用缓存</strong>，协商缓存的具体流程如下：</p>
+<p>浏览器初次请求资源，服务器返回资源，同时生成一个Etag值携带在响应头里返回给浏览器，当浏览器再次请求资源时会在请求头里携带If-None-Match，值是之前服务器返回的Etag的值，服务器收到之后拿该值与资源文件最新的Etag值做对比。</p>
+<ul>
+<li>如果没有变化则返回304，告诉浏览器继续使用缓存（不返回资源文件）。</li>
+<li>如果发生变化，则返回200和最新的资源文件给浏览器使用。</li>
+</ul>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://raw.githubusercontent.com/YuZeZhang/myImgslib/main/202407121603356.webp"
+                      alt="img"
+                ></p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://raw.githubusercontent.com/YuZeZhang/myImgslib/main/202407121603175.webp"
+                      alt="img"
+                ></p>
+<p>除了Etag外，还有一个Last-Modified的属性，它是Http1.0规范的，服务器返回Last-Modified，浏览器请求头对应携带的是If-Modified-since，与Etag不同的是，Last-Modified的值是一个时间值，代表文件的修改时间，服务器通过对比文件的修改时间是否发生改变来判断是否使用缓存。</p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://raw.githubusercontent.com/YuZeZhang/myImgslib/main/202407121603459.webp"
+                      alt="img"
+                ></p>
+<p>相比Last-Modified，Etag优先级更高，使用上也更精确一些，因为有时候会存在文件内容并没有改变，但文件的修改时间变更了，Last-Modified不一致所以服务器会重新返回资源文件，实际上还是可以继续使用缓存的。</p>
+<p>强缓存优先级大于协商缓存，即两者同时存在时，如果强缓存开启且在有效期内，则不会走协商缓存。</p>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>强缓存就是浏览器本地根据服务器设置的过期时间来判断是否使用缓存，未过期则从本地缓存里拿资源，已过期则重新请求服务器获取最新资源。</p>
+<p>协商缓存则是浏览器本地每次都向服务器发起请求，由服务器来告诉浏览器是从缓存里拿资源还是返回最新资源给浏览器使用。</p>
+<p>Reference: <a class="link"   href="https://juejin.cn/post/7259298281578889273?searchId=20240712153934B2B3A1160462EB235132" >https://juejin.cn/post/7259298281578889273?searchId=20240712153934B2B3A1160462EB235132 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
 ]]></content>
   </entry>
   <entry>
@@ -173,6 +171,222 @@
 <p>较为标准的针对模块曝光的定义：窗口可视区域内 &amp;&amp; 组件矩形与视窗区域发生交集 &amp;&amp; 交集垂线距离 &gt;&#x3D; 1px &amp;&amp; 停留时间 &gt;&#x3D; XXms</p>
 <p>Reference：<a class="link"   href="https://juejin.cn/post/7324334380373426227?searchId=202406242342178A14CCB0DE15106BCCCB" >https://juejin.cn/post/7324334380373426227?searchId=202406242342178A14CCB0DE15106BCCCB <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
 <p>备注：近几个月来看到👀过质量最高的文章！学到了！</p>
+]]></content>
+  </entry>
+  <entry>
+    <title>MAC 内网穿透 cpolar</title>
+    <url>/Yuyang/cpolar/</url>
+    <content><![CDATA[<blockquote>
+<p>介绍如何通过使用cpolar来完成将内网下的本地服务器通过安全隧道暴露至公网，完成公网正常访问内网服务。目前我的本地web服务只能在局域网内访问，使用cpolar内网穿透可以将本地服务映射到公网，实现公网用户也可以访问到本地服务，无需公网IP，也无需设置路由器。<br>cpolar官网：<a class="link"   href="https://www.cpolar.com/" >https://www.cpolar.com <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
+</blockquote>
+<h2 id="1、安装配置cpolar"><a href="#1、安装配置cpolar" class="headerlink" title="1、安装配置cpolar"></a>1、安装配置cpolar</h2><ul>
+<li>通过Homebrew包管理器安装cpolar</li>
+</ul>
+<div class="highlight-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="code"><pre><span class="line">brew tap probezy/core &amp;&amp; brew install cpolar</span><br></pre></td></tr></table></figure></div>
+
+<ul>
+<li>token认证：在cpolar官网后台的验证初复制自己的token</li>
+</ul>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://raw.githubusercontent.com/YuZeZhang/myImgslib/main/202406232255851.png"
+                      alt="img"
+                ></p>
+<p>cpolar authtoken xxx</p>
+<p>         xxx处用复制的token代替</p>
+<ul>
+<li><p>安装cpolar服务</p>
+<div class="highlight-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="code"><pre><span class="line">sudo cpolar service install</span><br></pre></td></tr></table></figure></div></li>
+</ul>
+<h2 id="2、使用cpolar"><a href="#2、使用cpolar" class="headerlink" title="2、使用cpolar"></a>2、使用cpolar</h2><ul>
+<li><p>启动服务</p>
+<div class="highlight-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="code"><pre><span class="line">sudo cpolar service start</span><br></pre></td></tr></table></figure></div>
+</li>
+<li><p>cpolar web UI管理界面</p>
+<p> 访问本地9200端口【<a class="link"   href="http://127.0.0.1:9200/%E3%80%91%EF%BC%8C%E4%BD%BF%E7%94%A8cpolar%E8%B4%A6%E5%8F%B7%E7%99%BB%E5%BD%95%E3%80%82" >http://127.0.0.1:9200/】，使用cpolar账号登录。 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
+</li>
+</ul>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://raw.githubusercontent.com/YuZeZhang/myImgslib/main/202406232257170.png"
+                      alt="img"
+                ></p>
+<p>         可在UI界面中查看自己的隧道信息 以及编辑、启动、停止和删除。其中状态列表下的的在线隧道列表显示了目前的公网地址和本地地址映射关系。</p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://raw.githubusercontent.com/YuZeZhang/myImgslib/main/202406232257753.png"
+                      alt="img"
+                ></p>
+<ul>
+<li><p> 公网请求测试。</p>
+<p>     可借助APIFOX在线测试。官网地址：<a class="link"   href="https://apifox.com/" >https://apifox.com <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
+</li>
+</ul>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://raw.githubusercontent.com/YuZeZhang/myImgslib/main/202406232258155.png"
+                      alt="img"
+                ></p>
+<p> 根据自己情况填写。示例中的接口地址为&#x2F;model</p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://raw.githubusercontent.com/YuZeZhang/myImgslib/main/202406232258116.png"
+                      alt="img"
+                ></p>
+<p>        请求成功🎉 </p>
+<ul>
+<li> 停止服务</li>
+</ul>
+<div class="highlight-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="code"><pre><span class="line">sudo cpolar service stop</span><br></pre></td></tr></table></figure></div>
+
+<blockquote>
+<p>注意⚠️：停止后再启动，免费版的域名会发生变化需要重新设置，及时更新。 </p>
+</blockquote>
+<p>Reference：<a class="link"   href="https://www.cpolar.com/blog/cpolar-quick-start-tutorial-macos-series" >https://www.cpolar.com/blog/cpolar-quick-start-tutorial-macos-series <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
+]]></content>
+  </entry>
+  <entry>
+    <title>前端路由hash和history</title>
+    <url>/Yuyang/hash_history/</url>
+    <content><![CDATA[<p>前端路由hash和history</p>
+<h2 id="hash模式"><a href="#hash模式" class="headerlink" title="hash模式"></a>hash模式</h2><p>使用window.location.hash属性以及onhashchange事件，实现监听浏览器地址的hash值变化，执行相应的js切换网页</p>
+<table>
+<thead>
+<tr>
+<th align="center">属性</th>
+<th align="center">含义</th>
+<th align="center">例子</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">location.href</td>
+<td align="center">完整的URL字符串</td>
+<td align="center"><a class="link"   href="https://www.example.com:8080/pathname/?search=test#hash" >https://www.example.com:8080/pathname/?search=test#hash <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></td>
+</tr>
+<tr>
+<td align="center">location.protocol</td>
+<td align="center">协议部分</td>
+<td align="center">https:</td>
+</tr>
+<tr>
+<td align="center">location.hostname</td>
+<td align="center">主机名</td>
+<td align="center"><a class="link"   href="http://www.example.com/" >www.example.com <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></td>
+</tr>
+<tr>
+<td align="center">location.port</td>
+<td align="center">端口号</td>
+<td align="center">8080</td>
+</tr>
+<tr>
+<td align="center">location.host</td>
+<td align="center">主机名和端口号</td>
+<td align="center"><a class="link"   href="http://www.example.com:8080/" >www.example.com:8080 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></td>
+</tr>
+<tr>
+<td align="center">location.pathname</td>
+<td align="center">路径部分</td>
+<td align="center">&#x2F;post&#x2F;6993840419041706014</td>
+</tr>
+<tr>
+<td align="center">location.search</td>
+<td align="center">查询字符串部分</td>
+<td align="center">?search&#x3D;test</td>
+</tr>
+<tr>
+<td align="center">location.hash</td>
+<td align="center">哈希值</td>
+<td align="center">#hash</td>
+</tr>
+</tbody></table>
+<p>window.location还提供了一些方法：</p>
+<table>
+<thead>
+<tr>
+<th align="center">方法</th>
+<th align="center">含义</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">location.assign(url)</td>
+<td align="center">加载指定的URL</td>
+</tr>
+<tr>
+<td align="center">location.replace(url)</td>
+<td align="center">替换当前的 URL，但不会在历史记录中创建新的条目。即用户无法通过浏览器的“后退”按钮返回到之前的页面。</td>
+</tr>
+<tr>
+<td align="center">location.reload(forceReload)</td>
+<td align="center">重新加载当前页面。forceReload 参数为 true 时会强制从服务器重新加载页面（而不是从缓存中加载）。</td>
+</tr>
+<tr>
+<td align="center">location.toString()</td>
+<td align="center">返回当前 URL 的字符串表示。</td>
+</tr>
+</tbody></table>
+<div class="highlight-container" data-rel="Javascript"><figure class="iseeu highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 获取当前 URL 的各种部分</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="variable language_">window</span>.<span class="property">location</span>.<span class="property">href</span>);      <span class="comment">// 输出完整的 URL</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="variable language_">window</span>.<span class="property">location</span>.<span class="property">protocol</span>);  <span class="comment">// 输出协议部分</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="variable language_">window</span>.<span class="property">location</span>.<span class="property">host</span>);      <span class="comment">// 输出主机和端口号</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="variable language_">window</span>.<span class="property">location</span>.<span class="property">hostname</span>);  <span class="comment">// 输出主机名</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="variable language_">window</span>.<span class="property">location</span>.<span class="property">port</span>);      <span class="comment">// 输出端口号</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="variable language_">window</span>.<span class="property">location</span>.<span class="property">pathname</span>);  <span class="comment">// 输出路径</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="variable language_">window</span>.<span class="property">location</span>.<span class="property">search</span>);    <span class="comment">// 输出查询字符串</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="variable language_">window</span>.<span class="property">location</span>.<span class="property">hash</span>);      <span class="comment">// 输出哈希</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="variable language_">window</span>.<span class="property">location</span>.<span class="property">origin</span>);    <span class="comment">// 输出源 URL</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 改变 URL 并重新加载页面</span></span><br><span class="line"><span class="variable language_">window</span>.<span class="property">location</span>.<span class="property">href</span> = <span class="string">&#x27;https://www.example.com&#x27;</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 替换当前 URL，不会在历史记录中创建新的条目</span></span><br><span class="line"><span class="variable language_">window</span>.<span class="property">location</span>.<span class="title function_">replace</span>(<span class="string">&#x27;https://www.example.com&#x27;</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 重新加载页面</span></span><br><span class="line"><span class="variable language_">window</span>.<span class="property">location</span>.<span class="title function_">reload</span>();     <span class="comment">// 从缓存中重新加载</span></span><br><span class="line"><span class="variable language_">window</span>.<span class="property">location</span>.<span class="title function_">reload</span>(<span class="literal">true</span>); <span class="comment">// 强制从服务器重新加载</span></span><br></pre></td></tr></table></figure></div>
+
+
+
+<h2 id="history模式"><a href="#history模式" class="headerlink" title="history模式"></a>history模式</h2><p>History API是H5提供的新特性，允许开发者直接更改前端路由，即更新浏览器URL地址而不重新发起请求。它表示当前窗口的浏览历史。当发生改变时，只会改变页面的路径，不会刷新页面。 History 对象保存了当前窗口访问过的所有页面网址。通过 history.length 可以得出当前窗口一共访问过几个网址。 由于安全原因，浏览器不允许脚本读取这些地址，但是允许在地址之间导航。 浏览器工具栏的“前进”和“后退”按钮，其实就是对 History 对象进行操作。</p>
+<table>
+<thead>
+<tr>
+<th align="center">属性</th>
+<th align="center">含义</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">history.length</td>
+<td align="center">历史记录中的条目数</td>
+</tr>
+<tr>
+<td align="center">history.state</td>
+<td align="center">历史记录条目的状态对象</td>
+</tr>
+</tbody></table>
+<p>window.history 还提供了一些方法：</p>
+<table>
+<thead>
+<tr>
+<th align="center">方法</th>
+<th align="center">含义</th>
+<th>例子</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">history.pushState(state, title, url)</td>
+<td align="center">将一个状态对象添加到历史记录栈中</td>
+<td>window.history.pushState({ page: 1 }, “title 1”, “&#x2F;page1”);</td>
+</tr>
+<tr>
+<td align="center">history.replaceState(state, title, url)</td>
+<td align="center">修改当前历史记录条目的状态对象、标题和 URL</td>
+<td>window.history.replaceState({ page: 2 }, “title 2”, “&#x2F;page2”);</td>
+</tr>
+<tr>
+<td align="center">history.back()</td>
+<td align="center">加载历史记录列表中的前一个 URL，与用户点击浏览器的后退按钮相同。</td>
+<td>window.history.back();</td>
+</tr>
+<tr>
+<td align="center">history.forward()</td>
+<td align="center">加载历史记录列表中的下一个 URL，与用户点击浏览器的前进按钮相同。</td>
+<td>window.history.forward();</td>
+</tr>
+<tr>
+<td align="center">history.go(delta)</td>
+<td align="center">根据 delta 值加载历史记录中的特定页面。delta: 为正值时前进，为负值时后退。</td>
+<td>window.history.go(-1); &#x2F;&#x2F; 后退一页<br/>window.history.go(1);  &#x2F;&#x2F; 前进一页</td>
+</tr>
+</tbody></table>
+<h2 id="history代码实现"><a href="#history代码实现" class="headerlink" title="history代码实现"></a>history代码实现</h2><div class="highlight-container" data-rel="Javascript"><figure class="iseeu highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">CustomHistory</span> &#123;</span><br><span class="line">  <span class="title function_">constructor</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="variable language_">this</span>.<span class="property">stack</span> = [];</span><br><span class="line">    <span class="variable language_">this</span>.<span class="property">currentIndex</span> = -<span class="number">1</span>;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="title function_">pushState</span>(<span class="params">state, title, url</span>) &#123;</span><br><span class="line">    <span class="keyword">if</span> (<span class="variable language_">this</span>.<span class="property">currentIndex</span> &lt; <span class="variable language_">this</span>.<span class="property">stack</span>.<span class="property">length</span> - <span class="number">1</span>) &#123;</span><br><span class="line">      <span class="variable language_">this</span>.<span class="property">stack</span> = <span class="variable language_">this</span>.<span class="property">stack</span>.<span class="title function_">slice</span>(<span class="number">0</span>, <span class="variable language_">this</span>.<span class="property">currentIndex</span> + <span class="number">1</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="variable language_">this</span>.<span class="property">stack</span>.<span class="title function_">push</span>(&#123; state, title, url &#125;);</span><br><span class="line">    <span class="variable language_">this</span>.<span class="property">currentIndex</span>++;</span><br><span class="line">    <span class="variable language_">this</span>.<span class="title function_">updateUrl</span>(url);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="title function_">replaceState</span>(<span class="params">state, title, url</span>) &#123;</span><br><span class="line">    <span class="keyword">if</span>(<span class="variable language_">this</span>.<span class="property">currentIndex</span> &gt;= <span class="number">0</span>)&#123;</span><br><span class="line">      <span class="variable language_">this</span>.<span class="property">stack</span>[<span class="variable language_">this</span>.<span class="property">currentIndex</span>] = &#123; state, title, url &#125;;</span><br><span class="line">      <span class="variable language_">this</span>.<span class="title function_">updateUrl</span>(url);</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        <span class="variable language_">this</span>.<span class="title function_">pushState</span>(state, title, url);</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="title function_">go</span>(<span class="params">index</span>) &#123;</span><br><span class="line">    <span class="keyword">const</span> newIndex = <span class="variable language_">this</span>.<span class="property">currentIndex</span> + index;</span><br><span class="line">    <span class="keyword">if</span> (newIndex &gt;= <span class="number">0</span> &amp;&amp; newIndex &lt; <span class="variable language_">this</span>.<span class="property">stack</span>.<span class="property">length</span>) &#123;</span><br><span class="line">      <span class="variable language_">this</span>.<span class="property">currentIndex</span> = newIndex;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="title function_">back</span>(<span class="params"></span>)&#123;</span><br><span class="line">    <span class="keyword">if</span>(<span class="variable language_">this</span>.<span class="property">currentIndex</span> &gt; <span class="number">0</span>)&#123;</span><br><span class="line">      <span class="variable language_">this</span>.<span class="property">currentIndex</span>--;</span><br><span class="line">      <span class="variable language_">this</span>.<span class="title function_">applyState</span>();</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  </span><br><span class="line">  <span class="title function_">forward</span>(<span class="params"></span>)&#123;</span><br><span class="line">    <span class="keyword">if</span>(<span class="variable language_">this</span>.<span class="property">currentIndex</span> &lt; <span class="variable language_">this</span>.<span class="property">stack</span>.<span class="property">length</span> - <span class="number">1</span>)&#123;</span><br><span class="line">      <span class="variable language_">this</span>.<span class="property">currentIndex</span>++;</span><br><span class="line">      <span class="variable language_">this</span>.<span class="title function_">applyState</span>();</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="title function_">applyState</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="keyword">const</span> currentState = <span class="variable language_">this</span>.<span class="property">stack</span>[<span class="variable language_">this</span>.<span class="property">currentIndex</span>];</span><br><span class="line">    <span class="variable language_">this</span>.<span class="title function_">updateUrl</span>(currentState.<span class="property">url</span>);</span><br><span class="line">    <span class="comment">// this.dispatchPopStaet(currentState);</span></span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="title function_">updateUrl</span>(<span class="params">url</span>) &#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;🚀 ~ CustomHistory ~ updateUrl ~ url:&quot;</span>, url)</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="title function_">dispatchPopStaet</span>(<span class="params">state</span>)&#123;</span><br><span class="line">    <span class="keyword">const</span> event = <span class="keyword">new</span> <span class="title class_">CustomEvent</span>(<span class="string">&#x27;popstate&#x27;</span>, &#123; <span class="attr">detail</span>: state &#125;);</span><br><span class="line">    <span class="variable language_">window</span>.<span class="title function_">dispatchEvent</span>(event);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// Usage example:</span></span><br><span class="line"><span class="keyword">const</span> customHistory = <span class="keyword">new</span> <span class="title class_">CustomHistory</span>();</span><br><span class="line"></span><br><span class="line">customHistory.<span class="title function_">pushState</span>(&#123; <span class="attr">page</span>: <span class="number">1</span> &#125;, <span class="string">&quot;Title 1&quot;</span>, <span class="string">&quot;/page1&quot;</span>);</span><br><span class="line">customHistory.<span class="title function_">pushState</span>(&#123; <span class="attr">page</span>: <span class="number">2</span> &#125;, <span class="string">&quot;Title 2&quot;</span>, <span class="string">&quot;/page2&quot;</span>);</span><br><span class="line">customHistory.<span class="title function_">replaceState</span>(&#123; <span class="attr">page</span>: <span class="number">3</span> &#125;, <span class="string">&quot;Title 3&quot;</span>, <span class="string">&quot;/page3&quot;</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// window.addEventListener(&#x27;popstate&#x27;, (event) =&gt; &#123;</span></span><br><span class="line"><span class="comment">//     console.log(&#x27;Popstate event:&#x27;, event.detail);</span></span><br><span class="line"><span class="comment">// &#125;);</span></span><br><span class="line"></span><br><span class="line">customHistory.<span class="title function_">back</span>(); <span class="comment">// Navigating to: /page1</span></span><br><span class="line">customHistory.<span class="title function_">forward</span>(); <span class="comment">// Navigating to: /page3</span></span><br><span class="line">customHistory.<span class="title function_">go</span>(-<span class="number">1</span>); <span class="comment">// Navigating to: /page1</span></span><br></pre></td></tr></table></figure></div>
+
 ]]></content>
   </entry>
   <entry>
@@ -378,145 +592,6 @@
 <p>相比 yarn 和 npm3+ 呢，那就是没有幽灵依赖，也不会有没有被提升的依赖依然复制多份的问题。</p>
 <p>这就已经足够优秀了，对 yarn 和 npm 可以说是降维打击。</p>
 <p>Reference：<a class="link"   href="https://juejin.cn/post/7127295203177676837?searchId=20240623222554B51B38FF0362E0D545BE" >https://juejin.cn/post/7127295203177676837?searchId=20240623222554B51B38FF0362E0D545BE <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
-]]></content>
-  </entry>
-  <entry>
-    <title>前端路由hash和history</title>
-    <url>/Yuyang/hash_history/</url>
-    <content><![CDATA[<p>前端路由hash和history</p>
-<h2 id="hash模式"><a href="#hash模式" class="headerlink" title="hash模式"></a>hash模式</h2><p>使用window.location.hash属性以及onhashchange事件，实现监听浏览器地址的hash值变化，执行相应的js切换网页</p>
-<table>
-<thead>
-<tr>
-<th align="center">属性</th>
-<th align="center">含义</th>
-<th align="center">例子</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center">location.href</td>
-<td align="center">完整的URL字符串</td>
-<td align="center"><a class="link"   href="https://www.example.com:8080/pathname/?search=test#hash" >https://www.example.com:8080/pathname/?search=test#hash <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></td>
-</tr>
-<tr>
-<td align="center">location.protocol</td>
-<td align="center">协议部分</td>
-<td align="center">https:</td>
-</tr>
-<tr>
-<td align="center">location.hostname</td>
-<td align="center">主机名</td>
-<td align="center"><a class="link"   href="http://www.example.com/" >www.example.com <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></td>
-</tr>
-<tr>
-<td align="center">location.port</td>
-<td align="center">端口号</td>
-<td align="center">8080</td>
-</tr>
-<tr>
-<td align="center">location.host</td>
-<td align="center">主机名和端口号</td>
-<td align="center"><a class="link"   href="http://www.example.com:8080/" >www.example.com:8080 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></td>
-</tr>
-<tr>
-<td align="center">location.pathname</td>
-<td align="center">路径部分</td>
-<td align="center">&#x2F;post&#x2F;6993840419041706014</td>
-</tr>
-<tr>
-<td align="center">location.search</td>
-<td align="center">查询字符串部分</td>
-<td align="center">?search&#x3D;test</td>
-</tr>
-<tr>
-<td align="center">location.hash</td>
-<td align="center">哈希值</td>
-<td align="center">#hash</td>
-</tr>
-</tbody></table>
-<p>window.location还提供了一些方法：</p>
-<table>
-<thead>
-<tr>
-<th align="center">方法</th>
-<th align="center">含义</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center">location.assign(url)</td>
-<td align="center">加载指定的URL</td>
-</tr>
-<tr>
-<td align="center">location.replace(url)</td>
-<td align="center">替换当前的 URL，但不会在历史记录中创建新的条目。即用户无法通过浏览器的“后退”按钮返回到之前的页面。</td>
-</tr>
-<tr>
-<td align="center">location.reload(forceReload)</td>
-<td align="center">重新加载当前页面。forceReload 参数为 true 时会强制从服务器重新加载页面（而不是从缓存中加载）。</td>
-</tr>
-<tr>
-<td align="center">location.toString()</td>
-<td align="center">返回当前 URL 的字符串表示。</td>
-</tr>
-</tbody></table>
-<div class="highlight-container" data-rel="Javascript"><figure class="iseeu highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 获取当前 URL 的各种部分</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="variable language_">window</span>.<span class="property">location</span>.<span class="property">href</span>);      <span class="comment">// 输出完整的 URL</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="variable language_">window</span>.<span class="property">location</span>.<span class="property">protocol</span>);  <span class="comment">// 输出协议部分</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="variable language_">window</span>.<span class="property">location</span>.<span class="property">host</span>);      <span class="comment">// 输出主机和端口号</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="variable language_">window</span>.<span class="property">location</span>.<span class="property">hostname</span>);  <span class="comment">// 输出主机名</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="variable language_">window</span>.<span class="property">location</span>.<span class="property">port</span>);      <span class="comment">// 输出端口号</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="variable language_">window</span>.<span class="property">location</span>.<span class="property">pathname</span>);  <span class="comment">// 输出路径</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="variable language_">window</span>.<span class="property">location</span>.<span class="property">search</span>);    <span class="comment">// 输出查询字符串</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="variable language_">window</span>.<span class="property">location</span>.<span class="property">hash</span>);      <span class="comment">// 输出哈希</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="variable language_">window</span>.<span class="property">location</span>.<span class="property">origin</span>);    <span class="comment">// 输出源 URL</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 改变 URL 并重新加载页面</span></span><br><span class="line"><span class="variable language_">window</span>.<span class="property">location</span>.<span class="property">href</span> = <span class="string">&#x27;https://www.example.com&#x27;</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 替换当前 URL，不会在历史记录中创建新的条目</span></span><br><span class="line"><span class="variable language_">window</span>.<span class="property">location</span>.<span class="title function_">replace</span>(<span class="string">&#x27;https://www.example.com&#x27;</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 重新加载页面</span></span><br><span class="line"><span class="variable language_">window</span>.<span class="property">location</span>.<span class="title function_">reload</span>();     <span class="comment">// 从缓存中重新加载</span></span><br><span class="line"><span class="variable language_">window</span>.<span class="property">location</span>.<span class="title function_">reload</span>(<span class="literal">true</span>); <span class="comment">// 强制从服务器重新加载</span></span><br></pre></td></tr></table></figure></div>
-
-
-
-<h2 id="history模式"><a href="#history模式" class="headerlink" title="history模式"></a>history模式</h2><p>History API是H5提供的新特性，允许开发者直接更改前端路由，即更新浏览器URL地址而不重新发起请求。它表示当前窗口的浏览历史。当发生改变时，只会改变页面的路径，不会刷新页面。 History 对象保存了当前窗口访问过的所有页面网址。通过 history.length 可以得出当前窗口一共访问过几个网址。 由于安全原因，浏览器不允许脚本读取这些地址，但是允许在地址之间导航。 浏览器工具栏的“前进”和“后退”按钮，其实就是对 History 对象进行操作。</p>
-<table>
-<thead>
-<tr>
-<th align="center">属性</th>
-<th align="center">含义</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center">history.length</td>
-<td align="center">历史记录中的条目数</td>
-</tr>
-<tr>
-<td align="center">history.state</td>
-<td align="center">历史记录条目的状态对象</td>
-</tr>
-</tbody></table>
-<p>window.history 还提供了一些方法：</p>
-<table>
-<thead>
-<tr>
-<th align="center">方法</th>
-<th align="center">含义</th>
-<th>例子</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center">history.pushState(state, title, url)</td>
-<td align="center">将一个状态对象添加到历史记录栈中</td>
-<td>window.history.pushState({ page: 1 }, “title 1”, “&#x2F;page1”);</td>
-</tr>
-<tr>
-<td align="center">history.replaceState(state, title, url)</td>
-<td align="center">修改当前历史记录条目的状态对象、标题和 URL</td>
-<td>window.history.replaceState({ page: 2 }, “title 2”, “&#x2F;page2”);</td>
-</tr>
-<tr>
-<td align="center">history.back()</td>
-<td align="center">加载历史记录列表中的前一个 URL，与用户点击浏览器的后退按钮相同。</td>
-<td>window.history.back();</td>
-</tr>
-<tr>
-<td align="center">history.forward()</td>
-<td align="center">加载历史记录列表中的下一个 URL，与用户点击浏览器的前进按钮相同。</td>
-<td>window.history.forward();</td>
-</tr>
-<tr>
-<td align="center">history.go(delta)</td>
-<td align="center">根据 delta 值加载历史记录中的特定页面。delta: 为正值时前进，为负值时后退。</td>
-<td>window.history.go(-1); &#x2F;&#x2F; 后退一页<br/>window.history.go(1);  &#x2F;&#x2F; 前进一页</td>
-</tr>
-</tbody></table>
-<h2 id="history代码实现"><a href="#history代码实现" class="headerlink" title="history代码实现"></a>history代码实现</h2><div class="highlight-container" data-rel="Javascript"><figure class="iseeu highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">CustomHistory</span> &#123;</span><br><span class="line">  <span class="title function_">constructor</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="variable language_">this</span>.<span class="property">stack</span> = [];</span><br><span class="line">    <span class="variable language_">this</span>.<span class="property">currentIndex</span> = -<span class="number">1</span>;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="title function_">pushState</span>(<span class="params">state, title, url</span>) &#123;</span><br><span class="line">    <span class="keyword">if</span> (<span class="variable language_">this</span>.<span class="property">currentIndex</span> &lt; <span class="variable language_">this</span>.<span class="property">stack</span>.<span class="property">length</span> - <span class="number">1</span>) &#123;</span><br><span class="line">      <span class="variable language_">this</span>.<span class="property">stack</span> = <span class="variable language_">this</span>.<span class="property">stack</span>.<span class="title function_">slice</span>(<span class="number">0</span>, <span class="variable language_">this</span>.<span class="property">currentIndex</span> + <span class="number">1</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="variable language_">this</span>.<span class="property">stack</span>.<span class="title function_">push</span>(&#123; state, title, url &#125;);</span><br><span class="line">    <span class="variable language_">this</span>.<span class="property">currentIndex</span>++;</span><br><span class="line">    <span class="variable language_">this</span>.<span class="title function_">updateUrl</span>(url);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="title function_">replaceState</span>(<span class="params">state, title, url</span>) &#123;</span><br><span class="line">    <span class="keyword">if</span>(<span class="variable language_">this</span>.<span class="property">currentIndex</span> &gt;= <span class="number">0</span>)&#123;</span><br><span class="line">      <span class="variable language_">this</span>.<span class="property">stack</span>[<span class="variable language_">this</span>.<span class="property">currentIndex</span>] = &#123; state, title, url &#125;;</span><br><span class="line">      <span class="variable language_">this</span>.<span class="title function_">updateUrl</span>(url);</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        <span class="variable language_">this</span>.<span class="title function_">pushState</span>(state, title, url);</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="title function_">go</span>(<span class="params">index</span>) &#123;</span><br><span class="line">    <span class="keyword">const</span> newIndex = <span class="variable language_">this</span>.<span class="property">currentIndex</span> + index;</span><br><span class="line">    <span class="keyword">if</span> (newIndex &gt;= <span class="number">0</span> &amp;&amp; newIndex &lt; <span class="variable language_">this</span>.<span class="property">stack</span>.<span class="property">length</span>) &#123;</span><br><span class="line">      <span class="variable language_">this</span>.<span class="property">currentIndex</span> = newIndex;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="title function_">back</span>(<span class="params"></span>)&#123;</span><br><span class="line">    <span class="keyword">if</span>(<span class="variable language_">this</span>.<span class="property">currentIndex</span> &gt; <span class="number">0</span>)&#123;</span><br><span class="line">      <span class="variable language_">this</span>.<span class="property">currentIndex</span>--;</span><br><span class="line">      <span class="variable language_">this</span>.<span class="title function_">applyState</span>();</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  </span><br><span class="line">  <span class="title function_">forward</span>(<span class="params"></span>)&#123;</span><br><span class="line">    <span class="keyword">if</span>(<span class="variable language_">this</span>.<span class="property">currentIndex</span> &lt; <span class="variable language_">this</span>.<span class="property">stack</span>.<span class="property">length</span> - <span class="number">1</span>)&#123;</span><br><span class="line">      <span class="variable language_">this</span>.<span class="property">currentIndex</span>++;</span><br><span class="line">      <span class="variable language_">this</span>.<span class="title function_">applyState</span>();</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="title function_">applyState</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="keyword">const</span> currentState = <span class="variable language_">this</span>.<span class="property">stack</span>[<span class="variable language_">this</span>.<span class="property">currentIndex</span>];</span><br><span class="line">    <span class="variable language_">this</span>.<span class="title function_">updateUrl</span>(currentState.<span class="property">url</span>);</span><br><span class="line">    <span class="comment">// this.dispatchPopStaet(currentState);</span></span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="title function_">updateUrl</span>(<span class="params">url</span>) &#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;🚀 ~ CustomHistory ~ updateUrl ~ url:&quot;</span>, url)</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="title function_">dispatchPopStaet</span>(<span class="params">state</span>)&#123;</span><br><span class="line">    <span class="keyword">const</span> event = <span class="keyword">new</span> <span class="title class_">CustomEvent</span>(<span class="string">&#x27;popstate&#x27;</span>, &#123; <span class="attr">detail</span>: state &#125;);</span><br><span class="line">    <span class="variable language_">window</span>.<span class="title function_">dispatchEvent</span>(event);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// Usage example:</span></span><br><span class="line"><span class="keyword">const</span> customHistory = <span class="keyword">new</span> <span class="title class_">CustomHistory</span>();</span><br><span class="line"></span><br><span class="line">customHistory.<span class="title function_">pushState</span>(&#123; <span class="attr">page</span>: <span class="number">1</span> &#125;, <span class="string">&quot;Title 1&quot;</span>, <span class="string">&quot;/page1&quot;</span>);</span><br><span class="line">customHistory.<span class="title function_">pushState</span>(&#123; <span class="attr">page</span>: <span class="number">2</span> &#125;, <span class="string">&quot;Title 2&quot;</span>, <span class="string">&quot;/page2&quot;</span>);</span><br><span class="line">customHistory.<span class="title function_">replaceState</span>(&#123; <span class="attr">page</span>: <span class="number">3</span> &#125;, <span class="string">&quot;Title 3&quot;</span>, <span class="string">&quot;/page3&quot;</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// window.addEventListener(&#x27;popstate&#x27;, (event) =&gt; &#123;</span></span><br><span class="line"><span class="comment">//     console.log(&#x27;Popstate event:&#x27;, event.detail);</span></span><br><span class="line"><span class="comment">// &#125;);</span></span><br><span class="line"></span><br><span class="line">customHistory.<span class="title function_">back</span>(); <span class="comment">// Navigating to: /page1</span></span><br><span class="line">customHistory.<span class="title function_">forward</span>(); <span class="comment">// Navigating to: /page3</span></span><br><span class="line">customHistory.<span class="title function_">go</span>(-<span class="number">1</span>); <span class="comment">// Navigating to: /page1</span></span><br></pre></td></tr></table></figure></div>
-
 ]]></content>
   </entry>
 </search>
