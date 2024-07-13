@@ -1,179 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>强缓存和协商缓存</title>
-    <url>/Yuyang/cache/</url>
-    <content><![CDATA[<h2 id="缓存"><a href="#缓存" class="headerlink" title="缓存"></a>缓存</h2><p>为了减少资源请求次数，加快资源访问速度，浏览器会对资源文件如图片、css文件、js文件等进行缓存，而浏览器缓存策略又分为强缓存和协商缓存。</p>
-<h2 id="强缓存"><a href="#强缓存" class="headerlink" title="强缓存"></a>强缓存</h2><p>强缓存是指浏览器在缓存有效期内直接从本地缓存中读取资源，而不与服务器进行任何通信。强缓存的实现依赖于 HTTP 响应头中的 Expires 或 Cache-Control。</p>
-<h3 id="Expires"><a href="#Expires" class="headerlink" title="Expires"></a>Expires</h3><p><a class="link"   href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Expires" >https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Expires <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
-<p>一个绝对的过期时间（GMT 时间），在此时间之前，浏览器会认为缓存是有效的。</p>
-<div class="highlight-container" data-rel="Http"><figure class="iseeu highlight http"><table><tr><td class="code"><pre><span class="line"><span class="attribute">Expires</span><span class="punctuation">: </span>Wed, 21 Oct 2024 07:28:00 GMT</span><br></pre></td></tr></table></figure></div>
-
-<h3 id="Cache-Control"><a href="#Cache-Control" class="headerlink" title="Cache-Control"></a>Cache-Control</h3><p>max-age代表缓存时间，单位为秒</p>
-<div class="highlight-container" data-rel="Http"><figure class="iseeu highlight http"><table><tr><td class="code"><pre><span class="line"><span class="attribute">Cache-Control</span><span class="punctuation">: </span>max-age=3600</span><br></pre></td></tr></table></figure></div>
-
-<p><a class="link"   href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Cache-Control" >https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Cache-Control <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
-<p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="https://raw.githubusercontent.com/YuZeZhang/myImgslib/main/202407121558393.webp"
-                      alt="img"
-                ></p>
-<p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="https://raw.githubusercontent.com/YuZeZhang/myImgslib/main/202407121558374.webp"
-                      alt="img"
-                ></p>
-<p>使用缓存的话，状态码200后面会标明情况。浏览器缓存资源的地方有两个：磁盘缓存（disk cache）和内存缓存（memory cache）。</p>
-<p>当缓存时间到期后再次访问时，状态码200后面便没有括号内的内容了。</p>
-<p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="https://raw.githubusercontent.com/YuZeZhang/myImgslib/main/202407121558501.webp"
-                      alt="img"
-                ></p>
-<p>一般来说，浏览器会将较大的资源缓存到disk cache，而较小的资源则被缓存到memory cache里。内存缓存与磁盘缓存相比，访问速度要更快一些！</p>
-<p>Cache-Control除了max-age外，还可以设置其它属性值：</p>
-<ul>
-<li>no-cache: 不使用强缓存（但仍会使用协商缓存）。</li>
-<li>no-store: 不使用缓存（不使用强缓存也不使用协商缓存），每次都向服务器发送资源请求。</li>
-<li>private： 只允许客户端使用缓存，不允许其他代理服务器进行缓存。</li>
-<li>public: 客户端和代理服务器都可缓存。</li>
-<li>s-maxage: 与max-age类似，区别是s-maxage是设定代理服务器的缓存时间。</li>
-</ul>
-<p>另外，Cache-control的优先级要高于Expires，如果两者同时设置，会优先使用Cache-control而忽略掉Expires。</p>
-<h2 id="协商缓存"><a href="#协商缓存" class="headerlink" title="协商缓存"></a>协商缓存</h2><p><strong>在强缓存里，是否使用缓存是由浏览器来确定的，而协商缓存则是由服务器来告诉浏览器是否使用缓存资源，也就是浏览器每一次都要发送请求到服务器询问是否使用缓存</strong>，协商缓存的具体流程如下：</p>
-<p>浏览器初次请求资源，服务器返回资源，同时生成一个Etag值携带在响应头里返回给浏览器，当浏览器再次请求资源时会在请求头里携带If-None-Match，值是之前服务器返回的Etag的值，服务器收到之后拿该值与资源文件最新的Etag值做对比。</p>
-<ul>
-<li>如果没有变化则返回304，告诉浏览器继续使用缓存（不返回资源文件）。</li>
-<li>如果发生变化，则返回200和最新的资源文件给浏览器使用。</li>
-</ul>
-<p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="https://raw.githubusercontent.com/YuZeZhang/myImgslib/main/202407121603356.webp"
-                      alt="img"
-                ></p>
-<p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="https://raw.githubusercontent.com/YuZeZhang/myImgslib/main/202407121603175.webp"
-                      alt="img"
-                ></p>
-<p>除了Etag外，还有一个Last-Modified的属性，它是Http1.0规范的，服务器返回Last-Modified，浏览器请求头对应携带的是If-Modified-since，与Etag不同的是，Last-Modified的值是一个时间值，代表文件的修改时间，服务器通过对比文件的修改时间是否发生改变来判断是否使用缓存。</p>
-<p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="https://raw.githubusercontent.com/YuZeZhang/myImgslib/main/202407121603459.webp"
-                      alt="img"
-                ></p>
-<p>相比Last-Modified，Etag优先级更高，使用上也更精确一些，因为有时候会存在文件内容并没有改变，但文件的修改时间变更了，Last-Modified不一致所以服务器会重新返回资源文件，实际上还是可以继续使用缓存的。</p>
-<p>强缓存优先级大于协商缓存，即两者同时存在时，如果强缓存开启且在有效期内，则不会走协商缓存。</p>
-<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>强缓存就是浏览器本地根据服务器设置的过期时间来判断是否使用缓存，未过期则从本地缓存里拿资源，已过期则重新请求服务器获取最新资源。</p>
-<p>协商缓存则是浏览器本地每次都向服务器发起请求，由服务器来告诉浏览器是从缓存里拿资源还是返回最新资源给浏览器使用。</p>
-<p>Reference: <a class="link"   href="https://juejin.cn/post/7259298281578889273?searchId=20240712153934B2B3A1160462EB235132" >https://juejin.cn/post/7259298281578889273?searchId=20240712153934B2B3A1160462EB235132 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
-]]></content>
-  </entry>
-  <entry>
-    <title>前端埋点与全链路</title>
-    <url>/Yuyang/eventTracking/</url>
-    <content><![CDATA[<h2 id="什么是埋点："><a href="#什么是埋点：" class="headerlink" title="什么是埋点："></a>什么是埋点：</h2><p>​	前端埋点是一种用于收集用户在网站或应用程序上的行为数据的方法。这些数据可以帮助企业了解用户的行为模式、使用习惯，并对产品进行优化。</p>
-<h2 id="为什么要埋点："><a href="#为什么要埋点：" class="headerlink" title="为什么要埋点："></a>为什么要埋点：</h2><ul>
-<li>流量监测（按时间空间维度分析，留存分析，转化分析）。</li>
-<li>构建行为路径，获取用户的全链路信息获取，实现用户分群、人群洞察、行为细查等，构建用户画像。</li>
-<li>通过对埋点数据的处理、分析、建模，判断产品的效果和未来走向。</li>
-<li>为营销策略提供数据支持，分析营销效果，提高渠道转化。</li>
-<li>热力分析，帮助判断访客热衷的区域，评估网页设计是否合理等。</li>
-<li>实施AB Test，持续优化产品，使产品在市场上更具有竞争力。</li>
-<li>用户行为异常监测以及问题快速定位与响应。</li>
-</ul>
-<h2 id="埋点的使用场景有哪些："><a href="#埋点的使用场景有哪些：" class="headerlink" title="埋点的使用场景有哪些："></a>埋点的使用场景有哪些：</h2><p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="https://raw.githubusercontent.com/YuZeZhang/myImgslib/main/202406250013175.png"
-                      alt="image-20240625001317104"
-                ></p>
-<h2 id="埋点方式："><a href="#埋点方式：" class="headerlink" title="埋点方式："></a>埋点方式：</h2><table>
-<thead>
-<tr>
-<th></th>
-<th>代码埋点</th>
-<th>全埋点</th>
-<th>可视化埋点</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>定义</td>
-<td><strong>代码埋点</strong>是指在前端代码中手动添加埋点代码，用于捕获特定用户行为事件。这种方法灵活且精确，适用于需要细粒度数据收集的场景。</td>
-<td><strong>全埋点</strong>是一种自动化的埋点方式，旨在捕获页面上的所有用户行为事件。通过全埋点，可以自动记录用户在页面上的所有操作，如点击、滑动、输入等，减少了手动添加埋点的工作量。</td>
-<td><strong>可视化埋点</strong>是通过可视化界面配置埋点，而不需要修改代码。通过可视化工具，非技术人员也可以方便地配置和管理埋点。</td>
-</tr>
-<tr>
-<td>优点</td>
-<td>•	精确控制埋点的位置和事件。	<br />•	可以收集详细的事件信息。</td>
-<td>•	覆盖全面，无需手动添加埋点代码。<br />•	能够捕获所有用户行为，数据更完整</td>
-<td>•	无需修改代码，配置方便。<br />•	非技术人员也可以配置和管理埋点。</td>
-</tr>
-<tr>
-<td>缺点</td>
-<td>•	手动维护埋点代码，工作量大，容易出错。<br />•	需要开发人员介入，维护成本高。</td>
-<td>•	数据量大，可能带来存储和处理的压力。<br />•	需要在数据清洗和分析阶段进行大量处理。</td>
-<td>•	可能无法满足所有细粒度的埋点需求。<br />•	配置不当可能导致数据不准确。</td>
-</tr>
-</tbody></table>
-<h2 id="埋点例子："><a href="#埋点例子：" class="headerlink" title="埋点例子："></a>埋点例子：</h2><p>代码埋点例子：</p>
-<div class="highlight-container" data-rel="Javascript"><figure class="iseeu highlight javascript"><table><tr><td class="code"><pre><span class="line">$(<span class="string">&#x27;#button&#x27;</span>).<span class="title function_">on</span>(<span class="string">&#x27;click&#x27;</span>, <span class="keyword">function</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="comment">// 构建埋点数据</span></span><br><span class="line">    <span class="keyword">var</span> eventData = &#123;</span><br><span class="line">        <span class="attr">eventType</span>: <span class="string">&#x27;button_click&#x27;</span>,</span><br><span class="line">        <span class="attr">buttonId</span>: <span class="string">&#x27;button&#x27;</span>,</span><br><span class="line">        <span class="attr">timestamp</span>: <span class="keyword">new</span> <span class="title class_">Date</span>().<span class="title function_">toISOString</span>()</span><br><span class="line">    &#125;;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// 发送数据到服务器</span></span><br><span class="line">    $.<span class="title function_">ajax</span>(&#123;</span><br><span class="line">        <span class="attr">url</span>: <span class="string">&#x27;https://example.com/track&#x27;</span>,</span><br><span class="line">        <span class="attr">method</span>: <span class="string">&#x27;POST&#x27;</span>,</span><br><span class="line">        <span class="attr">contentType</span>: <span class="string">&#x27;application/json&#x27;</span>,</span><br><span class="line">        <span class="attr">data</span>: <span class="title class_">JSON</span>.<span class="title function_">stringify</span>(eventData),</span><br><span class="line">        <span class="attr">success</span>: <span class="keyword">function</span>(<span class="params">response</span>) &#123;</span><br><span class="line">            <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;埋点数据发送成功&#x27;</span>);</span><br><span class="line">        &#125;,</span><br><span class="line">        <span class="attr">error</span>: <span class="keyword">function</span>(<span class="params">error</span>) &#123;</span><br><span class="line">            <span class="variable language_">console</span>.<span class="title function_">error</span>(<span class="string">&#x27;埋点数据发送失败&#x27;</span>, error);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure></div>
-
-<p>全埋点例子：</p>
-<div class="highlight-container" data-rel="Javascript"><figure class="iseeu highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 全埋点脚本</span></span><br><span class="line">(<span class="keyword">function</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="comment">// 事件监听器</span></span><br><span class="line">    <span class="keyword">function</span> <span class="title function_">eventListener</span>(<span class="params">event</span>) &#123;</span><br><span class="line">        <span class="keyword">var</span> eventData = &#123;</span><br><span class="line">            <span class="attr">eventType</span>: event.<span class="property">type</span>,</span><br><span class="line">            <span class="attr">timestamp</span>: <span class="keyword">new</span> <span class="title class_">Date</span>().<span class="title function_">toISOString</span>(),</span><br><span class="line">            <span class="attr">element</span>: event.<span class="property">target</span>.<span class="property">tagName</span>,</span><br><span class="line">            <span class="attr">id</span>: event.<span class="property">target</span>.<span class="property">id</span>,</span><br><span class="line">            <span class="attr">className</span>: event.<span class="property">target</span>.<span class="property">className</span>,</span><br><span class="line">            <span class="attr">pageX</span>: event.<span class="property">pageX</span>,</span><br><span class="line">            <span class="attr">pageY</span>: event.<span class="property">pageY</span>,</span><br><span class="line">            <span class="attr">url</span>: <span class="variable language_">window</span>.<span class="property">location</span>.<span class="property">href</span></span><br><span class="line">        &#125;;</span><br><span class="line">        </span><br><span class="line">        <span class="comment">// 发送数据到服务器</span></span><br><span class="line">        <span class="keyword">var</span> xhr = <span class="keyword">new</span> <span class="title class_">XMLHttpRequest</span>();</span><br><span class="line">        xhr.<span class="title function_">open</span>(<span class="string">&quot;POST&quot;</span>, <span class="string">&quot;https://example.com/track&quot;</span>, <span class="literal">true</span>);</span><br><span class="line">        xhr.<span class="title function_">setRequestHeader</span>(<span class="string">&quot;Content-Type&quot;</span>, <span class="string">&quot;application/json;charset=UTF-8&quot;</span>);</span><br><span class="line">        xhr.<span class="title function_">send</span>(<span class="title class_">JSON</span>.<span class="title function_">stringify</span>(eventData));</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 监听点击事件</span></span><br><span class="line">    <span class="variable language_">document</span>.<span class="title function_">addEventListener</span>(<span class="string">&#x27;click&#x27;</span>, eventListener, <span class="literal">true</span>);</span><br><span class="line">    <span class="variable language_">document</span>.<span class="title function_">addEventListener</span>(<span class="string">&#x27;input&#x27;</span>, eventListener, <span class="literal">true</span>);</span><br><span class="line">    <span class="variable language_">document</span>.<span class="title function_">addEventListener</span>(<span class="string">&#x27;scroll&#x27;</span>, eventListener, <span class="literal">true</span>);</span><br><span class="line">&#125;)();</span><br></pre></td></tr></table></figure></div>
-
-<h2 id="埋点模型："><a href="#埋点模型：" class="headerlink" title="埋点模型："></a>埋点模型：</h2><blockquote>
-<p>埋点模型包含两个主要概念：<strong>事件(event)</strong> 、<strong>属性(params)</strong></p>
-<p><strong>事件</strong>：通过埋点定义的用户行为或业务操作，比如页面打开，页面离开，模块曝光，模块点击</p>
-<p><strong>属性</strong>：事件附带的各种维度信息，比如用户信息，网络信息，设备信息，事件具体维度信息等</p>
-</blockquote>
-<p>一个设计的相对完善的模型,一般包含用户行为五元素</p>
-<p>通过这个可以详细的分析是谁在什么地方什么时间，怎么样进行了什么操作</p>
-<p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="https://raw.githubusercontent.com/YuZeZhang/myImgslib/main/202406250041129.png"
-                      alt="image-20240625004123315"
-                ></p>
-<p>模型事件：</p>
-<p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="https://raw.githubusercontent.com/YuZeZhang/myImgslib/main/202406250047727.png"
-                      alt="image-20240625004727426"
-                ></p>
-<p>模型信息：</p>
-<p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="https://raw.githubusercontent.com/YuZeZhang/myImgslib/main/202406250053185.png"
-                      alt="image-20240625005335046"
-                ></p>
-<h2 id="埋点上报："><a href="#埋点上报：" class="headerlink" title="埋点上报："></a>埋点上报：</h2><p>数据队列处理：当需要上报的数据量逐渐变多时，就需要考虑进行批量上报和延迟上报，本质上都是为了不阻塞业务程序的执行，上报本来就是用户无感知的事情，用户不能为此耗时买单。</p>
-<p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="https://raw.githubusercontent.com/YuZeZhang/myImgslib/main/202406250115952.png"
-                      alt="image-20240625011532834"
-                ></p>
-<p>对于数据请求处理，主要考虑的有三个因素</p>
-<ul>
-<li>跨域的问题</li>
-<li>页面销毁时，如何保障还未成功上传的数据完成数据上传请求</li>
-<li>大数据量的上传</li>
-</ul>
-<p>较为标准的针对模块曝光的定义：窗口可视区域内 &amp;&amp; 组件矩形与视窗区域发生交集 &amp;&amp; 交集垂线距离 &gt;&#x3D; 1px &amp;&amp; 停留时间 &gt;&#x3D; XXms</p>
-<p>Reference：<a class="link"   href="https://juejin.cn/post/7324334380373426227?searchId=202406242342178A14CCB0DE15106BCCCB" >https://juejin.cn/post/7324334380373426227?searchId=202406242342178A14CCB0DE15106BCCCB <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
-<p>备注：近几个月来看到👀过质量最高的文章！学到了！</p>
-]]></content>
-  </entry>
-  <entry>
     <title>MAC 内网穿透 cpolar</title>
     <url>/Yuyang/cpolar/</url>
     <content><![CDATA[<blockquote>
@@ -390,6 +217,154 @@
 ]]></content>
   </entry>
   <entry>
+    <title>强缓存和协商缓存</title>
+    <url>/Yuyang/cache/</url>
+    <content><![CDATA[<h2 id="缓存"><a href="#缓存" class="headerlink" title="缓存"></a>缓存</h2><p>为了减少资源请求次数，加快资源访问速度，浏览器会对资源文件如图片、css文件、js文件等进行缓存，而浏览器缓存策略又分为强缓存和协商缓存。</p>
+<h2 id="强缓存"><a href="#强缓存" class="headerlink" title="强缓存"></a>强缓存</h2><p>强缓存是指浏览器在缓存有效期内直接从本地缓存中读取资源，而不与服务器进行任何通信。强缓存的实现依赖于 HTTP 响应头中的 Expires 或 Cache-Control。</p>
+<h3 id="Expires"><a href="#Expires" class="headerlink" title="Expires"></a>Expires</h3><p><a class="link"   href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Expires" >https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Expires <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
+<p>一个绝对的过期时间（GMT 时间），在此时间之前，浏览器会认为缓存是有效的。</p>
+<div class="highlight-container" data-rel="Http"><figure class="iseeu highlight http"><table><tr><td class="code"><pre><span class="line"><span class="attribute">Expires</span><span class="punctuation">: </span>Wed, 21 Oct 2024 07:28:00 GMT</span><br></pre></td></tr></table></figure></div>
+
+<h3 id="Cache-Control"><a href="#Cache-Control" class="headerlink" title="Cache-Control"></a>Cache-Control</h3><p>max-age代表缓存时间，单位为秒</p>
+<div class="highlight-container" data-rel="Http"><figure class="iseeu highlight http"><table><tr><td class="code"><pre><span class="line"><span class="attribute">Cache-Control</span><span class="punctuation">: </span>max-age=3600</span><br></pre></td></tr></table></figure></div>
+
+<p><a class="link"   href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Cache-Control" >https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Cache-Control <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://raw.githubusercontent.com/YuZeZhang/myImgslib/main/202407121558393.webp"
+                      alt="img"
+                ></p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://raw.githubusercontent.com/YuZeZhang/myImgslib/main/202407121558374.webp"
+                      alt="img"
+                ></p>
+<p>使用缓存的话，状态码200后面会标明情况。浏览器缓存资源的地方有两个：磁盘缓存（disk cache）和内存缓存（memory cache）。</p>
+<p>当缓存时间到期后再次访问时，状态码200后面便没有括号内的内容了。</p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://raw.githubusercontent.com/YuZeZhang/myImgslib/main/202407121558501.webp"
+                      alt="img"
+                ></p>
+<p>一般来说，浏览器会将较大的资源缓存到disk cache，而较小的资源则被缓存到memory cache里。内存缓存与磁盘缓存相比，访问速度要更快一些！</p>
+<p>Cache-Control除了max-age外，还可以设置其它属性值：</p>
+<ul>
+<li>no-cache: 不使用强缓存（但仍会使用协商缓存）。</li>
+<li>no-store: 不使用缓存（不使用强缓存也不使用协商缓存），每次都向服务器发送资源请求。</li>
+<li>private： 只允许客户端使用缓存，不允许其他代理服务器进行缓存。</li>
+<li>public: 客户端和代理服务器都可缓存。</li>
+<li>s-maxage: 与max-age类似，区别是s-maxage是设定代理服务器的缓存时间。</li>
+</ul>
+<p>另外，Cache-control的优先级要高于Expires，如果两者同时设置，会优先使用Cache-control而忽略掉Expires。</p>
+<h2 id="协商缓存"><a href="#协商缓存" class="headerlink" title="协商缓存"></a>协商缓存</h2><p><strong>在强缓存里，是否使用缓存是由浏览器来确定的，而协商缓存则是由服务器来告诉浏览器是否使用缓存资源，也就是浏览器每一次都要发送请求到服务器询问是否使用缓存</strong>，协商缓存的具体流程如下：</p>
+<p>浏览器初次请求资源，服务器返回资源，同时生成一个Etag值携带在响应头里返回给浏览器，当浏览器再次请求资源时会在请求头里携带If-None-Match，值是之前服务器返回的Etag的值，服务器收到之后拿该值与资源文件最新的Etag值做对比。</p>
+<ul>
+<li>如果没有变化则返回304，告诉浏览器继续使用缓存（不返回资源文件）。</li>
+<li>如果发生变化，则返回200和最新的资源文件给浏览器使用。</li>
+</ul>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://raw.githubusercontent.com/YuZeZhang/myImgslib/main/202407121603356.webp"
+                      alt="img"
+                ></p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://raw.githubusercontent.com/YuZeZhang/myImgslib/main/202407121603175.webp"
+                      alt="img"
+                ></p>
+<p>除了Etag外，还有一个Last-Modified的属性，它是Http1.0规范的，服务器返回Last-Modified，浏览器请求头对应携带的是If-Modified-since，与Etag不同的是，Last-Modified的值是一个时间值，代表文件的修改时间，服务器通过对比文件的修改时间是否发生改变来判断是否使用缓存。</p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://raw.githubusercontent.com/YuZeZhang/myImgslib/main/202407121603459.webp"
+                      alt="img"
+                ></p>
+<p>相比Last-Modified，Etag优先级更高，使用上也更精确一些，因为有时候会存在文件内容并没有改变，但文件的修改时间变更了，Last-Modified不一致所以服务器会重新返回资源文件，实际上还是可以继续使用缓存的。</p>
+<p>强缓存优先级大于协商缓存，即两者同时存在时，如果强缓存开启且在有效期内，则不会走协商缓存。</p>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>强缓存就是浏览器本地根据服务器设置的过期时间来判断是否使用缓存，未过期则从本地缓存里拿资源，已过期则重新请求服务器获取最新资源。</p>
+<p>协商缓存则是浏览器本地每次都向服务器发起请求，由服务器来告诉浏览器是从缓存里拿资源还是返回最新资源给浏览器使用。</p>
+<p>Reference: <a class="link"   href="https://juejin.cn/post/7259298281578889273?searchId=20240712153934B2B3A1160462EB235132" >https://juejin.cn/post/7259298281578889273?searchId=20240712153934B2B3A1160462EB235132 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
+]]></content>
+  </entry>
+  <entry>
+    <title>原型和原型链</title>
+    <url>/Yuyang/prototype/</url>
+    <content><![CDATA[<h2 id="原型"><a href="#原型" class="headerlink" title="原型"></a>原型</h2><p>什么是原型？什么是构造函数、实例原型、实例？它们的关系是什么？</p>
+<h3 id="原型（Prototype）"><a href="#原型（Prototype）" class="headerlink" title="原型（Prototype）"></a>原型（Prototype）</h3><p>每个 JavaScript 对象都有一个内部链接到另一个对象的引用，这个对象被称为原型。当试图访问一个对象的属性时，JavaScript 会首先在这个对象自身上寻找该属性，如果找不到，则会查找该对象的原型，如此递归下去，直到找到该属性或达到原型链的末端。</p>
+<h3 id="构造函数（Constructor）"><a href="#构造函数（Constructor）" class="headerlink" title="构造函数（Constructor）"></a>构造函数（Constructor）</h3><p>构造函数是用于创建对象的函数。通过 new 操作符调用构造函数时，它会创建一个新对象，并将这个新对象的内部 [[Prototype]] 连接到构造函数的 prototype 属性。</p>
+<div class="highlight-container" data-rel="Javascript"><figure class="iseeu highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">Person</span>(<span class="params">name</span>) &#123;</span><br><span class="line">  <span class="variable language_">this</span>.<span class="property">name</span> = name;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> person = <span class="keyword">new</span> <span class="title class_">Person</span>(<span class="string">&#x27;Yuyang&#x27;</span>);</span><br></pre></td></tr></table></figure></div>
+
+<p>Person是构造函数，person是创建的对象</p>
+<h3 id="实例原型（Instance-Prototype）"><a href="#实例原型（Instance-Prototype）" class="headerlink" title="实例原型（Instance Prototype）"></a>实例原型（Instance Prototype）</h3><p>实例原型是由构造函数的 <code>prototype</code> 属性引用的对象。所有由该构造函数创建的实例对象都将共享这个实例原型对象的属性和方法。</p>
+<div class="highlight-container" data-rel="Javascript"><figure class="iseeu highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">Person</span>(<span class="params">name</span>) &#123;</span><br><span class="line">  <span class="variable language_">this</span>.<span class="property">name</span> = name;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="title class_">Person</span>.<span class="property"><span class="keyword">prototype</span></span>.<span class="property">callName</span> = <span class="keyword">function</span>(<span class="params"></span>)&#123;</span><br><span class="line">	<span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;zyz&quot;</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> person1 = <span class="keyword">new</span> <span class="title class_">Person</span>(<span class="string">&quot;Yuyang&quot;</span>);</span><br><span class="line"><span class="keyword">const</span> person2 = <span class="keyword">new</span> <span class="title class_">Person</span>(<span class="string">&quot;YuyangA&quot;</span>);</span><br><span class="line">person1.<span class="property">callName</span> = <span class="keyword">function</span>(<span class="params"></span>)&#123;</span><br><span class="line">	<span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="variable language_">this</span>.<span class="property">name</span>)</span><br><span class="line">&#125;</span><br><span class="line">person1.<span class="title function_">callName</span>();</span><br><span class="line">person2.<span class="title function_">callName</span>();</span><br></pre></td></tr></table></figure></div>
+
+<h3 id="实例（Instance）"><a href="#实例（Instance）" class="headerlink" title="实例（Instance）"></a>实例（Instance）</h3><p>实例是通过构造函数创建的具体对象。每个实例都有一个内部链接到它的构造函数的 <code>prototype</code> 属性的引用，这个链接可以通过 <code>__proto__</code>（非标准）或 <code>Object.getPrototypeOf</code> 方法来访问。</p>
+<div class="highlight-container" data-rel="Javascript"><figure class="iseeu highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> person3 = <span class="keyword">new</span> <span class="title class_">Person</span>(<span class="string">&#x27;Charlie&#x27;</span>);</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(person3.<span class="property">__proto__</span> === <span class="title class_">Person</span>.<span class="property"><span class="keyword">prototype</span></span>); <span class="comment">// 输出：true</span></span><br></pre></td></tr></table></figure></div>
+
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://raw.githubusercontent.com/YuZeZhang/myImgslib/main/202407121647943.png"
+                      alt="image.png"
+                ></p>
+<h2 id="原型链"><a href="#原型链" class="headerlink" title="原型链"></a>原型链</h2><p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://raw.githubusercontent.com/YuZeZhang/myImgslib/main/202407121648478.png"
+                      alt="image.png"
+                ></p>
+<h2 id="词法作用域"><a href="#词法作用域" class="headerlink" title="词法作用域"></a>词法作用域</h2><p><strong>JavaScript 采用词法作用域(lexical scoping)，也就是静态作用域。</strong></p>
+<h2 id="this"><a href="#this" class="headerlink" title="this"></a>this</h2><p>JavaScript中的this总是指向一个对象，而具体指向哪个对象是在运行时基于函数的执行环境动态绑定的，而非函数被声明时的环境。</p>
+<h3 id="this的指向"><a href="#this的指向" class="headerlink" title="this的指向"></a>this的指向</h3><ul>
+<li>作为对象的方法调用</li>
+<li>作为普通函数调用</li>
+<li>构造器调用</li>
+<li>Function.prototype.call 或 Function.prototype.apply 调用</li>
+</ul>
+<h4 id="作为对象的方法调用："><a href="#作为对象的方法调用：" class="headerlink" title="作为对象的方法调用："></a>作为对象的方法调用：</h4><p>函数作为对象的方法被调用时，this指向该对象：</p>
+<div class="highlight-container" data-rel="Javascript"><figure class="iseeu highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> obj = &#123;</span><br><span class="line">    <span class="attr">a</span>: <span class="number">1</span>,</span><br><span class="line">    <span class="attr">getA</span>: <span class="keyword">function</span> (<span class="params"></span>) &#123;</span><br><span class="line">        <span class="title function_">alert</span>(<span class="variable language_">this</span> === obj);</span><br><span class="line">        <span class="title function_">alert</span>(<span class="variable language_">this</span>.<span class="property">a</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">obj.<span class="title function_">getA</span>();</span><br></pre></td></tr></table></figure></div>
+
+<h4 id="作为普通函数调用："><a href="#作为普通函数调用：" class="headerlink" title="作为普通函数调用："></a>作为普通函数调用：</h4><p>当函数不作为对象的属性被调用时，此时的this总是指向全局对象。在浏览器的javascript里，这个全局对象是window对象。</p>
+<div class="highlight-container" data-rel="Javascript"><figure class="iseeu highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="variable language_">window</span>.<span class="property">name</span> = <span class="string">&quot;globalName&quot;</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> getName = <span class="keyword">function</span>(<span class="params"></span>)&#123;</span><br><span class="line">	<span class="keyword">return</span> <span class="variable language_">this</span>.<span class="property">name</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="title function_">getName</span>()); <span class="comment">//输出: globalName</span></span><br><span class="line"></span><br></pre></td></tr></table></figure></div>
+
+<div class="highlight-container" data-rel="Javascript"><figure class="iseeu highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="variable language_">window</span>.<span class="property">name</span> = <span class="string">&quot;globalName&quot;</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> myObject = &#123;</span><br><span class="line">	<span class="attr">name</span>: <span class="string">&quot;sven&quot;</span>,</span><br><span class="line">	<span class="attr">getName</span>: <span class="keyword">function</span>(<span class="params"></span>)&#123;</span><br><span class="line">		<span class="keyword">return</span> <span class="variable language_">this</span>.<span class="property">name</span>;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> getName = myObject.<span class="property">getName</span>;</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="title function_">getName</span>()); <span class="comment">// globalName</span></span><br><span class="line"></span><br></pre></td></tr></table></figure></div>
+
+
+
+<div class="highlight-container" data-rel="Javascript"><figure class="iseeu highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="variable language_">window</span>.<span class="property">id</span> = <span class="string">&quot;window&quot;</span>;</span><br><span class="line"><span class="variable language_">document</span>.<span class="title function_">getElementById</span>(<span class="string">&quot;div1&quot;</span>).<span class="title function_">addEventListener</span>(<span class="string">&quot;click&quot;</span>, <span class="keyword">function</span>(<span class="params"></span>) &#123;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;🚀 ~ window.id:&quot;</span>, <span class="variable language_">this</span>.<span class="property">id</span>, <span class="variable language_">this</span>) </span><br><span class="line">  <span class="keyword">var</span> callback = <span class="keyword">function</span>(<span class="params"></span>)&#123;</span><br><span class="line">     <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;🚀 ~ window.id:&quot;</span>, <span class="variable language_">this</span>.<span class="property">id</span>, <span class="variable language_">this</span>)</span><br><span class="line">  &#125;        </span><br><span class="line">  <span class="title function_">callback</span>()</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line"><span class="comment">// callback中的this指向window</span></span><br><span class="line"></span><br><span class="line"><span class="variable language_">document</span>.<span class="title function_">getElementById</span>(<span class="string">&quot;div1&quot;</span>).<span class="title function_">addEventListener</span>(<span class="string">&quot;click&quot;</span>, <span class="keyword">function</span>(<span class="params"></span>) &#123;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;🚀 ~ window.id:&quot;</span>, <span class="variable language_">this</span>.<span class="property">id</span>, <span class="variable language_">this</span>);</span><br><span class="line">  <span class="keyword">var</span> <span class="title function_">callback</span> = (<span class="params"></span>) =&gt; &#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;🚀 ~ window.id:&quot;</span>, <span class="variable language_">this</span>.<span class="property">id</span>, <span class="variable language_">this</span>);</span><br><span class="line">  &#125;;        </span><br><span class="line">  <span class="title function_">callback</span>();</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 箭头函数没有this 捕获其上下文的this值</span></span><br><span class="line"></span><br><span class="line"><span class="variable language_">document</span>.<span class="title function_">getElementById</span>(<span class="string">&quot;div1&quot;</span>).<span class="title function_">addEventListener</span>(<span class="string">&quot;click&quot;</span>, <span class="keyword">function</span>(<span class="params"></span>) &#123;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;🚀 ~ window.id:&quot;</span>, <span class="variable language_">this</span>.<span class="property">id</span>, <span class="variable language_">this</span>);</span><br><span class="line">  <span class="keyword">var</span> callback = <span class="keyword">function</span>(<span class="params"></span>)&#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;🚀 ~ window.id:&quot;</span>, <span class="variable language_">this</span>.<span class="property">id</span>, <span class="variable language_">this</span>);</span><br><span class="line">  &#125;.<span class="title function_">bind</span>(<span class="variable language_">this</span>);        </span><br><span class="line">  <span class="title function_">callback</span>();</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 使用 bind 显式地将 this 绑定到 div1</span></span><br><span class="line"></span><br><span class="line"><span class="variable language_">document</span>.<span class="title function_">getElementById</span>(<span class="string">&quot;div1&quot;</span>).<span class="title function_">addEventListener</span>(<span class="string">&quot;click&quot;</span>, <span class="keyword">function</span>(<span class="params"></span>) &#123;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;🚀 ~ window.id:&quot;</span>, <span class="variable language_">this</span>.<span class="property">id</span>, <span class="variable language_">this</span>);</span><br><span class="line">  <span class="keyword">var</span> self = <span class="variable language_">this</span>;</span><br><span class="line">  <span class="keyword">var</span> callback = <span class="keyword">function</span>(<span class="params"></span>)&#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;🚀 ~ window.id:&quot;</span>, self.<span class="property">id</span>, self);</span><br><span class="line">  &#125;;        </span><br><span class="line">  <span class="title function_">callback</span>();</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 暂存this</span></span><br></pre></td></tr></table></figure></div>
+
+<h4 id="构造器调用："><a href="#构造器调用：" class="headerlink" title="构造器调用："></a>构造器调用：</h4><p>用new调用函数时，该函数会返回一个对象，通常情况下，构造器的this就会指向返回的这个对象，</p>
+<div class="highlight-container" data-rel="Javascript"><figure class="iseeu highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> <span class="title class_">MyClass</span> = <span class="keyword">function</span>(<span class="params"></span>)&#123;</span><br><span class="line">	<span class="variable language_">this</span>.<span class="property">name</span> = <span class="string">&quot;seven&quot;</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> obj = <span class="keyword">new</span> <span class="title class_">MyClass</span>();</span><br><span class="line"><span class="title function_">alert</span>(obj.<span class="property">name</span>);</span><br></pre></td></tr></table></figure></div>
+
+<p>当构造器显式的返回一个对象时，那么此次运算结果最终会返回这个对象，而不是我们之前期待的this</p>
+<div class="highlight-container" data-rel="Javascript"><figure class="iseeu highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> <span class="title class_">MyClass</span> = <span class="keyword">function</span>(<span class="params"></span>)&#123;</span><br><span class="line">	<span class="variable language_">this</span>.<span class="property">name</span> = <span class="string">&quot;sven&quot;</span>;</span><br><span class="line">	<span class="keyword">return</span> &#123;</span><br><span class="line">		<span class="attr">name</span>: <span class="string">&quot;anne&quot;</span></span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> obj = <span class="keyword">new</span> <span class="title class_">MyClass</span>();</span><br><span class="line"><span class="title function_">alert</span>(obj.<span class="property">name</span>); <span class="comment">//anne</span></span><br></pre></td></tr></table></figure></div>
+
+<h4 id="Function-prototype-call-或-Function-prototype-apply-调用"><a href="#Function-prototype-call-或-Function-prototype-apply-调用" class="headerlink" title="Function.prototype.call 或 Function.prototype.apply 调用:"></a>Function.prototype.call 或 Function.prototype.apply 调用:</h4><div class="highlight-container" data-rel="Javascript"><figure class="iseeu highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> obj1 = &#123;</span><br><span class="line">  <span class="attr">name</span>: <span class="string">&#x27;seven&#x27;</span>,</span><br><span class="line">  <span class="attr">getName</span>: <span class="keyword">function</span>(<span class="params"></span>)&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="variable language_">this</span>.<span class="property">name</span>;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> obj2 = &#123;</span><br><span class="line">  <span class="attr">name</span>: <span class="string">&#x27;anne&#x27;</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(obj1.<span class="title function_">getName</span>()) <span class="comment">// seven</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(obj1.<span class="property">getName</span>.<span class="title function_">call</span>(obj2)) <span class="comment">// anne</span></span><br></pre></td></tr></table></figure></div>
+
+<p><code>call</code> 方法调用一个函数，并显式地指定 <code>this</code> 值和传递的参数。</p>
+<p>call源码实现：</p>
+<div class="highlight-container" data-rel="Javascript"><figure class="iseeu highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="title class_">Function</span>.<span class="property"><span class="keyword">prototype</span></span>.<span class="property">myCall</span> = <span class="keyword">function</span>(<span class="params">context, ...args</span>) &#123;</span><br><span class="line">  <span class="comment">// 如果没有提供 context，默认设置为全局对象（在浏览器中是 window）</span></span><br><span class="line">  context = context || globalThis;</span><br><span class="line">  </span><br><span class="line">  <span class="comment">// 为 context 创建一个唯一的临时属性来存储函数</span></span><br><span class="line">  <span class="keyword">const</span> fnSymbol = <span class="title class_">Symbol</span>();</span><br><span class="line">  context[fnSymbol] = <span class="variable language_">this</span>;</span><br><span class="line">  </span><br><span class="line">  <span class="comment">// 使用 context 调用函数，并传递参数</span></span><br><span class="line">  <span class="keyword">const</span> result = context[fnSymbol](...args);</span><br><span class="line">  </span><br><span class="line">  <span class="comment">// 删除临时属性</span></span><br><span class="line">  <span class="keyword">delete</span> context[fnSymbol];</span><br><span class="line">  </span><br><span class="line">  <span class="keyword">return</span> result;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 示例使用 myCall</span></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">greet</span>(<span class="params">greeting, punctuation</span>) &#123;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(greeting + <span class="string">&#x27;, &#x27;</span> + <span class="variable language_">this</span>.<span class="property">name</span> + punctuation);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> person = &#123; <span class="attr">name</span>: <span class="string">&#x27;Alice&#x27;</span> &#125;;</span><br><span class="line">greet.<span class="title function_">myCall</span>(person, <span class="string">&#x27;Hello&#x27;</span>, <span class="string">&#x27;!&#x27;</span>);  <span class="comment">// 输出: &quot;Hello, Alice!&quot;</span></span><br><span class="line"></span><br></pre></td></tr></table></figure></div>
+
+<p> <strong>call() 方法接受的是参数列表，而 apply() 方法接受的是一个参数数组</strong>。</p>
+<p>call：</p>
+<blockquote>
+<p><em>function</em>.call(<em>thisArg</em>, <em>arg1</em>, <em>arg2</em>, …)</p>
+</blockquote>
+<p>apply：</p>
+<blockquote>
+<p><em>func</em>.apply(<em>thisArg, [argsArray</em>])</p>
+</blockquote>
+<p><code>bind</code> 方法创建一个新的函数，该函数在调用时，其 <code>this</code> 值和传递的参数被预先设置。与 <code>call</code> 方法不同，<code>bind</code> 不会立即调用函数，而是返回一个新的函数。</p>
+<div class="highlight-container" data-rel="Javascript"><figure class="iseeu highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> foo = &#123;</span><br><span class="line">  <span class="attr">value</span>: <span class="number">1</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="title class_">Function</span>.<span class="property"><span class="keyword">prototype</span></span>.<span class="property">bind2</span> = <span class="keyword">function</span>(<span class="params">context</span>)&#123;</span><br><span class="line">  <span class="keyword">var</span> _this = <span class="variable language_">this</span>;</span><br><span class="line">  <span class="keyword">return</span> <span class="keyword">function</span>(<span class="params"></span>)&#123;</span><br><span class="line">    _this.<span class="title function_">apply</span>(context);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> bindFoo2 = bar.<span class="title function_">bind2</span>(foo);</span><br></pre></td></tr></table></figure></div>
+
+<h3 id="丢失的this"><a href="#丢失的this" class="headerlink" title="丢失的this"></a>丢失的this</h3>]]></content>
+  </entry>
+  <entry>
     <title>node_modules困境以及pnpm</title>
     <url>/Yuyang/pnpm/</url>
     <content><![CDATA[<p>node_modules的设计虽然能满足大部分的场景，但是其仍然存在着种种缺陷由于每个项目可能依赖成百上千个小模块，node_modules 目录的体积往往非常庞大，动辄几百MB甚至超过1GB。这不仅增加了存储负担，也影响了项目的克隆、备份和部署速度。</p>
@@ -592,6 +567,104 @@
 <p>相比 yarn 和 npm3+ 呢，那就是没有幽灵依赖，也不会有没有被提升的依赖依然复制多份的问题。</p>
 <p>这就已经足够优秀了，对 yarn 和 npm 可以说是降维打击。</p>
 <p>Reference：<a class="link"   href="https://juejin.cn/post/7127295203177676837?searchId=20240623222554B51B38FF0362E0D545BE" >https://juejin.cn/post/7127295203177676837?searchId=20240623222554B51B38FF0362E0D545BE <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
+]]></content>
+  </entry>
+  <entry>
+    <title>前端埋点与全链路</title>
+    <url>/Yuyang/eventTracking/</url>
+    <content><![CDATA[<h2 id="什么是埋点："><a href="#什么是埋点：" class="headerlink" title="什么是埋点："></a>什么是埋点：</h2><p>​	前端埋点是一种用于收集用户在网站或应用程序上的行为数据的方法。这些数据可以帮助企业了解用户的行为模式、使用习惯，并对产品进行优化。</p>
+<h2 id="为什么要埋点："><a href="#为什么要埋点：" class="headerlink" title="为什么要埋点："></a>为什么要埋点：</h2><ul>
+<li>流量监测（按时间空间维度分析，留存分析，转化分析）。</li>
+<li>构建行为路径，获取用户的全链路信息获取，实现用户分群、人群洞察、行为细查等，构建用户画像。</li>
+<li>通过对埋点数据的处理、分析、建模，判断产品的效果和未来走向。</li>
+<li>为营销策略提供数据支持，分析营销效果，提高渠道转化。</li>
+<li>热力分析，帮助判断访客热衷的区域，评估网页设计是否合理等。</li>
+<li>实施AB Test，持续优化产品，使产品在市场上更具有竞争力。</li>
+<li>用户行为异常监测以及问题快速定位与响应。</li>
+</ul>
+<h2 id="埋点的使用场景有哪些："><a href="#埋点的使用场景有哪些：" class="headerlink" title="埋点的使用场景有哪些："></a>埋点的使用场景有哪些：</h2><p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://raw.githubusercontent.com/YuZeZhang/myImgslib/main/202406250013175.png"
+                      alt="image-20240625001317104"
+                ></p>
+<h2 id="埋点方式："><a href="#埋点方式：" class="headerlink" title="埋点方式："></a>埋点方式：</h2><table>
+<thead>
+<tr>
+<th></th>
+<th>代码埋点</th>
+<th>全埋点</th>
+<th>可视化埋点</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>定义</td>
+<td><strong>代码埋点</strong>是指在前端代码中手动添加埋点代码，用于捕获特定用户行为事件。这种方法灵活且精确，适用于需要细粒度数据收集的场景。</td>
+<td><strong>全埋点</strong>是一种自动化的埋点方式，旨在捕获页面上的所有用户行为事件。通过全埋点，可以自动记录用户在页面上的所有操作，如点击、滑动、输入等，减少了手动添加埋点的工作量。</td>
+<td><strong>可视化埋点</strong>是通过可视化界面配置埋点，而不需要修改代码。通过可视化工具，非技术人员也可以方便地配置和管理埋点。</td>
+</tr>
+<tr>
+<td>优点</td>
+<td>•	精确控制埋点的位置和事件。	<br />•	可以收集详细的事件信息。</td>
+<td>•	覆盖全面，无需手动添加埋点代码。<br />•	能够捕获所有用户行为，数据更完整</td>
+<td>•	无需修改代码，配置方便。<br />•	非技术人员也可以配置和管理埋点。</td>
+</tr>
+<tr>
+<td>缺点</td>
+<td>•	手动维护埋点代码，工作量大，容易出错。<br />•	需要开发人员介入，维护成本高。</td>
+<td>•	数据量大，可能带来存储和处理的压力。<br />•	需要在数据清洗和分析阶段进行大量处理。</td>
+<td>•	可能无法满足所有细粒度的埋点需求。<br />•	配置不当可能导致数据不准确。</td>
+</tr>
+</tbody></table>
+<h2 id="埋点例子："><a href="#埋点例子：" class="headerlink" title="埋点例子："></a>埋点例子：</h2><p>代码埋点例子：</p>
+<div class="highlight-container" data-rel="Javascript"><figure class="iseeu highlight javascript"><table><tr><td class="code"><pre><span class="line">$(<span class="string">&#x27;#button&#x27;</span>).<span class="title function_">on</span>(<span class="string">&#x27;click&#x27;</span>, <span class="keyword">function</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="comment">// 构建埋点数据</span></span><br><span class="line">    <span class="keyword">var</span> eventData = &#123;</span><br><span class="line">        <span class="attr">eventType</span>: <span class="string">&#x27;button_click&#x27;</span>,</span><br><span class="line">        <span class="attr">buttonId</span>: <span class="string">&#x27;button&#x27;</span>,</span><br><span class="line">        <span class="attr">timestamp</span>: <span class="keyword">new</span> <span class="title class_">Date</span>().<span class="title function_">toISOString</span>()</span><br><span class="line">    &#125;;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// 发送数据到服务器</span></span><br><span class="line">    $.<span class="title function_">ajax</span>(&#123;</span><br><span class="line">        <span class="attr">url</span>: <span class="string">&#x27;https://example.com/track&#x27;</span>,</span><br><span class="line">        <span class="attr">method</span>: <span class="string">&#x27;POST&#x27;</span>,</span><br><span class="line">        <span class="attr">contentType</span>: <span class="string">&#x27;application/json&#x27;</span>,</span><br><span class="line">        <span class="attr">data</span>: <span class="title class_">JSON</span>.<span class="title function_">stringify</span>(eventData),</span><br><span class="line">        <span class="attr">success</span>: <span class="keyword">function</span>(<span class="params">response</span>) &#123;</span><br><span class="line">            <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;埋点数据发送成功&#x27;</span>);</span><br><span class="line">        &#125;,</span><br><span class="line">        <span class="attr">error</span>: <span class="keyword">function</span>(<span class="params">error</span>) &#123;</span><br><span class="line">            <span class="variable language_">console</span>.<span class="title function_">error</span>(<span class="string">&#x27;埋点数据发送失败&#x27;</span>, error);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure></div>
+
+<p>全埋点例子：</p>
+<div class="highlight-container" data-rel="Javascript"><figure class="iseeu highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 全埋点脚本</span></span><br><span class="line">(<span class="keyword">function</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="comment">// 事件监听器</span></span><br><span class="line">    <span class="keyword">function</span> <span class="title function_">eventListener</span>(<span class="params">event</span>) &#123;</span><br><span class="line">        <span class="keyword">var</span> eventData = &#123;</span><br><span class="line">            <span class="attr">eventType</span>: event.<span class="property">type</span>,</span><br><span class="line">            <span class="attr">timestamp</span>: <span class="keyword">new</span> <span class="title class_">Date</span>().<span class="title function_">toISOString</span>(),</span><br><span class="line">            <span class="attr">element</span>: event.<span class="property">target</span>.<span class="property">tagName</span>,</span><br><span class="line">            <span class="attr">id</span>: event.<span class="property">target</span>.<span class="property">id</span>,</span><br><span class="line">            <span class="attr">className</span>: event.<span class="property">target</span>.<span class="property">className</span>,</span><br><span class="line">            <span class="attr">pageX</span>: event.<span class="property">pageX</span>,</span><br><span class="line">            <span class="attr">pageY</span>: event.<span class="property">pageY</span>,</span><br><span class="line">            <span class="attr">url</span>: <span class="variable language_">window</span>.<span class="property">location</span>.<span class="property">href</span></span><br><span class="line">        &#125;;</span><br><span class="line">        </span><br><span class="line">        <span class="comment">// 发送数据到服务器</span></span><br><span class="line">        <span class="keyword">var</span> xhr = <span class="keyword">new</span> <span class="title class_">XMLHttpRequest</span>();</span><br><span class="line">        xhr.<span class="title function_">open</span>(<span class="string">&quot;POST&quot;</span>, <span class="string">&quot;https://example.com/track&quot;</span>, <span class="literal">true</span>);</span><br><span class="line">        xhr.<span class="title function_">setRequestHeader</span>(<span class="string">&quot;Content-Type&quot;</span>, <span class="string">&quot;application/json;charset=UTF-8&quot;</span>);</span><br><span class="line">        xhr.<span class="title function_">send</span>(<span class="title class_">JSON</span>.<span class="title function_">stringify</span>(eventData));</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 监听点击事件</span></span><br><span class="line">    <span class="variable language_">document</span>.<span class="title function_">addEventListener</span>(<span class="string">&#x27;click&#x27;</span>, eventListener, <span class="literal">true</span>);</span><br><span class="line">    <span class="variable language_">document</span>.<span class="title function_">addEventListener</span>(<span class="string">&#x27;input&#x27;</span>, eventListener, <span class="literal">true</span>);</span><br><span class="line">    <span class="variable language_">document</span>.<span class="title function_">addEventListener</span>(<span class="string">&#x27;scroll&#x27;</span>, eventListener, <span class="literal">true</span>);</span><br><span class="line">&#125;)();</span><br></pre></td></tr></table></figure></div>
+
+<h2 id="埋点模型："><a href="#埋点模型：" class="headerlink" title="埋点模型："></a>埋点模型：</h2><blockquote>
+<p>埋点模型包含两个主要概念：<strong>事件(event)</strong> 、<strong>属性(params)</strong></p>
+<p><strong>事件</strong>：通过埋点定义的用户行为或业务操作，比如页面打开，页面离开，模块曝光，模块点击</p>
+<p><strong>属性</strong>：事件附带的各种维度信息，比如用户信息，网络信息，设备信息，事件具体维度信息等</p>
+</blockquote>
+<p>一个设计的相对完善的模型,一般包含用户行为五元素</p>
+<p>通过这个可以详细的分析是谁在什么地方什么时间，怎么样进行了什么操作</p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://raw.githubusercontent.com/YuZeZhang/myImgslib/main/202406250041129.png"
+                      alt="image-20240625004123315"
+                ></p>
+<p>模型事件：</p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://raw.githubusercontent.com/YuZeZhang/myImgslib/main/202406250047727.png"
+                      alt="image-20240625004727426"
+                ></p>
+<p>模型信息：</p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://raw.githubusercontent.com/YuZeZhang/myImgslib/main/202406250053185.png"
+                      alt="image-20240625005335046"
+                ></p>
+<h2 id="埋点上报："><a href="#埋点上报：" class="headerlink" title="埋点上报："></a>埋点上报：</h2><p>数据队列处理：当需要上报的数据量逐渐变多时，就需要考虑进行批量上报和延迟上报，本质上都是为了不阻塞业务程序的执行，上报本来就是用户无感知的事情，用户不能为此耗时买单。</p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://raw.githubusercontent.com/YuZeZhang/myImgslib/main/202406250115952.png"
+                      alt="image-20240625011532834"
+                ></p>
+<p>对于数据请求处理，主要考虑的有三个因素</p>
+<ul>
+<li>跨域的问题</li>
+<li>页面销毁时，如何保障还未成功上传的数据完成数据上传请求</li>
+<li>大数据量的上传</li>
+</ul>
+<p>较为标准的针对模块曝光的定义：窗口可视区域内 &amp;&amp; 组件矩形与视窗区域发生交集 &amp;&amp; 交集垂线距离 &gt;&#x3D; 1px &amp;&amp; 停留时间 &gt;&#x3D; XXms</p>
+<p>Reference：<a class="link"   href="https://juejin.cn/post/7324334380373426227?searchId=202406242342178A14CCB0DE15106BCCCB" >https://juejin.cn/post/7324334380373426227?searchId=202406242342178A14CCB0DE15106BCCCB <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
+<p>备注：近几个月来看到👀过质量最高的文章！学到了！</p>
 ]]></content>
   </entry>
 </search>
