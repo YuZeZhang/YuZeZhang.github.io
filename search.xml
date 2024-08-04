@@ -711,7 +711,7 @@
 ]]></content>
   </entry>
   <entry>
-    <title>自动化</title>
+    <title>自动化构建</title>
     <url>/Yuyang/autoBuild/</url>
     <content><![CDATA[<h2 id="自动化构建方案"><a href="#自动化构建方案" class="headerlink" title="自动化构建方案"></a>自动化构建方案</h2><p>通过自动化手段 提高效率 可靠性</p>
 <p>构建工具： grunt webpack gulp vite rollup esbuild swc turbopack</p>
@@ -811,10 +811,9 @@
 ]]></content>
   </entry>
   <entry>
-    <title></title>
-    <url>/undefined/autoTest/</url>
-    <content><![CDATA[<h4 id="title-自动化测试"><a href="#title-自动化测试" class="headerlink" title="title: 自动化测试"></a>title: 自动化测试</h4><p>author: Yuyang</p>
-<h2 id="自动化测试与技术选型"><a href="#自动化测试与技术选型" class="headerlink" title="自动化测试与技术选型"></a>自动化测试与技术选型</h2><h3 id="认识并使用jest"><a href="#认识并使用jest" class="headerlink" title="认识并使用jest"></a>认识并使用jest</h3><h3 id="e2e测试"><a href="#e2e测试" class="headerlink" title="e2e测试"></a>e2e测试</h3><h3 id="devops"><a href="#devops" class="headerlink" title="devops"></a>devops</h3><h3 id="自动化测试"><a href="#自动化测试" class="headerlink" title="自动化测试"></a>自动化测试</h3><h4 id="为什么需要测试"><a href="#为什么需要测试" class="headerlink" title="为什么需要测试"></a>为什么需要测试</h4><p>让程序稳定健壮，提高代码质量，减少bug，提高开发效率。</p>
+    <title>自动化测试</title>
+    <url>/Yuyang/autoTest/</url>
+    <content><![CDATA[<h2 id="自动化测试与技术选型"><a href="#自动化测试与技术选型" class="headerlink" title="自动化测试与技术选型"></a>自动化测试与技术选型</h2><h3 id="认识并使用jest"><a href="#认识并使用jest" class="headerlink" title="认识并使用jest"></a>认识并使用jest</h3><h3 id="e2e测试"><a href="#e2e测试" class="headerlink" title="e2e测试"></a>e2e测试</h3><h3 id="devops"><a href="#devops" class="headerlink" title="devops"></a>devops</h3><h3 id="自动化测试"><a href="#自动化测试" class="headerlink" title="自动化测试"></a>自动化测试</h3><h4 id="为什么需要测试"><a href="#为什么需要测试" class="headerlink" title="为什么需要测试"></a>为什么需要测试</h4><p>让程序稳定健壮，提高代码质量，减少bug，提高开发效率。</p>
 <ul>
 <li>频繁变动的需求</li>
 <li>人力成本</li>
