@@ -13,28 +13,22 @@
     
     <!--- Seo Part-->
     
-    <link rel="canonical" href="https://github.com/YuZeZhang/YuZeZhang.github.io/yuyang/cpolar/"/>
+    <link rel="canonical" href="https://github.com/YuZeZhang/YuZeZhang.github.io/yuyang/autobuild/"/>
     <meta name="robots" content="index,follow">
     <meta name="googlebot" content="index,follow">
     <meta name="revisit-after" content="1 days">
     
-        <meta name="description" content="介绍如何通过使用cpolar来完成将内网下的本地服务器通过安全隧道暴露至公网，完成公网正常访问内网服务。目前我的本地web服务只能在局域网内访问，使用cpolar内网穿透可以将本地服务映射到公网，实现公网用户也可以访问到本地服务，无需公网IP，也无需设置路由器。cpolar官网：https:&#x2F;&#x2F;www.cpolar.com   1、安装配置cpolar 通过Homebrew包管理器安装cpola">
+        <meta name="description" content="自动化构建方案通过自动化手段 提高效率 可靠性 构建工具： grunt webpack gulp vite rollup esbuild swc turbopack 编译 测试 部署 区分环境 构建的整体设计思路 构建工具的选择 实际业务触发  UI rollup 小型项目 vite 大型项目 vite webpack swc swc-loader 对标 babel-loader &#x3D;&amp;g">
 <meta property="og:type" content="article">
-<meta property="og:title" content="MAC 内网穿透 cpolar">
-<meta property="og:url" content="https://github.com/YuZeZhang/YuZeZhang.github.io/Yuyang/cpolar/index.html">
+<meta property="og:title" content="自动化">
+<meta property="og:url" content="https://github.com/YuZeZhang/YuZeZhang.github.io/Yuyang/autoBuild/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="介绍如何通过使用cpolar来完成将内网下的本地服务器通过安全隧道暴露至公网，完成公网正常访问内网服务。目前我的本地web服务只能在局域网内访问，使用cpolar内网穿透可以将本地服务映射到公网，实现公网用户也可以访问到本地服务，无需公网IP，也无需设置路由器。cpolar官网：https:&#x2F;&#x2F;www.cpolar.com   1、安装配置cpolar 通过Homebrew包管理器安装cpola">
+<meta property="og:description" content="自动化构建方案通过自动化手段 提高效率 可靠性 构建工具： grunt webpack gulp vite rollup esbuild swc turbopack 编译 测试 部署 区分环境 构建的整体设计思路 构建工具的选择 实际业务触发  UI rollup 小型项目 vite 大型项目 vite webpack swc swc-loader 对标 babel-loader &#x3D;&amp;g">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://raw.githubusercontent.com/YuZeZhang/myImgslib/main/202406232255851.png">
-<meta property="og:image" content="https://raw.githubusercontent.com/YuZeZhang/myImgslib/main/202406232257170.png">
-<meta property="og:image" content="https://raw.githubusercontent.com/YuZeZhang/myImgslib/main/202406232257753.png">
-<meta property="og:image" content="https://raw.githubusercontent.com/YuZeZhang/myImgslib/main/202406232258155.png">
-<meta property="og:image" content="https://raw.githubusercontent.com/YuZeZhang/myImgslib/main/202406232258116.png">
-<meta property="article:published_time" content="2024-06-23T14:06:35.000Z">
-<meta property="article:modified_time" content="2024-06-23T15:10:41.335Z">
+<meta property="article:published_time" content="2024-07-17T14:43:08.434Z">
+<meta property="article:modified_time" content="2024-07-18T11:26:31.403Z">
 <meta property="article:author" content="Yuyang">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://raw.githubusercontent.com/YuZeZhang/myImgslib/main/202406232255851.png">
     
     
     <!--- Icon Part-->
@@ -46,7 +40,7 @@
     
     <title>
         
-            MAC 内网穿透 cpolar -
+            自动化 -
         
         Welcome to Yuyang&#39;s Blog
     </title>
@@ -475,7 +469,7 @@
         <div class="article-title relative w-full">
             
                 <div class="w-full flex items-center pt-6 justify-start">
-                    <h1 class="article-title-regular text-second-text-color tracking-tight text-4xl md:text-6xl font-semibold px-2 sm:px-6 md:px-8 py-3">MAC 内网穿透 cpolar</h1>
+                    <h1 class="article-title-regular text-second-text-color tracking-tight text-4xl md:text-6xl font-semibold px-2 sm:px-6 md:px-8 py-3">自动化</h1>
                 </div>
             
             </div>
@@ -496,15 +490,15 @@
                         <div class="article-meta-info">
     <span class="article-date article-meta-item">
         <i class="fa-regular fa-pen-fancy"></i>&nbsp;
-        <span class="desktop">2024-06-23 22:06:35</span>
-        <span class="mobile">2024-06-23 22:06:35</span>
+        <span class="desktop">2024-07-17 22:43:08</span>
+        <span class="mobile">2024-07-17 22:43:08</span>
         <span class="hover-info">创建</span>
     </span>
     
         <span class="article-date article-meta-item">
             <i class="fa-regular fa-wrench"></i>&nbsp;
-            <span class="desktop">2024-06-23 23:10:41</span>
-            <span class="mobile">2024-06-23 23:10:41</span>
+            <span class="desktop">2024-07-18 19:26:31</span>
+            <span class="mobile">2024-07-18 19:26:31</span>
             <span class="hover-info">更新</span>
         </span>
     
@@ -531,78 +525,101 @@
 
 
         <div class="article-content markdown-body px-2 sm:px-6 md:px-8 pb-8">
-            <blockquote>
-<p>介绍如何通过使用cpolar来完成将内网下的本地服务器通过安全隧道暴露至公网，完成公网正常访问内网服务。目前我的本地web服务只能在局域网内访问，使用cpolar内网穿透可以将本地服务映射到公网，实现公网用户也可以访问到本地服务，无需公网IP，也无需设置路由器。<br>cpolar官网：<a class="link"   target="_blank" rel="noopener" href="https://www.cpolar.com/" >https://www.cpolar.com <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
-</blockquote>
-<h2 id="1、安装配置cpolar"><a href="#1、安装配置cpolar" class="headerlink" title="1、安装配置cpolar"></a>1、安装配置cpolar</h2><ul>
-<li>通过Homebrew包管理器安装cpolar</li>
+            <h2 id="自动化构建方案"><a href="#自动化构建方案" class="headerlink" title="自动化构建方案"></a>自动化构建方案</h2><p>通过自动化手段 提高效率 可靠性</p>
+<p>构建工具： grunt webpack gulp vite rollup esbuild swc turbopack</p>
+<p>编译 测试 部署 区分环境</p>
+<h2 id="构建的整体设计思路"><a href="#构建的整体设计思路" class="headerlink" title="构建的整体设计思路"></a>构建的整体设计思路</h2><ul>
+<li><p>构建工具的选择</p>
+<p>实际业务触发</p>
+<ul>
+<li>UI rollup</li>
+<li>小型项目 vite</li>
+<li>大型项目 vite webpack</li>
+<li>swc swc-loader 对标 babel-loader &#x3D;&gt; ast</li>
 </ul>
-<div class="highlight-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">brew tap probezy/core &amp;&amp; brew install cpolar</span><br></pre></td></tr></table></figure></div>
+</li>
+<li><p>确定构建流程</p>
+<ul>
+<li>loader（解析 编译 文件处理）webpack 需要了解 基础</li>
+<li>plugin  增强 最后阶段进行输出 webpack</li>
+</ul>
+</li>
+<li><p>确定构建产物的输出</p>
+<ul>
+<li>分chunk输出 可以对内容进行按需加载</li>
+</ul>
+</li>
+<li><p>优化打包构建流程</p>
+<ul>
+<li>review构建过程 优化部分阶段</li>
+<li>怎么让打出来的包体积更小？</li>
+<li>tree shaking webpack 静态编译的时候<ul>
+<li>尽量减少commonjs库的使用，尽量使用esm的库？</li>
+</ul>
+</li>
+<li>按需加载（异步组件）把非首屏的组件异步出来</li>
+<li>配合缓存 splitChunks<ul>
+<li>不怎么变动的包打包到一起 vue pinia vue-router vrender.js<ul>
+<li>优势 减小入口js体积</li>
+<li>vender 利用缓存 无需跟新</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p>….</p>
+<ul>
+<li><p>externals 通过这种方式导入第三方资源</p>
+<ul>
+<li>微前端 引用公共资源</li>
+</ul>
+</li>
+<li><p>提升构建速度</p>
+<ul>
+<li>空间 时间<ul>
+<li>缓存 cache</li>
+<li>利用好计算机算力</li>
+<li>多线程打包 happy-pack thread-loader</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>构建的技术选型和方案</p>
+</li>
+<li><p>初始化工程</p>
+</li>
+<li><p>依赖盘点与安装</p>
+</li>
+<li><p>确定一些工程化脚本</p>
+</li>
+<li><p>start build</p>
+</li>
+<li><p>test lint type-check</p>
+</li>
+<li><p>基于git钩子 commit pre-commit</p>
+</li>
+<li><p>前端代码规范 确定代码规范 ts eslint spellcheck git flow 规范</p>
+<h2 id="插件"><a href="#插件" class="headerlink" title="插件"></a>插件</h2><p>tapbale 组织这条复杂的生产线</p>
+</li>
+<li><p>事件发布订阅机制</p>
+</li>
+<li><p>广播事件</p>
+<h3 id="tapbale"><a href="#tapbale" class="headerlink" title="tapbale"></a>tapbale</h3><div class="highlight-container" data-rel="Javascript"><figure class="iseeu highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 初始化钩子</span></span><br><span class="line"><span class="keyword">const</span> hook = <span class="keyword">new</span> <span class="title class_">SyncHook</span>([<span class="string">&#x27;compilation&#x27;</span>])</span><br></pre></td></tr></table></figure></div>
+</li>
+<li><p>事件注册</p>
+</li>
+</ul>
+<div class="highlight-container" data-rel="Javascript"><figure class="iseeu highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">hook.<span class="title function_">tap</span>(<span class="string">&quot;flag1&quot;</span>,<span class="function">(<span class="params">compilation</span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(compilation)</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></div>
 
 <ul>
-<li>token认证：在cpolar官网后台的验证初复制自己的token</li>
+<li>事件执行</li>
 </ul>
-<p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="https://raw.githubusercontent.com/YuZeZhang/myImgslib/main/202406232255851.png"
-                      alt="img"
-                ></p>
-<p>cpolar authtoken xxx</p>
-<p>         xxx处用复制的token代替</p>
-<ul>
-<li><p>安装cpolar服务</p>
-<div class="highlight-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo cpolar service install</span><br></pre></td></tr></table></figure></div></li>
-</ul>
-<h2 id="2、使用cpolar"><a href="#2、使用cpolar" class="headerlink" title="2、使用cpolar"></a>2、使用cpolar</h2><ul>
-<li><p>启动服务</p>
-<div class="highlight-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo cpolar service start</span><br></pre></td></tr></table></figure></div>
-</li>
-<li><p>cpolar web UI管理界面</p>
-<p> 访问本地9200端口【<a class="link"   target="_blank" rel="noopener" href="http://127.0.0.1:9200/%E3%80%91%EF%BC%8C%E4%BD%BF%E7%94%A8cpolar%E8%B4%A6%E5%8F%B7%E7%99%BB%E5%BD%95%E3%80%82" >http://127.0.0.1:9200/】，使用cpolar账号登录。 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
-</li>
-</ul>
-<p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="https://raw.githubusercontent.com/YuZeZhang/myImgslib/main/202406232257170.png"
-                      alt="img"
-                ></p>
-<p>         可在UI界面中查看自己的隧道信息 以及编辑、启动、停止和删除。其中状态列表下的的在线隧道列表显示了目前的公网地址和本地地址映射关系。</p>
-<p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="https://raw.githubusercontent.com/YuZeZhang/myImgslib/main/202406232257753.png"
-                      alt="img"
-                ></p>
-<ul>
-<li><p> 公网请求测试。</p>
-<p>     可借助APIFOX在线测试。官网地址：<a class="link"   target="_blank" rel="noopener" href="https://apifox.com/" >https://apifox.com <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
-</li>
-</ul>
-<p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="https://raw.githubusercontent.com/YuZeZhang/myImgslib/main/202406232258155.png"
-                      alt="img"
-                ></p>
-<p> 根据自己情况填写。示例中的接口地址为&#x2F;model</p>
-<p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="https://raw.githubusercontent.com/YuZeZhang/myImgslib/main/202406232258116.png"
-                      alt="img"
-                ></p>
-<p>        请求成功🎉 </p>
-<ul>
-<li> 停止服务</li>
-</ul>
-<div class="highlight-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo cpolar service stop</span><br></pre></td></tr></table></figure></div>
-
-<blockquote>
-<p>注意⚠️：停止后再启动，免费版的域名会发生变化需要重新设置，及时更新。 </p>
-</blockquote>
-<p>Reference：<a class="link"   target="_blank" rel="noopener" href="https://www.cpolar.com/blog/cpolar-quick-start-tutorial-macos-series" >https://www.cpolar.com/blog/cpolar-quick-start-tutorial-macos-series <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
+<p>call()</p>
+<h3 id="compilation"><a href="#compilation" class="headerlink" title="compilation"></a>compilation</h3><p>compilation 对象包含当前的模块资源 编译生成的资源 变化的文件</p>
+<p>compiler 包含 webpack所有配置信息 options loaders plugins全局唯一的</p>
+<p>compiler &#x3D;&gt; compilation</p>
 
         </div>
 
@@ -618,18 +635,33 @@
                     <div class="article-prev border-border-color shadow-redefine-flat shadow-shadow-color-2 rounded-medium px-4 py-2 hover:shadow-redefine-flat-hover hover:shadow-shadow-color-2">
                         <a class="prev"
                         rel="prev"
-                        href="/Yuyang/pnpm/"
+                        href="/undefined/autoTest/"
                         >
                             <span class="left arrow-icon flex justify-center items-center">
                                 <i class="fa-solid fa-chevron-left"></i>
                             </span>
                             <span class="title flex justify-center items-center">
-                                <span class="post-nav-title-item">node_modules困境以及pnpm</span>
+                                <span class="post-nav-title-item"></span>
                                 <span class="post-nav-item">上一篇</span>
                             </span>
                         </a>
                     </div>
                 
+                
+                    <div class="article-next border-border-color shadow-redefine-flat shadow-shadow-color-2 rounded-medium px-4 py-2 hover:shadow-redefine-flat-hover hover:shadow-shadow-color-2">
+                        <a class="next"
+                        rel="next"
+                        href="/Yuyang/reg/"
+                        >
+                            <span class="title flex justify-center items-center">
+                                <span class="post-nav-title-item">正则表达式</span>
+                                <span class="post-nav-item">下一篇</span>
+                            </span>
+                            <span class="right arrow-icon flex justify-center items-center">
+                                <i class="fa-solid fa-chevron-right"></i>
+                            </span>
+                        </a>
+                    </div>
                 
             </div>
         
@@ -643,8 +675,8 @@
             <div class="post-toc-wrap">
     <div class="post-toc">
         <div class="toc-title">此页目录</div>
-        <div class="page-title">MAC 内网穿透 cpolar</div>
-        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1%E3%80%81%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AEcpolar"><span class="nav-text">1、安装配置cpolar</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2%E3%80%81%E4%BD%BF%E7%94%A8cpolar"><span class="nav-text">2、使用cpolar</span></a></li></ol>
+        <div class="page-title">自动化</div>
+        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%87%AA%E5%8A%A8%E5%8C%96%E6%9E%84%E5%BB%BA%E6%96%B9%E6%A1%88"><span class="nav-text">自动化构建方案</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9E%84%E5%BB%BA%E7%9A%84%E6%95%B4%E4%BD%93%E8%AE%BE%E8%AE%A1%E6%80%9D%E8%B7%AF"><span class="nav-text">构建的整体设计思路</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%8F%92%E4%BB%B6"><span class="nav-text">插件</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#tapbale"><span class="nav-text">tapbale</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#compilation"><span class="nav-text">compilation</span></a></li></ol></li></ol>
 
     </div>
 </div>

@@ -514,8 +514,8 @@
 <p>那 pnpm 是怎么解决这俩问题的呢？</p>
 <h2 id="pnpm"><a href="#pnpm" class="headerlink" title="pnpm"></a>pnpm</h2><p><strong>pnpm：</strong>是一个更新的包管理工具，旨在提供比 npm 和 Yarn 更好的磁盘空间效率和更快的安装速度。</p>
 <p>pnpm 通过使用软硬链接解决这个问题。</p>
-<p>软链接：</p>
-<p>硬链接：</p>
+<p>软链接：软链接是一个指向文件路径的引用。</p>
+<p>硬链接：硬链接是一个指向文件数据的直接引用。</p>
 <p>这样不会有复制多次的磁盘空间浪费，而且也不会有路径过长的问题。因为路径过长的限制本质上是不能有太深的目录层级，现在都是各个位置的目录的 link，并不是同一个目录，所以也不会有长度限制。</p>
 <p>没错，pnpm 就是通过这种思路来实现的。</p>
 <p>再把 node_modules 删掉，然后用 pnpm 重新装一遍，执行 pnpm install。</p>
@@ -665,6 +665,589 @@
 <p>较为标准的针对模块曝光的定义：窗口可视区域内 &amp;&amp; 组件矩形与视窗区域发生交集 &amp;&amp; 交集垂线距离 &gt;&#x3D; 1px &amp;&amp; 停留时间 &gt;&#x3D; XXms</p>
 <p>Reference：<a class="link"   href="https://juejin.cn/post/7324334380373426227?searchId=202406242342178A14CCB0DE15106BCCCB" >https://juejin.cn/post/7324334380373426227?searchId=202406242342178A14CCB0DE15106BCCCB <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
 <p>备注：近几个月来看到👀过质量最高的文章！学到了！</p>
+]]></content>
+  </entry>
+  <entry>
+    <title>AST-抽象语法树</title>
+    <url>/Yuyang/ast/</url>
+    <content><![CDATA[<h2 id="编译器的底层原理-AST"><a href="#编译器的底层原理-AST" class="headerlink" title="编译器的底层原理 AST"></a>编译器的底层原理 AST</h2><p>编译器介绍：它会将用某种编程语言写成的源代码，转换成另一种编程语言。编译器（compiler）是一种用于将源代码（通常是高级编程语言编写的代码）翻译成目标代码（如机器语言或中间代码）的软件工具。目标代码通常可以直接在计算机上执行，或者在特定的运行环境中执行。编译器的主要目的是使程序员编写的源代码能够在计算机硬件上运行。</p>
+<h2 id="编译器实现的思路"><a href="#编译器实现的思路" class="headerlink" title="编译器实现的思路"></a>编译器实现的思路</h2><p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://raw.githubusercontent.com/YuZeZhang/myImgslib/main/202407142153107.png"
+                      alt="image-20240714215346889"
+                ></p>
+<h3 id="Parsing"><a href="#Parsing" class="headerlink" title="Parsing"></a>Parsing</h3><p>这一部分主要实现的功能是将源码转换为抽象语法树</p>
+<p>解析通常分为两个阶段：词法分析（Lexical Analysis）和语法分析（Syntactic Analysis）。</p>
+<ol>
+<li><p><strong>词法分析</strong> 将原始代码拆分成称为标记（tokens）的部分，这个过程由一个称为分词器（tokenizer）或词法分析器（lexer）的东西完成。</p>
+<p>标记是描述语法中独立部分的小对象的数组。它们可以是数字、标签、标点符号、操作符等。</p>
+</li>
+<li><p><strong>语法分析</strong> 将标记重新格式化为描述语法各部分及其相互关系的表示形式。这被称为中间表示或抽象语法树（AST）。</p>
+<p>抽象语法树（AST）是一个深度嵌套的对象，它以一种易于处理并包含大量信息的方式表示代码。</p>
+</li>
+</ol>
+<p>对于以下语法：</p>
+<p>  <code>(add 2 (subtract 4 2))</code></p>
+<p>Tokens应该是这样的这样：</p>
+  <div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="code"><pre><span class="line">[</span><br><span class="line">  &#123; type: &#x27;paren&#x27;,  value: &#x27;(&#x27;        &#125;,</span><br><span class="line">  &#123; type: &#x27;name&#x27;,   value: &#x27;add&#x27;      &#125;,</span><br><span class="line">  &#123; type: &#x27;number&#x27;, value: &#x27;2&#x27;        &#125;,</span><br><span class="line">  &#123; type: &#x27;paren&#x27;,  value: &#x27;(&#x27;        &#125;,</span><br><span class="line">  &#123; type: &#x27;name&#x27;,   value: &#x27;subtract&#x27; &#125;,</span><br><span class="line">  &#123; type: &#x27;number&#x27;, value: &#x27;4&#x27;        &#125;,</span><br><span class="line">  &#123; type: &#x27;number&#x27;, value: &#x27;2&#x27;        &#125;,</span><br><span class="line">  &#123; type: &#x27;paren&#x27;,  value: &#x27;)&#x27;        &#125;,</span><br><span class="line">  &#123; type: &#x27;paren&#x27;,  value: &#x27;)&#x27;        &#125;,</span><br><span class="line">]</span><br></pre></td></tr></table></figure></div>
+
+<p>而抽象语法树（AST）可能看起来像这样：</p>
+  <div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  type: &#x27;Program&#x27;,</span><br><span class="line">  body: [&#123;</span><br><span class="line">    type: &#x27;CallExpression&#x27;,</span><br><span class="line">    name: &#x27;add&#x27;,</span><br><span class="line">    params: [&#123;</span><br><span class="line">      type: &#x27;NumberLiteral&#x27;,</span><br><span class="line">      value: &#x27;2&#x27;,</span><br><span class="line">    &#125;, &#123;</span><br><span class="line">      type: &#x27;CallExpression&#x27;,</span><br><span class="line">      name: &#x27;subtract&#x27;,</span><br><span class="line">      params: [&#123;</span><br><span class="line">        type: &#x27;NumberLiteral&#x27;,</span><br><span class="line">        value: &#x27;4&#x27;,</span><br><span class="line">      &#125;, &#123;</span><br><span class="line">        type: &#x27;NumberLiteral&#x27;,</span><br><span class="line">        value: &#x27;2&#x27;,</span><br><span class="line">      &#125;]</span><br><span class="line">    &#125;]</span><br><span class="line">  &#125;]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+
+<h3 id="Transformation"><a href="#Transformation" class="headerlink" title="Transformation"></a>Transformation</h3><p>这一部分主要实现的功能是对初始的抽象语法树进行操作使其变成我们所期望的抽象语法树。</p>
+<p>同样，这个阶段只是接收上一步生成的AST并对其进行更改。它可以在相同的语言中操作AST，也可以将其转换为完全新的语言。</p>
+<p>让我们看看如何转换一个AST。</p>
+<p>你可能会注意到，我们的AST中有一些看起来非常相似的元素。这些对象都有一个type属性。每个这样的对象都被称为AST节点。这些节点上有定义的属性，用来描述树的一个独立部分。</p>
+<p>我们可以有一个表示“NumberLiteral”（数字字面量）的节点：</p>
+<div class="highlight-container" data-rel="Javascript"><figure class="iseeu highlight javascript"><table><tr><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="attr">type</span>: <span class="string">&#x27;NumberLiteral&#x27;</span>,</span><br><span class="line">  <span class="attr">value</span>: <span class="string">&#x27;2&#x27;</span>,</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+
+<p>或者一个表示“CallExpression”（调用表达式）的节点：</p>
+<div class="highlight-container" data-rel="Javascript"><figure class="iseeu highlight javascript"><table><tr><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="attr">type</span>: <span class="string">&#x27;CallExpression&#x27;</span>,</span><br><span class="line">  <span class="attr">name</span>: <span class="string">&#x27;subtract&#x27;</span>,</span><br><span class="line">  <span class="attr">params</span>: [...嵌套节点在这里...],</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+
+<p>在转换AST时，我们可以通过添加&#x2F;移除&#x2F;替换属性来操作节点，我们可以添加新节点，移除节点，或者保留现有的AST不变，基于它创建一个全新的AST。</p>
+<p>由于我们目标是一种新语言，因此我们将专注于创建一个特定于目标语言的全新AST。</p>
+<h3 id="Code-Generation"><a href="#Code-Generation" class="headerlink" title="Code Generation"></a>Code Generation</h3><p>将新的语法树转换成新的代码</p>
+]]></content>
+  </entry>
+  <entry>
+    <title>自动化</title>
+    <url>/Yuyang/autoBuild/</url>
+    <content><![CDATA[<h2 id="自动化构建方案"><a href="#自动化构建方案" class="headerlink" title="自动化构建方案"></a>自动化构建方案</h2><p>通过自动化手段 提高效率 可靠性</p>
+<p>构建工具： grunt webpack gulp vite rollup esbuild swc turbopack</p>
+<p>编译 测试 部署 区分环境</p>
+<h2 id="构建的整体设计思路"><a href="#构建的整体设计思路" class="headerlink" title="构建的整体设计思路"></a>构建的整体设计思路</h2><ul>
+<li><p>构建工具的选择</p>
+<p>实际业务触发</p>
+<ul>
+<li>UI rollup</li>
+<li>小型项目 vite</li>
+<li>大型项目 vite webpack</li>
+<li>swc swc-loader 对标 babel-loader &#x3D;&gt; ast</li>
+</ul>
+</li>
+<li><p>确定构建流程</p>
+<ul>
+<li>loader（解析 编译 文件处理）webpack 需要了解 基础</li>
+<li>plugin  增强 最后阶段进行输出 webpack</li>
+</ul>
+</li>
+<li><p>确定构建产物的输出</p>
+<ul>
+<li>分chunk输出 可以对内容进行按需加载</li>
+</ul>
+</li>
+<li><p>优化打包构建流程</p>
+<ul>
+<li>review构建过程 优化部分阶段</li>
+<li>怎么让打出来的包体积更小？</li>
+<li>tree shaking webpack 静态编译的时候<ul>
+<li>尽量减少commonjs库的使用，尽量使用esm的库？</li>
+</ul>
+</li>
+<li>按需加载（异步组件）把非首屏的组件异步出来</li>
+<li>配合缓存 splitChunks<ul>
+<li>不怎么变动的包打包到一起 vue pinia vue-router vrender.js<ul>
+<li>优势 减小入口js体积</li>
+<li>vender 利用缓存 无需跟新</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p>….</p>
+<ul>
+<li><p>externals 通过这种方式导入第三方资源</p>
+<ul>
+<li>微前端 引用公共资源</li>
+</ul>
+</li>
+<li><p>提升构建速度</p>
+<ul>
+<li>空间 时间<ul>
+<li>缓存 cache</li>
+<li>利用好计算机算力</li>
+<li>多线程打包 happy-pack thread-loader</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>构建的技术选型和方案</p>
+</li>
+<li><p>初始化工程</p>
+</li>
+<li><p>依赖盘点与安装</p>
+</li>
+<li><p>确定一些工程化脚本</p>
+</li>
+<li><p>start build</p>
+</li>
+<li><p>test lint type-check</p>
+</li>
+<li><p>基于git钩子 commit pre-commit</p>
+</li>
+<li><p>前端代码规范 确定代码规范 ts eslint spellcheck git flow 规范</p>
+<h2 id="插件"><a href="#插件" class="headerlink" title="插件"></a>插件</h2><p>tapbale 组织这条复杂的生产线</p>
+</li>
+<li><p>事件发布订阅机制</p>
+</li>
+<li><p>广播事件</p>
+<h3 id="tapbale"><a href="#tapbale" class="headerlink" title="tapbale"></a>tapbale</h3><div class="highlight-container" data-rel="Javascript"><figure class="iseeu highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 初始化钩子</span></span><br><span class="line"><span class="keyword">const</span> hook = <span class="keyword">new</span> <span class="title class_">SyncHook</span>([<span class="string">&#x27;compilation&#x27;</span>])</span><br></pre></td></tr></table></figure></div>
+</li>
+<li><p>事件注册</p>
+</li>
+</ul>
+<div class="highlight-container" data-rel="Javascript"><figure class="iseeu highlight javascript"><table><tr><td class="code"><pre><span class="line">hook.<span class="title function_">tap</span>(<span class="string">&quot;flag1&quot;</span>,<span class="function">(<span class="params">compilation</span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(compilation)</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></div>
+
+<ul>
+<li>事件执行</li>
+</ul>
+<p>call()</p>
+<h3 id="compilation"><a href="#compilation" class="headerlink" title="compilation"></a>compilation</h3><p>compilation 对象包含当前的模块资源 编译生成的资源 变化的文件</p>
+<p>compiler 包含 webpack所有配置信息 options loaders plugins全局唯一的</p>
+<p>compiler &#x3D;&gt; compilation</p>
+]]></content>
+  </entry>
+  <entry>
+    <title></title>
+    <url>/undefined/autoTest/</url>
+    <content><![CDATA[<h4 id="title-自动化测试"><a href="#title-自动化测试" class="headerlink" title="title: 自动化测试"></a>title: 自动化测试</h4><p>author: Yuyang</p>
+<h2 id="自动化测试与技术选型"><a href="#自动化测试与技术选型" class="headerlink" title="自动化测试与技术选型"></a>自动化测试与技术选型</h2><h3 id="认识并使用jest"><a href="#认识并使用jest" class="headerlink" title="认识并使用jest"></a>认识并使用jest</h3><h3 id="e2e测试"><a href="#e2e测试" class="headerlink" title="e2e测试"></a>e2e测试</h3><h3 id="devops"><a href="#devops" class="headerlink" title="devops"></a>devops</h3><h3 id="自动化测试"><a href="#自动化测试" class="headerlink" title="自动化测试"></a>自动化测试</h3><h4 id="为什么需要测试"><a href="#为什么需要测试" class="headerlink" title="为什么需要测试"></a>为什么需要测试</h4><p>让程序稳定健壮，提高代码质量，减少bug，提高开发效率。</p>
+<ul>
+<li>频繁变动的需求</li>
+<li>人力成本</li>
+<li>不太重视</li>
+</ul>
+<h4 id="什么时候-或者什么场景需要考虑自动化测试"><a href="#什么时候-或者什么场景需要考虑自动化测试" class="headerlink" title="什么时候 或者什么场景需要考虑自动化测试"></a>什么时候 或者什么场景需要考虑自动化测试</h4><ul>
+<li>公共库项目开发维护 vue react babel</li>
+<li>中长期项目</li>
+<li>需求趋于稳定后的系统</li>
+</ul>
+<h4 id="测试类型"><a href="#测试类型" class="headerlink" title="测试类型"></a>测试类型</h4><ul>
+<li>单元测试 Unit Test 小的功能的测试 Jest @vue&#x2F;test-utils Mocha</li>
+<li>集成测试 Integration Test 小的模块测试</li>
+<li>端到端测试 End-to-End Test 从页面出发去测试一些功能</li>
+<li>E2E测试 End-to-End Test (UI+接口) puppeteer</li>
+</ul>
+<p>断言库 Assert</p>
+<h2 id="单元测试原理"><a href="#单元测试原理" class="headerlink" title="单元测试原理"></a>单元测试原理</h2><p>通过一些测试用例 来编写测试代码 保证测试用例通过</p>
+<div class="highlight-container" data-rel="Javascript"><figure class="iseeu highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> chalk = <span class="built_in">require</span>(<span class="string">&#x27;chalk&#x27;</span>)</span><br><span class="line"><span class="comment">// import chalk from &#x27;chalk&#x27;</span></span><br><span class="line"><span class="comment">// 描述测试场景</span></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">describe</span>(<span class="params">desc, fn</span>) &#123;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(chalk.<span class="title function_">green</span>(desc))</span><br><span class="line">  <span class="title function_">fn</span>()</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 单元测试的测试描述</span></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">it</span>(<span class="params">desc, fn</span>) &#123;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(chalk.<span class="title function_">yellow</span>(desc))</span><br><span class="line">  <span class="title function_">fn</span>()</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 断言</span></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">expect</span>(<span class="params">result</span>) &#123;</span><br><span class="line">  <span class="keyword">return</span> &#123;</span><br><span class="line">    <span class="title function_">toBe</span>(<span class="params">actual</span>) &#123;</span><br><span class="line">      <span class="keyword">if</span> (result != actual) &#123;</span><br><span class="line">        <span class="variable language_">console</span>.<span class="title function_">log</span>(chalk.<span class="title function_">red</span>(<span class="string">&#x27;FAIL&#x27;</span>, result, actual))</span><br><span class="line">        <span class="keyword">throw</span> <span class="keyword">new</span> <span class="title class_">Error</span>(<span class="string">`预期值和实际值不相等，预期<span class="subst">$&#123;actual&#125;</span>,实际是<span class="subst">$&#123;result&#125;</span>`</span>)</span><br><span class="line">      &#125;</span><br><span class="line">      <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;success&#x27;</span>, result, actual)</span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="title function_">toEqual</span>(<span class="params">actual</span>) &#123;</span><br><span class="line">      <span class="comment">//   if (result != actual) &#123;</span></span><br><span class="line">      <span class="comment">//     console.log(chalk.red(&#x27;FAIL&#x27;, result, actual))</span></span><br><span class="line">      <span class="comment">//     throw new Error(`预期值和实际值不相等，预期$&#123;actual&#125;,实际是$&#123;result&#125;`)</span></span><br><span class="line">      <span class="comment">//   &#125;</span></span><br><span class="line">      <span class="comment">//   console.log(&#x27;success&#x27;, result, actual)</span></span><br><span class="line">    &#125;,</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="variable language_">module</span>.<span class="property">exports</span> = &#123;</span><br><span class="line">  describe,</span><br><span class="line">  it,</span><br><span class="line">  expect,</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure></div>
+
+<div class="highlight-container" data-rel="Javascript"><figure class="iseeu highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> &#123; expect, describe, it &#125; = <span class="built_in">require</span>(<span class="string">&quot;./test&quot;</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">sum</span>(<span class="params">a, b</span>) &#123;</span><br><span class="line">  <span class="keyword">return</span> a + b;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="title function_">describe</span>(<span class="string">&quot;用来测试sum函数&quot;</span>, <span class="function">() =&gt;</span> &#123;</span><br><span class="line">    <span class="title function_">it</span>(<span class="string">&quot;1 + 1 = 2&quot;</span>, <span class="function">() =&gt;</span> &#123;</span><br><span class="line">        <span class="title function_">expect</span>(<span class="title function_">sum</span>(<span class="number">1</span>, <span class="number">1</span>)).<span class="title function_">toBe</span>(<span class="number">2</span>);</span><br><span class="line">    &#125;);</span><br><span class="line">    <span class="title function_">it</span>(<span class="string">&quot;1 + 2 = 3&quot;</span>, <span class="function">() =&gt;</span> &#123;</span><br><span class="line">        <span class="title function_">expect</span>(<span class="title function_">sum</span>(<span class="number">1</span>, <span class="number">2</span>)).<span class="title function_">toBe</span>(<span class="number">3</span>);</span><br><span class="line">    &#125;);</span><br><span class="line">    <span class="title function_">it</span>(<span class="string">&quot;2 + 3 = 5&quot;</span>, <span class="function">() =&gt;</span> &#123;</span><br><span class="line">        <span class="title function_">expect</span>(<span class="title function_">sum</span>(<span class="number">2</span>, <span class="number">3</span>)).<span class="title function_">toBe</span>(<span class="number">5</span>);</span><br><span class="line">    &#125;);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure></div>
+
+<h3 id="JEST"><a href="#JEST" class="headerlink" title="JEST"></a>JEST</h3><ul>
+<li>快照测试</li>
+<li>测试覆盖率</li>
+<li>基本使用<ul>
+<li>基本方法测试</li>
+</ul>
+</li>
+</ul>
+<h4 id="常用的API"><a href="#常用的API" class="headerlink" title="常用的API"></a>常用的API</h4><ul>
+<li>describe 将多个相关的测试进行组合 组合到一块</li>
+<li>it </li>
+<li>expect 断言</li>
+</ul>
+<h4 id="生命周期"><a href="#生命周期" class="headerlink" title="生命周期"></a>生命周期</h4><ul>
+<li>beforeAll 所有用例执行前调用</li>
+<li>beforeEach 每个测试用例执行前调用</li>
+<li>after All 执行结束后调用</li>
+<li>afterEach 每个执行后调用</li>
+</ul>
+<h4 id="断言钩子"><a href="#断言钩子" class="headerlink" title="断言钩子"></a>断言钩子</h4><ul>
+<li>toBe 严格比对 &#x3D;&#x3D;&#x3D; 内存空间都是一致的</li>
+<li>toEqual 值比对 对象 递归遍历 比对值</li>
+</ul>
+<h4 id="快照测试"><a href="#快照测试" class="headerlink" title="快照测试"></a>快照测试</h4><p>确保UI不会有意外的改变</p>
+<h4 id="测试覆盖率"><a href="#测试覆盖率" class="headerlink" title="测试覆盖率"></a>测试覆盖率</h4><ul>
+<li>stmts 语句覆盖率</li>
+<li>branch 是否执行了每个分支</li>
+<li>funcs 函数覆盖率</li>
+<li>lines 是否执行每一行代码</li>
+</ul>
+<h2 id="E2E测试"><a href="#E2E测试" class="headerlink" title="E2E测试"></a>E2E测试</h2><p>puppeteer 无头浏览器</p>
+<p>cypress</p>
+<h3 id="puppeteer"><a href="#puppeteer" class="headerlink" title="puppeteer"></a>puppeteer</h3><p>node库 chrome</p>
+<p>在node环境下面对浏览器行为进行控制</p>
+<ul>
+<li>生成页面快照 图片 pdf</li>
+<li>抓取spa</li>
+<li>从网站上抓取需要的内容</li>
+<li>自动表单提交 UI 测试 键盘输入</li>
+<li>测试chrome扩展</li>
+<li>抓取应用的性能数据</li>
+</ul>
+<h4 id="技术点"><a href="#技术点" class="headerlink" title="技术点"></a>技术点</h4><ul>
+<li>browser 浏览器实例</li>
+<li>page页面</li>
+<li>executionContext js执行环境</li>
+<li>elementhandle 对应dom的元素借点</li>
+<li>jshandler js对象</li>
+</ul>
+<h4 id="测试场景"><a href="#测试场景" class="headerlink" title="测试场景"></a>测试场景</h4><ul>
+<li>表单输入 用户名 密码 提交 页面跳转</li>
+<li>体验优化 生成骨架屏 直接使用对应的页面截图</li>
+</ul>
+<p>puppteer 制定一些规则 img 灰色代码块替换</p>
+<h4 id="CI-CD"><a href="#CI-CD" class="headerlink" title="CI&#x2F;CD"></a>CI&#x2F;CD</h4><p>工程化 &#x3D;&gt; 研发工作台 &#x3D;&gt; 管理维护 发布 运维</p>
+<p>ci </p>
+<p>构建 &#x3D;&gt; 生成最终构建产物</p>
+<p>Test &#x3D;&gt; 保证产物健壮性</p>
+<p>cd</p>
+<p>最后阶段 &#x3D;&gt; 发布到对应的环境上 &#x3D;&gt; 线上服务器 nginx</p>
+<h4 id="git-action-自动化部署"><a href="#git-action-自动化部署" class="headerlink" title="git action 自动化部署"></a>git action 自动化部署</h4><p>workflow 工作流程</p>
+<ul>
+<li><p>配置文件</p>
+</li>
+<li><p>   .github&#x2F;workflows</p>
+</li>
+<li><p>   xxx.yml</p>
+<ul>
+<li>   name workflow名称</li>
+<li>   on:[push pull_request]</li>
+</ul>
+</li>
+<li><p>job 任务 可以配置一项或者多项任务</p>
+<ul>
+<li>name 名称 任务说明</li>
+<li>needs 运行顺序<ul>
+<li>jobs:<ul>
+<li>job1:</li>
+<li>job2:<ul>
+<li>needs: job1</li>
+</ul>
+</li>
+<li><h2 id="job3-needs-job1-job2-runs-on-ubuntuxx"><a href="#job3-needs-job1-job2-runs-on-ubuntuxx" class="headerlink" title="job3:- needs: [job1, job2]  - runs-on: ubuntuxx"></a>job3:<br>- needs: [job1, job2]<br>  - runs-on: ubuntuxx</h2></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>step 步骤</p>
+<ul>
+<li>name 步骤名称</li>
+<li>run 执行的命令 action</li>
+<li>env 环境变量</li>
+</ul>
+</li>
+<li><p>action 动作</p>
+</li>
+</ul>
+]]></content>
+  </entry>
+  <entry>
+    <title>前端工程化</title>
+    <url>/Yuyang/engineering/</url>
+    <content><![CDATA[<h1 id="前端工程化讲解-包管理工具"><a href="#前端工程化讲解-包管理工具" class="headerlink" title="前端工程化讲解&amp;包管理工具"></a>前端工程化讲解&amp;包管理工具</h1><h2 id="工程化体系"><a href="#工程化体系" class="headerlink" title="工程化体系"></a>工程化体系</h2><p>前端工程化： 前端+软件工程</p>
+<p>整个前端的研发周期当中 我们可以干预的行为</p>
+<h3 id="前端工程化开展"><a href="#前端工程化开展" class="headerlink" title="前端工程化开展"></a>前端工程化开展</h3><ul>
+<li>模块化：模块复用</li>
+<li>自动化：CI&#x2F;CD 研发平台</li>
+<li>智能化：AI code</li>
+</ul>
+<h3 id="脚手架能力"><a href="#脚手架能力" class="headerlink" title="脚手架能力"></a>脚手架能力</h3><p>通过更多的规范 约束开发人员的研发流程</p>
+<p>狭义：命令行<br>广义：约束</p>
+<p>准备阶段：</p>
+<ul>
+<li>需求</li>
+<li>技术选型</li>
+<li>代码规范<ul>
+<li>lint 规范</li>
+</ul>
+</li>
+<li>生态规范<ul>
+<li>UI库</li>
+<li>静态站点 npm github readme types</li>
+</ul>
+</li>
+<li>三方规范<ul>
+<li>npm 发布</li>
+<li>github ci cd</li>
+</ul>
+</li>
+</ul>
+<h4 id="开发阶段"><a href="#开发阶段" class="headerlink" title="开发阶段"></a>开发阶段</h4><p>确定规范内容<br>规范 eslint md stylelint</p>
+<p>测试</p>
+<ul>
+<li>单元测试</li>
+<li>e2e测试</li>
+</ul>
+<h3 id="打包流程"><a href="#打包流程" class="headerlink" title="打包流程"></a>打包流程</h3><ul>
+<li>webpack</li>
+<li>rollup</li>
+<li>vite</li>
+</ul>
+<h3 id="体验度量"><a href="#体验度量" class="headerlink" title="体验度量"></a>体验度量</h3><p>定义一些指标 衡量当前系统好不好用</p>
+<p>埋点：用户行为统计<br>perfomance：性能指标</p>
+<h3 id="研发效能流程"><a href="#研发效能流程" class="headerlink" title="研发效能流程"></a>研发效能流程</h3><h3 id="稳定性建设"><a href="#稳定性建设" class="headerlink" title="稳定性建设"></a>稳定性建设</h3><p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://raw.githubusercontent.com/YuZeZhang/myImgslib/main/202407220023631.png"
+                      alt="image-20240722002317481"
+                ></p>
+<p>pdd:<br>高端机 2s &#x3D;&gt; 0.8s<br>0.5s<br>低端机 1.2s</p>
+<h2 id="npm包"><a href="#npm包" class="headerlink" title="npm包"></a>npm包</h2><p>查看包版本 npm view xxx</p>
+<p>peerDependencies<br>基础包约束依赖包版本</p>
+<h3 id="打包工具对比"><a href="#打包工具对比" class="headerlink" title="打包工具对比"></a>打包工具对比</h3><p>yarn npm</p>
+<ul>
+<li>问题？</li>
+<li>慢</li>
+<li>体积大</li>
+</ul>
+<p>pnpm 推荐</p>
+<ul>
+<li>快</li>
+<li>体积小</li>
+</ul>
+<h3 id="前端仓库管理对比"><a href="#前端仓库管理对比" class="headerlink" title="前端仓库管理对比"></a>前端仓库管理对比</h3><ul>
+<li>Multirepo</li>
+<li>Monorepo</li>
+</ul>
+]]></content>
+  </entry>
+  <entry>
+    <title>JS模块化</title>
+    <url>/Yuyang/jsModule/</url>
+    <content><![CDATA[<p>JS模块化</p>
+<h2 id="模块化的理解"><a href="#模块化的理解" class="headerlink" title="模块化的理解"></a>模块化的理解</h2><p>模块化主要解决两个问题：命名冲突和文件依赖。</p>
+<div class="highlight-container" data-rel="Js"><figure class="iseeu highlight js"><table><tr><td class="code"><pre><span class="line"> 生态             诞生时间</span><br><span class="line"> <span class="title class_">CommonJS</span>         <span class="number">2009</span>年</span><br><span class="line"> <span class="title class_">Node</span>.<span class="property">js</span>          <span class="number">2009</span>年   </span><br><span class="line"> <span class="variable constant_">NPM</span>              <span class="number">2010</span>年   </span><br><span class="line"> requireJS(<span class="variable constant_">AMD</span>)   <span class="number">2010</span>年	异步模块定义 <span class="keyword">async</span> <span class="variable language_">module</span> definition</span><br><span class="line"> <span class="title function_">seaJS</span>(<span class="variable constant_">CMD</span>)       <span class="number">2011</span>年	common <span class="variable language_">module</span> define</span><br><span class="line"> broswerify       <span class="number">2011</span>年</span><br><span class="line"> webpack          <span class="number">2012</span>年</span><br><span class="line"> grunt            <span class="number">2012</span>年 </span><br><span class="line"> gulp             <span class="number">2013</span>年</span><br><span class="line"> react            <span class="number">2013</span>年 </span><br><span class="line"> vue              <span class="number">2014</span>年</span><br><span class="line"> <span class="title class_">ES6</span>(<span class="title class_">Module</span>)      <span class="number">2015</span>年</span><br><span class="line"> angular          <span class="number">2016</span>年</span><br><span class="line"> redux            <span class="number">2015</span>年 </span><br><span class="line"> vite             <span class="number">2020</span>年</span><br><span class="line"> snowpack         <span class="number">2020</span>年  </span><br><span class="line">跨端 rollup truopack</span><br></pre></td></tr></table></figure></div>
+
+<h2 id="模块化的进程"><a href="#模块化的进程" class="headerlink" title="模块化的进程"></a>模块化的进程</h2><h3 id="全局function模式"><a href="#全局function模式" class="headerlink" title="全局function模式"></a>全局function模式</h3><p>将不同的功能封装成不同的全局函数<br>问题：污染全局命名空间，容易引起命名冲突</p>
+<div class="highlight-container" data-rel="Js"><figure class="iseeu highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">m1</span>(<span class="params"></span>)&#123;</span><br><span class="line">  <span class="comment">//...</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">function</span> <span class="title function_">m2</span>(<span class="params"></span>)&#123;</span><br><span class="line">  <span class="comment">//...</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+
+<h3 id="namespace模式"><a href="#namespace模式" class="headerlink" title="namespace模式"></a>namespace模式</h3><p>简单对象封装<br>作用：减少了全局变量，解决命名冲突<br>问题：数据不安全(外部可以直接修改模块内部的数据)</p>
+<div class="highlight-container" data-rel="Js"><figure class="iseeu highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">let</span> myModule = &#123;</span><br><span class="line">  <span class="attr">data</span>: <span class="string">&#x27;www.baidu.com&#x27;</span>,</span><br><span class="line">  <span class="title function_">foo</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">`foo() <span class="subst">$&#123;<span class="variable language_">this</span>.data&#125;</span>`</span>)</span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="title function_">bar</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">`bar() <span class="subst">$&#123;<span class="variable language_">this</span>.data&#125;</span>`</span>)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line">myModule.<span class="property">data</span> = <span class="string">&#x27;other data&#x27;</span> <span class="comment">//能直接修改模块内部的数据</span></span><br><span class="line">myModule.<span class="title function_">foo</span>() <span class="comment">// foo() other data</span></span><br></pre></td></tr></table></figure></div>
+
+
+<h3 id="IIFE模式"><a href="#IIFE模式" class="headerlink" title="IIFE模式"></a>IIFE模式</h3><p>immediately-invoked function expression 匿名函数自调用(闭包)<br>作用：数据是私有的, 外部只能通过暴露的方法操作。将数据和行为封装到一个函数内部, 通过给window添加属性来向外暴露接口<br>问题：如果当前这个模块依赖另一个模块怎么办?</p>
+<div class="highlight-container" data-rel="Js"><figure class="iseeu highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// index.html文件</span></span><br><span class="line">&lt;script type=<span class="string">&quot;text/javascript&quot;</span> src=<span class="string">&quot;module.js&quot;</span>&gt;&lt;/script&gt;</span><br><span class="line"><span class="language-xml"><span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">&quot;text/javascript&quot;</span>&gt;</span><span class="language-javascript"></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    myModule.<span class="title function_">foo</span>()</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    myModule.<span class="title function_">bar</span>()</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    <span class="variable language_">console</span>.<span class="title function_">log</span>(myModule.<span class="property">data</span>) <span class="comment">//undefined 不能访问模块内部数据</span></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    myModule.<span class="property">data</span> = <span class="string">&#x27;xxxx&#x27;</span> <span class="comment">//不是修改的模块内部的data</span></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    myModule.<span class="title function_">foo</span>() <span class="comment">//没有改变</span></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="comment">// module.js文件</span></span><br><span class="line">(<span class="keyword">function</span>(<span class="params"><span class="variable language_">window</span></span>) &#123;</span><br><span class="line">  <span class="keyword">let</span> data = <span class="string">&#x27;www.baidu.com&#x27;</span></span><br><span class="line">  <span class="comment">//操作数据的函数</span></span><br><span class="line">  <span class="keyword">function</span> <span class="title function_">foo</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="comment">//用于暴露有函数</span></span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">`foo() <span class="subst">$&#123;data&#125;</span>`</span>)</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">function</span> <span class="title function_">bar</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="comment">//用于暴露有函数</span></span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">`bar() <span class="subst">$&#123;data&#125;</span>`</span>)</span><br><span class="line">    <span class="title function_">otherFun</span>() <span class="comment">//内部调用</span></span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">function</span> <span class="title function_">otherFun</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="comment">//内部私有的函数</span></span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;otherFun()&#x27;</span>)</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="comment">//暴露行为</span></span><br><span class="line">  <span class="variable language_">window</span>.<span class="property">myModule</span> = &#123; foo, bar &#125; <span class="comment">//ES6写法</span></span><br><span class="line">&#125;)(<span class="variable language_">window</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">// foo() www.baidu.com</span></span><br><span class="line"><span class="comment">// bar() www.baidu.com</span></span><br><span class="line"><span class="comment">// otehrFun()</span></span><br><span class="line"><span class="comment">// undefined</span></span><br><span class="line"><span class="comment">// foo() www.baidu.com</span></span><br></pre></td></tr></table></figure></div>
+
+<h3 id="IIFE模式增强"><a href="#IIFE模式增强" class="headerlink" title="IIFE模式增强"></a>IIFE模式增强</h3><div class="highlight-container" data-rel="Js"><figure class="iseeu highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// module.js文件</span></span><br><span class="line">(<span class="keyword">function</span>(<span class="params"><span class="variable language_">window</span>, $</span>) &#123;</span><br><span class="line">  <span class="keyword">let</span> data = <span class="string">&#x27;www.baidu.com&#x27;</span></span><br><span class="line">  <span class="comment">//操作数据的函数</span></span><br><span class="line">  <span class="keyword">function</span> <span class="title function_">foo</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="comment">//用于暴露有函数</span></span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">`foo() <span class="subst">$&#123;data&#125;</span>`</span>)</span><br><span class="line">    $(<span class="string">&#x27;body&#x27;</span>).<span class="title function_">css</span>(<span class="string">&#x27;background&#x27;</span>, <span class="string">&#x27;red&#x27;</span>)</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">function</span> <span class="title function_">bar</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="comment">//用于暴露有函数</span></span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">`bar() <span class="subst">$&#123;data&#125;</span>`</span>)</span><br><span class="line">    <span class="title function_">otherFun</span>() <span class="comment">//内部调用</span></span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">function</span> <span class="title function_">otherFun</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="comment">//内部私有的函数</span></span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;otherFun()&#x27;</span>)</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="comment">//暴露行为</span></span><br><span class="line">  <span class="variable language_">window</span>.<span class="property">myModule</span> = &#123; foo, bar &#125;</span><br><span class="line">&#125;)(<span class="variable language_">window</span>, jQuery)</span><br><span class="line"></span><br><span class="line"> <span class="comment">// index.html文件</span></span><br><span class="line">&lt;!-- 引入的js必须有一定顺序 --&gt;</span><br><span class="line"><span class="language-xml"><span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">&quot;text/javascript&quot;</span> <span class="attr">src</span>=<span class="string">&quot;jquery-1.10.1.js&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></span><br><span class="line"><span class="language-xml"><span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">&quot;text/javascript&quot;</span> <span class="attr">src</span>=<span class="string">&quot;module.js&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></span><br><span class="line"><span class="language-xml"><span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">&quot;text/javascript&quot;</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">  myModule.foo()</span></span><br><span class="line"><span class="language-xml"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></span><br></pre></td></tr></table></figure></div>
+<p>这样做除了保证模块的独立性，还使得模块之间的依赖关系变得明显。</p>
+<h2 id="模块化的好处"><a href="#模块化的好处" class="headerlink" title="模块化的好处"></a>模块化的好处</h2><ul>
+<li>避免命名冲突（减少命名空间污染）</li>
+<li>更好的分离，按需加载</li>
+<li>更高的复用性</li>
+<li>更高的可维护性</li>
+</ul>
+<h3 id="引入多个的问题"><a href="#引入多个的问题" class="headerlink" title="引入多个的问题"></a>引入多个<script>的问题</h3><ul>
+<li>依赖引用顺序、依赖模糊、难以维护<br>因此才有了后续的commonjs, AMD, ESM, CMD规范。</li>
+</ul>
+<h2 id="模块化规范"><a href="#模块化规范" class="headerlink" title="模块化规范"></a>模块化规范</h2><h3 id="CommonJS"><a href="#CommonJS" class="headerlink" title="CommonJS"></a>CommonJS</h3><p>Node.js的模块规范，同步加载模块。每个文件都是一个模块有自己的作用域，模块可以通过module.exports导出变量，通过require()来导入其他模块的输出到当前模块作用域中。其里面定义的变量、函数、类都是私有的，不会污染全局作用域。在服务器端，模块的加载时运行时同步加载的；在浏览器端，模块需要提前编译打包。</p>
+<div class="highlight-container" data-rel="Js"><figure class="iseeu highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// example.js</span></span><br><span class="line"><span class="keyword">var</span> x = <span class="number">5</span>;</span><br><span class="line"><span class="keyword">var</span> addX = <span class="keyword">function</span> (<span class="params">value</span>) &#123;</span><br><span class="line">  <span class="keyword">return</span> value + x;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="variable language_">module</span>.<span class="property">exports</span>.<span class="property">x</span> = x;</span><br><span class="line"><span class="variable language_">module</span>.<span class="property">exports</span>.<span class="property">addX</span> = addX;</span><br></pre></td></tr></table></figure></div>
+
+<div class="highlight-container" data-rel="Js"><figure class="iseeu highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> example = <span class="built_in">require</span>(<span class="string">&#x27;./example.js&#x27;</span>);<span class="comment">//如果参数字符串以“./”开头，则表示加载的是一个位于相对路径</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(example.<span class="property">x</span>); <span class="comment">// 5</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(example.<span class="title function_">addX</span>(<span class="number">1</span>)); <span class="comment">// 6</span></span><br></pre></td></tr></table></figure></div>
+
+<h4 id="模块的加载机制"><a href="#模块的加载机制" class="headerlink" title="模块的加载机制"></a>模块的加载机制</h4><p>CommonJS模块的加载机制是，输入的是被输出的值的拷贝。也就是说，一旦输出一个值，模块内部的变化就影响不到这个值。</p>
+<div class="highlight-container" data-rel="Js"><figure class="iseeu highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// lib.js</span></span><br><span class="line"><span class="keyword">var</span> counter = <span class="number">3</span>;</span><br><span class="line"><span class="keyword">function</span> <span class="title function_">incCounter</span>(<span class="params"></span>) &#123;</span><br><span class="line">  counter++;</span><br><span class="line">&#125;</span><br><span class="line"><span class="variable language_">module</span>.<span class="property">exports</span> = &#123;</span><br><span class="line">  <span class="attr">counter</span>: counter,</span><br><span class="line">  <span class="attr">incCounter</span>: incCounter,</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></div>
+
+<div class="highlight-container" data-rel="Js"><figure class="iseeu highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// main.js</span></span><br><span class="line"><span class="keyword">var</span> counter = <span class="built_in">require</span>(<span class="string">&#x27;./lib&#x27;</span>).<span class="property">counter</span>;</span><br><span class="line"><span class="keyword">var</span> incCounter = <span class="built_in">require</span>(<span class="string">&#x27;./lib&#x27;</span>).<span class="property">incCounter</span>;</span><br><span class="line"></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(counter);  <span class="comment">// 3</span></span><br><span class="line"><span class="title function_">incCounter</span>();</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(counter); <span class="comment">// 3</span></span><br></pre></td></tr></table></figure></div>
+
+<p>如果需要获取到模块内部变化后的值，可以通过getter函数来获取。</p>
+<div class="highlight-container" data-rel="Js"><figure class="iseeu highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// lib.js</span></span><br><span class="line"><span class="keyword">var</span> counter = <span class="number">3</span>;</span><br><span class="line"><span class="keyword">function</span> <span class="title function_">incCounter</span>(<span class="params"></span>) &#123;</span><br><span class="line">  counter++;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">function</span> <span class="title function_">getCounter</span>(<span class="params"></span>)&#123;</span><br><span class="line">    <span class="keyword">return</span> counter;</span><br><span class="line">&#125;</span><br><span class="line"><span class="variable language_">module</span>.<span class="property">exports</span> = &#123;</span><br><span class="line">  <span class="attr">counter</span>: counter,</span><br><span class="line">  <span class="attr">incCounter</span>: incCounter,</span><br><span class="line">  <span class="attr">getCounter</span>: getCounter</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></div>
+
+<div class="highlight-container" data-rel="Js"><figure class="iseeu highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// main.js</span></span><br><span class="line"><span class="keyword">var</span> counter = <span class="built_in">require</span>(<span class="string">&#x27;./example&#x27;</span>).<span class="property">counter</span>;</span><br><span class="line"><span class="keyword">var</span> incCounter = <span class="built_in">require</span>(<span class="string">&#x27;./example&#x27;</span>).<span class="property">incCounter</span>;</span><br><span class="line"><span class="keyword">var</span> getCounter = <span class="built_in">require</span>(<span class="string">&#x27;./example&#x27;</span>).<span class="property">getCounter</span>;</span><br><span class="line"></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(counter);  <span class="comment">// 3</span></span><br><span class="line"><span class="title function_">incCounter</span>();</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(counter); <span class="comment">// 3</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;🚀 ~ require(&#x27;./example&#x27;).counter:&quot;</span>, <span class="title function_">getCounter</span>() ) <span class="comment">// 4</span></span><br></pre></td></tr></table></figure></div>
+
+<h3 id="AMD-Asynchronous-Module-Definition"><a href="#AMD-Asynchronous-Module-Definition" class="headerlink" title="AMD(Asynchronous Module Definition)"></a>AMD(Asynchronous Module Definition)</h3><p>CommonJS规范加载模块是同步的，也就是说，只有加载完成，才能执行后面的操作。AMD规范则是非同步加载模块，允许指定回调函数。由于Node.js主要用于服务器编程，模块文件一般都已经存在于本地硬盘，所以加载起来比较快，不用考虑非同步加载的方式，所以CommonJS规范比较适用。但是，如果是浏览器环境，要从服务器端加载模块，这时就必须采用非同步模式，因此浏览器端一般采用AMD规范。此外AMD规范比CommonJS规范在浏览器端实现要来着早。</p>
+<div class="highlight-container" data-rel="Js"><figure class="iseeu highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">//定义没有依赖的模块</span></span><br><span class="line"><span class="title function_">define</span>(<span class="keyword">function</span>(<span class="params"></span>)&#123;</span><br><span class="line">   <span class="keyword">return</span> 模块</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line"><span class="comment">//定义有依赖的模块</span></span><br><span class="line"><span class="title function_">define</span>([<span class="string">&#x27;module1&#x27;</span>, <span class="string">&#x27;module2&#x27;</span>], <span class="keyword">function</span>(<span class="params">m1, m2</span>)&#123;</span><br><span class="line">   <span class="keyword">return</span> 模块</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="built_in">require</span>([<span class="string">&#x27;module1&#x27;</span>, <span class="string">&#x27;module2&#x27;</span>], <span class="keyword">function</span>(<span class="params">m1, m2</span>)&#123;</span><br><span class="line">   使用m1/m2</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></div>
+
+<h3 id="CMD-Common-Module-Definition"><a href="#CMD-Common-Module-Definition" class="headerlink" title="CMD(Common Module Definition)"></a>CMD(Common Module Definition)</h3><p>CMD规范是Sea.js推广过程中产生的，Sea.js是阿里的玉伯大神推出的，Sea.js的推广过程中对模块定义的规范化产生了影响，CMD是Sea.js推广过程中产生的。CMD规范是依赖就近，用的时候再require。CMD规范是依赖就近，用的时候再require。CMD规范是依赖就近，用的时候再require。</p>
+<div class="highlight-container" data-rel="Js"><figure class="iseeu highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">//定义没有依赖的模块</span></span><br><span class="line"><span class="title function_">define</span>(<span class="keyword">function</span>(<span class="params"><span class="built_in">require</span>, <span class="built_in">exports</span>, <span class="variable language_">module</span></span>)&#123;</span><br><span class="line">  <span class="built_in">exports</span>.<span class="property">xxx</span> = value</span><br><span class="line">  <span class="variable language_">module</span>.<span class="property">exports</span> = value</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line"><span class="comment">//定义有依赖的模块</span></span><br><span class="line"><span class="title function_">define</span>(<span class="keyword">function</span>(<span class="params"><span class="built_in">require</span>, <span class="built_in">exports</span>, <span class="variable language_">module</span></span>)&#123;</span><br><span class="line">  <span class="comment">//引入依赖模块(同步)</span></span><br><span class="line">  <span class="keyword">var</span> module2 = <span class="built_in">require</span>(<span class="string">&#x27;./module2&#x27;</span>)</span><br><span class="line">  <span class="comment">//引入依赖模块(异步)</span></span><br><span class="line">    <span class="built_in">require</span>.<span class="title function_">async</span>(<span class="string">&#x27;./module3&#x27;</span>, <span class="keyword">function</span> (<span class="params">m3</span>) &#123;</span><br><span class="line">    &#125;)</span><br><span class="line">  <span class="comment">//暴露模块</span></span><br><span class="line">  <span class="built_in">exports</span>.<span class="property">xxx</span> = value</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line"><span class="comment">// 引入使用的模块</span></span><br><span class="line"><span class="title function_">define</span>(<span class="keyword">function</span> (<span class="params"><span class="built_in">require</span></span>) &#123;</span><br><span class="line">  <span class="keyword">var</span> m1 = <span class="built_in">require</span>(<span class="string">&#x27;./module1&#x27;</span>)</span><br><span class="line">  <span class="keyword">var</span> m4 = <span class="built_in">require</span>(<span class="string">&#x27;./module4&#x27;</span>)</span><br><span class="line">  m1.<span class="title function_">show</span>()</span><br><span class="line">  m4.<span class="title function_">show</span>()</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></div>
+
+<h3 id="ES6-Module"><a href="#ES6-Module" class="headerlink" title="ES6 Module"></a>ES6 Module</h3><p>ES6模块是ECMAScript 6标准新增的功能，它是JavaScript模块的标准写法，是未来JS模块的主流标准。ES6模块不是对象，而是通过export命令显示指定输出的代码，再通过import命令输入。ES6模块自动采用严格模式，不管你有没有在模块头部加上"use strict"。</p>
+<div class="highlight-container" data-rel="Js"><figure class="iseeu highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">/** 定义模块 math.js /</span></span><br><span class="line"><span class="comment">var basicNum = 0;</span></span><br><span class="line"><span class="comment">var add = function (a, b) &#123;</span></span><br><span class="line"><span class="comment">    return a + b;</span></span><br><span class="line"><span class="comment">&#125;;</span></span><br><span class="line"><span class="comment">export &#123; basicNum, add &#125;;</span></span><br><span class="line"><span class="comment">/ 引用模块 **/</span></span><br><span class="line"><span class="keyword">import</span> &#123; basicNum, add &#125; <span class="keyword">from</span> <span class="string">&#x27;./math&#x27;</span>;</span><br><span class="line"><span class="keyword">function</span> <span class="title function_">test</span>(<span class="params">ele</span>) &#123;</span><br><span class="line">    ele.<span class="property">textContent</span> = <span class="title function_">add</span>(<span class="number">99</span> + basicNum);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">// export-default.js</span></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="keyword">function</span> (<span class="params"></span>) &#123;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;foo&#x27;</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// import-default.js</span></span><br><span class="line"><span class="keyword">import</span> customName <span class="keyword">from</span> <span class="string">&#x27;./export-default&#x27;</span>;</span><br><span class="line"><span class="title function_">customName</span>(); <span class="comment">// &#x27;foo&#x27;</span></span><br></pre></td></tr></table></figure></div>
+
+<p>ES6模块与CommonJS模块的差异：</p>
+<ul>
+<li>CommonJS 模块输出的是一个值的拷贝，ES6 模块输出的是值的引用。</li>
+<li>CommonJS 模块是运行时加载，ES6 模块是编译时输出接口。<br>第二个差异是因为 CommonJS 加载的是一个对象（即module.exports属性），该对象只有在脚本运行完才会生成。而 ES6 模块不是对象，它的对外接口只是一种静态定义，在代码静态解析阶段就会生成。</li>
+</ul>
+<div class="highlight-container" data-rel="Js"><figure class="iseeu highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// lib.js</span></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">let</span> counter = <span class="number">3</span>;</span><br><span class="line"><span class="keyword">export</span> <span class="keyword">function</span> <span class="title function_">incCounter</span>(<span class="params"></span>) &#123;</span><br><span class="line">  counter++;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// main.js</span></span><br><span class="line"><span class="keyword">import</span> &#123; counter, incCounter &#125; <span class="keyword">from</span> <span class="string">&#x27;./lib&#x27;</span>;</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(counter); <span class="comment">// 3</span></span><br><span class="line"><span class="title function_">incCounter</span>();</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(counter); <span class="comment">// 4</span></span><br></pre></td></tr></table></figure></div>
+
+<p>TreeShaking是指在打包时去除无用的代码，只打包需要的代码。ES6模块静态引入的特性，使得TreeShaking成为可能。</p>
+<h3 id="UMD-Universal-Module-Definition"><a href="#UMD-Universal-Module-Definition" class="headerlink" title="UMD(Universal Module Definition)"></a>UMD(Universal Module Definition)</h3><p>UMD是AMD和CommonJS的糅合，既可以支持浏览器端，又可以支持服务器端。UMD规范通常在模块定义中先判断是否支持Node.js模块（exports）是否存在，存在则使用Node.js模块模式，不存在则判断是否支持AMD（define是否存在），存在则使用AMD方式加载模块。</p>
+<div class="highlight-container" data-rel="Js"><figure class="iseeu highlight js"><table><tr><td class="code"><pre><span class="line">(<span class="keyword">function</span>(<span class="params">root, factory</span>) &#123;</span><br><span class="line">    <span class="keyword">if</span> (<span class="keyword">typeof</span> <span class="variable language_">module</span> === <span class="string">&#x27;object&#x27;</span> &amp;&amp; <span class="keyword">typeof</span> <span class="variable language_">module</span>.<span class="property">exports</span> === <span class="string">&#x27;object&#x27;</span>) &#123;</span><br><span class="line">        <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;是commonjs模块规范，nodejs环境&#x27;</span>)</span><br><span class="line">        <span class="variable language_">module</span>.<span class="property">exports</span> = <span class="title function_">factory</span>();</span><br><span class="line">    &#125; <span class="keyword">else</span> <span class="keyword">if</span> (<span class="keyword">typeof</span> define === <span class="string">&#x27;function&#x27;</span> &amp;&amp; define.<span class="property">amd</span>) &#123;</span><br><span class="line">        <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;是AMD模块规范，如require.js&#x27;</span>)</span><br><span class="line">        <span class="title function_">define</span>(factory)</span><br><span class="line">    &#125; <span class="keyword">else</span> <span class="keyword">if</span> (<span class="keyword">typeof</span> define === <span class="string">&#x27;function&#x27;</span> &amp;&amp; define.<span class="property">cmd</span>) &#123;</span><br><span class="line">        <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;是CMD模块规范，如sea.js&#x27;</span>)</span><br><span class="line">        <span class="title function_">define</span>(<span class="keyword">function</span>(<span class="params"><span class="built_in">require</span>, <span class="built_in">exports</span>, <span class="variable language_">module</span></span>) &#123;</span><br><span class="line">            <span class="variable language_">module</span>.<span class="property">exports</span> = <span class="title function_">factory</span>()</span><br><span class="line">        &#125;)</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;没有模块环境，直接挂载在全局对象上&#x27;</span>)</span><br><span class="line">        root.<span class="property">umdModule</span> = <span class="title function_">factory</span>();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;(<span class="variable language_">this</span>, <span class="keyword">function</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="keyword">return</span> &#123;</span><br><span class="line">        <span class="attr">name</span>: <span class="string">&#x27;我是一个umd模块&#x27;</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;))</span><br></pre></td></tr></table></figure></div>]]></content>
+  </entry>
+  <entry>
+    <title>RSA前端js加密 后端java解密</title>
+    <url>/Yuyang/rsa/</url>
+    <content><![CDATA[<h1 id="什么是RSA加密"><a href="#什么是RSA加密" class="headerlink" title="什么是RSA加密"></a>什么是RSA加密</h1><p>RSA加密是一种非对称加密算法，其具体实现如下：<br>1、选择两个不相等的质数p和q，计算n&#x3D;p<em>q<br>2、计算n的欧拉函数φ(n)&#x3D;(p-1)</em>(q-1)<br>3、选择一个整数e，1&lt;e&lt;φ(n)，且e与φ(n)互质<br>4、计算d, 使得(d*e)modφ(n)&#x3D;1<br>5、公钥是(n, e)，私钥是(n, d)<br>6、加密时，将明文m^e mod n，解密时，将密文c^d mod n</p>
+<p>例如公钥(n, e) &#x3D; (33, 3)，私钥(n, d) &#x3D; (33, 7)，明文m &#x3D; 24，加密后的密文c &#x3D; 24^3 mod 33 &#x3D; 24，解密后的明文m &#x3D; 24^7 mod 33 &#x3D; 24</p>
+<p>p &#x3D; 11, q &#x3D; 3, n &#x3D; 33, φ(n) &#x3D; 20, e &#x3D; 3, d &#x3D; 7</p>
+<h2 id="前端js加密"><a href="#前端js加密" class="headerlink" title="前端js加密"></a>前端js加密</h2><div class="highlight-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="code"><pre><span class="line">npm install jsencrypt</span><br><span class="line">npm install node-forge</span><br></pre></td></tr></table></figure></div>
+<h3 id="生成公钥和私钥"><a href="#生成公钥和私钥" class="headerlink" title="生成公钥和私钥"></a>生成公钥和私钥</h3><div class="highlight-container" data-rel="Js"><figure class="iseeu highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> forge <span class="keyword">from</span> <span class="string">&#x27;node-forge&#x27;</span></span><br><span class="line"><span class="comment">// 生成RSA密钥对</span></span><br><span class="line"><span class="keyword">const</span> &#123; privateKey, publicKey &#125; = forge.<span class="property">pki</span>.<span class="property">rsa</span>.<span class="title function_">generateKeyPair</span>(<span class="number">1024</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 转换公钥和私钥为PEM格式字符串</span></span><br><span class="line"><span class="keyword">const</span> publicKeyPem = forge.<span class="property">pki</span>.<span class="title function_">publicKeyToPem</span>(publicKey);</span><br><span class="line"><span class="keyword">const</span> privateKeyPem = forge.<span class="property">pki</span>.<span class="title function_">privateKeyToPem</span>(privateKey);</span><br><span class="line"></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;Public Key:&#x27;</span>, publicKeyPem);</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;Private Key:&#x27;</span>, privateKeyPem);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 生成的公钥和私钥</span></span><br><span class="line"><span class="comment">// 公钥</span></span><br><span class="line"><span class="comment">// -----BEGIN PUBLIC KEY-----</span></span><br><span class="line"><span class="comment">// MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQCjXq96Iz4+TShUSGkPO2LpCWue</span></span><br><span class="line"><span class="comment">// C56FQoEFGZqx/7F6JIqLdF8qA773iPk1qbqSbtYPzu3lCOXWxDl99bI+aIKEJPDp</span></span><br><span class="line"><span class="comment">// cGM4QbMwDhYN2WgUHbnaAPJOLpCvf2S+COG3HRQMarMvTX2PVujIhi44EfOPPJ5f</span></span><br><span class="line"><span class="comment">// lf6KAddjsiCBi85x7wIDAQAB</span></span><br><span class="line"><span class="comment">// -----END PUBLIC KEY-----</span></span><br><span class="line"><span class="comment">// 私钥</span></span><br><span class="line"><span class="comment">// -----BEGIN RSA PRIVATE KEY-----</span></span><br><span class="line"><span class="comment">// MIICXAIBAAKBgQCjXq96Iz4+TShUSGkPO2LpCWueC56FQoEFGZqx/7F6JIqLdF8q</span></span><br><span class="line"><span class="comment">// A773iPk1qbqSbtYPzu3lCOXWxDl99bI+aIKEJPDpcGM4QbMwDhYN2WgUHbnaAPJO</span></span><br><span class="line"><span class="comment">// LpCvf2S+COG3HRQMarMvTX2PVujIhi44EfOPPJ5flf6KAddjsiCBi85x7wIDAQAB</span></span><br><span class="line"><span class="comment">// AoGAUfw9gcTYAroD6DAikSNTYvF4UWsxVVznlKCh0nwoG8zkvlFbRKF2n5Dcx8Jy</span></span><br><span class="line"><span class="comment">// v/PhdzN4jX0mot38oCrCFbGq9UoohUYo0tKKroWjV6Tz2Cbfv/9/GGi6I3nrn409</span></span><br><span class="line"><span class="comment">// hh9LzyRoIddLRaBBL91bZZ7OKF9G98Ya27y3teUM1MfX5uECQQDcD6dtZsNTjqFm</span></span><br><span class="line"><span class="comment">// haWKlcvEB3z/+brgwMFU53g0PLhfCTD7dXfh83Sc9zcrMDMYAnM6bDBTKrMet6LV</span></span><br><span class="line"><span class="comment">// M33OmyURAkEAvgzf6luLFHlQZ8T8CpPRMOcfYrn6qnVBeZ5FsQx+Le84rqk3Tcv+</span></span><br><span class="line"><span class="comment">// mXqhjJia49J2n6qlSRyiY5loos6A64Qm/wJASY5p9mWNEJbyWCSACuy7KZEfNSiy</span></span><br><span class="line"><span class="comment">// UIHdnZWpVjydnBakasj/A2WvKvBvXl5EFdhrz7FuDb6OFMxo/z6w5KhzIQJAZVHB</span></span><br><span class="line"><span class="comment">// 0lRpikm+twPKhu0VOmgNUHnsDBIlDOx3JROO9XgylNM726rkmfhJxgXZlZmviiHU</span></span><br><span class="line"><span class="comment">// qmysmkLACQPksSqsCwJBAJVEcG3gonm0BGmZiMDmwwP0M7grYTOUHDAVDJV1u1cB</span></span><br><span class="line"><span class="comment">// hYoV6mr5ZDBOMMIMroIHorcuYdqEKfiV8ulHc8hxBmo=</span></span><br><span class="line"><span class="comment">// -----END RSA PRIVATE KEY-----</span></span><br><span class="line"></span><br></pre></td></tr></table></figure></div>
+
+<h3 id="前端加密"><a href="#前端加密" class="headerlink" title="前端加密"></a>前端加密</h3><div class="highlight-container" data-rel="Javascript"><figure class="iseeu highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> <span class="title class_">Encrypt</span> <span class="keyword">from</span> <span class="string">&#x27;jsencrypt&#x27;</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> publulicKey = <span class="string">`-----BEGIN PUBLIC KEY-----</span></span><br><span class="line"><span class="string">MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQCjXq96Iz4+TShUSGkPO2LpCWue</span></span><br><span class="line"><span class="string">C56FQoEFGZqx/7F6JIqLdF8qA773iPk1qbqSbtYPzu3lCOXWxDl99bI+aIKEJPDp</span></span><br><span class="line"><span class="string">cGM4QbMwDhYN2WgUHbnaAPJOLpCvf2S+COG3HRQMarMvTX2PVujIhi44EfOPPJ5f</span></span><br><span class="line"><span class="string">lf6KAddjsiCBi85x7wIDAQAB</span></span><br><span class="line"><span class="string">-----END PUBLIC KEY-----`</span>;</span><br><span class="line"><span class="keyword">const</span> encryptor = <span class="keyword">new</span> <span class="title class_">Encrypt</span>();</span><br><span class="line">encryptor.<span class="title function_">setPublicKey</span>(publulicKey);</span><br><span class="line"><span class="keyword">const</span> data = &#123;</span><br><span class="line">  <span class="attr">password</span>: <span class="string">&#x27;123456&#x27;</span>,</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">const</span> encrypted = encryptor.<span class="title function_">encrypt</span>(<span class="title class_">JSON</span>.<span class="title function_">stringify</span>(data));</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;🚀 ~ encrypted:&quot;</span>, encrypted)</span><br><span class="line"></span><br><span class="line"><span class="comment">// 🚀 ~ encrypted: HFzmziwImUXYOfVDy2RnlFm73rjWRQ/sacZ/hV7/XEATCaIjQdTbIPeH3iy+Kc6rIRJRp42LKMWLGq0x2pBdHauCEbJeKDGF3t3RXKk+AM/CFsODv3rXwXt4ArDMkhrtDg7ha6Zgr4jIqvkhauV9hVrB34RUK4jRBw8gBO9rmoM=</span></span><br></pre></td></tr></table></figure></div>
+
+<h3 id="后端解密"><a href="#后端解密" class="headerlink" title="后端解密"></a>后端解密</h3><div class="highlight-container" data-rel="Java"><figure class="iseeu highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> org.springframework.stereotype.Service;</span><br><span class="line"><span class="keyword">import</span> org.bouncycastle.jce.provider.BouncyCastleProvider;</span><br><span class="line"><span class="keyword">import</span> org.bouncycastle.util.io.pem.PemObject;</span><br><span class="line"><span class="keyword">import</span> org.bouncycastle.util.io.pem.PemReader;</span><br><span class="line"><span class="keyword">import</span> javax.crypto.Cipher;</span><br><span class="line"><span class="keyword">import</span> java.io.StringReader;</span><br><span class="line"><span class="keyword">import</span> java.nio.charset.StandardCharsets;</span><br><span class="line"><span class="keyword">import</span> java.security.KeyFactory;</span><br><span class="line"><span class="keyword">import</span> java.security.PrivateKey;</span><br><span class="line"><span class="keyword">import</span> java.security.Security;</span><br><span class="line"><span class="keyword">import</span> java.security.spec.PKCS8EncodedKeySpec;</span><br><span class="line"><span class="keyword">import</span> java.util.Base64;</span><br><span class="line"><span class="meta">@Service</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">EncryptService</span> &#123;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="type">int</span> <span class="variable">RSA_KEY_SIZE</span> <span class="operator">=</span> <span class="number">1024</span>;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="type">int</span> <span class="variable">CHUNK_SIZE</span> <span class="operator">=</span> RSA_KEY_SIZE / <span class="number">8</span>;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">testRsa</span><span class="params">(String encryptedData)</span>&#123;</span><br><span class="line">        System.out.println(encryptedData);</span><br><span class="line">        Security.addProvider(<span class="keyword">new</span> <span class="title class_">BouncyCastleProvider</span>());</span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line">            <span class="type">String</span> <span class="variable">privateKeyStr</span> <span class="operator">=</span> <span class="string">&quot; -----BEGIN RSA PRIVATE KEY-----\n&quot;</span> +</span><br><span class="line">                    <span class="string">&quot; MIICXAIBAAKBgQCjXq96Iz4+TShUSGkPO2LpCWueC56FQoEFGZqx/7F6JIqLdF8q\n&quot;</span> +</span><br><span class="line">                    <span class="string">&quot; A773iPk1qbqSbtYPzu3lCOXWxDl99bI+aIKEJPDpcGM4QbMwDhYN2WgUHbnaAPJO\n&quot;</span> +</span><br><span class="line">                    <span class="string">&quot; LpCvf2S+COG3HRQMarMvTX2PVujIhi44EfOPPJ5flf6KAddjsiCBi85x7wIDAQAB\n&quot;</span> +</span><br><span class="line">                    <span class="string">&quot; AoGAUfw9gcTYAroD6DAikSNTYvF4UWsxVVznlKCh0nwoG8zkvlFbRKF2n5Dcx8Jy\n&quot;</span> +</span><br><span class="line">                    <span class="string">&quot; v/PhdzN4jX0mot38oCrCFbGq9UoohUYo0tKKroWjV6Tz2Cbfv/9/GGi6I3nrn409\n&quot;</span> +</span><br><span class="line">                    <span class="string">&quot; hh9LzyRoIddLRaBBL91bZZ7OKF9G98Ya27y3teUM1MfX5uECQQDcD6dtZsNTjqFm\n&quot;</span> +</span><br><span class="line">                    <span class="string">&quot; haWKlcvEB3z/+brgwMFU53g0PLhfCTD7dXfh83Sc9zcrMDMYAnM6bDBTKrMet6LV\n&quot;</span> +</span><br><span class="line">                    <span class="string">&quot; M33OmyURAkEAvgzf6luLFHlQZ8T8CpPRMOcfYrn6qnVBeZ5FsQx+Le84rqk3Tcv+\n&quot;</span> +</span><br><span class="line">                    <span class="string">&quot; mXqhjJia49J2n6qlSRyiY5loos6A64Qm/wJASY5p9mWNEJbyWCSACuy7KZEfNSiy\n&quot;</span> +</span><br><span class="line">                    <span class="string">&quot; UIHdnZWpVjydnBakasj/A2WvKvBvXl5EFdhrz7FuDb6OFMxo/z6w5KhzIQJAZVHB\n&quot;</span> +</span><br><span class="line">                    <span class="string">&quot; 0lRpikm+twPKhu0VOmgNUHnsDBIlDOx3JROO9XgylNM726rkmfhJxgXZlZmviiHU\n&quot;</span> +</span><br><span class="line">                    <span class="string">&quot; qmysmkLACQPksSqsCwJBAJVEcG3gonm0BGmZiMDmwwP0M7grYTOUHDAVDJV1u1cB\n&quot;</span> +</span><br><span class="line">                    <span class="string">&quot; hYoV6mr5ZDBOMMIMroIHorcuYdqEKfiV8ulHc8hxBmo=\n&quot;</span> +</span><br><span class="line">                    <span class="string">&quot; -----END RSA PRIVATE KEY-----&quot;</span>;</span><br><span class="line"></span><br><span class="line">            <span class="type">PrivateKey</span> <span class="variable">privateKey</span> <span class="operator">=</span> getPrivateKeyFromPem(privateKeyStr);</span><br><span class="line">            <span class="type">String</span> <span class="variable">decryptedData</span> <span class="operator">=</span> decryptData(encryptedData, privateKey);</span><br><span class="line"></span><br><span class="line">            <span class="comment">// 将解密后的 Base64 编码字符串转换回原始的 JSON 字符串</span></span><br><span class="line"><span class="comment">//            byte[] decodedBytes = Base64.getDecoder().decode(decryptedData);</span></span><br><span class="line"><span class="comment">//            String jsonString = new String(decodedBytes, StandardCharsets.UTF_8);</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//            System.out.println(&quot;Decrypted Data: &quot; + jsonString);</span></span><br><span class="line">            System.out.println(<span class="string">&quot;Decrypted Data: &quot;</span> + decryptedData);</span><br><span class="line"><span class="comment">//            System.out.println(java.net.URLDecoder.decode(decryptedData ,&quot;UTF-8&quot;));</span></span><br><span class="line">        &#125; <span class="keyword">catch</span> (Exception e) &#123;</span><br><span class="line">            e.printStackTrace();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> PrivateKey <span class="title function_">getPrivateKeyFromPem</span><span class="params">(String pemString)</span> <span class="keyword">throws</span> Exception &#123;</span><br><span class="line"><span class="comment">//        PemReader pemReader = new PemReader(new StringReader(pemString));</span></span><br><span class="line"><span class="comment">//        PemObject pemObject = pemReader.readPemObject();</span></span><br><span class="line"><span class="comment">//        byte[] keyBytes = pemObject.getContent();</span></span><br><span class="line"><span class="comment">//        pemReader.close();</span></span><br><span class="line"><span class="comment">//</span></span><br><span class="line"><span class="comment">//        PKCS8EncodedKeySpec keySpec = new PKCS8EncodedKeySpec(keyBytes);</span></span><br><span class="line"><span class="comment">//        KeyFactory keyFactory = KeyFactory.getInstance(&quot;RSA&quot;);</span></span><br><span class="line"><span class="comment">//        return keyFactory.generatePrivate(keySpec);</span></span><br><span class="line">        <span class="type">String</span> <span class="variable">privateKeyPEM</span> <span class="operator">=</span> pemString</span><br><span class="line">                .replace(<span class="string">&quot;-----BEGIN RSA PRIVATE KEY-----&quot;</span>, <span class="string">&quot;&quot;</span>)</span><br><span class="line">                .replace(<span class="string">&quot;-----END RSA PRIVATE KEY-----&quot;</span>, <span class="string">&quot;&quot;</span>)</span><br><span class="line">                .replaceAll(<span class="string">&quot;\\s&quot;</span>, <span class="string">&quot;&quot;</span>); <span class="comment">// 删除所有空格和换行</span></span><br><span class="line"></span><br><span class="line">        <span class="type">byte</span>[] encoded = Base64.getDecoder().decode(privateKeyPEM);</span><br><span class="line">        <span class="type">KeyFactory</span> <span class="variable">keyFactory</span> <span class="operator">=</span> KeyFactory.getInstance(<span class="string">&quot;RSA&quot;</span>);</span><br><span class="line">        <span class="type">PKCS8EncodedKeySpec</span> <span class="variable">keySpec</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">PKCS8EncodedKeySpec</span>(encoded);</span><br><span class="line">        <span class="keyword">return</span> keyFactory.generatePrivate(keySpec);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> String <span class="title function_">decryptData</span><span class="params">(String encryptedData, PrivateKey privateKey)</span> <span class="keyword">throws</span> Exception &#123;</span><br><span class="line">        <span class="type">Cipher</span> <span class="variable">cipher</span> <span class="operator">=</span> Cipher.getInstance(<span class="string">&quot;RSA/ECB/PKCS1Padding&quot;</span>);</span><br><span class="line">        cipher.init(Cipher.DECRYPT_MODE, privateKey);</span><br><span class="line"></span><br><span class="line">        <span class="type">byte</span>[] encryptedBytes = Base64.getDecoder().decode(encryptedData);</span><br><span class="line"></span><br><span class="line">        <span class="comment">// Ensure the buffer is large enough to hold all decrypted chunks</span></span><br><span class="line">        <span class="type">byte</span>[] decryptedBytes = <span class="keyword">new</span> <span class="title class_">byte</span>[encryptedBytes.length];</span><br><span class="line">        <span class="type">int</span> <span class="variable">decryptedLength</span> <span class="operator">=</span> <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt; encryptedBytes.length; i += CHUNK_SIZE) &#123;</span><br><span class="line">            <span class="type">int</span> <span class="variable">chunkLength</span> <span class="operator">=</span> Math.min(CHUNK_SIZE, encryptedBytes.length - i);</span><br><span class="line">            <span class="type">byte</span>[] chunk = <span class="keyword">new</span> <span class="title class_">byte</span>[chunkLength];</span><br><span class="line">            System.arraycopy(encryptedBytes, i, chunk, <span class="number">0</span>, chunkLength);</span><br><span class="line">            <span class="type">byte</span>[] decryptedChunk = cipher.doFinal(chunk);</span><br><span class="line">            System.arraycopy(decryptedChunk, <span class="number">0</span>, decryptedBytes, decryptedLength, decryptedChunk.length);</span><br><span class="line">            decryptedLength += decryptedChunk.length;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">new</span> <span class="title class_">String</span>(decryptedBytes, <span class="number">0</span>, decryptedLength, StandardCharsets.UTF_8);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure></div>
+
+<h4 id="存在的问题-当前端解密信息超长时jsencrypt库无法分段加密"><a href="#存在的问题-当前端解密信息超长时jsencrypt库无法分段加密" class="headerlink" title="存在的问题 当前端解密信息超长时jsencrypt库无法分段加密"></a>存在的问题 当前端解密信息超长时jsencrypt库无法分段加密</h4><div class="highlight-container" data-rel="Javascript"><figure class="iseeu highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 将数据替换为以下数据即会显示Message too long for RSA 原因：RSA 加密算法对单个消息块的长度有限制。这是因为 RSA 加密使用公钥对消息进行加密，而消息的长度不能超过密钥的长度减去填充字节数。因此对于 1024 位（128 字节）的 RSA 密钥，最大消息长度为：128 - 11 - 3 = 128 - 14 = 117</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> data = &#123;</span><br><span class="line">  <span class="attr">code</span>: <span class="number">200</span>,</span><br><span class="line">  <span class="attr">result</span>: &#123;</span><br><span class="line">    <span class="attr">timestamp</span>: <span class="number">1572321851823</span>,</span><br><span class="line">    <span class="attr">inter1</span>: [</span><br><span class="line">      <span class="string">&quot;123123123&quot;</span>,</span><br><span class="line">      <span class="string">&quot;123123123&quot;</span>,</span><br><span class="line">      <span class="string">&quot;123123123&quot;</span>,</span><br><span class="line">      <span class="string">&quot;123123123&quot;</span>,</span><br><span class="line">      <span class="string">&quot;123123123&quot;</span>,</span><br><span class="line">    ],</span><br><span class="line">    <span class="attr">inter2</span>: [</span><br><span class="line">      <span class="string">&quot;123123123&quot;</span>,</span><br><span class="line">      <span class="string">&quot;123123123&quot;</span>,</span><br><span class="line">      <span class="string">&quot;123123123&quot;</span>,</span><br><span class="line">      <span class="string">&quot;123123123&quot;</span>,</span><br><span class="line">      <span class="string">&quot;123123123&quot;</span>,</span><br><span class="line">    ],</span><br><span class="line">    <span class="attr">inter3</span>: [</span><br><span class="line">      <span class="string">&quot;123123123&quot;</span>,</span><br><span class="line">      <span class="string">&quot;123123123&quot;</span>,</span><br><span class="line">      <span class="string">&quot;123123123&quot;</span>,</span><br><span class="line">      <span class="string">&quot;123123123&quot;</span>,</span><br><span class="line">      <span class="string">&quot;123123123&quot;</span>,</span><br><span class="line">    ],</span><br><span class="line">    <span class="attr">inter4</span>: [</span><br><span class="line">      <span class="string">&quot;123123123&quot;</span>,</span><br><span class="line">      <span class="string">&quot;123123123&quot;</span>,</span><br><span class="line">      <span class="string">&quot;123123123&quot;</span>,</span><br><span class="line">      <span class="string">&quot;123123123&quot;</span>,</span><br><span class="line">      <span class="string">&quot;123123123&quot;</span>,</span><br><span class="line">    ],</span><br><span class="line">    <span class="attr">inter5</span>: [</span><br><span class="line">      <span class="string">&quot;123123123&quot;</span>,</span><br><span class="line">      <span class="string">&quot;123123123&quot;</span>,</span><br><span class="line">      <span class="string">&quot;123123123&quot;</span>,</span><br><span class="line">      <span class="string">&quot;123s123123&quot;</span>,</span><br><span class="line">      <span class="string">&quot;123123123&quot;</span>,</span><br><span class="line">    ],</span><br><span class="line">    <span class="attr">inter6</span>: [</span><br><span class="line">      <span class="string">&quot;123123123&quot;</span>,</span><br><span class="line">      <span class="string">&quot;123123123&quot;</span>,</span><br><span class="line">      <span class="string">&quot;123123123&quot;</span>,</span><br><span class="line">      <span class="string">&quot;123123123&quot;</span>,</span><br><span class="line">      <span class="string">&quot;123123123&quot;</span>,</span><br><span class="line">    ],</span><br><span class="line">    <span class="attr">stream</span>: &#123;&#125;,</span><br><span class="line">    <span class="attr">caton</span>: &#123;&#125;,</span><br><span class="line">    <span class="attr">card</span>: [],</span><br><span class="line">  &#125;,</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></div>
+
+<p>解决方法使用encryptlong库</p>
+<div class="highlight-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="code"><pre><span class="line">npm install encryptlong</span><br></pre></td></tr></table></figure></div>
+
+<p>验证</p>
+<div class="highlight-container" data-rel="Javascript"><figure class="iseeu highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> <span class="title class_">JSEncrypt</span> <span class="keyword">from</span> <span class="string">&#x27;encryptlong&#x27;</span>;</span><br><span class="line"><span class="keyword">const</span> publulicKey = <span class="string">`-----BEGIN PUBLIC KEY-----</span></span><br><span class="line"><span class="string">MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQCjXq96Iz4+TShUSGkPO2LpCWue</span></span><br><span class="line"><span class="string">C56FQoEFGZqx/7F6JIqLdF8qA773iPk1qbqSbtYPzu3lCOXWxDl99bI+aIKEJPDp</span></span><br><span class="line"><span class="string">cGM4QbMwDhYN2WgUHbnaAPJOLpCvf2S+COG3HRQMarMvTX2PVujIhi44EfOPPJ5f</span></span><br><span class="line"><span class="string">lf6KAddjsiCBi85x7wIDAQAB</span></span><br><span class="line"><span class="string">-----END PUBLIC KEY-----`</span>;</span><br><span class="line"><span class="keyword">const</span> encryptor = <span class="keyword">new</span> <span class="title class_">JSEncrypt</span>();</span><br><span class="line">encryptor.<span class="title function_">setPublicKey</span>(publulicKey);</span><br><span class="line"><span class="comment">// const data = &#123;</span></span><br><span class="line"><span class="comment">//   password: &#x27;123456&#x27;,</span></span><br><span class="line"><span class="comment">// &#125;</span></span><br><span class="line"><span class="keyword">let</span> data = &#123;</span><br><span class="line">  <span class="attr">code</span>: <span class="number">200</span>,</span><br><span class="line">  <span class="attr">result</span>: &#123;</span><br><span class="line">    <span class="attr">timestamp</span>: <span class="number">1572321851823</span>,</span><br><span class="line">    <span class="attr">inter1</span>: [</span><br><span class="line">      <span class="string">&quot;123123123&quot;</span>,</span><br><span class="line">      <span class="string">&quot;123123123&quot;</span>,</span><br><span class="line">      <span class="string">&quot;123123123&quot;</span>,</span><br><span class="line">      <span class="string">&quot;123123123&quot;</span>,</span><br><span class="line">      <span class="string">&quot;123123123&quot;</span>,</span><br><span class="line">    ],</span><br><span class="line">    <span class="attr">inter2</span>: [</span><br><span class="line">      <span class="string">&quot;123123123&quot;</span>,</span><br><span class="line">      <span class="string">&quot;123123123&quot;</span>,</span><br><span class="line">      <span class="string">&quot;123123123&quot;</span>,</span><br><span class="line">      <span class="string">&quot;123123123&quot;</span>,</span><br><span class="line">      <span class="string">&quot;123123123&quot;</span>,</span><br><span class="line">    ],</span><br><span class="line">    <span class="attr">inter3</span>: [</span><br><span class="line">      <span class="string">&quot;123123123&quot;</span>,</span><br><span class="line">      <span class="string">&quot;123123123&quot;</span>,</span><br><span class="line">      <span class="string">&quot;123123123&quot;</span>,</span><br><span class="line">      <span class="string">&quot;123123123&quot;</span>,</span><br><span class="line">      <span class="string">&quot;123123123&quot;</span>,</span><br><span class="line">    ],</span><br><span class="line">    <span class="attr">inter4</span>: [</span><br><span class="line">      <span class="string">&quot;123123123&quot;</span>,</span><br><span class="line">      <span class="string">&quot;123123123&quot;</span>,</span><br><span class="line">      <span class="string">&quot;123123123&quot;</span>,</span><br><span class="line">      <span class="string">&quot;123123123&quot;</span>,</span><br><span class="line">      <span class="string">&quot;123123123&quot;</span>,</span><br><span class="line">    ],</span><br><span class="line">    <span class="attr">inter5</span>: [</span><br><span class="line">      <span class="string">&quot;123123123&quot;</span>,</span><br><span class="line">      <span class="string">&quot;123123123&quot;</span>,</span><br><span class="line">      <span class="string">&quot;123123123&quot;</span>,</span><br><span class="line">      <span class="string">&quot;123s123123&quot;</span>,</span><br><span class="line">      <span class="string">&quot;123123123&quot;</span>,</span><br><span class="line">    ],</span><br><span class="line">    <span class="attr">inter6</span>: [</span><br><span class="line">      <span class="string">&quot;123123123&quot;</span>,</span><br><span class="line">      <span class="string">&quot;123123123&quot;</span>,</span><br><span class="line">      <span class="string">&quot;123123123&quot;</span>,</span><br><span class="line">      <span class="string">&quot;123123123&quot;</span>,</span><br><span class="line">      <span class="string">&quot;123123123&quot;</span>,</span><br><span class="line">    ],</span><br><span class="line">    <span class="attr">stream</span>: &#123;&#125;,</span><br><span class="line">    <span class="attr">caton</span>: &#123;&#125;,</span><br><span class="line">    <span class="attr">card</span>: [],</span><br><span class="line">  &#125;,</span><br><span class="line">&#125;;</span><br><span class="line"><span class="keyword">const</span> encrypted = encryptor.<span class="title function_">encryptLong</span>(<span class="title class_">JSON</span>.<span class="title function_">stringify</span>(data));</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;🚀 ~ encrypted:&quot;</span>, encrypted)</span><br></pre></td></tr></table></figure></div>
+
+<p>后端可以解析 but 当内容过长且出现中文时后端就会解析失败😭 例如加密输入改为：</p>
+<div class="highlight-container" data-rel="Javascript"><figure class="iseeu highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">let</span> data = &#123;</span><br><span class="line">  <span class="attr">code</span>: <span class="number">200</span>,</span><br><span class="line">  <span class="attr">result</span>: &#123;</span><br><span class="line">    <span class="attr">timestamp</span>: <span class="number">1572321851823</span>,</span><br><span class="line">    <span class="attr">name</span>: <span class="string">&quot;宇阳&quot;</span>,</span><br><span class="line">    <span class="attr">inter1</span>: [</span><br><span class="line">      <span class="string">&quot;123123123&quot;</span>,</span><br><span class="line">      <span class="string">&quot;123123123&quot;</span>,</span><br><span class="line">      <span class="string">&quot;123123123&quot;</span>,</span><br><span class="line">      <span class="string">&quot;123123123&quot;</span>,</span><br><span class="line">      <span class="string">&quot;123123123&quot;</span>,</span><br><span class="line">    ],</span><br><span class="line">    <span class="attr">inter2</span>: [</span><br><span class="line">      <span class="string">&quot;123123123&quot;</span>,</span><br><span class="line">      <span class="string">&quot;123123123&quot;</span>,</span><br><span class="line">      <span class="string">&quot;123123123&quot;</span>,</span><br><span class="line">      <span class="string">&quot;123123123&quot;</span>,</span><br><span class="line">      <span class="string">&quot;123123123&quot;</span>,</span><br><span class="line">    ],</span><br><span class="line">    <span class="attr">inter3</span>: [</span><br><span class="line">      <span class="string">&quot;123123123&quot;</span>,</span><br><span class="line">      <span class="string">&quot;123123123&quot;</span>,</span><br><span class="line">      <span class="string">&quot;123123123&quot;</span>,</span><br><span class="line">      <span class="string">&quot;123123123&quot;</span>,</span><br><span class="line">      <span class="string">&quot;123123123&quot;</span>,</span><br><span class="line">    ],</span><br><span class="line">    <span class="attr">inter4</span>: [</span><br><span class="line">      <span class="string">&quot;123123123&quot;</span>,</span><br><span class="line">      <span class="string">&quot;123123123&quot;</span>,</span><br><span class="line">      <span class="string">&quot;123123123&quot;</span>,</span><br><span class="line">      <span class="string">&quot;123123123&quot;</span>,</span><br><span class="line">      <span class="string">&quot;123123123&quot;</span>,</span><br><span class="line">    ],</span><br><span class="line">    <span class="attr">inter5</span>: [</span><br><span class="line">      <span class="string">&quot;123123123&quot;</span>,</span><br><span class="line">      <span class="string">&quot;123123123&quot;</span>,</span><br><span class="line">      <span class="string">&quot;123123123&quot;</span>,</span><br><span class="line">      <span class="string">&quot;123s123123&quot;</span>,</span><br><span class="line">      <span class="string">&quot;123123123&quot;</span>,</span><br><span class="line">    ],</span><br><span class="line">    <span class="attr">inter6</span>: [</span><br><span class="line">      <span class="string">&quot;123123123&quot;</span>,</span><br><span class="line">      <span class="string">&quot;123123123&quot;</span>,</span><br><span class="line">      <span class="string">&quot;123123123&quot;</span>,</span><br><span class="line">      <span class="string">&quot;123123123&quot;</span>,</span><br><span class="line">      <span class="string">&quot;123123123&quot;</span>,</span><br><span class="line">    ],</span><br><span class="line">    <span class="attr">stream</span>: &#123;&#125;,</span><br><span class="line">    <span class="attr">caton</span>: &#123;&#125;,</span><br><span class="line">    <span class="attr">card</span>: [],</span><br><span class="line">  &#125;,</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></div>
+
+<p>后端解析报错</p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://raw.githubusercontent.com/YuZeZhang/myImgslib/main/202408042344886.png"
+                      alt="image-20240804234409275"
+                ></p>
+<p>原因排查 源码解析</p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://raw.githubusercontent.com/YuZeZhang/myImgslib/main/202408050036985.png"
+                      alt="image-20240805001758724"
+                ></p>
+<p><strong>PKCS#1 v1.5 填充方案</strong></p>
+<p>PKCS#1 v1.5 是一种填充方案，用于确保 RSA 加密的安全性和一致性。它在加密前对数据进行填充，以确保填充后的数据长度与 RSA 密钥长度相匹配。具体填充格式如下：</p>
+<div class="highlight-container" data-rel="Javascript"><figure class="iseeu highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="number">0x00</span> || <span class="number">0x02</span> || <span class="variable constant_">PS</span> || <span class="number">0x00</span> || D</span><br></pre></td></tr></table></figure></div>
+
+<p>代码中体现</p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://raw.githubusercontent.com/YuZeZhang/myImgslib/main/202408050036260.png"
+                      alt="image-20240805001918947"
+                ></p>
+<p>中文问题：</p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://raw.githubusercontent.com/YuZeZhang/myImgslib/main/202408050036574.png"
+                      alt="image-20240805003508983"
+                ></p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://raw.githubusercontent.com/YuZeZhang/myImgslib/main/202408050037323.png"
+                      alt="image-20240805003620646"
+                ></p>
+<p>当出现中文时由于其占3个字符 所以会导致传入的ba数组出现负索引的情况 导致后续解密失败</p>
+<p><a class="link"   href="https://www.npmjs.com/package/jsencrypt-ext" >https://www.npmjs.com/package/jsencrypt-ext <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
+<p>使用这位大哥改进的代码就可以，但是我在使用其打包构建后的文件script导入仍有问题。</p>
+]]></content>
+  </entry>
+  <entry>
+    <title>正则表达式</title>
+    <url>/Yuyang/reg/</url>
+    <content><![CDATA[<h2 id="正则表达式"><a href="#正则表达式" class="headerlink" title="正则表达式"></a>正则表达式</h2><p>正则表达式是一种用来匹配字符串的强有力的武器。它的设计思想是用一种描述性的语言来给字符串定义一个规则，凡是符合规则的字符串，我们就认为它“匹配”了，否则，该字符串就是不合法的。具有强大的模式匹配和文本检索与替换功能。</p>
+<h2 id="正则表达式的定义"><a href="#正则表达式的定义" class="headerlink" title="正则表达式的定义"></a>正则表达式的定义</h2><p>在 JavaScript 中，可以通过两种方式定义正则表达式：</p>
+<ol>
+<li><p><strong>正则表达式字面量</strong>： 使用一对斜杠（<code>/</code>）包围正则表达式模式。</p>
+<div class="highlight-container" data-rel="Javascript"><figure class="iseeu highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">let</span> regex = <span class="regexp">/pattern/</span>flags;</span><br></pre></td></tr></table></figure></div>
+
+<p>例如：</p>
+<div class="highlight-container" data-rel="Javascript"><figure class="iseeu highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">let</span> regex = <span class="regexp">/hello/i</span>;</span><br></pre></td></tr></table></figure></div>
+</li>
+<li><p><strong>RegExp 构造函数</strong>： 使用 <code>RegExp</code> 构造函数来创建正则表达式。</p>
+<div class="highlight-container" data-rel="Javascript"><figure class="iseeu highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">let</span> regex = <span class="keyword">new</span> <span class="title class_">RegExp</span>(<span class="string">&#x27;pattern&#x27;</span>, <span class="string">&#x27;flags&#x27;</span>);</span><br></pre></td></tr></table></figure></div>
+
+<p>例如：</p>
+<div class="highlight-container" data-rel="Javascript"><figure class="iseeu highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">let</span> regex = <span class="keyword">new</span> <span class="title class_">RegExp</span>(<span class="string">&#x27;hello&#x27;</span>, <span class="string">&#x27;i&#x27;</span>);</span><br></pre></td></tr></table></figure></div></li>
+</ol>
+<h2 id="正则表达式的标志（Flags）"><a href="#正则表达式的标志（Flags）" class="headerlink" title="正则表达式的标志（Flags）"></a>正则表达式的标志（Flags）</h2><p>正则表达式标志用于修改正则表达式的行为。常见的标志包括：</p>
+<ul>
+<li><code>g</code>：全局搜索（global search）。</li>
+<li><code>i</code>：不区分大小写搜索（case-insensitive search）。</li>
+<li><code>m</code>：多行搜索（multi-line search）。</li>
+<li><code>s</code>：允许点号（<code>.</code>）匹配换行符（newline characters）。</li>
+<li><code>u</code>：启用 Unicode 匹配。</li>
+<li><code>y</code>：粘性匹配（sticky search），从目标字符串的当前位置开始匹配。</li>
+</ul>
+<h2 id="常用的正则表达式方法"><a href="#常用的正则表达式方法" class="headerlink" title="常用的正则表达式方法"></a>常用的正则表达式方法</h2><p>1、**<code>test()</code>**： 测试字符串中是否存在与正则表达式模式匹配的文本，返回布尔值。</p>
+<div class="highlight-container" data-rel="Javascript"><figure class="iseeu highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">let</span> regex = <span class="regexp">/hello/</span>;</span><br><span class="line"><span class="keyword">let</span> result = regex.<span class="title function_">test</span>(<span class="string">&#x27;hello world&#x27;</span>);</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(result); <span class="comment">// true</span></span><br></pre></td></tr></table></figure></div>
+
+<p>2、**<code>exec()</code>**： 搜索字符串中与正则表达式模式匹配的文本，返回一个结果数组或 <code>null</code>。</p>
+<div class="highlight-container" data-rel="Javascript"><figure class="iseeu highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">let</span> regex = <span class="regexp">/hello/</span>;</span><br><span class="line"><span class="keyword">let</span> result = regex.<span class="title function_">exec</span>(<span class="string">&#x27;hello world&#x27;</span>);</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(result); <span class="comment">// [&quot;hello&quot;]</span></span><br></pre></td></tr></table></figure></div>
+
+<h2 id="正则表达式的基本模式"><a href="#正则表达式的基本模式" class="headerlink" title="正则表达式的基本模式"></a>正则表达式的基本模式</h2><p><strong>字符类</strong>：</p>
+<ul>
+<li><code>.</code>：匹配除换行符外的任何单个字符。</li>
+<li><code>\d</code>：匹配一个数字（0-9）。</li>
+<li><code>\D</code>：匹配一个非数字字符。</li>
+<li><code>\w</code>：匹配一个字母、数字或下划线字符。</li>
+<li><code>\W</code>：匹配一个非字母、数字或下划线字符。</li>
+<li><code>\s</code>：匹配一个空白字符（包括空格、制表符等）。</li>
+<li><code>\S</code>：匹配一个非空白字符。</li>
+</ul>
+<p><strong>边界匹配</strong>：</p>
+<ul>
+<li><code>^</code>：匹配字符串的开始。</li>
+<li><code>$</code>：匹配字符串的结束。</li>
+<li><code>\b</code>：匹配单词边界。</li>
+<li><code>\B</code>：匹配非单词边界。</li>
+</ul>
+<p><strong>量词</strong>：</p>
+<ul>
+<li><code>*</code>：匹配前一个字符 0 次或多次。</li>
+<li><code>+</code>：匹配前一个字符 1 次或多次。</li>
+<li><code>?</code>：匹配前一个字符 0 次或 1 次。</li>
+<li><code>&#123;n&#125;</code>：匹配前一个字符恰好 n 次。</li>
+<li><code>&#123;n,&#125;</code>：匹配前一个字符至少 n 次。</li>
+<li><code>&#123;n,m&#125;</code>：匹配前一个字符至少 n 次，但不超过 m 次。</li>
+</ul>
+<p><strong>什么是贪婪匹配和非贪婪匹配</strong>：</p>
+<h3 id="贪婪匹配"><a href="#贪婪匹配" class="headerlink" title="贪婪匹配"></a>贪婪匹配</h3><p><strong>贪婪匹配（Greedy Matching）</strong> 会尽可能多地匹配字符。这是正则表达式的默认行为。</p>
+<p>例如，考虑以下正则表达式和字符串：</p>
+<div class="highlight-container" data-rel="Javascript"><figure class="iseeu highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">let</span> regex = <span class="regexp">/a.*b/</span>;</span><br><span class="line"><span class="keyword">let</span> str = <span class="string">&quot;aabab&quot;</span>;</span><br><span class="line"><span class="keyword">let</span> match = str.<span class="title function_">match</span>(regex);</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(match[<span class="number">0</span>]); <span class="comment">// &quot;aabab&quot;</span></span><br></pre></td></tr></table></figure></div>
+
+<p>在这个例子中，<code>.*</code> 是贪婪的，它会尝试匹配尽可能多的字符，以使整个表达式匹配成功。因此，它从第一个 <code>a</code> 开始，直到最后一个 <code>b</code> 才停止匹配。</p>
+<p>在正则表达式中，“贪婪匹配”和“非贪婪匹配”是用于描述重复量词（如 <code>*</code>, <code>+</code>, <code>?</code>, <code>&#123;&#125;</code>）的两种不同行为。</p>
+<h3 id="贪婪匹配-1"><a href="#贪婪匹配-1" class="headerlink" title="贪婪匹配"></a>贪婪匹配</h3><p><strong>贪婪匹配（Greedy Matching）</strong> 会尽可能多地匹配字符。这是正则表达式的默认行为。</p>
+<p>例如，考虑以下正则表达式和字符串：</p>
+<div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="code"><pre><span class="line">javascript</span><br><span class="line">复制代码</span><br><span class="line">let regex = /a.*b/;</span><br><span class="line">let str = &quot;aabab&quot;;</span><br><span class="line">let match = str.match(regex);</span><br><span class="line">console.log(match[0]); // &quot;aabab&quot;</span><br></pre></td></tr></table></figure></div>
+
+<p>在这个例子中，<code>.*</code> 是贪婪的，它会尝试匹配尽可能多的字符，以使整个表达式匹配成功。因此，它从第一个 <code>a</code> 开始，直到最后一个 <code>b</code> 才停止匹配。</p>
+<h3 id="非贪婪匹配"><a href="#非贪婪匹配" class="headerlink" title="非贪婪匹配"></a>非贪婪匹配</h3><p><strong>非贪婪匹配（Non-Greedy Matching）</strong>，也称为“懒惰匹配（Lazy Matching）”，会尽可能少地匹配字符。使用 <code>?</code> 来表示非贪婪匹配。</p>
+<p>例如，考虑以下正则表达式和字符串：</p>
+<div class="highlight-container" data-rel="Javascript"><figure class="iseeu highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">let</span> regex = <span class="regexp">/a.*?b/</span>;</span><br><span class="line"><span class="keyword">let</span> str = <span class="string">&quot;aabab&quot;</span>;</span><br><span class="line"><span class="keyword">let</span> match = str.<span class="title function_">match</span>(regex);</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(match[<span class="number">0</span>]); <span class="comment">// &quot;aab&quot;</span></span><br></pre></td></tr></table></figure></div>
+
+<p>在这个例子中，<code>.*?</code> 是非贪婪的，它会尽可能少地匹配字符。因此，它从第一个 <code>a</code> 开始，匹配到第一个 <code>b</code> 就停止匹配。</p>
+<h3 id=""><a href="#" class="headerlink" title=""></a></h3>]]></content>
+  </entry>
+  <entry>
+    <title>webpack 与 打包工具开发</title>
+    <url>/Yuyang/webpack/</url>
+    <content><![CDATA[<h1 id="webpack-与-打包工具开发"><a href="#webpack-与-打包工具开发" class="headerlink" title="webpack 与 打包工具开发"></a>webpack 与 打包工具开发</h1><h2 id="webpack核心配置"><a href="#webpack核心配置" class="headerlink" title="webpack核心配置"></a>webpack核心配置</h2><h3 id="Entry"><a href="#Entry" class="headerlink" title="Entry"></a>Entry</h3><h3 id="Module"><a href="#Module" class="headerlink" title="Module"></a>Module</h3><h3 id="Plugin"><a href="#Plugin" class="headerlink" title="Plugin"></a>Plugin</h3><h3 id="MiniCssExtractPlugin"><a href="#MiniCssExtractPlugin" class="headerlink" title="MiniCssExtractPlugin"></a>MiniCssExtractPlugin</h3><p>用于提取css样式内容</p>
+<h3 id="Resolve"><a href="#Resolve" class="headerlink" title="Resolve"></a>Resolve</h3><p>用于解析</p>
+<h3 id="Output"><a href="#Output" class="headerlink" title="Output"></a>Output</h3><h2 id="grunt、gulp-15、16年"><a href="#grunt、gulp-15、16年" class="headerlink" title="grunt、gulp 15、16年"></a>grunt、gulp 15、16年</h2><h2 id="新晋打包工具"><a href="#新晋打包工具" class="headerlink" title="新晋打包工具"></a>新晋打包工具</h2><h3 id="发展史"><a href="#发展史" class="headerlink" title="发展史"></a>发展史</h3><p>1、2009，commonjs，Modules&#x2F;1.0；<br>2、2011，为commonjs引入异步加载特性，Module&#x2F;Transfer&#x2F;C 提案，独立成AMD规范；<br>3、2013，grunt、gulp，基于任务的自动化构建工具；<br>4、2014，定义跨平台的模块规范，定义了一个新的规范，叫做UMD；<br>5、2014，将ES6 -&gt; ES5的工具，命名为babel；<br>6、2014，systemjs问世，简化了模块加载和处理的过程；<br>7、2014，Webpack问世，基于模块化的打包工具；<br>8、2015，正式ES6（ECMAScript 2015）规范正式发布<br>9、2015，Rollup，因为ES6的发布，借用ESModul，提出了tree-shaking的概念；<br>10、2017，webpack逐渐让人厌倦，Parcel问世，零配置的打包工具；<br>11、2019，snowpack出现 node_modules转ESM构建工具出现；<br>12、2020，浏览器对于ESM和HTTP2的更全面化支持，bundleless思路出现，ESBuild，出现在大众视野<br>13、2021，Vite发布</p>
+<p>阶段分为：<br>1、初版构建工具：grunt（task）、gulp（flow）<br>2、webpack<br>3、基于webpack思维，扩展一些新兴构建工具<br>4、bundleless构建工具<br>5、正在进行时，基于Rust的前端工具链重构（swc、rspack）</p>
+<h3 id="grunt-11年"><a href="#grunt-11年" class="headerlink" title="grunt 11年"></a>grunt 11年</h3><p>基于Task的构建工具，对应任务的配置，我们通过Plugins来完成</p>
+<h3 id="gulp"><a href="#gulp" class="headerlink" title="gulp"></a>gulp</h3><p>通过定义Task与Flow，自定义打包构建流程</p>
+<h2 id="构建基石-Webpack"><a href="#构建基石-Webpack" class="headerlink" title="构建基石 Webpack"></a>构建基石 Webpack</h2><h2 id="衍生出rollup、parcel"><a href="#衍生出rollup、parcel" class="headerlink" title="衍生出rollup、parcel"></a>衍生出rollup、parcel</h2><p>突破性的构建工具<br>go、rust来去编写构建工具<br>webpack+babel 比较受人诟病</p>
+<h3 id="ESBuild"><a href="#ESBuild" class="headerlink" title="ESBuild"></a>ESBuild</h3><p>js编译引擎v8，v8引擎是基于C++编写的<br>js属于解释性语言，go语言是编译型语言不存在编译时的开销，只有运行时，所以速度快<br>基于Go语言，速度快，但是功能不够完善 多线程</p>
+<p>在webpack、rollup使用中，相关的依赖我们需要第三方库来支持</p>
+<ul>
+<li>babel来去转译和检查</li>
+<li>eslint来去检查</li>
+<li>tsc 实现ts的转译和检查</li>
+<li>less、sass这些都需要预处理器工具来完成</li>
+</ul>
+<h3 id="swc"><a href="#swc" class="headerlink" title="swc"></a>swc</h3><h3 id="Vite"><a href="#Vite" class="headerlink" title="Vite"></a>Vite</h3><p>几大特点</p>
+<p>1、冷启动<br>2、快速热更新<br>3、bundleless<br>4、优化构建</p>
+<p>特性说明：<br>1、开发环境冷启动，构建基于ESBuild，线上产物构建 rollup<br>2、本地HMR，做了很多优化，webpack是不是需要分析依赖图（耗时的），因为开发环境ESM方式请求资源文件<br>3、配置简单，比parcel还是复杂点</p>
+<p>区分环境构建</p>
+<ul>
+<li>开发环境 esbuild，bundleless方案进行构建</li>
+<li>开发环境 rollup</li>
+</ul>
+<p>如果你想在低版本浏览器调试，不好意思，vite不支持，因为vite是基于ESM的，低版本浏览器不支持ESM</p>
+<p>热更新原理</p>
+<p>建立长链接，websocket</p>
+<p>vite&#x2F;client 插入到客户端<br>vite websocket 服务</p>
+<p>浏览器的热更新需要结合，定义一些事件来处理：connect、disconnect、message<br>vite&#x2F;client 会监听文件变化，然后通知vite服务，vite服务会推送到客户端</p>
+<p>turbopack</p>
 ]]></content>
   </entry>
 </search>

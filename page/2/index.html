@@ -13,28 +13,18 @@
     
     <!--- Seo Part-->
     
-    <link rel="canonical" href="https://github.com/YuZeZhang/YuZeZhang.github.io/yuyang/cpolar/"/>
+    <link rel="canonical" href="https://github.com/YuZeZhang/YuZeZhang.github.io/page/2/"/>
     <meta name="robots" content="index,follow">
     <meta name="googlebot" content="index,follow">
     <meta name="revisit-after" content="1 days">
     
-        <meta name="description" content="介绍如何通过使用cpolar来完成将内网下的本地服务器通过安全隧道暴露至公网，完成公网正常访问内网服务。目前我的本地web服务只能在局域网内访问，使用cpolar内网穿透可以将本地服务映射到公网，实现公网用户也可以访问到本地服务，无需公网IP，也无需设置路由器。cpolar官网：https:&#x2F;&#x2F;www.cpolar.com   1、安装配置cpolar 通过Homebrew包管理器安装cpola">
-<meta property="og:type" content="article">
-<meta property="og:title" content="MAC 内网穿透 cpolar">
-<meta property="og:url" content="https://github.com/YuZeZhang/YuZeZhang.github.io/Yuyang/cpolar/index.html">
+        <meta property="og:type" content="website">
+<meta property="og:title" content="Hexo">
+<meta property="og:url" content="https://github.com/YuZeZhang/YuZeZhang.github.io/page/2/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="介绍如何通过使用cpolar来完成将内网下的本地服务器通过安全隧道暴露至公网，完成公网正常访问内网服务。目前我的本地web服务只能在局域网内访问，使用cpolar内网穿透可以将本地服务映射到公网，实现公网用户也可以访问到本地服务，无需公网IP，也无需设置路由器。cpolar官网：https:&#x2F;&#x2F;www.cpolar.com   1、安装配置cpolar 通过Homebrew包管理器安装cpola">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://raw.githubusercontent.com/YuZeZhang/myImgslib/main/202406232255851.png">
-<meta property="og:image" content="https://raw.githubusercontent.com/YuZeZhang/myImgslib/main/202406232257170.png">
-<meta property="og:image" content="https://raw.githubusercontent.com/YuZeZhang/myImgslib/main/202406232257753.png">
-<meta property="og:image" content="https://raw.githubusercontent.com/YuZeZhang/myImgslib/main/202406232258155.png">
-<meta property="og:image" content="https://raw.githubusercontent.com/YuZeZhang/myImgslib/main/202406232258116.png">
-<meta property="article:published_time" content="2024-06-23T14:06:35.000Z">
-<meta property="article:modified_time" content="2024-06-23T15:10:41.335Z">
 <meta property="article:author" content="Yuyang">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://raw.githubusercontent.com/YuZeZhang/myImgslib/main/202406232255851.png">
     
     
     <!--- Icon Part-->
@@ -45,8 +35,6 @@
     <!--- Page Info-->
     
     <title>
-        
-            MAC 内网穿透 cpolar -
         
         Welcome to Yuyang&#39;s Blog
     </title>
@@ -277,6 +265,41 @@
 <main class="page-container" id="swup">
 
     
+        <style>
+    .home-article-item,
+    .sidebar-links,
+    .sidebar-content,
+    a.page-number,
+    a.extend,
+    .sidebar-links .links:hover,
+    .right-bottom-tools,
+    footer.footer {
+        background-color: var(--background-color-transparent-80) !important;
+    }
+    .right-bottom-tools:hover,
+    a.page-number:hover,
+    a.extend:hover {
+        background-color: var(--primary-color) !important;
+    }
+    .site-info,
+    .home-article-sticky-label {
+        background-color: var(--background-color-transparent-15) !important;
+    }
+    .home-article-sticky-label {
+        backdrop-filter: none !important;
+    }
+    .home-banner-background {
+        filter: blur(15px);
+    }
+</style>
+
+<div class="home-banner-background transition-fade fixed top-0 left-0 w-screen h-screen scale-125 sm:scale-110 box-border will-change-transform bg-cover">
+    <img src="/images/wallhaven-wqery6-light.webp" alt="home-banner-background" class="w-full h-full object-cover dark:hidden">
+    <img src="/images/wallhaven-wqery6-dark.webp" alt="home-banner-background" class="w-full h-full object-cover hidden dark:block">
+</div>
+
+
+    
 
     <div class="main-content-container">
 
@@ -288,9 +311,9 @@
         <div class="left">
             
             <a class="logo-title" href="/">
-                
+                <h1>
                 Welcome to Yuyang&#39;s Blog
-                
+                </h1>
             </a>
         </div>
 
@@ -304,7 +327,7 @@
 
                             <li class="navbar-item">
                                 <!-- Menu -->
-                                <a class=""
+                                <a class="active"
                                    href="/"
                                         >
                                     <i class="fa-regular fa-house fa-fw"></i>
@@ -379,7 +402,7 @@
 
                     <li class="drawer-navbar-item text-base my-1.5 flex flex-col w-full">
                         
-                        <a class="py-1.5 px-2 flex flex-row items-center justify-between gap-1 hover:!text-primary active:!text-primary text-2xl font-semibold group border-b border-border-color hover:border-primary w-full "
+                        <a class="py-1.5 px-2 flex flex-row items-center justify-between gap-1 hover:!text-primary active:!text-primary text-2xl font-semibold group border-b border-border-color hover:border-primary w-full active"
                            href="/"
                         >
                             <span>
@@ -465,195 +488,232 @@
         <div class="main-content-body">
 
             
+                <div class="home-sidebar-container">
+    <div class="sticky-container sticky">
+        
+        
+            
+            <div class="sidebar-content" >
+                <div class="avatar flex justify-center">
+    <img src="https://raw.githubusercontent.com/YuZeZhang/myImgslib/main/202406232019880.png">
+</div>
+                <div class="author flex flex-col justify-center my-2.5 mx-0">
+    <div class="name">Yuyang</div>
+    
+        <div class="label">前端小白🥬</div>
+    
+</div>
+                <div class="statistics flex justify-around my-2.5">
+    <a class="item tag-count-item flex flex-col justify-center items-center w-20" href="/tags">
+        <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">0</div>
+        <div class="label text-third-text-color text-sm">标签</div>
+    </a>
+    <a class="item tag-count-item flex flex-col justify-center items-center w-20" href="/categories">
+        <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">0</div>
+        <div class="label text-third-text-color text-sm">分类</div>
+    </a>
+    <a class="item tag-count-item flex flex-col justify-center items-center w-20" href="/archives">
+        <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">14</div>
+        <div class="label text-third-text-color text-sm">文章</div>
+    </a>
+</div>
+            </div>
+        
+
+    </div>
+</div>
+
+            
 
             <div class="main-content">
 
                 
-                    <div class="post-page-container flex relative justify-between box-border w-full h-full">
-    <div class="article-content-container">
-
-        <div class="article-title relative w-full">
-            
-                <div class="w-full flex items-center pt-6 justify-start">
-                    <h1 class="article-title-regular text-second-text-color tracking-tight text-4xl md:text-6xl font-semibold px-2 sm:px-6 md:px-8 py-3">MAC 内网穿透 cpolar</h1>
-                </div>
-            
-            </div>
-
+                    <div class="home-content-container">
+    <ul class="home-article-list">
         
-            <div class="article-header flex flex-row gap-2 items-center px-2 sm:px-6 md:px-8">
-                <div class="avatar w-[46px] h-[46px] flex-shrink-0 rounded-medium border border-border-color p-[1px]">
-                    <img src="https://raw.githubusercontent.com/YuZeZhang/myImgslib/main/202406232019880.png">
-                </div>
-                <div class="info flex flex-col justify-between">
-                    <div class="author flex items-center">
-                        <span class="name text-default-text-color text-lg font-semibold">Yuyang</span>
-                        
-                            <span class="author-label ml-1.5 text-xs px-2 py-0.5 rounded-small text-third-text-color border border-shadow-color-1">前端小白🥬</span>
-                        
-                    </div>
-                    <div class="meta-info">
-                        <div class="article-meta-info">
-    <span class="article-date article-meta-item">
-        <i class="fa-regular fa-pen-fancy"></i>&nbsp;
-        <span class="desktop">2024-06-23 22:06:35</span>
-        <span class="mobile">2024-06-23 22:06:35</span>
-        <span class="hover-info">创建</span>
-    </span>
-    
-        <span class="article-date article-meta-item">
-            <i class="fa-regular fa-wrench"></i>&nbsp;
-            <span class="desktop">2024-06-23 23:10:41</span>
-            <span class="mobile">2024-06-23 23:10:41</span>
-            <span class="hover-info">更新</span>
-        </span>
-    
+            <li class="home-article-item">
 
-    
-    
-
-    
-    
-    
-    
-        <span class="article-pv article-meta-item">
-            <i class="fa-regular fa-eye"></i>&nbsp;<span id="busuanzi_value_page_pv"></span>
-        </span>
-    
-</div>
-
-                    </div>
-                </div>
-            </div>
-        
-
-        
-
-
-        <div class="article-content markdown-body px-2 sm:px-6 md:px-8 pb-8">
-            <blockquote>
-<p>介绍如何通过使用cpolar来完成将内网下的本地服务器通过安全隧道暴露至公网，完成公网正常访问内网服务。目前我的本地web服务只能在局域网内访问，使用cpolar内网穿透可以将本地服务映射到公网，实现公网用户也可以访问到本地服务，无需公网IP，也无需设置路由器。<br>cpolar官网：<a class="link"   target="_blank" rel="noopener" href="https://www.cpolar.com/" >https://www.cpolar.com <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
-</blockquote>
-<h2 id="1、安装配置cpolar"><a href="#1、安装配置cpolar" class="headerlink" title="1、安装配置cpolar"></a>1、安装配置cpolar</h2><ul>
-<li>通过Homebrew包管理器安装cpolar</li>
-</ul>
-<div class="highlight-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">brew tap probezy/core &amp;&amp; brew install cpolar</span><br></pre></td></tr></table></figure></div>
-
-<ul>
-<li>token认证：在cpolar官网后台的验证初复制自己的token</li>
-</ul>
-<p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="https://raw.githubusercontent.com/YuZeZhang/myImgslib/main/202406232255851.png"
-                      alt="img"
-                ></p>
-<p>cpolar authtoken xxx</p>
-<p>         xxx处用复制的token代替</p>
-<ul>
-<li><p>安装cpolar服务</p>
-<div class="highlight-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo cpolar service install</span><br></pre></td></tr></table></figure></div></li>
-</ul>
-<h2 id="2、使用cpolar"><a href="#2、使用cpolar" class="headerlink" title="2、使用cpolar"></a>2、使用cpolar</h2><ul>
-<li><p>启动服务</p>
-<div class="highlight-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo cpolar service start</span><br></pre></td></tr></table></figure></div>
-</li>
-<li><p>cpolar web UI管理界面</p>
-<p> 访问本地9200端口【<a class="link"   target="_blank" rel="noopener" href="http://127.0.0.1:9200/%E3%80%91%EF%BC%8C%E4%BD%BF%E7%94%A8cpolar%E8%B4%A6%E5%8F%B7%E7%99%BB%E5%BD%95%E3%80%82" >http://127.0.0.1:9200/】，使用cpolar账号登录。 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
-</li>
-</ul>
-<p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="https://raw.githubusercontent.com/YuZeZhang/myImgslib/main/202406232257170.png"
-                      alt="img"
-                ></p>
-<p>         可在UI界面中查看自己的隧道信息 以及编辑、启动、停止和删除。其中状态列表下的的在线隧道列表显示了目前的公网地址和本地地址映射关系。</p>
-<p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="https://raw.githubusercontent.com/YuZeZhang/myImgslib/main/202406232257753.png"
-                      alt="img"
-                ></p>
-<ul>
-<li><p> 公网请求测试。</p>
-<p>     可借助APIFOX在线测试。官网地址：<a class="link"   target="_blank" rel="noopener" href="https://apifox.com/" >https://apifox.com <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
-</li>
-</ul>
-<p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="https://raw.githubusercontent.com/YuZeZhang/myImgslib/main/202406232258155.png"
-                      alt="img"
-                ></p>
-<p> 根据自己情况填写。示例中的接口地址为&#x2F;model</p>
-<p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="https://raw.githubusercontent.com/YuZeZhang/myImgslib/main/202406232258116.png"
-                      alt="img"
-                ></p>
-<p>        请求成功🎉 </p>
-<ul>
-<li> 停止服务</li>
-</ul>
-<div class="highlight-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo cpolar service stop</span><br></pre></td></tr></table></figure></div>
-
-<blockquote>
-<p>注意⚠️：停止后再启动，免费版的域名会发生变化需要重新设置，及时更新。 </p>
-</blockquote>
-<p>Reference：<a class="link"   target="_blank" rel="noopener" href="https://www.cpolar.com/blog/cpolar-quick-start-tutorial-macos-series" >https://www.cpolar.com/blog/cpolar-quick-start-tutorial-macos-series <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
-
-        </div>
-
-        
-
-        
-
-        
-
-        
-            <div class="article-nav my-8 flex justify-between items-center px-2 sm:px-6 md:px-8">
                 
-                    <div class="article-prev border-border-color shadow-redefine-flat shadow-shadow-color-2 rounded-medium px-4 py-2 hover:shadow-redefine-flat-hover hover:shadow-shadow-color-2">
-                        <a class="prev"
-                        rel="prev"
-                        href="/Yuyang/pnpm/"
-                        >
-                            <span class="left arrow-icon flex justify-center items-center">
-                                <i class="fa-solid fa-chevron-left"></i>
-                            </span>
-                            <span class="title flex justify-center items-center">
-                                <span class="post-nav-title-item">node_modules困境以及pnpm</span>
-                                <span class="post-nav-item">上一篇</span>
-                            </span>
+
+                
+
+                
+                <div class="flex flex-col gap-5 px-7 pb-7 pt-7">
+                    <h3 class="home-article-title">
+                        <a href="/Yuyang/hash_history/">
+                            前端路由hash和history
                         </a>
+                    </h3>
+
+                    <div class="home-article-content markdown-body">
+                        
+                            前端路由hash和history
+hash模式使用window.location.hash属性以及onhashchange事件，实现监听浏览器地址的hash值变化，执行相应的js切换网页
+
+
+
+属性
+含义
+例子
+
+
+
+location.href
+完整...
+                        
                     </div>
+
+                    <div class="home-article-meta-info-container">
+    <div class="home-article-meta-info">
+        <span><i class="fa-solid fa-calendars"></i>&nbsp;
+            <span class="home-article-date" data-date="Sun Jun 30 2024 21:45:35 GMT+0800">
                 
+                    2024-06-30
                 
-            </div>
+            </span>
+        </span>
         
-
-
         
     </div>
 
-    
-        <div class="toc-content-container">
-            <div class="post-toc-wrap">
-    <div class="post-toc">
-        <div class="toc-title">此页目录</div>
-        <div class="page-title">MAC 内网穿透 cpolar</div>
-        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1%E3%80%81%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AEcpolar"><span class="nav-text">1、安装配置cpolar</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2%E3%80%81%E4%BD%BF%E7%94%A8cpolar"><span class="nav-text">2、使用cpolar</span></a></li></ol>
+    <a href="/Yuyang/hash_history/">阅读全文<span class="seo-reader-text">前端路由hash和history</span>&nbsp;<i class="fa-solid fa-angle-right"></i></a>
+</div>
+
+                </div>
+            </li>
+        
+            <li class="home-article-item">
+
+                
+
+                
+
+                
+                <div class="flex flex-col gap-5 px-7 pb-7 pt-7">
+                    <h3 class="home-article-title">
+                        <a href="/Yuyang/eventTracking/">
+                            前端埋点与全链路
+                        </a>
+                    </h3>
+
+                    <div class="home-article-content markdown-body">
+                        
+                            什么是埋点：​	前端埋点是一种用于收集用户在网站或应用程序上的行为数据的方法。这些数据可以帮助企业了解用户的行为模式、使用习惯，并对产品进行优化。
+为什么要埋点：
+流量监测（按时间空间维度分析，留存分析，转化分析）。
+构建行为路径，获取用户的全链路信...
+                        
+                    </div>
+
+                    <div class="home-article-meta-info-container">
+    <div class="home-article-meta-info">
+        <span><i class="fa-solid fa-calendars"></i>&nbsp;
+            <span class="home-article-date" data-date="Mon Jun 24 2024 23:47:47 GMT+0800">
+                
+                    2024-06-24
+                
+            </span>
+        </span>
+        
+        
+    </div>
+
+    <a href="/Yuyang/eventTracking/">阅读全文<span class="seo-reader-text">前端埋点与全链路</span>&nbsp;<i class="fa-solid fa-angle-right"></i></a>
+</div>
+
+                </div>
+            </li>
+        
+            <li class="home-article-item">
+
+                
+
+                
+
+                
+                <div class="flex flex-col gap-5 px-7 pb-7 pt-7">
+                    <h3 class="home-article-title">
+                        <a href="/Yuyang/pnpm/">
+                            node_modules困境以及pnpm
+                        </a>
+                    </h3>
+
+                    <div class="home-article-content markdown-body">
+                        
+                            node_modules的设计虽然能满足大部分的场景，但是其仍然存在着种种缺陷由于每个项目可能依赖成百上千个小模块，node_modules 目录的体积往往非常庞大，动辄几百MB甚至超过1GB。这不仅增加了存储负担，也影响了项目的克隆、备份和部署速度...
+                        
+                    </div>
+
+                    <div class="home-article-meta-info-container">
+    <div class="home-article-meta-info">
+        <span><i class="fa-solid fa-calendars"></i>&nbsp;
+            <span class="home-article-date" data-date="Sun Jun 23 2024 22:27:05 GMT+0800">
+                
+                    2024-06-23
+                
+            </span>
+        </span>
+        
+        
+    </div>
+
+    <a href="/Yuyang/pnpm/">阅读全文<span class="seo-reader-text">node_modules困境以及pnpm</span>&nbsp;<i class="fa-solid fa-angle-right"></i></a>
+</div>
+
+                </div>
+            </li>
+        
+            <li class="home-article-item">
+
+                
+
+                
+
+                
+                <div class="flex flex-col gap-5 px-7 pb-7 pt-7">
+                    <h3 class="home-article-title">
+                        <a href="/Yuyang/cpolar/">
+                            MAC 内网穿透 cpolar
+                        </a>
+                    </h3>
+
+                    <div class="home-article-content markdown-body">
+                        
+                            
+介绍如何通过使用cpolar来完成将内网下的本地服务器通过安全隧道暴露至公网，完成公网正常访问内网服务。目前我的本地web服务只能在局域网内访问，使用cpolar内网穿透可以将本地服务映射到公网，实现公网用户也可以访问到本地服务，无需公网IP，也无...
+                        
+                    </div>
+
+                    <div class="home-article-meta-info-container">
+    <div class="home-article-meta-info">
+        <span><i class="fa-solid fa-calendars"></i>&nbsp;
+            <span class="home-article-date" data-date="Sun Jun 23 2024 22:06:35 GMT+0800">
+                
+                    2024-06-23
+                
+            </span>
+        </span>
+        
+        
+    </div>
+
+    <a href="/Yuyang/cpolar/">阅读全文<span class="seo-reader-text">MAC 内网穿透 cpolar</span>&nbsp;<i class="fa-solid fa-angle-right"></i></a>
+</div>
+
+                </div>
+            </li>
+        
+    </ul>
+
+    <div class="home-paginator px-7 py-5">
+        <div class="paginator">
+    <a class="extend prev" rel="prev" href="/"><i class="fa-regular fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span>
+</div>
 
     </div>
 </div>
-        </div>
-    
-</div>
 
-
-
+                    <div class="comment-container pjax"></div>
                 
 
             </div>
@@ -714,23 +774,6 @@
         </div>
     </div>
 
-    
-        <div class="post-tools">
-            <div class="post-tools-container">
-    <ul class="article-tools-list">
-        <!-- TOC aside toggle -->
-        
-            <li class="right-bottom-tools page-aside-toggle">
-                <i class="fa-regular fa-outdent"></i>
-            </li>
-        
-
-        <!-- go comment -->
-        
-    </ul>
-</div>
-
-        </div>
     
 
     <div class="right-side-tools-container">
@@ -844,6 +887,7 @@
         containers: ["#swup"],
     });
 </script>
+
 
 
 
