@@ -13,18 +13,25 @@
     
     <!--- Seo Part-->
     
-    <link rel="canonical" href="https://github.com/YuZeZhang/YuZeZhang.github.io/archives/2024/08/"/>
+    <link rel="canonical" href="https://github.com/YuZeZhang/YuZeZhang.github.io/yuyang/css_box_model/"/>
     <meta name="robots" content="index,follow">
     <meta name="googlebot" content="index,follow">
     <meta name="revisit-after" content="1 days">
     
-        <meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
-<meta property="og:url" content="https://github.com/YuZeZhang/YuZeZhang.github.io/archives/2024/08/index.html">
+        <meta name="description" content="CSS 盒模型介绍CSS中的盒模型用来描述一个元素在页面汇总的布局方式，每个HTML元素都被视为是一个矩形的盒子，这个盒子由实际内容（content）、外边距（margin）、边框（border）和内边距（padding）组成。CSS盒模型主要包含两种：W3C标准盒子模型和IE怪异盒子模型。 CSS的box-sizing属性定义了引擎如何计算一个元素的总宽度和总高度 box-sizing: con">
+<meta property="og:type" content="article">
+<meta property="og:title" content="CSS 盒模型">
+<meta property="og:url" content="https://github.com/YuZeZhang/YuZeZhang.github.io/Yuyang/CSS_BOX_MODEL/index.html">
 <meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="CSS 盒模型介绍CSS中的盒模型用来描述一个元素在页面汇总的布局方式，每个HTML元素都被视为是一个矩形的盒子，这个盒子由实际内容（content）、外边距（margin）、边框（border）和内边距（padding）组成。CSS盒模型主要包含两种：W3C标准盒子模型和IE怪异盒子模型。 CSS的box-sizing属性定义了引擎如何计算一个元素的总宽度和总高度 box-sizing: con">
 <meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://raw.githubusercontent.com/YuZeZhang/myImgslib/main/202410200006845.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/YuZeZhang/myImgslib/main/202410200018782.png">
+<meta property="article:published_time" content="2024-10-19T15:22:31.498Z">
+<meta property="article:modified_time" content="2024-10-19T16:43:52.208Z">
 <meta property="article:author" content="Yuyang">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://raw.githubusercontent.com/YuZeZhang/myImgslib/main/202410200006845.png">
     
     
     <!--- Icon Part-->
@@ -36,7 +43,7 @@
     
     <title>
         
-            归档: 2024/8 -
+            CSS 盒模型 -
         
         Welcome to Yuyang&#39;s Blog
     </title>
@@ -459,257 +466,154 @@
             <div class="main-content">
 
                 
-                    <div class="archive-container shadow-none hover:shadow-none sm:shadow-redefine sm:hover:shadow-redefine-hover">
-    
-<div class="archive-list-container">
-    
-        <section class="archive-item mb-spacing-unit last:mb-0">
-            <div class="archive-item-header flex flex-row items-center mb-2">
-                <span class="archive-year font-semibold text-3xl mr-2">2024</span>
-                <span class="archive-year-post-count text-xs md:text-sm font-bold rounded-small bg-third-background-color py-[2px] px-[10px] border border-border-color">22</span>
-            </div>
+                    <div class="post-page-container flex relative justify-between box-border w-full h-full">
+    <div class="article-content-container">
+
+        <div class="article-title relative w-full">
             
-            <ul class="article-list pl-0 md:pl-8 text-lg leading-[1.5]">
-                
-                    
-                    
-                         <!-- Close the previous LI if not the first item -->
-                        <li class="article-item space-y-2 px-6 pt-10 pb-2 text-xl relative border-l-2 border-border-color" date-is='10-19'>
-                    
-                    <a href="/Yuyang/CSS_BOX_MODEL/" class="block overflow-hidden w-fit">
-                        <span class="article-title my-0.5 text-2xl">CSS 盒模型</span>
-                    </a>
-                    
-                
-                    
-                    
-                    <a href="/Yuyang/BFC/" class="block overflow-hidden w-fit">
-                        <span class="article-title my-0.5 text-2xl">BFC</span>
-                    </a>
-                    
-                
-                    
-                    
+                <div class="w-full flex items-center pt-6 justify-start">
+                    <h1 class="article-title-regular text-second-text-color tracking-tight text-4xl md:text-6xl font-semibold px-2 sm:px-6 md:px-8 py-3">CSS 盒模型</h1>
+                </div>
+            
+            </div>
+
+        
+            <div class="article-header flex flex-row gap-2 items-center px-2 sm:px-6 md:px-8">
+                <div class="avatar w-[46px] h-[46px] flex-shrink-0 rounded-medium border border-border-color p-[1px]">
+                    <img src="https://raw.githubusercontent.com/YuZeZhang/myImgslib/main/202406232019880.png">
+                </div>
+                <div class="info flex flex-col justify-between">
+                    <div class="author flex items-center">
+                        <span class="name text-default-text-color text-lg font-semibold">Yuyang</span>
                         
-                            </li>
-                         <!-- Close the previous LI if not the first item -->
-                        <li class="article-item space-y-2 px-6 pt-10 pb-2 text-xl relative border-l-2 border-border-color" date-is='09-20'>
-                    
-                    <a href="/Yuyang/borwer/" class="block overflow-hidden w-fit">
-                        <span class="article-title my-0.5 text-2xl">从输入URL到页面加载完成的过程</span>
-                    </a>
-                    
-                
-                    
-                    
+                            <span class="author-label ml-1.5 text-xs px-2 py-0.5 rounded-small text-third-text-color border border-shadow-color-1">前端小白🥬</span>
                         
-                            </li>
-                         <!-- Close the previous LI if not the first item -->
-                        <li class="article-item space-y-2 px-6 pt-10 pb-2 text-xl relative border-l-2 border-border-color" date-is='09-10'>
-                    
-                    <a href="/Yuyang/browserEngine/" class="block overflow-hidden w-fit">
-                        <span class="article-title my-0.5 text-2xl">浏览器引擎（Browser engine/ layout engine + rendering engine）</span>
-                    </a>
-                    
-                
-                    
-                    
-                        
-                            </li>
-                         <!-- Close the previous LI if not the first item -->
-                        <li class="article-item space-y-2 px-6 pt-10 pb-2 text-xl relative border-l-2 border-border-color" date-is='08-18'>
-                    
-                    <a href="/Yuyang/howbrowserswork/" class="block overflow-hidden w-fit">
-                        <span class="article-title my-0.5 text-2xl">How Browsers Work</span>
-                    </a>
-                    
-                
-                    
-                    
-                    <a href="/Yuyang/processandthread/" class="block overflow-hidden w-fit">
-                        <span class="article-title my-0.5 text-2xl">Process and Thread</span>
-                    </a>
-                    
-                
-                    
-                    
-                    <a href="/Yuyang/baseconfigcli/" class="block overflow-hidden w-fit">
-                        <span class="article-title my-0.5 text-2xl">前端编码规范工程化</span>
-                    </a>
-                    
-                
-                    
-                    
-                        
-                            </li>
-                         <!-- Close the previous LI if not the first item -->
-                        <li class="article-item space-y-2 px-6 pt-10 pb-2 text-xl relative border-l-2 border-border-color" date-is='08-05'>
-                    
-                    <a href="/Yuyang/MIT15-S12-session1/" class="block overflow-hidden w-fit">
-                        <span class="article-title my-0.5 text-2xl">Blockchain and Money Session1</span>
-                    </a>
-                    
-                
-                    
-                    
-                        
-                            </li>
-                         <!-- Close the previous LI if not the first item -->
-                        <li class="article-item space-y-2 px-6 pt-10 pb-2 text-xl relative border-l-2 border-border-color" date-is='08-04'>
-                    
-                    <a href="/Yuyang/rsa/" class="block overflow-hidden w-fit">
-                        <span class="article-title my-0.5 text-2xl">RSA前端js加密 后端java解密</span>
-                    </a>
-                    
-                
-                    
-                    
-                        
-                            </li>
-                         <!-- Close the previous LI if not the first item -->
-                        <li class="article-item space-y-2 px-6 pt-10 pb-2 text-xl relative border-l-2 border-border-color" date-is='07-22'>
-                    
-                    <a href="/Yuyang/jsModule/" class="block overflow-hidden w-fit">
-                        <span class="article-title my-0.5 text-2xl">JS模块化</span>
-                    </a>
-                    
-                
-                    
-                    
-                    <a href="/Yuyang/webpack/" class="block overflow-hidden w-fit">
-                        <span class="article-title my-0.5 text-2xl">webpack 与 打包工具开发</span>
-                    </a>
-                    
-                
-                    
-                    
-                        
-                            </li>
-                         <!-- Close the previous LI if not the first item -->
-                        <li class="article-item space-y-2 px-6 pt-10 pb-2 text-xl relative border-l-2 border-border-color" date-is='07-21'>
-                    
-                    <a href="/Yuyang/engineering/" class="block overflow-hidden w-fit">
-                        <span class="article-title my-0.5 text-2xl">前端工程化</span>
-                    </a>
-                    
-                
-                    
-                    
-                        
-                            </li>
-                         <!-- Close the previous LI if not the first item -->
-                        <li class="article-item space-y-2 px-6 pt-10 pb-2 text-xl relative border-l-2 border-border-color" date-is='07-19'>
-                    
-                    <a href="/Yuyang/autoTest/" class="block overflow-hidden w-fit">
-                        <span class="article-title my-0.5 text-2xl">自动化测试</span>
-                    </a>
-                    
-                
-                    
-                    
-                        
-                            </li>
-                         <!-- Close the previous LI if not the first item -->
-                        <li class="article-item space-y-2 px-6 pt-10 pb-2 text-xl relative border-l-2 border-border-color" date-is='07-17'>
-                    
-                    <a href="/Yuyang/autoBuild/" class="block overflow-hidden w-fit">
-                        <span class="article-title my-0.5 text-2xl">自动化构建</span>
-                    </a>
-                    
-                
-                    
-                    
-                        
-                            </li>
-                         <!-- Close the previous LI if not the first item -->
-                        <li class="article-item space-y-2 px-6 pt-10 pb-2 text-xl relative border-l-2 border-border-color" date-is='07-15'>
-                    
-                    <a href="/Yuyang/reg/" class="block overflow-hidden w-fit">
-                        <span class="article-title my-0.5 text-2xl">正则表达式</span>
-                    </a>
-                    
-                
-                    
-                    
-                        
-                            </li>
-                         <!-- Close the previous LI if not the first item -->
-                        <li class="article-item space-y-2 px-6 pt-10 pb-2 text-xl relative border-l-2 border-border-color" date-is='07-14'>
-                    
-                    <a href="/Yuyang/ast/" class="block overflow-hidden w-fit">
-                        <span class="article-title my-0.5 text-2xl">AST-抽象语法树</span>
-                    </a>
-                    
-                
-                    
-                    
-                        
-                            </li>
-                         <!-- Close the previous LI if not the first item -->
-                        <li class="article-item space-y-2 px-6 pt-10 pb-2 text-xl relative border-l-2 border-border-color" date-is='07-12'>
-                    
-                    <a href="/Yuyang/prototype/" class="block overflow-hidden w-fit">
-                        <span class="article-title my-0.5 text-2xl">原型和原型链</span>
-                    </a>
-                    
-                
-                    
-                    
-                    <a href="/Yuyang/cache/" class="block overflow-hidden w-fit">
-                        <span class="article-title my-0.5 text-2xl">强缓存和协商缓存</span>
-                    </a>
-                    
-                
-                    
-                    
-                        
-                            </li>
-                         <!-- Close the previous LI if not the first item -->
-                        <li class="article-item space-y-2 px-6 pt-10 pb-2 text-xl relative border-l-2 border-border-color" date-is='06-30'>
-                    
-                    <a href="/Yuyang/hash_history/" class="block overflow-hidden w-fit">
-                        <span class="article-title my-0.5 text-2xl">前端路由hash和history</span>
-                    </a>
-                    
-                
-                    
-                    
-                        
-                            </li>
-                         <!-- Close the previous LI if not the first item -->
-                        <li class="article-item space-y-2 px-6 pt-10 pb-2 text-xl relative border-l-2 border-border-color" date-is='06-24'>
-                    
-                    <a href="/Yuyang/eventTracking/" class="block overflow-hidden w-fit">
-                        <span class="article-title my-0.5 text-2xl">前端埋点与全链路</span>
-                    </a>
-                    
-                
-                    
-                    
-                        
-                            </li>
-                         <!-- Close the previous LI if not the first item -->
-                        <li class="article-item space-y-2 px-6 pt-10 pb-2 text-xl relative border-l-2 border-border-color" date-is='06-23'>
-                    
-                    <a href="/Yuyang/pnpm/" class="block overflow-hidden w-fit">
-                        <span class="article-title my-0.5 text-2xl">node_modules困境以及pnpm</span>
-                    </a>
-                    
-                
-                    
-                    
-                    <a href="/Yuyang/cpolar/" class="block overflow-hidden w-fit">
-                        <span class="article-title my-0.5 text-2xl">MAC 内网穿透 cpolar</span>
-                    </a>
-                    
-                
-                </li> <!-- Ensure the last item is properly closed -->
-            </ul>
-        </section>
+                    </div>
+                    <div class="meta-info">
+                        <div class="article-meta-info">
+    <span class="article-date article-meta-item">
+        <i class="fa-regular fa-pen-fancy"></i>&nbsp;
+        <span class="desktop">2024-10-19 23:22:31</span>
+        <span class="mobile">2024-10-19 23:22:31</span>
+        <span class="hover-info">创建</span>
+    </span>
+    
+        <span class="article-date article-meta-item">
+            <i class="fa-regular fa-wrench"></i>&nbsp;
+            <span class="desktop">2024-10-20 00:43:52</span>
+            <span class="mobile">2024-10-20 00:43:52</span>
+            <span class="hover-info">更新</span>
+        </span>
+    
+
+    
+    
+
+    
+    
+    
+    
+        <span class="article-pv article-meta-item">
+            <i class="fa-regular fa-eye"></i>&nbsp;<span id="busuanzi_value_page_pv"></span>
+        </span>
     
 </div>
 
+                    </div>
+                </div>
+            </div>
+        
+
+        
+
+
+        <div class="article-content markdown-body px-2 sm:px-6 md:px-8 pb-8">
+            <h2 id="CSS-盒模型介绍"><a href="#CSS-盒模型介绍" class="headerlink" title="CSS 盒模型介绍"></a>CSS 盒模型介绍</h2><p>CSS中的盒模型用来描述一个元素在页面汇总的布局方式，每个HTML元素都被视为是一个矩形的盒子，这个盒子由实际内容（content）、外边距（margin）、边框（border）和内边距（padding）组成。<br>CSS盒模型主要包含两种：W3C标准盒子模型和IE怪异盒子模型。</p>
+<p>CSS的box-sizing属性定义了引擎如何计算一个元素的总宽度和总高度</p>
+<p>box-sizing: content-box ｜ border-box ｜inherit</p>
+<ul>
+<li>content-box 默认值，元素的 width&#x2F;height 不包含 padding，border 与标准盒子模型表现一致</li>
+<li>border-box 元素的 width&#x2F;height 包含 padding，border，与怪异盒子模型表现一致</li>
+<li>inherit 指定 box-sizing 属性的值，应该从父元素继承</li>
+</ul>
+<h3 id="标准盒子模型："><a href="#标准盒子模型：" class="headerlink" title="标准盒子模型："></a>标准盒子模型：</h3><ul>
+<li>盒子总宽度 &#x3D; width + padding + border + margin</li>
+<li>盒子总高度 &#x3D; height + padding + border + margin</li>
+</ul>
+<div class="highlight-container" data-rel="Css"><figure class="iseeu highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.box</span> &#123;</span><br><span class="line">    <span class="attribute">width</span>: <span class="number">200px</span>;</span><br><span class="line">    <span class="attribute">height</span>: <span class="number">40px</span>;</span><br><span class="line">    <span class="attribute">padding</span>: <span class="number">10px</span>;</span><br><span class="line">    <span class="attribute">border</span>: <span class="number">1px</span> solid red;</span><br><span class="line">    <span class="attribute">margin</span>: <span class="number">10px</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://raw.githubusercontent.com/YuZeZhang/myImgslib/main/202410200006845.png"
+                      alt="image-20241020000606496"
+                ></p>
+<h3 id="IE怪异盒子模型："><a href="#IE怪异盒子模型：" class="headerlink" title="IE怪异盒子模型："></a>IE怪异盒子模型：</h3><ul>
+<li>盒子总宽度 &#x3D; width + margin</li>
+<li>盒子总高度 &#x3D; height + margin</li>
+</ul>
+<div class="highlight-container" data-rel="Css"><figure class="iseeu highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.box</span> &#123;</span><br><span class="line">    <span class="attribute">box-sizing</span>: border-box;</span><br><span class="line">    <span class="attribute">width</span>: <span class="number">200px</span>;</span><br><span class="line">    <span class="attribute">height</span>: <span class="number">100px</span>;</span><br><span class="line">    <span class="attribute">padding</span>: <span class="number">20px</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://raw.githubusercontent.com/YuZeZhang/myImgslib/main/202410200018782.png"
+                      alt="image-20241020001810933"
+                ></p>
+<h3 id="Example"><a href="#Example" class="headerlink" title="Example"></a>Example</h3><div class="highlight-container" data-rel="Html"><figure class="iseeu highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE <span class="keyword">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">&quot;en&quot;</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">&quot;UTF-8&quot;</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">&quot;viewport&quot;</span> <span class="attr">content</span>=<span class="string">&quot;width=device-width, initial-scale=1.0&quot;</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">title</span>&gt;</span>CSS 盒模型示例<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">&quot;stylesheet&quot;</span> <span class="attr">href</span>=<span class="string">&quot;styles.css&quot;</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;box&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">p</span>&gt;</span>W3C 标准盒子模型<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;box2&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">p</span>&gt;</span>IE 怪异盒子模型<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure></div>
+
+<div class="highlight-container" data-rel="Css"><figure class="iseeu highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">body</span> &#123;</span><br><span class="line">    <span class="attribute">margin</span>: <span class="number">0</span>;</span><br><span class="line">    <span class="attribute">padding</span>: <span class="number">0</span>;</span><br><span class="line">    <span class="attribute">font-family</span>: Arial, sans-serif;</span><br><span class="line">    <span class="attribute">display</span>: flex;</span><br><span class="line">    <span class="attribute">justify-content</span>: center;</span><br><span class="line">    <span class="attribute">align-items</span>: center;</span><br><span class="line">    <span class="attribute">height</span>: <span class="number">100vh</span>;</span><br><span class="line">  &#125;</span><br><span class="line">  </span><br><span class="line"><span class="selector-class">.box</span> &#123;</span><br><span class="line">    <span class="attribute">width</span>: <span class="number">200px</span>;</span><br><span class="line">    <span class="attribute">height</span>: <span class="number">100px</span>;</span><br><span class="line">    <span class="attribute">padding</span>: <span class="number">20px</span>;</span><br><span class="line">    <span class="attribute">margin</span>: <span class="number">30px</span>;</span><br><span class="line">    <span class="attribute">border</span>: <span class="number">5px</span> solid <span class="number">#3498db</span>;</span><br><span class="line">    <span class="attribute">background-color</span>: <span class="number">#f5f5f5</span>;</span><br><span class="line">    <span class="attribute">box-sizing</span>: content-box;</span><br><span class="line">    <span class="attribute">text-align</span>: center;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.box2</span>&#123;</span><br><span class="line">    <span class="attribute">width</span>: <span class="number">200px</span>;</span><br><span class="line">    <span class="attribute">height</span>: <span class="number">100px</span>;</span><br><span class="line">    <span class="attribute">padding</span>: <span class="number">20px</span>;</span><br><span class="line">    <span class="attribute">margin</span>: <span class="number">30px</span>;</span><br><span class="line">    <span class="attribute">border</span>: <span class="number">5px</span> solid <span class="number">#3498db</span>;</span><br><span class="line">    <span class="attribute">background-color</span>: <span class="number">#f5f5f5</span>;</span><br><span class="line">    <span class="attribute">box-sizing</span>: border-box;</span><br><span class="line">    <span class="attribute">text-align</span>: center;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure></div>
+
+
+        </div>
+
+        
+
+        
+
+        
+
+        
+            <div class="article-nav my-8 flex justify-between items-center px-2 sm:px-6 md:px-8">
+                
+                
+                    <div class="article-next border-border-color shadow-redefine-flat shadow-shadow-color-2 rounded-medium px-4 py-2 hover:shadow-redefine-flat-hover hover:shadow-shadow-color-2">
+                        <a class="next"
+                        rel="next"
+                        href="/Yuyang/BFC/"
+                        >
+                            <span class="title flex justify-center items-center">
+                                <span class="post-nav-title-item">BFC</span>
+                                <span class="post-nav-item">下一篇</span>
+                            </span>
+                            <span class="right arrow-icon flex justify-center items-center">
+                                <i class="fa-solid fa-chevron-right"></i>
+                            </span>
+                        </a>
+                    </div>
+                
+            </div>
+        
+
+
+        
+    </div>
+
+    
+        <div class="toc-content-container">
+            <div class="post-toc-wrap">
+    <div class="post-toc">
+        <div class="toc-title">此页目录</div>
+        <div class="page-title">CSS 盒模型</div>
+        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#CSS-%E7%9B%92%E6%A8%A1%E5%9E%8B%E4%BB%8B%E7%BB%8D"><span class="nav-text">CSS 盒模型介绍</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%A0%87%E5%87%86%E7%9B%92%E5%AD%90%E6%A8%A1%E5%9E%8B%EF%BC%9A"><span class="nav-text">标准盒子模型：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#IE%E6%80%AA%E5%BC%82%E7%9B%92%E5%AD%90%E6%A8%A1%E5%9E%8B%EF%BC%9A"><span class="nav-text">IE怪异盒子模型：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Example"><span class="nav-text">Example</span></a></li></ol></li></ol>
+
+    </div>
 </div>
+        </div>
+    
+</div>
+
+
 
                 
 
@@ -771,6 +675,23 @@
         </div>
     </div>
 
+    
+        <div class="post-tools">
+            <div class="post-tools-container">
+    <ul class="article-tools-list">
+        <!-- TOC aside toggle -->
+        
+            <li class="right-bottom-tools page-aside-toggle">
+                <i class="fa-regular fa-outdent"></i>
+            </li>
+        
+
+        <!-- go comment -->
+        
+    </ul>
+</div>
+
+        </div>
     
 
     <div class="right-side-tools-container">
