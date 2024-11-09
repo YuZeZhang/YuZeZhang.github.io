@@ -1,0 +1,884 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="keywords" content="Hexo Theme Redefine">
+    
+    <meta name="author" content="Yuyang">
+    <!-- preconnect -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    
+    <!--- Seo Part-->
+    
+    <link rel="canonical" href="https://github.com/YuZeZhang/YuZeZhang.github.io/yuyang/webpack/"/>
+    <meta name="robots" content="index,follow">
+    <meta name="googlebot" content="index,follow">
+    <meta name="revisit-after" content="1 days">
+    
+        <meta name="description" content="webpack 与 打包工具开发webpack核心配置EntryModulePluginMiniCssExtractPlugin用于提取css样式内容 Resolve用于解析 Outputgrunt、gulp 15、16年新晋打包工具发展史1、2009，commonjs，Modules&#x2F;1.0；2、2011，为commonjs引入异步加载特性，Module&#x2F;Transfer&amp;#">
+<meta property="og:type" content="article">
+<meta property="og:title" content="webpack 与 打包工具开发">
+<meta property="og:url" content="https://github.com/YuZeZhang/YuZeZhang.github.io/Yuyang/webpack/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="webpack 与 打包工具开发webpack核心配置EntryModulePluginMiniCssExtractPlugin用于提取css样式内容 Resolve用于解析 Outputgrunt、gulp 15、16年新晋打包工具发展史1、2009，commonjs，Modules&#x2F;1.0；2、2011，为commonjs引入异步加载特性，Module&#x2F;Transfer&amp;#">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2024-07-21T16:41:18.569Z">
+<meta property="article:modified_time" content="2024-07-23T16:55:41.943Z">
+<meta property="article:author" content="Yuyang">
+<meta name="twitter:card" content="summary">
+    
+    
+    <!--- Icon Part-->
+    <link rel="icon" type="image/png" href="https://raw.githubusercontent.com/YuZeZhang/myImgslib/main/202406232019880.png" sizes="192x192">
+    <link rel="apple-touch-icon" sizes="180x180" href="https://raw.githubusercontent.com/YuZeZhang/myImgslib/main/202406232019880.png">
+    <meta name="theme-color" content="#A31F34">
+    <link rel="shortcut icon" href="https://raw.githubusercontent.com/YuZeZhang/myImgslib/main/202406232019880.png">
+    <!--- Page Info-->
+    
+    <title>
+        
+            webpack 与 打包工具开发 -
+        
+        Welcome to Yuyang&#39;s Blog
+    </title>
+
+    
+<link rel="stylesheet" href="/fonts/Chillax/chillax.css">
+
+
+    <!--- Inject Part-->
+    
+
+    
+<link rel="stylesheet" href="/css/style.css">
+
+
+    
+        
+<link rel="stylesheet" href="/assets/build/styles.css">
+
+    
+
+    
+<link rel="stylesheet" href="/fonts/GeistMono/geist-mono.css">
+
+    
+<link rel="stylesheet" href="/fonts/Geist/geist.css">
+
+    <!--- Font Part-->
+    
+    
+    
+    
+
+    
+        
+<script src="/js/libs/anime.min.js"></script>
+
+    
+
+    <script id="hexo-configurations">
+    window.config = {"hostname":"github.com","root":"/","language":"zh-CN","path":"search.xml"};
+    window.theme = {"articles":{"style":{"font_size":"16px","line_height":1.5,"image_border_radius":"14px","image_alignment":"center","image_caption":false,"link_icon":true,"title_alignment":"left","headings_top_spacing":{"h1":"3.2rem","h2":"2.4rem","h3":"1.9rem","h4":"1.6rem","h5":"1.4rem","h6":"1.3rem"}},"word_count":{"enable":true,"count":true,"min2read":true},"author_label":{"enable":true,"auto":false,"list":["前端小白🥬"]},"code_block":{"copy":true,"style":"mac","font":{"enable":false,"family":null,"url":null}},"toc":{"enable":true,"max_depth":3,"number":false,"expand":true,"init_open":true},"copyright":{"enable":false,"default":"cc_by_nc_sa"},"lazyload":true,"recommendation":{"enable":false,"title":"推荐阅读","limit":3,"mobile_limit":2,"placeholder":"/images/wallhaven-wqery6-light.webp","skip_dirs":[]}},"colors":{"primary":"#A31F34","secondary":null,"default_mode":"light"},"global":{"fonts":{"chinese":{"enable":false,"family":null,"url":null},"english":{"enable":false,"family":null,"url":null}},"content_max_width":"1000px","sidebar_width":"210px","hover":{"shadow":true,"scale":false},"scroll_progress":{"bar":true,"percentage":true},"website_counter":{"url":"https://cn.vercount.one/js","enable":true,"site_pv":true,"site_uv":true,"post_pv":true},"single_page":true,"preloader":true,"open_graph":true,"google_analytics":{"enable":false,"id":null}},"home_banner":{"enable":true,"style":"fixed","image":{"light":"/images/wallhaven-wqery6-light.webp","dark":"/images/wallhaven-wqery6-dark.webp"},"title":"Yuyang's Blog","subtitle":{"text":["马无夜草不肥，人无横财不富","富贵险中求"],"hitokoto":{"enable":false,"api":"https://v1.hitokoto.cn"},"typing_speed":100,"backing_speed":80,"starting_delay":500,"backing_delay":1500,"loop":true,"smart_backspace":true},"text_color":{"light":"#fff","dark":"#d1d1b6"},"text_style":{"title_size":"2.8rem","subtitle_size":"1.5rem","line_height":1.2},"custom_font":{"enable":false,"family":null,"url":null},"social_links":{"enable":false,"style":"default","links":{"github":null,"instagram":null,"zhihu":null,"twitter":null,"email":null},"qrs":{"weixin":null}}},"plugins":{"feed":{"enable":false},"aplayer":{"enable":false,"type":"fixed","audios":[{"name":null,"artist":null,"url":null,"cover":null,"lrc":null}]},"mermaid":{"enable":false,"version":"9.3.0"}},"version":"2.6.4","navbar":{"auto_hide":false,"color":{"left":"#f78736","right":"#367df7","transparency":35},"width":{"home":"1200px","pages":"1000px"},"links":{"Home":{"path":"/","icon":"fa-regular fa-house"},"GitHub":{"path":"https://github.com/YuZeZhang","icon":"fa-brands fa-github"},"CSDN":{"path":"https://blog.csdn.net/weixin_57301463","icon":"fa-solid fa-rocket-launch"}},"search":{"enable":true,"preload":true}},"page_templates":{"friends_column":2,"tags_style":"blur"},"home":{"sidebar":{"enable":true,"position":"left","first_item":"menu","announcement":null,"show_on_mobile":true,"links":null},"article_date_format":"auto","categories":{"enable":true,"limit":3},"tags":{"enable":true,"limit":3}},"footerStart":"2022/8/17 11:45:14"};
+    window.lang_ago = {"second":"%s 秒前","minute":"%s 分钟前","hour":"%s 小时前","day":"%s 天前","week":"%s 周前","month":"%s 个月前","year":"%s 年前"};
+    window.data = {"masonry":false};
+  </script>
+    
+    <!--- Fontawesome Part-->
+    
+<link rel="stylesheet" href="/fontawesome/fontawesome.min.css">
+
+    
+<link rel="stylesheet" href="/fontawesome/brands.min.css">
+
+    
+<link rel="stylesheet" href="/fontawesome/solid.min.css">
+
+    
+<link rel="stylesheet" href="/fontawesome/regular.min.css">
+
+    
+    
+    
+    
+<meta name="generator" content="Hexo 7.2.0"></head>
+
+
+<body>
+<div class="progress-bar-container">
+    
+        <span class="scroll-progress-bar"></span>
+    
+
+    
+        <span class="pjax-progress-bar"></span>
+<!--        <span class="swup-progress-icon">-->
+<!--            <i class="fa-solid fa-circle-notch fa-spin"></i>-->
+<!--        </span>-->
+    
+</div>
+
+
+
+    <style>
+    :root {
+        --preloader-background-color: #fff;
+        --preloader-text-color: #000;
+    }
+
+    @media (prefers-color-scheme: dark) {
+        :root {
+            --preloader-background-color: #202124;
+            --preloader-text-color: #fff;
+        }
+    }
+
+    @media (prefers-color-scheme: light) {
+        :root {
+            --preloader-background-color: #fff;
+            --preloader-text-color: #000;
+        }
+    }
+
+    @media (max-width: 600px) {
+        .ml13 {
+            font-size: 2.6rem !important; /* Adjust this value as needed */
+        }
+    }
+
+    .preloader {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem; /* Tailwind 'gap-4' is 1rem */
+        align-items: center;
+        justify-content: center;
+        position: fixed;
+        padding: 12px;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh; /* 'h-screen' is 100% of the viewport height */
+        background-color: var(--preloader-background-color);
+        z-index: 1100; /* 'z-[1100]' sets the z-index */
+        transition: opacity 0.2s ease-in-out;
+    }
+
+    .ml13 {
+        font-size: 3.2rem;
+        /* text-transform: uppercase; */
+        color: var(--preloader-text-color);
+        letter-spacing: -1px;
+        font-weight: 500;
+        font-family: 'Chillax-Variable', sans-serif;
+        text-align: center;
+    }
+
+    .ml13 .word {
+        display: inline-flex;
+        flex-wrap: wrap;
+        white-space: nowrap;
+    }
+
+    .ml13 .letter {
+        display: inline-block;
+        line-height: 1em;
+    }
+</style>
+
+<div class="preloader">
+    <h2 class="ml13">
+        Welcome to Yuyang&#39;s Blog
+    </h2>
+    <script>
+        var textWrapper = document.querySelector('.ml13');
+        // Split text into words
+        var words = textWrapper.textContent.trim().split(' ');
+
+        // Clear the existing content
+        textWrapper.innerHTML = '';
+
+        // Wrap each word and its letters in spans
+        words.forEach(function(word) {
+            var wordSpan = document.createElement('span');
+            wordSpan.classList.add('word');
+            wordSpan.innerHTML = word.replace(/\S/g, "<span class='letter'>$&</span>");
+            textWrapper.appendChild(wordSpan);
+            textWrapper.appendChild(document.createTextNode(' ')); // Add space between words
+        });
+
+        var animation = anime.timeline({loop: true})
+            .add({
+                targets: '.ml13 .letter',
+                translateY: [40,0],
+                translateZ: 0,
+                opacity: [0,1],
+                filter: ['blur(5px)', 'blur(0px)'], // Starting from blurred to unblurred
+                easing: "easeOutExpo",
+                duration: 1400,
+                delay: (el, i) => 300 + 30 * i,
+            }).add({
+                targets: '.ml13 .letter',
+                translateY: [0,-40],
+                opacity: [1,0],
+                filter: ['blur(0px)', 'blur(5px)'], // Ending from unblurred to blurred
+                easing: "easeInExpo",
+                duration: 1200,
+                delay: (el, i) => 100 + 30 * i,
+                complete: function() {
+                    hidePreloader(); // Call hidePreloader after the animation completes
+                }
+            });
+
+        let themeStatus = JSON.parse(localStorage.getItem('REDEFINE-THEME-STATUS'))?.isDark;
+
+        // If the theme status is not found in local storage, check the preferred color scheme
+        if (themeStatus === undefined || themeStatus === null) {
+            if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+                themeStatus = 'dark';
+            } else {
+                themeStatus = 'light';
+            }
+        }
+
+        // Now you can use the themeStatus variable in your code
+        if (themeStatus) {
+            document.documentElement.style.setProperty('--preloader-background-color', '#202124');
+            document.documentElement.style.setProperty('--preloader-text-color', '#fff');
+        } else {
+            document.documentElement.style.setProperty('--preloader-background-color', '#fff');
+            document.documentElement.style.setProperty('--preloader-text-color', '#000');
+        }
+
+        window.addEventListener('load', function () {
+            setTimeout(hidePreloader, 5000); // Call hidePreloader after 5000 milliseconds if not already called by animation
+        });
+
+        function hidePreloader() {
+            var preloader = document.querySelector('.preloader');
+            preloader.style.opacity = '0';
+            setTimeout(function () {
+                preloader.style.display = 'none';
+            }, 200);
+        }
+    </script>
+</div>
+
+<main class="page-container" id="swup">
+
+    
+
+    <div class="main-content-container">
+
+
+        <div class="main-content-header">
+            <header class="navbar-container px-6 md:px-12">
+
+    <div class="navbar-content ">
+        <div class="left">
+            
+            <a class="logo-title" href="/">
+                
+                Welcome to Yuyang&#39;s Blog
+                
+            </a>
+        </div>
+
+        <div class="right">
+            <!-- PC -->
+            <div class="desktop">
+                <ul class="navbar-list">
+                    
+                        
+                            
+
+                            <li class="navbar-item">
+                                <!-- Menu -->
+                                <a class=""
+                                   href="/"
+                                        >
+                                    <i class="fa-regular fa-house fa-fw"></i>
+                                    首页
+                                    
+                                </a>
+
+                                <!-- Submenu -->
+                                
+                            </li>
+                    
+                        
+                            
+
+                            <li class="navbar-item">
+                                <!-- Menu -->
+                                <a class=""
+                                   href="https://github.com/YuZeZhang"
+                                        >
+                                    <i class="fa-brands fa-github fa-fw"></i>
+                                    GITHUB
+                                    
+                                </a>
+
+                                <!-- Submenu -->
+                                
+                            </li>
+                    
+                        
+                            
+
+                            <li class="navbar-item">
+                                <!-- Menu -->
+                                <a class=""
+                                   target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_57301463"
+                                        >
+                                    <i class="fa-solid fa-rocket-launch fa-fw"></i>
+                                    CSDN
+                                    
+                                </a>
+
+                                <!-- Submenu -->
+                                
+                            </li>
+                    
+                    
+                        <li class="navbar-item search search-popup-trigger">
+                            <i class="fa-solid fa-magnifying-glass"></i>
+                        </li>
+                    
+                </ul>
+            </div>
+            <!-- Mobile -->
+            <div class="mobile">
+                
+                    <div class="icon-item search search-popup-trigger"><i class="fa-solid fa-magnifying-glass"></i>
+                    </div>
+                
+                <div class="icon-item navbar-bar">
+                    <div class="navbar-bar-middle"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Mobile sheet -->
+    <div class="navbar-drawer h-screen w-full absolute top-0 left-0 bg-background-color flex flex-col justify-between">
+        <ul class="drawer-navbar-list flex flex-col px-4 justify-center items-start">
+            
+                
+                    
+
+                    <li class="drawer-navbar-item text-base my-1.5 flex flex-col w-full">
+                        
+                        <a class="py-1.5 px-2 flex flex-row items-center justify-between gap-1 hover:!text-primary active:!text-primary text-2xl font-semibold group border-b border-border-color hover:border-primary w-full "
+                           href="/"
+                        >
+                            <span>
+                                首页
+                            </span>
+                            
+                                <i class="fa-regular fa-house fa-sm fa-fw"></i>
+                            
+                        </a>
+                        
+
+                        
+                    </li>
+            
+                
+                    
+
+                    <li class="drawer-navbar-item text-base my-1.5 flex flex-col w-full">
+                        
+                        <a class="py-1.5 px-2 flex flex-row items-center justify-between gap-1 hover:!text-primary active:!text-primary text-2xl font-semibold group border-b border-border-color hover:border-primary w-full "
+                           href="https://github.com/YuZeZhang"
+                        >
+                            <span>
+                                GITHUB
+                            </span>
+                            
+                                <i class="fa-brands fa-github fa-sm fa-fw"></i>
+                            
+                        </a>
+                        
+
+                        
+                    </li>
+            
+                
+                    
+
+                    <li class="drawer-navbar-item text-base my-1.5 flex flex-col w-full">
+                        
+                        <a class="py-1.5 px-2 flex flex-row items-center justify-between gap-1 hover:!text-primary active:!text-primary text-2xl font-semibold group border-b border-border-color hover:border-primary w-full "
+                           target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_57301463"
+                        >
+                            <span>
+                                CSDN
+                            </span>
+                            
+                                <i class="fa-solid fa-rocket-launch fa-sm fa-fw"></i>
+                            
+                        </a>
+                        
+
+                        
+                    </li>
+            
+
+            
+            
+        </ul>
+
+        <div class="statistics flex justify-around my-2.5">
+    <a class="item tag-count-item flex flex-col justify-center items-center w-20" href="/tags">
+        <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">0</div>
+        <div class="label text-third-text-color text-sm">标签</div>
+    </a>
+    <a class="item tag-count-item flex flex-col justify-center items-center w-20" href="/categories">
+        <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">0</div>
+        <div class="label text-third-text-color text-sm">分类</div>
+    </a>
+    <a class="item tag-count-item flex flex-col justify-center items-center w-20" href="/archives">
+        <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">26</div>
+        <div class="label text-third-text-color text-sm">文章</div>
+    </a>
+</div>
+    </div>
+
+    <div class="window-mask"></div>
+
+</header>
+
+
+        </div>
+
+        <div class="main-content-body">
+
+            
+
+            <div class="main-content">
+
+                
+                    <div class="post-page-container flex relative justify-between box-border w-full h-full">
+    <div class="article-content-container">
+
+        <div class="article-title relative w-full">
+            
+                <div class="w-full flex items-center pt-6 justify-start">
+                    <h1 class="article-title-regular text-second-text-color tracking-tight text-4xl md:text-6xl font-semibold px-2 sm:px-6 md:px-8 py-3">webpack 与 打包工具开发</h1>
+                </div>
+            
+            </div>
+
+        
+            <div class="article-header flex flex-row gap-2 items-center px-2 sm:px-6 md:px-8">
+                <div class="avatar w-[46px] h-[46px] flex-shrink-0 rounded-medium border border-border-color p-[1px]">
+                    <img src="https://raw.githubusercontent.com/YuZeZhang/myImgslib/main/202406232019880.png">
+                </div>
+                <div class="info flex flex-col justify-between">
+                    <div class="author flex items-center">
+                        <span class="name text-default-text-color text-lg font-semibold">Yuyang</span>
+                        
+                            <span class="author-label ml-1.5 text-xs px-2 py-0.5 rounded-small text-third-text-color border border-shadow-color-1">前端小白🥬</span>
+                        
+                    </div>
+                    <div class="meta-info">
+                        <div class="article-meta-info">
+    <span class="article-date article-meta-item">
+        <i class="fa-regular fa-pen-fancy"></i>&nbsp;
+        <span class="desktop">2024-07-22 00:41:18</span>
+        <span class="mobile">2024-07-22 00:41:18</span>
+        <span class="hover-info">创建</span>
+    </span>
+    
+        <span class="article-date article-meta-item">
+            <i class="fa-regular fa-wrench"></i>&nbsp;
+            <span class="desktop">2024-07-24 00:55:41</span>
+            <span class="mobile">2024-07-24 00:55:41</span>
+            <span class="hover-info">更新</span>
+        </span>
+    
+
+    
+    
+
+    
+    
+    
+    
+        <span class="article-pv article-meta-item">
+            <i class="fa-regular fa-eye"></i>&nbsp;<span id="busuanzi_value_page_pv"></span>
+        </span>
+    
+</div>
+
+                    </div>
+                </div>
+            </div>
+        
+
+        
+
+
+        <div class="article-content markdown-body px-2 sm:px-6 md:px-8 pb-8">
+            <h1 id="webpack-与-打包工具开发"><a href="#webpack-与-打包工具开发" class="headerlink" title="webpack 与 打包工具开发"></a>webpack 与 打包工具开发</h1><h2 id="webpack核心配置"><a href="#webpack核心配置" class="headerlink" title="webpack核心配置"></a>webpack核心配置</h2><h3 id="Entry"><a href="#Entry" class="headerlink" title="Entry"></a>Entry</h3><h3 id="Module"><a href="#Module" class="headerlink" title="Module"></a>Module</h3><h3 id="Plugin"><a href="#Plugin" class="headerlink" title="Plugin"></a>Plugin</h3><h3 id="MiniCssExtractPlugin"><a href="#MiniCssExtractPlugin" class="headerlink" title="MiniCssExtractPlugin"></a>MiniCssExtractPlugin</h3><p>用于提取css样式内容</p>
+<h3 id="Resolve"><a href="#Resolve" class="headerlink" title="Resolve"></a>Resolve</h3><p>用于解析</p>
+<h3 id="Output"><a href="#Output" class="headerlink" title="Output"></a>Output</h3><h2 id="grunt、gulp-15、16年"><a href="#grunt、gulp-15、16年" class="headerlink" title="grunt、gulp 15、16年"></a>grunt、gulp 15、16年</h2><h2 id="新晋打包工具"><a href="#新晋打包工具" class="headerlink" title="新晋打包工具"></a>新晋打包工具</h2><h3 id="发展史"><a href="#发展史" class="headerlink" title="发展史"></a>发展史</h3><p>1、2009，commonjs，Modules&#x2F;1.0；<br>2、2011，为commonjs引入异步加载特性，Module&#x2F;Transfer&#x2F;C 提案，独立成AMD规范；<br>3、2013，grunt、gulp，基于任务的自动化构建工具；<br>4、2014，定义跨平台的模块规范，定义了一个新的规范，叫做UMD；<br>5、2014，将ES6 -&gt; ES5的工具，命名为babel；<br>6、2014，systemjs问世，简化了模块加载和处理的过程；<br>7、2014，Webpack问世，基于模块化的打包工具；<br>8、2015，正式ES6（ECMAScript 2015）规范正式发布<br>9、2015，Rollup，因为ES6的发布，借用ESModul，提出了tree-shaking的概念；<br>10、2017，webpack逐渐让人厌倦，Parcel问世，零配置的打包工具；<br>11、2019，snowpack出现 node_modules转ESM构建工具出现；<br>12、2020，浏览器对于ESM和HTTP2的更全面化支持，bundleless思路出现，ESBuild，出现在大众视野<br>13、2021，Vite发布</p>
+<p>阶段分为：<br>1、初版构建工具：grunt（task）、gulp（flow）<br>2、webpack<br>3、基于webpack思维，扩展一些新兴构建工具<br>4、bundleless构建工具<br>5、正在进行时，基于Rust的前端工具链重构（swc、rspack）</p>
+<h3 id="grunt-11年"><a href="#grunt-11年" class="headerlink" title="grunt 11年"></a>grunt 11年</h3><p>基于Task的构建工具，对应任务的配置，我们通过Plugins来完成</p>
+<h3 id="gulp"><a href="#gulp" class="headerlink" title="gulp"></a>gulp</h3><p>通过定义Task与Flow，自定义打包构建流程</p>
+<h2 id="构建基石-Webpack"><a href="#构建基石-Webpack" class="headerlink" title="构建基石 Webpack"></a>构建基石 Webpack</h2><h2 id="衍生出rollup、parcel"><a href="#衍生出rollup、parcel" class="headerlink" title="衍生出rollup、parcel"></a>衍生出rollup、parcel</h2><p>突破性的构建工具<br>go、rust来去编写构建工具<br>webpack+babel 比较受人诟病</p>
+<h3 id="ESBuild"><a href="#ESBuild" class="headerlink" title="ESBuild"></a>ESBuild</h3><p>js编译引擎v8，v8引擎是基于C++编写的<br>js属于解释性语言，go语言是编译型语言不存在编译时的开销，只有运行时，所以速度快<br>基于Go语言，速度快，但是功能不够完善 多线程</p>
+<p>在webpack、rollup使用中，相关的依赖我们需要第三方库来支持</p>
+<ul>
+<li>babel来去转译和检查</li>
+<li>eslint来去检查</li>
+<li>tsc 实现ts的转译和检查</li>
+<li>less、sass这些都需要预处理器工具来完成</li>
+</ul>
+<h3 id="swc"><a href="#swc" class="headerlink" title="swc"></a>swc</h3><h3 id="Vite"><a href="#Vite" class="headerlink" title="Vite"></a>Vite</h3><p>几大特点</p>
+<p>1、冷启动<br>2、快速热更新<br>3、bundleless<br>4、优化构建</p>
+<p>特性说明：<br>1、开发环境冷启动，构建基于ESBuild，线上产物构建 rollup<br>2、本地HMR，做了很多优化，webpack是不是需要分析依赖图（耗时的），因为开发环境ESM方式请求资源文件<br>3、配置简单，比parcel还是复杂点</p>
+<p>区分环境构建</p>
+<ul>
+<li>开发环境 esbuild，bundleless方案进行构建</li>
+<li>开发环境 rollup</li>
+</ul>
+<p>如果你想在低版本浏览器调试，不好意思，vite不支持，因为vite是基于ESM的，低版本浏览器不支持ESM</p>
+<p>热更新原理</p>
+<p>建立长链接，websocket</p>
+<p>vite&#x2F;client 插入到客户端<br>vite websocket 服务</p>
+<p>浏览器的热更新需要结合，定义一些事件来处理：connect、disconnect、message<br>vite&#x2F;client 会监听文件变化，然后通知vite服务，vite服务会推送到客户端</p>
+<p>turbopack</p>
+
+        </div>
+
+        
+
+        
+
+        
+
+        
+            <div class="article-nav my-8 flex justify-between items-center px-2 sm:px-6 md:px-8">
+                
+                    <div class="article-prev border-border-color shadow-redefine-flat shadow-shadow-color-2 rounded-medium px-4 py-2 hover:shadow-redefine-flat-hover hover:shadow-shadow-color-2">
+                        <a class="prev"
+                        rel="prev"
+                        href="/Yuyang/jsModule/"
+                        >
+                            <span class="left arrow-icon flex justify-center items-center">
+                                <i class="fa-solid fa-chevron-left"></i>
+                            </span>
+                            <span class="title flex justify-center items-center">
+                                <span class="post-nav-title-item">JS模块化</span>
+                                <span class="post-nav-item">上一篇</span>
+                            </span>
+                        </a>
+                    </div>
+                
+                
+                    <div class="article-next border-border-color shadow-redefine-flat shadow-shadow-color-2 rounded-medium px-4 py-2 hover:shadow-redefine-flat-hover hover:shadow-shadow-color-2">
+                        <a class="next"
+                        rel="next"
+                        href="/Yuyang/engineering/"
+                        >
+                            <span class="title flex justify-center items-center">
+                                <span class="post-nav-title-item">前端工程化</span>
+                                <span class="post-nav-item">下一篇</span>
+                            </span>
+                            <span class="right arrow-icon flex justify-center items-center">
+                                <i class="fa-solid fa-chevron-right"></i>
+                            </span>
+                        </a>
+                    </div>
+                
+            </div>
+        
+
+
+        
+    </div>
+
+    
+        <div class="toc-content-container">
+            <div class="post-toc-wrap">
+    <div class="post-toc">
+        <div class="toc-title">此页目录</div>
+        <div class="page-title">webpack 与 打包工具开发</div>
+        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#webpack-%E4%B8%8E-%E6%89%93%E5%8C%85%E5%B7%A5%E5%85%B7%E5%BC%80%E5%8F%91"><span class="nav-text">webpack 与 打包工具开发</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#webpack%E6%A0%B8%E5%BF%83%E9%85%8D%E7%BD%AE"><span class="nav-text">webpack核心配置</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Entry"><span class="nav-text">Entry</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Module"><span class="nav-text">Module</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Plugin"><span class="nav-text">Plugin</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#MiniCssExtractPlugin"><span class="nav-text">MiniCssExtractPlugin</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Resolve"><span class="nav-text">Resolve</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Output"><span class="nav-text">Output</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#grunt%E3%80%81gulp-15%E3%80%8116%E5%B9%B4"><span class="nav-text">grunt、gulp 15、16年</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%96%B0%E6%99%8B%E6%89%93%E5%8C%85%E5%B7%A5%E5%85%B7"><span class="nav-text">新晋打包工具</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8F%91%E5%B1%95%E5%8F%B2"><span class="nav-text">发展史</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#grunt-11%E5%B9%B4"><span class="nav-text">grunt 11年</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#gulp"><span class="nav-text">gulp</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9E%84%E5%BB%BA%E5%9F%BA%E7%9F%B3-Webpack"><span class="nav-text">构建基石 Webpack</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%A1%8D%E7%94%9F%E5%87%BArollup%E3%80%81parcel"><span class="nav-text">衍生出rollup、parcel</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#ESBuild"><span class="nav-text">ESBuild</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#swc"><span class="nav-text">swc</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Vite"><span class="nav-text">Vite</span></a></li></ol></li></ol></li></ol>
+
+    </div>
+</div>
+        </div>
+    
+</div>
+
+
+
+                
+
+            </div>
+
+            
+
+        </div>
+
+        <div class="main-content-footer">
+            <footer class="footer mt-5 py-5 h-auto text-base text-third-text-color relative border-t-2 border-t-border-color">
+    <div class="info-container py-3 text-center">
+        
+        <div class="text-center">
+            &copy;
+            
+              <span>2022</span>
+              -
+            
+            2024&nbsp;&nbsp;<i class="fa-solid fa-heart fa-beat" style="--fa-animation-duration: 0.5s; color: #f54545"></i>&nbsp;&nbsp;<a href="/">Yuyang</a>
+            
+                
+                <p class="post-count space-x-0.5">
+                    <span>
+                        共 26 篇文章
+                    </span>
+                    
+                </p>
+            
+        </div>
+        
+            <script data-swup-reload-script src="https://cn.vercount.one/js"></script>
+            <div class="relative text-center lg:absolute lg:right-[20px] lg:top-1/2 lg:-translate-y-1/2 lg:text-right">
+                
+                    <span id="busuanzi_container_site_uv" class="lg:!block">
+                        <span class="text-sm">访问人数</span>
+                        <span id="busuanzi_value_site_uv"></span>
+                    </span>
+                
+                
+                    <span id="busuanzi_container_site_pv" class="lg:!block">
+                        <span class="text-sm">总访问量</span>
+                        <span id="busuanzi_value_site_pv"></span>
+                    </span>
+                
+            </div>
+        
+        <div class="relative text-center lg:absolute lg:left-[20px] lg:top-1/2 lg:-translate-y-1/2 lg:text-left">
+            <span class="lg:block text-sm">由 <?xml version="1.0" encoding="utf-8"?><!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"><svg class="relative top-[2px] inline-block align-baseline" version="1.1" id="圖層_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="1rem" height="1rem" viewBox="0 0 512 512" enable-background="new 0 0 512 512" xml:space="preserve"><path fill="#0E83CD" d="M256.4,25.8l-200,115.5L56,371.5l199.6,114.7l200-115.5l0.4-230.2L256.4,25.8z M349,354.6l-18.4,10.7l-18.6-11V275H200v79.6l-18.4,10.7l-18.6-11v-197l18.5-10.6l18.5,10.8V237h112v-79.6l18.5-10.6l18.5,10.8V354.6z"/></svg><a target="_blank" class="text-base" href="https://hexo.io">Hexo</a> 驱动</span>
+            <span class="text-sm lg:block">主题&nbsp;<a class="text-base" target="_blank" href="https://github.com/EvanNotFound/hexo-theme-redefine">Redefine v2.6.4</a></span>
+        </div>
+        
+        
+        
+        
+        
+    </div>  
+</footer>
+        </div>
+    </div>
+
+    
+        <div class="post-tools">
+            <div class="post-tools-container">
+    <ul class="article-tools-list">
+        <!-- TOC aside toggle -->
+        
+            <li class="right-bottom-tools page-aside-toggle">
+                <i class="fa-regular fa-outdent"></i>
+            </li>
+        
+
+        <!-- go comment -->
+        
+    </ul>
+</div>
+
+        </div>
+    
+
+    <div class="right-side-tools-container">
+        <div class="side-tools-container">
+    <ul class="hidden-tools-list">
+        <li class="right-bottom-tools tool-font-adjust-plus flex justify-center items-center">
+            <i class="fa-regular fa-magnifying-glass-plus"></i>
+        </li>
+
+        <li class="right-bottom-tools tool-font-adjust-minus flex justify-center items-center">
+            <i class="fa-regular fa-magnifying-glass-minus"></i>
+        </li>
+
+        <li class="right-bottom-tools tool-dark-light-toggle flex justify-center items-center">
+            <i class="fa-regular fa-moon"></i>
+        </li>
+
+        <!-- rss -->
+        
+
+        
+
+        <li class="right-bottom-tools tool-scroll-to-bottom flex justify-center items-center">
+            <i class="fa-regular fa-arrow-down"></i>
+        </li>
+    </ul>
+
+    <ul class="visible-tools-list">
+        <li class="right-bottom-tools toggle-tools-list flex justify-center items-center">
+            <i class="fa-regular fa-cog fa-spin"></i>
+        </li>
+        
+            <li class="right-bottom-tools tool-scroll-to-top flex justify-center items-center">
+                <i class="arrow-up fas fa-arrow-up"></i>
+                <span class="percent"></span>
+            </li>
+        
+        
+    </ul>
+</div>
+
+    </div>
+
+    <div class="image-viewer-container">
+    <img src="">
+</div>
+
+
+    
+        <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+          <span class="search-input-field-pre">
+            <i class="fa-solid fa-keyboard"></i>
+          </span>
+            <div class="search-input-container">
+                <input autocomplete="off"
+                       autocorrect="off"
+                       autocapitalize="off"
+                       placeholder="搜索..."
+                       spellcheck="false"
+                       type="search"
+                       class="search-input"
+                >
+            </div>
+            <span class="popup-btn-close">
+                <i class="fa-solid fa-times"></i>
+            </span>
+        </div>
+        <div id="search-result">
+            <div id="no-result">
+                <i class="fa-solid fa-spinner fa-spin-pulse fa-5x fa-fw"></i>
+            </div>
+        </div>
+    </div>
+</div>
+
+    
+
+</main>
+
+
+    
+<script src="/js/libs/Swup.min.js"></script>
+
+<script src="/js/libs/SwupSlideTheme.min.js"></script>
+
+<script src="/js/libs/SwupScriptsPlugin.min.js"></script>
+
+<script src="/js/libs/SwupProgressPlugin.min.js"></script>
+
+<script src="/js/libs/SwupScrollPlugin.min.js"></script>
+
+<script src="/js/libs/SwupPreloadPlugin.min.js"></script>
+
+<script>
+    const swup = new Swup({
+        plugins: [
+            new SwupScriptsPlugin({
+                optin: true,
+            }),
+            new SwupProgressPlugin(),
+            new SwupScrollPlugin({
+                offset: 80,
+            }),
+            new SwupSlideTheme({
+                mainElement: ".main-content-body",
+            }),
+            new SwupPreloadPlugin(),
+        ],
+        containers: ["#swup"],
+    });
+</script>
+
+
+
+
+
+
+
+<script src="/js/tools/imageViewer.js" type="module"></script>
+
+<script src="/js/utils.js" type="module"></script>
+
+<script src="/js/main.js" type="module"></script>
+
+<script src="/js/layouts/navbarShrink.js" type="module"></script>
+
+<script src="/js/tools/scrollTopBottom.js" type="module"></script>
+
+<script src="/js/tools/lightDarkSwitch.js" type="module"></script>
+
+<script src="/js/layouts/categoryList.js" type="module"></script>
+
+
+
+    
+<script src="/js/tools/localSearch.js" type="module"></script>
+
+
+
+
+    
+<script src="/js/tools/codeBlock.js" type="module"></script>
+
+
+
+
+    
+<script src="/js/layouts/lazyload.js" type="module"></script>
+
+
+
+
+
+
+  
+<script src="/js/libs/Typed.min.js"></script>
+
+  
+<script src="/js/plugins/typed.js" type="module"></script>
+
+
+
+
+
+
+
+
+
+<div class="post-scripts" data-swup-reload-script>
+    
+        
+<script src="/js/tools/tocToggle.js" type="module"></script>
+
+<script src="/js/layouts/toc.js" type="module"></script>
+
+<script src="/js/plugins/tabs.js" type="module"></script>
+
+    
+</div>
+
+
+</body>
+</html>

@@ -1,0 +1,977 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="keywords" content="Hexo Theme Redefine">
+    
+    <meta name="author" content="Yuyang">
+    <!-- preconnect -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    
+    <!--- Seo Part-->
+    
+    <link rel="canonical" href="https://github.com/YuZeZhang/YuZeZhang.github.io/yuyang/autotest/"/>
+    <meta name="robots" content="index,follow">
+    <meta name="googlebot" content="index,follow">
+    <meta name="revisit-after" content="1 days">
+    
+        <meta name="description" content="自动化测试与技术选型认识并使用jeste2e测试devops自动化测试为什么需要测试让程序稳定健壮，提高代码质量，减少bug，提高开发效率。  频繁变动的需求 人力成本 不太重视  什么时候 或者什么场景需要考虑自动化测试 公共库项目开发维护 vue react babel 中长期项目 需求趋于稳定后的系统  测试类型 单元测试 Unit Test 小的功能的测试 Jest @vue&#x2F;t">
+<meta property="og:type" content="article">
+<meta property="og:title" content="自动化测试">
+<meta property="og:url" content="https://github.com/YuZeZhang/YuZeZhang.github.io/Yuyang/autoTest/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="自动化测试与技术选型认识并使用jeste2e测试devops自动化测试为什么需要测试让程序稳定健壮，提高代码质量，减少bug，提高开发效率。  频繁变动的需求 人力成本 不太重视  什么时候 或者什么场景需要考虑自动化测试 公共库项目开发维护 vue react babel 中长期项目 需求趋于稳定后的系统  测试类型 单元测试 Unit Test 小的功能的测试 Jest @vue&#x2F;t">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2024-07-19T02:46:17.627Z">
+<meta property="article:modified_time" content="2024-08-04T18:08:54.139Z">
+<meta property="article:author" content="Yuyang">
+<meta name="twitter:card" content="summary">
+    
+    
+    <!--- Icon Part-->
+    <link rel="icon" type="image/png" href="https://raw.githubusercontent.com/YuZeZhang/myImgslib/main/202406232019880.png" sizes="192x192">
+    <link rel="apple-touch-icon" sizes="180x180" href="https://raw.githubusercontent.com/YuZeZhang/myImgslib/main/202406232019880.png">
+    <meta name="theme-color" content="#A31F34">
+    <link rel="shortcut icon" href="https://raw.githubusercontent.com/YuZeZhang/myImgslib/main/202406232019880.png">
+    <!--- Page Info-->
+    
+    <title>
+        
+            自动化测试 -
+        
+        Welcome to Yuyang&#39;s Blog
+    </title>
+
+    
+<link rel="stylesheet" href="/fonts/Chillax/chillax.css">
+
+
+    <!--- Inject Part-->
+    
+
+    
+<link rel="stylesheet" href="/css/style.css">
+
+
+    
+        
+<link rel="stylesheet" href="/assets/build/styles.css">
+
+    
+
+    
+<link rel="stylesheet" href="/fonts/GeistMono/geist-mono.css">
+
+    
+<link rel="stylesheet" href="/fonts/Geist/geist.css">
+
+    <!--- Font Part-->
+    
+    
+    
+    
+
+    
+        
+<script src="/js/libs/anime.min.js"></script>
+
+    
+
+    <script id="hexo-configurations">
+    window.config = {"hostname":"github.com","root":"/","language":"zh-CN","path":"search.xml"};
+    window.theme = {"articles":{"style":{"font_size":"16px","line_height":1.5,"image_border_radius":"14px","image_alignment":"center","image_caption":false,"link_icon":true,"title_alignment":"left","headings_top_spacing":{"h1":"3.2rem","h2":"2.4rem","h3":"1.9rem","h4":"1.6rem","h5":"1.4rem","h6":"1.3rem"}},"word_count":{"enable":true,"count":true,"min2read":true},"author_label":{"enable":true,"auto":false,"list":["前端小白🥬"]},"code_block":{"copy":true,"style":"mac","font":{"enable":false,"family":null,"url":null}},"toc":{"enable":true,"max_depth":3,"number":false,"expand":true,"init_open":true},"copyright":{"enable":false,"default":"cc_by_nc_sa"},"lazyload":true,"recommendation":{"enable":false,"title":"推荐阅读","limit":3,"mobile_limit":2,"placeholder":"/images/wallhaven-wqery6-light.webp","skip_dirs":[]}},"colors":{"primary":"#A31F34","secondary":null,"default_mode":"light"},"global":{"fonts":{"chinese":{"enable":false,"family":null,"url":null},"english":{"enable":false,"family":null,"url":null}},"content_max_width":"1000px","sidebar_width":"210px","hover":{"shadow":true,"scale":false},"scroll_progress":{"bar":true,"percentage":true},"website_counter":{"url":"https://cn.vercount.one/js","enable":true,"site_pv":true,"site_uv":true,"post_pv":true},"single_page":true,"preloader":true,"open_graph":true,"google_analytics":{"enable":false,"id":null}},"home_banner":{"enable":true,"style":"fixed","image":{"light":"/images/wallhaven-wqery6-light.webp","dark":"/images/wallhaven-wqery6-dark.webp"},"title":"Yuyang's Blog","subtitle":{"text":["马无夜草不肥，人无横财不富","富贵险中求"],"hitokoto":{"enable":false,"api":"https://v1.hitokoto.cn"},"typing_speed":100,"backing_speed":80,"starting_delay":500,"backing_delay":1500,"loop":true,"smart_backspace":true},"text_color":{"light":"#fff","dark":"#d1d1b6"},"text_style":{"title_size":"2.8rem","subtitle_size":"1.5rem","line_height":1.2},"custom_font":{"enable":false,"family":null,"url":null},"social_links":{"enable":false,"style":"default","links":{"github":null,"instagram":null,"zhihu":null,"twitter":null,"email":null},"qrs":{"weixin":null}}},"plugins":{"feed":{"enable":false},"aplayer":{"enable":false,"type":"fixed","audios":[{"name":null,"artist":null,"url":null,"cover":null,"lrc":null}]},"mermaid":{"enable":false,"version":"9.3.0"}},"version":"2.6.4","navbar":{"auto_hide":false,"color":{"left":"#f78736","right":"#367df7","transparency":35},"width":{"home":"1200px","pages":"1000px"},"links":{"Home":{"path":"/","icon":"fa-regular fa-house"},"GitHub":{"path":"https://github.com/YuZeZhang","icon":"fa-brands fa-github"},"CSDN":{"path":"https://blog.csdn.net/weixin_57301463","icon":"fa-solid fa-rocket-launch"}},"search":{"enable":true,"preload":true}},"page_templates":{"friends_column":2,"tags_style":"blur"},"home":{"sidebar":{"enable":true,"position":"left","first_item":"menu","announcement":null,"show_on_mobile":true,"links":null},"article_date_format":"auto","categories":{"enable":true,"limit":3},"tags":{"enable":true,"limit":3}},"footerStart":"2022/8/17 11:45:14"};
+    window.lang_ago = {"second":"%s 秒前","minute":"%s 分钟前","hour":"%s 小时前","day":"%s 天前","week":"%s 周前","month":"%s 个月前","year":"%s 年前"};
+    window.data = {"masonry":false};
+  </script>
+    
+    <!--- Fontawesome Part-->
+    
+<link rel="stylesheet" href="/fontawesome/fontawesome.min.css">
+
+    
+<link rel="stylesheet" href="/fontawesome/brands.min.css">
+
+    
+<link rel="stylesheet" href="/fontawesome/solid.min.css">
+
+    
+<link rel="stylesheet" href="/fontawesome/regular.min.css">
+
+    
+    
+    
+    
+<meta name="generator" content="Hexo 7.2.0"></head>
+
+
+<body>
+<div class="progress-bar-container">
+    
+        <span class="scroll-progress-bar"></span>
+    
+
+    
+        <span class="pjax-progress-bar"></span>
+<!--        <span class="swup-progress-icon">-->
+<!--            <i class="fa-solid fa-circle-notch fa-spin"></i>-->
+<!--        </span>-->
+    
+</div>
+
+
+
+    <style>
+    :root {
+        --preloader-background-color: #fff;
+        --preloader-text-color: #000;
+    }
+
+    @media (prefers-color-scheme: dark) {
+        :root {
+            --preloader-background-color: #202124;
+            --preloader-text-color: #fff;
+        }
+    }
+
+    @media (prefers-color-scheme: light) {
+        :root {
+            --preloader-background-color: #fff;
+            --preloader-text-color: #000;
+        }
+    }
+
+    @media (max-width: 600px) {
+        .ml13 {
+            font-size: 2.6rem !important; /* Adjust this value as needed */
+        }
+    }
+
+    .preloader {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem; /* Tailwind 'gap-4' is 1rem */
+        align-items: center;
+        justify-content: center;
+        position: fixed;
+        padding: 12px;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh; /* 'h-screen' is 100% of the viewport height */
+        background-color: var(--preloader-background-color);
+        z-index: 1100; /* 'z-[1100]' sets the z-index */
+        transition: opacity 0.2s ease-in-out;
+    }
+
+    .ml13 {
+        font-size: 3.2rem;
+        /* text-transform: uppercase; */
+        color: var(--preloader-text-color);
+        letter-spacing: -1px;
+        font-weight: 500;
+        font-family: 'Chillax-Variable', sans-serif;
+        text-align: center;
+    }
+
+    .ml13 .word {
+        display: inline-flex;
+        flex-wrap: wrap;
+        white-space: nowrap;
+    }
+
+    .ml13 .letter {
+        display: inline-block;
+        line-height: 1em;
+    }
+</style>
+
+<div class="preloader">
+    <h2 class="ml13">
+        Welcome to Yuyang&#39;s Blog
+    </h2>
+    <script>
+        var textWrapper = document.querySelector('.ml13');
+        // Split text into words
+        var words = textWrapper.textContent.trim().split(' ');
+
+        // Clear the existing content
+        textWrapper.innerHTML = '';
+
+        // Wrap each word and its letters in spans
+        words.forEach(function(word) {
+            var wordSpan = document.createElement('span');
+            wordSpan.classList.add('word');
+            wordSpan.innerHTML = word.replace(/\S/g, "<span class='letter'>$&</span>");
+            textWrapper.appendChild(wordSpan);
+            textWrapper.appendChild(document.createTextNode(' ')); // Add space between words
+        });
+
+        var animation = anime.timeline({loop: true})
+            .add({
+                targets: '.ml13 .letter',
+                translateY: [40,0],
+                translateZ: 0,
+                opacity: [0,1],
+                filter: ['blur(5px)', 'blur(0px)'], // Starting from blurred to unblurred
+                easing: "easeOutExpo",
+                duration: 1400,
+                delay: (el, i) => 300 + 30 * i,
+            }).add({
+                targets: '.ml13 .letter',
+                translateY: [0,-40],
+                opacity: [1,0],
+                filter: ['blur(0px)', 'blur(5px)'], // Ending from unblurred to blurred
+                easing: "easeInExpo",
+                duration: 1200,
+                delay: (el, i) => 100 + 30 * i,
+                complete: function() {
+                    hidePreloader(); // Call hidePreloader after the animation completes
+                }
+            });
+
+        let themeStatus = JSON.parse(localStorage.getItem('REDEFINE-THEME-STATUS'))?.isDark;
+
+        // If the theme status is not found in local storage, check the preferred color scheme
+        if (themeStatus === undefined || themeStatus === null) {
+            if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+                themeStatus = 'dark';
+            } else {
+                themeStatus = 'light';
+            }
+        }
+
+        // Now you can use the themeStatus variable in your code
+        if (themeStatus) {
+            document.documentElement.style.setProperty('--preloader-background-color', '#202124');
+            document.documentElement.style.setProperty('--preloader-text-color', '#fff');
+        } else {
+            document.documentElement.style.setProperty('--preloader-background-color', '#fff');
+            document.documentElement.style.setProperty('--preloader-text-color', '#000');
+        }
+
+        window.addEventListener('load', function () {
+            setTimeout(hidePreloader, 5000); // Call hidePreloader after 5000 milliseconds if not already called by animation
+        });
+
+        function hidePreloader() {
+            var preloader = document.querySelector('.preloader');
+            preloader.style.opacity = '0';
+            setTimeout(function () {
+                preloader.style.display = 'none';
+            }, 200);
+        }
+    </script>
+</div>
+
+<main class="page-container" id="swup">
+
+    
+
+    <div class="main-content-container">
+
+
+        <div class="main-content-header">
+            <header class="navbar-container px-6 md:px-12">
+
+    <div class="navbar-content ">
+        <div class="left">
+            
+            <a class="logo-title" href="/">
+                
+                Welcome to Yuyang&#39;s Blog
+                
+            </a>
+        </div>
+
+        <div class="right">
+            <!-- PC -->
+            <div class="desktop">
+                <ul class="navbar-list">
+                    
+                        
+                            
+
+                            <li class="navbar-item">
+                                <!-- Menu -->
+                                <a class=""
+                                   href="/"
+                                        >
+                                    <i class="fa-regular fa-house fa-fw"></i>
+                                    首页
+                                    
+                                </a>
+
+                                <!-- Submenu -->
+                                
+                            </li>
+                    
+                        
+                            
+
+                            <li class="navbar-item">
+                                <!-- Menu -->
+                                <a class=""
+                                   href="https://github.com/YuZeZhang"
+                                        >
+                                    <i class="fa-brands fa-github fa-fw"></i>
+                                    GITHUB
+                                    
+                                </a>
+
+                                <!-- Submenu -->
+                                
+                            </li>
+                    
+                        
+                            
+
+                            <li class="navbar-item">
+                                <!-- Menu -->
+                                <a class=""
+                                   target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_57301463"
+                                        >
+                                    <i class="fa-solid fa-rocket-launch fa-fw"></i>
+                                    CSDN
+                                    
+                                </a>
+
+                                <!-- Submenu -->
+                                
+                            </li>
+                    
+                    
+                        <li class="navbar-item search search-popup-trigger">
+                            <i class="fa-solid fa-magnifying-glass"></i>
+                        </li>
+                    
+                </ul>
+            </div>
+            <!-- Mobile -->
+            <div class="mobile">
+                
+                    <div class="icon-item search search-popup-trigger"><i class="fa-solid fa-magnifying-glass"></i>
+                    </div>
+                
+                <div class="icon-item navbar-bar">
+                    <div class="navbar-bar-middle"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Mobile sheet -->
+    <div class="navbar-drawer h-screen w-full absolute top-0 left-0 bg-background-color flex flex-col justify-between">
+        <ul class="drawer-navbar-list flex flex-col px-4 justify-center items-start">
+            
+                
+                    
+
+                    <li class="drawer-navbar-item text-base my-1.5 flex flex-col w-full">
+                        
+                        <a class="py-1.5 px-2 flex flex-row items-center justify-between gap-1 hover:!text-primary active:!text-primary text-2xl font-semibold group border-b border-border-color hover:border-primary w-full "
+                           href="/"
+                        >
+                            <span>
+                                首页
+                            </span>
+                            
+                                <i class="fa-regular fa-house fa-sm fa-fw"></i>
+                            
+                        </a>
+                        
+
+                        
+                    </li>
+            
+                
+                    
+
+                    <li class="drawer-navbar-item text-base my-1.5 flex flex-col w-full">
+                        
+                        <a class="py-1.5 px-2 flex flex-row items-center justify-between gap-1 hover:!text-primary active:!text-primary text-2xl font-semibold group border-b border-border-color hover:border-primary w-full "
+                           href="https://github.com/YuZeZhang"
+                        >
+                            <span>
+                                GITHUB
+                            </span>
+                            
+                                <i class="fa-brands fa-github fa-sm fa-fw"></i>
+                            
+                        </a>
+                        
+
+                        
+                    </li>
+            
+                
+                    
+
+                    <li class="drawer-navbar-item text-base my-1.5 flex flex-col w-full">
+                        
+                        <a class="py-1.5 px-2 flex flex-row items-center justify-between gap-1 hover:!text-primary active:!text-primary text-2xl font-semibold group border-b border-border-color hover:border-primary w-full "
+                           target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_57301463"
+                        >
+                            <span>
+                                CSDN
+                            </span>
+                            
+                                <i class="fa-solid fa-rocket-launch fa-sm fa-fw"></i>
+                            
+                        </a>
+                        
+
+                        
+                    </li>
+            
+
+            
+            
+        </ul>
+
+        <div class="statistics flex justify-around my-2.5">
+    <a class="item tag-count-item flex flex-col justify-center items-center w-20" href="/tags">
+        <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">0</div>
+        <div class="label text-third-text-color text-sm">标签</div>
+    </a>
+    <a class="item tag-count-item flex flex-col justify-center items-center w-20" href="/categories">
+        <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">0</div>
+        <div class="label text-third-text-color text-sm">分类</div>
+    </a>
+    <a class="item tag-count-item flex flex-col justify-center items-center w-20" href="/archives">
+        <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">26</div>
+        <div class="label text-third-text-color text-sm">文章</div>
+    </a>
+</div>
+    </div>
+
+    <div class="window-mask"></div>
+
+</header>
+
+
+        </div>
+
+        <div class="main-content-body">
+
+            
+
+            <div class="main-content">
+
+                
+                    <div class="post-page-container flex relative justify-between box-border w-full h-full">
+    <div class="article-content-container">
+
+        <div class="article-title relative w-full">
+            
+                <div class="w-full flex items-center pt-6 justify-start">
+                    <h1 class="article-title-regular text-second-text-color tracking-tight text-4xl md:text-6xl font-semibold px-2 sm:px-6 md:px-8 py-3">自动化测试</h1>
+                </div>
+            
+            </div>
+
+        
+            <div class="article-header flex flex-row gap-2 items-center px-2 sm:px-6 md:px-8">
+                <div class="avatar w-[46px] h-[46px] flex-shrink-0 rounded-medium border border-border-color p-[1px]">
+                    <img src="https://raw.githubusercontent.com/YuZeZhang/myImgslib/main/202406232019880.png">
+                </div>
+                <div class="info flex flex-col justify-between">
+                    <div class="author flex items-center">
+                        <span class="name text-default-text-color text-lg font-semibold">Yuyang</span>
+                        
+                            <span class="author-label ml-1.5 text-xs px-2 py-0.5 rounded-small text-third-text-color border border-shadow-color-1">前端小白🥬</span>
+                        
+                    </div>
+                    <div class="meta-info">
+                        <div class="article-meta-info">
+    <span class="article-date article-meta-item">
+        <i class="fa-regular fa-pen-fancy"></i>&nbsp;
+        <span class="desktop">2024-07-19 10:46:17</span>
+        <span class="mobile">2024-07-19 10:46:17</span>
+        <span class="hover-info">创建</span>
+    </span>
+    
+        <span class="article-date article-meta-item">
+            <i class="fa-regular fa-wrench"></i>&nbsp;
+            <span class="desktop">2024-08-05 02:08:54</span>
+            <span class="mobile">2024-08-05 02:08:54</span>
+            <span class="hover-info">更新</span>
+        </span>
+    
+
+    
+    
+
+    
+    
+    
+    
+        <span class="article-pv article-meta-item">
+            <i class="fa-regular fa-eye"></i>&nbsp;<span id="busuanzi_value_page_pv"></span>
+        </span>
+    
+</div>
+
+                    </div>
+                </div>
+            </div>
+        
+
+        
+
+
+        <div class="article-content markdown-body px-2 sm:px-6 md:px-8 pb-8">
+            <h2 id="自动化测试与技术选型"><a href="#自动化测试与技术选型" class="headerlink" title="自动化测试与技术选型"></a>自动化测试与技术选型</h2><h3 id="认识并使用jest"><a href="#认识并使用jest" class="headerlink" title="认识并使用jest"></a>认识并使用jest</h3><h3 id="e2e测试"><a href="#e2e测试" class="headerlink" title="e2e测试"></a>e2e测试</h3><h3 id="devops"><a href="#devops" class="headerlink" title="devops"></a>devops</h3><h3 id="自动化测试"><a href="#自动化测试" class="headerlink" title="自动化测试"></a>自动化测试</h3><h4 id="为什么需要测试"><a href="#为什么需要测试" class="headerlink" title="为什么需要测试"></a>为什么需要测试</h4><p>让程序稳定健壮，提高代码质量，减少bug，提高开发效率。</p>
+<ul>
+<li>频繁变动的需求</li>
+<li>人力成本</li>
+<li>不太重视</li>
+</ul>
+<h4 id="什么时候-或者什么场景需要考虑自动化测试"><a href="#什么时候-或者什么场景需要考虑自动化测试" class="headerlink" title="什么时候 或者什么场景需要考虑自动化测试"></a>什么时候 或者什么场景需要考虑自动化测试</h4><ul>
+<li>公共库项目开发维护 vue react babel</li>
+<li>中长期项目</li>
+<li>需求趋于稳定后的系统</li>
+</ul>
+<h4 id="测试类型"><a href="#测试类型" class="headerlink" title="测试类型"></a>测试类型</h4><ul>
+<li>单元测试 Unit Test 小的功能的测试 Jest @vue&#x2F;test-utils Mocha</li>
+<li>集成测试 Integration Test 小的模块测试</li>
+<li>端到端测试 End-to-End Test 从页面出发去测试一些功能</li>
+<li>E2E测试 End-to-End Test (UI+接口) puppeteer</li>
+</ul>
+<p>断言库 Assert</p>
+<h2 id="单元测试原理"><a href="#单元测试原理" class="headerlink" title="单元测试原理"></a>单元测试原理</h2><p>通过一些测试用例 来编写测试代码 保证测试用例通过</p>
+<div class="highlight-container" data-rel="Javascript"><figure class="iseeu highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> chalk = <span class="built_in">require</span>(<span class="string">&#x27;chalk&#x27;</span>)</span><br><span class="line"><span class="comment">// import chalk from &#x27;chalk&#x27;</span></span><br><span class="line"><span class="comment">// 描述测试场景</span></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">describe</span>(<span class="params">desc, fn</span>) &#123;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(chalk.<span class="title function_">green</span>(desc))</span><br><span class="line">  <span class="title function_">fn</span>()</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 单元测试的测试描述</span></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">it</span>(<span class="params">desc, fn</span>) &#123;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(chalk.<span class="title function_">yellow</span>(desc))</span><br><span class="line">  <span class="title function_">fn</span>()</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 断言</span></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">expect</span>(<span class="params">result</span>) &#123;</span><br><span class="line">  <span class="keyword">return</span> &#123;</span><br><span class="line">    <span class="title function_">toBe</span>(<span class="params">actual</span>) &#123;</span><br><span class="line">      <span class="keyword">if</span> (result != actual) &#123;</span><br><span class="line">        <span class="variable language_">console</span>.<span class="title function_">log</span>(chalk.<span class="title function_">red</span>(<span class="string">&#x27;FAIL&#x27;</span>, result, actual))</span><br><span class="line">        <span class="keyword">throw</span> <span class="keyword">new</span> <span class="title class_">Error</span>(<span class="string">`预期值和实际值不相等，预期<span class="subst">$&#123;actual&#125;</span>,实际是<span class="subst">$&#123;result&#125;</span>`</span>)</span><br><span class="line">      &#125;</span><br><span class="line">      <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;success&#x27;</span>, result, actual)</span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="title function_">toEqual</span>(<span class="params">actual</span>) &#123;</span><br><span class="line">      <span class="comment">//   if (result != actual) &#123;</span></span><br><span class="line">      <span class="comment">//     console.log(chalk.red(&#x27;FAIL&#x27;, result, actual))</span></span><br><span class="line">      <span class="comment">//     throw new Error(`预期值和实际值不相等，预期$&#123;actual&#125;,实际是$&#123;result&#125;`)</span></span><br><span class="line">      <span class="comment">//   &#125;</span></span><br><span class="line">      <span class="comment">//   console.log(&#x27;success&#x27;, result, actual)</span></span><br><span class="line">    &#125;,</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="variable language_">module</span>.<span class="property">exports</span> = &#123;</span><br><span class="line">  describe,</span><br><span class="line">  it,</span><br><span class="line">  expect,</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure></div>
+
+<div class="highlight-container" data-rel="Javascript"><figure class="iseeu highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> &#123; expect, describe, it &#125; = <span class="built_in">require</span>(<span class="string">&quot;./test&quot;</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">sum</span>(<span class="params">a, b</span>) &#123;</span><br><span class="line">  <span class="keyword">return</span> a + b;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="title function_">describe</span>(<span class="string">&quot;用来测试sum函数&quot;</span>, <span class="function">() =&gt;</span> &#123;</span><br><span class="line">    <span class="title function_">it</span>(<span class="string">&quot;1 + 1 = 2&quot;</span>, <span class="function">() =&gt;</span> &#123;</span><br><span class="line">        <span class="title function_">expect</span>(<span class="title function_">sum</span>(<span class="number">1</span>, <span class="number">1</span>)).<span class="title function_">toBe</span>(<span class="number">2</span>);</span><br><span class="line">    &#125;);</span><br><span class="line">    <span class="title function_">it</span>(<span class="string">&quot;1 + 2 = 3&quot;</span>, <span class="function">() =&gt;</span> &#123;</span><br><span class="line">        <span class="title function_">expect</span>(<span class="title function_">sum</span>(<span class="number">1</span>, <span class="number">2</span>)).<span class="title function_">toBe</span>(<span class="number">3</span>);</span><br><span class="line">    &#125;);</span><br><span class="line">    <span class="title function_">it</span>(<span class="string">&quot;2 + 3 = 5&quot;</span>, <span class="function">() =&gt;</span> &#123;</span><br><span class="line">        <span class="title function_">expect</span>(<span class="title function_">sum</span>(<span class="number">2</span>, <span class="number">3</span>)).<span class="title function_">toBe</span>(<span class="number">5</span>);</span><br><span class="line">    &#125;);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure></div>
+
+<h3 id="JEST"><a href="#JEST" class="headerlink" title="JEST"></a>JEST</h3><ul>
+<li>快照测试</li>
+<li>测试覆盖率</li>
+<li>基本使用<ul>
+<li>基本方法测试</li>
+</ul>
+</li>
+</ul>
+<h4 id="常用的API"><a href="#常用的API" class="headerlink" title="常用的API"></a>常用的API</h4><ul>
+<li>describe 将多个相关的测试进行组合 组合到一块</li>
+<li>it </li>
+<li>expect 断言</li>
+</ul>
+<h4 id="生命周期"><a href="#生命周期" class="headerlink" title="生命周期"></a>生命周期</h4><ul>
+<li>beforeAll 所有用例执行前调用</li>
+<li>beforeEach 每个测试用例执行前调用</li>
+<li>after All 执行结束后调用</li>
+<li>afterEach 每个执行后调用</li>
+</ul>
+<h4 id="断言钩子"><a href="#断言钩子" class="headerlink" title="断言钩子"></a>断言钩子</h4><ul>
+<li>toBe 严格比对 &#x3D;&#x3D;&#x3D; 内存空间都是一致的</li>
+<li>toEqual 值比对 对象 递归遍历 比对值</li>
+</ul>
+<h4 id="快照测试"><a href="#快照测试" class="headerlink" title="快照测试"></a>快照测试</h4><p>确保UI不会有意外的改变</p>
+<h4 id="测试覆盖率"><a href="#测试覆盖率" class="headerlink" title="测试覆盖率"></a>测试覆盖率</h4><ul>
+<li>stmts 语句覆盖率</li>
+<li>branch 是否执行了每个分支</li>
+<li>funcs 函数覆盖率</li>
+<li>lines 是否执行每一行代码</li>
+</ul>
+<h2 id="E2E测试"><a href="#E2E测试" class="headerlink" title="E2E测试"></a>E2E测试</h2><p>puppeteer 无头浏览器</p>
+<p>cypress</p>
+<h3 id="puppeteer"><a href="#puppeteer" class="headerlink" title="puppeteer"></a>puppeteer</h3><p>node库 chrome</p>
+<p>在node环境下面对浏览器行为进行控制</p>
+<ul>
+<li>生成页面快照 图片 pdf</li>
+<li>抓取spa</li>
+<li>从网站上抓取需要的内容</li>
+<li>自动表单提交 UI 测试 键盘输入</li>
+<li>测试chrome扩展</li>
+<li>抓取应用的性能数据</li>
+</ul>
+<h4 id="技术点"><a href="#技术点" class="headerlink" title="技术点"></a>技术点</h4><ul>
+<li>browser 浏览器实例</li>
+<li>page页面</li>
+<li>executionContext js执行环境</li>
+<li>elementhandle 对应dom的元素借点</li>
+<li>jshandler js对象</li>
+</ul>
+<h4 id="测试场景"><a href="#测试场景" class="headerlink" title="测试场景"></a>测试场景</h4><ul>
+<li>表单输入 用户名 密码 提交 页面跳转</li>
+<li>体验优化 生成骨架屏 直接使用对应的页面截图</li>
+</ul>
+<p>puppteer 制定一些规则 img 灰色代码块替换</p>
+<h4 id="CI-CD"><a href="#CI-CD" class="headerlink" title="CI&#x2F;CD"></a>CI&#x2F;CD</h4><p>工程化 &#x3D;&gt; 研发工作台 &#x3D;&gt; 管理维护 发布 运维</p>
+<p>ci </p>
+<p>构建 &#x3D;&gt; 生成最终构建产物</p>
+<p>Test &#x3D;&gt; 保证产物健壮性</p>
+<p>cd</p>
+<p>最后阶段 &#x3D;&gt; 发布到对应的环境上 &#x3D;&gt; 线上服务器 nginx</p>
+<h4 id="git-action-自动化部署"><a href="#git-action-自动化部署" class="headerlink" title="git action 自动化部署"></a>git action 自动化部署</h4><p>workflow 工作流程</p>
+<ul>
+<li><p>配置文件</p>
+</li>
+<li><p>   .github&#x2F;workflows</p>
+</li>
+<li><p>   xxx.yml</p>
+<ul>
+<li>   name workflow名称</li>
+<li>   on:[push pull_request]</li>
+</ul>
+</li>
+<li><p>job 任务 可以配置一项或者多项任务</p>
+<ul>
+<li>name 名称 任务说明</li>
+<li>needs 运行顺序<ul>
+<li>jobs:<ul>
+<li>job1:</li>
+<li>job2:<ul>
+<li>needs: job1</li>
+</ul>
+</li>
+<li><h2 id="job3-needs-job1-job2-runs-on-ubuntuxx"><a href="#job3-needs-job1-job2-runs-on-ubuntuxx" class="headerlink" title="job3:- needs: [job1, job2]  - runs-on: ubuntuxx"></a>job3:<br>- needs: [job1, job2]<br>  - runs-on: ubuntuxx</h2></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>step 步骤</p>
+<ul>
+<li>name 步骤名称</li>
+<li>run 执行的命令 action</li>
+<li>env 环境变量</li>
+</ul>
+</li>
+<li><p>action 动作</p>
+</li>
+</ul>
+
+        </div>
+
+        
+
+        
+
+        
+
+        
+            <div class="article-nav my-8 flex justify-between items-center px-2 sm:px-6 md:px-8">
+                
+                    <div class="article-prev border-border-color shadow-redefine-flat shadow-shadow-color-2 rounded-medium px-4 py-2 hover:shadow-redefine-flat-hover hover:shadow-shadow-color-2">
+                        <a class="prev"
+                        rel="prev"
+                        href="/Yuyang/engineering/"
+                        >
+                            <span class="left arrow-icon flex justify-center items-center">
+                                <i class="fa-solid fa-chevron-left"></i>
+                            </span>
+                            <span class="title flex justify-center items-center">
+                                <span class="post-nav-title-item">前端工程化</span>
+                                <span class="post-nav-item">上一篇</span>
+                            </span>
+                        </a>
+                    </div>
+                
+                
+                    <div class="article-next border-border-color shadow-redefine-flat shadow-shadow-color-2 rounded-medium px-4 py-2 hover:shadow-redefine-flat-hover hover:shadow-shadow-color-2">
+                        <a class="next"
+                        rel="next"
+                        href="/Yuyang/autoBuild/"
+                        >
+                            <span class="title flex justify-center items-center">
+                                <span class="post-nav-title-item">自动化构建</span>
+                                <span class="post-nav-item">下一篇</span>
+                            </span>
+                            <span class="right arrow-icon flex justify-center items-center">
+                                <i class="fa-solid fa-chevron-right"></i>
+                            </span>
+                        </a>
+                    </div>
+                
+            </div>
+        
+
+
+        
+    </div>
+
+    
+        <div class="toc-content-container">
+            <div class="post-toc-wrap">
+    <div class="post-toc">
+        <div class="toc-title">此页目录</div>
+        <div class="page-title">自动化测试</div>
+        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%87%AA%E5%8A%A8%E5%8C%96%E6%B5%8B%E8%AF%95%E4%B8%8E%E6%8A%80%E6%9C%AF%E9%80%89%E5%9E%8B"><span class="nav-text">自动化测试与技术选型</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%AE%A4%E8%AF%86%E5%B9%B6%E4%BD%BF%E7%94%A8jest"><span class="nav-text">认识并使用jest</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#e2e%E6%B5%8B%E8%AF%95"><span class="nav-text">e2e测试</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#devops"><span class="nav-text">devops</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%87%AA%E5%8A%A8%E5%8C%96%E6%B5%8B%E8%AF%95"><span class="nav-text">自动化测试</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8D%95%E5%85%83%E6%B5%8B%E8%AF%95%E5%8E%9F%E7%90%86"><span class="nav-text">单元测试原理</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#JEST"><span class="nav-text">JEST</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#E2E%E6%B5%8B%E8%AF%95"><span class="nav-text">E2E测试</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#puppeteer"><span class="nav-text">puppeteer</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#job3-needs-job1-job2-runs-on-ubuntuxx"><span class="nav-text">job3:- needs: [job1, job2]  - runs-on: ubuntuxx</span></a></li></ol>
+
+    </div>
+</div>
+        </div>
+    
+</div>
+
+
+
+                
+
+            </div>
+
+            
+
+        </div>
+
+        <div class="main-content-footer">
+            <footer class="footer mt-5 py-5 h-auto text-base text-third-text-color relative border-t-2 border-t-border-color">
+    <div class="info-container py-3 text-center">
+        
+        <div class="text-center">
+            &copy;
+            
+              <span>2022</span>
+              -
+            
+            2024&nbsp;&nbsp;<i class="fa-solid fa-heart fa-beat" style="--fa-animation-duration: 0.5s; color: #f54545"></i>&nbsp;&nbsp;<a href="/">Yuyang</a>
+            
+                
+                <p class="post-count space-x-0.5">
+                    <span>
+                        共 26 篇文章
+                    </span>
+                    
+                </p>
+            
+        </div>
+        
+            <script data-swup-reload-script src="https://cn.vercount.one/js"></script>
+            <div class="relative text-center lg:absolute lg:right-[20px] lg:top-1/2 lg:-translate-y-1/2 lg:text-right">
+                
+                    <span id="busuanzi_container_site_uv" class="lg:!block">
+                        <span class="text-sm">访问人数</span>
+                        <span id="busuanzi_value_site_uv"></span>
+                    </span>
+                
+                
+                    <span id="busuanzi_container_site_pv" class="lg:!block">
+                        <span class="text-sm">总访问量</span>
+                        <span id="busuanzi_value_site_pv"></span>
+                    </span>
+                
+            </div>
+        
+        <div class="relative text-center lg:absolute lg:left-[20px] lg:top-1/2 lg:-translate-y-1/2 lg:text-left">
+            <span class="lg:block text-sm">由 <?xml version="1.0" encoding="utf-8"?><!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"><svg class="relative top-[2px] inline-block align-baseline" version="1.1" id="圖層_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="1rem" height="1rem" viewBox="0 0 512 512" enable-background="new 0 0 512 512" xml:space="preserve"><path fill="#0E83CD" d="M256.4,25.8l-200,115.5L56,371.5l199.6,114.7l200-115.5l0.4-230.2L256.4,25.8z M349,354.6l-18.4,10.7l-18.6-11V275H200v79.6l-18.4,10.7l-18.6-11v-197l18.5-10.6l18.5,10.8V237h112v-79.6l18.5-10.6l18.5,10.8V354.6z"/></svg><a target="_blank" class="text-base" href="https://hexo.io">Hexo</a> 驱动</span>
+            <span class="text-sm lg:block">主题&nbsp;<a class="text-base" target="_blank" href="https://github.com/EvanNotFound/hexo-theme-redefine">Redefine v2.6.4</a></span>
+        </div>
+        
+        
+        
+        
+        
+    </div>  
+</footer>
+        </div>
+    </div>
+
+    
+        <div class="post-tools">
+            <div class="post-tools-container">
+    <ul class="article-tools-list">
+        <!-- TOC aside toggle -->
+        
+            <li class="right-bottom-tools page-aside-toggle">
+                <i class="fa-regular fa-outdent"></i>
+            </li>
+        
+
+        <!-- go comment -->
+        
+    </ul>
+</div>
+
+        </div>
+    
+
+    <div class="right-side-tools-container">
+        <div class="side-tools-container">
+    <ul class="hidden-tools-list">
+        <li class="right-bottom-tools tool-font-adjust-plus flex justify-center items-center">
+            <i class="fa-regular fa-magnifying-glass-plus"></i>
+        </li>
+
+        <li class="right-bottom-tools tool-font-adjust-minus flex justify-center items-center">
+            <i class="fa-regular fa-magnifying-glass-minus"></i>
+        </li>
+
+        <li class="right-bottom-tools tool-dark-light-toggle flex justify-center items-center">
+            <i class="fa-regular fa-moon"></i>
+        </li>
+
+        <!-- rss -->
+        
+
+        
+
+        <li class="right-bottom-tools tool-scroll-to-bottom flex justify-center items-center">
+            <i class="fa-regular fa-arrow-down"></i>
+        </li>
+    </ul>
+
+    <ul class="visible-tools-list">
+        <li class="right-bottom-tools toggle-tools-list flex justify-center items-center">
+            <i class="fa-regular fa-cog fa-spin"></i>
+        </li>
+        
+            <li class="right-bottom-tools tool-scroll-to-top flex justify-center items-center">
+                <i class="arrow-up fas fa-arrow-up"></i>
+                <span class="percent"></span>
+            </li>
+        
+        
+    </ul>
+</div>
+
+    </div>
+
+    <div class="image-viewer-container">
+    <img src="">
+</div>
+
+
+    
+        <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+          <span class="search-input-field-pre">
+            <i class="fa-solid fa-keyboard"></i>
+          </span>
+            <div class="search-input-container">
+                <input autocomplete="off"
+                       autocorrect="off"
+                       autocapitalize="off"
+                       placeholder="搜索..."
+                       spellcheck="false"
+                       type="search"
+                       class="search-input"
+                >
+            </div>
+            <span class="popup-btn-close">
+                <i class="fa-solid fa-times"></i>
+            </span>
+        </div>
+        <div id="search-result">
+            <div id="no-result">
+                <i class="fa-solid fa-spinner fa-spin-pulse fa-5x fa-fw"></i>
+            </div>
+        </div>
+    </div>
+</div>
+
+    
+
+</main>
+
+
+    
+<script src="/js/libs/Swup.min.js"></script>
+
+<script src="/js/libs/SwupSlideTheme.min.js"></script>
+
+<script src="/js/libs/SwupScriptsPlugin.min.js"></script>
+
+<script src="/js/libs/SwupProgressPlugin.min.js"></script>
+
+<script src="/js/libs/SwupScrollPlugin.min.js"></script>
+
+<script src="/js/libs/SwupPreloadPlugin.min.js"></script>
+
+<script>
+    const swup = new Swup({
+        plugins: [
+            new SwupScriptsPlugin({
+                optin: true,
+            }),
+            new SwupProgressPlugin(),
+            new SwupScrollPlugin({
+                offset: 80,
+            }),
+            new SwupSlideTheme({
+                mainElement: ".main-content-body",
+            }),
+            new SwupPreloadPlugin(),
+        ],
+        containers: ["#swup"],
+    });
+</script>
+
+
+
+
+
+
+
+<script src="/js/tools/imageViewer.js" type="module"></script>
+
+<script src="/js/utils.js" type="module"></script>
+
+<script src="/js/main.js" type="module"></script>
+
+<script src="/js/layouts/navbarShrink.js" type="module"></script>
+
+<script src="/js/tools/scrollTopBottom.js" type="module"></script>
+
+<script src="/js/tools/lightDarkSwitch.js" type="module"></script>
+
+<script src="/js/layouts/categoryList.js" type="module"></script>
+
+
+
+    
+<script src="/js/tools/localSearch.js" type="module"></script>
+
+
+
+
+    
+<script src="/js/tools/codeBlock.js" type="module"></script>
+
+
+
+
+    
+<script src="/js/layouts/lazyload.js" type="module"></script>
+
+
+
+
+
+
+  
+<script src="/js/libs/Typed.min.js"></script>
+
+  
+<script src="/js/plugins/typed.js" type="module"></script>
+
+
+
+
+
+
+
+
+
+<div class="post-scripts" data-swup-reload-script>
+    
+        
+<script src="/js/tools/tocToggle.js" type="module"></script>
+
+<script src="/js/layouts/toc.js" type="module"></script>
+
+<script src="/js/plugins/tabs.js" type="module"></script>
+
+    
+</div>
+
+
+</body>
+</html>

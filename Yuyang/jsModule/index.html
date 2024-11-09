@@ -1,0 +1,949 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="keywords" content="Hexo Theme Redefine">
+    
+    <meta name="author" content="Yuyang">
+    <!-- preconnect -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    
+    <!--- Seo Part-->
+    
+    <link rel="canonical" href="https://github.com/YuZeZhang/YuZeZhang.github.io/yuyang/jsmodule/"/>
+    <meta name="robots" content="index,follow">
+    <meta name="googlebot" content="index,follow">
+    <meta name="revisit-after" content="1 days">
+    
+        <meta name="description" content="JS模块化 模块化的理解模块化主要解决两个问题：命名冲突和文件依赖。 123456789101112131415161718 生态             诞生时间 CommonJS         2009年 Node.js          2009年    NPM              2010年    requireJS(AMD)   2010年	异步模块定义 async module">
+<meta property="og:type" content="article">
+<meta property="og:title" content="JS模块化">
+<meta property="og:url" content="https://github.com/YuZeZhang/YuZeZhang.github.io/Yuyang/jsModule/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="JS模块化 模块化的理解模块化主要解决两个问题：命名冲突和文件依赖。 123456789101112131415161718 生态             诞生时间 CommonJS         2009年 Node.js          2009年    NPM              2010年    requireJS(AMD)   2010年	异步模块定义 async module">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2024-07-22T07:46:14.773Z">
+<meta property="article:modified_time" content="2024-07-22T09:03:48.420Z">
+<meta property="article:author" content="Yuyang">
+<meta name="twitter:card" content="summary">
+    
+    
+    <!--- Icon Part-->
+    <link rel="icon" type="image/png" href="https://raw.githubusercontent.com/YuZeZhang/myImgslib/main/202406232019880.png" sizes="192x192">
+    <link rel="apple-touch-icon" sizes="180x180" href="https://raw.githubusercontent.com/YuZeZhang/myImgslib/main/202406232019880.png">
+    <meta name="theme-color" content="#A31F34">
+    <link rel="shortcut icon" href="https://raw.githubusercontent.com/YuZeZhang/myImgslib/main/202406232019880.png">
+    <!--- Page Info-->
+    
+    <title>
+        
+            JS模块化 -
+        
+        Welcome to Yuyang&#39;s Blog
+    </title>
+
+    
+<link rel="stylesheet" href="/fonts/Chillax/chillax.css">
+
+
+    <!--- Inject Part-->
+    
+
+    
+<link rel="stylesheet" href="/css/style.css">
+
+
+    
+        
+<link rel="stylesheet" href="/assets/build/styles.css">
+
+    
+
+    
+<link rel="stylesheet" href="/fonts/GeistMono/geist-mono.css">
+
+    
+<link rel="stylesheet" href="/fonts/Geist/geist.css">
+
+    <!--- Font Part-->
+    
+    
+    
+    
+
+    
+        
+<script src="/js/libs/anime.min.js"></script>
+
+    
+
+    <script id="hexo-configurations">
+    window.config = {"hostname":"github.com","root":"/","language":"zh-CN","path":"search.xml"};
+    window.theme = {"articles":{"style":{"font_size":"16px","line_height":1.5,"image_border_radius":"14px","image_alignment":"center","image_caption":false,"link_icon":true,"title_alignment":"left","headings_top_spacing":{"h1":"3.2rem","h2":"2.4rem","h3":"1.9rem","h4":"1.6rem","h5":"1.4rem","h6":"1.3rem"}},"word_count":{"enable":true,"count":true,"min2read":true},"author_label":{"enable":true,"auto":false,"list":["前端小白🥬"]},"code_block":{"copy":true,"style":"mac","font":{"enable":false,"family":null,"url":null}},"toc":{"enable":true,"max_depth":3,"number":false,"expand":true,"init_open":true},"copyright":{"enable":false,"default":"cc_by_nc_sa"},"lazyload":true,"recommendation":{"enable":false,"title":"推荐阅读","limit":3,"mobile_limit":2,"placeholder":"/images/wallhaven-wqery6-light.webp","skip_dirs":[]}},"colors":{"primary":"#A31F34","secondary":null,"default_mode":"light"},"global":{"fonts":{"chinese":{"enable":false,"family":null,"url":null},"english":{"enable":false,"family":null,"url":null}},"content_max_width":"1000px","sidebar_width":"210px","hover":{"shadow":true,"scale":false},"scroll_progress":{"bar":true,"percentage":true},"website_counter":{"url":"https://cn.vercount.one/js","enable":true,"site_pv":true,"site_uv":true,"post_pv":true},"single_page":true,"preloader":true,"open_graph":true,"google_analytics":{"enable":false,"id":null}},"home_banner":{"enable":true,"style":"fixed","image":{"light":"/images/wallhaven-wqery6-light.webp","dark":"/images/wallhaven-wqery6-dark.webp"},"title":"Yuyang's Blog","subtitle":{"text":["马无夜草不肥，人无横财不富","富贵险中求"],"hitokoto":{"enable":false,"api":"https://v1.hitokoto.cn"},"typing_speed":100,"backing_speed":80,"starting_delay":500,"backing_delay":1500,"loop":true,"smart_backspace":true},"text_color":{"light":"#fff","dark":"#d1d1b6"},"text_style":{"title_size":"2.8rem","subtitle_size":"1.5rem","line_height":1.2},"custom_font":{"enable":false,"family":null,"url":null},"social_links":{"enable":false,"style":"default","links":{"github":null,"instagram":null,"zhihu":null,"twitter":null,"email":null},"qrs":{"weixin":null}}},"plugins":{"feed":{"enable":false},"aplayer":{"enable":false,"type":"fixed","audios":[{"name":null,"artist":null,"url":null,"cover":null,"lrc":null}]},"mermaid":{"enable":false,"version":"9.3.0"}},"version":"2.6.4","navbar":{"auto_hide":false,"color":{"left":"#f78736","right":"#367df7","transparency":35},"width":{"home":"1200px","pages":"1000px"},"links":{"Home":{"path":"/","icon":"fa-regular fa-house"},"GitHub":{"path":"https://github.com/YuZeZhang","icon":"fa-brands fa-github"},"CSDN":{"path":"https://blog.csdn.net/weixin_57301463","icon":"fa-solid fa-rocket-launch"}},"search":{"enable":true,"preload":true}},"page_templates":{"friends_column":2,"tags_style":"blur"},"home":{"sidebar":{"enable":true,"position":"left","first_item":"menu","announcement":null,"show_on_mobile":true,"links":null},"article_date_format":"auto","categories":{"enable":true,"limit":3},"tags":{"enable":true,"limit":3}},"footerStart":"2022/8/17 11:45:14"};
+    window.lang_ago = {"second":"%s 秒前","minute":"%s 分钟前","hour":"%s 小时前","day":"%s 天前","week":"%s 周前","month":"%s 个月前","year":"%s 年前"};
+    window.data = {"masonry":false};
+  </script>
+    
+    <!--- Fontawesome Part-->
+    
+<link rel="stylesheet" href="/fontawesome/fontawesome.min.css">
+
+    
+<link rel="stylesheet" href="/fontawesome/brands.min.css">
+
+    
+<link rel="stylesheet" href="/fontawesome/solid.min.css">
+
+    
+<link rel="stylesheet" href="/fontawesome/regular.min.css">
+
+    
+    
+    
+    
+<meta name="generator" content="Hexo 7.2.0"></head>
+
+
+<body>
+<div class="progress-bar-container">
+    
+        <span class="scroll-progress-bar"></span>
+    
+
+    
+        <span class="pjax-progress-bar"></span>
+<!--        <span class="swup-progress-icon">-->
+<!--            <i class="fa-solid fa-circle-notch fa-spin"></i>-->
+<!--        </span>-->
+    
+</div>
+
+
+
+    <style>
+    :root {
+        --preloader-background-color: #fff;
+        --preloader-text-color: #000;
+    }
+
+    @media (prefers-color-scheme: dark) {
+        :root {
+            --preloader-background-color: #202124;
+            --preloader-text-color: #fff;
+        }
+    }
+
+    @media (prefers-color-scheme: light) {
+        :root {
+            --preloader-background-color: #fff;
+            --preloader-text-color: #000;
+        }
+    }
+
+    @media (max-width: 600px) {
+        .ml13 {
+            font-size: 2.6rem !important; /* Adjust this value as needed */
+        }
+    }
+
+    .preloader {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem; /* Tailwind 'gap-4' is 1rem */
+        align-items: center;
+        justify-content: center;
+        position: fixed;
+        padding: 12px;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh; /* 'h-screen' is 100% of the viewport height */
+        background-color: var(--preloader-background-color);
+        z-index: 1100; /* 'z-[1100]' sets the z-index */
+        transition: opacity 0.2s ease-in-out;
+    }
+
+    .ml13 {
+        font-size: 3.2rem;
+        /* text-transform: uppercase; */
+        color: var(--preloader-text-color);
+        letter-spacing: -1px;
+        font-weight: 500;
+        font-family: 'Chillax-Variable', sans-serif;
+        text-align: center;
+    }
+
+    .ml13 .word {
+        display: inline-flex;
+        flex-wrap: wrap;
+        white-space: nowrap;
+    }
+
+    .ml13 .letter {
+        display: inline-block;
+        line-height: 1em;
+    }
+</style>
+
+<div class="preloader">
+    <h2 class="ml13">
+        Welcome to Yuyang&#39;s Blog
+    </h2>
+    <script>
+        var textWrapper = document.querySelector('.ml13');
+        // Split text into words
+        var words = textWrapper.textContent.trim().split(' ');
+
+        // Clear the existing content
+        textWrapper.innerHTML = '';
+
+        // Wrap each word and its letters in spans
+        words.forEach(function(word) {
+            var wordSpan = document.createElement('span');
+            wordSpan.classList.add('word');
+            wordSpan.innerHTML = word.replace(/\S/g, "<span class='letter'>$&</span>");
+            textWrapper.appendChild(wordSpan);
+            textWrapper.appendChild(document.createTextNode(' ')); // Add space between words
+        });
+
+        var animation = anime.timeline({loop: true})
+            .add({
+                targets: '.ml13 .letter',
+                translateY: [40,0],
+                translateZ: 0,
+                opacity: [0,1],
+                filter: ['blur(5px)', 'blur(0px)'], // Starting from blurred to unblurred
+                easing: "easeOutExpo",
+                duration: 1400,
+                delay: (el, i) => 300 + 30 * i,
+            }).add({
+                targets: '.ml13 .letter',
+                translateY: [0,-40],
+                opacity: [1,0],
+                filter: ['blur(0px)', 'blur(5px)'], // Ending from unblurred to blurred
+                easing: "easeInExpo",
+                duration: 1200,
+                delay: (el, i) => 100 + 30 * i,
+                complete: function() {
+                    hidePreloader(); // Call hidePreloader after the animation completes
+                }
+            });
+
+        let themeStatus = JSON.parse(localStorage.getItem('REDEFINE-THEME-STATUS'))?.isDark;
+
+        // If the theme status is not found in local storage, check the preferred color scheme
+        if (themeStatus === undefined || themeStatus === null) {
+            if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+                themeStatus = 'dark';
+            } else {
+                themeStatus = 'light';
+            }
+        }
+
+        // Now you can use the themeStatus variable in your code
+        if (themeStatus) {
+            document.documentElement.style.setProperty('--preloader-background-color', '#202124');
+            document.documentElement.style.setProperty('--preloader-text-color', '#fff');
+        } else {
+            document.documentElement.style.setProperty('--preloader-background-color', '#fff');
+            document.documentElement.style.setProperty('--preloader-text-color', '#000');
+        }
+
+        window.addEventListener('load', function () {
+            setTimeout(hidePreloader, 5000); // Call hidePreloader after 5000 milliseconds if not already called by animation
+        });
+
+        function hidePreloader() {
+            var preloader = document.querySelector('.preloader');
+            preloader.style.opacity = '0';
+            setTimeout(function () {
+                preloader.style.display = 'none';
+            }, 200);
+        }
+    </script>
+</div>
+
+<main class="page-container" id="swup">
+
+    
+
+    <div class="main-content-container">
+
+
+        <div class="main-content-header">
+            <header class="navbar-container px-6 md:px-12">
+
+    <div class="navbar-content ">
+        <div class="left">
+            
+            <a class="logo-title" href="/">
+                
+                Welcome to Yuyang&#39;s Blog
+                
+            </a>
+        </div>
+
+        <div class="right">
+            <!-- PC -->
+            <div class="desktop">
+                <ul class="navbar-list">
+                    
+                        
+                            
+
+                            <li class="navbar-item">
+                                <!-- Menu -->
+                                <a class=""
+                                   href="/"
+                                        >
+                                    <i class="fa-regular fa-house fa-fw"></i>
+                                    首页
+                                    
+                                </a>
+
+                                <!-- Submenu -->
+                                
+                            </li>
+                    
+                        
+                            
+
+                            <li class="navbar-item">
+                                <!-- Menu -->
+                                <a class=""
+                                   href="https://github.com/YuZeZhang"
+                                        >
+                                    <i class="fa-brands fa-github fa-fw"></i>
+                                    GITHUB
+                                    
+                                </a>
+
+                                <!-- Submenu -->
+                                
+                            </li>
+                    
+                        
+                            
+
+                            <li class="navbar-item">
+                                <!-- Menu -->
+                                <a class=""
+                                   target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_57301463"
+                                        >
+                                    <i class="fa-solid fa-rocket-launch fa-fw"></i>
+                                    CSDN
+                                    
+                                </a>
+
+                                <!-- Submenu -->
+                                
+                            </li>
+                    
+                    
+                        <li class="navbar-item search search-popup-trigger">
+                            <i class="fa-solid fa-magnifying-glass"></i>
+                        </li>
+                    
+                </ul>
+            </div>
+            <!-- Mobile -->
+            <div class="mobile">
+                
+                    <div class="icon-item search search-popup-trigger"><i class="fa-solid fa-magnifying-glass"></i>
+                    </div>
+                
+                <div class="icon-item navbar-bar">
+                    <div class="navbar-bar-middle"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Mobile sheet -->
+    <div class="navbar-drawer h-screen w-full absolute top-0 left-0 bg-background-color flex flex-col justify-between">
+        <ul class="drawer-navbar-list flex flex-col px-4 justify-center items-start">
+            
+                
+                    
+
+                    <li class="drawer-navbar-item text-base my-1.5 flex flex-col w-full">
+                        
+                        <a class="py-1.5 px-2 flex flex-row items-center justify-between gap-1 hover:!text-primary active:!text-primary text-2xl font-semibold group border-b border-border-color hover:border-primary w-full "
+                           href="/"
+                        >
+                            <span>
+                                首页
+                            </span>
+                            
+                                <i class="fa-regular fa-house fa-sm fa-fw"></i>
+                            
+                        </a>
+                        
+
+                        
+                    </li>
+            
+                
+                    
+
+                    <li class="drawer-navbar-item text-base my-1.5 flex flex-col w-full">
+                        
+                        <a class="py-1.5 px-2 flex flex-row items-center justify-between gap-1 hover:!text-primary active:!text-primary text-2xl font-semibold group border-b border-border-color hover:border-primary w-full "
+                           href="https://github.com/YuZeZhang"
+                        >
+                            <span>
+                                GITHUB
+                            </span>
+                            
+                                <i class="fa-brands fa-github fa-sm fa-fw"></i>
+                            
+                        </a>
+                        
+
+                        
+                    </li>
+            
+                
+                    
+
+                    <li class="drawer-navbar-item text-base my-1.5 flex flex-col w-full">
+                        
+                        <a class="py-1.5 px-2 flex flex-row items-center justify-between gap-1 hover:!text-primary active:!text-primary text-2xl font-semibold group border-b border-border-color hover:border-primary w-full "
+                           target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_57301463"
+                        >
+                            <span>
+                                CSDN
+                            </span>
+                            
+                                <i class="fa-solid fa-rocket-launch fa-sm fa-fw"></i>
+                            
+                        </a>
+                        
+
+                        
+                    </li>
+            
+
+            
+            
+        </ul>
+
+        <div class="statistics flex justify-around my-2.5">
+    <a class="item tag-count-item flex flex-col justify-center items-center w-20" href="/tags">
+        <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">0</div>
+        <div class="label text-third-text-color text-sm">标签</div>
+    </a>
+    <a class="item tag-count-item flex flex-col justify-center items-center w-20" href="/categories">
+        <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">0</div>
+        <div class="label text-third-text-color text-sm">分类</div>
+    </a>
+    <a class="item tag-count-item flex flex-col justify-center items-center w-20" href="/archives">
+        <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">26</div>
+        <div class="label text-third-text-color text-sm">文章</div>
+    </a>
+</div>
+    </div>
+
+    <div class="window-mask"></div>
+
+</header>
+
+
+        </div>
+
+        <div class="main-content-body">
+
+            
+
+            <div class="main-content">
+
+                
+                    <div class="post-page-container flex relative justify-between box-border w-full h-full">
+    <div class="article-content-container">
+
+        <div class="article-title relative w-full">
+            
+                <div class="w-full flex items-center pt-6 justify-start">
+                    <h1 class="article-title-regular text-second-text-color tracking-tight text-4xl md:text-6xl font-semibold px-2 sm:px-6 md:px-8 py-3">JS模块化</h1>
+                </div>
+            
+            </div>
+
+        
+            <div class="article-header flex flex-row gap-2 items-center px-2 sm:px-6 md:px-8">
+                <div class="avatar w-[46px] h-[46px] flex-shrink-0 rounded-medium border border-border-color p-[1px]">
+                    <img src="https://raw.githubusercontent.com/YuZeZhang/myImgslib/main/202406232019880.png">
+                </div>
+                <div class="info flex flex-col justify-between">
+                    <div class="author flex items-center">
+                        <span class="name text-default-text-color text-lg font-semibold">Yuyang</span>
+                        
+                            <span class="author-label ml-1.5 text-xs px-2 py-0.5 rounded-small text-third-text-color border border-shadow-color-1">前端小白🥬</span>
+                        
+                    </div>
+                    <div class="meta-info">
+                        <div class="article-meta-info">
+    <span class="article-date article-meta-item">
+        <i class="fa-regular fa-pen-fancy"></i>&nbsp;
+        <span class="desktop">2024-07-22 15:46:14</span>
+        <span class="mobile">2024-07-22 15:46:14</span>
+        <span class="hover-info">创建</span>
+    </span>
+    
+        <span class="article-date article-meta-item">
+            <i class="fa-regular fa-wrench"></i>&nbsp;
+            <span class="desktop">2024-07-22 17:03:48</span>
+            <span class="mobile">2024-07-22 17:03:48</span>
+            <span class="hover-info">更新</span>
+        </span>
+    
+
+    
+    
+
+    
+    
+    
+    
+        <span class="article-pv article-meta-item">
+            <i class="fa-regular fa-eye"></i>&nbsp;<span id="busuanzi_value_page_pv"></span>
+        </span>
+    
+</div>
+
+                    </div>
+                </div>
+            </div>
+        
+
+        
+
+
+        <div class="article-content markdown-body px-2 sm:px-6 md:px-8 pb-8">
+            <p>JS模块化</p>
+<h2 id="模块化的理解"><a href="#模块化的理解" class="headerlink" title="模块化的理解"></a>模块化的理解</h2><p>模块化主要解决两个问题：命名冲突和文件依赖。</p>
+<div class="highlight-container" data-rel="Js"><figure class="iseeu highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"> 生态             诞生时间</span><br><span class="line"> <span class="title class_">CommonJS</span>         <span class="number">2009</span>年</span><br><span class="line"> <span class="title class_">Node</span>.<span class="property">js</span>          <span class="number">2009</span>年   </span><br><span class="line"> <span class="variable constant_">NPM</span>              <span class="number">2010</span>年   </span><br><span class="line"> requireJS(<span class="variable constant_">AMD</span>)   <span class="number">2010</span>年	异步模块定义 <span class="keyword">async</span> <span class="variable language_">module</span> definition</span><br><span class="line"> <span class="title function_">seaJS</span>(<span class="variable constant_">CMD</span>)       <span class="number">2011</span>年	common <span class="variable language_">module</span> define</span><br><span class="line"> broswerify       <span class="number">2011</span>年</span><br><span class="line"> webpack          <span class="number">2012</span>年</span><br><span class="line"> grunt            <span class="number">2012</span>年 </span><br><span class="line"> gulp             <span class="number">2013</span>年</span><br><span class="line"> react            <span class="number">2013</span>年 </span><br><span class="line"> vue              <span class="number">2014</span>年</span><br><span class="line"> <span class="title class_">ES6</span>(<span class="title class_">Module</span>)      <span class="number">2015</span>年</span><br><span class="line"> angular          <span class="number">2016</span>年</span><br><span class="line"> redux            <span class="number">2015</span>年 </span><br><span class="line"> vite             <span class="number">2020</span>年</span><br><span class="line"> snowpack         <span class="number">2020</span>年  </span><br><span class="line">跨端 rollup truopack</span><br></pre></td></tr></table></figure></div>
+
+<h2 id="模块化的进程"><a href="#模块化的进程" class="headerlink" title="模块化的进程"></a>模块化的进程</h2><h3 id="全局function模式"><a href="#全局function模式" class="headerlink" title="全局function模式"></a>全局function模式</h3><p>将不同的功能封装成不同的全局函数<br>问题：污染全局命名空间，容易引起命名冲突</p>
+<div class="highlight-container" data-rel="Js"><figure class="iseeu highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">m1</span>(<span class="params"></span>)&#123;</span><br><span class="line">  <span class="comment">//...</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">function</span> <span class="title function_">m2</span>(<span class="params"></span>)&#123;</span><br><span class="line">  <span class="comment">//...</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+
+<h3 id="namespace模式"><a href="#namespace模式" class="headerlink" title="namespace模式"></a>namespace模式</h3><p>简单对象封装<br>作用：减少了全局变量，解决命名冲突<br>问题：数据不安全(外部可以直接修改模块内部的数据)</p>
+<div class="highlight-container" data-rel="Js"><figure class="iseeu highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> myModule = &#123;</span><br><span class="line">  <span class="attr">data</span>: <span class="string">&#x27;www.baidu.com&#x27;</span>,</span><br><span class="line">  <span class="title function_">foo</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">`foo() <span class="subst">$&#123;<span class="variable language_">this</span>.data&#125;</span>`</span>)</span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="title function_">bar</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">`bar() <span class="subst">$&#123;<span class="variable language_">this</span>.data&#125;</span>`</span>)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line">myModule.<span class="property">data</span> = <span class="string">&#x27;other data&#x27;</span> <span class="comment">//能直接修改模块内部的数据</span></span><br><span class="line">myModule.<span class="title function_">foo</span>() <span class="comment">// foo() other data</span></span><br></pre></td></tr></table></figure></div>
+
+
+<h3 id="IIFE模式"><a href="#IIFE模式" class="headerlink" title="IIFE模式"></a>IIFE模式</h3><p>immediately-invoked function expression 匿名函数自调用(闭包)<br>作用：数据是私有的, 外部只能通过暴露的方法操作。将数据和行为封装到一个函数内部, 通过给window添加属性来向外暴露接口<br>问题：如果当前这个模块依赖另一个模块怎么办?</p>
+<div class="highlight-container" data-rel="Js"><figure class="iseeu highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// index.html文件</span></span><br><span class="line">&lt;script type=<span class="string">&quot;text/javascript&quot;</span> src=<span class="string">&quot;module.js&quot;</span>&gt;&lt;/script&gt;</span><br><span class="line"><span class="language-xml"><span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">&quot;text/javascript&quot;</span>&gt;</span><span class="language-javascript"></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    myModule.<span class="title function_">foo</span>()</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    myModule.<span class="title function_">bar</span>()</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    <span class="variable language_">console</span>.<span class="title function_">log</span>(myModule.<span class="property">data</span>) <span class="comment">//undefined 不能访问模块内部数据</span></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    myModule.<span class="property">data</span> = <span class="string">&#x27;xxxx&#x27;</span> <span class="comment">//不是修改的模块内部的data</span></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    myModule.<span class="title function_">foo</span>() <span class="comment">//没有改变</span></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="comment">// module.js文件</span></span><br><span class="line">(<span class="keyword">function</span>(<span class="params"><span class="variable language_">window</span></span>) &#123;</span><br><span class="line">  <span class="keyword">let</span> data = <span class="string">&#x27;www.baidu.com&#x27;</span></span><br><span class="line">  <span class="comment">//操作数据的函数</span></span><br><span class="line">  <span class="keyword">function</span> <span class="title function_">foo</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="comment">//用于暴露有函数</span></span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">`foo() <span class="subst">$&#123;data&#125;</span>`</span>)</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">function</span> <span class="title function_">bar</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="comment">//用于暴露有函数</span></span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">`bar() <span class="subst">$&#123;data&#125;</span>`</span>)</span><br><span class="line">    <span class="title function_">otherFun</span>() <span class="comment">//内部调用</span></span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">function</span> <span class="title function_">otherFun</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="comment">//内部私有的函数</span></span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;otherFun()&#x27;</span>)</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="comment">//暴露行为</span></span><br><span class="line">  <span class="variable language_">window</span>.<span class="property">myModule</span> = &#123; foo, bar &#125; <span class="comment">//ES6写法</span></span><br><span class="line">&#125;)(<span class="variable language_">window</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">// foo() www.baidu.com</span></span><br><span class="line"><span class="comment">// bar() www.baidu.com</span></span><br><span class="line"><span class="comment">// otehrFun()</span></span><br><span class="line"><span class="comment">// undefined</span></span><br><span class="line"><span class="comment">// foo() www.baidu.com</span></span><br></pre></td></tr></table></figure></div>
+
+<h3 id="IIFE模式增强"><a href="#IIFE模式增强" class="headerlink" title="IIFE模式增强"></a>IIFE模式增强</h3><div class="highlight-container" data-rel="Js"><figure class="iseeu highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// module.js文件</span></span><br><span class="line">(<span class="keyword">function</span>(<span class="params"><span class="variable language_">window</span>, $</span>) &#123;</span><br><span class="line">  <span class="keyword">let</span> data = <span class="string">&#x27;www.baidu.com&#x27;</span></span><br><span class="line">  <span class="comment">//操作数据的函数</span></span><br><span class="line">  <span class="keyword">function</span> <span class="title function_">foo</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="comment">//用于暴露有函数</span></span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">`foo() <span class="subst">$&#123;data&#125;</span>`</span>)</span><br><span class="line">    $(<span class="string">&#x27;body&#x27;</span>).<span class="title function_">css</span>(<span class="string">&#x27;background&#x27;</span>, <span class="string">&#x27;red&#x27;</span>)</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">function</span> <span class="title function_">bar</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="comment">//用于暴露有函数</span></span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">`bar() <span class="subst">$&#123;data&#125;</span>`</span>)</span><br><span class="line">    <span class="title function_">otherFun</span>() <span class="comment">//内部调用</span></span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">function</span> <span class="title function_">otherFun</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="comment">//内部私有的函数</span></span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;otherFun()&#x27;</span>)</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="comment">//暴露行为</span></span><br><span class="line">  <span class="variable language_">window</span>.<span class="property">myModule</span> = &#123; foo, bar &#125;</span><br><span class="line">&#125;)(<span class="variable language_">window</span>, jQuery)</span><br><span class="line"></span><br><span class="line"> <span class="comment">// index.html文件</span></span><br><span class="line">&lt;!-- 引入的js必须有一定顺序 --&gt;</span><br><span class="line"><span class="language-xml"><span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">&quot;text/javascript&quot;</span> <span class="attr">src</span>=<span class="string">&quot;jquery-1.10.1.js&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></span><br><span class="line"><span class="language-xml"><span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">&quot;text/javascript&quot;</span> <span class="attr">src</span>=<span class="string">&quot;module.js&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></span><br><span class="line"><span class="language-xml"><span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">&quot;text/javascript&quot;</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">  myModule.foo()</span></span><br><span class="line"><span class="language-xml"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></span><br></pre></td></tr></table></figure></div>
+<p>这样做除了保证模块的独立性，还使得模块之间的依赖关系变得明显。</p>
+<h2 id="模块化的好处"><a href="#模块化的好处" class="headerlink" title="模块化的好处"></a>模块化的好处</h2><ul>
+<li>避免命名冲突（减少命名空间污染）</li>
+<li>更好的分离，按需加载</li>
+<li>更高的复用性</li>
+<li>更高的可维护性</li>
+</ul>
+<h3 id="引入多个的问题"><a href="#引入多个的问题" class="headerlink" title="引入多个的问题"></a>引入多个<script>的问题</h3><ul>
+<li>依赖引用顺序、依赖模糊、难以维护<br>因此才有了后续的commonjs, AMD, ESM, CMD规范。</li>
+</ul>
+<h2 id="模块化规范"><a href="#模块化规范" class="headerlink" title="模块化规范"></a>模块化规范</h2><h3 id="CommonJS"><a href="#CommonJS" class="headerlink" title="CommonJS"></a>CommonJS</h3><p>Node.js的模块规范，同步加载模块。每个文件都是一个模块有自己的作用域，模块可以通过module.exports导出变量，通过require()来导入其他模块的输出到当前模块作用域中。其里面定义的变量、函数、类都是私有的，不会污染全局作用域。在服务器端，模块的加载时运行时同步加载的；在浏览器端，模块需要提前编译打包。</p>
+<div class="highlight-container" data-rel="Js"><figure class="iseeu highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// example.js</span></span><br><span class="line"><span class="keyword">var</span> x = <span class="number">5</span>;</span><br><span class="line"><span class="keyword">var</span> addX = <span class="keyword">function</span> (<span class="params">value</span>) &#123;</span><br><span class="line">  <span class="keyword">return</span> value + x;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="variable language_">module</span>.<span class="property">exports</span>.<span class="property">x</span> = x;</span><br><span class="line"><span class="variable language_">module</span>.<span class="property">exports</span>.<span class="property">addX</span> = addX;</span><br></pre></td></tr></table></figure></div>
+
+<div class="highlight-container" data-rel="Js"><figure class="iseeu highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> example = <span class="built_in">require</span>(<span class="string">&#x27;./example.js&#x27;</span>);<span class="comment">//如果参数字符串以“./”开头，则表示加载的是一个位于相对路径</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(example.<span class="property">x</span>); <span class="comment">// 5</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(example.<span class="title function_">addX</span>(<span class="number">1</span>)); <span class="comment">// 6</span></span><br></pre></td></tr></table></figure></div>
+
+<h4 id="模块的加载机制"><a href="#模块的加载机制" class="headerlink" title="模块的加载机制"></a>模块的加载机制</h4><p>CommonJS模块的加载机制是，输入的是被输出的值的拷贝。也就是说，一旦输出一个值，模块内部的变化就影响不到这个值。</p>
+<div class="highlight-container" data-rel="Js"><figure class="iseeu highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// lib.js</span></span><br><span class="line"><span class="keyword">var</span> counter = <span class="number">3</span>;</span><br><span class="line"><span class="keyword">function</span> <span class="title function_">incCounter</span>(<span class="params"></span>) &#123;</span><br><span class="line">  counter++;</span><br><span class="line">&#125;</span><br><span class="line"><span class="variable language_">module</span>.<span class="property">exports</span> = &#123;</span><br><span class="line">  <span class="attr">counter</span>: counter,</span><br><span class="line">  <span class="attr">incCounter</span>: incCounter,</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></div>
+
+<div class="highlight-container" data-rel="Js"><figure class="iseeu highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// main.js</span></span><br><span class="line"><span class="keyword">var</span> counter = <span class="built_in">require</span>(<span class="string">&#x27;./lib&#x27;</span>).<span class="property">counter</span>;</span><br><span class="line"><span class="keyword">var</span> incCounter = <span class="built_in">require</span>(<span class="string">&#x27;./lib&#x27;</span>).<span class="property">incCounter</span>;</span><br><span class="line"></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(counter);  <span class="comment">// 3</span></span><br><span class="line"><span class="title function_">incCounter</span>();</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(counter); <span class="comment">// 3</span></span><br></pre></td></tr></table></figure></div>
+
+<p>如果需要获取到模块内部变化后的值，可以通过getter函数来获取。</p>
+<div class="highlight-container" data-rel="Js"><figure class="iseeu highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// lib.js</span></span><br><span class="line"><span class="keyword">var</span> counter = <span class="number">3</span>;</span><br><span class="line"><span class="keyword">function</span> <span class="title function_">incCounter</span>(<span class="params"></span>) &#123;</span><br><span class="line">  counter++;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">function</span> <span class="title function_">getCounter</span>(<span class="params"></span>)&#123;</span><br><span class="line">    <span class="keyword">return</span> counter;</span><br><span class="line">&#125;</span><br><span class="line"><span class="variable language_">module</span>.<span class="property">exports</span> = &#123;</span><br><span class="line">  <span class="attr">counter</span>: counter,</span><br><span class="line">  <span class="attr">incCounter</span>: incCounter,</span><br><span class="line">  <span class="attr">getCounter</span>: getCounter</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></div>
+
+<div class="highlight-container" data-rel="Js"><figure class="iseeu highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// main.js</span></span><br><span class="line"><span class="keyword">var</span> counter = <span class="built_in">require</span>(<span class="string">&#x27;./example&#x27;</span>).<span class="property">counter</span>;</span><br><span class="line"><span class="keyword">var</span> incCounter = <span class="built_in">require</span>(<span class="string">&#x27;./example&#x27;</span>).<span class="property">incCounter</span>;</span><br><span class="line"><span class="keyword">var</span> getCounter = <span class="built_in">require</span>(<span class="string">&#x27;./example&#x27;</span>).<span class="property">getCounter</span>;</span><br><span class="line"></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(counter);  <span class="comment">// 3</span></span><br><span class="line"><span class="title function_">incCounter</span>();</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(counter); <span class="comment">// 3</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;🚀 ~ require(&#x27;./example&#x27;).counter:&quot;</span>, <span class="title function_">getCounter</span>() ) <span class="comment">// 4</span></span><br></pre></td></tr></table></figure></div>
+
+<h3 id="AMD-Asynchronous-Module-Definition"><a href="#AMD-Asynchronous-Module-Definition" class="headerlink" title="AMD(Asynchronous Module Definition)"></a>AMD(Asynchronous Module Definition)</h3><p>CommonJS规范加载模块是同步的，也就是说，只有加载完成，才能执行后面的操作。AMD规范则是非同步加载模块，允许指定回调函数。由于Node.js主要用于服务器编程，模块文件一般都已经存在于本地硬盘，所以加载起来比较快，不用考虑非同步加载的方式，所以CommonJS规范比较适用。但是，如果是浏览器环境，要从服务器端加载模块，这时就必须采用非同步模式，因此浏览器端一般采用AMD规范。此外AMD规范比CommonJS规范在浏览器端实现要来着早。</p>
+<div class="highlight-container" data-rel="Js"><figure class="iseeu highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//定义没有依赖的模块</span></span><br><span class="line"><span class="title function_">define</span>(<span class="keyword">function</span>(<span class="params"></span>)&#123;</span><br><span class="line">   <span class="keyword">return</span> 模块</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line"><span class="comment">//定义有依赖的模块</span></span><br><span class="line"><span class="title function_">define</span>([<span class="string">&#x27;module1&#x27;</span>, <span class="string">&#x27;module2&#x27;</span>], <span class="keyword">function</span>(<span class="params">m1, m2</span>)&#123;</span><br><span class="line">   <span class="keyword">return</span> 模块</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="built_in">require</span>([<span class="string">&#x27;module1&#x27;</span>, <span class="string">&#x27;module2&#x27;</span>], <span class="keyword">function</span>(<span class="params">m1, m2</span>)&#123;</span><br><span class="line">   使用m1/m2</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></div>
+
+<h3 id="CMD-Common-Module-Definition"><a href="#CMD-Common-Module-Definition" class="headerlink" title="CMD(Common Module Definition)"></a>CMD(Common Module Definition)</h3><p>CMD规范是Sea.js推广过程中产生的，Sea.js是阿里的玉伯大神推出的，Sea.js的推广过程中对模块定义的规范化产生了影响，CMD是Sea.js推广过程中产生的。CMD规范是依赖就近，用的时候再require。CMD规范是依赖就近，用的时候再require。CMD规范是依赖就近，用的时候再require。</p>
+<div class="highlight-container" data-rel="Js"><figure class="iseeu highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//定义没有依赖的模块</span></span><br><span class="line"><span class="title function_">define</span>(<span class="keyword">function</span>(<span class="params"><span class="built_in">require</span>, <span class="built_in">exports</span>, <span class="variable language_">module</span></span>)&#123;</span><br><span class="line">  <span class="built_in">exports</span>.<span class="property">xxx</span> = value</span><br><span class="line">  <span class="variable language_">module</span>.<span class="property">exports</span> = value</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line"><span class="comment">//定义有依赖的模块</span></span><br><span class="line"><span class="title function_">define</span>(<span class="keyword">function</span>(<span class="params"><span class="built_in">require</span>, <span class="built_in">exports</span>, <span class="variable language_">module</span></span>)&#123;</span><br><span class="line">  <span class="comment">//引入依赖模块(同步)</span></span><br><span class="line">  <span class="keyword">var</span> module2 = <span class="built_in">require</span>(<span class="string">&#x27;./module2&#x27;</span>)</span><br><span class="line">  <span class="comment">//引入依赖模块(异步)</span></span><br><span class="line">    <span class="built_in">require</span>.<span class="title function_">async</span>(<span class="string">&#x27;./module3&#x27;</span>, <span class="keyword">function</span> (<span class="params">m3</span>) &#123;</span><br><span class="line">    &#125;)</span><br><span class="line">  <span class="comment">//暴露模块</span></span><br><span class="line">  <span class="built_in">exports</span>.<span class="property">xxx</span> = value</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line"><span class="comment">// 引入使用的模块</span></span><br><span class="line"><span class="title function_">define</span>(<span class="keyword">function</span> (<span class="params"><span class="built_in">require</span></span>) &#123;</span><br><span class="line">  <span class="keyword">var</span> m1 = <span class="built_in">require</span>(<span class="string">&#x27;./module1&#x27;</span>)</span><br><span class="line">  <span class="keyword">var</span> m4 = <span class="built_in">require</span>(<span class="string">&#x27;./module4&#x27;</span>)</span><br><span class="line">  m1.<span class="title function_">show</span>()</span><br><span class="line">  m4.<span class="title function_">show</span>()</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></div>
+
+<h3 id="ES6-Module"><a href="#ES6-Module" class="headerlink" title="ES6 Module"></a>ES6 Module</h3><p>ES6模块是ECMAScript 6标准新增的功能，它是JavaScript模块的标准写法，是未来JS模块的主流标准。ES6模块不是对象，而是通过export命令显示指定输出的代码，再通过import命令输入。ES6模块自动采用严格模式，不管你有没有在模块头部加上"use strict"。</p>
+<div class="highlight-container" data-rel="Js"><figure class="iseeu highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/** 定义模块 math.js /</span></span><br><span class="line"><span class="comment">var basicNum = 0;</span></span><br><span class="line"><span class="comment">var add = function (a, b) &#123;</span></span><br><span class="line"><span class="comment">    return a + b;</span></span><br><span class="line"><span class="comment">&#125;;</span></span><br><span class="line"><span class="comment">export &#123; basicNum, add &#125;;</span></span><br><span class="line"><span class="comment">/ 引用模块 **/</span></span><br><span class="line"><span class="keyword">import</span> &#123; basicNum, add &#125; <span class="keyword">from</span> <span class="string">&#x27;./math&#x27;</span>;</span><br><span class="line"><span class="keyword">function</span> <span class="title function_">test</span>(<span class="params">ele</span>) &#123;</span><br><span class="line">    ele.<span class="property">textContent</span> = <span class="title function_">add</span>(<span class="number">99</span> + basicNum);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">// export-default.js</span></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="keyword">function</span> (<span class="params"></span>) &#123;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;foo&#x27;</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// import-default.js</span></span><br><span class="line"><span class="keyword">import</span> customName <span class="keyword">from</span> <span class="string">&#x27;./export-default&#x27;</span>;</span><br><span class="line"><span class="title function_">customName</span>(); <span class="comment">// &#x27;foo&#x27;</span></span><br></pre></td></tr></table></figure></div>
+
+<p>ES6模块与CommonJS模块的差异：</p>
+<ul>
+<li>CommonJS 模块输出的是一个值的拷贝，ES6 模块输出的是值的引用。</li>
+<li>CommonJS 模块是运行时加载，ES6 模块是编译时输出接口。<br>第二个差异是因为 CommonJS 加载的是一个对象（即module.exports属性），该对象只有在脚本运行完才会生成。而 ES6 模块不是对象，它的对外接口只是一种静态定义，在代码静态解析阶段就会生成。</li>
+</ul>
+<div class="highlight-container" data-rel="Js"><figure class="iseeu highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// lib.js</span></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">let</span> counter = <span class="number">3</span>;</span><br><span class="line"><span class="keyword">export</span> <span class="keyword">function</span> <span class="title function_">incCounter</span>(<span class="params"></span>) &#123;</span><br><span class="line">  counter++;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// main.js</span></span><br><span class="line"><span class="keyword">import</span> &#123; counter, incCounter &#125; <span class="keyword">from</span> <span class="string">&#x27;./lib&#x27;</span>;</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(counter); <span class="comment">// 3</span></span><br><span class="line"><span class="title function_">incCounter</span>();</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(counter); <span class="comment">// 4</span></span><br></pre></td></tr></table></figure></div>
+
+<p>TreeShaking是指在打包时去除无用的代码，只打包需要的代码。ES6模块静态引入的特性，使得TreeShaking成为可能。</p>
+<h3 id="UMD-Universal-Module-Definition"><a href="#UMD-Universal-Module-Definition" class="headerlink" title="UMD(Universal Module Definition)"></a>UMD(Universal Module Definition)</h3><p>UMD是AMD和CommonJS的糅合，既可以支持浏览器端，又可以支持服务器端。UMD规范通常在模块定义中先判断是否支持Node.js模块（exports）是否存在，存在则使用Node.js模块模式，不存在则判断是否支持AMD（define是否存在），存在则使用AMD方式加载模块。</p>
+<div class="highlight-container" data-rel="Js"><figure class="iseeu highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">(<span class="keyword">function</span>(<span class="params">root, factory</span>) &#123;</span><br><span class="line">    <span class="keyword">if</span> (<span class="keyword">typeof</span> <span class="variable language_">module</span> === <span class="string">&#x27;object&#x27;</span> &amp;&amp; <span class="keyword">typeof</span> <span class="variable language_">module</span>.<span class="property">exports</span> === <span class="string">&#x27;object&#x27;</span>) &#123;</span><br><span class="line">        <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;是commonjs模块规范，nodejs环境&#x27;</span>)</span><br><span class="line">        <span class="variable language_">module</span>.<span class="property">exports</span> = <span class="title function_">factory</span>();</span><br><span class="line">    &#125; <span class="keyword">else</span> <span class="keyword">if</span> (<span class="keyword">typeof</span> define === <span class="string">&#x27;function&#x27;</span> &amp;&amp; define.<span class="property">amd</span>) &#123;</span><br><span class="line">        <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;是AMD模块规范，如require.js&#x27;</span>)</span><br><span class="line">        <span class="title function_">define</span>(factory)</span><br><span class="line">    &#125; <span class="keyword">else</span> <span class="keyword">if</span> (<span class="keyword">typeof</span> define === <span class="string">&#x27;function&#x27;</span> &amp;&amp; define.<span class="property">cmd</span>) &#123;</span><br><span class="line">        <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;是CMD模块规范，如sea.js&#x27;</span>)</span><br><span class="line">        <span class="title function_">define</span>(<span class="keyword">function</span>(<span class="params"><span class="built_in">require</span>, <span class="built_in">exports</span>, <span class="variable language_">module</span></span>) &#123;</span><br><span class="line">            <span class="variable language_">module</span>.<span class="property">exports</span> = <span class="title function_">factory</span>()</span><br><span class="line">        &#125;)</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;没有模块环境，直接挂载在全局对象上&#x27;</span>)</span><br><span class="line">        root.<span class="property">umdModule</span> = <span class="title function_">factory</span>();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;(<span class="variable language_">this</span>, <span class="keyword">function</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="keyword">return</span> &#123;</span><br><span class="line">        <span class="attr">name</span>: <span class="string">&#x27;我是一个umd模块&#x27;</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;))</span><br></pre></td></tr></table></figure></div>
+        </div>
+
+        
+
+        
+
+        
+
+        
+            <div class="article-nav my-8 flex justify-between items-center px-2 sm:px-6 md:px-8">
+                
+                    <div class="article-prev border-border-color shadow-redefine-flat shadow-shadow-color-2 rounded-medium px-4 py-2 hover:shadow-redefine-flat-hover hover:shadow-shadow-color-2">
+                        <a class="prev"
+                        rel="prev"
+                        href="/Yuyang/rsa/"
+                        >
+                            <span class="left arrow-icon flex justify-center items-center">
+                                <i class="fa-solid fa-chevron-left"></i>
+                            </span>
+                            <span class="title flex justify-center items-center">
+                                <span class="post-nav-title-item">RSA前端js加密 后端java解密</span>
+                                <span class="post-nav-item">上一篇</span>
+                            </span>
+                        </a>
+                    </div>
+                
+                
+                    <div class="article-next border-border-color shadow-redefine-flat shadow-shadow-color-2 rounded-medium px-4 py-2 hover:shadow-redefine-flat-hover hover:shadow-shadow-color-2">
+                        <a class="next"
+                        rel="next"
+                        href="/Yuyang/webpack/"
+                        >
+                            <span class="title flex justify-center items-center">
+                                <span class="post-nav-title-item">webpack 与 打包工具开发</span>
+                                <span class="post-nav-item">下一篇</span>
+                            </span>
+                            <span class="right arrow-icon flex justify-center items-center">
+                                <i class="fa-solid fa-chevron-right"></i>
+                            </span>
+                        </a>
+                    </div>
+                
+            </div>
+        
+
+
+        
+    </div>
+
+    
+        <div class="toc-content-container">
+            <div class="post-toc-wrap">
+    <div class="post-toc">
+        <div class="toc-title">此页目录</div>
+        <div class="page-title">JS模块化</div>
+        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%A8%A1%E5%9D%97%E5%8C%96%E7%9A%84%E7%90%86%E8%A7%A3"><span class="nav-text">模块化的理解</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%A8%A1%E5%9D%97%E5%8C%96%E7%9A%84%E8%BF%9B%E7%A8%8B"><span class="nav-text">模块化的进程</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%85%A8%E5%B1%80function%E6%A8%A1%E5%BC%8F"><span class="nav-text">全局function模式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#namespace%E6%A8%A1%E5%BC%8F"><span class="nav-text">namespace模式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#IIFE%E6%A8%A1%E5%BC%8F"><span class="nav-text">IIFE模式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#IIFE%E6%A8%A1%E5%BC%8F%E5%A2%9E%E5%BC%BA"><span class="nav-text">IIFE模式增强</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%A8%A1%E5%9D%97%E5%8C%96%E7%9A%84%E5%A5%BD%E5%A4%84"><span class="nav-text">模块化的好处</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%BC%95%E5%85%A5%E5%A4%9A%E4%B8%AA%E7%9A%84%E9%97%AE%E9%A2%98"><span class="nav-text">引入多个的问题&lt;&#x2F;h3&gt;&lt;ul&gt;
+&lt;li&gt;依赖引用顺序、依赖模糊、难以维护&lt;br&gt;因此才有了后续的commonjs, AMD, ESM, CMD规范。&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h2 id&#x3D;&quot;模块化规范&quot;&gt;&lt;a href&#x3D;&quot;#模块化规范&quot; class&#x3D;&quot;headerlink&quot; title&#x3D;&quot;模块化规范&quot;&gt;&lt;&#x2F;a&gt;模块化规范&lt;&#x2F;h2&gt;&lt;h3 id&#x3D;&quot;CommonJS&quot;&gt;&lt;a href&#x3D;&quot;#CommonJS&quot; class&#x3D;&quot;headerlink&quot; title&#x3D;&quot;CommonJS&quot;&gt;&lt;&#x2F;a&gt;CommonJS&lt;&#x2F;h3&gt;&lt;p&gt;Node.js的模块规范，同步加载模块。每个文件都是一个模块有自己的作用域，模块可以通过module.exports导出变量，通过require()来导入其他模块的输出到当前模块作用域中。其里面定义的变量、函数、类都是私有的，不会污染全局作用域。在服务器端，模块的加载时运行时同步加载的；在浏览器端，模块需要提前编译打包。&lt;&#x2F;p&gt;
+&lt;div class&#x3D;&quot;highlight-container&quot; data-rel&#x3D;&quot;Js&quot;&gt;&lt;figure class&#x3D;&quot;iseeu highlight js&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class&#x3D;&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class&#x3D;&quot;line&quot;&gt;1&lt;&#x2F;span&gt;&lt;br&gt;&lt;span class&#x3D;&quot;line&quot;&gt;2&lt;&#x2F;span&gt;&lt;br&gt;&lt;span class&#x3D;&quot;line&quot;&gt;3&lt;&#x2F;span&gt;&lt;br&gt;&lt;span class&#x3D;&quot;line&quot;&gt;4&lt;&#x2F;span&gt;&lt;br&gt;&lt;span class&#x3D;&quot;line&quot;&gt;5&lt;&#x2F;span&gt;&lt;br&gt;&lt;span class&#x3D;&quot;line&quot;&gt;6&lt;&#x2F;span&gt;&lt;br&gt;&lt;span class&#x3D;&quot;line&quot;&gt;7&lt;&#x2F;span&gt;&lt;br&gt;&lt;&#x2F;pre&gt;&lt;&#x2F;td&gt;&lt;td class&#x3D;&quot;code&quot;&gt;&lt;pre&gt;&lt;span class&#x3D;&quot;line&quot;&gt;&lt;span class&#x3D;&quot;comment&quot;&gt;&#x2F;&#x2F; example.js&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;br&gt;&lt;span class&#x3D;&quot;line&quot;&gt;&lt;span class&#x3D;&quot;keyword&quot;&gt;var&lt;&#x2F;span&gt; x &#x3D; &lt;span class&#x3D;&quot;number&quot;&gt;5&lt;&#x2F;span&gt;;&lt;&#x2F;span&gt;&lt;br&gt;&lt;span class&#x3D;&quot;line&quot;&gt;&lt;span class&#x3D;&quot;keyword&quot;&gt;var&lt;&#x2F;span&gt; addX &#x3D; &lt;span class&#x3D;&quot;keyword&quot;&gt;function&lt;&#x2F;span&gt; (&lt;span class&#x3D;&quot;params&quot;&gt;value&lt;&#x2F;span&gt;) &#123;&lt;&#x2F;span&gt;&lt;br&gt;&lt;span class&#x3D;&quot;line&quot;&gt;  &lt;span class&#x3D;&quot;keyword&quot;&gt;return&lt;&#x2F;span&gt; value + x;&lt;&#x2F;span&gt;&lt;br&gt;&lt;span class&#x3D;&quot;line&quot;&gt;&#125;;&lt;&#x2F;span&gt;&lt;br&gt;&lt;span class&#x3D;&quot;line&quot;&gt;&lt;span class&#x3D;&quot;variable language_&quot;&gt;module&lt;&#x2F;span&gt;.&lt;span class&#x3D;&quot;property&quot;&gt;exports&lt;&#x2F;span&gt;.&lt;span class&#x3D;&quot;property&quot;&gt;x&lt;&#x2F;span&gt; &#x3D; x;&lt;&#x2F;span&gt;&lt;br&gt;&lt;span class&#x3D;&quot;line&quot;&gt;&lt;span class&#x3D;&quot;variable language_&quot;&gt;module&lt;&#x2F;span&gt;.&lt;span class&#x3D;&quot;property&quot;&gt;exports&lt;&#x2F;span&gt;.&lt;span class&#x3D;&quot;property&quot;&gt;addX&lt;&#x2F;span&gt; &#x3D; addX;&lt;&#x2F;span&gt;&lt;br&gt;&lt;&#x2F;pre&gt;&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;&lt;&#x2F;table&gt;&lt;&#x2F;figure&gt;&lt;&#x2F;div&gt;
+
+&lt;div class&#x3D;&quot;highlight-container&quot; data-rel&#x3D;&quot;Js&quot;&gt;&lt;figure class&#x3D;&quot;iseeu highlight js&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class&#x3D;&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class&#x3D;&quot;line&quot;&gt;1&lt;&#x2F;span&gt;&lt;br&gt;&lt;span class&#x3D;&quot;line&quot;&gt;2&lt;&#x2F;span&gt;&lt;br&gt;&lt;span class&#x3D;&quot;line&quot;&gt;3&lt;&#x2F;span&gt;&lt;br&gt;&lt;&#x2F;pre&gt;&lt;&#x2F;td&gt;&lt;td class&#x3D;&quot;code&quot;&gt;&lt;pre&gt;&lt;span class&#x3D;&quot;line&quot;&gt;&lt;span class&#x3D;&quot;keyword&quot;&gt;var&lt;&#x2F;span&gt; example &#x3D; &lt;span class&#x3D;&quot;built_in&quot;&gt;require&lt;&#x2F;span&gt;(&lt;span class&#x3D;&quot;string&quot;&gt;&#x27;.&#x2F;example.js&#x27;&lt;&#x2F;span&gt;);&lt;span class&#x3D;&quot;comment&quot;&gt;&#x2F;&#x2F;如果参数字符串以“.&#x2F;”开头，则表示加载的是一个位于相对路径&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;br&gt;&lt;span class&#x3D;&quot;line&quot;&gt;&lt;span class&#x3D;&quot;variable language_&quot;&gt;console&lt;&#x2F;span&gt;.&lt;span class&#x3D;&quot;title function_&quot;&gt;log&lt;&#x2F;span&gt;(example.&lt;span class&#x3D;&quot;property&quot;&gt;x&lt;&#x2F;span&gt;); &lt;span class&#x3D;&quot;comment&quot;&gt;&#x2F;&#x2F; 5&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;br&gt;&lt;span class&#x3D;&quot;line&quot;&gt;&lt;span class&#x3D;&quot;variable language_&quot;&gt;console&lt;&#x2F;span&gt;.&lt;span class&#x3D;&quot;title function_&quot;&gt;log&lt;&#x2F;span&gt;(example.&lt;span class&#x3D;&quot;title function_&quot;&gt;addX&lt;&#x2F;span&gt;(&lt;span class&#x3D;&quot;number&quot;&gt;1&lt;&#x2F;span&gt;)); &lt;span class&#x3D;&quot;comment&quot;&gt;&#x2F;&#x2F; 6&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;br&gt;&lt;&#x2F;pre&gt;&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;&lt;&#x2F;table&gt;&lt;&#x2F;figure&gt;&lt;&#x2F;div&gt;
+
+&lt;h4 id&#x3D;&quot;模块的加载机制&quot;&gt;&lt;a href&#x3D;&quot;#模块的加载机制&quot; class&#x3D;&quot;headerlink&quot; title&#x3D;&quot;模块的加载机制&quot;&gt;&lt;&#x2F;a&gt;模块的加载机制&lt;&#x2F;h4&gt;&lt;p&gt;CommonJS模块的加载机制是，输入的是被输出的值的拷贝。也就是说，一旦输出一个值，模块内部的变化就影响不到这个值。&lt;&#x2F;p&gt;
+&lt;div class&#x3D;&quot;highlight-container&quot; data-rel&#x3D;&quot;Js&quot;&gt;&lt;figure class&#x3D;&quot;iseeu highlight js&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class&#x3D;&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class&#x3D;&quot;line&quot;&gt;1&lt;&#x2F;span&gt;&lt;br&gt;&lt;span class&#x3D;&quot;line&quot;&gt;2&lt;&#x2F;span&gt;&lt;br&gt;&lt;span class&#x3D;&quot;line&quot;&gt;3&lt;&#x2F;span&gt;&lt;br&gt;&lt;span class&#x3D;&quot;line&quot;&gt;4&lt;&#x2F;span&gt;&lt;br&gt;&lt;span class&#x3D;&quot;line&quot;&gt;5&lt;&#x2F;span&gt;&lt;br&gt;&lt;span class&#x3D;&quot;line&quot;&gt;6&lt;&#x2F;span&gt;&lt;br&gt;&lt;span class&#x3D;&quot;line&quot;&gt;7&lt;&#x2F;span&gt;&lt;br&gt;&lt;span class&#x3D;&quot;line&quot;&gt;8&lt;&#x2F;span&gt;&lt;br&gt;&lt;span class&#x3D;&quot;line&quot;&gt;9&lt;&#x2F;span&gt;&lt;br&gt;&lt;&#x2F;pre&gt;&lt;&#x2F;td&gt;&lt;td class&#x3D;&quot;code&quot;&gt;&lt;pre&gt;&lt;span class&#x3D;&quot;line&quot;&gt;&lt;span class&#x3D;&quot;comment&quot;&gt;&#x2F;&#x2F; lib.js&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;br&gt;&lt;span class&#x3D;&quot;line&quot;&gt;&lt;span class&#x3D;&quot;keyword&quot;&gt;var&lt;&#x2F;span&gt; counter &#x3D; &lt;span class&#x3D;&quot;number&quot;&gt;3&lt;&#x2F;span&gt;;&lt;&#x2F;span&gt;&lt;br&gt;&lt;span class&#x3D;&quot;line&quot;&gt;&lt;span class&#x3D;&quot;keyword&quot;&gt;function&lt;&#x2F;span&gt; &lt;span class&#x3D;&quot;title function_&quot;&gt;incCounter&lt;&#x2F;span&gt;(&lt;span class&#x3D;&quot;params&quot;&gt;&lt;&#x2F;span&gt;) &#123;&lt;&#x2F;span&gt;&lt;br&gt;&lt;span class&#x3D;&quot;line&quot;&gt;  counter++;&lt;&#x2F;span&gt;&lt;br&gt;&lt;span class&#x3D;&quot;line&quot;&gt;&#125;&lt;&#x2F;span&gt;&lt;br&gt;&lt;span class&#x3D;&quot;line&quot;&gt;&lt;span class&#x3D;&quot;variable language_&quot;&gt;module&lt;&#x2F;span&gt;.&lt;span class&#x3D;&quot;property&quot;&gt;exports&lt;&#x2F;span&gt; &#x3D; &#123;&lt;&#x2F;span&gt;&lt;br&gt;&lt;span class&#x3D;&quot;line&quot;&gt;  &lt;span class&#x3D;&quot;attr&quot;&gt;counter&lt;&#x2F;span&gt;: counter,&lt;&#x2F;span&gt;&lt;br&gt;&lt;span class&#x3D;&quot;line&quot;&gt;  &lt;span class&#x3D;&quot;attr&quot;&gt;incCounter&lt;&#x2F;span&gt;: incCounter,&lt;&#x2F;span&gt;&lt;br&gt;&lt;span class&#x3D;&quot;line&quot;&gt;&#125;;&lt;&#x2F;span&gt;&lt;br&gt;&lt;&#x2F;pre&gt;&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;&lt;&#x2F;table&gt;&lt;&#x2F;figure&gt;&lt;&#x2F;div&gt;
+
+&lt;div class&#x3D;&quot;highlight-container&quot; data-rel&#x3D;&quot;Js&quot;&gt;&lt;figure class&#x3D;&quot;iseeu highlight js&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class&#x3D;&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class&#x3D;&quot;line&quot;&gt;1&lt;&#x2F;span&gt;&lt;br&gt;&lt;span class&#x3D;&quot;line&quot;&gt;2&lt;&#x2F;span&gt;&lt;br&gt;&lt;span class&#x3D;&quot;line&quot;&gt;3&lt;&#x2F;span&gt;&lt;br&gt;&lt;span class&#x3D;&quot;line&quot;&gt;4&lt;&#x2F;span&gt;&lt;br&gt;&lt;span class&#x3D;&quot;line&quot;&gt;5&lt;&#x2F;span&gt;&lt;br&gt;&lt;span class&#x3D;&quot;line&quot;&gt;6&lt;&#x2F;span&gt;&lt;br&gt;&lt;span class&#x3D;&quot;line&quot;&gt;7&lt;&#x2F;span&gt;&lt;br&gt;&lt;&#x2F;pre&gt;&lt;&#x2F;td&gt;&lt;td class&#x3D;&quot;code&quot;&gt;&lt;pre&gt;&lt;span class&#x3D;&quot;line&quot;&gt;&lt;span class&#x3D;&quot;comment&quot;&gt;&#x2F;&#x2F; main.js&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;br&gt;&lt;span class&#x3D;&quot;line&quot;&gt;&lt;span class&#x3D;&quot;keyword&quot;&gt;var&lt;&#x2F;span&gt; counter &#x3D; &lt;span class&#x3D;&quot;built_in&quot;&gt;require&lt;&#x2F;span&gt;(&lt;span class&#x3D;&quot;string&quot;&gt;&#x27;.&#x2F;lib&#x27;&lt;&#x2F;span&gt;).&lt;span class&#x3D;&quot;property&quot;&gt;counter&lt;&#x2F;span&gt;;&lt;&#x2F;span&gt;&lt;br&gt;&lt;span class&#x3D;&quot;line&quot;&gt;&lt;span class&#x3D;&quot;keyword&quot;&gt;var&lt;&#x2F;span&gt; incCounter &#x3D; &lt;span class&#x3D;&quot;built_in&quot;&gt;require&lt;&#x2F;span&gt;(&lt;span class&#x3D;&quot;string&quot;&gt;&#x27;.&#x2F;lib&#x27;&lt;&#x2F;span&gt;).&lt;span class&#x3D;&quot;property&quot;&gt;incCounter&lt;&#x2F;span&gt;;&lt;&#x2F;span&gt;&lt;br&gt;&lt;span class&#x3D;&quot;line&quot;&gt;&lt;&#x2F;span&gt;&lt;br&gt;&lt;span class&#x3D;&quot;line&quot;&gt;&lt;span class&#x3D;&quot;variable language_&quot;&gt;console&lt;&#x2F;span&gt;.&lt;span class&#x3D;&quot;title function_&quot;&gt;log&lt;&#x2F;span&gt;(counter);  &lt;span class&#x3D;&quot;comment&quot;&gt;&#x2F;&#x2F; 3&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;br&gt;&lt;span class&#x3D;&quot;line&quot;&gt;&lt;span class&#x3D;&quot;title function_&quot;&gt;incCounter&lt;&#x2F;span&gt;();&lt;&#x2F;span&gt;&lt;br&gt;&lt;span class&#x3D;&quot;line&quot;&gt;&lt;span class&#x3D;&quot;variable language_&quot;&gt;console&lt;&#x2F;span&gt;.&lt;span class&#x3D;&quot;title function_&quot;&gt;log&lt;&#x2F;span&gt;(counter); &lt;span class&#x3D;&quot;comment&quot;&gt;&#x2F;&#x2F; 3&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;br&gt;&lt;&#x2F;pre&gt;&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;&lt;&#x2F;table&gt;&lt;&#x2F;figure&gt;&lt;&#x2F;div&gt;
+
+&lt;p&gt;如果需要获取到模块内部变化后的值，可以通过getter函数来获取。&lt;&#x2F;p&gt;
+&lt;div class&#x3D;&quot;highlight-container&quot; data-rel&#x3D;&quot;Js&quot;&gt;&lt;figure class&#x3D;&quot;iseeu highlight js&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class&#x3D;&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class&#x3D;&quot;line&quot;&gt;1&lt;&#x2F;span&gt;&lt;br&gt;&lt;span class&#x3D;&quot;line&quot;&gt;2&lt;&#x2F;span&gt;&lt;br&gt;&lt;span class&#x3D;&quot;line&quot;&gt;3&lt;&#x2F;span&gt;&lt;br&gt;&lt;span class&#x3D;&quot;line&quot;&gt;4&lt;&#x2F;span&gt;&lt;br&gt;&lt;span class&#x3D;&quot;line&quot;&gt;5&lt;&#x2F;span&gt;&lt;br&gt;&lt;span class&#x3D;&quot;line&quot;&gt;6&lt;&#x2F;span&gt;&lt;br&gt;&lt;span class&#x3D;&quot;line&quot;&gt;7&lt;&#x2F;span&gt;&lt;br&gt;&lt;span class&#x3D;&quot;line&quot;&gt;8&lt;&#x2F;span&gt;&lt;br&gt;&lt;span class&#x3D;&quot;line&quot;&gt;9&lt;&#x2F;span&gt;&lt;br&gt;&lt;span class&#x3D;&quot;line&quot;&gt;10&lt;&#x2F;span&gt;&lt;br&gt;&lt;span class&#x3D;&quot;line&quot;&gt;11&lt;&#x2F;span&gt;&lt;br&gt;&lt;span class&#x3D;&quot;line&quot;&gt;12&lt;&#x2F;span&gt;&lt;br&gt;&lt;span class&#x3D;&quot;line&quot;&gt;13&lt;&#x2F;span&gt;&lt;br&gt;&lt;&#x2F;pre&gt;&lt;&#x2F;td&gt;&lt;td class&#x3D;&quot;code&quot;&gt;&lt;pre&gt;&lt;span class&#x3D;&quot;line&quot;&gt;&lt;span class&#x3D;&quot;comment&quot;&gt;&#x2F;&#x2F; lib.js&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;br&gt;&lt;span class&#x3D;&quot;line&quot;&gt;&lt;span class&#x3D;&quot;keyword&quot;&gt;var&lt;&#x2F;span&gt; counter &#x3D; &lt;span class&#x3D;&quot;number&quot;&gt;3&lt;&#x2F;span&gt;;&lt;&#x2F;span&gt;&lt;br&gt;&lt;span class&#x3D;&quot;line&quot;&gt;&lt;span class&#x3D;&quot;keyword&quot;&gt;function&lt;&#x2F;span&gt; &lt;span class&#x3D;&quot;title function_&quot;&gt;incCounter&lt;&#x2F;span&gt;(&lt;span class&#x3D;&quot;params&quot;&gt;&lt;&#x2F;span&gt;) &#123;&lt;&#x2F;span&gt;&lt;br&gt;&lt;span class&#x3D;&quot;line&quot;&gt;  counter++;&lt;&#x2F;span&gt;&lt;br&gt;&lt;span class&#x3D;&quot;line&quot;&gt;&#125;&lt;&#x2F;span&gt;&lt;br&gt;&lt;span class&#x3D;&quot;line&quot;&gt;&lt;span class&#x3D;&quot;keyword&quot;&gt;function&lt;&#x2F;span&gt; &lt;span class&#x3D;&quot;title function_&quot;&gt;getCounter&lt;&#x2F;span&gt;(&lt;span class&#x3D;&quot;params&quot;&gt;&lt;&#x2F;span&gt;)&#123;&lt;&#x2F;span&gt;&lt;br&gt;&lt;span class&#x3D;&quot;line&quot;&gt;    &lt;span class&#x3D;&quot;keyword&quot;&gt;return&lt;&#x2F;span&gt; counter;&lt;&#x2F;span&gt;&lt;br&gt;&lt;span class&#x3D;&quot;line&quot;&gt;&#125;&lt;&#x2F;span&gt;&lt;br&gt;&lt;span class&#x3D;&quot;line&quot;&gt;&lt;span class&#x3D;&quot;variable language_&quot;&gt;module&lt;&#x2F;span&gt;.&lt;span class&#x3D;&quot;property&quot;&gt;exports&lt;&#x2F;span&gt; &#x3D; &#123;&lt;&#x2F;span&gt;&lt;br&gt;&lt;span class&#x3D;&quot;line&quot;&gt;  &lt;span class&#x3D;&quot;attr&quot;&gt;counter&lt;&#x2F;span&gt;: counter,&lt;&#x2F;span&gt;&lt;br&gt;&lt;span class&#x3D;&quot;line&quot;&gt;  &lt;span class&#x3D;&quot;attr&quot;&gt;incCounter&lt;&#x2F;span&gt;: incCounter,&lt;&#x2F;span&gt;&lt;br&gt;&lt;span class&#x3D;&quot;line&quot;&gt;  &lt;span class&#x3D;&quot;attr&quot;&gt;getCounter&lt;&#x2F;span&gt;: getCounter&lt;&#x2F;span&gt;&lt;br&gt;&lt;span class&#x3D;&quot;line&quot;&gt;&#125;;&lt;&#x2F;span&gt;&lt;br&gt;&lt;&#x2F;pre&gt;&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;&lt;&#x2F;table&gt;&lt;&#x2F;figure&gt;&lt;&#x2F;div&gt;
+
+&lt;div class&#x3D;&quot;highlight-container&quot; data-rel&#x3D;&quot;Js&quot;&gt;&lt;figure class&#x3D;&quot;iseeu highlight js&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class&#x3D;&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class&#x3D;&quot;line&quot;&gt;1&lt;&#x2F;span&gt;&lt;br&gt;&lt;span class&#x3D;&quot;line&quot;&gt;2&lt;&#x2F;span&gt;&lt;br&gt;&lt;span class&#x3D;&quot;line&quot;&gt;3&lt;&#x2F;span&gt;&lt;br&gt;&lt;span class&#x3D;&quot;line&quot;&gt;4&lt;&#x2F;span&gt;&lt;br&gt;&lt;span class&#x3D;&quot;line&quot;&gt;5&lt;&#x2F;span&gt;&lt;br&gt;&lt;span class&#x3D;&quot;line&quot;&gt;6&lt;&#x2F;span&gt;&lt;br&gt;&lt;span class&#x3D;&quot;line&quot;&gt;7&lt;&#x2F;span&gt;&lt;br&gt;&lt;span class&#x3D;&quot;line&quot;&gt;8&lt;&#x2F;span&gt;&lt;br&gt;&lt;span class&#x3D;&quot;line&quot;&gt;9&lt;&#x2F;span&gt;&lt;br&gt;&lt;&#x2F;pre&gt;&lt;&#x2F;td&gt;&lt;td class&#x3D;&quot;code&quot;&gt;&lt;pre&gt;&lt;span class&#x3D;&quot;line&quot;&gt;&lt;span class&#x3D;&quot;comment&quot;&gt;&#x2F;&#x2F; main.js&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;br&gt;&lt;span class&#x3D;&quot;line&quot;&gt;&lt;span class&#x3D;&quot;keyword&quot;&gt;var&lt;&#x2F;span&gt; counter &#x3D; &lt;span class&#x3D;&quot;built_in&quot;&gt;require&lt;&#x2F;span&gt;(&lt;span class&#x3D;&quot;string&quot;&gt;&#x27;.&#x2F;example&#x27;&lt;&#x2F;span&gt;).&lt;span class&#x3D;&quot;property&quot;&gt;counter&lt;&#x2F;span&gt;;&lt;&#x2F;span&gt;&lt;br&gt;&lt;span class&#x3D;&quot;line&quot;&gt;&lt;span class&#x3D;&quot;keyword&quot;&gt;var&lt;&#x2F;span&gt; incCounter &#x3D; &lt;span class&#x3D;&quot;built_in&quot;&gt;require&lt;&#x2F;span&gt;(&lt;span class&#x3D;&quot;string&quot;&gt;&#x27;.&#x2F;example&#x27;&lt;&#x2F;span&gt;).&lt;span class&#x3D;&quot;property&quot;&gt;incCounter&lt;&#x2F;span&gt;;&lt;&#x2F;span&gt;&lt;br&gt;&lt;span class&#x3D;&quot;line&quot;&gt;&lt;span class&#x3D;&quot;keyword&quot;&gt;var&lt;&#x2F;span&gt; getCounter &#x3D; &lt;span class&#x3D;&quot;built_in&quot;&gt;require&lt;&#x2F;span&gt;(&lt;span class&#x3D;&quot;string&quot;&gt;&#x27;.&#x2F;example&#x27;&lt;&#x2F;span&gt;).&lt;span class&#x3D;&quot;property&quot;&gt;getCounter&lt;&#x2F;span&gt;;&lt;&#x2F;span&gt;&lt;br&gt;&lt;span class&#x3D;&quot;line&quot;&gt;&lt;&#x2F;span&gt;&lt;br&gt;&lt;span class&#x3D;&quot;line&quot;&gt;&lt;span class&#x3D;&quot;variable language_&quot;&gt;console&lt;&#x2F;span&gt;.&lt;span class&#x3D;&quot;title function_&quot;&gt;log&lt;&#x2F;span&gt;(counter);  &lt;span class&#x3D;&quot;comment&quot;&gt;&#x2F;&#x2F; 3&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;br&gt;&lt;span class&#x3D;&quot;line&quot;&gt;&lt;span class&#x3D;&quot;title function_&quot;&gt;incCounter&lt;&#x2F;span&gt;();&lt;&#x2F;span&gt;&lt;br&gt;&lt;span class&#x3D;&quot;line&quot;&gt;&lt;span class&#x3D;&quot;variable language_&quot;&gt;console&lt;&#x2F;span&gt;.&lt;span class&#x3D;&quot;title function_&quot;&gt;log&lt;&#x2F;span&gt;(counter); &lt;span class&#x3D;&quot;comment&quot;&gt;&#x2F;&#x2F; 3&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;br&gt;&lt;span class&#x3D;&quot;line&quot;&gt;&lt;span class&#x3D;&quot;variable language_&quot;&gt;console&lt;&#x2F;span&gt;.&lt;span class&#x3D;&quot;title function_&quot;&gt;log&lt;&#x2F;span&gt;(&lt;span class&#x3D;&quot;string&quot;&gt;&quot;🚀 ~ require(&#x27;.&#x2F;example&#x27;).counter:&quot;&lt;&#x2F;span&gt;, &lt;span class&#x3D;&quot;title function_&quot;&gt;getCounter&lt;&#x2F;span&gt;() ) &lt;span class&#x3D;&quot;comment&quot;&gt;&#x2F;&#x2F; 4&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;br&gt;&lt;&#x2F;pre&gt;&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;&lt;&#x2F;table&gt;&lt;&#x2F;figure&gt;&lt;&#x2F;div&gt;
+
+&lt;h3 id&#x3D;&quot;AMD-Asynchronous-Module-Definition&quot;&gt;&lt;a href&#x3D;&quot;#AMD-Asynchronous-Module-Definition&quot; class&#x3D;&quot;headerlink&quot; title&#x3D;&quot;AMD(Asynchronous Module Definition)&quot;&gt;&lt;&#x2F;a&gt;AMD(Asynchronous Module Definition)&lt;&#x2F;h3&gt;&lt;p&gt;CommonJS规范加载模块是同步的，也就是说，只有加载完成，才能执行后面的操作。AMD规范则是非同步加载模块，允许指定回调函数。由于Node.js主要用于服务器编程，模块文件一般都已经存在于本地硬盘，所以加载起来比较快，不用考虑非同步加载的方式，所以CommonJS规范比较适用。但是，如果是浏览器环境，要从服务器端加载模块，这时就必须采用非同步模式，因此浏览器端一般采用AMD规范。此外AMD规范比CommonJS规范在浏览器端实现要来着早。&lt;&#x2F;p&gt;
+&lt;div class&#x3D;&quot;highlight-container&quot; data-rel&#x3D;&quot;Js&quot;&gt;&lt;figure class&#x3D;&quot;iseeu highlight js&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class&#x3D;&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class&#x3D;&quot;line&quot;&gt;1&lt;&#x2F;span&gt;&lt;br&gt;&lt;span class&#x3D;&quot;line&quot;&gt;2&lt;&#x2F;span&gt;&lt;br&gt;&lt;span class&#x3D;&quot;line&quot;&gt;3&lt;&#x2F;span&gt;&lt;br&gt;&lt;span class&#x3D;&quot;line&quot;&gt;4&lt;&#x2F;span&gt;&lt;br&gt;&lt;span class&#x3D;&quot;line&quot;&gt;5&lt;&#x2F;span&gt;&lt;br&gt;&lt;span class&#x3D;&quot;line&quot;&gt;6&lt;&#x2F;span&gt;&lt;br&gt;&lt;span class&#x3D;&quot;line&quot;&gt;7&lt;&#x2F;span&gt;&lt;br&gt;&lt;span class&#x3D;&quot;line&quot;&gt;8&lt;&#x2F;span&gt;&lt;br&gt;&lt;span class&#x3D;&quot;line&quot;&gt;9&lt;&#x2F;span&gt;&lt;br&gt;&lt;span class&#x3D;&quot;line&quot;&gt;10&lt;&#x2F;span&gt;&lt;br&gt;&lt;span class&#x3D;&quot;line&quot;&gt;11&lt;&#x2F;span&gt;&lt;br&gt;&lt;span class&#x3D;&quot;line&quot;&gt;12&lt;&#x2F;span&gt;&lt;br&gt;&lt;span class&#x3D;&quot;line&quot;&gt;13&lt;&#x2F;span&gt;&lt;br&gt;&lt;span class&#x3D;&quot;line&quot;&gt;14&lt;&#x2F;span&gt;&lt;br&gt;&lt;&#x2F;pre&gt;&lt;&#x2F;td&gt;&lt;td class&#x3D;&quot;code&quot;&gt;&lt;pre&gt;&lt;span class&#x3D;&quot;line&quot;&gt;&lt;span class&#x3D;&quot;comment&quot;&gt;&#x2F;&#x2F;定义没有依赖的模块&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;br&gt;&lt;span class&#x3D;&quot;line&quot;&gt;&lt;span class&#x3D;&quot;title function_&quot;&gt;define&lt;&#x2F;span&gt;(&lt;span class&#x3D;&quot;keyword&quot;&gt;function&lt;&#x2F;span&gt;(&lt;span class&#x3D;&quot;params&quot;&gt;&lt;&#x2F;span&gt;)&#123;&lt;&#x2F;span&gt;&lt;br&gt;&lt;span class&#x3D;&quot;line&quot;&gt;   &lt;span class&#x3D;&quot;keyword&quot;&gt;return&lt;&#x2F;span&gt; 模块&lt;&#x2F;span&gt;&lt;br&gt;&lt;span class&#x3D;&quot;line&quot;&gt;&#125;)&lt;&#x2F;span&gt;&lt;br&gt;&lt;span class&#x3D;&quot;line&quot;&gt;&lt;&#x2F;span&gt;&lt;br&gt;&lt;span class&#x3D;&quot;line&quot;&gt;&lt;span class&#x3D;&quot;comment&quot;&gt;&#x2F;&#x2F;定义有依赖的模块&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;br&gt;&lt;span class&#x3D;&quot;line&quot;&gt;&lt;span class&#x3D;&quot;title function_&quot;&gt;define&lt;&#x2F;span&gt;([&lt;span class&#x3D;&quot;string&quot;&gt;&#x27;module1&#x27;&lt;&#x2F;span&gt;, &lt;span class&#x3D;&quot;string&quot;&gt;&#x27;module2&#x27;&lt;&#x2F;span&gt;], &lt;span class&#x3D;&quot;keyword&quot;&gt;function&lt;&#x2F;span&gt;(&lt;span class&#x3D;&quot;params&quot;&gt;m1, m2&lt;&#x2F;span&gt;)&#123;&lt;&#x2F;span&gt;&lt;br&gt;&lt;span class&#x3D;&quot;line&quot;&gt;   &lt;span class&#x3D;&quot;keyword&quot;&gt;return&lt;&#x2F;span&gt; 模块&lt;&#x2F;span&gt;&lt;br&gt;&lt;span class&#x3D;&quot;line&quot;&gt;&#125;)&lt;&#x2F;span&gt;&lt;br&gt;&lt;span class&#x3D;&quot;line&quot;&gt;&lt;&#x2F;span&gt;&lt;br&gt;&lt;span class&#x3D;&quot;line&quot;&gt;&lt;&#x2F;span&gt;&lt;br&gt;&lt;span class&#x3D;&quot;line&quot;&gt;&lt;span class&#x3D;&quot;built_in&quot;&gt;require&lt;&#x2F;span&gt;([&lt;span class&#x3D;&quot;string&quot;&gt;&#x27;module1&#x27;&lt;&#x2F;span&gt;, &lt;span class&#x3D;&quot;string&quot;&gt;&#x27;module2&#x27;&lt;&#x2F;span&gt;], &lt;span class&#x3D;&quot;keyword&quot;&gt;function&lt;&#x2F;span&gt;(&lt;span class&#x3D;&quot;params&quot;&gt;m1, m2&lt;&#x2F;span&gt;)&#123;&lt;&#x2F;span&gt;&lt;br&gt;&lt;span class&#x3D;&quot;line&quot;&gt;   使用m1&#x2F;m2&lt;&#x2F;span&gt;&lt;br&gt;&lt;span class&#x3D;&quot;line&quot;&gt;&#125;)&lt;&#x2F;span&gt;&lt;br&gt;&lt;&#x2F;pre&gt;&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;&lt;&#x2F;table&gt;&lt;&#x2F;figure&gt;&lt;&#x2F;div&gt;
+
+&lt;h3 id&#x3D;&quot;CMD-Common-Module-Definition&quot;&gt;&lt;a href&#x3D;&quot;#CMD-Common-Module-Definition&quot; class&#x3D;&quot;headerlink&quot; title&#x3D;&quot;CMD(Common Module Definition)&quot;&gt;&lt;&#x2F;a&gt;CMD(Common Module Definition)&lt;&#x2F;h3&gt;&lt;p&gt;CMD规范是Sea.js推广过程中产生的，Sea.js是阿里的玉伯大神推出的，Sea.js的推广过程中对模块定义的规范化产生了影响，CMD是Sea.js推广过程中产生的。CMD规范是依赖就近，用的时候再require。CMD规范是依赖就近，用的时候再require。CMD规范是依赖就近，用的时候再require。&lt;&#x2F;p&gt;
+&lt;div class&#x3D;&quot;highlight-container&quot; data-rel&#x3D;&quot;Js&quot;&gt;&lt;figure class&#x3D;&quot;iseeu highlight js&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class&#x3D;&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class&#x3D;&quot;line&quot;&gt;1&lt;&#x2F;span&gt;&lt;br&gt;&lt;span class&#x3D;&quot;line&quot;&gt;2&lt;&#x2F;span&gt;&lt;br&gt;&lt;span class&#x3D;&quot;line&quot;&gt;3&lt;&#x2F;span&gt;&lt;br&gt;&lt;span class&#x3D;&quot;line&quot;&gt;4&lt;&#x2F;span&gt;&lt;br&gt;&lt;span class&#x3D;&quot;line&quot;&gt;5&lt;&#x2F;span&gt;&lt;br&gt;&lt;span class&#x3D;&quot;line&quot;&gt;6&lt;&#x2F;span&gt;&lt;br&gt;&lt;span class&#x3D;&quot;line&quot;&gt;7&lt;&#x2F;span&gt;&lt;br&gt;&lt;span class&#x3D;&quot;line&quot;&gt;8&lt;&#x2F;span&gt;&lt;br&gt;&lt;span class&#x3D;&quot;line&quot;&gt;9&lt;&#x2F;span&gt;&lt;br&gt;&lt;span class&#x3D;&quot;line&quot;&gt;10&lt;&#x2F;span&gt;&lt;br&gt;&lt;span class&#x3D;&quot;line&quot;&gt;11&lt;&#x2F;span&gt;&lt;br&gt;&lt;span class&#x3D;&quot;line&quot;&gt;12&lt;&#x2F;span&gt;&lt;br&gt;&lt;span class&#x3D;&quot;line&quot;&gt;13&lt;&#x2F;span&gt;&lt;br&gt;&lt;span class&#x3D;&quot;line&quot;&gt;14&lt;&#x2F;span&gt;&lt;br&gt;&lt;span class&#x3D;&quot;line&quot;&gt;15&lt;&#x2F;span&gt;&lt;br&gt;&lt;span class&#x3D;&quot;line&quot;&gt;16&lt;&#x2F;span&gt;&lt;br&gt;&lt;span class&#x3D;&quot;line&quot;&gt;17&lt;&#x2F;span&gt;&lt;br&gt;&lt;span class&#x3D;&quot;line&quot;&gt;18&lt;&#x2F;span&gt;&lt;br&gt;&lt;span class&#x3D;&quot;line&quot;&gt;19&lt;&#x2F;span&gt;&lt;br&gt;&lt;span class&#x3D;&quot;line&quot;&gt;20&lt;&#x2F;span&gt;&lt;br&gt;&lt;span class&#x3D;&quot;line&quot;&gt;21&lt;&#x2F;span&gt;&lt;br&gt;&lt;span class&#x3D;&quot;line&quot;&gt;22&lt;&#x2F;span&gt;&lt;br&gt;&lt;span class&#x3D;&quot;line&quot;&gt;23&lt;&#x2F;span&gt;&lt;br&gt;&lt;span class&#x3D;&quot;line&quot;&gt;24&lt;&#x2F;span&gt;&lt;br&gt;&lt;&#x2F;pre&gt;&lt;&#x2F;td&gt;&lt;td class&#x3D;&quot;code&quot;&gt;&lt;pre&gt;&lt;span class&#x3D;&quot;line&quot;&gt;&lt;span class&#x3D;&quot;comment&quot;&gt;&#x2F;&#x2F;定义没有依赖的模块&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;br&gt;&lt;span class&#x3D;&quot;line&quot;&gt;&lt;span class&#x3D;&quot;title function_&quot;&gt;define&lt;&#x2F;span&gt;(&lt;span class&#x3D;&quot;keyword&quot;&gt;function&lt;&#x2F;span&gt;(&lt;span class&#x3D;&quot;params&quot;&gt;&lt;span class&#x3D;&quot;built_in&quot;&gt;require&lt;&#x2F;span&gt;, &lt;span class&#x3D;&quot;built_in&quot;&gt;exports&lt;&#x2F;span&gt;, &lt;span class&#x3D;&quot;variable language_&quot;&gt;module&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;)&#123;&lt;&#x2F;span&gt;&lt;br&gt;&lt;span class&#x3D;&quot;line&quot;&gt;  &lt;span class&#x3D;&quot;built_in&quot;&gt;exports&lt;&#x2F;span&gt;.&lt;span class&#x3D;&quot;property&quot;&gt;xxx&lt;&#x2F;span&gt; &#x3D; value&lt;&#x2F;span&gt;&lt;br&gt;&lt;span class&#x3D;&quot;line&quot;&gt;  &lt;span class&#x3D;&quot;variable language_&quot;&gt;module&lt;&#x2F;span&gt;.&lt;span class&#x3D;&quot;property&quot;&gt;exports&lt;&#x2F;span&gt; &#x3D; value&lt;&#x2F;span&gt;&lt;br&gt;&lt;span class&#x3D;&quot;line&quot;&gt;&#125;)&lt;&#x2F;span&gt;&lt;br&gt;&lt;span class&#x3D;&quot;line&quot;&gt;&lt;&#x2F;span&gt;&lt;br&gt;&lt;span class&#x3D;&quot;line&quot;&gt;&lt;span class&#x3D;&quot;comment&quot;&gt;&#x2F;&#x2F;定义有依赖的模块&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;br&gt;&lt;span class&#x3D;&quot;line&quot;&gt;&lt;span class&#x3D;&quot;title function_&quot;&gt;define&lt;&#x2F;span&gt;(&lt;span class&#x3D;&quot;keyword&quot;&gt;function&lt;&#x2F;span&gt;(&lt;span class&#x3D;&quot;params&quot;&gt;&lt;span class&#x3D;&quot;built_in&quot;&gt;require&lt;&#x2F;span&gt;, &lt;span class&#x3D;&quot;built_in&quot;&gt;exports&lt;&#x2F;span&gt;, &lt;span class&#x3D;&quot;variable language_&quot;&gt;module&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;)&#123;&lt;&#x2F;span&gt;&lt;br&gt;&lt;span class&#x3D;&quot;line&quot;&gt;  &lt;span class&#x3D;&quot;comment&quot;&gt;&#x2F;&#x2F;引入依赖模块(同步)&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;br&gt;&lt;span class&#x3D;&quot;line&quot;&gt;  &lt;span class&#x3D;&quot;keyword&quot;&gt;var&lt;&#x2F;span&gt; module2 &#x3D; &lt;span class&#x3D;&quot;built_in&quot;&gt;require&lt;&#x2F;span&gt;(&lt;span class&#x3D;&quot;string&quot;&gt;&#x27;.&#x2F;module2&#x27;&lt;&#x2F;span&gt;)&lt;&#x2F;span&gt;&lt;br&gt;&lt;span class&#x3D;&quot;line&quot;&gt;  &lt;span class&#x3D;&quot;comment&quot;&gt;&#x2F;&#x2F;引入依赖模块(异步)&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;br&gt;&lt;span class&#x3D;&quot;line&quot;&gt;    &lt;span class&#x3D;&quot;built_in&quot;&gt;require&lt;&#x2F;span&gt;.&lt;span class&#x3D;&quot;title function_&quot;&gt;async&lt;&#x2F;span&gt;(&lt;span class&#x3D;&quot;string&quot;&gt;&#x27;.&#x2F;module3&#x27;&lt;&#x2F;span&gt;, &lt;span class&#x3D;&quot;keyword&quot;&gt;function&lt;&#x2F;span&gt; (&lt;span class&#x3D;&quot;params&quot;&gt;m3&lt;&#x2F;span&gt;) &#123;&lt;&#x2F;span&gt;&lt;br&gt;&lt;span class&#x3D;&quot;line&quot;&gt;    &#125;)&lt;&#x2F;span&gt;&lt;br&gt;&lt;span class&#x3D;&quot;line&quot;&gt;  &lt;span class&#x3D;&quot;comment&quot;&gt;&#x2F;&#x2F;暴露模块&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;br&gt;&lt;span class&#x3D;&quot;line&quot;&gt;  &lt;span class&#x3D;&quot;built_in&quot;&gt;exports&lt;&#x2F;span&gt;.&lt;span class&#x3D;&quot;property&quot;&gt;xxx&lt;&#x2F;span&gt; &#x3D; value&lt;&#x2F;span&gt;&lt;br&gt;&lt;span class&#x3D;&quot;line&quot;&gt;&#125;)&lt;&#x2F;span&gt;&lt;br&gt;&lt;span class&#x3D;&quot;line&quot;&gt;&lt;&#x2F;span&gt;&lt;br&gt;&lt;span class&#x3D;&quot;line&quot;&gt;&lt;span class&#x3D;&quot;comment&quot;&gt;&#x2F;&#x2F; 引入使用的模块&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;br&gt;&lt;span class&#x3D;&quot;line&quot;&gt;&lt;span class&#x3D;&quot;title function_&quot;&gt;define&lt;&#x2F;span&gt;(&lt;span class&#x3D;&quot;keyword&quot;&gt;function&lt;&#x2F;span&gt; (&lt;span class&#x3D;&quot;params&quot;&gt;&lt;span class&#x3D;&quot;built_in&quot;&gt;require&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;) &#123;&lt;&#x2F;span&gt;&lt;br&gt;&lt;span class&#x3D;&quot;line&quot;&gt;  &lt;span class&#x3D;&quot;keyword&quot;&gt;var&lt;&#x2F;span&gt; m1 &#x3D; &lt;span class&#x3D;&quot;built_in&quot;&gt;require&lt;&#x2F;span&gt;(&lt;span class&#x3D;&quot;string&quot;&gt;&#x27;.&#x2F;module1&#x27;&lt;&#x2F;span&gt;)&lt;&#x2F;span&gt;&lt;br&gt;&lt;span class&#x3D;&quot;line&quot;&gt;  &lt;span class&#x3D;&quot;keyword&quot;&gt;var&lt;&#x2F;span&gt; m4 &#x3D; &lt;span class&#x3D;&quot;built_in&quot;&gt;require&lt;&#x2F;span&gt;(&lt;span class&#x3D;&quot;string&quot;&gt;&#x27;.&#x2F;module4&#x27;&lt;&#x2F;span&gt;)&lt;&#x2F;span&gt;&lt;br&gt;&lt;span class&#x3D;&quot;line&quot;&gt;  m1.&lt;span class&#x3D;&quot;title function_&quot;&gt;show&lt;&#x2F;span&gt;()&lt;&#x2F;span&gt;&lt;br&gt;&lt;span class&#x3D;&quot;line&quot;&gt;  m4.&lt;span class&#x3D;&quot;title function_&quot;&gt;show&lt;&#x2F;span&gt;()&lt;&#x2F;span&gt;&lt;br&gt;&lt;span class&#x3D;&quot;line&quot;&gt;&#125;)&lt;&#x2F;span&gt;&lt;br&gt;&lt;&#x2F;pre&gt;&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;&lt;&#x2F;table&gt;&lt;&#x2F;figure&gt;&lt;&#x2F;div&gt;
+
+&lt;h3 id&#x3D;&quot;ES6-Module&quot;&gt;&lt;a href&#x3D;&quot;#ES6-Module&quot; class&#x3D;&quot;headerlink&quot; title&#x3D;&quot;ES6 Module&quot;&gt;&lt;&#x2F;a&gt;ES6 Module&lt;&#x2F;h3&gt;&lt;p&gt;ES6模块是ECMAScript 6标准新增的功能，它是JavaScript模块的标准写法，是未来JS模块的主流标准。ES6模块不是对象，而是通过export命令显示指定输出的代码，再通过import命令输入。ES6模块自动采用严格模式，不管你有没有在模块头部加上&quot;use strict&quot;。&lt;&#x2F;p&gt;
+&lt;div class&#x3D;&quot;highlight-container&quot; data-rel&#x3D;&quot;Js&quot;&gt;&lt;figure class&#x3D;&quot;iseeu highlight js&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class&#x3D;&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class&#x3D;&quot;line&quot;&gt;1&lt;&#x2F;span&gt;&lt;br&gt;&lt;span class&#x3D;&quot;line&quot;&gt;2&lt;&#x2F;span&gt;&lt;br&gt;&lt;span class&#x3D;&quot;line&quot;&gt;3&lt;&#x2F;span&gt;&lt;br&gt;&lt;span class&#x3D;&quot;line&quot;&gt;4&lt;&#x2F;span&gt;&lt;br&gt;&lt;span class&#x3D;&quot;line&quot;&gt;5&lt;&#x2F;span&gt;&lt;br&gt;&lt;span class&#x3D;&quot;line&quot;&gt;6&lt;&#x2F;span&gt;&lt;br&gt;&lt;span class&#x3D;&quot;line&quot;&gt;7&lt;&#x2F;span&gt;&lt;br&gt;&lt;span class&#x3D;&quot;line&quot;&gt;8&lt;&#x2F;span&gt;&lt;br&gt;&lt;span class&#x3D;&quot;line&quot;&gt;9&lt;&#x2F;span&gt;&lt;br&gt;&lt;span class&#x3D;&quot;line&quot;&gt;10&lt;&#x2F;span&gt;&lt;br&gt;&lt;span class&#x3D;&quot;line&quot;&gt;11&lt;&#x2F;span&gt;&lt;br&gt;&lt;span class&#x3D;&quot;line&quot;&gt;12&lt;&#x2F;span&gt;&lt;br&gt;&lt;span class&#x3D;&quot;line&quot;&gt;13&lt;&#x2F;span&gt;&lt;br&gt;&lt;span class&#x3D;&quot;line&quot;&gt;14&lt;&#x2F;span&gt;&lt;br&gt;&lt;span class&#x3D;&quot;line&quot;&gt;15&lt;&#x2F;span&gt;&lt;br&gt;&lt;span class&#x3D;&quot;line&quot;&gt;16&lt;&#x2F;span&gt;&lt;br&gt;&lt;span class&#x3D;&quot;line&quot;&gt;17&lt;&#x2F;span&gt;&lt;br&gt;&lt;span class&#x3D;&quot;line&quot;&gt;18&lt;&#x2F;span&gt;&lt;br&gt;&lt;span class&#x3D;&quot;line&quot;&gt;19&lt;&#x2F;span&gt;&lt;br&gt;&lt;span class&#x3D;&quot;line&quot;&gt;20&lt;&#x2F;span&gt;&lt;br&gt;&lt;span class&#x3D;&quot;line&quot;&gt;21&lt;&#x2F;span&gt;&lt;br&gt;&lt;&#x2F;pre&gt;&lt;&#x2F;td&gt;&lt;td class&#x3D;&quot;code&quot;&gt;&lt;pre&gt;&lt;span class&#x3D;&quot;line&quot;&gt;&lt;span class&#x3D;&quot;comment&quot;&gt;&#x2F;** 定义模块 math.js &#x2F;&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;br&gt;&lt;span class&#x3D;&quot;line&quot;&gt;&lt;span class&#x3D;&quot;comment&quot;&gt;var basicNum &#x3D; 0;&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;br&gt;&lt;span class&#x3D;&quot;line&quot;&gt;&lt;span class&#x3D;&quot;comment&quot;&gt;var add &#x3D; function (a, b) &#123;&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;br&gt;&lt;span class&#x3D;&quot;line&quot;&gt;&lt;span class&#x3D;&quot;comment&quot;&gt;    return a + b;&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;br&gt;&lt;span class&#x3D;&quot;line&quot;&gt;&lt;span class&#x3D;&quot;comment&quot;&gt;&#125;;&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;br&gt;&lt;span class&#x3D;&quot;line&quot;&gt;&lt;span class&#x3D;&quot;comment&quot;&gt;export &#123; basicNum, add &#125;;&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;br&gt;&lt;span class&#x3D;&quot;line&quot;&gt;&lt;span class&#x3D;&quot;comment&quot;&gt;&#x2F; 引用模块 **&#x2F;&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;br&gt;&lt;span class&#x3D;&quot;line&quot;&gt;&lt;span class&#x3D;&quot;keyword&quot;&gt;import&lt;&#x2F;span&gt; &#123; basicNum, add &#125; &lt;span class&#x3D;&quot;keyword&quot;&gt;from&lt;&#x2F;span&gt; &lt;span class&#x3D;&quot;string&quot;&gt;&#x27;.&#x2F;math&#x27;&lt;&#x2F;span&gt;;&lt;&#x2F;span&gt;&lt;br&gt;&lt;span class&#x3D;&quot;line&quot;&gt;&lt;span class&#x3D;&quot;keyword&quot;&gt;function&lt;&#x2F;span&gt; &lt;span class&#x3D;&quot;title function_&quot;&gt;test&lt;&#x2F;span&gt;(&lt;span class&#x3D;&quot;params&quot;&gt;ele&lt;&#x2F;span&gt;) &#123;&lt;&#x2F;span&gt;&lt;br&gt;&lt;span class&#x3D;&quot;line&quot;&gt;    ele.&lt;span class&#x3D;&quot;property&quot;&gt;textContent&lt;&#x2F;span&gt; &#x3D; &lt;span class&#x3D;&quot;title function_&quot;&gt;add&lt;&#x2F;span&gt;(&lt;span class&#x3D;&quot;number&quot;&gt;99&lt;&#x2F;span&gt; + basicNum);&lt;&#x2F;span&gt;&lt;br&gt;&lt;span class&#x3D;&quot;line&quot;&gt;&#125;&lt;&#x2F;span&gt;&lt;br&gt;&lt;span class&#x3D;&quot;line&quot;&gt;&lt;&#x2F;span&gt;&lt;br&gt;&lt;span class&#x3D;&quot;line&quot;&gt;&lt;&#x2F;span&gt;&lt;br&gt;&lt;span class&#x3D;&quot;line&quot;&gt;&lt;span class&#x3D;&quot;comment&quot;&gt;&#x2F;&#x2F; export-default.js&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;br&gt;&lt;span class&#x3D;&quot;line&quot;&gt;&lt;span class&#x3D;&quot;keyword&quot;&gt;export&lt;&#x2F;span&gt; &lt;span class&#x3D;&quot;keyword&quot;&gt;default&lt;&#x2F;span&gt; &lt;span class&#x3D;&quot;keyword&quot;&gt;function&lt;&#x2F;span&gt; (&lt;span class&#x3D;&quot;params&quot;&gt;&lt;&#x2F;span&gt;) &#123;&lt;&#x2F;span&gt;&lt;br&gt;&lt;span class&#x3D;&quot;line&quot;&gt;  &lt;span class&#x3D;&quot;variable language_&quot;&gt;console&lt;&#x2F;span&gt;.&lt;span class&#x3D;&quot;title function_&quot;&gt;log&lt;&#x2F;span&gt;(&lt;span class&#x3D;&quot;string&quot;&gt;&#x27;foo&#x27;&lt;&#x2F;span&gt;);&lt;&#x2F;span&gt;&lt;br&gt;&lt;span class&#x3D;&quot;line&quot;&gt;&#125;&lt;&#x2F;span&gt;&lt;br&gt;&lt;span class&#x3D;&quot;line&quot;&gt;&lt;&#x2F;span&gt;&lt;br&gt;&lt;span class&#x3D;&quot;line&quot;&gt;&lt;span class&#x3D;&quot;comment&quot;&gt;&#x2F;&#x2F; import-default.js&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;br&gt;&lt;span class&#x3D;&quot;line&quot;&gt;&lt;span class&#x3D;&quot;keyword&quot;&gt;import&lt;&#x2F;span&gt; customName &lt;span class&#x3D;&quot;keyword&quot;&gt;from&lt;&#x2F;span&gt; &lt;span class&#x3D;&quot;string&quot;&gt;&#x27;.&#x2F;export-default&#x27;&lt;&#x2F;span&gt;;&lt;&#x2F;span&gt;&lt;br&gt;&lt;span class&#x3D;&quot;line&quot;&gt;&lt;span class&#x3D;&quot;title function_&quot;&gt;customName&lt;&#x2F;span&gt;(); &lt;span class&#x3D;&quot;comment&quot;&gt;&#x2F;&#x2F; &#x27;foo&#x27;&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;br&gt;&lt;&#x2F;pre&gt;&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;&lt;&#x2F;table&gt;&lt;&#x2F;figure&gt;&lt;&#x2F;div&gt;
+
+&lt;p&gt;ES6模块与CommonJS模块的差异：&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;CommonJS 模块输出的是一个值的拷贝，ES6 模块输出的是值的引用。&lt;&#x2F;li&gt;
+&lt;li&gt;CommonJS 模块是运行时加载，ES6 模块是编译时输出接口。&lt;br&gt;第二个差异是因为 CommonJS 加载的是一个对象（即module.exports属性），该对象只有在脚本运行完才会生成。而 ES6 模块不是对象，它的对外接口只是一种静态定义，在代码静态解析阶段就会生成。&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;div class&#x3D;&quot;highlight-container&quot; data-rel&#x3D;&quot;Js&quot;&gt;&lt;figure class&#x3D;&quot;iseeu highlight js&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class&#x3D;&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class&#x3D;&quot;line&quot;&gt;1&lt;&#x2F;span&gt;&lt;br&gt;&lt;span class&#x3D;&quot;line&quot;&gt;2&lt;&#x2F;span&gt;&lt;br&gt;&lt;span class&#x3D;&quot;line&quot;&gt;3&lt;&#x2F;span&gt;&lt;br&gt;&lt;span class&#x3D;&quot;line&quot;&gt;4&lt;&#x2F;span&gt;&lt;br&gt;&lt;span class&#x3D;&quot;line&quot;&gt;5&lt;&#x2F;span&gt;&lt;br&gt;&lt;span class&#x3D;&quot;line&quot;&gt;6&lt;&#x2F;span&gt;&lt;br&gt;&lt;span class&#x3D;&quot;line&quot;&gt;7&lt;&#x2F;span&gt;&lt;br&gt;&lt;span class&#x3D;&quot;line&quot;&gt;8&lt;&#x2F;span&gt;&lt;br&gt;&lt;span class&#x3D;&quot;line&quot;&gt;9&lt;&#x2F;span&gt;&lt;br&gt;&lt;span class&#x3D;&quot;line&quot;&gt;10&lt;&#x2F;span&gt;&lt;br&gt;&lt;&#x2F;pre&gt;&lt;&#x2F;td&gt;&lt;td class&#x3D;&quot;code&quot;&gt;&lt;pre&gt;&lt;span class&#x3D;&quot;line&quot;&gt;&lt;span class&#x3D;&quot;comment&quot;&gt;&#x2F;&#x2F; lib.js&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;br&gt;&lt;span class&#x3D;&quot;line&quot;&gt;&lt;span class&#x3D;&quot;keyword&quot;&gt;export&lt;&#x2F;span&gt; &lt;span class&#x3D;&quot;keyword&quot;&gt;let&lt;&#x2F;span&gt; counter &#x3D; &lt;span class&#x3D;&quot;number&quot;&gt;3&lt;&#x2F;span&gt;;&lt;&#x2F;span&gt;&lt;br&gt;&lt;span class&#x3D;&quot;line&quot;&gt;&lt;span class&#x3D;&quot;keyword&quot;&gt;export&lt;&#x2F;span&gt; &lt;span class&#x3D;&quot;keyword&quot;&gt;function&lt;&#x2F;span&gt; &lt;span class&#x3D;&quot;title function_&quot;&gt;incCounter&lt;&#x2F;span&gt;(&lt;span class&#x3D;&quot;params&quot;&gt;&lt;&#x2F;span&gt;) &#123;&lt;&#x2F;span&gt;&lt;br&gt;&lt;span class&#x3D;&quot;line&quot;&gt;  counter++;&lt;&#x2F;span&gt;&lt;br&gt;&lt;span class&#x3D;&quot;line&quot;&gt;&#125;&lt;&#x2F;span&gt;&lt;br&gt;&lt;span class&#x3D;&quot;line&quot;&gt;&lt;span class&#x3D;&quot;comment&quot;&gt;&#x2F;&#x2F; main.js&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;br&gt;&lt;span class&#x3D;&quot;line&quot;&gt;&lt;span class&#x3D;&quot;keyword&quot;&gt;import&lt;&#x2F;span&gt; &#123; counter, incCounter &#125; &lt;span class&#x3D;&quot;keyword&quot;&gt;from&lt;&#x2F;span&gt; &lt;span class&#x3D;&quot;string&quot;&gt;&#x27;.&#x2F;lib&#x27;&lt;&#x2F;span&gt;;&lt;&#x2F;span&gt;&lt;br&gt;&lt;span class&#x3D;&quot;line&quot;&gt;&lt;span class&#x3D;&quot;variable language_&quot;&gt;console&lt;&#x2F;span&gt;.&lt;span class&#x3D;&quot;title function_&quot;&gt;log&lt;&#x2F;span&gt;(counter); &lt;span class&#x3D;&quot;comment&quot;&gt;&#x2F;&#x2F; 3&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;br&gt;&lt;span class&#x3D;&quot;line&quot;&gt;&lt;span class&#x3D;&quot;title function_&quot;&gt;incCounter&lt;&#x2F;span&gt;();&lt;&#x2F;span&gt;&lt;br&gt;&lt;span class&#x3D;&quot;line&quot;&gt;&lt;span class&#x3D;&quot;variable language_&quot;&gt;console&lt;&#x2F;span&gt;.&lt;span class&#x3D;&quot;title function_&quot;&gt;log&lt;&#x2F;span&gt;(counter); &lt;span class&#x3D;&quot;comment&quot;&gt;&#x2F;&#x2F; 4&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;br&gt;&lt;&#x2F;pre&gt;&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;&lt;&#x2F;table&gt;&lt;&#x2F;figure&gt;&lt;&#x2F;div&gt;
+
+&lt;p&gt;TreeShaking是指在打包时去除无用的代码，只打包需要的代码。ES6模块静态引入的特性，使得TreeShaking成为可能。&lt;&#x2F;p&gt;
+&lt;h3 id&#x3D;&quot;UMD-Universal-Module-Definition&quot;&gt;&lt;a href&#x3D;&quot;#UMD-Universal-Module-Definition&quot; class&#x3D;&quot;headerlink&quot; title&#x3D;&quot;UMD(Universal Module Definition)&quot;&gt;&lt;&#x2F;a&gt;UMD(Universal Module Definition)&lt;&#x2F;h3&gt;&lt;p&gt;UMD是AMD和CommonJS的糅合，既可以支持浏览器端，又可以支持服务器端。UMD规范通常在模块定义中先判断是否支持Node.js模块（exports）是否存在，存在则使用Node.js模块模式，不存在则判断是否支持AMD（define是否存在），存在则使用AMD方式加载模块。&lt;&#x2F;p&gt;
+&lt;div class&#x3D;&quot;highlight-container&quot; data-rel&#x3D;&quot;Js&quot;&gt;&lt;figure class&#x3D;&quot;iseeu highlight js&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class&#x3D;&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class&#x3D;&quot;line&quot;&gt;1&lt;&#x2F;span&gt;&lt;br&gt;&lt;span class&#x3D;&quot;line&quot;&gt;2&lt;&#x2F;span&gt;&lt;br&gt;&lt;span class&#x3D;&quot;line&quot;&gt;3&lt;&#x2F;span&gt;&lt;br&gt;&lt;span class&#x3D;&quot;line&quot;&gt;4&lt;&#x2F;span&gt;&lt;br&gt;&lt;span class&#x3D;&quot;line&quot;&gt;5&lt;&#x2F;span&gt;&lt;br&gt;&lt;span class&#x3D;&quot;line&quot;&gt;6&lt;&#x2F;span&gt;&lt;br&gt;&lt;span class&#x3D;&quot;line&quot;&gt;7&lt;&#x2F;span&gt;&lt;br&gt;&lt;span class&#x3D;&quot;line&quot;&gt;8&lt;&#x2F;span&gt;&lt;br&gt;&lt;span class&#x3D;&quot;line&quot;&gt;9&lt;&#x2F;span&gt;&lt;br&gt;&lt;span class&#x3D;&quot;line&quot;&gt;10&lt;&#x2F;span&gt;&lt;br&gt;&lt;span class&#x3D;&quot;line&quot;&gt;11&lt;&#x2F;span&gt;&lt;br&gt;&lt;span class&#x3D;&quot;line&quot;&gt;12&lt;&#x2F;span&gt;&lt;br&gt;&lt;span class&#x3D;&quot;line&quot;&gt;13&lt;&#x2F;span&gt;&lt;br&gt;&lt;span class&#x3D;&quot;line&quot;&gt;14&lt;&#x2F;span&gt;&lt;br&gt;&lt;span class&#x3D;&quot;line&quot;&gt;15&lt;&#x2F;span&gt;&lt;br&gt;&lt;span class&#x3D;&quot;line&quot;&gt;16&lt;&#x2F;span&gt;&lt;br&gt;&lt;span class&#x3D;&quot;line&quot;&gt;17&lt;&#x2F;span&gt;&lt;br&gt;&lt;span class&#x3D;&quot;line&quot;&gt;18&lt;&#x2F;span&gt;&lt;br&gt;&lt;span class&#x3D;&quot;line&quot;&gt;19&lt;&#x2F;span&gt;&lt;br&gt;&lt;span class&#x3D;&quot;line&quot;&gt;20&lt;&#x2F;span&gt;&lt;br&gt;&lt;span class&#x3D;&quot;line&quot;&gt;21&lt;&#x2F;span&gt;&lt;br&gt;&lt;&#x2F;pre&gt;&lt;&#x2F;td&gt;&lt;td class&#x3D;&quot;code&quot;&gt;&lt;pre&gt;&lt;span class&#x3D;&quot;line&quot;&gt;(&lt;span class&#x3D;&quot;keyword&quot;&gt;function&lt;&#x2F;span&gt;(&lt;span class&#x3D;&quot;params&quot;&gt;root, factory&lt;&#x2F;span&gt;) &#123;&lt;&#x2F;span&gt;&lt;br&gt;&lt;span class&#x3D;&quot;line&quot;&gt;    &lt;span class&#x3D;&quot;keyword&quot;&gt;if&lt;&#x2F;span&gt; (&lt;span class&#x3D;&quot;keyword&quot;&gt;typeof&lt;&#x2F;span&gt; &lt;span class&#x3D;&quot;variable language_&quot;&gt;module&lt;&#x2F;span&gt; &#x3D;&#x3D;&#x3D; &lt;span class&#x3D;&quot;string&quot;&gt;&#x27;object&#x27;&lt;&#x2F;span&gt; &amp;&amp; &lt;span class&#x3D;&quot;keyword&quot;&gt;typeof&lt;&#x2F;span&gt; &lt;span class&#x3D;&quot;variable language_&quot;&gt;module&lt;&#x2F;span&gt;.&lt;span class&#x3D;&quot;property&quot;&gt;exports&lt;&#x2F;span&gt; &#x3D;&#x3D;&#x3D; &lt;span class&#x3D;&quot;string&quot;&gt;&#x27;object&#x27;&lt;&#x2F;span&gt;) &#123;&lt;&#x2F;span&gt;&lt;br&gt;&lt;span class&#x3D;&quot;line&quot;&gt;        &lt;span class&#x3D;&quot;variable language_&quot;&gt;console&lt;&#x2F;span&gt;.&lt;span class&#x3D;&quot;title function_&quot;&gt;log&lt;&#x2F;span&gt;(&lt;span class&#x3D;&quot;string&quot;&gt;&#x27;是commonjs模块规范，nodejs环境&#x27;&lt;&#x2F;span&gt;)&lt;&#x2F;span&gt;&lt;br&gt;&lt;span class&#x3D;&quot;line&quot;&gt;        &lt;span class&#x3D;&quot;variable language_&quot;&gt;module&lt;&#x2F;span&gt;.&lt;span class&#x3D;&quot;property&quot;&gt;exports&lt;&#x2F;span&gt; &#x3D; &lt;span class&#x3D;&quot;title function_&quot;&gt;factory&lt;&#x2F;span&gt;();&lt;&#x2F;span&gt;&lt;br&gt;&lt;span class&#x3D;&quot;line&quot;&gt;    &#125; &lt;span class&#x3D;&quot;keyword&quot;&gt;else&lt;&#x2F;span&gt; &lt;span class&#x3D;&quot;keyword&quot;&gt;if&lt;&#x2F;span&gt; (&lt;span class&#x3D;&quot;keyword&quot;&gt;typeof&lt;&#x2F;span&gt; define &#x3D;&#x3D;&#x3D; &lt;span class&#x3D;&quot;string&quot;&gt;&#x27;function&#x27;&lt;&#x2F;span&gt; &amp;&amp; define.&lt;span class&#x3D;&quot;property&quot;&gt;amd&lt;&#x2F;span&gt;) &#123;&lt;&#x2F;span&gt;&lt;br&gt;&lt;span class&#x3D;&quot;line&quot;&gt;        &lt;span class&#x3D;&quot;variable language_&quot;&gt;console&lt;&#x2F;span&gt;.&lt;span class&#x3D;&quot;title function_&quot;&gt;log&lt;&#x2F;span&gt;(&lt;span class&#x3D;&quot;string&quot;&gt;&#x27;是AMD模块规范，如require.js&#x27;&lt;&#x2F;span&gt;)&lt;&#x2F;span&gt;&lt;br&gt;&lt;span class&#x3D;&quot;line&quot;&gt;        &lt;span class&#x3D;&quot;title function_&quot;&gt;define&lt;&#x2F;span&gt;(factory)&lt;&#x2F;span&gt;&lt;br&gt;&lt;span class&#x3D;&quot;line&quot;&gt;    &#125; &lt;span class&#x3D;&quot;keyword&quot;&gt;else&lt;&#x2F;span&gt; &lt;span class&#x3D;&quot;keyword&quot;&gt;if&lt;&#x2F;span&gt; (&lt;span class&#x3D;&quot;keyword&quot;&gt;typeof&lt;&#x2F;span&gt; define &#x3D;&#x3D;&#x3D; &lt;span class&#x3D;&quot;string&quot;&gt;&#x27;function&#x27;&lt;&#x2F;span&gt; &amp;&amp; define.&lt;span class&#x3D;&quot;property&quot;&gt;cmd&lt;&#x2F;span&gt;) &#123;&lt;&#x2F;span&gt;&lt;br&gt;&lt;span class&#x3D;&quot;line&quot;&gt;        &lt;span class&#x3D;&quot;variable language_&quot;&gt;console&lt;&#x2F;span&gt;.&lt;span class&#x3D;&quot;title function_&quot;&gt;log&lt;&#x2F;span&gt;(&lt;span class&#x3D;&quot;string&quot;&gt;&#x27;是CMD模块规范，如sea.js&#x27;&lt;&#x2F;span&gt;)&lt;&#x2F;span&gt;&lt;br&gt;&lt;span class&#x3D;&quot;line&quot;&gt;        &lt;span class&#x3D;&quot;title function_&quot;&gt;define&lt;&#x2F;span&gt;(&lt;span class&#x3D;&quot;keyword&quot;&gt;function&lt;&#x2F;span&gt;(&lt;span class&#x3D;&quot;params&quot;&gt;&lt;span class&#x3D;&quot;built_in&quot;&gt;require&lt;&#x2F;span&gt;, &lt;span class&#x3D;&quot;built_in&quot;&gt;exports&lt;&#x2F;span&gt;, &lt;span class&#x3D;&quot;variable language_&quot;&gt;module&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;) &#123;&lt;&#x2F;span&gt;&lt;br&gt;&lt;span class&#x3D;&quot;line&quot;&gt;            &lt;span class&#x3D;&quot;variable language_&quot;&gt;module&lt;&#x2F;span&gt;.&lt;span class&#x3D;&quot;property&quot;&gt;exports&lt;&#x2F;span&gt; &#x3D; &lt;span class&#x3D;&quot;title function_&quot;&gt;factory&lt;&#x2F;span&gt;()&lt;&#x2F;span&gt;&lt;br&gt;&lt;span class&#x3D;&quot;line&quot;&gt;        &#125;)&lt;&#x2F;span&gt;&lt;br&gt;&lt;span class&#x3D;&quot;line&quot;&gt;    &#125; &lt;span class&#x3D;&quot;keyword&quot;&gt;else&lt;&#x2F;span&gt; &#123;&lt;&#x2F;span&gt;&lt;br&gt;&lt;span class&#x3D;&quot;line&quot;&gt;        &lt;span class&#x3D;&quot;variable language_&quot;&gt;console&lt;&#x2F;span&gt;.&lt;span class&#x3D;&quot;title function_&quot;&gt;log&lt;&#x2F;span&gt;(&lt;span class&#x3D;&quot;string&quot;&gt;&#x27;没有模块环境，直接挂载在全局对象上&#x27;&lt;&#x2F;span&gt;)&lt;&#x2F;span&gt;&lt;br&gt;&lt;span class&#x3D;&quot;line&quot;&gt;        root.&lt;span class&#x3D;&quot;property&quot;&gt;umdModule&lt;&#x2F;span&gt; &#x3D; &lt;span class&#x3D;&quot;title function_&quot;&gt;factory&lt;&#x2F;span&gt;();&lt;&#x2F;span&gt;&lt;br&gt;&lt;span class&#x3D;&quot;line&quot;&gt;    &#125;&lt;&#x2F;span&gt;&lt;br&gt;&lt;span class&#x3D;&quot;line&quot;&gt;&#125;(&lt;span class&#x3D;&quot;variable language_&quot;&gt;this&lt;&#x2F;span&gt;, &lt;span class&#x3D;&quot;keyword&quot;&gt;function&lt;&#x2F;span&gt;(&lt;span class&#x3D;&quot;params&quot;&gt;&lt;&#x2F;span&gt;) &#123;&lt;&#x2F;span&gt;&lt;br&gt;&lt;span class&#x3D;&quot;line&quot;&gt;    &lt;span class&#x3D;&quot;keyword&quot;&gt;return&lt;&#x2F;span&gt; &#123;&lt;&#x2F;span&gt;&lt;br&gt;&lt;span class&#x3D;&quot;line&quot;&gt;        &lt;span class&#x3D;&quot;attr&quot;&gt;name&lt;&#x2F;span&gt;: &lt;span class&#x3D;&quot;string&quot;&gt;&#x27;我是一个umd模块&#x27;&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;br&gt;&lt;span class&#x3D;&quot;line&quot;&gt;    &#125;&lt;&#x2F;span&gt;&lt;br&gt;&lt;span class&#x3D;&quot;line&quot;&gt;&#125;))&lt;&#x2F;span&gt;&lt;br&gt;&lt;&#x2F;pre&gt;&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;&lt;&#x2F;table&gt;&lt;&#x2F;figure&gt;&lt;&#x2F;div&gt;</span></a></li></ol></li></ol>
+
+    </div>
+</div>
+        </div>
+    
+</div>
+
+
+
+                
+
+            </div>
+
+            
+
+        </div>
+
+        <div class="main-content-footer">
+            <footer class="footer mt-5 py-5 h-auto text-base text-third-text-color relative border-t-2 border-t-border-color">
+    <div class="info-container py-3 text-center">
+        
+        <div class="text-center">
+            &copy;
+            
+              <span>2022</span>
+              -
+            
+            2024&nbsp;&nbsp;<i class="fa-solid fa-heart fa-beat" style="--fa-animation-duration: 0.5s; color: #f54545"></i>&nbsp;&nbsp;<a href="/">Yuyang</a>
+            
+                
+                <p class="post-count space-x-0.5">
+                    <span>
+                        共 26 篇文章
+                    </span>
+                    
+                </p>
+            
+        </div>
+        
+            <script data-swup-reload-script src="https://cn.vercount.one/js"></script>
+            <div class="relative text-center lg:absolute lg:right-[20px] lg:top-1/2 lg:-translate-y-1/2 lg:text-right">
+                
+                    <span id="busuanzi_container_site_uv" class="lg:!block">
+                        <span class="text-sm">访问人数</span>
+                        <span id="busuanzi_value_site_uv"></span>
+                    </span>
+                
+                
+                    <span id="busuanzi_container_site_pv" class="lg:!block">
+                        <span class="text-sm">总访问量</span>
+                        <span id="busuanzi_value_site_pv"></span>
+                    </span>
+                
+            </div>
+        
+        <div class="relative text-center lg:absolute lg:left-[20px] lg:top-1/2 lg:-translate-y-1/2 lg:text-left">
+            <span class="lg:block text-sm">由 <?xml version="1.0" encoding="utf-8"?><!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"><svg class="relative top-[2px] inline-block align-baseline" version="1.1" id="圖層_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="1rem" height="1rem" viewBox="0 0 512 512" enable-background="new 0 0 512 512" xml:space="preserve"><path fill="#0E83CD" d="M256.4,25.8l-200,115.5L56,371.5l199.6,114.7l200-115.5l0.4-230.2L256.4,25.8z M349,354.6l-18.4,10.7l-18.6-11V275H200v79.6l-18.4,10.7l-18.6-11v-197l18.5-10.6l18.5,10.8V237h112v-79.6l18.5-10.6l18.5,10.8V354.6z"/></svg><a target="_blank" class="text-base" href="https://hexo.io">Hexo</a> 驱动</span>
+            <span class="text-sm lg:block">主题&nbsp;<a class="text-base" target="_blank" href="https://github.com/EvanNotFound/hexo-theme-redefine">Redefine v2.6.4</a></span>
+        </div>
+        
+        
+        
+        
+        
+    </div>  
+</footer>
+        </div>
+    </div>
+
+    
+        <div class="post-tools">
+            <div class="post-tools-container">
+    <ul class="article-tools-list">
+        <!-- TOC aside toggle -->
+        
+            <li class="right-bottom-tools page-aside-toggle">
+                <i class="fa-regular fa-outdent"></i>
+            </li>
+        
+
+        <!-- go comment -->
+        
+    </ul>
+</div>
+
+        </div>
+    
+
+    <div class="right-side-tools-container">
+        <div class="side-tools-container">
+    <ul class="hidden-tools-list">
+        <li class="right-bottom-tools tool-font-adjust-plus flex justify-center items-center">
+            <i class="fa-regular fa-magnifying-glass-plus"></i>
+        </li>
+
+        <li class="right-bottom-tools tool-font-adjust-minus flex justify-center items-center">
+            <i class="fa-regular fa-magnifying-glass-minus"></i>
+        </li>
+
+        <li class="right-bottom-tools tool-dark-light-toggle flex justify-center items-center">
+            <i class="fa-regular fa-moon"></i>
+        </li>
+
+        <!-- rss -->
+        
+
+        
+
+        <li class="right-bottom-tools tool-scroll-to-bottom flex justify-center items-center">
+            <i class="fa-regular fa-arrow-down"></i>
+        </li>
+    </ul>
+
+    <ul class="visible-tools-list">
+        <li class="right-bottom-tools toggle-tools-list flex justify-center items-center">
+            <i class="fa-regular fa-cog fa-spin"></i>
+        </li>
+        
+            <li class="right-bottom-tools tool-scroll-to-top flex justify-center items-center">
+                <i class="arrow-up fas fa-arrow-up"></i>
+                <span class="percent"></span>
+            </li>
+        
+        
+    </ul>
+</div>
+
+    </div>
+
+    <div class="image-viewer-container">
+    <img src="">
+</div>
+
+
+    
+        <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+          <span class="search-input-field-pre">
+            <i class="fa-solid fa-keyboard"></i>
+          </span>
+            <div class="search-input-container">
+                <input autocomplete="off"
+                       autocorrect="off"
+                       autocapitalize="off"
+                       placeholder="搜索..."
+                       spellcheck="false"
+                       type="search"
+                       class="search-input"
+                >
+            </div>
+            <span class="popup-btn-close">
+                <i class="fa-solid fa-times"></i>
+            </span>
+        </div>
+        <div id="search-result">
+            <div id="no-result">
+                <i class="fa-solid fa-spinner fa-spin-pulse fa-5x fa-fw"></i>
+            </div>
+        </div>
+    </div>
+</div>
+
+    
+
+</main>
+
+
+    
+<script src="/js/libs/Swup.min.js"></script>
+
+<script src="/js/libs/SwupSlideTheme.min.js"></script>
+
+<script src="/js/libs/SwupScriptsPlugin.min.js"></script>
+
+<script src="/js/libs/SwupProgressPlugin.min.js"></script>
+
+<script src="/js/libs/SwupScrollPlugin.min.js"></script>
+
+<script src="/js/libs/SwupPreloadPlugin.min.js"></script>
+
+<script>
+    const swup = new Swup({
+        plugins: [
+            new SwupScriptsPlugin({
+                optin: true,
+            }),
+            new SwupProgressPlugin(),
+            new SwupScrollPlugin({
+                offset: 80,
+            }),
+            new SwupSlideTheme({
+                mainElement: ".main-content-body",
+            }),
+            new SwupPreloadPlugin(),
+        ],
+        containers: ["#swup"],
+    });
+</script>
+
+
+
+
+
+
+
+<script src="/js/tools/imageViewer.js" type="module"></script>
+
+<script src="/js/utils.js" type="module"></script>
+
+<script src="/js/main.js" type="module"></script>
+
+<script src="/js/layouts/navbarShrink.js" type="module"></script>
+
+<script src="/js/tools/scrollTopBottom.js" type="module"></script>
+
+<script src="/js/tools/lightDarkSwitch.js" type="module"></script>
+
+<script src="/js/layouts/categoryList.js" type="module"></script>
+
+
+
+    
+<script src="/js/tools/localSearch.js" type="module"></script>
+
+
+
+
+    
+<script src="/js/tools/codeBlock.js" type="module"></script>
+
+
+
+
+    
+<script src="/js/layouts/lazyload.js" type="module"></script>
+
+
+
+
+
+
+  
+<script src="/js/libs/Typed.min.js"></script>
+
+  
+<script src="/js/plugins/typed.js" type="module"></script>
+
+
+
+
+
+
+
+
+
+<div class="post-scripts" data-swup-reload-script>
+    
+        
+<script src="/js/tools/tocToggle.js" type="module"></script>
+
+<script src="/js/layouts/toc.js" type="module"></script>
+
+<script src="/js/plugins/tabs.js" type="module"></script>
+
+    
+</div>
+
+
+</body>
+</html>
