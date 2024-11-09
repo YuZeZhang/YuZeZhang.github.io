@@ -1,6 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>你的文章标题</title>
+    <url>/undefined/2024-11-10/</url>
+    <content><![CDATA[<p>##1234123123</p>
+]]></content>
+      <categories>
+        <category>journal1</category>
+      </categories>
+      <tags>
+        <tag>example_tag_1</tag>
+        <tag>example_tag_2</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>2024-11-9 日报</title>
     <url>/undefined/2024-11-9/</url>
     <content><![CDATA[<h2 id="写在本类目的最前面"><a href="#写在本类目的最前面" class="headerlink" title="写在本类目的最前面"></a>写在本类目的最前面</h2><p>   不知道以什么开始，就以最近看到的《我与地坛》中的一句话作为本类目的开头吧：</p>
@@ -1018,6 +1031,145 @@
 ]]></content>
   </entry>
   <entry>
+    <title>前端路由hash和history</title>
+    <url>/Yuyang/hash_history/</url>
+    <content><![CDATA[<p>前端路由hash和history</p>
+<h2 id="hash模式"><a href="#hash模式" class="headerlink" title="hash模式"></a>hash模式</h2><p>使用window.location.hash属性以及onhashchange事件，实现监听浏览器地址的hash值变化，执行相应的js切换网页</p>
+<table>
+<thead>
+<tr>
+<th align="center">属性</th>
+<th align="center">含义</th>
+<th align="center">例子</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">location.href</td>
+<td align="center">完整的URL字符串</td>
+<td align="center"><a class="link"   href="https://www.example.com:8080/pathname/?search=test#hash" >https://www.example.com:8080/pathname/?search=test#hash <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></td>
+</tr>
+<tr>
+<td align="center">location.protocol</td>
+<td align="center">协议部分</td>
+<td align="center">https:</td>
+</tr>
+<tr>
+<td align="center">location.hostname</td>
+<td align="center">主机名</td>
+<td align="center"><a class="link"   href="http://www.example.com/" >www.example.com <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></td>
+</tr>
+<tr>
+<td align="center">location.port</td>
+<td align="center">端口号</td>
+<td align="center">8080</td>
+</tr>
+<tr>
+<td align="center">location.host</td>
+<td align="center">主机名和端口号</td>
+<td align="center"><a class="link"   href="http://www.example.com:8080/" >www.example.com:8080 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></td>
+</tr>
+<tr>
+<td align="center">location.pathname</td>
+<td align="center">路径部分</td>
+<td align="center">&#x2F;post&#x2F;6993840419041706014</td>
+</tr>
+<tr>
+<td align="center">location.search</td>
+<td align="center">查询字符串部分</td>
+<td align="center">?search&#x3D;test</td>
+</tr>
+<tr>
+<td align="center">location.hash</td>
+<td align="center">哈希值</td>
+<td align="center">#hash</td>
+</tr>
+</tbody></table>
+<p>window.location还提供了一些方法：</p>
+<table>
+<thead>
+<tr>
+<th align="center">方法</th>
+<th align="center">含义</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">location.assign(url)</td>
+<td align="center">加载指定的URL</td>
+</tr>
+<tr>
+<td align="center">location.replace(url)</td>
+<td align="center">替换当前的 URL，但不会在历史记录中创建新的条目。即用户无法通过浏览器的“后退”按钮返回到之前的页面。</td>
+</tr>
+<tr>
+<td align="center">location.reload(forceReload)</td>
+<td align="center">重新加载当前页面。forceReload 参数为 true 时会强制从服务器重新加载页面（而不是从缓存中加载）。</td>
+</tr>
+<tr>
+<td align="center">location.toString()</td>
+<td align="center">返回当前 URL 的字符串表示。</td>
+</tr>
+</tbody></table>
+<div class="highlight-container" data-rel="Javascript"><figure class="iseeu highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 获取当前 URL 的各种部分</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="variable language_">window</span>.<span class="property">location</span>.<span class="property">href</span>);      <span class="comment">// 输出完整的 URL</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="variable language_">window</span>.<span class="property">location</span>.<span class="property">protocol</span>);  <span class="comment">// 输出协议部分</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="variable language_">window</span>.<span class="property">location</span>.<span class="property">host</span>);      <span class="comment">// 输出主机和端口号</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="variable language_">window</span>.<span class="property">location</span>.<span class="property">hostname</span>);  <span class="comment">// 输出主机名</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="variable language_">window</span>.<span class="property">location</span>.<span class="property">port</span>);      <span class="comment">// 输出端口号</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="variable language_">window</span>.<span class="property">location</span>.<span class="property">pathname</span>);  <span class="comment">// 输出路径</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="variable language_">window</span>.<span class="property">location</span>.<span class="property">search</span>);    <span class="comment">// 输出查询字符串</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="variable language_">window</span>.<span class="property">location</span>.<span class="property">hash</span>);      <span class="comment">// 输出哈希</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="variable language_">window</span>.<span class="property">location</span>.<span class="property">origin</span>);    <span class="comment">// 输出源 URL</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 改变 URL 并重新加载页面</span></span><br><span class="line"><span class="variable language_">window</span>.<span class="property">location</span>.<span class="property">href</span> = <span class="string">&#x27;https://www.example.com&#x27;</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 替换当前 URL，不会在历史记录中创建新的条目</span></span><br><span class="line"><span class="variable language_">window</span>.<span class="property">location</span>.<span class="title function_">replace</span>(<span class="string">&#x27;https://www.example.com&#x27;</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 重新加载页面</span></span><br><span class="line"><span class="variable language_">window</span>.<span class="property">location</span>.<span class="title function_">reload</span>();     <span class="comment">// 从缓存中重新加载</span></span><br><span class="line"><span class="variable language_">window</span>.<span class="property">location</span>.<span class="title function_">reload</span>(<span class="literal">true</span>); <span class="comment">// 强制从服务器重新加载</span></span><br></pre></td></tr></table></figure></div>
+
+
+
+<h2 id="history模式"><a href="#history模式" class="headerlink" title="history模式"></a>history模式</h2><p>History API是H5提供的新特性，允许开发者直接更改前端路由，即更新浏览器URL地址而不重新发起请求。它表示当前窗口的浏览历史。当发生改变时，只会改变页面的路径，不会刷新页面。 History 对象保存了当前窗口访问过的所有页面网址。通过 history.length 可以得出当前窗口一共访问过几个网址。 由于安全原因，浏览器不允许脚本读取这些地址，但是允许在地址之间导航。 浏览器工具栏的“前进”和“后退”按钮，其实就是对 History 对象进行操作。</p>
+<table>
+<thead>
+<tr>
+<th align="center">属性</th>
+<th align="center">含义</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">history.length</td>
+<td align="center">历史记录中的条目数</td>
+</tr>
+<tr>
+<td align="center">history.state</td>
+<td align="center">历史记录条目的状态对象</td>
+</tr>
+</tbody></table>
+<p>window.history 还提供了一些方法：</p>
+<table>
+<thead>
+<tr>
+<th align="center">方法</th>
+<th align="center">含义</th>
+<th>例子</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">history.pushState(state, title, url)</td>
+<td align="center">将一个状态对象添加到历史记录栈中</td>
+<td>window.history.pushState({ page: 1 }, “title 1”, “&#x2F;page1”);</td>
+</tr>
+<tr>
+<td align="center">history.replaceState(state, title, url)</td>
+<td align="center">修改当前历史记录条目的状态对象、标题和 URL</td>
+<td>window.history.replaceState({ page: 2 }, “title 2”, “&#x2F;page2”);</td>
+</tr>
+<tr>
+<td align="center">history.back()</td>
+<td align="center">加载历史记录列表中的前一个 URL，与用户点击浏览器的后退按钮相同。</td>
+<td>window.history.back();</td>
+</tr>
+<tr>
+<td align="center">history.forward()</td>
+<td align="center">加载历史记录列表中的下一个 URL，与用户点击浏览器的前进按钮相同。</td>
+<td>window.history.forward();</td>
+</tr>
+<tr>
+<td align="center">history.go(delta)</td>
+<td align="center">根据 delta 值加载历史记录中的特定页面。delta: 为正值时前进，为负值时后退。</td>
+<td>window.history.go(-1); &#x2F;&#x2F; 后退一页<br/>window.history.go(1);  &#x2F;&#x2F; 前进一页</td>
+</tr>
+</tbody></table>
+<h2 id="history代码实现"><a href="#history代码实现" class="headerlink" title="history代码实现"></a>history代码实现</h2><div class="highlight-container" data-rel="Javascript"><figure class="iseeu highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">CustomHistory</span> &#123;</span><br><span class="line">  <span class="title function_">constructor</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="variable language_">this</span>.<span class="property">stack</span> = [];</span><br><span class="line">    <span class="variable language_">this</span>.<span class="property">currentIndex</span> = -<span class="number">1</span>;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="title function_">pushState</span>(<span class="params">state, title, url</span>) &#123;</span><br><span class="line">    <span class="keyword">if</span> (<span class="variable language_">this</span>.<span class="property">currentIndex</span> &lt; <span class="variable language_">this</span>.<span class="property">stack</span>.<span class="property">length</span> - <span class="number">1</span>) &#123;</span><br><span class="line">      <span class="variable language_">this</span>.<span class="property">stack</span> = <span class="variable language_">this</span>.<span class="property">stack</span>.<span class="title function_">slice</span>(<span class="number">0</span>, <span class="variable language_">this</span>.<span class="property">currentIndex</span> + <span class="number">1</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="variable language_">this</span>.<span class="property">stack</span>.<span class="title function_">push</span>(&#123; state, title, url &#125;);</span><br><span class="line">    <span class="variable language_">this</span>.<span class="property">currentIndex</span>++;</span><br><span class="line">    <span class="variable language_">this</span>.<span class="title function_">updateUrl</span>(url);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="title function_">replaceState</span>(<span class="params">state, title, url</span>) &#123;</span><br><span class="line">    <span class="keyword">if</span>(<span class="variable language_">this</span>.<span class="property">currentIndex</span> &gt;= <span class="number">0</span>)&#123;</span><br><span class="line">      <span class="variable language_">this</span>.<span class="property">stack</span>[<span class="variable language_">this</span>.<span class="property">currentIndex</span>] = &#123; state, title, url &#125;;</span><br><span class="line">      <span class="variable language_">this</span>.<span class="title function_">updateUrl</span>(url);</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        <span class="variable language_">this</span>.<span class="title function_">pushState</span>(state, title, url);</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="title function_">go</span>(<span class="params">index</span>) &#123;</span><br><span class="line">    <span class="keyword">const</span> newIndex = <span class="variable language_">this</span>.<span class="property">currentIndex</span> + index;</span><br><span class="line">    <span class="keyword">if</span> (newIndex &gt;= <span class="number">0</span> &amp;&amp; newIndex &lt; <span class="variable language_">this</span>.<span class="property">stack</span>.<span class="property">length</span>) &#123;</span><br><span class="line">      <span class="variable language_">this</span>.<span class="property">currentIndex</span> = newIndex;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="title function_">back</span>(<span class="params"></span>)&#123;</span><br><span class="line">    <span class="keyword">if</span>(<span class="variable language_">this</span>.<span class="property">currentIndex</span> &gt; <span class="number">0</span>)&#123;</span><br><span class="line">      <span class="variable language_">this</span>.<span class="property">currentIndex</span>--;</span><br><span class="line">      <span class="variable language_">this</span>.<span class="title function_">applyState</span>();</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  </span><br><span class="line">  <span class="title function_">forward</span>(<span class="params"></span>)&#123;</span><br><span class="line">    <span class="keyword">if</span>(<span class="variable language_">this</span>.<span class="property">currentIndex</span> &lt; <span class="variable language_">this</span>.<span class="property">stack</span>.<span class="property">length</span> - <span class="number">1</span>)&#123;</span><br><span class="line">      <span class="variable language_">this</span>.<span class="property">currentIndex</span>++;</span><br><span class="line">      <span class="variable language_">this</span>.<span class="title function_">applyState</span>();</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="title function_">applyState</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="keyword">const</span> currentState = <span class="variable language_">this</span>.<span class="property">stack</span>[<span class="variable language_">this</span>.<span class="property">currentIndex</span>];</span><br><span class="line">    <span class="variable language_">this</span>.<span class="title function_">updateUrl</span>(currentState.<span class="property">url</span>);</span><br><span class="line">    <span class="comment">// this.dispatchPopStaet(currentState);</span></span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="title function_">updateUrl</span>(<span class="params">url</span>) &#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;🚀 ~ CustomHistory ~ updateUrl ~ url:&quot;</span>, url)</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="title function_">dispatchPopStaet</span>(<span class="params">state</span>)&#123;</span><br><span class="line">    <span class="keyword">const</span> event = <span class="keyword">new</span> <span class="title class_">CustomEvent</span>(<span class="string">&#x27;popstate&#x27;</span>, &#123; <span class="attr">detail</span>: state &#125;);</span><br><span class="line">    <span class="variable language_">window</span>.<span class="title function_">dispatchEvent</span>(event);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// Usage example:</span></span><br><span class="line"><span class="keyword">const</span> customHistory = <span class="keyword">new</span> <span class="title class_">CustomHistory</span>();</span><br><span class="line"></span><br><span class="line">customHistory.<span class="title function_">pushState</span>(&#123; <span class="attr">page</span>: <span class="number">1</span> &#125;, <span class="string">&quot;Title 1&quot;</span>, <span class="string">&quot;/page1&quot;</span>);</span><br><span class="line">customHistory.<span class="title function_">pushState</span>(&#123; <span class="attr">page</span>: <span class="number">2</span> &#125;, <span class="string">&quot;Title 2&quot;</span>, <span class="string">&quot;/page2&quot;</span>);</span><br><span class="line">customHistory.<span class="title function_">replaceState</span>(&#123; <span class="attr">page</span>: <span class="number">3</span> &#125;, <span class="string">&quot;Title 3&quot;</span>, <span class="string">&quot;/page3&quot;</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// window.addEventListener(&#x27;popstate&#x27;, (event) =&gt; &#123;</span></span><br><span class="line"><span class="comment">//     console.log(&#x27;Popstate event:&#x27;, event.detail);</span></span><br><span class="line"><span class="comment">// &#125;);</span></span><br><span class="line"></span><br><span class="line">customHistory.<span class="title function_">back</span>(); <span class="comment">// Navigating to: /page1</span></span><br><span class="line">customHistory.<span class="title function_">forward</span>(); <span class="comment">// Navigating to: /page3</span></span><br><span class="line">customHistory.<span class="title function_">go</span>(-<span class="number">1</span>); <span class="comment">// Navigating to: /page1</span></span><br></pre></td></tr></table></figure></div>
+
+]]></content>
+  </entry>
+  <entry>
     <title></title>
     <url>/undefined/helloalgo/</url>
     <content><![CDATA[<h2 id="速刷hello-algo"><a href="#速刷hello-algo" class="headerlink" title="速刷hello-algo"></a>速刷hello-algo</h2><h3 id="Framework"><a href="#Framework" class="headerlink" title="Framework"></a>Framework</h3><p>复杂度分析: 时间复杂度、空间复杂度<br>数据结构: 数组、链表、栈、队列、哈希表、树、堆、图<br>算法: 搜索、排序、分治、回溯、动态规划、贪心<br><a class="link"   href="https://www.hello-algo.com/" >https://www.hello-algo.com/ <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a><br><img  
@@ -1175,6 +1327,211 @@
                      data-src="https://raw.githubusercontent.com/YuZeZhang/myImgslib/main/202411042301055.png"
                       alt="image-20241104230111263"
                 ></p>
+]]></content>
+  </entry>
+  <entry>
+    <title>node_modules困境以及pnpm</title>
+    <url>/Yuyang/pnpm/</url>
+    <content><![CDATA[<p>node_modules的设计虽然能满足大部分的场景，但是其仍然存在着种种缺陷由于每个项目可能依赖成百上千个小模块，node_modules 目录的体积往往非常庞大，动辄几百MB甚至超过1GB。这不仅增加了存储负担，也影响了项目的克隆、备份和部署速度。</p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://raw.githubusercontent.com/YuZeZhang/myImgslib/main/202406232217640.png"
+                      alt="image.png"
+                ></p>
+<p>pnpm 的机制对于 yarn 和 npm 来说是降维打击。</p>
+<p>包管理工具发展史，npm2 开始</p>
+<h2 id="npm2"><a href="#npm2" class="headerlink" title="npm2"></a>npm2</h2><p>用 node 版本管理工具把 node 版本降到 4，那 npm 版本就是 2.x 了。</p>
+<p>然后找个目录，执行下 npm init -y，快速创建个 package.json。然后执行 npm install express，那么 express 包和它的依赖都会被下载下来：</p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://raw.githubusercontent.com/YuZeZhang/myImgslib/main/202406232247533.webp"
+                      alt="img"
+                ></p>
+<p>展开 express，它也有 node_modules：</p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://raw.githubusercontent.com/YuZeZhang/myImgslib/main/202406232247605.webp"
+                      alt="img"
+                ></p>
+<p>再展开几层，每个依赖都有自己的 node_modules：</p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://raw.githubusercontent.com/YuZeZhang/myImgslib/main/202406232247887.webp"
+                      alt="img"
+                ></p>
+<p>也就是说 npm2 的 node_modules 是嵌套的。</p>
+<p><strong>存在的缺陷：</strong></p>
+<ul>
+<li>嵌套深度问题：深层嵌套结构容易导致路径过长，特别是在 Windows 系统中，这可能导致系统路径长度限制问题。 windows 的文件路径最长是 260 多个字符，这样嵌套是会超过 windows 路径的长度限制的。</li>
+</ul>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://raw.githubusercontent.com/YuZeZhang/myImgslib/main/202406232247173.png"
+                      alt="img"
+                ></p>
+<ul>
+<li>重复的包：多层嵌套意味着大量重复的包实例，这无疑增加了磁盘空间的使用且影响安装速度。多个包之间难免会有公共的依赖，这样嵌套的话，同样的依赖会复制很多次，会占据比较大的磁盘空间。</li>
+</ul>
+<h2 id="YARN-NPM-3"><a href="#YARN-NPM-3" class="headerlink" title="YARN &amp; NPM@3"></a>YARN &amp; NPM@3</h2><p>yarn 是怎么解决依赖重复很多次，嵌套路径过长的问题的呢？</p>
+<p><strong>处理方式：</strong></p>
+<ul>
+<li>扁平化结构：大部分依赖被安装在顶层 node_modules 目录，减少了重复安装相同包的情况。</li>
+</ul>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://raw.githubusercontent.com/YuZeZhang/myImgslib/main/202406232247543.png"
+                      alt="img"
+                ></p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://raw.githubusercontent.com/YuZeZhang/myImgslib/main/202406232247991.png"
+                      alt="img"
+                ></p>
+<ul>
+<li>版本冲突处理：当两个包需要不同版本的同一个依赖时，无法被提升至顶层的依赖会被安装在需要它们的包的 node_modules 目录下。</li>
+</ul>
+<p><strong>存在的缺陷：</strong></p>
+<ul>
+<li>依赖结构的不确定性导致扁平化结果的不确定解决方法.lock 文件</li>
+</ul>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://raw.githubusercontent.com/YuZeZhang/myImgslib/main/202406232247361.png"
+                      alt="img"
+                ></p>
+<ul>
+<li>幽灵依赖：最主要的一个问题是幽灵依赖，也就是你明明没有声明在 dependencies 里的依赖，但在代码里却可以 require 进来。这个也很容易理解，因为都铺平了嘛，那依赖的依赖也是可以找到的。但是这样是有隐患的，因为没有显式依赖，万一有一天别的包不依赖这个包了，那你的代码也就不能跑了，因为你依赖这个包，但是现在不会被安装了。这就是幽灵依赖的问题。</li>
+</ul>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://raw.githubusercontent.com/YuZeZhang/myImgslib/main/202406232248078.png"
+                      alt="img"
+                ><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://raw.githubusercontent.com/YuZeZhang/myImgslib/main/202406232248136.png"
+                      alt="img"
+                ></p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://raw.githubusercontent.com/YuZeZhang/myImgslib/main/202406232248329.png"
+                      alt="img"
+                ></p>
+<ul>
+<li>包重复安装问题。提升机制仍然可能导致大量的依赖被重复安装。</li>
+</ul>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://raw.githubusercontent.com/YuZeZhang/myImgslib/main/202406232248172.png"
+                      alt="img"
+                ></p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://raw.githubusercontent.com/YuZeZhang/myImgslib/main/202406232248183.png"
+                      alt="img"
+                ></p>
+<p>扁平化处理：</p>
+<p>我们把 node_modules 删了，用 yarn 再重新安装下，执行 yarn add express：</p>
+<p>这时候 node_modules 就是这样了：</p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://raw.githubusercontent.com/YuZeZhang/myImgslib/main/202406232249070.webp"
+                      alt="img"
+                ></p>
+<p>全部铺平在了一层，展开下面的包大部分是没有二层 node_modules 的：</p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://raw.githubusercontent.com/YuZeZhang/myImgslib/main/202406232249644.webp"
+                      alt="img"
+                ></p>
+<p>当然也有的包还是有 node_modules 的，比如这样：</p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://raw.githubusercontent.com/YuZeZhang/myImgslib/main/202406232249531.webp"
+                      alt="img"
+                ></p>
+<p>为什么还有嵌套呢？</p>
+<p>因为一个包是可能有多个版本的，提升只能提升一个，所以后面再遇到相同包的不同版本，依然还是用嵌套的方式。</p>
+<p>npm 后来升级到 3 之后，也是采用这种铺平的方案了，和 yarn 很类似：</p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://raw.githubusercontent.com/YuZeZhang/myImgslib/main/202406232249282.webp"
+                      alt="img"
+                ></p>
+<p>当然，yarn 还实现了 yarn.lock 来锁定依赖版本的功能，不过这个 npm 也实现了。</p>
+<p>扁平化的方案也有相应的问题。而且还有一个问题，就是上面提到的依赖包有多个版本的时候，只会提升一个，那其余版本的包不还是复制了很多次么，依然有浪费磁盘空间的问题。</p>
+<p>那 pnpm 是怎么解决这俩问题的呢？</p>
+<h2 id="pnpm"><a href="#pnpm" class="headerlink" title="pnpm"></a>pnpm</h2><p><strong>pnpm：</strong>是一个更新的包管理工具，旨在提供比 npm 和 Yarn 更好的磁盘空间效率和更快的安装速度。</p>
+<p>pnpm 通过使用软硬链接解决这个问题。</p>
+<p>软链接：软链接是一个指向文件路径的引用。</p>
+<p>硬链接：硬链接是一个指向文件数据的直接引用。</p>
+<p>这样不会有复制多次的磁盘空间浪费，而且也不会有路径过长的问题。因为路径过长的限制本质上是不能有太深的目录层级，现在都是各个位置的目录的 link，并不是同一个目录，所以也不会有长度限制。</p>
+<p>没错，pnpm 就是通过这种思路来实现的。</p>
+<p>再把 node_modules 删掉，然后用 pnpm 重新装一遍，执行 pnpm install。</p>
+<p>你会发现它打印了这样一句话：</p>
+<p>包是从全局 store 硬连接到虚拟 store 的，这里的虚拟 store 就是 node_modules&#x2F;.pnpm。</p>
+<p>我们打开 node_modules 看一下：</p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://raw.githubusercontent.com/YuZeZhang/myImgslib/main/202406232249706.webp"
+                      alt="img"
+                ></p>
+<p>确实不是扁平化的了，依赖了 express，那 node_modules 下就只有 express，没有幽灵依赖。</p>
+<p>展开 .pnpm 看一下：</p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://raw.githubusercontent.com/YuZeZhang/myImgslib/main/202406232249750.webp"
+                      alt="img"
+                ></p>
+<p>所有的依赖都在这里铺平了，都是从全局 store 硬连接过来的，然后包和包之间的依赖关系是通过软链接组织的。</p>
+<p>比如 .pnpm 下的 expresss，这些都是软链接，</p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://raw.githubusercontent.com/YuZeZhang/myImgslib/main/202406232249099.webp"
+                      alt="img"
+                ></p>
+<p>也就是说，所有的依赖都是从全局 store 硬连接到了 node_modules&#x2F;.pnpm 下，然后之间通过软链接来相互依赖。</p>
+<p>官方给了一张原理图，配合着看一下就明白了：</p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://raw.githubusercontent.com/YuZeZhang/myImgslib/main/202406232249755.webp"
+                      alt="img"
+                ></p>
+<p>这就是 pnpm 的实现原理。</p>
+<p>那么回过头来看一下，pnpm 为什么优秀呢？</p>
+<p>首先，最大的优点是节省磁盘空间呀，一个包全局只保存一份，剩下的都是软硬连接，这得节省多少磁盘空间呀。</p>
+<p>其次就是快，因为通过链接的方式而不是复制，自然会快。</p>
+<p>这也是它所标榜的优点：</p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://raw.githubusercontent.com/YuZeZhang/myImgslib/main/202406232250962.webp"
+                      alt="img"
+                ></p>
+<p>相比 npm2 的优点就是不会进行同样依赖的多次复制。</p>
+<p>相比 yarn 和 npm3+ 呢，那就是没有幽灵依赖，也不会有没有被提升的依赖依然复制多份的问题。</p>
+<p>这就已经足够优秀了，对 yarn 和 npm 可以说是降维打击。</p>
+<p>Reference：<a class="link"   href="https://juejin.cn/post/7127295203177676837?searchId=20240623222554B51B38FF0362E0D545BE" >https://juejin.cn/post/7127295203177676837?searchId=20240623222554B51B38FF0362E0D545BE <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
 ]]></content>
   </entry>
   <entry>
@@ -1493,18 +1850,6 @@ if (promises.length === 0) &#123;
 ]]></content>
   </entry>
   <entry>
-    <title>你的文章标题</title>
-    <url>/undefined/test/</url>
-    <content><![CDATA[]]></content>
-      <categories>
-        <category>journal</category>
-      </categories>
-      <tags>
-        <tag>example_tag_1</tag>
-        <tag>example_tag_2</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>webpack 与 打包工具开发</title>
     <url>/Yuyang/webpack/</url>
     <content><![CDATA[<h1 id="webpack-与-打包工具开发"><a href="#webpack-与-打包工具开发" class="headerlink" title="webpack 与 打包工具开发"></a>webpack 与 打包工具开发</h1><h2 id="webpack核心配置"><a href="#webpack核心配置" class="headerlink" title="webpack核心配置"></a>webpack核心配置</h2><h3 id="Entry"><a href="#Entry" class="headerlink" title="Entry"></a>Entry</h3><h3 id="Module"><a href="#Module" class="headerlink" title="Module"></a>Module</h3><h3 id="Plugin"><a href="#Plugin" class="headerlink" title="Plugin"></a>Plugin</h3><h3 id="MiniCssExtractPlugin"><a href="#MiniCssExtractPlugin" class="headerlink" title="MiniCssExtractPlugin"></a>MiniCssExtractPlugin</h3><p>用于提取css样式内容</p>
@@ -1536,350 +1881,6 @@ if (promises.length === 0) &#123;
 <p>vite&#x2F;client 插入到客户端<br>vite websocket 服务</p>
 <p>浏览器的热更新需要结合，定义一些事件来处理：connect、disconnect、message<br>vite&#x2F;client 会监听文件变化，然后通知vite服务，vite服务会推送到客户端</p>
 <p>turbopack</p>
-]]></content>
-  </entry>
-  <entry>
-    <title>前端路由hash和history</title>
-    <url>/Yuyang/hash_history/</url>
-    <content><![CDATA[<p>前端路由hash和history</p>
-<h2 id="hash模式"><a href="#hash模式" class="headerlink" title="hash模式"></a>hash模式</h2><p>使用window.location.hash属性以及onhashchange事件，实现监听浏览器地址的hash值变化，执行相应的js切换网页</p>
-<table>
-<thead>
-<tr>
-<th align="center">属性</th>
-<th align="center">含义</th>
-<th align="center">例子</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center">location.href</td>
-<td align="center">完整的URL字符串</td>
-<td align="center"><a class="link"   href="https://www.example.com:8080/pathname/?search=test#hash" >https://www.example.com:8080/pathname/?search=test#hash <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></td>
-</tr>
-<tr>
-<td align="center">location.protocol</td>
-<td align="center">协议部分</td>
-<td align="center">https:</td>
-</tr>
-<tr>
-<td align="center">location.hostname</td>
-<td align="center">主机名</td>
-<td align="center"><a class="link"   href="http://www.example.com/" >www.example.com <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></td>
-</tr>
-<tr>
-<td align="center">location.port</td>
-<td align="center">端口号</td>
-<td align="center">8080</td>
-</tr>
-<tr>
-<td align="center">location.host</td>
-<td align="center">主机名和端口号</td>
-<td align="center"><a class="link"   href="http://www.example.com:8080/" >www.example.com:8080 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></td>
-</tr>
-<tr>
-<td align="center">location.pathname</td>
-<td align="center">路径部分</td>
-<td align="center">&#x2F;post&#x2F;6993840419041706014</td>
-</tr>
-<tr>
-<td align="center">location.search</td>
-<td align="center">查询字符串部分</td>
-<td align="center">?search&#x3D;test</td>
-</tr>
-<tr>
-<td align="center">location.hash</td>
-<td align="center">哈希值</td>
-<td align="center">#hash</td>
-</tr>
-</tbody></table>
-<p>window.location还提供了一些方法：</p>
-<table>
-<thead>
-<tr>
-<th align="center">方法</th>
-<th align="center">含义</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center">location.assign(url)</td>
-<td align="center">加载指定的URL</td>
-</tr>
-<tr>
-<td align="center">location.replace(url)</td>
-<td align="center">替换当前的 URL，但不会在历史记录中创建新的条目。即用户无法通过浏览器的“后退”按钮返回到之前的页面。</td>
-</tr>
-<tr>
-<td align="center">location.reload(forceReload)</td>
-<td align="center">重新加载当前页面。forceReload 参数为 true 时会强制从服务器重新加载页面（而不是从缓存中加载）。</td>
-</tr>
-<tr>
-<td align="center">location.toString()</td>
-<td align="center">返回当前 URL 的字符串表示。</td>
-</tr>
-</tbody></table>
-<div class="highlight-container" data-rel="Javascript"><figure class="iseeu highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 获取当前 URL 的各种部分</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="variable language_">window</span>.<span class="property">location</span>.<span class="property">href</span>);      <span class="comment">// 输出完整的 URL</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="variable language_">window</span>.<span class="property">location</span>.<span class="property">protocol</span>);  <span class="comment">// 输出协议部分</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="variable language_">window</span>.<span class="property">location</span>.<span class="property">host</span>);      <span class="comment">// 输出主机和端口号</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="variable language_">window</span>.<span class="property">location</span>.<span class="property">hostname</span>);  <span class="comment">// 输出主机名</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="variable language_">window</span>.<span class="property">location</span>.<span class="property">port</span>);      <span class="comment">// 输出端口号</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="variable language_">window</span>.<span class="property">location</span>.<span class="property">pathname</span>);  <span class="comment">// 输出路径</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="variable language_">window</span>.<span class="property">location</span>.<span class="property">search</span>);    <span class="comment">// 输出查询字符串</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="variable language_">window</span>.<span class="property">location</span>.<span class="property">hash</span>);      <span class="comment">// 输出哈希</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="variable language_">window</span>.<span class="property">location</span>.<span class="property">origin</span>);    <span class="comment">// 输出源 URL</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 改变 URL 并重新加载页面</span></span><br><span class="line"><span class="variable language_">window</span>.<span class="property">location</span>.<span class="property">href</span> = <span class="string">&#x27;https://www.example.com&#x27;</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 替换当前 URL，不会在历史记录中创建新的条目</span></span><br><span class="line"><span class="variable language_">window</span>.<span class="property">location</span>.<span class="title function_">replace</span>(<span class="string">&#x27;https://www.example.com&#x27;</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 重新加载页面</span></span><br><span class="line"><span class="variable language_">window</span>.<span class="property">location</span>.<span class="title function_">reload</span>();     <span class="comment">// 从缓存中重新加载</span></span><br><span class="line"><span class="variable language_">window</span>.<span class="property">location</span>.<span class="title function_">reload</span>(<span class="literal">true</span>); <span class="comment">// 强制从服务器重新加载</span></span><br></pre></td></tr></table></figure></div>
-
-
-
-<h2 id="history模式"><a href="#history模式" class="headerlink" title="history模式"></a>history模式</h2><p>History API是H5提供的新特性，允许开发者直接更改前端路由，即更新浏览器URL地址而不重新发起请求。它表示当前窗口的浏览历史。当发生改变时，只会改变页面的路径，不会刷新页面。 History 对象保存了当前窗口访问过的所有页面网址。通过 history.length 可以得出当前窗口一共访问过几个网址。 由于安全原因，浏览器不允许脚本读取这些地址，但是允许在地址之间导航。 浏览器工具栏的“前进”和“后退”按钮，其实就是对 History 对象进行操作。</p>
-<table>
-<thead>
-<tr>
-<th align="center">属性</th>
-<th align="center">含义</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center">history.length</td>
-<td align="center">历史记录中的条目数</td>
-</tr>
-<tr>
-<td align="center">history.state</td>
-<td align="center">历史记录条目的状态对象</td>
-</tr>
-</tbody></table>
-<p>window.history 还提供了一些方法：</p>
-<table>
-<thead>
-<tr>
-<th align="center">方法</th>
-<th align="center">含义</th>
-<th>例子</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center">history.pushState(state, title, url)</td>
-<td align="center">将一个状态对象添加到历史记录栈中</td>
-<td>window.history.pushState({ page: 1 }, “title 1”, “&#x2F;page1”);</td>
-</tr>
-<tr>
-<td align="center">history.replaceState(state, title, url)</td>
-<td align="center">修改当前历史记录条目的状态对象、标题和 URL</td>
-<td>window.history.replaceState({ page: 2 }, “title 2”, “&#x2F;page2”);</td>
-</tr>
-<tr>
-<td align="center">history.back()</td>
-<td align="center">加载历史记录列表中的前一个 URL，与用户点击浏览器的后退按钮相同。</td>
-<td>window.history.back();</td>
-</tr>
-<tr>
-<td align="center">history.forward()</td>
-<td align="center">加载历史记录列表中的下一个 URL，与用户点击浏览器的前进按钮相同。</td>
-<td>window.history.forward();</td>
-</tr>
-<tr>
-<td align="center">history.go(delta)</td>
-<td align="center">根据 delta 值加载历史记录中的特定页面。delta: 为正值时前进，为负值时后退。</td>
-<td>window.history.go(-1); &#x2F;&#x2F; 后退一页<br/>window.history.go(1);  &#x2F;&#x2F; 前进一页</td>
-</tr>
-</tbody></table>
-<h2 id="history代码实现"><a href="#history代码实现" class="headerlink" title="history代码实现"></a>history代码实现</h2><div class="highlight-container" data-rel="Javascript"><figure class="iseeu highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">CustomHistory</span> &#123;</span><br><span class="line">  <span class="title function_">constructor</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="variable language_">this</span>.<span class="property">stack</span> = [];</span><br><span class="line">    <span class="variable language_">this</span>.<span class="property">currentIndex</span> = -<span class="number">1</span>;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="title function_">pushState</span>(<span class="params">state, title, url</span>) &#123;</span><br><span class="line">    <span class="keyword">if</span> (<span class="variable language_">this</span>.<span class="property">currentIndex</span> &lt; <span class="variable language_">this</span>.<span class="property">stack</span>.<span class="property">length</span> - <span class="number">1</span>) &#123;</span><br><span class="line">      <span class="variable language_">this</span>.<span class="property">stack</span> = <span class="variable language_">this</span>.<span class="property">stack</span>.<span class="title function_">slice</span>(<span class="number">0</span>, <span class="variable language_">this</span>.<span class="property">currentIndex</span> + <span class="number">1</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="variable language_">this</span>.<span class="property">stack</span>.<span class="title function_">push</span>(&#123; state, title, url &#125;);</span><br><span class="line">    <span class="variable language_">this</span>.<span class="property">currentIndex</span>++;</span><br><span class="line">    <span class="variable language_">this</span>.<span class="title function_">updateUrl</span>(url);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="title function_">replaceState</span>(<span class="params">state, title, url</span>) &#123;</span><br><span class="line">    <span class="keyword">if</span>(<span class="variable language_">this</span>.<span class="property">currentIndex</span> &gt;= <span class="number">0</span>)&#123;</span><br><span class="line">      <span class="variable language_">this</span>.<span class="property">stack</span>[<span class="variable language_">this</span>.<span class="property">currentIndex</span>] = &#123; state, title, url &#125;;</span><br><span class="line">      <span class="variable language_">this</span>.<span class="title function_">updateUrl</span>(url);</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        <span class="variable language_">this</span>.<span class="title function_">pushState</span>(state, title, url);</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="title function_">go</span>(<span class="params">index</span>) &#123;</span><br><span class="line">    <span class="keyword">const</span> newIndex = <span class="variable language_">this</span>.<span class="property">currentIndex</span> + index;</span><br><span class="line">    <span class="keyword">if</span> (newIndex &gt;= <span class="number">0</span> &amp;&amp; newIndex &lt; <span class="variable language_">this</span>.<span class="property">stack</span>.<span class="property">length</span>) &#123;</span><br><span class="line">      <span class="variable language_">this</span>.<span class="property">currentIndex</span> = newIndex;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="title function_">back</span>(<span class="params"></span>)&#123;</span><br><span class="line">    <span class="keyword">if</span>(<span class="variable language_">this</span>.<span class="property">currentIndex</span> &gt; <span class="number">0</span>)&#123;</span><br><span class="line">      <span class="variable language_">this</span>.<span class="property">currentIndex</span>--;</span><br><span class="line">      <span class="variable language_">this</span>.<span class="title function_">applyState</span>();</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  </span><br><span class="line">  <span class="title function_">forward</span>(<span class="params"></span>)&#123;</span><br><span class="line">    <span class="keyword">if</span>(<span class="variable language_">this</span>.<span class="property">currentIndex</span> &lt; <span class="variable language_">this</span>.<span class="property">stack</span>.<span class="property">length</span> - <span class="number">1</span>)&#123;</span><br><span class="line">      <span class="variable language_">this</span>.<span class="property">currentIndex</span>++;</span><br><span class="line">      <span class="variable language_">this</span>.<span class="title function_">applyState</span>();</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="title function_">applyState</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="keyword">const</span> currentState = <span class="variable language_">this</span>.<span class="property">stack</span>[<span class="variable language_">this</span>.<span class="property">currentIndex</span>];</span><br><span class="line">    <span class="variable language_">this</span>.<span class="title function_">updateUrl</span>(currentState.<span class="property">url</span>);</span><br><span class="line">    <span class="comment">// this.dispatchPopStaet(currentState);</span></span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="title function_">updateUrl</span>(<span class="params">url</span>) &#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;🚀 ~ CustomHistory ~ updateUrl ~ url:&quot;</span>, url)</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="title function_">dispatchPopStaet</span>(<span class="params">state</span>)&#123;</span><br><span class="line">    <span class="keyword">const</span> event = <span class="keyword">new</span> <span class="title class_">CustomEvent</span>(<span class="string">&#x27;popstate&#x27;</span>, &#123; <span class="attr">detail</span>: state &#125;);</span><br><span class="line">    <span class="variable language_">window</span>.<span class="title function_">dispatchEvent</span>(event);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// Usage example:</span></span><br><span class="line"><span class="keyword">const</span> customHistory = <span class="keyword">new</span> <span class="title class_">CustomHistory</span>();</span><br><span class="line"></span><br><span class="line">customHistory.<span class="title function_">pushState</span>(&#123; <span class="attr">page</span>: <span class="number">1</span> &#125;, <span class="string">&quot;Title 1&quot;</span>, <span class="string">&quot;/page1&quot;</span>);</span><br><span class="line">customHistory.<span class="title function_">pushState</span>(&#123; <span class="attr">page</span>: <span class="number">2</span> &#125;, <span class="string">&quot;Title 2&quot;</span>, <span class="string">&quot;/page2&quot;</span>);</span><br><span class="line">customHistory.<span class="title function_">replaceState</span>(&#123; <span class="attr">page</span>: <span class="number">3</span> &#125;, <span class="string">&quot;Title 3&quot;</span>, <span class="string">&quot;/page3&quot;</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// window.addEventListener(&#x27;popstate&#x27;, (event) =&gt; &#123;</span></span><br><span class="line"><span class="comment">//     console.log(&#x27;Popstate event:&#x27;, event.detail);</span></span><br><span class="line"><span class="comment">// &#125;);</span></span><br><span class="line"></span><br><span class="line">customHistory.<span class="title function_">back</span>(); <span class="comment">// Navigating to: /page1</span></span><br><span class="line">customHistory.<span class="title function_">forward</span>(); <span class="comment">// Navigating to: /page3</span></span><br><span class="line">customHistory.<span class="title function_">go</span>(-<span class="number">1</span>); <span class="comment">// Navigating to: /page1</span></span><br></pre></td></tr></table></figure></div>
-
-]]></content>
-  </entry>
-  <entry>
-    <title>node_modules困境以及pnpm</title>
-    <url>/Yuyang/pnpm/</url>
-    <content><![CDATA[<p>node_modules的设计虽然能满足大部分的场景，但是其仍然存在着种种缺陷由于每个项目可能依赖成百上千个小模块，node_modules 目录的体积往往非常庞大，动辄几百MB甚至超过1GB。这不仅增加了存储负担，也影响了项目的克隆、备份和部署速度。</p>
-<p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="https://raw.githubusercontent.com/YuZeZhang/myImgslib/main/202406232217640.png"
-                      alt="image.png"
-                ></p>
-<p>pnpm 的机制对于 yarn 和 npm 来说是降维打击。</p>
-<p>包管理工具发展史，npm2 开始</p>
-<h2 id="npm2"><a href="#npm2" class="headerlink" title="npm2"></a>npm2</h2><p>用 node 版本管理工具把 node 版本降到 4，那 npm 版本就是 2.x 了。</p>
-<p>然后找个目录，执行下 npm init -y，快速创建个 package.json。然后执行 npm install express，那么 express 包和它的依赖都会被下载下来：</p>
-<p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="https://raw.githubusercontent.com/YuZeZhang/myImgslib/main/202406232247533.webp"
-                      alt="img"
-                ></p>
-<p>展开 express，它也有 node_modules：</p>
-<p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="https://raw.githubusercontent.com/YuZeZhang/myImgslib/main/202406232247605.webp"
-                      alt="img"
-                ></p>
-<p>再展开几层，每个依赖都有自己的 node_modules：</p>
-<p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="https://raw.githubusercontent.com/YuZeZhang/myImgslib/main/202406232247887.webp"
-                      alt="img"
-                ></p>
-<p>也就是说 npm2 的 node_modules 是嵌套的。</p>
-<p><strong>存在的缺陷：</strong></p>
-<ul>
-<li>嵌套深度问题：深层嵌套结构容易导致路径过长，特别是在 Windows 系统中，这可能导致系统路径长度限制问题。 windows 的文件路径最长是 260 多个字符，这样嵌套是会超过 windows 路径的长度限制的。</li>
-</ul>
-<p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="https://raw.githubusercontent.com/YuZeZhang/myImgslib/main/202406232247173.png"
-                      alt="img"
-                ></p>
-<ul>
-<li>重复的包：多层嵌套意味着大量重复的包实例，这无疑增加了磁盘空间的使用且影响安装速度。多个包之间难免会有公共的依赖，这样嵌套的话，同样的依赖会复制很多次，会占据比较大的磁盘空间。</li>
-</ul>
-<h2 id="YARN-NPM-3"><a href="#YARN-NPM-3" class="headerlink" title="YARN &amp; NPM@3"></a>YARN &amp; NPM@3</h2><p>yarn 是怎么解决依赖重复很多次，嵌套路径过长的问题的呢？</p>
-<p><strong>处理方式：</strong></p>
-<ul>
-<li>扁平化结构：大部分依赖被安装在顶层 node_modules 目录，减少了重复安装相同包的情况。</li>
-</ul>
-<p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="https://raw.githubusercontent.com/YuZeZhang/myImgslib/main/202406232247543.png"
-                      alt="img"
-                ></p>
-<p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="https://raw.githubusercontent.com/YuZeZhang/myImgslib/main/202406232247991.png"
-                      alt="img"
-                ></p>
-<ul>
-<li>版本冲突处理：当两个包需要不同版本的同一个依赖时，无法被提升至顶层的依赖会被安装在需要它们的包的 node_modules 目录下。</li>
-</ul>
-<p><strong>存在的缺陷：</strong></p>
-<ul>
-<li>依赖结构的不确定性导致扁平化结果的不确定解决方法.lock 文件</li>
-</ul>
-<p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="https://raw.githubusercontent.com/YuZeZhang/myImgslib/main/202406232247361.png"
-                      alt="img"
-                ></p>
-<ul>
-<li>幽灵依赖：最主要的一个问题是幽灵依赖，也就是你明明没有声明在 dependencies 里的依赖，但在代码里却可以 require 进来。这个也很容易理解，因为都铺平了嘛，那依赖的依赖也是可以找到的。但是这样是有隐患的，因为没有显式依赖，万一有一天别的包不依赖这个包了，那你的代码也就不能跑了，因为你依赖这个包，但是现在不会被安装了。这就是幽灵依赖的问题。</li>
-</ul>
-<p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="https://raw.githubusercontent.com/YuZeZhang/myImgslib/main/202406232248078.png"
-                      alt="img"
-                ><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="https://raw.githubusercontent.com/YuZeZhang/myImgslib/main/202406232248136.png"
-                      alt="img"
-                ></p>
-<p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="https://raw.githubusercontent.com/YuZeZhang/myImgslib/main/202406232248329.png"
-                      alt="img"
-                ></p>
-<ul>
-<li>包重复安装问题。提升机制仍然可能导致大量的依赖被重复安装。</li>
-</ul>
-<p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="https://raw.githubusercontent.com/YuZeZhang/myImgslib/main/202406232248172.png"
-                      alt="img"
-                ></p>
-<p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="https://raw.githubusercontent.com/YuZeZhang/myImgslib/main/202406232248183.png"
-                      alt="img"
-                ></p>
-<p>扁平化处理：</p>
-<p>我们把 node_modules 删了，用 yarn 再重新安装下，执行 yarn add express：</p>
-<p>这时候 node_modules 就是这样了：</p>
-<p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="https://raw.githubusercontent.com/YuZeZhang/myImgslib/main/202406232249070.webp"
-                      alt="img"
-                ></p>
-<p>全部铺平在了一层，展开下面的包大部分是没有二层 node_modules 的：</p>
-<p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="https://raw.githubusercontent.com/YuZeZhang/myImgslib/main/202406232249644.webp"
-                      alt="img"
-                ></p>
-<p>当然也有的包还是有 node_modules 的，比如这样：</p>
-<p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="https://raw.githubusercontent.com/YuZeZhang/myImgslib/main/202406232249531.webp"
-                      alt="img"
-                ></p>
-<p>为什么还有嵌套呢？</p>
-<p>因为一个包是可能有多个版本的，提升只能提升一个，所以后面再遇到相同包的不同版本，依然还是用嵌套的方式。</p>
-<p>npm 后来升级到 3 之后，也是采用这种铺平的方案了，和 yarn 很类似：</p>
-<p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="https://raw.githubusercontent.com/YuZeZhang/myImgslib/main/202406232249282.webp"
-                      alt="img"
-                ></p>
-<p>当然，yarn 还实现了 yarn.lock 来锁定依赖版本的功能，不过这个 npm 也实现了。</p>
-<p>扁平化的方案也有相应的问题。而且还有一个问题，就是上面提到的依赖包有多个版本的时候，只会提升一个，那其余版本的包不还是复制了很多次么，依然有浪费磁盘空间的问题。</p>
-<p>那 pnpm 是怎么解决这俩问题的呢？</p>
-<h2 id="pnpm"><a href="#pnpm" class="headerlink" title="pnpm"></a>pnpm</h2><p><strong>pnpm：</strong>是一个更新的包管理工具，旨在提供比 npm 和 Yarn 更好的磁盘空间效率和更快的安装速度。</p>
-<p>pnpm 通过使用软硬链接解决这个问题。</p>
-<p>软链接：软链接是一个指向文件路径的引用。</p>
-<p>硬链接：硬链接是一个指向文件数据的直接引用。</p>
-<p>这样不会有复制多次的磁盘空间浪费，而且也不会有路径过长的问题。因为路径过长的限制本质上是不能有太深的目录层级，现在都是各个位置的目录的 link，并不是同一个目录，所以也不会有长度限制。</p>
-<p>没错，pnpm 就是通过这种思路来实现的。</p>
-<p>再把 node_modules 删掉，然后用 pnpm 重新装一遍，执行 pnpm install。</p>
-<p>你会发现它打印了这样一句话：</p>
-<p>包是从全局 store 硬连接到虚拟 store 的，这里的虚拟 store 就是 node_modules&#x2F;.pnpm。</p>
-<p>我们打开 node_modules 看一下：</p>
-<p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="https://raw.githubusercontent.com/YuZeZhang/myImgslib/main/202406232249706.webp"
-                      alt="img"
-                ></p>
-<p>确实不是扁平化的了，依赖了 express，那 node_modules 下就只有 express，没有幽灵依赖。</p>
-<p>展开 .pnpm 看一下：</p>
-<p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="https://raw.githubusercontent.com/YuZeZhang/myImgslib/main/202406232249750.webp"
-                      alt="img"
-                ></p>
-<p>所有的依赖都在这里铺平了，都是从全局 store 硬连接过来的，然后包和包之间的依赖关系是通过软链接组织的。</p>
-<p>比如 .pnpm 下的 expresss，这些都是软链接，</p>
-<p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="https://raw.githubusercontent.com/YuZeZhang/myImgslib/main/202406232249099.webp"
-                      alt="img"
-                ></p>
-<p>也就是说，所有的依赖都是从全局 store 硬连接到了 node_modules&#x2F;.pnpm 下，然后之间通过软链接来相互依赖。</p>
-<p>官方给了一张原理图，配合着看一下就明白了：</p>
-<p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="https://raw.githubusercontent.com/YuZeZhang/myImgslib/main/202406232249755.webp"
-                      alt="img"
-                ></p>
-<p>这就是 pnpm 的实现原理。</p>
-<p>那么回过头来看一下，pnpm 为什么优秀呢？</p>
-<p>首先，最大的优点是节省磁盘空间呀，一个包全局只保存一份，剩下的都是软硬连接，这得节省多少磁盘空间呀。</p>
-<p>其次就是快，因为通过链接的方式而不是复制，自然会快。</p>
-<p>这也是它所标榜的优点：</p>
-<p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="https://raw.githubusercontent.com/YuZeZhang/myImgslib/main/202406232250962.webp"
-                      alt="img"
-                ></p>
-<p>相比 npm2 的优点就是不会进行同样依赖的多次复制。</p>
-<p>相比 yarn 和 npm3+ 呢，那就是没有幽灵依赖，也不会有没有被提升的依赖依然复制多份的问题。</p>
-<p>这就已经足够优秀了，对 yarn 和 npm 可以说是降维打击。</p>
-<p>Reference：<a class="link"   href="https://juejin.cn/post/7127295203177676837?searchId=20240623222554B51B38FF0362E0D545BE" >https://juejin.cn/post/7127295203177676837?searchId=20240623222554B51B38FF0362E0D545BE <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
 ]]></content>
   </entry>
 </search>
