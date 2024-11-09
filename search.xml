@@ -200,49 +200,6 @@
 ]]></content>
   </entry>
   <entry>
-    <title>AST-抽象语法树</title>
-    <url>/Yuyang/ast/</url>
-    <content><![CDATA[<h2 id="编译器的底层原理-AST"><a href="#编译器的底层原理-AST" class="headerlink" title="编译器的底层原理 AST"></a>编译器的底层原理 AST</h2><p>编译器介绍：它会将用某种编程语言写成的源代码，转换成另一种编程语言。编译器（compiler）是一种用于将源代码（通常是高级编程语言编写的代码）翻译成目标代码（如机器语言或中间代码）的软件工具。目标代码通常可以直接在计算机上执行，或者在特定的运行环境中执行。编译器的主要目的是使程序员编写的源代码能够在计算机硬件上运行。</p>
-<h2 id="编译器实现的思路"><a href="#编译器实现的思路" class="headerlink" title="编译器实现的思路"></a>编译器实现的思路</h2><p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="https://raw.githubusercontent.com/YuZeZhang/myImgslib/main/202407142153107.png"
-                      alt="image-20240714215346889"
-                ></p>
-<h3 id="Parsing"><a href="#Parsing" class="headerlink" title="Parsing"></a>Parsing</h3><p>这一部分主要实现的功能是将源码转换为抽象语法树</p>
-<p>解析通常分为两个阶段：词法分析（Lexical Analysis）和语法分析（Syntactic Analysis）。</p>
-<ol>
-<li><p><strong>词法分析</strong> 将原始代码拆分成称为标记（tokens）的部分，这个过程由一个称为分词器（tokenizer）或词法分析器（lexer）的东西完成。</p>
-<p>标记是描述语法中独立部分的小对象的数组。它们可以是数字、标签、标点符号、操作符等。</p>
-</li>
-<li><p><strong>语法分析</strong> 将标记重新格式化为描述语法各部分及其相互关系的表示形式。这被称为中间表示或抽象语法树（AST）。</p>
-<p>抽象语法树（AST）是一个深度嵌套的对象，它以一种易于处理并包含大量信息的方式表示代码。</p>
-</li>
-</ol>
-<p>对于以下语法：</p>
-<p>  <code>(add 2 (subtract 4 2))</code></p>
-<p>Tokens应该是这样的这样：</p>
-  <div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="code"><pre><span class="line">[</span><br><span class="line">  &#123; type: &#x27;paren&#x27;,  value: &#x27;(&#x27;        &#125;,</span><br><span class="line">  &#123; type: &#x27;name&#x27;,   value: &#x27;add&#x27;      &#125;,</span><br><span class="line">  &#123; type: &#x27;number&#x27;, value: &#x27;2&#x27;        &#125;,</span><br><span class="line">  &#123; type: &#x27;paren&#x27;,  value: &#x27;(&#x27;        &#125;,</span><br><span class="line">  &#123; type: &#x27;name&#x27;,   value: &#x27;subtract&#x27; &#125;,</span><br><span class="line">  &#123; type: &#x27;number&#x27;, value: &#x27;4&#x27;        &#125;,</span><br><span class="line">  &#123; type: &#x27;number&#x27;, value: &#x27;2&#x27;        &#125;,</span><br><span class="line">  &#123; type: &#x27;paren&#x27;,  value: &#x27;)&#x27;        &#125;,</span><br><span class="line">  &#123; type: &#x27;paren&#x27;,  value: &#x27;)&#x27;        &#125;,</span><br><span class="line">]</span><br></pre></td></tr></table></figure></div>
-
-<p>而抽象语法树（AST）可能看起来像这样：</p>
-  <div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  type: &#x27;Program&#x27;,</span><br><span class="line">  body: [&#123;</span><br><span class="line">    type: &#x27;CallExpression&#x27;,</span><br><span class="line">    name: &#x27;add&#x27;,</span><br><span class="line">    params: [&#123;</span><br><span class="line">      type: &#x27;NumberLiteral&#x27;,</span><br><span class="line">      value: &#x27;2&#x27;,</span><br><span class="line">    &#125;, &#123;</span><br><span class="line">      type: &#x27;CallExpression&#x27;,</span><br><span class="line">      name: &#x27;subtract&#x27;,</span><br><span class="line">      params: [&#123;</span><br><span class="line">        type: &#x27;NumberLiteral&#x27;,</span><br><span class="line">        value: &#x27;4&#x27;,</span><br><span class="line">      &#125;, &#123;</span><br><span class="line">        type: &#x27;NumberLiteral&#x27;,</span><br><span class="line">        value: &#x27;2&#x27;,</span><br><span class="line">      &#125;]</span><br><span class="line">    &#125;]</span><br><span class="line">  &#125;]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
-
-<h3 id="Transformation"><a href="#Transformation" class="headerlink" title="Transformation"></a>Transformation</h3><p>这一部分主要实现的功能是对初始的抽象语法树进行操作使其变成我们所期望的抽象语法树。</p>
-<p>同样，这个阶段只是接收上一步生成的AST并对其进行更改。它可以在相同的语言中操作AST，也可以将其转换为完全新的语言。</p>
-<p>让我们看看如何转换一个AST。</p>
-<p>你可能会注意到，我们的AST中有一些看起来非常相似的元素。这些对象都有一个type属性。每个这样的对象都被称为AST节点。这些节点上有定义的属性，用来描述树的一个独立部分。</p>
-<p>我们可以有一个表示“NumberLiteral”（数字字面量）的节点：</p>
-<div class="highlight-container" data-rel="Javascript"><figure class="iseeu highlight javascript"><table><tr><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="attr">type</span>: <span class="string">&#x27;NumberLiteral&#x27;</span>,</span><br><span class="line">  <span class="attr">value</span>: <span class="string">&#x27;2&#x27;</span>,</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
-
-<p>或者一个表示“CallExpression”（调用表达式）的节点：</p>
-<div class="highlight-container" data-rel="Javascript"><figure class="iseeu highlight javascript"><table><tr><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="attr">type</span>: <span class="string">&#x27;CallExpression&#x27;</span>,</span><br><span class="line">  <span class="attr">name</span>: <span class="string">&#x27;subtract&#x27;</span>,</span><br><span class="line">  <span class="attr">params</span>: [...嵌套节点在这里...],</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
-
-<p>在转换AST时，我们可以通过添加&#x2F;移除&#x2F;替换属性来操作节点，我们可以添加新节点，移除节点，或者保留现有的AST不变，基于它创建一个全新的AST。</p>
-<p>由于我们目标是一种新语言，因此我们将专注于创建一个特定于目标语言的全新AST。</p>
-<h3 id="Code-Generation"><a href="#Code-Generation" class="headerlink" title="Code Generation"></a>Code Generation</h3><p>将新的语法树转换成新的代码</p>
-]]></content>
-  </entry>
-  <entry>
     <title>响应式设计</title>
     <url>/Yuyang/RWD/</url>
     <content><![CDATA[<h2 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h2><p>我们的需求包含平台的H5和PC端，为了适应不同的屏幕尺寸，我们需要做响应式设计。<br>响应式网站设计（Responsive Web Design）是一种网络页面设计布局，页面的设计与开发应该根据用户行为以及设备环境（系统平台、屏幕尺寸、屏幕定向等）进行相应的响应和调整。响应式设计是一种优化设计，不同于传统的网站设计，它可以使网站在不同的设备上显示效果更加友好，提高用户体验。</p>
@@ -335,6 +292,49 @@
 <td>简单且稳定，方便全局控制字体和布局</td>
 </tr>
 </tbody></table>
+]]></content>
+  </entry>
+  <entry>
+    <title>AST-抽象语法树</title>
+    <url>/Yuyang/ast/</url>
+    <content><![CDATA[<h2 id="编译器的底层原理-AST"><a href="#编译器的底层原理-AST" class="headerlink" title="编译器的底层原理 AST"></a>编译器的底层原理 AST</h2><p>编译器介绍：它会将用某种编程语言写成的源代码，转换成另一种编程语言。编译器（compiler）是一种用于将源代码（通常是高级编程语言编写的代码）翻译成目标代码（如机器语言或中间代码）的软件工具。目标代码通常可以直接在计算机上执行，或者在特定的运行环境中执行。编译器的主要目的是使程序员编写的源代码能够在计算机硬件上运行。</p>
+<h2 id="编译器实现的思路"><a href="#编译器实现的思路" class="headerlink" title="编译器实现的思路"></a>编译器实现的思路</h2><p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://raw.githubusercontent.com/YuZeZhang/myImgslib/main/202407142153107.png"
+                      alt="image-20240714215346889"
+                ></p>
+<h3 id="Parsing"><a href="#Parsing" class="headerlink" title="Parsing"></a>Parsing</h3><p>这一部分主要实现的功能是将源码转换为抽象语法树</p>
+<p>解析通常分为两个阶段：词法分析（Lexical Analysis）和语法分析（Syntactic Analysis）。</p>
+<ol>
+<li><p><strong>词法分析</strong> 将原始代码拆分成称为标记（tokens）的部分，这个过程由一个称为分词器（tokenizer）或词法分析器（lexer）的东西完成。</p>
+<p>标记是描述语法中独立部分的小对象的数组。它们可以是数字、标签、标点符号、操作符等。</p>
+</li>
+<li><p><strong>语法分析</strong> 将标记重新格式化为描述语法各部分及其相互关系的表示形式。这被称为中间表示或抽象语法树（AST）。</p>
+<p>抽象语法树（AST）是一个深度嵌套的对象，它以一种易于处理并包含大量信息的方式表示代码。</p>
+</li>
+</ol>
+<p>对于以下语法：</p>
+<p>  <code>(add 2 (subtract 4 2))</code></p>
+<p>Tokens应该是这样的这样：</p>
+  <div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="code"><pre><span class="line">[</span><br><span class="line">  &#123; type: &#x27;paren&#x27;,  value: &#x27;(&#x27;        &#125;,</span><br><span class="line">  &#123; type: &#x27;name&#x27;,   value: &#x27;add&#x27;      &#125;,</span><br><span class="line">  &#123; type: &#x27;number&#x27;, value: &#x27;2&#x27;        &#125;,</span><br><span class="line">  &#123; type: &#x27;paren&#x27;,  value: &#x27;(&#x27;        &#125;,</span><br><span class="line">  &#123; type: &#x27;name&#x27;,   value: &#x27;subtract&#x27; &#125;,</span><br><span class="line">  &#123; type: &#x27;number&#x27;, value: &#x27;4&#x27;        &#125;,</span><br><span class="line">  &#123; type: &#x27;number&#x27;, value: &#x27;2&#x27;        &#125;,</span><br><span class="line">  &#123; type: &#x27;paren&#x27;,  value: &#x27;)&#x27;        &#125;,</span><br><span class="line">  &#123; type: &#x27;paren&#x27;,  value: &#x27;)&#x27;        &#125;,</span><br><span class="line">]</span><br></pre></td></tr></table></figure></div>
+
+<p>而抽象语法树（AST）可能看起来像这样：</p>
+  <div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  type: &#x27;Program&#x27;,</span><br><span class="line">  body: [&#123;</span><br><span class="line">    type: &#x27;CallExpression&#x27;,</span><br><span class="line">    name: &#x27;add&#x27;,</span><br><span class="line">    params: [&#123;</span><br><span class="line">      type: &#x27;NumberLiteral&#x27;,</span><br><span class="line">      value: &#x27;2&#x27;,</span><br><span class="line">    &#125;, &#123;</span><br><span class="line">      type: &#x27;CallExpression&#x27;,</span><br><span class="line">      name: &#x27;subtract&#x27;,</span><br><span class="line">      params: [&#123;</span><br><span class="line">        type: &#x27;NumberLiteral&#x27;,</span><br><span class="line">        value: &#x27;4&#x27;,</span><br><span class="line">      &#125;, &#123;</span><br><span class="line">        type: &#x27;NumberLiteral&#x27;,</span><br><span class="line">        value: &#x27;2&#x27;,</span><br><span class="line">      &#125;]</span><br><span class="line">    &#125;]</span><br><span class="line">  &#125;]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+
+<h3 id="Transformation"><a href="#Transformation" class="headerlink" title="Transformation"></a>Transformation</h3><p>这一部分主要实现的功能是对初始的抽象语法树进行操作使其变成我们所期望的抽象语法树。</p>
+<p>同样，这个阶段只是接收上一步生成的AST并对其进行更改。它可以在相同的语言中操作AST，也可以将其转换为完全新的语言。</p>
+<p>让我们看看如何转换一个AST。</p>
+<p>你可能会注意到，我们的AST中有一些看起来非常相似的元素。这些对象都有一个type属性。每个这样的对象都被称为AST节点。这些节点上有定义的属性，用来描述树的一个独立部分。</p>
+<p>我们可以有一个表示“NumberLiteral”（数字字面量）的节点：</p>
+<div class="highlight-container" data-rel="Javascript"><figure class="iseeu highlight javascript"><table><tr><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="attr">type</span>: <span class="string">&#x27;NumberLiteral&#x27;</span>,</span><br><span class="line">  <span class="attr">value</span>: <span class="string">&#x27;2&#x27;</span>,</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+
+<p>或者一个表示“CallExpression”（调用表达式）的节点：</p>
+<div class="highlight-container" data-rel="Javascript"><figure class="iseeu highlight javascript"><table><tr><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="attr">type</span>: <span class="string">&#x27;CallExpression&#x27;</span>,</span><br><span class="line">  <span class="attr">name</span>: <span class="string">&#x27;subtract&#x27;</span>,</span><br><span class="line">  <span class="attr">params</span>: [...嵌套节点在这里...],</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+
+<p>在转换AST时，我们可以通过添加&#x2F;移除&#x2F;替换属性来操作节点，我们可以添加新节点，移除节点，或者保留现有的AST不变，基于它创建一个全新的AST。</p>
+<p>由于我们目标是一种新语言，因此我们将专注于创建一个特定于目标语言的全新AST。</p>
+<h3 id="Code-Generation"><a href="#Code-Generation" class="headerlink" title="Code Generation"></a>Code Generation</h3><p>将新的语法树转换成新的代码</p>
 ]]></content>
   </entry>
   <entry>
