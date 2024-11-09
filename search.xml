@@ -1,6 +1,39 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>2024-11-9 日报</title>
+    <url>/undefined/2024-11-9/</url>
+    <content><![CDATA[<h2 id="写在本类目的最前面"><a href="#写在本类目的最前面" class="headerlink" title="写在本类目的最前面"></a>写在本类目的最前面</h2><p>   不知道以什么开始，就以最近看到的《我与地坛》中的一句话作为本类目的开头吧：</p>
+<blockquote>
+<p>但是太阳，它每时每刻都是夕阳也都是旭日。当它熄灭着走下山去收尽苍凉残照之际，正是它在另一面燃烧着爬上山巅布散烈烈朝晖之时。<br>那一天，我也将沉静着走下山去，扶着我的拐杖。有一天，在某一处山洼里，势必会跑上来一个欢蹦的孩子，抱着他的玩具。<br>当然，那不是我。<br>但是，那不是我吗？</p>
+</blockquote>
+<h3 id="今天的思考"><a href="#今天的思考" class="headerlink" title="今天的思考"></a>今天的思考</h3><pre><code>不满足于当前的苟且，却又无能无力改变此局。如何破此死局，唯有涅槃重生。所以从今天开始从最基本的知识学起，每日保持不间断的更新，去到自己想要去到的高度。
+</code></pre>
+<h3 id="今日学习内容"><a href="#今日学习内容" class="headerlink" title="今日学习内容"></a>今日学习内容</h3><pre><code>1、《网络是怎样连接的》 P1- P12
+</code></pre>
+<h3 id="今日笔记"><a href="#今日笔记" class="headerlink" title="今日笔记"></a>今日笔记</h3><p>URL协议标识符如HTTP、HTTPS、FTP等，是用来标识资源的协议的。URL的格式如下：</p>
+<div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="code"><pre><span class="line">scheme://host:port/path?query#fragment</span><br></pre></td></tr></table></figure></div>
+
+<ul>
+<li>scheme：协议标识符，如HTTP、HTTPS、FTP等</li>
+</ul>
+<p>native上还有一些特殊的scheme，如：</p>
+<ul>
+<li>tell：用于电话号码</li>
+<li>sms：用于短信</li>
+<li>mailto：用于发送邮件</li>
+<li>geo：用于地理位置</li>
+<li>AppName：用于调起App</li>
+</ul>
+]]></content>
+      <categories>
+        <category>journal</category>
+      </categories>
+      <tags>
+        <tag>journal</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>BFC</title>
     <url>/Yuyang/BFC/</url>
     <content><![CDATA[<h2 id="BFC"><a href="#BFC" class="headerlink" title="BFC"></a>BFC</h2><p>BFC(Block Formatting Context) 是一个独立的渲染区域，只有 Block-level box 参与，它规定了内部的 Block-level box 如何布局，并且与这个区域外部毫不相干。</p>
@@ -527,64 +560,6 @@
 ]]></content>
   </entry>
   <entry>
-    <title>从输入URL到页面加载完成的过程</title>
-    <url>/Yuyang/borwer/</url>
-    <content><![CDATA[<h2 id="输入URL用户发起请求"><a href="#输入URL用户发起请求" class="headerlink" title="输入URL用户发起请求"></a>输入URL用户发起请求</h2><p>当用户在客户端输入一个网址如（如 <a class="link"   href="https://www.example.com),浏览器会根据这个操作发起网络请求./" >https://www.example.com），浏览器会根据这个操作发起网络请求。 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
-<h2 id="浏览器解析URL"><a href="#浏览器解析URL" class="headerlink" title="浏览器解析URL"></a>浏览器解析URL</h2><p>浏览器会解析用户输入的URL</p>
-<ul>
-<li>协议：例如HTTP或HTTPS</li>
-<li>主机名：例如<a class="link"   href="http://www.example.com/" >www.example.com <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></li>
-<li>端口号：例如80或443</li>
-<li>路径：例如&#x2F;index.html</li>
-<li>查询参数：例如?name&#x3D;example</li>
-<li>锚点：例如#section</li>
-</ul>
-<h2 id="检查缓存"><a href="#检查缓存" class="headerlink" title="检查缓存"></a>检查缓存</h2><p>在发起真正的网络请求之前，浏览器会检查以下几处缓存，以节省时间和资源：</p>
-<ul>
-<li>浏览器缓存：如果之前已经访问过该网站，浏览器可能已经缓存了该资源，直接从缓存中加载。（强缓存、协商缓存）<ul>
-<li>强缓存依赖于请求头的Expires或Cache-Control</li>
-</ul>
-</li>
-<li>DNS 缓存：浏览器会首先检查是否缓存了该域名对应的 IP 地址，避免重复的 DNS 解析。</li>
-<li>操作系统的 DNS 缓存：如果浏览器没有缓存 DNS 记录，它会查询操作系统的 DNS 缓存（如 Windows 的 DNS 缓存或 Linux 的 nscd）。</li>
-</ul>
-<h2 id="发起DNS请求"><a href="#发起DNS请求" class="headerlink" title="发起DNS请求"></a>发起DNS请求</h2><p>如果缓存中没有找到对应的IP地址，浏览器会发起一个DNS请求，将域名解析为IP地址。</p>
-<h2 id="构建HTTP-HTTPS请求-应用层"><a href="#构建HTTP-HTTPS请求-应用层" class="headerlink" title="构建HTTP&#x2F;HTTPS请求(应用层)"></a>构建HTTP&#x2F;HTTPS请求(应用层)</h2><p>一旦获取了IP地址，浏览器就可以构建HTTP&#x2F;HTTPS请求。HTTP请求报文包含以下几个部分：</p>
-<ul>
-<li>请求行：包含请求方法、请求URL和HTTP协议版本</li>
-<li>请求头：包含请求的各种信息，如User-Agent、Accept、Cookie等</li>
-<li>请求体：包含请求的数据，如POST请求的表单数据</li>
-</ul>
-<h2 id="建立TCP连接-传输层"><a href="#建立TCP连接-传输层" class="headerlink" title="建立TCP连接(传输层)"></a>建立TCP连接(传输层)</h2><p>HTTP是基于TCP协议的，因此浏览器需要建立TCP连接。TCP是一种面向连接的协议，它提供可靠的数据传输服务。HTTPS还需要建立TLS连接，TLS是SSL的升级版，提供了更强的安全性。</p>
-<ul>
-<li>三次握手：客户端和服务器之间需要通过三次握手建立连接。</li>
-<li>第一次握手：客户端发送一个 SYN 包给服务器，请求建立连接。</li>
-<li>第二次握手：服务器收到 SYN 包后，回应一个 SYN+ACK 包。</li>
-<li>第三次握手：客户端收到 SYN+ACK 包后，回应一个 ACK 包。</li>
-</ul>
-<h2 id="构建数据包-网络层"><a href="#构建数据包-网络层" class="headerlink" title="构建数据包(网络层)"></a>构建数据包(网络层)</h2><p>一旦建立了TCP连接，浏览器就可以基于DNS解析得到的IP地址将HTTP请求报文封装成数据包，通过网络层发送给服务器。</p>
-<h2 id="数据包在网络中传输-数据链路层"><a href="#数据包在网络中传输-数据链路层" class="headerlink" title="数据包在网络中传输(数据链路层)"></a>数据包在网络中传输(数据链路层)</h2><p>数据包通过数据链路层的设备（如交换机、网卡）在网络中传输，最终到达服务器。</p>
-<h2 id="服务器处理请求，浏览器接受HTTP响应"><a href="#服务器处理请求，浏览器接受HTTP响应" class="headerlink" title="服务器处理请求，浏览器接受HTTP响应"></a>服务器处理请求，浏览器接受HTTP响应</h2><p>服务器收到请求后，会根据请求的 URL、<br>请求头等信息，调用相应的处理程序，如处理静态资源的 Nginx、处理动态资源的 Tomcat。</p>
-<h2 id="浏览器渲染"><a href="#浏览器渲染" class="headerlink" title="浏览器渲染"></a>浏览器渲染</h2><p>浏览器接收到服务器返回的 HTTP 响应后，会解析响应报文，根据响应头中的 Content-Type 等信息判断响应的类型，然后进行相应的处理。</p>
-<ul>
-<li>HTML：浏览器会解析 HTML，构建 DOM 树。</li>
-<li>CSS：浏览器会解析 CSS，构建 CSSOM 树。</li>
-<li>render tree：浏览器会将 DOM 树和 CSSOM 树合并成一个 render tree。</li>
-<li>布局：浏览器会根据 render tree 计算每个节点的位置。</li>
-<li>绘制：浏览器会将 render tree 绘制到屏幕上。</li>
-</ul>
-<h2 id="关闭TCP连接-四次挥手"><a href="#关闭TCP连接-四次挥手" class="headerlink" title="关闭TCP连接(四次挥手)"></a>关闭TCP连接(四次挥手)</h2><p>一旦服务器返回了 HTTP 响应，浏览器会关闭 TCP 连接。</p>
-<ul>
-<li>四次挥手：客户端和服务器之间需要通过四次挥手关闭连接。</li>
-<li>第一次挥手：客户端发送一个 FIN 包给服务器，请求关闭连接。</li>
-<li>第二次挥手：服务器收到 FIN 包后，回应一个 ACK 包。</li>
-<li>第三次挥手：服务器发送一个 FIN 包给客户端，请求关闭连接。</li>
-<li>第四次挥手：客户端收到 FIN 包后，回应一个 ACK 包。</li>
-</ul>
-<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>以上就是从输入 URL 到页面加载完成的整个过程。在这个过程中，浏览器和服务器之间进行了多次的交互，包括 DNS 解析、建立 TCP 连接、发送 HTTP 请求、处理请求、返回 HTTP 响应等。最终，浏览器会将服务器返回的 HTML、CSS、JavaScript 等资源解析渲染，最终呈现给用户。</p>
-]]></content>
-  </entry>
-  <entry>
     <title>浏览器引擎（Browser engine/ layout engine + rendering engine）</title>
     <url>/Yuyang/browserEngine/</url>
     <content><![CDATA[<p><a class="link"   href="https://en.wikipedia.org/wiki/Browser_engine" >https://en.wikipedia.org/wiki/Browser_engine <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a><br>浏览器引擎：<a class="link"   href="https://taligarsiel.com/Projects/howbrowserswork1.htm" >https://taligarsiel.com/Projects/howbrowserswork1.htm <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
@@ -662,6 +637,64 @@
 <li><a class="link"   href="https://en.wikipedia.org/wiki/Browser_engine" >https://en.wikipedia.org/wiki/Browser_engine <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></li>
 <li><a class="link"   href="https://taligarsiel.com/Projects/howbrowserswork1.htm" >https://taligarsiel.com/Projects/howbrowserswork1.htm <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></li>
 </ul>
+]]></content>
+  </entry>
+  <entry>
+    <title>从输入URL到页面加载完成的过程</title>
+    <url>/Yuyang/borwer/</url>
+    <content><![CDATA[<h2 id="输入URL用户发起请求"><a href="#输入URL用户发起请求" class="headerlink" title="输入URL用户发起请求"></a>输入URL用户发起请求</h2><p>当用户在客户端输入一个网址如（如 <a class="link"   href="https://www.example.com),浏览器会根据这个操作发起网络请求./" >https://www.example.com），浏览器会根据这个操作发起网络请求。 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
+<h2 id="浏览器解析URL"><a href="#浏览器解析URL" class="headerlink" title="浏览器解析URL"></a>浏览器解析URL</h2><p>浏览器会解析用户输入的URL</p>
+<ul>
+<li>协议：例如HTTP或HTTPS</li>
+<li>主机名：例如<a class="link"   href="http://www.example.com/" >www.example.com <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></li>
+<li>端口号：例如80或443</li>
+<li>路径：例如&#x2F;index.html</li>
+<li>查询参数：例如?name&#x3D;example</li>
+<li>锚点：例如#section</li>
+</ul>
+<h2 id="检查缓存"><a href="#检查缓存" class="headerlink" title="检查缓存"></a>检查缓存</h2><p>在发起真正的网络请求之前，浏览器会检查以下几处缓存，以节省时间和资源：</p>
+<ul>
+<li>浏览器缓存：如果之前已经访问过该网站，浏览器可能已经缓存了该资源，直接从缓存中加载。（强缓存、协商缓存）<ul>
+<li>强缓存依赖于请求头的Expires或Cache-Control</li>
+</ul>
+</li>
+<li>DNS 缓存：浏览器会首先检查是否缓存了该域名对应的 IP 地址，避免重复的 DNS 解析。</li>
+<li>操作系统的 DNS 缓存：如果浏览器没有缓存 DNS 记录，它会查询操作系统的 DNS 缓存（如 Windows 的 DNS 缓存或 Linux 的 nscd）。</li>
+</ul>
+<h2 id="发起DNS请求"><a href="#发起DNS请求" class="headerlink" title="发起DNS请求"></a>发起DNS请求</h2><p>如果缓存中没有找到对应的IP地址，浏览器会发起一个DNS请求，将域名解析为IP地址。</p>
+<h2 id="构建HTTP-HTTPS请求-应用层"><a href="#构建HTTP-HTTPS请求-应用层" class="headerlink" title="构建HTTP&#x2F;HTTPS请求(应用层)"></a>构建HTTP&#x2F;HTTPS请求(应用层)</h2><p>一旦获取了IP地址，浏览器就可以构建HTTP&#x2F;HTTPS请求。HTTP请求报文包含以下几个部分：</p>
+<ul>
+<li>请求行：包含请求方法、请求URL和HTTP协议版本</li>
+<li>请求头：包含请求的各种信息，如User-Agent、Accept、Cookie等</li>
+<li>请求体：包含请求的数据，如POST请求的表单数据</li>
+</ul>
+<h2 id="建立TCP连接-传输层"><a href="#建立TCP连接-传输层" class="headerlink" title="建立TCP连接(传输层)"></a>建立TCP连接(传输层)</h2><p>HTTP是基于TCP协议的，因此浏览器需要建立TCP连接。TCP是一种面向连接的协议，它提供可靠的数据传输服务。HTTPS还需要建立TLS连接，TLS是SSL的升级版，提供了更强的安全性。</p>
+<ul>
+<li>三次握手：客户端和服务器之间需要通过三次握手建立连接。</li>
+<li>第一次握手：客户端发送一个 SYN 包给服务器，请求建立连接。</li>
+<li>第二次握手：服务器收到 SYN 包后，回应一个 SYN+ACK 包。</li>
+<li>第三次握手：客户端收到 SYN+ACK 包后，回应一个 ACK 包。</li>
+</ul>
+<h2 id="构建数据包-网络层"><a href="#构建数据包-网络层" class="headerlink" title="构建数据包(网络层)"></a>构建数据包(网络层)</h2><p>一旦建立了TCP连接，浏览器就可以基于DNS解析得到的IP地址将HTTP请求报文封装成数据包，通过网络层发送给服务器。</p>
+<h2 id="数据包在网络中传输-数据链路层"><a href="#数据包在网络中传输-数据链路层" class="headerlink" title="数据包在网络中传输(数据链路层)"></a>数据包在网络中传输(数据链路层)</h2><p>数据包通过数据链路层的设备（如交换机、网卡）在网络中传输，最终到达服务器。</p>
+<h2 id="服务器处理请求，浏览器接受HTTP响应"><a href="#服务器处理请求，浏览器接受HTTP响应" class="headerlink" title="服务器处理请求，浏览器接受HTTP响应"></a>服务器处理请求，浏览器接受HTTP响应</h2><p>服务器收到请求后，会根据请求的 URL、<br>请求头等信息，调用相应的处理程序，如处理静态资源的 Nginx、处理动态资源的 Tomcat。</p>
+<h2 id="浏览器渲染"><a href="#浏览器渲染" class="headerlink" title="浏览器渲染"></a>浏览器渲染</h2><p>浏览器接收到服务器返回的 HTTP 响应后，会解析响应报文，根据响应头中的 Content-Type 等信息判断响应的类型，然后进行相应的处理。</p>
+<ul>
+<li>HTML：浏览器会解析 HTML，构建 DOM 树。</li>
+<li>CSS：浏览器会解析 CSS，构建 CSSOM 树。</li>
+<li>render tree：浏览器会将 DOM 树和 CSSOM 树合并成一个 render tree。</li>
+<li>布局：浏览器会根据 render tree 计算每个节点的位置。</li>
+<li>绘制：浏览器会将 render tree 绘制到屏幕上。</li>
+</ul>
+<h2 id="关闭TCP连接-四次挥手"><a href="#关闭TCP连接-四次挥手" class="headerlink" title="关闭TCP连接(四次挥手)"></a>关闭TCP连接(四次挥手)</h2><p>一旦服务器返回了 HTTP 响应，浏览器会关闭 TCP 连接。</p>
+<ul>
+<li>四次挥手：客户端和服务器之间需要通过四次挥手关闭连接。</li>
+<li>第一次挥手：客户端发送一个 FIN 包给服务器，请求关闭连接。</li>
+<li>第二次挥手：服务器收到 FIN 包后，回应一个 ACK 包。</li>
+<li>第三次挥手：服务器发送一个 FIN 包给客户端，请求关闭连接。</li>
+<li>第四次挥手：客户端收到 FIN 包后，回应一个 ACK 包。</li>
+</ul>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>以上就是从输入 URL 到页面加载完成的整个过程。在这个过程中，浏览器和服务器之间进行了多次的交互，包括 DNS 解析、建立 TCP 连接、发送 HTTP 请求、处理请求、返回 HTTP 响应等。最终，浏览器会将服务器返回的 HTML、CSS、JavaScript 等资源解析渲染，最终呈现给用户。</p>
 ]]></content>
   </entry>
   <entry>
@@ -1209,6 +1242,18 @@
 ]]></content>
   </entry>
   <entry>
+    <title>MVVM和MVC</title>
+    <url>/Yuyang/mvvmAndMvc/</url>
+    <content><![CDATA[<p>众所周知，Vue.js是一个MVVM框架</p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://raw.githubusercontent.com/YuZeZhang/myImgslib/main/202411042301055.png"
+                      alt="image-20241104230111263"
+                ></p>
+]]></content>
+  </entry>
+  <entry>
     <title>JS模块化</title>
     <url>/Yuyang/jsModule/</url>
     <content><![CDATA[<p>JS模块化</p>
@@ -1270,18 +1315,6 @@
 <p>TreeShaking是指在打包时去除无用的代码，只打包需要的代码。ES6模块静态引入的特性，使得TreeShaking成为可能。</p>
 <h3 id="UMD-Universal-Module-Definition"><a href="#UMD-Universal-Module-Definition" class="headerlink" title="UMD(Universal Module Definition)"></a>UMD(Universal Module Definition)</h3><p>UMD是AMD和CommonJS的糅合，既可以支持浏览器端，又可以支持服务器端。UMD规范通常在模块定义中先判断是否支持Node.js模块（exports）是否存在，存在则使用Node.js模块模式，不存在则判断是否支持AMD（define是否存在），存在则使用AMD方式加载模块。</p>
 <div class="highlight-container" data-rel="Js"><figure class="iseeu highlight js"><table><tr><td class="code"><pre><span class="line">(<span class="keyword">function</span>(<span class="params">root, factory</span>) &#123;</span><br><span class="line">    <span class="keyword">if</span> (<span class="keyword">typeof</span> <span class="variable language_">module</span> === <span class="string">&#x27;object&#x27;</span> &amp;&amp; <span class="keyword">typeof</span> <span class="variable language_">module</span>.<span class="property">exports</span> === <span class="string">&#x27;object&#x27;</span>) &#123;</span><br><span class="line">        <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;是commonjs模块规范，nodejs环境&#x27;</span>)</span><br><span class="line">        <span class="variable language_">module</span>.<span class="property">exports</span> = <span class="title function_">factory</span>();</span><br><span class="line">    &#125; <span class="keyword">else</span> <span class="keyword">if</span> (<span class="keyword">typeof</span> define === <span class="string">&#x27;function&#x27;</span> &amp;&amp; define.<span class="property">amd</span>) &#123;</span><br><span class="line">        <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;是AMD模块规范，如require.js&#x27;</span>)</span><br><span class="line">        <span class="title function_">define</span>(factory)</span><br><span class="line">    &#125; <span class="keyword">else</span> <span class="keyword">if</span> (<span class="keyword">typeof</span> define === <span class="string">&#x27;function&#x27;</span> &amp;&amp; define.<span class="property">cmd</span>) &#123;</span><br><span class="line">        <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;是CMD模块规范，如sea.js&#x27;</span>)</span><br><span class="line">        <span class="title function_">define</span>(<span class="keyword">function</span>(<span class="params"><span class="built_in">require</span>, <span class="built_in">exports</span>, <span class="variable language_">module</span></span>) &#123;</span><br><span class="line">            <span class="variable language_">module</span>.<span class="property">exports</span> = <span class="title function_">factory</span>()</span><br><span class="line">        &#125;)</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;没有模块环境，直接挂载在全局对象上&#x27;</span>)</span><br><span class="line">        root.<span class="property">umdModule</span> = <span class="title function_">factory</span>();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;(<span class="variable language_">this</span>, <span class="keyword">function</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="keyword">return</span> &#123;</span><br><span class="line">        <span class="attr">name</span>: <span class="string">&#x27;我是一个umd模块&#x27;</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;))</span><br></pre></td></tr></table></figure></div>]]></content>
-  </entry>
-  <entry>
-    <title>MVVM和MVC</title>
-    <url>/Yuyang/mvvmAndMvc/</url>
-    <content><![CDATA[<p>众所周知，Vue.js是一个MVVM框架</p>
-<p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="https://raw.githubusercontent.com/YuZeZhang/myImgslib/main/202411042301055.png"
-                      alt="image-20241104230111263"
-                ></p>
-]]></content>
   </entry>
   <entry>
     <title>node_modules困境以及pnpm</title>
@@ -1489,6 +1522,50 @@
 ]]></content>
   </entry>
   <entry>
+    <title>Process and Thread</title>
+    <url>/Yuyang/processandthread/</url>
+    <content><![CDATA[<h2 id="Process-and-Thread"><a href="#Process-and-Thread" class="headerlink" title="Process and Thread"></a>Process and Thread</h2><p>What is process and thread?And what is the difference between them?In this article, we will discuss the concept of process and thread.To better understand the concept of process and thread, we need to understand the concept of program.</p>
+<h3 id="What-program-is"><a href="#What-program-is" class="headerlink" title="What program is"></a>What program is</h3><p>A program is a excutable file that is stored on disk and is loaded into memory when it is run.<br>When a program is loaded into memory, it becomes a process. </p>
+<h4 id="Process"><a href="#Process" class="headerlink" title="Process"></a>Process</h4><p>Process is a program in execution. A process is an instance of a program running on a computer. When a program is executed, it is loaded into memory and becomes a process. A process is an independent entity to which system resources (such as CPU time and memory) are allocated. Each process is executed in a separate address space, and one process cannot access the variables and data structures of another process. If a process wishes to access another process’ resources, inter-process communications have to be used. These include pipes, files, sockets, and other forms.</p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://raw.githubusercontent.com/YuZeZhang/myImgslib/main/202408180633691.png"
+                      alt="image-20240818063319857"
+                ></p>
+<h4 id="Thread"><a href="#Thread" class="headerlink" title="Thread"></a>Thread</h4><p>Thread is a basic unit of CPU utilization, consisting of a program counter, a stack, and a set of registers, (and a thread ID.) Each thread shares with other threads belonging to the same process its code section, data section, and other operating-system resources, such as open files and signals.</p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://raw.githubusercontent.com/YuZeZhang/myImgslib/main/202408180632067.png"
+                      alt="image-20240818063237021"
+                ></p>
+<h3 id="How-does-the-operating-system-manage-processes-and-threads"><a href="#How-does-the-operating-system-manage-processes-and-threads" class="headerlink" title="How does the operating system manage processes and threads"></a>How does the operating system manage processes and threads</h3><p>This is handled by the context switching mechanism, which enables the CPU to switch rapidly from one thread to another. This is done by saving the context of the thread that is currently running and loading the saved context of the thread that is to be executed. The operating system is responsible for managing the execution of processes and threads, and it does this by scheduling them to run on the CPU.</p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://raw.githubusercontent.com/YuZeZhang/myImgslib/main/202408180634154.png"
+                      alt="image-20240818063447864"
+                ></p>
+<p>![image-20240818064017828](..&#x2F;..&#x2F;..&#x2F;..&#x2F;..&#x2F;Library&#x2F;Application Support&#x2F;typora-user-images&#x2F;image-20240818064017828.png)</p>
+<p>The thread switching is also need context switching, but the thread switching is faster than the process switching.</p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://raw.githubusercontent.com/YuZeZhang/myImgslib/main/202408180642421.png"
+                      alt="image-20240818064201566"
+                ></p>
+<p>Because the expansive cost of context switching, there also have some other ways, such as fiber, coroutine, etc.</p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://raw.githubusercontent.com/YuZeZhang/myImgslib/main/202408180645121.png"
+                      alt="image-20240818064530759"
+                ></p>
+<p>Thanks <a class="link"   href="https://www.youtube.com/watch?v=4rLW7zg21gI" >https://www.youtube.com/watch?v=4rLW7zg21gI <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a>.</p>
+]]></content>
+  </entry>
+  <entry>
     <title>原型和原型链</title>
     <url>/Yuyang/prototype/</url>
     <content><![CDATA[<h2 id="原型"><a href="#原型" class="headerlink" title="原型"></a>原型</h2><p>什么是原型？什么是构造函数、实例原型、实例？它们的关系是什么？</p>
@@ -1691,50 +1768,6 @@ if (promises.length === 0) &#123;
 
 <p>在这个例子中，<code>.*?</code> 是非贪婪的，它会尽可能少地匹配字符。因此，它从第一个 <code>a</code> 开始，匹配到第一个 <code>b</code> 就停止匹配。</p>
 <h3 id=""><a href="#" class="headerlink" title=""></a></h3>]]></content>
-  </entry>
-  <entry>
-    <title>Process and Thread</title>
-    <url>/Yuyang/processandthread/</url>
-    <content><![CDATA[<h2 id="Process-and-Thread"><a href="#Process-and-Thread" class="headerlink" title="Process and Thread"></a>Process and Thread</h2><p>What is process and thread?And what is the difference between them?In this article, we will discuss the concept of process and thread.To better understand the concept of process and thread, we need to understand the concept of program.</p>
-<h3 id="What-program-is"><a href="#What-program-is" class="headerlink" title="What program is"></a>What program is</h3><p>A program is a excutable file that is stored on disk and is loaded into memory when it is run.<br>When a program is loaded into memory, it becomes a process. </p>
-<h4 id="Process"><a href="#Process" class="headerlink" title="Process"></a>Process</h4><p>Process is a program in execution. A process is an instance of a program running on a computer. When a program is executed, it is loaded into memory and becomes a process. A process is an independent entity to which system resources (such as CPU time and memory) are allocated. Each process is executed in a separate address space, and one process cannot access the variables and data structures of another process. If a process wishes to access another process’ resources, inter-process communications have to be used. These include pipes, files, sockets, and other forms.</p>
-<p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="https://raw.githubusercontent.com/YuZeZhang/myImgslib/main/202408180633691.png"
-                      alt="image-20240818063319857"
-                ></p>
-<h4 id="Thread"><a href="#Thread" class="headerlink" title="Thread"></a>Thread</h4><p>Thread is a basic unit of CPU utilization, consisting of a program counter, a stack, and a set of registers, (and a thread ID.) Each thread shares with other threads belonging to the same process its code section, data section, and other operating-system resources, such as open files and signals.</p>
-<p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="https://raw.githubusercontent.com/YuZeZhang/myImgslib/main/202408180632067.png"
-                      alt="image-20240818063237021"
-                ></p>
-<h3 id="How-does-the-operating-system-manage-processes-and-threads"><a href="#How-does-the-operating-system-manage-processes-and-threads" class="headerlink" title="How does the operating system manage processes and threads"></a>How does the operating system manage processes and threads</h3><p>This is handled by the context switching mechanism, which enables the CPU to switch rapidly from one thread to another. This is done by saving the context of the thread that is currently running and loading the saved context of the thread that is to be executed. The operating system is responsible for managing the execution of processes and threads, and it does this by scheduling them to run on the CPU.</p>
-<p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="https://raw.githubusercontent.com/YuZeZhang/myImgslib/main/202408180634154.png"
-                      alt="image-20240818063447864"
-                ></p>
-<p>![image-20240818064017828](..&#x2F;..&#x2F;..&#x2F;..&#x2F;..&#x2F;Library&#x2F;Application Support&#x2F;typora-user-images&#x2F;image-20240818064017828.png)</p>
-<p>The thread switching is also need context switching, but the thread switching is faster than the process switching.</p>
-<p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="https://raw.githubusercontent.com/YuZeZhang/myImgslib/main/202408180642421.png"
-                      alt="image-20240818064201566"
-                ></p>
-<p>Because the expansive cost of context switching, there also have some other ways, such as fiber, coroutine, etc.</p>
-<p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="https://raw.githubusercontent.com/YuZeZhang/myImgslib/main/202408180645121.png"
-                      alt="image-20240818064530759"
-                ></p>
-<p>Thanks <a class="link"   href="https://www.youtube.com/watch?v=4rLW7zg21gI" >https://www.youtube.com/watch?v=4rLW7zg21gI <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a>.</p>
-]]></content>
   </entry>
   <entry>
     <title>RSA前端js加密 后端java解密</title>
