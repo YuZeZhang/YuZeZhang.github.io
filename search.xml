@@ -63,6 +63,61 @@
       </tags>
   </entry>
   <entry>
+    <title>2024-11-11 日报 Day3</title>
+    <url>/undefined/2024-11-11/</url>
+    <content><![CDATA[
+  <div class="note-large red">
+    <div class="notel-title rounded-t-lg p-3 font-bold text-lg flex flex-row gap-2 items-center">
+      <p>今日的鸡汤</p>
+
+    </div>
+    <div class="notel-content">
+      <p>最慢的步伐不是跬步，而是徘徊;<br>最快的脚步不是冲刺，而是坚持。<br>The slowest pace is not a step, but wandering;<br>The fastest pace is not to sprint, but to persevere.</p>
+
+    </div>
+  </div>
+<h3 id="今日思考"><a href="#今日思考" class="headerlink" title="今日思考"></a>今日思考</h3><p>今天看到了一个youtube博主分享的一个行为习惯视频(<a class="link"   href="https://www.youtube.com/watch?v=4zXTyc2ZjXM)%EF%BC%8C%E5%85%B6%E4%B8%AD%E6%8F%90%E5%88%B0%E7%9A%84%E8%BF%99%E6%9C%AC%E3%80%8AThe" >https://www.youtube.com/watch?v=4zXTyc2ZjXM)，其中提到的这本《The <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a> 5 AM CLUB》以及5 AM Project.想要做到真正的早起需要一个明确的5 AM Project.<br> <img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://raw.githubusercontent.com/YuZeZhang/myImgslib/main/202411110002901.png"
+                      alt="image-202411110002901"
+                ></p>
+<p>这边就有一个问题，为什么非得是早上起来为什么不能是晚上熬夜呢？<br>早起奥义:<br>早上大脑是清空的 因此可以更好的学习自己的事情<br>晚上大脑经历了早上忙碌的工作，下班之后的时间都是垃圾时间，因此晚上经常会习惯刷短视频 一刷刷到后半夜</p>
+<p>-针对这个视频内容对我个人有什么思考呢？<br>可以考虑把下班后的学习时间提前到上班前。</p>
+<h3 id="今日学习内容"><a href="#今日学习内容" class="headerlink" title="今日学习内容"></a>今日学习内容</h3><pre><code>1、《网络是怎样连接的》 P75 - 完结🎉
+2、https://www.sonarsource.com/learn/monorepo/
+</code></pre>
+<h3 id="今日笔记"><a href="#今日笔记" class="headerlink" title="今日笔记"></a>今日笔记</h3><ul>
+<li><p>1、地址转换的基本原理是在转发网络包时对IP头部中的IP地址和端口号进行修改。</p>
+</li>
+<li><p>2、缓存服务器是一台通过<strong>代理机制</strong>对数据进行缓存的服务器。代理介于Web服务器和客户端之间，具有对Web服务器访问进行中转的功能。</p>
+</li>
+<li><p>3、正向代理: 在客户端部署一个代理。比如VPN、科学上网工具等。</p>
+</li>
+<li><p>4、反向代理: Nginx反向代理用于负载均衡和缓存、CDN加速服务。</p>
+</li>
+<li><p>5、CDN（Content Delivery Network）内容分发网络: 通过将内容分发到全球各地的服务器，使用户可以从距离较近的服务器获取内容，提高访问速度。<br>CDN基于WEB服务器运营者和网络运营商签约将自己的缓存服务器放在客户端的运营商处。一般有厂商提供CDN服务，提供这种服务的厂商称为CDSP（Content Delivery Service Provider）。</p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://raw.githubusercontent.com/YuZeZhang/myImgslib/main/202411110345416.png"
+                      alt="image-20241111034457433"
+                ></p>
+</li>
+</ul>
+<p>Reference: <a class="link"   href="https://bg.qianzhan.com/trends/detail/506/240226-8132891d.html" >https://bg.qianzhan.com/trends/detail/506/240226-8132891d.html <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
+<ul>
+<li>6、根据响应头的Content-Type字段，浏览器会决定如何处理响应的内容。例如，如果Content-Type字段的值是text&#x2F;html，浏览器会将响应的内容解析为HTML文档并显示在页面上。</li>
+</ul>
+]]></content>
+      <categories>
+        <category>journal</category>
+      </categories>
+      <tags>
+        <tag>journal</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>2024-11-9 日报 Day1</title>
     <url>/undefined/2024-11-9/</url>
     <content><![CDATA[<h2 id="写在本类目的最前面"><a href="#写在本类目的最前面" class="headerlink" title="写在本类目的最前面"></a>写在本类目的最前面</h2><p>   不知道以什么开始，就以最近看到的《我与地坛》中的一句话作为本类目的开头吧：</p>
@@ -94,6 +149,71 @@
       <tags>
         <tag>journal</tag>
       </tags>
+  </entry>
+  <entry>
+    <title>BFC</title>
+    <url>/Yuyang/BFC/</url>
+    <content><![CDATA[<h2 id="BFC"><a href="#BFC" class="headerlink" title="BFC"></a>BFC</h2><p>BFC(Block Formatting Context) 是一个独立的渲染区域，只有 Block-level box 参与，它规定了内部的 Block-level box 如何布局，并且与这个区域外部毫不相干。</p>
+<h2 id="BFC-的布局规则"><a href="#BFC-的布局规则" class="headerlink" title="BFC 的布局规则"></a>BFC 的布局规则</h2><ul>
+<li>内部的 Box 会在垂直方向，一个接一个地放置。</li>
+<li>Box 垂直方向的距离由 margin 决定，属于同一个 BFC 的两个相邻 Box 的 margin 会发生重叠。</li>
+<li>每个元素的 margin box 的左边， 与包含块 border box 的左边相接触（对于从左往右的格式化，否则相反），即使存在浮动也是如此。</li>
+<li>BFC 的区域不会与 float box 重叠。</li>
+<li>BFC 就是页面上的一个隔离的独立容器，容器里面的子元素不会影响到外面的元素，反之也如此。</li>
+<li>计算 BFC 的高度时，浮动元素也参与计算。</li>
+</ul>
+<h2 id="BFC的触发条件"><a href="#BFC的触发条件" class="headerlink" title="BFC的触发条件"></a>BFC的触发条件</h2><ul>
+<li>根元素，即 HTML 元素</li>
+<li>float 的值不为 none</li>
+<li>overflow 的值不为 visible</li>
+<li>display 的值为 inline-block、table-cell、table-caption</li>
+<li>position 的值为 absolute 或 fixed</li>
+<li>flex 元素的子元素，且父元素的 display 值为 flex 或 inline-flex</li>
+</ul>
+<h2 id="BFC-的应用"><a href="#BFC-的应用" class="headerlink" title="BFC 的应用"></a>BFC 的应用</h2><ul>
+<li>阻止 margin 重叠<br>属于同一个 BFC 的两个相邻 Box 的 margin 会发生重叠,以最大的为准。<div class="highlight-container" data-rel="Html"><figure class="iseeu highlight html"><table><tr><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE <span class="keyword">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">&quot;en&quot;</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">&quot;UTF-8&quot;</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">&quot;viewport&quot;</span> <span class="attr">content</span>=<span class="string">&quot;width=device-width, initial-scale=1.0&quot;</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">title</span>&gt;</span>BFC 示例<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;box1&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;box2&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="language-css"></span></span><br><span class="line"><span class="language-css">  <span class="selector-class">.box1</span> &#123;</span></span><br><span class="line"><span class="language-css">      <span class="attribute">width</span>: <span class="number">100px</span>;</span></span><br><span class="line"><span class="language-css">      <span class="attribute">height</span>: <span class="number">100px</span>;</span></span><br><span class="line"><span class="language-css">      <span class="attribute">background-color</span>: red;</span></span><br><span class="line"><span class="language-css">      <span class="attribute">margin-bottom</span>: <span class="number">20px</span>;</span></span><br><span class="line"><span class="language-css">  &#125;</span></span><br><span class="line"><span class="language-css">  <span class="selector-class">.box2</span> &#123;</span></span><br><span class="line"><span class="language-css">      <span class="attribute">width</span>: <span class="number">100px</span>;</span></span><br><span class="line"><span class="language-css">      <span class="attribute">height</span>: <span class="number">100px</span>;</span></span><br><span class="line"><span class="language-css">      <span class="attribute">background-color</span>: blue;</span></span><br><span class="line"><span class="language-css">      <span class="attribute">margin-top</span>: <span class="number">30px</span>;</span></span><br><span class="line"><span class="language-css">  &#125;</span></span><br><span class="line"><span class="language-css"></span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure></div></li>
+</ul>
+<p>避免重叠可以在box外面包裹一层容器，并触发这个容器生成一个BFC，此时不会出现margin重叠</p>
+<div class="highlight-container" data-rel="Html"><figure class="iseeu highlight html"><table><tr><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE <span class="keyword">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">&quot;en&quot;</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">&quot;UTF-8&quot;</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">&quot;viewport&quot;</span> <span class="attr">content</span>=<span class="string">&quot;width=device-width, initial-scale=1.0&quot;</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">title</span>&gt;</span>BFC 示例<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;box1&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;wrap&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;box2&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="language-css"></span></span><br><span class="line"><span class="language-css">  <span class="selector-class">.box1</span> &#123;</span></span><br><span class="line"><span class="language-css">      <span class="attribute">width</span>: <span class="number">100px</span>;</span></span><br><span class="line"><span class="language-css">      <span class="attribute">height</span>: <span class="number">100px</span>;</span></span><br><span class="line"><span class="language-css">      <span class="attribute">background-color</span>: red;</span></span><br><span class="line"><span class="language-css">      <span class="attribute">margin-bottom</span>: <span class="number">20px</span>;</span></span><br><span class="line"><span class="language-css">  &#125;</span></span><br><span class="line"><span class="language-css">  <span class="selector-class">.wrap</span> &#123;</span></span><br><span class="line"><span class="language-css">      <span class="attribute">overflow</span>: hidden;</span></span><br><span class="line"><span class="language-css">  &#125;</span></span><br><span class="line"><span class="language-css">  <span class="selector-class">.box2</span> &#123;</span></span><br><span class="line"><span class="language-css">      <span class="attribute">width</span>: <span class="number">100px</span>;</span></span><br><span class="line"><span class="language-css">      <span class="attribute">height</span>: <span class="number">100px</span>;</span></span><br><span class="line"><span class="language-css">      <span class="attribute">background-color</span>: blue;</span></span><br><span class="line"><span class="language-css">      <span class="attribute">margin-top</span>: <span class="number">30px</span>;</span></span><br><span class="line"><span class="language-css">  &#125;</span></span><br><span class="line"><span class="language-css"></span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure></div>
+<p>这时候box1和box2的margin不会重叠</p>
+<ul>
+<li>清除浮动<br>有浮动样式</li>
+</ul>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://raw.githubusercontent.com/YuZeZhang/myImgslib/main/202410201531989.png"
+                      alt="image-20241020153054705"
+                ></p>
+<div class="highlight-container" data-rel="Html"><figure class="iseeu highlight html"><table><tr><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE <span class="keyword">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">&quot;en&quot;</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">&quot;UTF-8&quot;</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">&quot;viewport&quot;</span> <span class="attr">content</span>=<span class="string">&quot;width=device-width, initial-scale=1.0&quot;</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">title</span>&gt;</span>BFC 示例<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;container&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;float-box&quot;</span>&gt;</span>浮动框 1<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;float-box&quot;</span>&gt;</span>浮动框 2<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;clearfix-example&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">p</span>&gt;</span>这是另一个段落，如果不清除浮动，它会和上面的浮动框重叠。<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="language-css"></span></span><br><span class="line"><span class="language-css"><span class="selector-tag">body</span> &#123;</span></span><br><span class="line"><span class="language-css">  <span class="attribute">font-family</span>: Arial, sans-serif;</span></span><br><span class="line"><span class="language-css">  <span class="attribute">margin</span>: <span class="number">0</span>;</span></span><br><span class="line"><span class="language-css">  <span class="attribute">padding</span>: <span class="number">20px</span>;</span></span><br><span class="line"><span class="language-css">  <span class="attribute">background-color</span>: <span class="number">#ffffff</span>;</span></span><br><span class="line"><span class="language-css">&#125;</span></span><br><span class="line"><span class="language-css"></span></span><br><span class="line"><span class="language-css"><span class="selector-class">.container</span> &#123;</span></span><br><span class="line"><span class="language-css">  <span class="attribute">background-color</span>: <span class="number">#eaf2f8</span>;</span></span><br><span class="line"><span class="language-css">  <span class="attribute">padding</span>: <span class="number">10px</span>;</span></span><br><span class="line"><span class="language-css">&#125;</span></span><br><span class="line"><span class="language-css"></span></span><br><span class="line"><span class="language-css"><span class="selector-class">.float-box</span> &#123;</span></span><br><span class="line"><span class="language-css">  <span class="attribute">float</span>: left;</span></span><br><span class="line"><span class="language-css">  <span class="attribute">width</span>: <span class="number">100px</span>;</span></span><br><span class="line"><span class="language-css">  <span class="attribute">height</span>: <span class="number">100px</span>;</span></span><br><span class="line"><span class="language-css">  <span class="attribute">margin-right</span>: <span class="number">10px</span>;</span></span><br><span class="line"><span class="language-css">  <span class="attribute">background-color</span>: <span class="number">#3498db</span>;</span></span><br><span class="line"><span class="language-css">  <span class="attribute">color</span>: white;</span></span><br><span class="line"><span class="language-css">  <span class="attribute">text-align</span>: center;</span></span><br><span class="line"><span class="language-css">  <span class="attribute">line-height</span>: <span class="number">100px</span>;</span></span><br><span class="line"><span class="language-css">&#125;</span></span><br><span class="line"><span class="language-css"></span></span><br><span class="line"><span class="language-css"><span class="selector-class">.clearfix-example</span> &#123;</span></span><br><span class="line"><span class="language-css">  <span class="attribute">background-color</span>: <span class="number">#f9e79f</span>;</span></span><br><span class="line"><span class="language-css">  <span class="attribute">padding</span>: <span class="number">20px</span>;</span></span><br><span class="line"><span class="language-css">  <span class="attribute">margin-top</span>: <span class="number">10px</span>;</span></span><br><span class="line"><span class="language-css">  <span class="attribute">overflow</span>: hidden;</span></span><br><span class="line"><span class="language-css">&#125;</span></span><br><span class="line"><span class="language-css"></span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure></div>
+<p>清除浮动后</p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://raw.githubusercontent.com/YuZeZhang/myImgslib/main/202410201534497.png"
+                      alt="image-20241020153407574"
+                ></p>
+<div class="highlight-container" data-rel="Html"><figure class="iseeu highlight html"><table><tr><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE <span class="keyword">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">&quot;en&quot;</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">&quot;UTF-8&quot;</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">&quot;viewport&quot;</span> <span class="attr">content</span>=<span class="string">&quot;width=device-width, initial-scale=1.0&quot;</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">title</span>&gt;</span>BFC 示例<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;container&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;float-box&quot;</span>&gt;</span>浮动框 1<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;float-box&quot;</span>&gt;</span>浮动框 2<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;clearfix-example&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">p</span>&gt;</span>这是另一个段落，如果不清除浮动，它会和上面的浮动框重叠。<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="language-css"></span></span><br><span class="line"><span class="language-css"><span class="selector-tag">body</span> &#123;</span></span><br><span class="line"><span class="language-css">  <span class="attribute">font-family</span>: Arial, sans-serif;</span></span><br><span class="line"><span class="language-css">  <span class="attribute">margin</span>: <span class="number">0</span>;</span></span><br><span class="line"><span class="language-css">  <span class="attribute">padding</span>: <span class="number">20px</span>;</span></span><br><span class="line"><span class="language-css">  <span class="attribute">background-color</span>: <span class="number">#ffffff</span>;</span></span><br><span class="line"><span class="language-css">&#125;</span></span><br><span class="line"><span class="language-css"></span></span><br><span class="line"><span class="language-css"><span class="selector-class">.container</span> &#123;</span></span><br><span class="line"><span class="language-css">  <span class="attribute">background-color</span>: <span class="number">#eaf2f8</span>;</span></span><br><span class="line"><span class="language-css">  <span class="attribute">padding</span>: <span class="number">10px</span>;</span></span><br><span class="line"><span class="language-css">&#125;</span></span><br><span class="line"><span class="language-css"></span></span><br><span class="line"><span class="language-css"><span class="selector-class">.float-box</span> &#123;</span></span><br><span class="line"><span class="language-css">  <span class="attribute">float</span>: left;</span></span><br><span class="line"><span class="language-css">  <span class="attribute">width</span>: <span class="number">100px</span>;</span></span><br><span class="line"><span class="language-css">  <span class="attribute">height</span>: <span class="number">100px</span>;</span></span><br><span class="line"><span class="language-css">  <span class="attribute">margin-right</span>: <span class="number">10px</span>;</span></span><br><span class="line"><span class="language-css">  <span class="attribute">background-color</span>: <span class="number">#3498db</span>;</span></span><br><span class="line"><span class="language-css">  <span class="attribute">color</span>: white;</span></span><br><span class="line"><span class="language-css">  <span class="attribute">text-align</span>: center;</span></span><br><span class="line"><span class="language-css">  <span class="attribute">line-height</span>: <span class="number">100px</span>;</span></span><br><span class="line"><span class="language-css">&#125;</span></span><br><span class="line"><span class="language-css"></span></span><br><span class="line"><span class="language-css"><span class="selector-class">.clearfix-example</span> &#123;</span></span><br><span class="line"><span class="language-css">  <span class="attribute">background-color</span>: <span class="number">#f9e79f</span>;</span></span><br><span class="line"><span class="language-css">  <span class="attribute">padding</span>: <span class="number">20px</span>;</span></span><br><span class="line"><span class="language-css">  <span class="attribute">margin-top</span>: <span class="number">10px</span>;</span></span><br><span class="line"><span class="language-css">  <span class="attribute">overflow</span>: hidden;</span></span><br><span class="line"><span class="language-css">&#125;</span></span><br><span class="line"><span class="language-css"></span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure></div>
+<ul>
+<li>自适应两栏布局<br>这里以两栏布局为例</li>
+</ul>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://raw.githubusercontent.com/YuZeZhang/myImgslib/main/202410201541730.png"
+                      alt="image-20241020154148226"
+                ></p>
+<div class="highlight-container" data-rel="Html"><figure class="iseeu highlight html"><table><tr><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE <span class="keyword">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">&quot;en&quot;</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">&quot;UTF-8&quot;</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">&quot;viewport&quot;</span> <span class="attr">content</span>=<span class="string">&quot;width=device-width, initial-scale=1.0&quot;</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">title</span>&gt;</span>BFC 示例<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;aside&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;main&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="language-css"></span></span><br><span class="line"><span class="language-css"><span class="selector-tag">body</span> &#123;</span></span><br><span class="line"><span class="language-css">  <span class="attribute">width</span>: <span class="number">300px</span>;</span></span><br><span class="line"><span class="language-css">&#125;</span></span><br><span class="line"><span class="language-css"></span></span><br><span class="line"><span class="language-css"><span class="selector-class">.aside</span> &#123;</span></span><br><span class="line"><span class="language-css">  <span class="attribute">width</span>: <span class="number">100px</span>;</span></span><br><span class="line"><span class="language-css">  <span class="attribute">height</span>: <span class="number">100px</span>;</span></span><br><span class="line"><span class="language-css">  <span class="attribute">background-color</span>: red;</span></span><br><span class="line"><span class="language-css">  <span class="attribute">float</span>: left;</span></span><br><span class="line"><span class="language-css">&#125;</span></span><br><span class="line"><span class="language-css"></span></span><br><span class="line"><span class="language-css"><span class="selector-class">.main</span> &#123;</span></span><br><span class="line"><span class="language-css">  <span class="attribute">width</span>: <span class="number">200px</span>;</span></span><br><span class="line"><span class="language-css">  <span class="attribute">height</span>: <span class="number">200px</span>;</span></span><br><span class="line"><span class="language-css">  <span class="attribute">background-color</span>: blue;</span></span><br><span class="line"><span class="language-css">&#125;</span></span><br><span class="line"><span class="language-css"></span></span><br><span class="line"><span class="language-css"></span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure></div>
+<p>每个元素的左外边距与包含块的左边界相接触（从左到右），即使浮动元素也是如此。而BFC的区域不会与浮动盒子重叠，所以可以通过触发main生成一个BFC来实现两栏布局</p>
+<div class="highlight-container" data-rel="Html"><figure class="iseeu highlight html"><table><tr><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE <span class="keyword">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">&quot;en&quot;</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">&quot;UTF-8&quot;</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">&quot;viewport&quot;</span> <span class="attr">content</span>=<span class="string">&quot;width=device-width, initial-scale=1.0&quot;</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">title</span>&gt;</span>BFC 示例<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;aside&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;main&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="language-css"></span></span><br><span class="line"><span class="language-css"><span class="selector-tag">body</span> &#123;</span></span><br><span class="line"><span class="language-css">  <span class="attribute">width</span>: <span class="number">300px</span>;</span></span><br><span class="line"><span class="language-css">&#125;</span></span><br><span class="line"><span class="language-css"></span></span><br><span class="line"><span class="language-css"><span class="selector-class">.aside</span> &#123;</span></span><br><span class="line"><span class="language-css">  <span class="attribute">width</span>: <span class="number">100px</span>;</span></span><br><span class="line"><span class="language-css">  <span class="attribute">height</span>: <span class="number">100px</span>;</span></span><br><span class="line"><span class="language-css">  <span class="attribute">background-color</span>: red;</span></span><br><span class="line"><span class="language-css">  <span class="attribute">float</span>: left;</span></span><br><span class="line"><span class="language-css">&#125;</span></span><br><span class="line"><span class="language-css"></span></span><br><span class="line"><span class="language-css"><span class="selector-class">.main</span> &#123;</span></span><br><span class="line"><span class="language-css">  <span class="attribute">width</span>: <span class="number">200px</span>;</span></span><br><span class="line"><span class="language-css">  <span class="attribute">height</span>: <span class="number">200px</span>;</span></span><br><span class="line"><span class="language-css">  <span class="attribute">background-color</span>: blue;</span></span><br><span class="line"><span class="language-css">  <span class="attribute">overflow</span>: hidden;</span></span><br><span class="line"><span class="language-css">&#125;</span></span><br><span class="line"><span class="language-css"></span></span><br><span class="line"><span class="language-css"></span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure></div>
+
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://raw.githubusercontent.com/YuZeZhang/myImgslib/main/202410202036606.png"
+                      alt="image-20241020203632868"
+                ></p>
+]]></content>
   </entry>
   <entry>
     <title>CSS 盒模型</title>
@@ -134,6 +254,39 @@
 
 <div class="highlight-container" data-rel="Css"><figure class="iseeu highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-tag">body</span> &#123;</span><br><span class="line">    <span class="attribute">margin</span>: <span class="number">0</span>;</span><br><span class="line">    <span class="attribute">padding</span>: <span class="number">0</span>;</span><br><span class="line">    <span class="attribute">font-family</span>: Arial, sans-serif;</span><br><span class="line">    <span class="attribute">display</span>: flex;</span><br><span class="line">    <span class="attribute">justify-content</span>: center;</span><br><span class="line">    <span class="attribute">align-items</span>: center;</span><br><span class="line">    <span class="attribute">height</span>: <span class="number">100vh</span>;</span><br><span class="line">  &#125;</span><br><span class="line">  </span><br><span class="line"><span class="selector-class">.box</span> &#123;</span><br><span class="line">    <span class="attribute">width</span>: <span class="number">200px</span>;</span><br><span class="line">    <span class="attribute">height</span>: <span class="number">100px</span>;</span><br><span class="line">    <span class="attribute">padding</span>: <span class="number">20px</span>;</span><br><span class="line">    <span class="attribute">margin</span>: <span class="number">30px</span>;</span><br><span class="line">    <span class="attribute">border</span>: <span class="number">5px</span> solid <span class="number">#3498db</span>;</span><br><span class="line">    <span class="attribute">background-color</span>: <span class="number">#f5f5f5</span>;</span><br><span class="line">    <span class="attribute">box-sizing</span>: content-box;</span><br><span class="line">    <span class="attribute">text-align</span>: center;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.box2</span>&#123;</span><br><span class="line">    <span class="attribute">width</span>: <span class="number">200px</span>;</span><br><span class="line">    <span class="attribute">height</span>: <span class="number">100px</span>;</span><br><span class="line">    <span class="attribute">padding</span>: <span class="number">20px</span>;</span><br><span class="line">    <span class="attribute">margin</span>: <span class="number">30px</span>;</span><br><span class="line">    <span class="attribute">border</span>: <span class="number">5px</span> solid <span class="number">#3498db</span>;</span><br><span class="line">    <span class="attribute">background-color</span>: <span class="number">#f5f5f5</span>;</span><br><span class="line">    <span class="attribute">box-sizing</span>: border-box;</span><br><span class="line">    <span class="attribute">text-align</span>: center;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure></div>
 
+]]></content>
+  </entry>
+  <entry>
+    <title>Blockchain and Money Session1</title>
+    <url>/Yuyang/MIT15-S12-session1/</url>
+    <content><![CDATA[<p>最近在学习这个区块链课程，单纯记录一下学习笔记。</p>
+<p>The Internet: Layers of open protocols</p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://raw.githubusercontent.com/YuZeZhang/myImgslib/main/202408060025360.png"
+                      alt="image-20240806002506930"
+                ></p>
+<h2 id="what-is-a-blockchain？"><a href="#what-is-a-blockchain？" class="headerlink" title="what is a blockchain？"></a>what is a blockchain？</h2><p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://raw.githubusercontent.com/YuZeZhang/myImgslib/main/202408060032056.png"
+                      alt="image-20240806003227672"
+                ></p>
+<p>区块链技术</p>
+<ul>
+<li>Verifiably moves ‘data’ on a decentralized network </li>
+<li>The ‘data’ can represent value or computer code </li>
+<li>Thus it goes directly to the plumbing of the financial sector and money </li>
+<li>Broad adoption rests on addressing technical, commercial and public policy hurdles </li>
+<li>It can be a catalyst for change in the world of finance and money</li>
+</ul>
+<h2 id="What-is-the-Role-of-Money"><a href="#What-is-the-Role-of-Money" class="headerlink" title="What is the Role of Money?"></a>What is the Role of Money?</h2><p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://raw.githubusercontent.com/YuZeZhang/myImgslib/main/202408060118524.png"
+                      alt="image-20240806011757446"
+                ></p>
 ]]></content>
   </entry>
   <entry>
@@ -229,39 +382,6 @@
 <td>简单且稳定，方便全局控制字体和布局</td>
 </tr>
 </tbody></table>
-]]></content>
-  </entry>
-  <entry>
-    <title>Blockchain and Money Session1</title>
-    <url>/Yuyang/MIT15-S12-session1/</url>
-    <content><![CDATA[<p>最近在学习这个区块链课程，单纯记录一下学习笔记。</p>
-<p>The Internet: Layers of open protocols</p>
-<p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="https://raw.githubusercontent.com/YuZeZhang/myImgslib/main/202408060025360.png"
-                      alt="image-20240806002506930"
-                ></p>
-<h2 id="what-is-a-blockchain？"><a href="#what-is-a-blockchain？" class="headerlink" title="what is a blockchain？"></a>what is a blockchain？</h2><p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="https://raw.githubusercontent.com/YuZeZhang/myImgslib/main/202408060032056.png"
-                      alt="image-20240806003227672"
-                ></p>
-<p>区块链技术</p>
-<ul>
-<li>Verifiably moves ‘data’ on a decentralized network </li>
-<li>The ‘data’ can represent value or computer code </li>
-<li>Thus it goes directly to the plumbing of the financial sector and money </li>
-<li>Broad adoption rests on addressing technical, commercial and public policy hurdles </li>
-<li>It can be a catalyst for change in the world of finance and money</li>
-</ul>
-<h2 id="What-is-the-Role-of-Money"><a href="#What-is-the-Role-of-Money" class="headerlink" title="What is the Role of Money?"></a>What is the Role of Money?</h2><p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="https://raw.githubusercontent.com/YuZeZhang/myImgslib/main/202408060118524.png"
-                      alt="image-20240806011757446"
-                ></p>
 ]]></content>
   </entry>
   <entry>
@@ -408,93 +528,6 @@
 ]]></content>
   </entry>
   <entry>
-    <title>BFC</title>
-    <url>/Yuyang/BFC/</url>
-    <content><![CDATA[<h2 id="BFC"><a href="#BFC" class="headerlink" title="BFC"></a>BFC</h2><p>BFC(Block Formatting Context) 是一个独立的渲染区域，只有 Block-level box 参与，它规定了内部的 Block-level box 如何布局，并且与这个区域外部毫不相干。</p>
-<h2 id="BFC-的布局规则"><a href="#BFC-的布局规则" class="headerlink" title="BFC 的布局规则"></a>BFC 的布局规则</h2><ul>
-<li>内部的 Box 会在垂直方向，一个接一个地放置。</li>
-<li>Box 垂直方向的距离由 margin 决定，属于同一个 BFC 的两个相邻 Box 的 margin 会发生重叠。</li>
-<li>每个元素的 margin box 的左边， 与包含块 border box 的左边相接触（对于从左往右的格式化，否则相反），即使存在浮动也是如此。</li>
-<li>BFC 的区域不会与 float box 重叠。</li>
-<li>BFC 就是页面上的一个隔离的独立容器，容器里面的子元素不会影响到外面的元素，反之也如此。</li>
-<li>计算 BFC 的高度时，浮动元素也参与计算。</li>
-</ul>
-<h2 id="BFC的触发条件"><a href="#BFC的触发条件" class="headerlink" title="BFC的触发条件"></a>BFC的触发条件</h2><ul>
-<li>根元素，即 HTML 元素</li>
-<li>float 的值不为 none</li>
-<li>overflow 的值不为 visible</li>
-<li>display 的值为 inline-block、table-cell、table-caption</li>
-<li>position 的值为 absolute 或 fixed</li>
-<li>flex 元素的子元素，且父元素的 display 值为 flex 或 inline-flex</li>
-</ul>
-<h2 id="BFC-的应用"><a href="#BFC-的应用" class="headerlink" title="BFC 的应用"></a>BFC 的应用</h2><ul>
-<li>阻止 margin 重叠<br>属于同一个 BFC 的两个相邻 Box 的 margin 会发生重叠,以最大的为准。<div class="highlight-container" data-rel="Html"><figure class="iseeu highlight html"><table><tr><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE <span class="keyword">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">&quot;en&quot;</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">&quot;UTF-8&quot;</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">&quot;viewport&quot;</span> <span class="attr">content</span>=<span class="string">&quot;width=device-width, initial-scale=1.0&quot;</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">title</span>&gt;</span>BFC 示例<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;box1&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;box2&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="language-css"></span></span><br><span class="line"><span class="language-css">  <span class="selector-class">.box1</span> &#123;</span></span><br><span class="line"><span class="language-css">      <span class="attribute">width</span>: <span class="number">100px</span>;</span></span><br><span class="line"><span class="language-css">      <span class="attribute">height</span>: <span class="number">100px</span>;</span></span><br><span class="line"><span class="language-css">      <span class="attribute">background-color</span>: red;</span></span><br><span class="line"><span class="language-css">      <span class="attribute">margin-bottom</span>: <span class="number">20px</span>;</span></span><br><span class="line"><span class="language-css">  &#125;</span></span><br><span class="line"><span class="language-css">  <span class="selector-class">.box2</span> &#123;</span></span><br><span class="line"><span class="language-css">      <span class="attribute">width</span>: <span class="number">100px</span>;</span></span><br><span class="line"><span class="language-css">      <span class="attribute">height</span>: <span class="number">100px</span>;</span></span><br><span class="line"><span class="language-css">      <span class="attribute">background-color</span>: blue;</span></span><br><span class="line"><span class="language-css">      <span class="attribute">margin-top</span>: <span class="number">30px</span>;</span></span><br><span class="line"><span class="language-css">  &#125;</span></span><br><span class="line"><span class="language-css"></span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure></div></li>
-</ul>
-<p>避免重叠可以在box外面包裹一层容器，并触发这个容器生成一个BFC，此时不会出现margin重叠</p>
-<div class="highlight-container" data-rel="Html"><figure class="iseeu highlight html"><table><tr><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE <span class="keyword">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">&quot;en&quot;</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">&quot;UTF-8&quot;</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">&quot;viewport&quot;</span> <span class="attr">content</span>=<span class="string">&quot;width=device-width, initial-scale=1.0&quot;</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">title</span>&gt;</span>BFC 示例<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;box1&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;wrap&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;box2&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="language-css"></span></span><br><span class="line"><span class="language-css">  <span class="selector-class">.box1</span> &#123;</span></span><br><span class="line"><span class="language-css">      <span class="attribute">width</span>: <span class="number">100px</span>;</span></span><br><span class="line"><span class="language-css">      <span class="attribute">height</span>: <span class="number">100px</span>;</span></span><br><span class="line"><span class="language-css">      <span class="attribute">background-color</span>: red;</span></span><br><span class="line"><span class="language-css">      <span class="attribute">margin-bottom</span>: <span class="number">20px</span>;</span></span><br><span class="line"><span class="language-css">  &#125;</span></span><br><span class="line"><span class="language-css">  <span class="selector-class">.wrap</span> &#123;</span></span><br><span class="line"><span class="language-css">      <span class="attribute">overflow</span>: hidden;</span></span><br><span class="line"><span class="language-css">  &#125;</span></span><br><span class="line"><span class="language-css">  <span class="selector-class">.box2</span> &#123;</span></span><br><span class="line"><span class="language-css">      <span class="attribute">width</span>: <span class="number">100px</span>;</span></span><br><span class="line"><span class="language-css">      <span class="attribute">height</span>: <span class="number">100px</span>;</span></span><br><span class="line"><span class="language-css">      <span class="attribute">background-color</span>: blue;</span></span><br><span class="line"><span class="language-css">      <span class="attribute">margin-top</span>: <span class="number">30px</span>;</span></span><br><span class="line"><span class="language-css">  &#125;</span></span><br><span class="line"><span class="language-css"></span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure></div>
-<p>这时候box1和box2的margin不会重叠</p>
-<ul>
-<li>清除浮动<br>有浮动样式</li>
-</ul>
-<p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="https://raw.githubusercontent.com/YuZeZhang/myImgslib/main/202410201531989.png"
-                      alt="image-20241020153054705"
-                ></p>
-<div class="highlight-container" data-rel="Html"><figure class="iseeu highlight html"><table><tr><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE <span class="keyword">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">&quot;en&quot;</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">&quot;UTF-8&quot;</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">&quot;viewport&quot;</span> <span class="attr">content</span>=<span class="string">&quot;width=device-width, initial-scale=1.0&quot;</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">title</span>&gt;</span>BFC 示例<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;container&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;float-box&quot;</span>&gt;</span>浮动框 1<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;float-box&quot;</span>&gt;</span>浮动框 2<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;clearfix-example&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">p</span>&gt;</span>这是另一个段落，如果不清除浮动，它会和上面的浮动框重叠。<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="language-css"></span></span><br><span class="line"><span class="language-css"><span class="selector-tag">body</span> &#123;</span></span><br><span class="line"><span class="language-css">  <span class="attribute">font-family</span>: Arial, sans-serif;</span></span><br><span class="line"><span class="language-css">  <span class="attribute">margin</span>: <span class="number">0</span>;</span></span><br><span class="line"><span class="language-css">  <span class="attribute">padding</span>: <span class="number">20px</span>;</span></span><br><span class="line"><span class="language-css">  <span class="attribute">background-color</span>: <span class="number">#ffffff</span>;</span></span><br><span class="line"><span class="language-css">&#125;</span></span><br><span class="line"><span class="language-css"></span></span><br><span class="line"><span class="language-css"><span class="selector-class">.container</span> &#123;</span></span><br><span class="line"><span class="language-css">  <span class="attribute">background-color</span>: <span class="number">#eaf2f8</span>;</span></span><br><span class="line"><span class="language-css">  <span class="attribute">padding</span>: <span class="number">10px</span>;</span></span><br><span class="line"><span class="language-css">&#125;</span></span><br><span class="line"><span class="language-css"></span></span><br><span class="line"><span class="language-css"><span class="selector-class">.float-box</span> &#123;</span></span><br><span class="line"><span class="language-css">  <span class="attribute">float</span>: left;</span></span><br><span class="line"><span class="language-css">  <span class="attribute">width</span>: <span class="number">100px</span>;</span></span><br><span class="line"><span class="language-css">  <span class="attribute">height</span>: <span class="number">100px</span>;</span></span><br><span class="line"><span class="language-css">  <span class="attribute">margin-right</span>: <span class="number">10px</span>;</span></span><br><span class="line"><span class="language-css">  <span class="attribute">background-color</span>: <span class="number">#3498db</span>;</span></span><br><span class="line"><span class="language-css">  <span class="attribute">color</span>: white;</span></span><br><span class="line"><span class="language-css">  <span class="attribute">text-align</span>: center;</span></span><br><span class="line"><span class="language-css">  <span class="attribute">line-height</span>: <span class="number">100px</span>;</span></span><br><span class="line"><span class="language-css">&#125;</span></span><br><span class="line"><span class="language-css"></span></span><br><span class="line"><span class="language-css"><span class="selector-class">.clearfix-example</span> &#123;</span></span><br><span class="line"><span class="language-css">  <span class="attribute">background-color</span>: <span class="number">#f9e79f</span>;</span></span><br><span class="line"><span class="language-css">  <span class="attribute">padding</span>: <span class="number">20px</span>;</span></span><br><span class="line"><span class="language-css">  <span class="attribute">margin-top</span>: <span class="number">10px</span>;</span></span><br><span class="line"><span class="language-css">  <span class="attribute">overflow</span>: hidden;</span></span><br><span class="line"><span class="language-css">&#125;</span></span><br><span class="line"><span class="language-css"></span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure></div>
-<p>清除浮动后</p>
-<p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="https://raw.githubusercontent.com/YuZeZhang/myImgslib/main/202410201534497.png"
-                      alt="image-20241020153407574"
-                ></p>
-<div class="highlight-container" data-rel="Html"><figure class="iseeu highlight html"><table><tr><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE <span class="keyword">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">&quot;en&quot;</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">&quot;UTF-8&quot;</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">&quot;viewport&quot;</span> <span class="attr">content</span>=<span class="string">&quot;width=device-width, initial-scale=1.0&quot;</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">title</span>&gt;</span>BFC 示例<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;container&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;float-box&quot;</span>&gt;</span>浮动框 1<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;float-box&quot;</span>&gt;</span>浮动框 2<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;clearfix-example&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">p</span>&gt;</span>这是另一个段落，如果不清除浮动，它会和上面的浮动框重叠。<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="language-css"></span></span><br><span class="line"><span class="language-css"><span class="selector-tag">body</span> &#123;</span></span><br><span class="line"><span class="language-css">  <span class="attribute">font-family</span>: Arial, sans-serif;</span></span><br><span class="line"><span class="language-css">  <span class="attribute">margin</span>: <span class="number">0</span>;</span></span><br><span class="line"><span class="language-css">  <span class="attribute">padding</span>: <span class="number">20px</span>;</span></span><br><span class="line"><span class="language-css">  <span class="attribute">background-color</span>: <span class="number">#ffffff</span>;</span></span><br><span class="line"><span class="language-css">&#125;</span></span><br><span class="line"><span class="language-css"></span></span><br><span class="line"><span class="language-css"><span class="selector-class">.container</span> &#123;</span></span><br><span class="line"><span class="language-css">  <span class="attribute">background-color</span>: <span class="number">#eaf2f8</span>;</span></span><br><span class="line"><span class="language-css">  <span class="attribute">padding</span>: <span class="number">10px</span>;</span></span><br><span class="line"><span class="language-css">&#125;</span></span><br><span class="line"><span class="language-css"></span></span><br><span class="line"><span class="language-css"><span class="selector-class">.float-box</span> &#123;</span></span><br><span class="line"><span class="language-css">  <span class="attribute">float</span>: left;</span></span><br><span class="line"><span class="language-css">  <span class="attribute">width</span>: <span class="number">100px</span>;</span></span><br><span class="line"><span class="language-css">  <span class="attribute">height</span>: <span class="number">100px</span>;</span></span><br><span class="line"><span class="language-css">  <span class="attribute">margin-right</span>: <span class="number">10px</span>;</span></span><br><span class="line"><span class="language-css">  <span class="attribute">background-color</span>: <span class="number">#3498db</span>;</span></span><br><span class="line"><span class="language-css">  <span class="attribute">color</span>: white;</span></span><br><span class="line"><span class="language-css">  <span class="attribute">text-align</span>: center;</span></span><br><span class="line"><span class="language-css">  <span class="attribute">line-height</span>: <span class="number">100px</span>;</span></span><br><span class="line"><span class="language-css">&#125;</span></span><br><span class="line"><span class="language-css"></span></span><br><span class="line"><span class="language-css"><span class="selector-class">.clearfix-example</span> &#123;</span></span><br><span class="line"><span class="language-css">  <span class="attribute">background-color</span>: <span class="number">#f9e79f</span>;</span></span><br><span class="line"><span class="language-css">  <span class="attribute">padding</span>: <span class="number">20px</span>;</span></span><br><span class="line"><span class="language-css">  <span class="attribute">margin-top</span>: <span class="number">10px</span>;</span></span><br><span class="line"><span class="language-css">  <span class="attribute">overflow</span>: hidden;</span></span><br><span class="line"><span class="language-css">&#125;</span></span><br><span class="line"><span class="language-css"></span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure></div>
-<ul>
-<li>自适应两栏布局<br>这里以两栏布局为例</li>
-</ul>
-<p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="https://raw.githubusercontent.com/YuZeZhang/myImgslib/main/202410201541730.png"
-                      alt="image-20241020154148226"
-                ></p>
-<div class="highlight-container" data-rel="Html"><figure class="iseeu highlight html"><table><tr><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE <span class="keyword">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">&quot;en&quot;</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">&quot;UTF-8&quot;</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">&quot;viewport&quot;</span> <span class="attr">content</span>=<span class="string">&quot;width=device-width, initial-scale=1.0&quot;</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">title</span>&gt;</span>BFC 示例<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;aside&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;main&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="language-css"></span></span><br><span class="line"><span class="language-css"><span class="selector-tag">body</span> &#123;</span></span><br><span class="line"><span class="language-css">  <span class="attribute">width</span>: <span class="number">300px</span>;</span></span><br><span class="line"><span class="language-css">&#125;</span></span><br><span class="line"><span class="language-css"></span></span><br><span class="line"><span class="language-css"><span class="selector-class">.aside</span> &#123;</span></span><br><span class="line"><span class="language-css">  <span class="attribute">width</span>: <span class="number">100px</span>;</span></span><br><span class="line"><span class="language-css">  <span class="attribute">height</span>: <span class="number">100px</span>;</span></span><br><span class="line"><span class="language-css">  <span class="attribute">background-color</span>: red;</span></span><br><span class="line"><span class="language-css">  <span class="attribute">float</span>: left;</span></span><br><span class="line"><span class="language-css">&#125;</span></span><br><span class="line"><span class="language-css"></span></span><br><span class="line"><span class="language-css"><span class="selector-class">.main</span> &#123;</span></span><br><span class="line"><span class="language-css">  <span class="attribute">width</span>: <span class="number">200px</span>;</span></span><br><span class="line"><span class="language-css">  <span class="attribute">height</span>: <span class="number">200px</span>;</span></span><br><span class="line"><span class="language-css">  <span class="attribute">background-color</span>: blue;</span></span><br><span class="line"><span class="language-css">&#125;</span></span><br><span class="line"><span class="language-css"></span></span><br><span class="line"><span class="language-css"></span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure></div>
-<p>每个元素的左外边距与包含块的左边界相接触（从左到右），即使浮动元素也是如此。而BFC的区域不会与浮动盒子重叠，所以可以通过触发main生成一个BFC来实现两栏布局</p>
-<div class="highlight-container" data-rel="Html"><figure class="iseeu highlight html"><table><tr><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE <span class="keyword">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">&quot;en&quot;</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">&quot;UTF-8&quot;</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">&quot;viewport&quot;</span> <span class="attr">content</span>=<span class="string">&quot;width=device-width, initial-scale=1.0&quot;</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">title</span>&gt;</span>BFC 示例<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;aside&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;main&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="language-css"></span></span><br><span class="line"><span class="language-css"><span class="selector-tag">body</span> &#123;</span></span><br><span class="line"><span class="language-css">  <span class="attribute">width</span>: <span class="number">300px</span>;</span></span><br><span class="line"><span class="language-css">&#125;</span></span><br><span class="line"><span class="language-css"></span></span><br><span class="line"><span class="language-css"><span class="selector-class">.aside</span> &#123;</span></span><br><span class="line"><span class="language-css">  <span class="attribute">width</span>: <span class="number">100px</span>;</span></span><br><span class="line"><span class="language-css">  <span class="attribute">height</span>: <span class="number">100px</span>;</span></span><br><span class="line"><span class="language-css">  <span class="attribute">background-color</span>: red;</span></span><br><span class="line"><span class="language-css">  <span class="attribute">float</span>: left;</span></span><br><span class="line"><span class="language-css">&#125;</span></span><br><span class="line"><span class="language-css"></span></span><br><span class="line"><span class="language-css"><span class="selector-class">.main</span> &#123;</span></span><br><span class="line"><span class="language-css">  <span class="attribute">width</span>: <span class="number">200px</span>;</span></span><br><span class="line"><span class="language-css">  <span class="attribute">height</span>: <span class="number">200px</span>;</span></span><br><span class="line"><span class="language-css">  <span class="attribute">background-color</span>: blue;</span></span><br><span class="line"><span class="language-css">  <span class="attribute">overflow</span>: hidden;</span></span><br><span class="line"><span class="language-css">&#125;</span></span><br><span class="line"><span class="language-css"></span></span><br><span class="line"><span class="language-css"></span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure></div>
-
-<p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="https://raw.githubusercontent.com/YuZeZhang/myImgslib/main/202410202036606.png"
-                      alt="image-20241020203632868"
-                ></p>
-]]></content>
-  </entry>
-  <entry>
-    <title>前端编码规范工程化</title>
-    <url>/Yuyang/baseconfigcli/</url>
-    <content><![CDATA[<h2 id="前端规范"><a href="#前端规范" class="headerlink" title="前端规范"></a>前端规范</h2><p>1、React Vue Js Ts 代码规范 eslint<br>2、Css Less Scss css预处理器 代码规范 stylelint<br>3、git commitlint 规范提交信息 husky<br>4、markdownlint 规范 markdown 代码</p>
-<p>lint 收敛 CLI</p>
-<p>1、一键接入、一键扫描、一键修复、一键升级</p>
-<h2 id="技术选型"><a href="#技术选型" class="headerlink" title="技术选型"></a>技术选型</h2><ul>
-<li>多包：monorepo lerna</li>
-<li>包管理工具：pnpm</li>
-<li>lint:<ul>
-<li>eslint</li>
-<li>stylelint</li>
-<li>commitlint</li>
-<li>markdownlint</li>
-<li>prettier</li>
-</ul>
-</li>
-<li>CLI</li>
-<li>Jest mocha</li>
-</ul>
-]]></content>
-  </entry>
-  <entry>
     <title>自动化测试</title>
     <url>/Yuyang/autoTest/</url>
     <content><![CDATA[<h2 id="自动化测试与技术选型"><a href="#自动化测试与技术选型" class="headerlink" title="自动化测试与技术选型"></a>自动化测试与技术选型</h2><h3 id="认识并使用jest"><a href="#认识并使用jest" class="headerlink" title="认识并使用jest"></a>认识并使用jest</h3><h3 id="e2e测试"><a href="#e2e测试" class="headerlink" title="e2e测试"></a>e2e测试</h3><h3 id="devops"><a href="#devops" class="headerlink" title="devops"></a>devops</h3><h3 id="自动化测试"><a href="#自动化测试" class="headerlink" title="自动化测试"></a>自动化测试</h3><h4 id="为什么需要测试"><a href="#为什么需要测试" class="headerlink" title="为什么需要测试"></a>为什么需要测试</h4><p>让程序稳定健壮，提高代码质量，减少bug，提高开发效率。</p>
@@ -622,6 +655,28 @@
 ]]></content>
   </entry>
   <entry>
+    <title>前端编码规范工程化</title>
+    <url>/Yuyang/baseconfigcli/</url>
+    <content><![CDATA[<h2 id="前端规范"><a href="#前端规范" class="headerlink" title="前端规范"></a>前端规范</h2><p>1、React Vue Js Ts 代码规范 eslint<br>2、Css Less Scss css预处理器 代码规范 stylelint<br>3、git commitlint 规范提交信息 husky<br>4、markdownlint 规范 markdown 代码</p>
+<p>lint 收敛 CLI</p>
+<p>1、一键接入、一键扫描、一键修复、一键升级</p>
+<h2 id="技术选型"><a href="#技术选型" class="headerlink" title="技术选型"></a>技术选型</h2><ul>
+<li>多包：monorepo lerna</li>
+<li>包管理工具：pnpm</li>
+<li>lint:<ul>
+<li>eslint</li>
+<li>stylelint</li>
+<li>commitlint</li>
+<li>markdownlint</li>
+<li>prettier</li>
+</ul>
+</li>
+<li>CLI</li>
+<li>Jest mocha</li>
+</ul>
+]]></content>
+  </entry>
+  <entry>
     <title>从输入URL到页面加载完成的过程</title>
     <url>/Yuyang/borwer/</url>
     <content><![CDATA[<h2 id="输入URL用户发起请求"><a href="#输入URL用户发起请求" class="headerlink" title="输入URL用户发起请求"></a>输入URL用户发起请求</h2><p>当用户在客户端输入一个网址如（如 <a class="link"   href="https://www.example.com),浏览器会根据这个操作发起网络请求./" >https://www.example.com），浏览器会根据这个操作发起网络请求。 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
@@ -677,6 +732,161 @@
 <li>第四次挥手：客户端收到 FIN 包后，回应一个 ACK 包。</li>
 </ul>
 <h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>以上就是从输入 URL 到页面加载完成的整个过程。在这个过程中，浏览器和服务器之间进行了多次的交互，包括 DNS 解析、建立 TCP 连接、发送 HTTP 请求、处理请求、返回 HTTP 响应等。最终，浏览器会将服务器返回的 HTML、CSS、JavaScript 等资源解析渲染，最终呈现给用户。</p>
+]]></content>
+  </entry>
+  <entry>
+    <title>浏览器引擎（Browser engine/ layout engine + rendering engine）</title>
+    <url>/Yuyang/browserEngine/</url>
+    <content><![CDATA[<p><a class="link"   href="https://en.wikipedia.org/wiki/Browser_engine" >https://en.wikipedia.org/wiki/Browser_engine <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a><br>浏览器引擎：<a class="link"   href="https://taligarsiel.com/Projects/howbrowserswork1.htm" >https://taligarsiel.com/Projects/howbrowserswork1.htm <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
+<h2 id="The-browser-List"><a href="#The-browser-List" class="headerlink" title="The browser List:"></a>The browser List:</h2><p>Internet Explorer, Firefox, Safari, Chrome.</p>
+<h2 id="Browser-Functionality"><a href="#Browser-Functionality" class="headerlink" title="Browser Functionality:"></a>Browser Functionality:</h2><p>The browser main functionality is to present the web resource you choose, by requesting it from the server and displaying it on the browser window. The resource format is usually HTML but also PDF, image and more. The location of the resource is specified by the user using a URI (Uniform resource Identifier).<br>Browsers’ user interface have a lot in common with each other. Among the common user interface elements are:</p>
+<ul>
+<li>Address bar for inserting a URI</li>
+<li>Back and forward buttons</li>
+<li>Bookmarking options</li>
+<li>Refresh and stop buttons for refreshing or stopping the loading of current documents</li>
+<li>Home button that gets you to your home page</li>
+</ul>
+<h2 id="The-main-components-of-a-browser"><a href="#The-main-components-of-a-browser" class="headerlink" title="The main components of a browser:"></a>The main components of a browser:</h2><ul>
+<li>The user interface: this includes the address bar, back&#x2F;forward button, bookmarking menu etc.</li>
+<li>The browser engine: the interface for querying and manipulating the rendering engine.</li>
+<li>The rendering engine: responsible for displaying the requested content. For example if the requested content is HTML, it is responsible for parsing the HTML and CSS and displaying the parsed content on the screen.</li>
+<li>Networking: for network calls such as HTTP requests, using different implementations for different platform behind a platform-independent interface.</li>
+<li>UI backend: used for drawing basic widgets like combo boxes and windows. It exposes a generic interface that is not platform specific. Underneath it uses the operating system user interface methods.</li>
+<li>JavaScript interpreter: Used to parse and execute the JavaScript code.</li>
+<li>Data storage: This is a persistence layer. The browser needs to save all sorts of data on the hard disk, such as cookies. Browsers also support storage mechanisms such as localStorage, IndexedDB, WebSQL and FileSystem.</li>
+</ul>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://taligarsiel.com/Projects/layers.png"
+                      alt="img"
+                ></p>
+<h2 id="The-Rendering-Engine"><a href="#The-Rendering-Engine" class="headerlink" title="The Rendering Engine:"></a>The Rendering Engine:</h2><p>Both chrome and safari use the WebKit rendering engine. Firefox uses Gecko. Internet Explorer uses Trident.<br>Webkit is an open source rendering engine which started as an engine for the Linux platform and was modified by Apple to support Mac and Windows. See <a class="link"   href="http://webkit.org/" >http://webkit.org/ <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a> for more details.</p>
+<h2 id="The-main-flow"><a href="#The-main-flow" class="headerlink" title="The main flow"></a>The main flow</h2><p>The rendering engine will start getting the contents of the requested document from the networking layer. This will usually be done in 8kB chunks.<br>The basic flow of the rendering engine is as follows:<br><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://taligarsiel.com/Projects/flow.png"
+                      alt="img"
+                ></p>
+<p>The render tree contains rectangles with visual attributes like color and dimensions. The rectangles are in the right order to be displayed on the screen.</p>
+<p>After the construction of the render tree it goes through a “layout” process. This means giving each node the exact coordinates where it should appear on the screen. The next stage is painting – the render tree will be traversed and each node will be painted using the UI backend layer.</p>
+<p>It’s important to understand that this is a gradual process. For better user experience, the rendering engine will try to display contents on the screen as soon as possible. It will not wait until all HTML is parsed before starting to build and layout the render tree. Parts of the content will be parsed and displayed, while the process continues with the rest of the contents that keeps coming from the network.</p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://taligarsiel.com/Projects/webkitflow.png"
+                      alt="img"
+                ></p>
+<h2 id="Parsing-general"><a href="#Parsing-general" class="headerlink" title="Parsing - general"></a>Parsing - general</h2><p>Parsing a document means translating it to some structure that makes sense - something the code can understand and use. The output of the parsing is usually a tree which will be used to render the page on the screen.</p>
+<h2 id="Grammars"><a href="#Grammars" class="headerlink" title="Grammars"></a>Grammars</h2><p>Parsing is based on the syntax rules the document obeys.</p>
+<h2 id="Parser-Lexer-combination"><a href="#Parser-Lexer-combination" class="headerlink" title="Parser - Lexer combination"></a>Parser - Lexer combination</h2><p>Parser can be separated into two sub processes - Lexical analysis and Syntactic analysis.<br>Lexical analysis is the process of breaking the input into tokens. Tokens are the language vocabulary - the collection of valid building blocks. In human language it will consist of all the words that appear in the dictionary for that language.<br>Syntactic analysis is the application of the language syntax rules. It is the process of analyzing the token sequence to determine the grammatical structure of the language.</p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://taligarsiel.com/Projects/image011.png"
+                      alt="img"
+                ></p>
+<h2 id="Translation"><a href="#Translation" class="headerlink" title="Translation"></a>Translation</h2><p>Parsing is often used in translation - transforming the input document to another format.The compiler that compiles a source code into machine code first parses it into a parse tree and then translates the parse tree into machine code.</p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://taligarsiel.com/Projects/image013.png"
+                      alt="img"
+                ></p>
+<h2 id="Parsing-example"><a href="#Parsing-example" class="headerlink" title="Parsing example"></a>Parsing example</h2><p>Example - parsing the expression “2 + 3 - 1”<br><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://taligarsiel.com/Projects/image009.png"
+                      alt="img"
+                ><br>Vocabulary: Our language can include integers, plus signs and minus signs.<br>Syntax:</p>
+<ul>
+<li>The language syntax building blocks are expressions, terms and operations.</li>
+<li>Our language can include any number of expressions.</li>
+<li>A expression is defined as a “term” followed by an “operation” followed by another “term”.</li>
+<li>An operation is a plus token or a minus token.</li>
+<li>A term is an integer token or an expression.</li>
+</ul>
+<p><a href="https://github.com/mengjian-github/copilot-analysis">https://github.com/mengjian-github/copilot-analysis</a></p>
+<h2 id="Referenc"><a href="#Referenc" class="headerlink" title="Referenc"></a>Referenc</h2><h2 id="抓不到copilot的链接"><a href="#抓不到copilot的链接" class="headerlink" title="抓不到copilot的链接"></a>抓不到copilot的链接</h2><ul>
+<li><a class="link"   href="https://en.wikipedia.org/wiki/Browser_engine" >https://en.wikipedia.org/wiki/Browser_engine <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></li>
+<li><a class="link"   href="https://taligarsiel.com/Projects/howbrowserswork1.htm" >https://taligarsiel.com/Projects/howbrowserswork1.htm <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></li>
+</ul>
+]]></content>
+  </entry>
+  <entry>
+    <title>强缓存和协商缓存</title>
+    <url>/Yuyang/cache/</url>
+    <content><![CDATA[<h2 id="缓存"><a href="#缓存" class="headerlink" title="缓存"></a>缓存</h2><p>为了减少资源请求次数，加快资源访问速度，浏览器会对资源文件如图片、css文件、js文件等进行缓存，而浏览器缓存策略又分为强缓存和协商缓存。</p>
+<h2 id="强缓存"><a href="#强缓存" class="headerlink" title="强缓存"></a>强缓存</h2><p>强缓存是指浏览器在缓存有效期内直接从本地缓存中读取资源，而不与服务器进行任何通信。强缓存的实现依赖于 HTTP 响应头中的 Expires 或 Cache-Control。</p>
+<h3 id="Expires"><a href="#Expires" class="headerlink" title="Expires"></a>Expires</h3><p><a class="link"   href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Expires" >https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Expires <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
+<p>一个绝对的过期时间（GMT 时间），在此时间之前，浏览器会认为缓存是有效的。</p>
+<div class="highlight-container" data-rel="Http"><figure class="iseeu highlight http"><table><tr><td class="code"><pre><span class="line"><span class="attribute">Expires</span><span class="punctuation">: </span>Wed, 21 Oct 2024 07:28:00 GMT</span><br></pre></td></tr></table></figure></div>
+
+<h3 id="Cache-Control"><a href="#Cache-Control" class="headerlink" title="Cache-Control"></a>Cache-Control</h3><p>max-age代表缓存时间，单位为秒</p>
+<div class="highlight-container" data-rel="Http"><figure class="iseeu highlight http"><table><tr><td class="code"><pre><span class="line"><span class="attribute">Cache-Control</span><span class="punctuation">: </span>max-age=3600</span><br></pre></td></tr></table></figure></div>
+
+<p><a class="link"   href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Cache-Control" >https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Cache-Control <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://raw.githubusercontent.com/YuZeZhang/myImgslib/main/202407121558393.webp"
+                      alt="img"
+                ></p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://raw.githubusercontent.com/YuZeZhang/myImgslib/main/202407121558374.webp"
+                      alt="img"
+                ></p>
+<p>使用缓存的话，状态码200后面会标明情况。浏览器缓存资源的地方有两个：磁盘缓存（disk cache）和内存缓存（memory cache）。</p>
+<p>当缓存时间到期后再次访问时，状态码200后面便没有括号内的内容了。</p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://raw.githubusercontent.com/YuZeZhang/myImgslib/main/202407121558501.webp"
+                      alt="img"
+                ></p>
+<p>一般来说，浏览器会将较大的资源缓存到disk cache，而较小的资源则被缓存到memory cache里。内存缓存与磁盘缓存相比，访问速度要更快一些！</p>
+<p>Cache-Control除了max-age外，还可以设置其它属性值：</p>
+<ul>
+<li>no-cache: 不使用强缓存（但仍会使用协商缓存）。</li>
+<li>no-store: 不使用缓存（不使用强缓存也不使用协商缓存），每次都向服务器发送资源请求。</li>
+<li>private： 只允许客户端使用缓存，不允许其他代理服务器进行缓存。</li>
+<li>public: 客户端和代理服务器都可缓存。</li>
+<li>s-maxage: 与max-age类似，区别是s-maxage是设定代理服务器的缓存时间。</li>
+</ul>
+<p>另外，Cache-control的优先级要高于Expires，如果两者同时设置，会优先使用Cache-control而忽略掉Expires。</p>
+<h2 id="协商缓存"><a href="#协商缓存" class="headerlink" title="协商缓存"></a>协商缓存</h2><p><strong>在强缓存里，是否使用缓存是由浏览器来确定的，而协商缓存则是由服务器来告诉浏览器是否使用缓存资源，也就是浏览器每一次都要发送请求到服务器询问是否使用缓存</strong>，协商缓存的具体流程如下：</p>
+<p>浏览器初次请求资源，服务器返回资源，同时生成一个Etag值携带在响应头里返回给浏览器，当浏览器再次请求资源时会在请求头里携带If-None-Match，值是之前服务器返回的Etag的值，服务器收到之后拿该值与资源文件最新的Etag值做对比。</p>
+<ul>
+<li>如果没有变化则返回304，告诉浏览器继续使用缓存（不返回资源文件）。</li>
+<li>如果发生变化，则返回200和最新的资源文件给浏览器使用。</li>
+</ul>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://raw.githubusercontent.com/YuZeZhang/myImgslib/main/202407121603356.webp"
+                      alt="img"
+                ></p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://raw.githubusercontent.com/YuZeZhang/myImgslib/main/202407121603175.webp"
+                      alt="img"
+                ></p>
+<p>除了Etag外，还有一个Last-Modified的属性，它是Http1.0规范的，服务器返回Last-Modified，浏览器请求头对应携带的是If-Modified-since，与Etag不同的是，Last-Modified的值是一个时间值，代表文件的修改时间，服务器通过对比文件的修改时间是否发生改变来判断是否使用缓存。</p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://raw.githubusercontent.com/YuZeZhang/myImgslib/main/202407121603459.webp"
+                      alt="img"
+                ></p>
+<p>相比Last-Modified，Etag优先级更高，使用上也更精确一些，因为有时候会存在文件内容并没有改变，但文件的修改时间变更了，Last-Modified不一致所以服务器会重新返回资源文件，实际上还是可以继续使用缓存的。</p>
+<p>强缓存优先级大于协商缓存，即两者同时存在时，如果强缓存开启且在有效期内，则不会走协商缓存。</p>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>强缓存就是浏览器本地根据服务器设置的过期时间来判断是否使用缓存，未过期则从本地缓存里拿资源，已过期则重新请求服务器获取最新资源。</p>
+<p>协商缓存则是浏览器本地每次都向服务器发起请求，由服务器来告诉浏览器是从缓存里拿资源还是返回最新资源给浏览器使用。</p>
+<p>Reference: <a class="link"   href="https://juejin.cn/post/7259298281578889273?searchId=20240712153934B2B3A1160462EB235132" >https://juejin.cn/post/7259298281578889273?searchId=20240712153934B2B3A1160462EB235132 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
 ]]></content>
   </entry>
   <entry>
@@ -757,157 +967,72 @@
 ]]></content>
   </entry>
   <entry>
-    <title>强缓存和协商缓存</title>
-    <url>/Yuyang/cache/</url>
-    <content><![CDATA[<h2 id="缓存"><a href="#缓存" class="headerlink" title="缓存"></a>缓存</h2><p>为了减少资源请求次数，加快资源访问速度，浏览器会对资源文件如图片、css文件、js文件等进行缓存，而浏览器缓存策略又分为强缓存和协商缓存。</p>
-<h2 id="强缓存"><a href="#强缓存" class="headerlink" title="强缓存"></a>强缓存</h2><p>强缓存是指浏览器在缓存有效期内直接从本地缓存中读取资源，而不与服务器进行任何通信。强缓存的实现依赖于 HTTP 响应头中的 Expires 或 Cache-Control。</p>
-<h3 id="Expires"><a href="#Expires" class="headerlink" title="Expires"></a>Expires</h3><p><a class="link"   href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Expires" >https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Expires <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
-<p>一个绝对的过期时间（GMT 时间），在此时间之前，浏览器会认为缓存是有效的。</p>
-<div class="highlight-container" data-rel="Http"><figure class="iseeu highlight http"><table><tr><td class="code"><pre><span class="line"><span class="attribute">Expires</span><span class="punctuation">: </span>Wed, 21 Oct 2024 07:28:00 GMT</span><br></pre></td></tr></table></figure></div>
-
-<h3 id="Cache-Control"><a href="#Cache-Control" class="headerlink" title="Cache-Control"></a>Cache-Control</h3><p>max-age代表缓存时间，单位为秒</p>
-<div class="highlight-container" data-rel="Http"><figure class="iseeu highlight http"><table><tr><td class="code"><pre><span class="line"><span class="attribute">Cache-Control</span><span class="punctuation">: </span>max-age=3600</span><br></pre></td></tr></table></figure></div>
-
-<p><a class="link"   href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Cache-Control" >https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Cache-Control <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
-<p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="https://raw.githubusercontent.com/YuZeZhang/myImgslib/main/202407121558393.webp"
-                      alt="img"
-                ></p>
-<p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="https://raw.githubusercontent.com/YuZeZhang/myImgslib/main/202407121558374.webp"
-                      alt="img"
-                ></p>
-<p>使用缓存的话，状态码200后面会标明情况。浏览器缓存资源的地方有两个：磁盘缓存（disk cache）和内存缓存（memory cache）。</p>
-<p>当缓存时间到期后再次访问时，状态码200后面便没有括号内的内容了。</p>
-<p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="https://raw.githubusercontent.com/YuZeZhang/myImgslib/main/202407121558501.webp"
-                      alt="img"
-                ></p>
-<p>一般来说，浏览器会将较大的资源缓存到disk cache，而较小的资源则被缓存到memory cache里。内存缓存与磁盘缓存相比，访问速度要更快一些！</p>
-<p>Cache-Control除了max-age外，还可以设置其它属性值：</p>
+    <title>前端工程化</title>
+    <url>/Yuyang/engineering/</url>
+    <content><![CDATA[<h1 id="前端工程化讲解-包管理工具"><a href="#前端工程化讲解-包管理工具" class="headerlink" title="前端工程化讲解&amp;包管理工具"></a>前端工程化讲解&amp;包管理工具</h1><h2 id="工程化体系"><a href="#工程化体系" class="headerlink" title="工程化体系"></a>工程化体系</h2><p>前端工程化： 前端+软件工程</p>
+<p>整个前端的研发周期当中 我们可以干预的行为</p>
+<h3 id="前端工程化开展"><a href="#前端工程化开展" class="headerlink" title="前端工程化开展"></a>前端工程化开展</h3><ul>
+<li>模块化：模块复用</li>
+<li>自动化：CI&#x2F;CD 研发平台</li>
+<li>智能化：AI code</li>
+</ul>
+<h3 id="脚手架能力"><a href="#脚手架能力" class="headerlink" title="脚手架能力"></a>脚手架能力</h3><p>通过更多的规范 约束开发人员的研发流程</p>
+<p>狭义：命令行<br>广义：约束</p>
+<p>准备阶段：</p>
 <ul>
-<li>no-cache: 不使用强缓存（但仍会使用协商缓存）。</li>
-<li>no-store: 不使用缓存（不使用强缓存也不使用协商缓存），每次都向服务器发送资源请求。</li>
-<li>private： 只允许客户端使用缓存，不允许其他代理服务器进行缓存。</li>
-<li>public: 客户端和代理服务器都可缓存。</li>
-<li>s-maxage: 与max-age类似，区别是s-maxage是设定代理服务器的缓存时间。</li>
+<li>需求</li>
+<li>技术选型</li>
+<li>代码规范<ul>
+<li>lint 规范</li>
 </ul>
-<p>另外，Cache-control的优先级要高于Expires，如果两者同时设置，会优先使用Cache-control而忽略掉Expires。</p>
-<h2 id="协商缓存"><a href="#协商缓存" class="headerlink" title="协商缓存"></a>协商缓存</h2><p><strong>在强缓存里，是否使用缓存是由浏览器来确定的，而协商缓存则是由服务器来告诉浏览器是否使用缓存资源，也就是浏览器每一次都要发送请求到服务器询问是否使用缓存</strong>，协商缓存的具体流程如下：</p>
-<p>浏览器初次请求资源，服务器返回资源，同时生成一个Etag值携带在响应头里返回给浏览器，当浏览器再次请求资源时会在请求头里携带If-None-Match，值是之前服务器返回的Etag的值，服务器收到之后拿该值与资源文件最新的Etag值做对比。</p>
+</li>
+<li>生态规范<ul>
+<li>UI库</li>
+<li>静态站点 npm github readme types</li>
+</ul>
+</li>
+<li>三方规范<ul>
+<li>npm 发布</li>
+<li>github ci cd</li>
+</ul>
+</li>
+</ul>
+<h4 id="开发阶段"><a href="#开发阶段" class="headerlink" title="开发阶段"></a>开发阶段</h4><p>确定规范内容<br>规范 eslint md stylelint</p>
+<p>测试</p>
 <ul>
-<li>如果没有变化则返回304，告诉浏览器继续使用缓存（不返回资源文件）。</li>
-<li>如果发生变化，则返回200和最新的资源文件给浏览器使用。</li>
+<li>单元测试</li>
+<li>e2e测试</li>
 </ul>
-<p><img  
+<h3 id="打包流程"><a href="#打包流程" class="headerlink" title="打包流程"></a>打包流程</h3><ul>
+<li>webpack</li>
+<li>rollup</li>
+<li>vite</li>
+</ul>
+<h3 id="体验度量"><a href="#体验度量" class="headerlink" title="体验度量"></a>体验度量</h3><p>定义一些指标 衡量当前系统好不好用</p>
+<p>埋点：用户行为统计<br>perfomance：性能指标</p>
+<h3 id="研发效能流程"><a href="#研发效能流程" class="headerlink" title="研发效能流程"></a>研发效能流程</h3><h3 id="稳定性建设"><a href="#稳定性建设" class="headerlink" title="稳定性建设"></a>稳定性建设</h3><p><img  
                      lazyload
                      src="/images/loading.svg"
-                     data-src="https://raw.githubusercontent.com/YuZeZhang/myImgslib/main/202407121603356.webp"
-                      alt="img"
+                     data-src="https://raw.githubusercontent.com/YuZeZhang/myImgslib/main/202407220023631.png"
+                      alt="image-20240722002317481"
                 ></p>
-<p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="https://raw.githubusercontent.com/YuZeZhang/myImgslib/main/202407121603175.webp"
-                      alt="img"
-                ></p>
-<p>除了Etag外，还有一个Last-Modified的属性，它是Http1.0规范的，服务器返回Last-Modified，浏览器请求头对应携带的是If-Modified-since，与Etag不同的是，Last-Modified的值是一个时间值，代表文件的修改时间，服务器通过对比文件的修改时间是否发生改变来判断是否使用缓存。</p>
-<p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="https://raw.githubusercontent.com/YuZeZhang/myImgslib/main/202407121603459.webp"
-                      alt="img"
-                ></p>
-<p>相比Last-Modified，Etag优先级更高，使用上也更精确一些，因为有时候会存在文件内容并没有改变，但文件的修改时间变更了，Last-Modified不一致所以服务器会重新返回资源文件，实际上还是可以继续使用缓存的。</p>
-<p>强缓存优先级大于协商缓存，即两者同时存在时，如果强缓存开启且在有效期内，则不会走协商缓存。</p>
-<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>强缓存就是浏览器本地根据服务器设置的过期时间来判断是否使用缓存，未过期则从本地缓存里拿资源，已过期则重新请求服务器获取最新资源。</p>
-<p>协商缓存则是浏览器本地每次都向服务器发起请求，由服务器来告诉浏览器是从缓存里拿资源还是返回最新资源给浏览器使用。</p>
-<p>Reference: <a class="link"   href="https://juejin.cn/post/7259298281578889273?searchId=20240712153934B2B3A1160462EB235132" >https://juejin.cn/post/7259298281578889273?searchId=20240712153934B2B3A1160462EB235132 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
-]]></content>
-  </entry>
-  <entry>
-    <title>浏览器引擎（Browser engine/ layout engine + rendering engine）</title>
-    <url>/Yuyang/browserEngine/</url>
-    <content><![CDATA[<p><a class="link"   href="https://en.wikipedia.org/wiki/Browser_engine" >https://en.wikipedia.org/wiki/Browser_engine <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a><br>浏览器引擎：<a class="link"   href="https://taligarsiel.com/Projects/howbrowserswork1.htm" >https://taligarsiel.com/Projects/howbrowserswork1.htm <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
-<h2 id="The-browser-List"><a href="#The-browser-List" class="headerlink" title="The browser List:"></a>The browser List:</h2><p>Internet Explorer, Firefox, Safari, Chrome.</p>
-<h2 id="Browser-Functionality"><a href="#Browser-Functionality" class="headerlink" title="Browser Functionality:"></a>Browser Functionality:</h2><p>The browser main functionality is to present the web resource you choose, by requesting it from the server and displaying it on the browser window. The resource format is usually HTML but also PDF, image and more. The location of the resource is specified by the user using a URI (Uniform resource Identifier).<br>Browsers’ user interface have a lot in common with each other. Among the common user interface elements are:</p>
+<p>pdd:<br>高端机 2s &#x3D;&gt; 0.8s<br>0.5s<br>低端机 1.2s</p>
+<h2 id="npm包"><a href="#npm包" class="headerlink" title="npm包"></a>npm包</h2><p>查看包版本 npm view xxx</p>
+<p>peerDependencies<br>基础包约束依赖包版本</p>
+<h3 id="打包工具对比"><a href="#打包工具对比" class="headerlink" title="打包工具对比"></a>打包工具对比</h3><p>yarn npm</p>
 <ul>
-<li>Address bar for inserting a URI</li>
-<li>Back and forward buttons</li>
-<li>Bookmarking options</li>
-<li>Refresh and stop buttons for refreshing or stopping the loading of current documents</li>
-<li>Home button that gets you to your home page</li>
+<li>问题？</li>
+<li>慢</li>
+<li>体积大</li>
 </ul>
-<h2 id="The-main-components-of-a-browser"><a href="#The-main-components-of-a-browser" class="headerlink" title="The main components of a browser:"></a>The main components of a browser:</h2><ul>
-<li>The user interface: this includes the address bar, back&#x2F;forward button, bookmarking menu etc.</li>
-<li>The browser engine: the interface for querying and manipulating the rendering engine.</li>
-<li>The rendering engine: responsible for displaying the requested content. For example if the requested content is HTML, it is responsible for parsing the HTML and CSS and displaying the parsed content on the screen.</li>
-<li>Networking: for network calls such as HTTP requests, using different implementations for different platform behind a platform-independent interface.</li>
-<li>UI backend: used for drawing basic widgets like combo boxes and windows. It exposes a generic interface that is not platform specific. Underneath it uses the operating system user interface methods.</li>
-<li>JavaScript interpreter: Used to parse and execute the JavaScript code.</li>
-<li>Data storage: This is a persistence layer. The browser needs to save all sorts of data on the hard disk, such as cookies. Browsers also support storage mechanisms such as localStorage, IndexedDB, WebSQL and FileSystem.</li>
-</ul>
-<p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="https://taligarsiel.com/Projects/layers.png"
-                      alt="img"
-                ></p>
-<h2 id="The-Rendering-Engine"><a href="#The-Rendering-Engine" class="headerlink" title="The Rendering Engine:"></a>The Rendering Engine:</h2><p>Both chrome and safari use the WebKit rendering engine. Firefox uses Gecko. Internet Explorer uses Trident.<br>Webkit is an open source rendering engine which started as an engine for the Linux platform and was modified by Apple to support Mac and Windows. See <a class="link"   href="http://webkit.org/" >http://webkit.org/ <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a> for more details.</p>
-<h2 id="The-main-flow"><a href="#The-main-flow" class="headerlink" title="The main flow"></a>The main flow</h2><p>The rendering engine will start getting the contents of the requested document from the networking layer. This will usually be done in 8kB chunks.<br>The basic flow of the rendering engine is as follows:<br><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="https://taligarsiel.com/Projects/flow.png"
-                      alt="img"
-                ></p>
-<p>The render tree contains rectangles with visual attributes like color and dimensions. The rectangles are in the right order to be displayed on the screen.</p>
-<p>After the construction of the render tree it goes through a “layout” process. This means giving each node the exact coordinates where it should appear on the screen. The next stage is painting – the render tree will be traversed and each node will be painted using the UI backend layer.</p>
-<p>It’s important to understand that this is a gradual process. For better user experience, the rendering engine will try to display contents on the screen as soon as possible. It will not wait until all HTML is parsed before starting to build and layout the render tree. Parts of the content will be parsed and displayed, while the process continues with the rest of the contents that keeps coming from the network.</p>
-<p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="https://taligarsiel.com/Projects/webkitflow.png"
-                      alt="img"
-                ></p>
-<h2 id="Parsing-general"><a href="#Parsing-general" class="headerlink" title="Parsing - general"></a>Parsing - general</h2><p>Parsing a document means translating it to some structure that makes sense - something the code can understand and use. The output of the parsing is usually a tree which will be used to render the page on the screen.</p>
-<h2 id="Grammars"><a href="#Grammars" class="headerlink" title="Grammars"></a>Grammars</h2><p>Parsing is based on the syntax rules the document obeys.</p>
-<h2 id="Parser-Lexer-combination"><a href="#Parser-Lexer-combination" class="headerlink" title="Parser - Lexer combination"></a>Parser - Lexer combination</h2><p>Parser can be separated into two sub processes - Lexical analysis and Syntactic analysis.<br>Lexical analysis is the process of breaking the input into tokens. Tokens are the language vocabulary - the collection of valid building blocks. In human language it will consist of all the words that appear in the dictionary for that language.<br>Syntactic analysis is the application of the language syntax rules. It is the process of analyzing the token sequence to determine the grammatical structure of the language.</p>
-<p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="https://taligarsiel.com/Projects/image011.png"
-                      alt="img"
-                ></p>
-<h2 id="Translation"><a href="#Translation" class="headerlink" title="Translation"></a>Translation</h2><p>Parsing is often used in translation - transforming the input document to another format.The compiler that compiles a source code into machine code first parses it into a parse tree and then translates the parse tree into machine code.</p>
-<p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="https://taligarsiel.com/Projects/image013.png"
-                      alt="img"
-                ></p>
-<h2 id="Parsing-example"><a href="#Parsing-example" class="headerlink" title="Parsing example"></a>Parsing example</h2><p>Example - parsing the expression “2 + 3 - 1”<br><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="https://taligarsiel.com/Projects/image009.png"
-                      alt="img"
-                ><br>Vocabulary: Our language can include integers, plus signs and minus signs.<br>Syntax:</p>
+<p>pnpm 推荐</p>
 <ul>
-<li>The language syntax building blocks are expressions, terms and operations.</li>
-<li>Our language can include any number of expressions.</li>
-<li>A expression is defined as a “term” followed by an “operation” followed by another “term”.</li>
-<li>An operation is a plus token or a minus token.</li>
-<li>A term is an integer token or an expression.</li>
+<li>快</li>
+<li>体积小</li>
 </ul>
-<p><a href="https://github.com/mengjian-github/copilot-analysis">https://github.com/mengjian-github/copilot-analysis</a></p>
-<h2 id="Referenc"><a href="#Referenc" class="headerlink" title="Referenc"></a>Referenc</h2><h2 id="抓不到copilot的链接"><a href="#抓不到copilot的链接" class="headerlink" title="抓不到copilot的链接"></a>抓不到copilot的链接</h2><ul>
-<li><a class="link"   href="https://en.wikipedia.org/wiki/Browser_engine" >https://en.wikipedia.org/wiki/Browser_engine <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></li>
-<li><a class="link"   href="https://taligarsiel.com/Projects/howbrowserswork1.htm" >https://taligarsiel.com/Projects/howbrowserswork1.htm <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></li>
+<h3 id="前端仓库管理对比"><a href="#前端仓库管理对比" class="headerlink" title="前端仓库管理对比"></a>前端仓库管理对比</h3><ul>
+<li>Multirepo</li>
+<li>Monorepo</li>
 </ul>
 ]]></content>
   </entry>
@@ -1007,74 +1132,6 @@
 <p>较为标准的针对模块曝光的定义：窗口可视区域内 &amp;&amp; 组件矩形与视窗区域发生交集 &amp;&amp; 交集垂线距离 &gt;&#x3D; 1px &amp;&amp; 停留时间 &gt;&#x3D; XXms</p>
 <p>Reference：<a class="link"   href="https://juejin.cn/post/7324334380373426227?searchId=202406242342178A14CCB0DE15106BCCCB" >https://juejin.cn/post/7324334380373426227?searchId=202406242342178A14CCB0DE15106BCCCB <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
 <p>备注：近几个月来看到👀过质量最高的文章！学到了！</p>
-]]></content>
-  </entry>
-  <entry>
-    <title>How Browsers Work</title>
-    <url>/Yuyang/howbrowserswork/</url>
-    <content><![CDATA[<p>Users want web experiences with content that is fast to load and smooth to interact with.They are two goals we want to achieve.</p>
-<p>To better achieve these goals, we need to understand how browsers work.</p>
-<h2 id="How-Browsers-Work"><a href="#How-Browsers-Work" class="headerlink" title="How Browsers Work"></a>How Browsers Work</h2><p>Two major issues in web performance are issues having to do with network latency and issues having to do with the fact that for the most part, browsers are single-threaded.</p>
-<h3 id="Navigation"><a href="#Navigation" class="headerlink" title="Navigation"></a>Navigation</h3><p>Navigation is the process of loading a web page. It involves the following steps:</p>
-<ol>
-<li>DNS lookup<br>The first step in the navigation process is to look up the IP address of the server that hosts the website. This is done using the Domain Name System (DNS).If you navigate to <a class="link"   href="https://example.com/" >https://example.com <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a>, the HTML page is located on the server with IP address of 93.184.216.34. If you’ve never visited this site, a DNS lookup must happen.<br>After this initial request, the IP will likely be cached for a time, which speeds up subsequent requests by retrieving the IP address from the cache instead of contacting a name server again.</li>
-</ol>
-<p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="https://raw.githubusercontent.com/YuZeZhang/myImgslib/main/202408180700896.jpeg"
-                      alt="img"
-                ><br>This can be problematic for performance, particularly on mobile networks. When a user is on a mobile network, each DNS lookup has to go from the phone to the cell tower to reach an authoritative DNS server. The distance between a phone, a cell tower, and the name server can add significant latency.</p>
-<ol start="2">
-<li>TCP handshake<br>Once the browser has the IP address, it can establish a connection to the server. This is done using the Transmission Control Protocol (TCP). The browser sends a SYN packet to the server, which responds with a SYN-ACK packet, and the browser sends an ACK packet back. This is known as the TCP handshake.</li>
-</ol>
-<p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="https://raw.githubusercontent.com/YuZeZhang/myImgslib/main/202408180705057.png"
-                      alt="img"
-                ></p>
-<ol start="3">
-<li>TLS negotiation<br>If the website uses HTTPS, the browser and server must negotiate a secure connection. This is done using the Transport Layer Security (TLS) protocol. The browser sends a ClientHello message to the server, which responds with a ServerHello message, and the browser sends a Finished message. This is known as the TLS handshake.</li>
-</ol>
-<h3 id="Response"><a href="#Response" class="headerlink" title="Response"></a>Response</h3><p>Once we have established a connection to the server, we can request the HTML page. The server responds with the HTML page, which the browser parses and renders.</p>
-<h4 id="Congestion-control-TCP-slow-start"><a href="#Congestion-control-TCP-slow-start" class="headerlink" title="Congestion control &#x2F; TCP slow start"></a>Congestion control &#x2F; TCP slow start</h4><p>During the TCP handshake, the browser and server negotiate the maximum segment size (MSS) for the connection. The browser starts by sending a small number of segments and increases the number of segments it sends until it reaches the maximum segment size. This is known as TCP slow start.</p>
-<h3 id="Parsing"><a href="#Parsing" class="headerlink" title="Parsing"></a>Parsing</h3><p>Once the browser receives the first chunk of data, it can begin parsing the information.Parsing is the step the browser takes to turn the data it receives over the network into a Document Object Model (DOM) tree and a CSS Object Model (CSSOM), which are used to render the page.  </p>
-<p>The browser will begin parsing and attempting to render the page as soon as it receives the first chunk of data. This is known as incremental rendering.</p>
-<ul>
-<li>Building the DOM tree<br><a class="link"   href="https://developer.mozilla.org/zh-CN/docs/Web/Performance/Critical_rendering_path" >https://developer.mozilla.org/zh-CN/docs/Web/Performance/Critical_rendering_path <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a><br>Above describes the process of building the DOM tree.</li>
-</ul>
-<p>CRP: Critical Rendering Path</p>
-<p>Web Performance includes the following:</p>
-<ul>
-<li>server requests and responses</li>
-<li>loading</li>
-<li>scripting</li>
-<li>rendering</li>
-<li>layout</li>
-<li>painting</li>
-</ul>
-<p>The CRP is the sequence of steps the browser goes through to convert the HTML, CSS, and JavaScript into pixels on the screen.<br>A request for a web page or app starts with an HTTP request. The server sends a response containing the HTML. The browser then begins parsing the HTML, converting the received bytes to the DOM tree. The browser initiates requests every time it finds links to external resources, be it stylesheets, scripts, or embedded image references. Some requests are blocking, which means the parsing of the rest of the HTML is halted until the imported asset is handled. The browser continues to parse the HTML making requests and building the DOM, until it gets to the end, at which point it constructs the CSS object model. With the DOM and CSSOM complete, the browser builds the render tree, computing the styles for all the visible content. After the render tree is complete, layout occurs, defining the location and size of all the render tree elements. Once complete, the page is rendered, or ‘painted’ on the screen.</p>
-<h4 id="Document-Object-Model-DOM"><a href="#Document-Object-Model-DOM" class="headerlink" title="Document Object Model (DOM)"></a>Document Object Model (DOM)</h4><p>DOM construction is incremental.</p>
-<h4 id="CSS-Object-Model-CSSOM"><a href="#CSS-Object-Model-CSSOM" class="headerlink" title="CSS Object Model (CSSOM)"></a>CSS Object Model (CSSOM)</h4><p>CSSOM construction is incremental.CSS is render blocking.</p>
-<h4 id="Render-tree"><a href="#Render-tree" class="headerlink" title="Render tree"></a>Render tree</h4><p>The render tree is the combination of the DOM and CSSOM. It is used to render the page.<br>To contrcut the render tree, the browser will:</p>
-<ul>
-<li>Traverse the DOM tree</li>
-<li>Match the CSSOM rules to the DOM nodes</li>
-<li>Apply the CSSOM rules to the DOM nodes</li>
-<li>Construct the render tree</li>
-</ul>
-<h4 id="Layout"><a href="#Layout" class="headerlink" title="Layout"></a>Layout</h4><p>Layout is the process of determining the size and position of each element on the page. The browser will:</p>
-<ul>
-<li>Traverse the render tree</li>
-<li>Calculate the size and position of each element</li>
-<li>Determine the flow of the page</li>
-</ul>
-<h4 id="Painting"><a href="#Painting" class="headerlink" title="Painting"></a>Painting</h4><p>Painting is the process of filling in pixels on the screen. The browser will:</p>
-<ul>
-<li>Traverse the render tree</li>
-<li>Paint the pixels on the screen</li>
-</ul>
 ]]></content>
   </entry>
   <entry>
@@ -1217,76 +1274,6 @@
 ]]></content>
   </entry>
   <entry>
-    <title>前端工程化</title>
-    <url>/Yuyang/engineering/</url>
-    <content><![CDATA[<h1 id="前端工程化讲解-包管理工具"><a href="#前端工程化讲解-包管理工具" class="headerlink" title="前端工程化讲解&amp;包管理工具"></a>前端工程化讲解&amp;包管理工具</h1><h2 id="工程化体系"><a href="#工程化体系" class="headerlink" title="工程化体系"></a>工程化体系</h2><p>前端工程化： 前端+软件工程</p>
-<p>整个前端的研发周期当中 我们可以干预的行为</p>
-<h3 id="前端工程化开展"><a href="#前端工程化开展" class="headerlink" title="前端工程化开展"></a>前端工程化开展</h3><ul>
-<li>模块化：模块复用</li>
-<li>自动化：CI&#x2F;CD 研发平台</li>
-<li>智能化：AI code</li>
-</ul>
-<h3 id="脚手架能力"><a href="#脚手架能力" class="headerlink" title="脚手架能力"></a>脚手架能力</h3><p>通过更多的规范 约束开发人员的研发流程</p>
-<p>狭义：命令行<br>广义：约束</p>
-<p>准备阶段：</p>
-<ul>
-<li>需求</li>
-<li>技术选型</li>
-<li>代码规范<ul>
-<li>lint 规范</li>
-</ul>
-</li>
-<li>生态规范<ul>
-<li>UI库</li>
-<li>静态站点 npm github readme types</li>
-</ul>
-</li>
-<li>三方规范<ul>
-<li>npm 发布</li>
-<li>github ci cd</li>
-</ul>
-</li>
-</ul>
-<h4 id="开发阶段"><a href="#开发阶段" class="headerlink" title="开发阶段"></a>开发阶段</h4><p>确定规范内容<br>规范 eslint md stylelint</p>
-<p>测试</p>
-<ul>
-<li>单元测试</li>
-<li>e2e测试</li>
-</ul>
-<h3 id="打包流程"><a href="#打包流程" class="headerlink" title="打包流程"></a>打包流程</h3><ul>
-<li>webpack</li>
-<li>rollup</li>
-<li>vite</li>
-</ul>
-<h3 id="体验度量"><a href="#体验度量" class="headerlink" title="体验度量"></a>体验度量</h3><p>定义一些指标 衡量当前系统好不好用</p>
-<p>埋点：用户行为统计<br>perfomance：性能指标</p>
-<h3 id="研发效能流程"><a href="#研发效能流程" class="headerlink" title="研发效能流程"></a>研发效能流程</h3><h3 id="稳定性建设"><a href="#稳定性建设" class="headerlink" title="稳定性建设"></a>稳定性建设</h3><p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="https://raw.githubusercontent.com/YuZeZhang/myImgslib/main/202407220023631.png"
-                      alt="image-20240722002317481"
-                ></p>
-<p>pdd:<br>高端机 2s &#x3D;&gt; 0.8s<br>0.5s<br>低端机 1.2s</p>
-<h2 id="npm包"><a href="#npm包" class="headerlink" title="npm包"></a>npm包</h2><p>查看包版本 npm view xxx</p>
-<p>peerDependencies<br>基础包约束依赖包版本</p>
-<h3 id="打包工具对比"><a href="#打包工具对比" class="headerlink" title="打包工具对比"></a>打包工具对比</h3><p>yarn npm</p>
-<ul>
-<li>问题？</li>
-<li>慢</li>
-<li>体积大</li>
-</ul>
-<p>pnpm 推荐</p>
-<ul>
-<li>快</li>
-<li>体积小</li>
-</ul>
-<h3 id="前端仓库管理对比"><a href="#前端仓库管理对比" class="headerlink" title="前端仓库管理对比"></a>前端仓库管理对比</h3><ul>
-<li>Multirepo</li>
-<li>Monorepo</li>
-</ul>
-]]></content>
-  </entry>
-  <entry>
     <title></title>
     <url>/undefined/helloalgo/</url>
     <content><![CDATA[<h2 id="速刷hello-algo"><a href="#速刷hello-algo" class="headerlink" title="速刷hello-algo"></a>速刷hello-algo</h2><h3 id="Framework"><a href="#Framework" class="headerlink" title="Framework"></a>Framework</h3><p>复杂度分析: 时间复杂度、空间复杂度<br>数据结构: 数组、链表、栈、队列、哈希表、树、堆、图<br>算法: 搜索、排序、分治、回溯、动态规划、贪心<br><a class="link"   href="https://www.hello-algo.com/" >https://www.hello-algo.com/ <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a><br><img  
@@ -1304,15 +1291,71 @@
 ]]></content>
   </entry>
   <entry>
-    <title>MVVM和MVC</title>
-    <url>/Yuyang/mvvmAndMvc/</url>
-    <content><![CDATA[<p>众所周知，Vue.js是一个MVVM框架</p>
+    <title>How Browsers Work</title>
+    <url>/Yuyang/howbrowserswork/</url>
+    <content><![CDATA[<p>Users want web experiences with content that is fast to load and smooth to interact with.They are two goals we want to achieve.</p>
+<p>To better achieve these goals, we need to understand how browsers work.</p>
+<h2 id="How-Browsers-Work"><a href="#How-Browsers-Work" class="headerlink" title="How Browsers Work"></a>How Browsers Work</h2><p>Two major issues in web performance are issues having to do with network latency and issues having to do with the fact that for the most part, browsers are single-threaded.</p>
+<h3 id="Navigation"><a href="#Navigation" class="headerlink" title="Navigation"></a>Navigation</h3><p>Navigation is the process of loading a web page. It involves the following steps:</p>
+<ol>
+<li>DNS lookup<br>The first step in the navigation process is to look up the IP address of the server that hosts the website. This is done using the Domain Name System (DNS).If you navigate to <a class="link"   href="https://example.com/" >https://example.com <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a>, the HTML page is located on the server with IP address of 93.184.216.34. If you’ve never visited this site, a DNS lookup must happen.<br>After this initial request, the IP will likely be cached for a time, which speeds up subsequent requests by retrieving the IP address from the cache instead of contacting a name server again.</li>
+</ol>
 <p><img  
                      lazyload
                      src="/images/loading.svg"
-                     data-src="https://raw.githubusercontent.com/YuZeZhang/myImgslib/main/202411042301055.png"
-                      alt="image-20241104230111263"
+                     data-src="https://raw.githubusercontent.com/YuZeZhang/myImgslib/main/202408180700896.jpeg"
+                      alt="img"
+                ><br>This can be problematic for performance, particularly on mobile networks. When a user is on a mobile network, each DNS lookup has to go from the phone to the cell tower to reach an authoritative DNS server. The distance between a phone, a cell tower, and the name server can add significant latency.</p>
+<ol start="2">
+<li>TCP handshake<br>Once the browser has the IP address, it can establish a connection to the server. This is done using the Transmission Control Protocol (TCP). The browser sends a SYN packet to the server, which responds with a SYN-ACK packet, and the browser sends an ACK packet back. This is known as the TCP handshake.</li>
+</ol>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://raw.githubusercontent.com/YuZeZhang/myImgslib/main/202408180705057.png"
+                      alt="img"
                 ></p>
+<ol start="3">
+<li>TLS negotiation<br>If the website uses HTTPS, the browser and server must negotiate a secure connection. This is done using the Transport Layer Security (TLS) protocol. The browser sends a ClientHello message to the server, which responds with a ServerHello message, and the browser sends a Finished message. This is known as the TLS handshake.</li>
+</ol>
+<h3 id="Response"><a href="#Response" class="headerlink" title="Response"></a>Response</h3><p>Once we have established a connection to the server, we can request the HTML page. The server responds with the HTML page, which the browser parses and renders.</p>
+<h4 id="Congestion-control-TCP-slow-start"><a href="#Congestion-control-TCP-slow-start" class="headerlink" title="Congestion control &#x2F; TCP slow start"></a>Congestion control &#x2F; TCP slow start</h4><p>During the TCP handshake, the browser and server negotiate the maximum segment size (MSS) for the connection. The browser starts by sending a small number of segments and increases the number of segments it sends until it reaches the maximum segment size. This is known as TCP slow start.</p>
+<h3 id="Parsing"><a href="#Parsing" class="headerlink" title="Parsing"></a>Parsing</h3><p>Once the browser receives the first chunk of data, it can begin parsing the information.Parsing is the step the browser takes to turn the data it receives over the network into a Document Object Model (DOM) tree and a CSS Object Model (CSSOM), which are used to render the page.  </p>
+<p>The browser will begin parsing and attempting to render the page as soon as it receives the first chunk of data. This is known as incremental rendering.</p>
+<ul>
+<li>Building the DOM tree<br><a class="link"   href="https://developer.mozilla.org/zh-CN/docs/Web/Performance/Critical_rendering_path" >https://developer.mozilla.org/zh-CN/docs/Web/Performance/Critical_rendering_path <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a><br>Above describes the process of building the DOM tree.</li>
+</ul>
+<p>CRP: Critical Rendering Path</p>
+<p>Web Performance includes the following:</p>
+<ul>
+<li>server requests and responses</li>
+<li>loading</li>
+<li>scripting</li>
+<li>rendering</li>
+<li>layout</li>
+<li>painting</li>
+</ul>
+<p>The CRP is the sequence of steps the browser goes through to convert the HTML, CSS, and JavaScript into pixels on the screen.<br>A request for a web page or app starts with an HTTP request. The server sends a response containing the HTML. The browser then begins parsing the HTML, converting the received bytes to the DOM tree. The browser initiates requests every time it finds links to external resources, be it stylesheets, scripts, or embedded image references. Some requests are blocking, which means the parsing of the rest of the HTML is halted until the imported asset is handled. The browser continues to parse the HTML making requests and building the DOM, until it gets to the end, at which point it constructs the CSS object model. With the DOM and CSSOM complete, the browser builds the render tree, computing the styles for all the visible content. After the render tree is complete, layout occurs, defining the location and size of all the render tree elements. Once complete, the page is rendered, or ‘painted’ on the screen.</p>
+<h4 id="Document-Object-Model-DOM"><a href="#Document-Object-Model-DOM" class="headerlink" title="Document Object Model (DOM)"></a>Document Object Model (DOM)</h4><p>DOM construction is incremental.</p>
+<h4 id="CSS-Object-Model-CSSOM"><a href="#CSS-Object-Model-CSSOM" class="headerlink" title="CSS Object Model (CSSOM)"></a>CSS Object Model (CSSOM)</h4><p>CSSOM construction is incremental.CSS is render blocking.</p>
+<h4 id="Render-tree"><a href="#Render-tree" class="headerlink" title="Render tree"></a>Render tree</h4><p>The render tree is the combination of the DOM and CSSOM. It is used to render the page.<br>To contrcut the render tree, the browser will:</p>
+<ul>
+<li>Traverse the DOM tree</li>
+<li>Match the CSSOM rules to the DOM nodes</li>
+<li>Apply the CSSOM rules to the DOM nodes</li>
+<li>Construct the render tree</li>
+</ul>
+<h4 id="Layout"><a href="#Layout" class="headerlink" title="Layout"></a>Layout</h4><p>Layout is the process of determining the size and position of each element on the page. The browser will:</p>
+<ul>
+<li>Traverse the render tree</li>
+<li>Calculate the size and position of each element</li>
+<li>Determine the flow of the page</li>
+</ul>
+<h4 id="Painting"><a href="#Painting" class="headerlink" title="Painting"></a>Painting</h4><p>Painting is the process of filling in pixels on the screen. The browser will:</p>
+<ul>
+<li>Traverse the render tree</li>
+<li>Paint the pixels on the screen</li>
+</ul>
 ]]></content>
   </entry>
   <entry>
@@ -1377,6 +1420,45 @@
 <p>TreeShaking是指在打包时去除无用的代码，只打包需要的代码。ES6模块静态引入的特性，使得TreeShaking成为可能。</p>
 <h3 id="UMD-Universal-Module-Definition"><a href="#UMD-Universal-Module-Definition" class="headerlink" title="UMD(Universal Module Definition)"></a>UMD(Universal Module Definition)</h3><p>UMD是AMD和CommonJS的糅合，既可以支持浏览器端，又可以支持服务器端。UMD规范通常在模块定义中先判断是否支持Node.js模块（exports）是否存在，存在则使用Node.js模块模式，不存在则判断是否支持AMD（define是否存在），存在则使用AMD方式加载模块。</p>
 <div class="highlight-container" data-rel="Js"><figure class="iseeu highlight js"><table><tr><td class="code"><pre><span class="line">(<span class="keyword">function</span>(<span class="params">root, factory</span>) &#123;</span><br><span class="line">    <span class="keyword">if</span> (<span class="keyword">typeof</span> <span class="variable language_">module</span> === <span class="string">&#x27;object&#x27;</span> &amp;&amp; <span class="keyword">typeof</span> <span class="variable language_">module</span>.<span class="property">exports</span> === <span class="string">&#x27;object&#x27;</span>) &#123;</span><br><span class="line">        <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;是commonjs模块规范，nodejs环境&#x27;</span>)</span><br><span class="line">        <span class="variable language_">module</span>.<span class="property">exports</span> = <span class="title function_">factory</span>();</span><br><span class="line">    &#125; <span class="keyword">else</span> <span class="keyword">if</span> (<span class="keyword">typeof</span> define === <span class="string">&#x27;function&#x27;</span> &amp;&amp; define.<span class="property">amd</span>) &#123;</span><br><span class="line">        <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;是AMD模块规范，如require.js&#x27;</span>)</span><br><span class="line">        <span class="title function_">define</span>(factory)</span><br><span class="line">    &#125; <span class="keyword">else</span> <span class="keyword">if</span> (<span class="keyword">typeof</span> define === <span class="string">&#x27;function&#x27;</span> &amp;&amp; define.<span class="property">cmd</span>) &#123;</span><br><span class="line">        <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;是CMD模块规范，如sea.js&#x27;</span>)</span><br><span class="line">        <span class="title function_">define</span>(<span class="keyword">function</span>(<span class="params"><span class="built_in">require</span>, <span class="built_in">exports</span>, <span class="variable language_">module</span></span>) &#123;</span><br><span class="line">            <span class="variable language_">module</span>.<span class="property">exports</span> = <span class="title function_">factory</span>()</span><br><span class="line">        &#125;)</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;没有模块环境，直接挂载在全局对象上&#x27;</span>)</span><br><span class="line">        root.<span class="property">umdModule</span> = <span class="title function_">factory</span>();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;(<span class="variable language_">this</span>, <span class="keyword">function</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="keyword">return</span> &#123;</span><br><span class="line">        <span class="attr">name</span>: <span class="string">&#x27;我是一个umd模块&#x27;</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;))</span><br></pre></td></tr></table></figure></div>]]></content>
+  </entry>
+  <entry>
+    <title>monorepo</title>
+    <url>/undefined/monorepo/</url>
+    <content><![CDATA[<h2 id="Preface"><a href="#Preface" class="headerlink" title="Preface"></a>Preface</h2><p>之前写过的一个项目是基于vue.js的前端和express的后端,一直是以分开的git repositories管理的。但其实后端内容很少，因此考虑后期的维护和开发，将前后端合并到一个git repository中，这样可以更好的管理项目。</p>
+<h2 id="What-is-Monorepo"><a href="#What-is-Monorepo" class="headerlink" title="What is Monorepo"></a>What is Monorepo</h2><p>A monorepo is a code management approach where all code for multiple projects, including components, libraries, and internal dependencies, is stored in a single centralized repository, often involving multiple programming languages and application types.</p>
+<h2 id="Why-Monorepo"><a href="#Why-Monorepo" class="headerlink" title="Why Monorepo"></a>Why Monorepo</h2><ul>
+<li><strong>Simplified Code Management</strong></li>
+<li><strong>Enhanced Collaboration</strong></li>
+<li><strong>Streamlined Tooling</strong></li>
+<li><strong>Code Sharing and Reusability</strong></li>
+<li><strong>Dependency Management</strong></li>
+<li><strong>Consistent Development Environment</strong></li>
+<li><strong>Flexibility and Scalability</strong></li>
+</ul>
+<h2 id="How-to-create-a-Monorepo"><a href="#How-to-create-a-Monorepo" class="headerlink" title="How to create a Monorepo"></a>How to create a Monorepo</h2><p>目前主流的monorepo管理工具主要是Lerna(<a class="link"   href="https://lerna.js.org/).%E4%BD%86%E7%94%B1%E4%BA%8E%E6%88%91%E8%BF%99%E4%B8%AA%E9%A1%B9%E7%9B%AE%E4%B8%BB%E8%A6%81%E6%98%AF%E5%89%8D%E5%90%8E%E7%AB%AF%E4%BB%A3%E7%A0%81%EF%BC%8C%E4%B8%8D%E6%98%AF%E7%BB%84%E4%BB%B6%E5%8C%96%E7%9A%84%E9%A1%B9%E7%9B%AE%EF%BC%8C%E5%9B%A0%E6%AD%A4%E6%9A%82%E4%B8%8D%E4%BD%BF%E7%94%A8Lerna%E3%80%82%E4%B8%BB%E8%A6%81%E8%BF%98%E6%98%AF%E5%AE%8C%E6%88%90%E5%89%8D%E5%90%8E%E7%AB%AF%E4%BB%A3%E7%A0%81%E7%9A%84%E5%90%88%E5%B9%B6%E3%80%82" >https://lerna.js.org/).但由于我这个项目主要是前后端代码，不是组件化的项目，因此暂不使用Lerna。主要还是完成前后端代码的合并。 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://raw.githubusercontent.com/YuZeZhang/myImgslib/main/202411110410947.png"
+                      alt="image-20241111041031268"
+                ></p>
+<h2 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h2><p><a class="link"   href="https://www.sonarsource.com/learn/monorepo/" >https://www.sonarsource.com/learn/monorepo/ <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a><br><a class="link"   href="https://juejin.cn/post/7215886869199896637" >https://juejin.cn/post/7215886869199896637 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
+]]></content>
+      <tags>
+        <tag>monorepo</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>MVVM和MVC</title>
+    <url>/Yuyang/mvvmAndMvc/</url>
+    <content><![CDATA[<p>众所周知，Vue.js是一个MVVM框架</p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://raw.githubusercontent.com/YuZeZhang/myImgslib/main/202411042301055.png"
+                      alt="image-20241104230111263"
+                ></p>
+]]></content>
   </entry>
   <entry>
     <title>node_modules困境以及pnpm</title>
@@ -1628,59 +1710,6 @@
 ]]></content>
   </entry>
   <entry>
-    <title></title>
-    <url>/undefined/redbook/</url>
-    <content><![CDATA[<h2 id="问题准备"><a href="#问题准备" class="headerlink" title="问题准备"></a>问题准备</h2><h2 id="Vite构建"><a href="#Vite构建" class="headerlink" title="Vite构建"></a>Vite构建</h2><p>几大特点</p>
-<p>1、冷启动<br>2、快速热更新<br>3、bundleless<br>4、优化构建</p>
-<p>特性说明：<br>1、开发环境冷启动，构建基于ESBuild，线上产物构建 rollup<br>2、本地HMR，做了很多优化，webpack是不是需要分析依赖图（耗时的），因为开发环境ESM方式请求资源文件<br>3、配置简单，比parcel还是复杂点</p>
-<p>区分环境构建</p>
-<p>开发环境 esbuild，bundleless方案进行构建<br>开发环境 rollup<br>如果你想在低版本浏览器调试，不好意思，vite不支持，因为vite是基于ESM的，低版本浏览器不支持ESM</p>
-<p>热更新原理</p>
-<p>建立长链接，websocket</p>
-<p>vite&#x2F;client 插入到客户端<br>vite websocket 服务</p>
-<p>浏览器的热更新需要结合，定义一些事件来处理：connect、disconnect、message<br>vite&#x2F;client 会监听文件变化，然后通知vite服务，vite服务会推送到客户端</p>
-<p>turbopack</p>
-<h2 id="前端工程化"><a href="#前端工程化" class="headerlink" title="前端工程化"></a>前端工程化</h2><h3 id="前端工程化方向"><a href="#前端工程化方向" class="headerlink" title="前端工程化方向"></a>前端工程化方向</h3><p>1、构建工具<br>2、自动化测试<br>3、代码规范<br>4、性能优化<br>5、持续集成<br>6、部署</p>
-<h2 id="React性能优化，性能优化指标采集"><a href="#React性能优化，性能优化指标采集" class="headerlink" title="React性能优化，性能优化指标采集"></a>React性能优化，性能优化指标采集</h2><p>React性能优化Hooks<br>1、React.memo<br>React.memo是一个高阶组件，类似于React.PureComponent，用于函数组件的性能优化，它只会在props发生变化时重新渲染组件，如果props没有发生变化，它会返回上一次的渲染结果，从而避免不必要的渲染。<br>2、useMemo<br>useMemo是一个自定义Hook，用于缓存计算结果，它接收一个函数和一个依赖数组，只有依赖数组中的值发生变化时，useMemo才会重新计算结果，否则直接返回上一次的计算结果。<br>3、useCallback<br>useCallback是一个自定义Hook，用于缓存函数，它接收一个函数和一个依赖数组，只有依赖数组中的值发生变化时，useCallback才会返回新的函数，否则直接返回上一次的函数。<br>4、useEffect<br>useEffect是一个自定义Hook，用于处理副作用，它接收一个函数和一个依赖数组，只有依赖数组中的值发生变化时，useEffect才会执行函数，否则直接返回上一次的执行结果。<br>5、useLayoutEffect<br>useLayoutEffect是一个自定义Hook，用于处理副作用，它接收一个函数和一个依赖数组，只有依赖数组中的值发生变化时，useLayoutEffect才会执行函数，否则直接返回上一次的执行结果。</p>
-<h2 id="React-Hooks实现原理-useEffect的实现原理以及执行时机"><a href="#React-Hooks实现原理-useEffect的实现原理以及执行时机" class="headerlink" title="React Hooks实现原理 useEffect的实现原理以及执行时机"></a>React Hooks实现原理 useEffect的实现原理以及执行时机</h2><p>React Hooks实现原理:</p>
-<h2 id="function组件如何保存状态"><a href="#function组件如何保存状态" class="headerlink" title="function组件如何保存状态"></a>function组件如何保存状态</h2><p>1、useState<br>2、useReducer<br>3、useRef<br>4、useMemo<br>5、useCallback</p>
-<h2 id="React事件处理机制是什么？以及为什么？"><a href="#React事件处理机制是什么？以及为什么？" class="headerlink" title="React事件处理机制是什么？以及为什么？"></a>React事件处理机制是什么？以及为什么？</h2><p>React事件处理机制是基于合成事件的，React会将原生事件封装成合成事件，然后通过事件委托的方式统一管理事件，从而提高性能。</p>
-<h2 id="输入url到页面呈现的过程，以及render树是怎么渲染的"><a href="#输入url到页面呈现的过程，以及render树是怎么渲染的" class="headerlink" title="输入url到页面呈现的过程，以及render树是怎么渲染的"></a>输入url到页面呈现的过程，以及render树是怎么渲染的</h2><h2 id="script-async和defer的区别"><a href="#script-async和defer的区别" class="headerlink" title="script async和defer的区别"></a>script async和defer的区别</h2><p>script async和script defer都是用于异步加载脚本的，但是它们之间有一些区别：<br>1、执行时机<br>script async是在下载完成后立即执行脚本，不会阻塞页面的渲染，但是执行顺序不确定；<br>script defer是在DOM解析完成后按照顺序执行脚本，不会阻塞页面的渲染，但是执行顺序是按照顺序执行的。</p>
-<h2 id="微任务和红任务"><a href="#微任务和红任务" class="headerlink" title="微任务和红任务"></a>微任务和红任务</h2><h2 id="css绘制同心圆"><a href="#css绘制同心圆" class="headerlink" title="css绘制同心圆"></a>css绘制同心圆</h2><h2 id="三数之和"><a href="#三数之和" class="headerlink" title="三数之和"></a>三数之和</h2><h2 id="状态码"><a href="#状态码" class="headerlink" title="状态码"></a>状态码</h2><h2 id="跨域"><a href="#跨域" class="headerlink" title="跨域"></a>跨域</h2><h2 id="Promise-all-和-Promise-allSettled"><a href="#Promise-all-和-Promise-allSettled" class="headerlink" title="Promise.all 和 Promise.allSettled"></a>Promise.all 和 Promise.allSettled</h2><p>function myPromiseAll(promises) {<br>  return new Promise((resolve, reject) &#x3D;&gt; {<br>    if (!Array.isArray(promises)) {<br>      return reject(new TypeError(“Argument must be an array”));<br>    }</p>
-<pre><code>const resultArray = [];
-let resolvedCount = 0;
-
-promises.forEach((promise, index) =&gt; &#123;
-  // 处理非 Promise 对象
-  Promise.resolve(promise)
-    .then((value) =&gt; &#123;
-      resultArray[index] = value; // 保存结果在对应位置
-      resolvedCount++; // 记录已成功的 Promise 数量
-
-      // 如果所有 Promise 都成功，resolve 返回结果
-      if (resolvedCount === promises.length) &#123;
-        resolve(resultArray);
-      &#125;
-    &#125;)
-    .catch((error) =&gt; &#123;
-      reject(error); // 一旦有 Promise 失败，立即 reject
-    &#125;);
-&#125;);
-
-// 如果传入空数组，直接 resolve
-if (promises.length === 0) &#123;
-  resolve(resultArray);
-&#125;
-</code></pre>
-<p>  });<br>}</p>
-<p>&#x2F;&#x2F; 测试用例<br>const p1 &#x3D; Promise.resolve(1);<br>const p2 &#x3D; Promise.resolve(2);<br>const p3 &#x3D; Promise.resolve(3);</p>
-<p>myPromiseAll([p1, p2, p3])<br>  .then((result) &#x3D;&gt; console.log(“成功:”, result)) &#x2F;&#x2F; 成功: [1, 2, 3]<br>  .catch((error) &#x3D;&gt; console.log(“失败:”, error));</p>
-<h2 id="实现一个URL解析"><a href="#实现一个URL解析" class="headerlink" title="实现一个URL解析"></a>实现一个URL解析</h2><p>url解析是一个比较复杂的过程，需要考虑很多情况，比如协议、主机、端口、路径、查询参数、锚点等，下面是一个简单的实现：</p>
-<div class="highlight-container" data-rel="Javascript"><figure class="iseeu highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">parseUrl</span>(<span class="params">url</span>) &#123;</span><br><span class="line">  <span class="keyword">const</span> urlObject = <span class="keyword">new</span> <span class="title function_">URL</span>(url); <span class="comment">// 使用 URL 构造函数解析</span></span><br><span class="line"></span><br><span class="line">  <span class="keyword">return</span> &#123;</span><br><span class="line">    <span class="attr">protocol</span>: urlObject.<span class="property">protocol</span>,  <span class="comment">// 协议，如 &#x27;https:&#x27;</span></span><br><span class="line">    <span class="attr">host</span>: urlObject.<span class="property">host</span>,          <span class="comment">// 主机名和端口号，如 &#x27;example.com:8080&#x27;</span></span><br><span class="line">    <span class="attr">hostname</span>: urlObject.<span class="property">hostname</span>,  <span class="comment">// 主机名，如 &#x27;example.com&#x27;</span></span><br><span class="line">    <span class="attr">port</span>: urlObject.<span class="property">port</span>,          <span class="comment">// 端口号，如 &#x27;8080&#x27;</span></span><br><span class="line">    <span class="attr">pathname</span>: urlObject.<span class="property">pathname</span>,  <span class="comment">// 路径，如 &#x27;/path/to/resource&#x27;</span></span><br><span class="line">    <span class="attr">search</span>: urlObject.<span class="property">search</span>,      <span class="comment">// 查询字符串，如 &#x27;?name=John&amp;age=30&#x27;</span></span><br><span class="line">    <span class="attr">params</span>: <span class="title class_">Object</span>.<span class="title function_">fromEntries</span>(<span class="keyword">new</span> <span class="title class_">URLSearchParams</span>(urlObject.<span class="property">search</span>)), <span class="comment">// 查询参数对象</span></span><br><span class="line">    <span class="attr">hash</span>: urlObject.<span class="property">hash</span>           <span class="comment">// 锚点，如 &#x27;#section1&#x27;</span></span><br><span class="line">  &#125;;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 测试用例</span></span><br><span class="line"><span class="keyword">const</span> url = <span class="string">&#x27;https://example.com:8080/path/to/resource?name=John&amp;age=30#section1&#x27;</span>;</span><br><span class="line"><span class="keyword">const</span> result = <span class="title function_">parseUrl</span>(url);</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(result);</span><br></pre></td></tr></table></figure></div>
-
-<h2 id="React-memo-useCallback-useEffect"><a href="#React-memo-useCallback-useEffect" class="headerlink" title="React.memo&#x2F;useCallback&#x2F;useEffect"></a>React.memo&#x2F;useCallback&#x2F;useEffect</h2><h2 id="介绍created和beforeRouteEnter区别-优劣"><a href="#介绍created和beforeRouteEnter区别-优劣" class="headerlink" title="介绍created和beforeRouteEnter区别 优劣"></a>介绍created和beforeRouteEnter区别 优劣</h2><h2 id="父子组建生命周期的顺序，为什么是这样的-为什么是在beforeMount的时候渲染子组件"><a href="#父子组建生命周期的顺序，为什么是这样的-为什么是在beforeMount的时候渲染子组件" class="headerlink" title="父子组建生命周期的顺序，为什么是这样的?为什么是在beforeMount的时候渲染子组件?"></a>父子组建生命周期的顺序，为什么是这样的?为什么是在beforeMount的时候渲染子组件?</h2><h2 id="http和tcp的关系"><a href="#http和tcp的关系" class="headerlink" title="http和tcp的关系"></a>http和tcp的关系</h2><h2 id="http状态码以及常见状态码"><a href="#http状态码以及常见状态码" class="headerlink" title="http状态码以及常见状态码"></a>http状态码以及常见状态码</h2><h2 id="介绍下三次握手"><a href="#介绍下三次握手" class="headerlink" title="介绍下三次握手"></a>介绍下三次握手</h2><h2 id="为什么需要三次"><a href="#为什么需要三次" class="headerlink" title="为什么需要三次"></a>为什么需要三次</h2><h2 id="二叉树-求根节点到叶子节点的路径之间数字构成的数总和，如路径4-1-5-表示415，故答案为414-415-436"><a href="#二叉树-求根节点到叶子节点的路径之间数字构成的数总和，如路径4-1-5-表示415，故答案为414-415-436" class="headerlink" title="二叉树 求根节点到叶子节点的路径之间数字构成的数总和，如路径4-&gt;1-&gt;5 表示415，故答案为414+415+436"></a>二叉树 求根节点到叶子节点的路径之间数字构成的数总和，如路径4-&gt;1-&gt;5 表示415，故答案为414+415+436</h2>]]></content>
-  </entry>
-  <entry>
     <title>原型和原型链</title>
     <url>/Yuyang/prototype/</url>
     <content><![CDATA[<h2 id="原型"><a href="#原型" class="headerlink" title="原型"></a>原型</h2><p>什么是原型？什么是构造函数、实例原型、实例？它们的关系是什么？</p>
@@ -1752,6 +1781,59 @@ if (promises.length === 0) &#123;
 <div class="highlight-container" data-rel="Javascript"><figure class="iseeu highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> foo = &#123;</span><br><span class="line">  <span class="attr">value</span>: <span class="number">1</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="title class_">Function</span>.<span class="property"><span class="keyword">prototype</span></span>.<span class="property">bind2</span> = <span class="keyword">function</span>(<span class="params">context</span>)&#123;</span><br><span class="line">  <span class="keyword">var</span> _this = <span class="variable language_">this</span>;</span><br><span class="line">  <span class="keyword">return</span> <span class="keyword">function</span>(<span class="params"></span>)&#123;</span><br><span class="line">    _this.<span class="title function_">apply</span>(context);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> bindFoo2 = bar.<span class="title function_">bind2</span>(foo);</span><br></pre></td></tr></table></figure></div>
 
 <h3 id="丢失的this"><a href="#丢失的this" class="headerlink" title="丢失的this"></a>丢失的this</h3>]]></content>
+  </entry>
+  <entry>
+    <title></title>
+    <url>/undefined/redbook/</url>
+    <content><![CDATA[<h2 id="问题准备"><a href="#问题准备" class="headerlink" title="问题准备"></a>问题准备</h2><h2 id="Vite构建"><a href="#Vite构建" class="headerlink" title="Vite构建"></a>Vite构建</h2><p>几大特点</p>
+<p>1、冷启动<br>2、快速热更新<br>3、bundleless<br>4、优化构建</p>
+<p>特性说明：<br>1、开发环境冷启动，构建基于ESBuild，线上产物构建 rollup<br>2、本地HMR，做了很多优化，webpack是不是需要分析依赖图（耗时的），因为开发环境ESM方式请求资源文件<br>3、配置简单，比parcel还是复杂点</p>
+<p>区分环境构建</p>
+<p>开发环境 esbuild，bundleless方案进行构建<br>开发环境 rollup<br>如果你想在低版本浏览器调试，不好意思，vite不支持，因为vite是基于ESM的，低版本浏览器不支持ESM</p>
+<p>热更新原理</p>
+<p>建立长链接，websocket</p>
+<p>vite&#x2F;client 插入到客户端<br>vite websocket 服务</p>
+<p>浏览器的热更新需要结合，定义一些事件来处理：connect、disconnect、message<br>vite&#x2F;client 会监听文件变化，然后通知vite服务，vite服务会推送到客户端</p>
+<p>turbopack</p>
+<h2 id="前端工程化"><a href="#前端工程化" class="headerlink" title="前端工程化"></a>前端工程化</h2><h3 id="前端工程化方向"><a href="#前端工程化方向" class="headerlink" title="前端工程化方向"></a>前端工程化方向</h3><p>1、构建工具<br>2、自动化测试<br>3、代码规范<br>4、性能优化<br>5、持续集成<br>6、部署</p>
+<h2 id="React性能优化，性能优化指标采集"><a href="#React性能优化，性能优化指标采集" class="headerlink" title="React性能优化，性能优化指标采集"></a>React性能优化，性能优化指标采集</h2><p>React性能优化Hooks<br>1、React.memo<br>React.memo是一个高阶组件，类似于React.PureComponent，用于函数组件的性能优化，它只会在props发生变化时重新渲染组件，如果props没有发生变化，它会返回上一次的渲染结果，从而避免不必要的渲染。<br>2、useMemo<br>useMemo是一个自定义Hook，用于缓存计算结果，它接收一个函数和一个依赖数组，只有依赖数组中的值发生变化时，useMemo才会重新计算结果，否则直接返回上一次的计算结果。<br>3、useCallback<br>useCallback是一个自定义Hook，用于缓存函数，它接收一个函数和一个依赖数组，只有依赖数组中的值发生变化时，useCallback才会返回新的函数，否则直接返回上一次的函数。<br>4、useEffect<br>useEffect是一个自定义Hook，用于处理副作用，它接收一个函数和一个依赖数组，只有依赖数组中的值发生变化时，useEffect才会执行函数，否则直接返回上一次的执行结果。<br>5、useLayoutEffect<br>useLayoutEffect是一个自定义Hook，用于处理副作用，它接收一个函数和一个依赖数组，只有依赖数组中的值发生变化时，useLayoutEffect才会执行函数，否则直接返回上一次的执行结果。</p>
+<h2 id="React-Hooks实现原理-useEffect的实现原理以及执行时机"><a href="#React-Hooks实现原理-useEffect的实现原理以及执行时机" class="headerlink" title="React Hooks实现原理 useEffect的实现原理以及执行时机"></a>React Hooks实现原理 useEffect的实现原理以及执行时机</h2><p>React Hooks实现原理:</p>
+<h2 id="function组件如何保存状态"><a href="#function组件如何保存状态" class="headerlink" title="function组件如何保存状态"></a>function组件如何保存状态</h2><p>1、useState<br>2、useReducer<br>3、useRef<br>4、useMemo<br>5、useCallback</p>
+<h2 id="React事件处理机制是什么？以及为什么？"><a href="#React事件处理机制是什么？以及为什么？" class="headerlink" title="React事件处理机制是什么？以及为什么？"></a>React事件处理机制是什么？以及为什么？</h2><p>React事件处理机制是基于合成事件的，React会将原生事件封装成合成事件，然后通过事件委托的方式统一管理事件，从而提高性能。</p>
+<h2 id="输入url到页面呈现的过程，以及render树是怎么渲染的"><a href="#输入url到页面呈现的过程，以及render树是怎么渲染的" class="headerlink" title="输入url到页面呈现的过程，以及render树是怎么渲染的"></a>输入url到页面呈现的过程，以及render树是怎么渲染的</h2><h2 id="script-async和defer的区别"><a href="#script-async和defer的区别" class="headerlink" title="script async和defer的区别"></a>script async和defer的区别</h2><p>script async和script defer都是用于异步加载脚本的，但是它们之间有一些区别：<br>1、执行时机<br>script async是在下载完成后立即执行脚本，不会阻塞页面的渲染，但是执行顺序不确定；<br>script defer是在DOM解析完成后按照顺序执行脚本，不会阻塞页面的渲染，但是执行顺序是按照顺序执行的。</p>
+<h2 id="微任务和红任务"><a href="#微任务和红任务" class="headerlink" title="微任务和红任务"></a>微任务和红任务</h2><h2 id="css绘制同心圆"><a href="#css绘制同心圆" class="headerlink" title="css绘制同心圆"></a>css绘制同心圆</h2><h2 id="三数之和"><a href="#三数之和" class="headerlink" title="三数之和"></a>三数之和</h2><h2 id="状态码"><a href="#状态码" class="headerlink" title="状态码"></a>状态码</h2><h2 id="跨域"><a href="#跨域" class="headerlink" title="跨域"></a>跨域</h2><h2 id="Promise-all-和-Promise-allSettled"><a href="#Promise-all-和-Promise-allSettled" class="headerlink" title="Promise.all 和 Promise.allSettled"></a>Promise.all 和 Promise.allSettled</h2><p>function myPromiseAll(promises) {<br>  return new Promise((resolve, reject) &#x3D;&gt; {<br>    if (!Array.isArray(promises)) {<br>      return reject(new TypeError(“Argument must be an array”));<br>    }</p>
+<pre><code>const resultArray = [];
+let resolvedCount = 0;
+
+promises.forEach((promise, index) =&gt; &#123;
+  // 处理非 Promise 对象
+  Promise.resolve(promise)
+    .then((value) =&gt; &#123;
+      resultArray[index] = value; // 保存结果在对应位置
+      resolvedCount++; // 记录已成功的 Promise 数量
+
+      // 如果所有 Promise 都成功，resolve 返回结果
+      if (resolvedCount === promises.length) &#123;
+        resolve(resultArray);
+      &#125;
+    &#125;)
+    .catch((error) =&gt; &#123;
+      reject(error); // 一旦有 Promise 失败，立即 reject
+    &#125;);
+&#125;);
+
+// 如果传入空数组，直接 resolve
+if (promises.length === 0) &#123;
+  resolve(resultArray);
+&#125;
+</code></pre>
+<p>  });<br>}</p>
+<p>&#x2F;&#x2F; 测试用例<br>const p1 &#x3D; Promise.resolve(1);<br>const p2 &#x3D; Promise.resolve(2);<br>const p3 &#x3D; Promise.resolve(3);</p>
+<p>myPromiseAll([p1, p2, p3])<br>  .then((result) &#x3D;&gt; console.log(“成功:”, result)) &#x2F;&#x2F; 成功: [1, 2, 3]<br>  .catch((error) &#x3D;&gt; console.log(“失败:”, error));</p>
+<h2 id="实现一个URL解析"><a href="#实现一个URL解析" class="headerlink" title="实现一个URL解析"></a>实现一个URL解析</h2><p>url解析是一个比较复杂的过程，需要考虑很多情况，比如协议、主机、端口、路径、查询参数、锚点等，下面是一个简单的实现：</p>
+<div class="highlight-container" data-rel="Javascript"><figure class="iseeu highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">parseUrl</span>(<span class="params">url</span>) &#123;</span><br><span class="line">  <span class="keyword">const</span> urlObject = <span class="keyword">new</span> <span class="title function_">URL</span>(url); <span class="comment">// 使用 URL 构造函数解析</span></span><br><span class="line"></span><br><span class="line">  <span class="keyword">return</span> &#123;</span><br><span class="line">    <span class="attr">protocol</span>: urlObject.<span class="property">protocol</span>,  <span class="comment">// 协议，如 &#x27;https:&#x27;</span></span><br><span class="line">    <span class="attr">host</span>: urlObject.<span class="property">host</span>,          <span class="comment">// 主机名和端口号，如 &#x27;example.com:8080&#x27;</span></span><br><span class="line">    <span class="attr">hostname</span>: urlObject.<span class="property">hostname</span>,  <span class="comment">// 主机名，如 &#x27;example.com&#x27;</span></span><br><span class="line">    <span class="attr">port</span>: urlObject.<span class="property">port</span>,          <span class="comment">// 端口号，如 &#x27;8080&#x27;</span></span><br><span class="line">    <span class="attr">pathname</span>: urlObject.<span class="property">pathname</span>,  <span class="comment">// 路径，如 &#x27;/path/to/resource&#x27;</span></span><br><span class="line">    <span class="attr">search</span>: urlObject.<span class="property">search</span>,      <span class="comment">// 查询字符串，如 &#x27;?name=John&amp;age=30&#x27;</span></span><br><span class="line">    <span class="attr">params</span>: <span class="title class_">Object</span>.<span class="title function_">fromEntries</span>(<span class="keyword">new</span> <span class="title class_">URLSearchParams</span>(urlObject.<span class="property">search</span>)), <span class="comment">// 查询参数对象</span></span><br><span class="line">    <span class="attr">hash</span>: urlObject.<span class="property">hash</span>           <span class="comment">// 锚点，如 &#x27;#section1&#x27;</span></span><br><span class="line">  &#125;;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 测试用例</span></span><br><span class="line"><span class="keyword">const</span> url = <span class="string">&#x27;https://example.com:8080/path/to/resource?name=John&amp;age=30#section1&#x27;</span>;</span><br><span class="line"><span class="keyword">const</span> result = <span class="title function_">parseUrl</span>(url);</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(result);</span><br></pre></td></tr></table></figure></div>
+
+<h2 id="React-memo-useCallback-useEffect"><a href="#React-memo-useCallback-useEffect" class="headerlink" title="React.memo&#x2F;useCallback&#x2F;useEffect"></a>React.memo&#x2F;useCallback&#x2F;useEffect</h2><h2 id="介绍created和beforeRouteEnter区别-优劣"><a href="#介绍created和beforeRouteEnter区别-优劣" class="headerlink" title="介绍created和beforeRouteEnter区别 优劣"></a>介绍created和beforeRouteEnter区别 优劣</h2><h2 id="父子组建生命周期的顺序，为什么是这样的-为什么是在beforeMount的时候渲染子组件"><a href="#父子组建生命周期的顺序，为什么是这样的-为什么是在beforeMount的时候渲染子组件" class="headerlink" title="父子组建生命周期的顺序，为什么是这样的?为什么是在beforeMount的时候渲染子组件?"></a>父子组建生命周期的顺序，为什么是这样的?为什么是在beforeMount的时候渲染子组件?</h2><h2 id="http和tcp的关系"><a href="#http和tcp的关系" class="headerlink" title="http和tcp的关系"></a>http和tcp的关系</h2><h2 id="http状态码以及常见状态码"><a href="#http状态码以及常见状态码" class="headerlink" title="http状态码以及常见状态码"></a>http状态码以及常见状态码</h2><h2 id="介绍下三次握手"><a href="#介绍下三次握手" class="headerlink" title="介绍下三次握手"></a>介绍下三次握手</h2><h2 id="为什么需要三次"><a href="#为什么需要三次" class="headerlink" title="为什么需要三次"></a>为什么需要三次</h2><h2 id="二叉树-求根节点到叶子节点的路径之间数字构成的数总和，如路径4-1-5-表示415，故答案为414-415-436"><a href="#二叉树-求根节点到叶子节点的路径之间数字构成的数总和，如路径4-1-5-表示415，故答案为414-415-436" class="headerlink" title="二叉树 求根节点到叶子节点的路径之间数字构成的数总和，如路径4-&gt;1-&gt;5 表示415，故答案为414+415+436"></a>二叉树 求根节点到叶子节点的路径之间数字构成的数总和，如路径4-&gt;1-&gt;5 表示415，故答案为414+415+436</h2>]]></content>
   </entry>
   <entry>
     <title>正则表达式</title>
@@ -1931,81 +2013,5 @@ if (promises.length === 0) &#123;
 <p>浏览器的热更新需要结合，定义一些事件来处理：connect、disconnect、message<br>vite&#x2F;client 会监听文件变化，然后通知vite服务，vite服务会推送到客户端</p>
 <p>turbopack</p>
 ]]></content>
-  </entry>
-  <entry>
-    <title>2024-11-11 日报 Day3</title>
-    <url>/undefined/2024-11-11/</url>
-    <content><![CDATA[
-  <div class="note-large red">
-    <div class="notel-title rounded-t-lg p-3 font-bold text-lg flex flex-row gap-2 items-center">
-      <p>今日的鸡汤</p>
-
-    </div>
-    <div class="notel-content">
-      <p>最慢的步伐不是跬步，而是徘徊;<br>最快的脚步不是冲刺，而是坚持。<br>The slowest pace is not a step, but wandering;<br>The fastest pace is not to sprint, but to persevere.</p>
-
-    </div>
-  </div>
-<h3 id="今日思考"><a href="#今日思考" class="headerlink" title="今日思考"></a>今日思考</h3><p>今天看到了一个youtube博主分享的一个行为习惯视频(<a class="link"   href="https://www.youtube.com/watch?v=4zXTyc2ZjXM)%EF%BC%8C%E5%85%B6%E4%B8%AD%E6%8F%90%E5%88%B0%E7%9A%84%E8%BF%99%E6%9C%AC%E3%80%8AThe" >https://www.youtube.com/watch?v=4zXTyc2ZjXM)，其中提到的这本《The <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a> 5 AM CLUB》以及5 AM Project.想要做到真正的早起需要一个明确的5 AM Project.这边就有一个问题，为什么非得是早上起来为什么不能是晚上熬夜呢？<br>早起奥义:<br>早上大脑是清空的 因此可以更好的学习自己的事情<br>晚上大脑经历了早上忙碌的工作，下班之后的时间都是垃圾时间，因此晚上经常会习惯刷短视频 一刷刷到后半夜</p>
-<p>-针对这个视频内容对我个人有什么思考呢？<br>可以考虑把下班后的学习时间提前到上班前。</p>
-<h3 id="今日学习内容"><a href="#今日学习内容" class="headerlink" title="今日学习内容"></a>今日学习内容</h3><pre><code>1、《网络是怎样连接的》 P75 - 完结🎉
-2、https://www.sonarsource.com/learn/monorepo/
-</code></pre>
-<h3 id="今日笔记"><a href="#今日笔记" class="headerlink" title="今日笔记"></a>今日笔记</h3><ul>
-<li><p>1、地址转换的基本原理是在转发网络包时对IP头部中的IP地址和端口号进行修改。</p>
-</li>
-<li><p>2、缓存服务器是一台通过<strong>代理机制</strong>对数据进行缓存的服务器。代理介于Web服务器和客户端之间，具有对Web服务器访问进行中转的功能。</p>
-</li>
-<li><p>3、正向代理: 在客户端部署一个代理。比如VPN、科学上网工具等。</p>
-</li>
-<li><p>4、反向代理: Nginx反向代理用于负载均衡和缓存、CDN加速服务。</p>
-</li>
-<li><p>5、CDN（Content Delivery Network）内容分发网络: 通过将内容分发到全球各地的服务器，使用户可以从距离较近的服务器获取内容，提高访问速度。<br>CDN基于WEB服务器运营者和网络运营商签约将自己的缓存服务器放在客户端的运营商处。一般有厂商提供CDN服务，提供这种服务的厂商称为CDSP（Content Delivery Service Provider）。</p>
-<p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="https://raw.githubusercontent.com/YuZeZhang/myImgslib/main/202411110345416.png"
-                      alt="image-20241111034457433"
-                ></p>
-</li>
-</ul>
-<p>Reference: <a class="link"   href="https://bg.qianzhan.com/trends/detail/506/240226-8132891d.html" >https://bg.qianzhan.com/trends/detail/506/240226-8132891d.html <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
-<ul>
-<li>6、根据响应头的Content-Type字段，浏览器会决定如何处理响应的内容。例如，如果Content-Type字段的值是text&#x2F;html，浏览器会将响应的内容解析为HTML文档并显示在页面上。</li>
-</ul>
-]]></content>
-      <categories>
-        <category>journal</category>
-      </categories>
-      <tags>
-        <tag>journal</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>monorepo</title>
-    <url>/undefined/monorepo/</url>
-    <content><![CDATA[<h2 id="Preface"><a href="#Preface" class="headerlink" title="Preface"></a>Preface</h2><p>之前写过的一个项目是基于vue.js的前端和express的后端,一直是以分开的git repositories管理的。但其实后端内容很少，因此考虑后期的维护和开发，将前后端合并到一个git repository中，这样可以更好的管理项目。</p>
-<h2 id="What-is-Monorepo"><a href="#What-is-Monorepo" class="headerlink" title="What is Monorepo"></a>What is Monorepo</h2><p>A monorepo is a code management approach where all code for multiple projects, including components, libraries, and internal dependencies, is stored in a single centralized repository, often involving multiple programming languages and application types.</p>
-<h2 id="Why-Monorepo"><a href="#Why-Monorepo" class="headerlink" title="Why Monorepo"></a>Why Monorepo</h2><ul>
-<li><strong>Simplified Code Management</strong></li>
-<li><strong>Enhanced Collaboration</strong></li>
-<li><strong>Streamlined Tooling</strong></li>
-<li><strong>Code Sharing and Reusability</strong></li>
-<li><strong>Dependency Management</strong></li>
-<li><strong>Consistent Development Environment</strong></li>
-<li><strong>Flexibility and Scalability</strong></li>
-</ul>
-<h2 id="How-to-create-a-Monorepo"><a href="#How-to-create-a-Monorepo" class="headerlink" title="How to create a Monorepo"></a>How to create a Monorepo</h2><p>目前主流的monorepo管理工具主要是Lerna(<a class="link"   href="https://lerna.js.org/).%E4%BD%86%E7%94%B1%E4%BA%8E%E6%88%91%E8%BF%99%E4%B8%AA%E9%A1%B9%E7%9B%AE%E4%B8%BB%E8%A6%81%E6%98%AF%E5%89%8D%E5%90%8E%E7%AB%AF%E4%BB%A3%E7%A0%81%EF%BC%8C%E4%B8%8D%E6%98%AF%E7%BB%84%E4%BB%B6%E5%8C%96%E7%9A%84%E9%A1%B9%E7%9B%AE%EF%BC%8C%E5%9B%A0%E6%AD%A4%E6%9A%82%E4%B8%8D%E4%BD%BF%E7%94%A8Lerna%E3%80%82%E4%B8%BB%E8%A6%81%E8%BF%98%E6%98%AF%E5%AE%8C%E6%88%90%E5%89%8D%E5%90%8E%E7%AB%AF%E4%BB%A3%E7%A0%81%E7%9A%84%E5%90%88%E5%B9%B6%E3%80%82" >https://lerna.js.org/).但由于我这个项目主要是前后端代码，不是组件化的项目，因此暂不使用Lerna。主要还是完成前后端代码的合并。 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
-<p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="https://raw.githubusercontent.com/YuZeZhang/myImgslib/main/202411110410947.png"
-                      alt="image-20241111041031268"
-                ></p>
-<h2 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h2><p><a class="link"   href="https://www.sonarsource.com/learn/monorepo/" >https://www.sonarsource.com/learn/monorepo/ <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a><br><a class="link"   href="https://juejin.cn/post/7215886869199896637" >https://juejin.cn/post/7215886869199896637 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
-]]></content>
-      <tags>
-        <tag>monorepo</tag>
-      </tags>
   </entry>
 </search>
