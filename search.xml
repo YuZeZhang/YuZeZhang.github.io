@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>2024-11-10 日报</title>
+    <title>2024-11-10 日报 Day2</title>
     <url>/undefined/2024-11-10/</url>
     <content><![CDATA[
   <div class="note-large red">
@@ -63,13 +63,13 @@
       </tags>
   </entry>
   <entry>
-    <title>2024-11-9 日报</title>
+    <title>2024-11-9 日报 Day1</title>
     <url>/undefined/2024-11-9/</url>
     <content><![CDATA[<h2 id="写在本类目的最前面"><a href="#写在本类目的最前面" class="headerlink" title="写在本类目的最前面"></a>写在本类目的最前面</h2><p>   不知道以什么开始，就以最近看到的《我与地坛》中的一句话作为本类目的开头吧：</p>
 <blockquote>
 <p>但是太阳，它每时每刻都是夕阳也都是旭日。当它熄灭着走下山去收尽苍凉残照之际，正是它在另一面燃烧着爬上山巅布散烈烈朝晖之时。<br>那一天，我也将沉静着走下山去，扶着我的拐杖。有一天，在某一处山洼里，势必会跑上来一个欢蹦的孩子，抱着他的玩具。<br>当然，那不是我。<br>但是，那不是我吗？</p>
 </blockquote>
-<h3 id="今天的思考"><a href="#今天的思考" class="headerlink" title="今天的思考"></a>今天的思考</h3><pre><code>不满足于当前的苟且，却又无能无力改变此局。如何破此死局，唯有涅槃重生。所以从今天开始从最基本的知识学起，每日保持不间断的更新，去到自己想要去到的高度。
+<h3 id="今天的思考"><a href="#今天的思考" class="headerlink" title="今天的思考"></a>今天的思考</h3><pre><code>不满足于当前的苟且，却又无能为力改变现状。何以破局，唯有涅槃重生。所以从今天开始从最基本的知识学起，每日保持不间断的更新，去到自己想要去到的高度。
 </code></pre>
 <h3 id="今日学习内容"><a href="#今日学习内容" class="headerlink" title="今日学习内容"></a>今日学习内容</h3><pre><code>1、《网络是怎样连接的》 P1 - P12
 </code></pre>
@@ -1931,5 +1931,81 @@ if (promises.length === 0) &#123;
 <p>浏览器的热更新需要结合，定义一些事件来处理：connect、disconnect、message<br>vite&#x2F;client 会监听文件变化，然后通知vite服务，vite服务会推送到客户端</p>
 <p>turbopack</p>
 ]]></content>
+  </entry>
+  <entry>
+    <title>2024-11-11 日报 Day3</title>
+    <url>/undefined/2024-11-11/</url>
+    <content><![CDATA[
+  <div class="note-large red">
+    <div class="notel-title rounded-t-lg p-3 font-bold text-lg flex flex-row gap-2 items-center">
+      <p>今日的鸡汤</p>
+
+    </div>
+    <div class="notel-content">
+      <p>最慢的步伐不是跬步，而是徘徊;<br>最快的脚步不是冲刺，而是坚持。<br>The slowest pace is not a step, but wandering;<br>The fastest pace is not to sprint, but to persevere.</p>
+
+    </div>
+  </div>
+<h3 id="今日思考"><a href="#今日思考" class="headerlink" title="今日思考"></a>今日思考</h3><p>今天看到了一个youtube博主分享的一个行为习惯视频(<a class="link"   href="https://www.youtube.com/watch?v=4zXTyc2ZjXM)%EF%BC%8C%E5%85%B6%E4%B8%AD%E6%8F%90%E5%88%B0%E7%9A%84%E8%BF%99%E6%9C%AC%E3%80%8AThe" >https://www.youtube.com/watch?v=4zXTyc2ZjXM)，其中提到的这本《The <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a> 5 AM CLUB》以及5 AM Project.想要做到真正的早起需要一个明确的5 AM Project.这边就有一个问题，为什么非得是早上起来为什么不能是晚上熬夜呢？<br>早起奥义:<br>早上大脑是清空的 因此可以更好的学习自己的事情<br>晚上大脑经历了早上忙碌的工作，下班之后的时间都是垃圾时间，因此晚上经常会习惯刷短视频 一刷刷到后半夜</p>
+<p>-针对这个视频内容对我个人有什么思考呢？<br>可以考虑把下班后的学习时间提前到上班前。</p>
+<h3 id="今日学习内容"><a href="#今日学习内容" class="headerlink" title="今日学习内容"></a>今日学习内容</h3><pre><code>1、《网络是怎样连接的》 P75 - 完结🎉
+2、https://www.sonarsource.com/learn/monorepo/
+</code></pre>
+<h3 id="今日笔记"><a href="#今日笔记" class="headerlink" title="今日笔记"></a>今日笔记</h3><ul>
+<li><p>1、地址转换的基本原理是在转发网络包时对IP头部中的IP地址和端口号进行修改。</p>
+</li>
+<li><p>2、缓存服务器是一台通过<strong>代理机制</strong>对数据进行缓存的服务器。代理介于Web服务器和客户端之间，具有对Web服务器访问进行中转的功能。</p>
+</li>
+<li><p>3、正向代理: 在客户端部署一个代理。比如VPN、科学上网工具等。</p>
+</li>
+<li><p>4、反向代理: Nginx反向代理用于负载均衡和缓存、CDN加速服务。</p>
+</li>
+<li><p>5、CDN（Content Delivery Network）内容分发网络: 通过将内容分发到全球各地的服务器，使用户可以从距离较近的服务器获取内容，提高访问速度。<br>CDN基于WEB服务器运营者和网络运营商签约将自己的缓存服务器放在客户端的运营商处。一般有厂商提供CDN服务，提供这种服务的厂商称为CDSP（Content Delivery Service Provider）。</p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://raw.githubusercontent.com/YuZeZhang/myImgslib/main/202411110345416.png"
+                      alt="image-20241111034457433"
+                ></p>
+</li>
+</ul>
+<p>Reference: <a class="link"   href="https://bg.qianzhan.com/trends/detail/506/240226-8132891d.html" >https://bg.qianzhan.com/trends/detail/506/240226-8132891d.html <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
+<ul>
+<li>6、根据响应头的Content-Type字段，浏览器会决定如何处理响应的内容。例如，如果Content-Type字段的值是text&#x2F;html，浏览器会将响应的内容解析为HTML文档并显示在页面上。</li>
+</ul>
+]]></content>
+      <categories>
+        <category>journal</category>
+      </categories>
+      <tags>
+        <tag>journal</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>monorepo</title>
+    <url>/undefined/monorepo/</url>
+    <content><![CDATA[<h2 id="Preface"><a href="#Preface" class="headerlink" title="Preface"></a>Preface</h2><p>之前写过的一个项目是基于vue.js的前端和express的后端,一直是以分开的git repositories管理的。但其实后端内容很少，因此考虑后期的维护和开发，将前后端合并到一个git repository中，这样可以更好的管理项目。</p>
+<h2 id="What-is-Monorepo"><a href="#What-is-Monorepo" class="headerlink" title="What is Monorepo"></a>What is Monorepo</h2><p>A monorepo is a code management approach where all code for multiple projects, including components, libraries, and internal dependencies, is stored in a single centralized repository, often involving multiple programming languages and application types.</p>
+<h2 id="Why-Monorepo"><a href="#Why-Monorepo" class="headerlink" title="Why Monorepo"></a>Why Monorepo</h2><ul>
+<li><strong>Simplified Code Management</strong></li>
+<li><strong>Enhanced Collaboration</strong></li>
+<li><strong>Streamlined Tooling</strong></li>
+<li><strong>Code Sharing and Reusability</strong></li>
+<li><strong>Dependency Management</strong></li>
+<li><strong>Consistent Development Environment</strong></li>
+<li><strong>Flexibility and Scalability</strong></li>
+</ul>
+<h2 id="How-to-create-a-Monorepo"><a href="#How-to-create-a-Monorepo" class="headerlink" title="How to create a Monorepo"></a>How to create a Monorepo</h2><p>目前主流的monorepo管理工具主要是Lerna(<a class="link"   href="https://lerna.js.org/).%E4%BD%86%E7%94%B1%E4%BA%8E%E6%88%91%E8%BF%99%E4%B8%AA%E9%A1%B9%E7%9B%AE%E4%B8%BB%E8%A6%81%E6%98%AF%E5%89%8D%E5%90%8E%E7%AB%AF%E4%BB%A3%E7%A0%81%EF%BC%8C%E4%B8%8D%E6%98%AF%E7%BB%84%E4%BB%B6%E5%8C%96%E7%9A%84%E9%A1%B9%E7%9B%AE%EF%BC%8C%E5%9B%A0%E6%AD%A4%E6%9A%82%E4%B8%8D%E4%BD%BF%E7%94%A8Lerna%E3%80%82%E4%B8%BB%E8%A6%81%E8%BF%98%E6%98%AF%E5%AE%8C%E6%88%90%E5%89%8D%E5%90%8E%E7%AB%AF%E4%BB%A3%E7%A0%81%E7%9A%84%E5%90%88%E5%B9%B6%E3%80%82" >https://lerna.js.org/).但由于我这个项目主要是前后端代码，不是组件化的项目，因此暂不使用Lerna。主要还是完成前后端代码的合并。 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://raw.githubusercontent.com/YuZeZhang/myImgslib/main/202411110410947.png"
+                      alt="image-20241111041031268"
+                ></p>
+<h2 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h2><p><a class="link"   href="https://www.sonarsource.com/learn/monorepo/" >https://www.sonarsource.com/learn/monorepo/ <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a><br><a class="link"   href="https://juejin.cn/post/7215886869199896637" >https://juejin.cn/post/7215886869199896637 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
+]]></content>
+      <tags>
+        <tag>monorepo</tag>
+      </tags>
   </entry>
 </search>
