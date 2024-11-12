@@ -80,7 +80,7 @@
 <h3 id="今日思考"><a href="#今日思考" class="headerlink" title="今日思考"></a>今日思考</h3><p>今天看到了一个youtube博主分享的一个行为习惯视频(<a class="link"   href="https://www.youtube.com/watch?v=4zXTyc2ZjXM)%EF%BC%8C%E5%85%B6%E4%B8%AD%E6%8F%90%E5%88%B0%E7%9A%84%E8%BF%99%E6%9C%AC%E3%80%8AThe" >https://www.youtube.com/watch?v=4zXTyc2ZjXM)，其中提到的这本《The <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a> 5 AM CLUB》以及5 AM Project.想要做到真正的早起需要一个明确的5 AM Project.<br> <img  
                      lazyload
                      src="/images/loading.svg"
-                     data-src="https://raw.githubusercontent.com/YuZeZhang/myImgslib/main/202411110002901.png"
+                     data-src="https://raw.githubusercontent.com/YuZeZhang/myImgslib/main/202411110002901.jpg"
                       alt="image-202411110002901"
                 ></p>
 <p>这边就有一个问题，为什么非得是早上起来为什么不能是晚上熬夜呢？<br>早起奥义:<br>早上大脑是清空的 因此可以更好的学习自己的事情<br>晚上大脑经历了早上忙碌的工作，下班之后的时间都是垃圾时间，因此晚上经常会习惯刷短视频 一刷刷到后半夜</p>
@@ -2014,5 +2014,229 @@ if (promises.length === 0) &#123;
 <p>浏览器的热更新需要结合，定义一些事件来处理：connect、disconnect、message<br>vite&#x2F;client 会监听文件变化，然后通知vite服务，vite服务会推送到客户端</p>
 <p>turbopack</p>
 ]]></content>
+  </entry>
+  <entry>
+    <title>2024-11-12 日报 Day4</title>
+    <url>/undefined/2024-11-12/</url>
+    <content><![CDATA[
+  <div class="note-large red">
+    <div class="notel-title rounded-t-lg p-3 font-bold text-lg flex flex-row gap-2 items-center">
+      <p>今日的鸡汤</p>
+
+    </div>
+    <div class="notel-content">
+      <p>流水不争先，争的是滔滔不绝。</p>
+<p>姜子牙年轻时也做过屠夫卖过酒，直到暮年遇到周文王才得以大展宏图。</p>
+
+    </div>
+  </div>
+
+<h3 id="今日学习内容"><a href="#今日学习内容" class="headerlink" title="今日学习内容"></a>今日学习内容</h3><pre><code>1、《图解HTTP》 P1-140
+</code></pre>
+<h3 id="今日笔记"><a href="#今日笔记" class="headerlink" title="今日笔记"></a>今日笔记</h3><ul>
+<li><p>1、TCP&#x2F;IP协议族分为以下4层: 应用层、传输层、网络层、数据链路层。</p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://raw.githubusercontent.com/YuZeZhang/myImgslib/main/202411121823887.png"
+                      alt="network"
+                ></p>
+</li>
+<li><p>2、请求报文是由请求方法、请求URI、协议版本、可选的请求首部字段和内容实体构成。</p>
+</li>
+<li><p>3、响应报文是由协议版本、状态码、用以解释状态码的原因短语、可选的响应首部字段以及实体主体构成。</p>
+</li>
+<li><p>4、HTTP是一种无状态(stateless)协议，HTTP&#x2F;1.1引入了Cookie技术。Cookie通过在请求和响应报文中写入Cookie信息来控制客户端的状态。</p>
+</li>
+<li><p>5、Cookie会根据服务端发送的响应报文内的一个叫做Set-Cookie的首部字段信息，通知客户端保存Cookie。当下次客户端再往服务端发送请求时，客户端会自动在请求报文中加入Cookie值后发送出去。</p>
+</li>
+<li><p>6、内容协商机制(Content Negotiation)是指客户端和服务端就响应的资源内容进行交涉，然后提供给客户端最为适合的资源。内容协商机制有3种类型：</p>
+<p>​	服务器驱动协商: 以请求的首部字段为参考，在服务器端自动处理。</p>
+<p>​	客户端驱动协商: 比如按OS类型或浏览器类型自行切换成PC版页面或手机版页面。</p>
+<p>​	透明协商</p>
+</li>
+<li><p>7、状态码类型：</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>类别</th>
+<th>原因短语</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>1XX</td>
+<td>Informational(信息性状态码)</td>
+<td>接收的请求正在处理</td>
+</tr>
+<tr>
+<td>2XX</td>
+<td>Success(成功状态码)</td>
+<td>请求正常处理完毕</td>
+</tr>
+<tr>
+<td>3XX</td>
+<td>Redirection(重定向状态码)</td>
+<td>需要进行附加操作以完成请求</td>
+</tr>
+<tr>
+<td>4XX</td>
+<td>Client Error(客户端错误状态码)</td>
+<td>服务器无法处理请求</td>
+</tr>
+<tr>
+<td>5XX</td>
+<td>Server Error(服务端错误状态码)</td>
+<td>服务器处理请求出错</td>
+</tr>
+</tbody></table>
+<table>
+<thead>
+<tr>
+<th>具体状态码</th>
+<th>状态名称</th>
+<th>状态描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>200</td>
+<td>OK</td>
+<td></td>
+</tr>
+<tr>
+<td>204</td>
+<td>No Content</td>
+<td>请求成功但无资源返回</td>
+</tr>
+<tr>
+<td>206</td>
+<td>Partial Content</td>
+<td></td>
+</tr>
+<tr>
+<td>301</td>
+<td>Moved Permanently</td>
+<td></td>
+</tr>
+<tr>
+<td>302</td>
+<td>Found</td>
+<td></td>
+</tr>
+<tr>
+<td>303</td>
+<td>See Other</td>
+<td></td>
+</tr>
+<tr>
+<td>304</td>
+<td>Not Modified</td>
+<td></td>
+</tr>
+<tr>
+<td>307</td>
+<td>Temporary Redirect</td>
+<td></td>
+</tr>
+<tr>
+<td>400</td>
+<td>Bad Request</td>
+<td></td>
+</tr>
+<tr>
+<td>401</td>
+<td>Unauthorized</td>
+<td></td>
+</tr>
+<tr>
+<td>403</td>
+<td>Forbidden</td>
+<td></td>
+</tr>
+<tr>
+<td>404</td>
+<td>Not Found</td>
+<td></td>
+</tr>
+<tr>
+<td>500</td>
+<td>Internal Server Error</td>
+<td></td>
+</tr>
+<tr>
+<td>503</td>
+<td>Service Unavailable</td>
+<td></td>
+</tr>
+</tbody></table>
+</li>
+<li><p>8、通信数据转发程序: 代理、网关、隧道。</p>
+</li>
+<li><p>9、为Cookie服务的首部字段</p>
+<table>
+<thead>
+<tr>
+<th>首部字段名</th>
+<th>说明</th>
+<th>首部类型</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Set-Cookie</td>
+<td>开始状态管理所使用的Cookie信息</td>
+<td>响应首部字段</td>
+</tr>
+<tr>
+<td>Cookie</td>
+<td>服务器接收到的Cookie信息</td>
+<td>请求首部字段</td>
+</tr>
+</tbody></table>
+</li>
+<li><p>10、Set-Cookie字段的属性</p>
+<table>
+<thead>
+<tr>
+<th>属性</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>NAME&#x3D;VALUE</td>
+<td>赋予Cookie的名称和值</td>
+</tr>
+<tr>
+<td>expires&#x3D;DATE</td>
+<td>Cookie的有效期</td>
+</tr>
+<tr>
+<td>path&#x3D;PATH</td>
+<td></td>
+</tr>
+<tr>
+<td>domain&#x3D;域名</td>
+<td>Cookie适用对象的域名</td>
+</tr>
+<tr>
+<td>Secure</td>
+<td>仅在HTTPS安全通信时才会发送Cookie</td>
+</tr>
+<tr>
+<td>HttpOnly</td>
+<td>加以限制，使Cookie不能被JavaScript脚本访问</td>
+</tr>
+</tbody></table>
+</li>
+</ul>
+<h3 id="术语"><a href="#术语" class="headerlink" title="术语"></a>术语</h3><ul>
+<li>HTTP(HyperText Transfer Protocol): 超文本传输协议</li>
+</ul>
+]]></content>
+      <categories>
+        <category>journal</category>
+      </categories>
+      <tags>
+        <tag>journal</tag>
+      </tags>
   </entry>
 </search>
