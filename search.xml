@@ -2239,4 +2239,51 @@ if (promises.length === 0) &#123;
         <tag>journal</tag>
       </tags>
   </entry>
+  <entry>
+    <title>2024-11-13 日报 Day5</title>
+    <url>/undefined/2024-11-13/</url>
+    <content><![CDATA[
+  <div class="note-large red">
+    <div class="notel-title rounded-t-lg p-3 font-bold text-lg flex flex-row gap-2 items-center">
+      <p>今日的鸡汤</p>
+
+    </div>
+    <div class="notel-content">
+      <p>理想是赶路人的月，是逆流者的桨<br>是荆棘尽处的繁华，是万仞山上的日出<br>让人在现实的泥沼中甘愿苦苦跋涉</p>
+
+    </div>
+  </div>
+
+<h3 id="今日学习内容"><a href="#今日学习内容" class="headerlink" title="今日学习内容"></a>今日学习内容</h3><pre><code>1、《图解HTTP》 P141-200
+</code></pre>
+<h3 id="今日笔记"><a href="#今日笔记" class="headerlink" title="今日笔记"></a>今日笔记</h3><ul>
+<li>1、在HTTP协议中有可能存在信息窃听或身份伪装等安全问题。使用HTTPS通信机制可以有效地防止这些问题。</li>
+<li>2、HTTP的缺点:<br>  通信使用明文(不加密)，内容可能会被窃听。<br>  不验证通信方的身份，因此有可能遭遇伪装。<br>  无法证明报文的完整性，所以有可能已遭篡改。</li>
+<li>3、HTTP协议中没有加密机制，但可以通过和SSL(Secure Socket Layer, 安全套接层)或TLS(Transport Layer Security, 传输层安全)的组合使用，加密HTTP的通信内容。</li>
+<li>4、认证本人核对的信息通常是指:<ul>
+<li>密码: 只有本人才知道的字符串信息。</li>
+<li>动态令牌: 仅限本人持有的设备内显示的一次性密码。</li>
+<li>数字证书: 仅限本人(终端)持有的信息。</li>
+<li>生物认证: 指纹和虹膜等本人的生理信息。</li>
+<li>IC卡等: 仅限本人持有的信息。</li>
+</ul>
+</li>
+<li>5、HTTP&#x2F;1.1使用的认证方式:<ul>
+<li>BASIC认证（基本认证）</li>
+<li>DIGEST认证（摘要认证）</li>
+<li>SSL客户端认证</li>
+<li>FormBase认证（基于表单认证）</li>
+</ul>
+</li>
+<li>6、WebSocket是一种在单个TCP连接上进行全双工通信的协议。通过WebSocket，浏览器和服务器之间的数据交换变得更加高效。为实现WebSocket通信，需要借助于HTTP协议。<br>HTTP的Upgrade首部字段可以将通信的协议切换为其他协议。通过发送Upgrade: websocket首部字段，通信过程从HTTP协议变成了WebSocket协议。同时Connection也会变为Upgrade。</li>
+<li>7、HTTP防火墙(80&#x2F;tcp)和HTTPS防火墙(443&#x2F;tcp)</li>
+</ul>
+]]></content>
+      <categories>
+        <category>journal</category>
+      </categories>
+      <tags>
+        <tag>journal</tag>
+      </tags>
+  </entry>
 </search>
