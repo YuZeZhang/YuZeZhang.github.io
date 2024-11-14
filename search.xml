@@ -119,6 +119,308 @@
       </tags>
   </entry>
   <entry>
+    <title>2024-11-12 日报 Day4</title>
+    <url>/undefined/2024-11-12/</url>
+    <content><![CDATA[
+  <div class="note-large red">
+    <div class="notel-title rounded-t-lg p-3 font-bold text-lg flex flex-row gap-2 items-center">
+      <p>今日的鸡汤</p>
+
+    </div>
+    <div class="notel-content">
+      <p>流水不争先，争的是滔滔不绝。</p>
+<p>姜子牙年轻时也做过屠夫卖过酒，直到暮年遇到周文王才得以大展宏图。</p>
+
+    </div>
+  </div>
+
+<h3 id="今日学习内容"><a href="#今日学习内容" class="headerlink" title="今日学习内容"></a>今日学习内容</h3><pre><code>1、《图解HTTP》 P1-140
+</code></pre>
+<h3 id="今日笔记"><a href="#今日笔记" class="headerlink" title="今日笔记"></a>今日笔记</h3><ul>
+<li><p>1、TCP&#x2F;IP协议族分为以下4层: 应用层、传输层、网络层、数据链路层。</p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://raw.githubusercontent.com/YuZeZhang/myImgslib/main/202411121823887.png"
+                      alt="network"
+                ></p>
+</li>
+<li><p>2、请求报文是由请求方法、请求URI、协议版本、可选的请求首部字段和内容实体构成。</p>
+</li>
+<li><p>3、响应报文是由协议版本、状态码、用以解释状态码的原因短语、可选的响应首部字段以及实体主体构成。</p>
+</li>
+<li><p>4、HTTP是一种无状态(stateless)协议，HTTP&#x2F;1.1引入了Cookie技术。Cookie通过在请求和响应报文中写入Cookie信息来控制客户端的状态。</p>
+</li>
+<li><p>5、Cookie会根据服务端发送的响应报文内的一个叫做Set-Cookie的首部字段信息，通知客户端保存Cookie。当下次客户端再往服务端发送请求时，客户端会自动在请求报文中加入Cookie值后发送出去。</p>
+</li>
+<li><p>6、内容协商机制(Content Negotiation)是指客户端和服务端就响应的资源内容进行交涉，然后提供给客户端最为适合的资源。内容协商机制有3种类型：</p>
+<p>​	服务器驱动协商: 以请求的首部字段为参考，在服务器端自动处理。</p>
+<p>​	客户端驱动协商: 比如按OS类型或浏览器类型自行切换成PC版页面或手机版页面。</p>
+<p>​	透明协商</p>
+</li>
+<li><p>7、状态码类型：</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>类别</th>
+<th>原因短语</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>1XX</td>
+<td>Informational(信息性状态码)</td>
+<td>接收的请求正在处理</td>
+</tr>
+<tr>
+<td>2XX</td>
+<td>Success(成功状态码)</td>
+<td>请求正常处理完毕</td>
+</tr>
+<tr>
+<td>3XX</td>
+<td>Redirection(重定向状态码)</td>
+<td>需要进行附加操作以完成请求</td>
+</tr>
+<tr>
+<td>4XX</td>
+<td>Client Error(客户端错误状态码)</td>
+<td>服务器无法处理请求</td>
+</tr>
+<tr>
+<td>5XX</td>
+<td>Server Error(服务端错误状态码)</td>
+<td>服务器处理请求出错</td>
+</tr>
+</tbody></table>
+<table>
+<thead>
+<tr>
+<th>具体状态码</th>
+<th>状态名称</th>
+<th>状态描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>200</td>
+<td>OK</td>
+<td></td>
+</tr>
+<tr>
+<td>204</td>
+<td>No Content</td>
+<td>请求成功但无资源返回</td>
+</tr>
+<tr>
+<td>206</td>
+<td>Partial Content</td>
+<td></td>
+</tr>
+<tr>
+<td>301</td>
+<td>Moved Permanently</td>
+<td></td>
+</tr>
+<tr>
+<td>302</td>
+<td>Found</td>
+<td></td>
+</tr>
+<tr>
+<td>303</td>
+<td>See Other</td>
+<td></td>
+</tr>
+<tr>
+<td>304</td>
+<td>Not Modified</td>
+<td></td>
+</tr>
+<tr>
+<td>307</td>
+<td>Temporary Redirect</td>
+<td></td>
+</tr>
+<tr>
+<td>400</td>
+<td>Bad Request</td>
+<td></td>
+</tr>
+<tr>
+<td>401</td>
+<td>Unauthorized</td>
+<td></td>
+</tr>
+<tr>
+<td>403</td>
+<td>Forbidden</td>
+<td></td>
+</tr>
+<tr>
+<td>404</td>
+<td>Not Found</td>
+<td></td>
+</tr>
+<tr>
+<td>500</td>
+<td>Internal Server Error</td>
+<td></td>
+</tr>
+<tr>
+<td>503</td>
+<td>Service Unavailable</td>
+<td></td>
+</tr>
+</tbody></table>
+</li>
+<li><p>8、通信数据转发程序: 代理、网关、隧道。</p>
+</li>
+<li><p>9、为Cookie服务的首部字段</p>
+<table>
+<thead>
+<tr>
+<th>首部字段名</th>
+<th>说明</th>
+<th>首部类型</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Set-Cookie</td>
+<td>开始状态管理所使用的Cookie信息</td>
+<td>响应首部字段</td>
+</tr>
+<tr>
+<td>Cookie</td>
+<td>服务器接收到的Cookie信息</td>
+<td>请求首部字段</td>
+</tr>
+</tbody></table>
+</li>
+<li><p>10、Set-Cookie字段的属性</p>
+<table>
+<thead>
+<tr>
+<th>属性</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>NAME&#x3D;VALUE</td>
+<td>赋予Cookie的名称和值</td>
+</tr>
+<tr>
+<td>expires&#x3D;DATE</td>
+<td>Cookie的有效期</td>
+</tr>
+<tr>
+<td>path&#x3D;PATH</td>
+<td></td>
+</tr>
+<tr>
+<td>domain&#x3D;域名</td>
+<td>Cookie适用对象的域名</td>
+</tr>
+<tr>
+<td>Secure</td>
+<td>仅在HTTPS安全通信时才会发送Cookie</td>
+</tr>
+<tr>
+<td>HttpOnly</td>
+<td>加以限制，使Cookie不能被JavaScript脚本访问</td>
+</tr>
+</tbody></table>
+</li>
+</ul>
+<h3 id="术语"><a href="#术语" class="headerlink" title="术语"></a>术语</h3><ul>
+<li>HTTP(HyperText Transfer Protocol): 超文本传输协议</li>
+</ul>
+]]></content>
+      <categories>
+        <category>journal</category>
+      </categories>
+      <tags>
+        <tag>journal</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>2024-11-13 日报 Day5</title>
+    <url>/undefined/2024-11-13/</url>
+    <content><![CDATA[
+  <div class="note-large red">
+    <div class="notel-title rounded-t-lg p-3 font-bold text-lg flex flex-row gap-2 items-center">
+      <p>今日的鸡汤</p>
+
+    </div>
+    <div class="notel-content">
+      <p>理想是赶路人的月，是逆流者的桨<br>是荆棘尽处的繁华，是万仞山上的日出<br>让人在现实的泥沼中甘愿苦苦跋涉</p>
+
+    </div>
+  </div>
+
+<h3 id="今日学习内容"><a href="#今日学习内容" class="headerlink" title="今日学习内容"></a>今日学习内容</h3><pre><code>1、《图解HTTP》 P141-200
+</code></pre>
+<h3 id="今日笔记"><a href="#今日笔记" class="headerlink" title="今日笔记"></a>今日笔记</h3><ul>
+<li>1、在HTTP协议中有可能存在信息窃听或身份伪装等安全问题。使用HTTPS通信机制可以有效地防止这些问题。</li>
+<li>2、HTTP的缺点:<br>  通信使用明文(不加密)，内容可能会被窃听。<br>  不验证通信方的身份，因此有可能遭遇伪装。<br>  无法证明报文的完整性，所以有可能已遭篡改。</li>
+<li>3、HTTP协议中没有加密机制，但可以通过和SSL(Secure Socket Layer, 安全套接层)或TLS(Transport Layer Security, 传输层安全)的组合使用，加密HTTP的通信内容。</li>
+<li>4、认证本人核对的信息通常是指:<ul>
+<li>密码: 只有本人才知道的字符串信息。</li>
+<li>动态令牌: 仅限本人持有的设备内显示的一次性密码。</li>
+<li>数字证书: 仅限本人(终端)持有的信息。</li>
+<li>生物认证: 指纹和虹膜等本人的生理信息。</li>
+<li>IC卡等: 仅限本人持有的信息。</li>
+</ul>
+</li>
+<li>5、HTTP&#x2F;1.1使用的认证方式:<ul>
+<li>BASIC认证（基本认证）</li>
+<li>DIGEST认证（摘要认证）</li>
+<li>SSL客户端认证</li>
+<li>FormBase认证（基于表单认证）</li>
+</ul>
+</li>
+<li>6、WebSocket是一种在单个TCP连接上进行全双工通信的协议。通过WebSocket，浏览器和服务器之间的数据交换变得更加高效。为实现WebSocket通信，需要借助于HTTP协议。<br>HTTP的Upgrade首部字段可以将通信的协议切换为其他协议。通过发送Upgrade: websocket首部字段，通信过程从HTTP协议变成了WebSocket协议。同时Connection也会变为Upgrade。</li>
+<li>7、HTTP防火墙(80&#x2F;tcp)和HTTPS防火墙(443&#x2F;tcp)</li>
+</ul>
+]]></content>
+      <categories>
+        <category>journal</category>
+      </categories>
+      <tags>
+        <tag>journal</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>2024-11-14 日报 Day6</title>
+    <url>/undefined/2024-11-14/</url>
+    <content><![CDATA[
+  <div class="note-large red">
+    <div class="notel-title rounded-t-lg p-3 font-bold text-lg flex flex-row gap-2 items-center">
+      <p>今日的鸡汤</p>
+
+    </div>
+    <div class="notel-content">
+      <p>遇见，获得，失去，成长，释怀，完结<br>我与旧事归于尽，来年依旧迎花开</p>
+<p>Encounter, gain, loss, growth, release, and completion.<br>I am at the end of old things, and the next year will still welcome the blooming flowers.</p>
+
+    </div>
+  </div>
+
+<h3 id="今日学习内容"><a href="#今日学习内容" class="headerlink" title="今日学习内容"></a>今日学习内容</h3><pre><code>1、《图解HTTP》 P141-完结
+</code></pre>
+<h3 id="今日笔记"><a href="#今日笔记" class="headerlink" title="今日笔记"></a>今日笔记</h3><p>1、CGI(Common Gateway Interface)是一种Web服务器和应用程序之间的接口标准。通过CGI，Web服务器可以调用外部程序处理客户端发送的请求。CGI程序是一种独立于服务器的程序，可以用任何语言编写。<br>2、Java Servlet可以处理 HTTP 请求并生成动态响应。与 CGI 不同，Servlet 直接运行在服务器中，无需每次请求都启动新的进程，因此性能更高。Servlet 部署在 Servlet 容器中（如 Apache Tomcat）。</p>
+<h3 id="术语"><a href="#术语" class="headerlink" title="术语"></a>术语</h3><ul>
+<li>CGI(Common Gateway Interface): 通用网关接口</li>
+<li>XSS(Cross-Site Scripting): 跨站脚本攻击</li>
+</ul>
+]]></content>
+      <categories>
+        <category>journal</category>
+      </categories>
+      <tags>
+        <tag>journal</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>2024-11-9 日报 Day1</title>
     <url>/undefined/2024-11-9/</url>
     <content><![CDATA[<h2 id="写在本类目的最前面"><a href="#写在本类目的最前面" class="headerlink" title="写在本类目的最前面"></a>写在本类目的最前面</h2><p>   不知道以什么开始，就以最近看到的《我与地坛》中的一句话作为本类目的开头吧：</p>
@@ -386,49 +688,6 @@
 ]]></content>
   </entry>
   <entry>
-    <title>AST-抽象语法树</title>
-    <url>/Yuyang/ast/</url>
-    <content><![CDATA[<h2 id="编译器的底层原理-AST"><a href="#编译器的底层原理-AST" class="headerlink" title="编译器的底层原理 AST"></a>编译器的底层原理 AST</h2><p>编译器介绍：它会将用某种编程语言写成的源代码，转换成另一种编程语言。编译器（compiler）是一种用于将源代码（通常是高级编程语言编写的代码）翻译成目标代码（如机器语言或中间代码）的软件工具。目标代码通常可以直接在计算机上执行，或者在特定的运行环境中执行。编译器的主要目的是使程序员编写的源代码能够在计算机硬件上运行。</p>
-<h2 id="编译器实现的思路"><a href="#编译器实现的思路" class="headerlink" title="编译器实现的思路"></a>编译器实现的思路</h2><p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="https://raw.githubusercontent.com/YuZeZhang/myImgslib/main/202407142153107.png"
-                      alt="image-20240714215346889"
-                ></p>
-<h3 id="Parsing"><a href="#Parsing" class="headerlink" title="Parsing"></a>Parsing</h3><p>这一部分主要实现的功能是将源码转换为抽象语法树</p>
-<p>解析通常分为两个阶段：词法分析（Lexical Analysis）和语法分析（Syntactic Analysis）。</p>
-<ol>
-<li><p><strong>词法分析</strong> 将原始代码拆分成称为标记（tokens）的部分，这个过程由一个称为分词器（tokenizer）或词法分析器（lexer）的东西完成。</p>
-<p>标记是描述语法中独立部分的小对象的数组。它们可以是数字、标签、标点符号、操作符等。</p>
-</li>
-<li><p><strong>语法分析</strong> 将标记重新格式化为描述语法各部分及其相互关系的表示形式。这被称为中间表示或抽象语法树（AST）。</p>
-<p>抽象语法树（AST）是一个深度嵌套的对象，它以一种易于处理并包含大量信息的方式表示代码。</p>
-</li>
-</ol>
-<p>对于以下语法：</p>
-<p>  <code>(add 2 (subtract 4 2))</code></p>
-<p>Tokens应该是这样的这样：</p>
-  <div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="code"><pre><span class="line">[</span><br><span class="line">  &#123; type: &#x27;paren&#x27;,  value: &#x27;(&#x27;        &#125;,</span><br><span class="line">  &#123; type: &#x27;name&#x27;,   value: &#x27;add&#x27;      &#125;,</span><br><span class="line">  &#123; type: &#x27;number&#x27;, value: &#x27;2&#x27;        &#125;,</span><br><span class="line">  &#123; type: &#x27;paren&#x27;,  value: &#x27;(&#x27;        &#125;,</span><br><span class="line">  &#123; type: &#x27;name&#x27;,   value: &#x27;subtract&#x27; &#125;,</span><br><span class="line">  &#123; type: &#x27;number&#x27;, value: &#x27;4&#x27;        &#125;,</span><br><span class="line">  &#123; type: &#x27;number&#x27;, value: &#x27;2&#x27;        &#125;,</span><br><span class="line">  &#123; type: &#x27;paren&#x27;,  value: &#x27;)&#x27;        &#125;,</span><br><span class="line">  &#123; type: &#x27;paren&#x27;,  value: &#x27;)&#x27;        &#125;,</span><br><span class="line">]</span><br></pre></td></tr></table></figure></div>
-
-<p>而抽象语法树（AST）可能看起来像这样：</p>
-  <div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  type: &#x27;Program&#x27;,</span><br><span class="line">  body: [&#123;</span><br><span class="line">    type: &#x27;CallExpression&#x27;,</span><br><span class="line">    name: &#x27;add&#x27;,</span><br><span class="line">    params: [&#123;</span><br><span class="line">      type: &#x27;NumberLiteral&#x27;,</span><br><span class="line">      value: &#x27;2&#x27;,</span><br><span class="line">    &#125;, &#123;</span><br><span class="line">      type: &#x27;CallExpression&#x27;,</span><br><span class="line">      name: &#x27;subtract&#x27;,</span><br><span class="line">      params: [&#123;</span><br><span class="line">        type: &#x27;NumberLiteral&#x27;,</span><br><span class="line">        value: &#x27;4&#x27;,</span><br><span class="line">      &#125;, &#123;</span><br><span class="line">        type: &#x27;NumberLiteral&#x27;,</span><br><span class="line">        value: &#x27;2&#x27;,</span><br><span class="line">      &#125;]</span><br><span class="line">    &#125;]</span><br><span class="line">  &#125;]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
-
-<h3 id="Transformation"><a href="#Transformation" class="headerlink" title="Transformation"></a>Transformation</h3><p>这一部分主要实现的功能是对初始的抽象语法树进行操作使其变成我们所期望的抽象语法树。</p>
-<p>同样，这个阶段只是接收上一步生成的AST并对其进行更改。它可以在相同的语言中操作AST，也可以将其转换为完全新的语言。</p>
-<p>让我们看看如何转换一个AST。</p>
-<p>你可能会注意到，我们的AST中有一些看起来非常相似的元素。这些对象都有一个type属性。每个这样的对象都被称为AST节点。这些节点上有定义的属性，用来描述树的一个独立部分。</p>
-<p>我们可以有一个表示“NumberLiteral”（数字字面量）的节点：</p>
-<div class="highlight-container" data-rel="Javascript"><figure class="iseeu highlight javascript"><table><tr><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="attr">type</span>: <span class="string">&#x27;NumberLiteral&#x27;</span>,</span><br><span class="line">  <span class="attr">value</span>: <span class="string">&#x27;2&#x27;</span>,</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
-
-<p>或者一个表示“CallExpression”（调用表达式）的节点：</p>
-<div class="highlight-container" data-rel="Javascript"><figure class="iseeu highlight javascript"><table><tr><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="attr">type</span>: <span class="string">&#x27;CallExpression&#x27;</span>,</span><br><span class="line">  <span class="attr">name</span>: <span class="string">&#x27;subtract&#x27;</span>,</span><br><span class="line">  <span class="attr">params</span>: [...嵌套节点在这里...],</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
-
-<p>在转换AST时，我们可以通过添加&#x2F;移除&#x2F;替换属性来操作节点，我们可以添加新节点，移除节点，或者保留现有的AST不变，基于它创建一个全新的AST。</p>
-<p>由于我们目标是一种新语言，因此我们将专注于创建一个特定于目标语言的全新AST。</p>
-<h3 id="Code-Generation"><a href="#Code-Generation" class="headerlink" title="Code Generation"></a>Code Generation</h3><p>将新的语法树转换成新的代码</p>
-]]></content>
-  </entry>
-  <entry>
     <title>自动化构建</title>
     <url>/Yuyang/autoBuild/</url>
     <content><![CDATA[<h2 id="自动化构建方案"><a href="#自动化构建方案" class="headerlink" title="自动化构建方案"></a>自动化构建方案</h2><p>通过自动化手段 提高效率 可靠性</p>
@@ -526,6 +785,49 @@
 <h3 id="compilation"><a href="#compilation" class="headerlink" title="compilation"></a>compilation</h3><p>compilation 对象包含当前的模块资源 编译生成的资源 变化的文件</p>
 <p>compiler 包含 webpack所有配置信息 options loaders plugins全局唯一的</p>
 <p>compiler &#x3D;&gt; compilation</p>
+]]></content>
+  </entry>
+  <entry>
+    <title>AST-抽象语法树</title>
+    <url>/Yuyang/ast/</url>
+    <content><![CDATA[<h2 id="编译器的底层原理-AST"><a href="#编译器的底层原理-AST" class="headerlink" title="编译器的底层原理 AST"></a>编译器的底层原理 AST</h2><p>编译器介绍：它会将用某种编程语言写成的源代码，转换成另一种编程语言。编译器（compiler）是一种用于将源代码（通常是高级编程语言编写的代码）翻译成目标代码（如机器语言或中间代码）的软件工具。目标代码通常可以直接在计算机上执行，或者在特定的运行环境中执行。编译器的主要目的是使程序员编写的源代码能够在计算机硬件上运行。</p>
+<h2 id="编译器实现的思路"><a href="#编译器实现的思路" class="headerlink" title="编译器实现的思路"></a>编译器实现的思路</h2><p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://raw.githubusercontent.com/YuZeZhang/myImgslib/main/202407142153107.png"
+                      alt="image-20240714215346889"
+                ></p>
+<h3 id="Parsing"><a href="#Parsing" class="headerlink" title="Parsing"></a>Parsing</h3><p>这一部分主要实现的功能是将源码转换为抽象语法树</p>
+<p>解析通常分为两个阶段：词法分析（Lexical Analysis）和语法分析（Syntactic Analysis）。</p>
+<ol>
+<li><p><strong>词法分析</strong> 将原始代码拆分成称为标记（tokens）的部分，这个过程由一个称为分词器（tokenizer）或词法分析器（lexer）的东西完成。</p>
+<p>标记是描述语法中独立部分的小对象的数组。它们可以是数字、标签、标点符号、操作符等。</p>
+</li>
+<li><p><strong>语法分析</strong> 将标记重新格式化为描述语法各部分及其相互关系的表示形式。这被称为中间表示或抽象语法树（AST）。</p>
+<p>抽象语法树（AST）是一个深度嵌套的对象，它以一种易于处理并包含大量信息的方式表示代码。</p>
+</li>
+</ol>
+<p>对于以下语法：</p>
+<p>  <code>(add 2 (subtract 4 2))</code></p>
+<p>Tokens应该是这样的这样：</p>
+  <div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="code"><pre><span class="line">[</span><br><span class="line">  &#123; type: &#x27;paren&#x27;,  value: &#x27;(&#x27;        &#125;,</span><br><span class="line">  &#123; type: &#x27;name&#x27;,   value: &#x27;add&#x27;      &#125;,</span><br><span class="line">  &#123; type: &#x27;number&#x27;, value: &#x27;2&#x27;        &#125;,</span><br><span class="line">  &#123; type: &#x27;paren&#x27;,  value: &#x27;(&#x27;        &#125;,</span><br><span class="line">  &#123; type: &#x27;name&#x27;,   value: &#x27;subtract&#x27; &#125;,</span><br><span class="line">  &#123; type: &#x27;number&#x27;, value: &#x27;4&#x27;        &#125;,</span><br><span class="line">  &#123; type: &#x27;number&#x27;, value: &#x27;2&#x27;        &#125;,</span><br><span class="line">  &#123; type: &#x27;paren&#x27;,  value: &#x27;)&#x27;        &#125;,</span><br><span class="line">  &#123; type: &#x27;paren&#x27;,  value: &#x27;)&#x27;        &#125;,</span><br><span class="line">]</span><br></pre></td></tr></table></figure></div>
+
+<p>而抽象语法树（AST）可能看起来像这样：</p>
+  <div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  type: &#x27;Program&#x27;,</span><br><span class="line">  body: [&#123;</span><br><span class="line">    type: &#x27;CallExpression&#x27;,</span><br><span class="line">    name: &#x27;add&#x27;,</span><br><span class="line">    params: [&#123;</span><br><span class="line">      type: &#x27;NumberLiteral&#x27;,</span><br><span class="line">      value: &#x27;2&#x27;,</span><br><span class="line">    &#125;, &#123;</span><br><span class="line">      type: &#x27;CallExpression&#x27;,</span><br><span class="line">      name: &#x27;subtract&#x27;,</span><br><span class="line">      params: [&#123;</span><br><span class="line">        type: &#x27;NumberLiteral&#x27;,</span><br><span class="line">        value: &#x27;4&#x27;,</span><br><span class="line">      &#125;, &#123;</span><br><span class="line">        type: &#x27;NumberLiteral&#x27;,</span><br><span class="line">        value: &#x27;2&#x27;,</span><br><span class="line">      &#125;]</span><br><span class="line">    &#125;]</span><br><span class="line">  &#125;]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+
+<h3 id="Transformation"><a href="#Transformation" class="headerlink" title="Transformation"></a>Transformation</h3><p>这一部分主要实现的功能是对初始的抽象语法树进行操作使其变成我们所期望的抽象语法树。</p>
+<p>同样，这个阶段只是接收上一步生成的AST并对其进行更改。它可以在相同的语言中操作AST，也可以将其转换为完全新的语言。</p>
+<p>让我们看看如何转换一个AST。</p>
+<p>你可能会注意到，我们的AST中有一些看起来非常相似的元素。这些对象都有一个type属性。每个这样的对象都被称为AST节点。这些节点上有定义的属性，用来描述树的一个独立部分。</p>
+<p>我们可以有一个表示“NumberLiteral”（数字字面量）的节点：</p>
+<div class="highlight-container" data-rel="Javascript"><figure class="iseeu highlight javascript"><table><tr><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="attr">type</span>: <span class="string">&#x27;NumberLiteral&#x27;</span>,</span><br><span class="line">  <span class="attr">value</span>: <span class="string">&#x27;2&#x27;</span>,</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+
+<p>或者一个表示“CallExpression”（调用表达式）的节点：</p>
+<div class="highlight-container" data-rel="Javascript"><figure class="iseeu highlight javascript"><table><tr><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="attr">type</span>: <span class="string">&#x27;CallExpression&#x27;</span>,</span><br><span class="line">  <span class="attr">name</span>: <span class="string">&#x27;subtract&#x27;</span>,</span><br><span class="line">  <span class="attr">params</span>: [...嵌套节点在这里...],</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+
+<p>在转换AST时，我们可以通过添加&#x2F;移除&#x2F;替换属性来操作节点，我们可以添加新节点，移除节点，或者保留现有的AST不变，基于它创建一个全新的AST。</p>
+<p>由于我们目标是一种新语言，因此我们将专注于创建一个特定于目标语言的全新AST。</p>
+<h3 id="Code-Generation"><a href="#Code-Generation" class="headerlink" title="Code Generation"></a>Code Generation</h3><p>将新的语法树转换成新的代码</p>
 ]]></content>
   </entry>
   <entry>
@@ -1136,6 +1438,91 @@
 ]]></content>
   </entry>
   <entry>
+    <title></title>
+    <url>/undefined/helloalgo/</url>
+    <content><![CDATA[<h2 id="速刷hello-algo"><a href="#速刷hello-algo" class="headerlink" title="速刷hello-algo"></a>速刷hello-algo</h2><h3 id="Framework"><a href="#Framework" class="headerlink" title="Framework"></a>Framework</h3><p>复杂度分析: 时间复杂度、空间复杂度<br>数据结构: 数组、链表、栈、队列、哈希表、树、堆、图<br>算法: 搜索、排序、分治、回溯、动态规划、贪心<br><a class="link"   href="https://www.hello-algo.com/" >https://www.hello-algo.com/ <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a><br><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://raw.githubusercontent.com/YuZeZhang/myImgslib/main/202410251743992.png"
+                      alt="image-20241025174311243"
+                ></p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://raw.githubusercontent.com/YuZeZhang/myImgslib/main/202410251749524.png"
+                      alt="image-20241025174936400"
+                ></p>
+]]></content>
+  </entry>
+  <entry>
+    <title>How Browsers Work</title>
+    <url>/Yuyang/howbrowserswork/</url>
+    <content><![CDATA[<p>Users want web experiences with content that is fast to load and smooth to interact with.They are two goals we want to achieve.</p>
+<p>To better achieve these goals, we need to understand how browsers work.</p>
+<h2 id="How-Browsers-Work"><a href="#How-Browsers-Work" class="headerlink" title="How Browsers Work"></a>How Browsers Work</h2><p>Two major issues in web performance are issues having to do with network latency and issues having to do with the fact that for the most part, browsers are single-threaded.</p>
+<h3 id="Navigation"><a href="#Navigation" class="headerlink" title="Navigation"></a>Navigation</h3><p>Navigation is the process of loading a web page. It involves the following steps:</p>
+<ol>
+<li>DNS lookup<br>The first step in the navigation process is to look up the IP address of the server that hosts the website. This is done using the Domain Name System (DNS).If you navigate to <a class="link"   href="https://example.com/" >https://example.com <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a>, the HTML page is located on the server with IP address of 93.184.216.34. If you’ve never visited this site, a DNS lookup must happen.<br>After this initial request, the IP will likely be cached for a time, which speeds up subsequent requests by retrieving the IP address from the cache instead of contacting a name server again.</li>
+</ol>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://raw.githubusercontent.com/YuZeZhang/myImgslib/main/202408180700896.jpeg"
+                      alt="img"
+                ><br>This can be problematic for performance, particularly on mobile networks. When a user is on a mobile network, each DNS lookup has to go from the phone to the cell tower to reach an authoritative DNS server. The distance between a phone, a cell tower, and the name server can add significant latency.</p>
+<ol start="2">
+<li>TCP handshake<br>Once the browser has the IP address, it can establish a connection to the server. This is done using the Transmission Control Protocol (TCP). The browser sends a SYN packet to the server, which responds with a SYN-ACK packet, and the browser sends an ACK packet back. This is known as the TCP handshake.</li>
+</ol>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://raw.githubusercontent.com/YuZeZhang/myImgslib/main/202408180705057.png"
+                      alt="img"
+                ></p>
+<ol start="3">
+<li>TLS negotiation<br>If the website uses HTTPS, the browser and server must negotiate a secure connection. This is done using the Transport Layer Security (TLS) protocol. The browser sends a ClientHello message to the server, which responds with a ServerHello message, and the browser sends a Finished message. This is known as the TLS handshake.</li>
+</ol>
+<h3 id="Response"><a href="#Response" class="headerlink" title="Response"></a>Response</h3><p>Once we have established a connection to the server, we can request the HTML page. The server responds with the HTML page, which the browser parses and renders.</p>
+<h4 id="Congestion-control-TCP-slow-start"><a href="#Congestion-control-TCP-slow-start" class="headerlink" title="Congestion control &#x2F; TCP slow start"></a>Congestion control &#x2F; TCP slow start</h4><p>During the TCP handshake, the browser and server negotiate the maximum segment size (MSS) for the connection. The browser starts by sending a small number of segments and increases the number of segments it sends until it reaches the maximum segment size. This is known as TCP slow start.</p>
+<h3 id="Parsing"><a href="#Parsing" class="headerlink" title="Parsing"></a>Parsing</h3><p>Once the browser receives the first chunk of data, it can begin parsing the information.Parsing is the step the browser takes to turn the data it receives over the network into a Document Object Model (DOM) tree and a CSS Object Model (CSSOM), which are used to render the page.  </p>
+<p>The browser will begin parsing and attempting to render the page as soon as it receives the first chunk of data. This is known as incremental rendering.</p>
+<ul>
+<li>Building the DOM tree<br><a class="link"   href="https://developer.mozilla.org/zh-CN/docs/Web/Performance/Critical_rendering_path" >https://developer.mozilla.org/zh-CN/docs/Web/Performance/Critical_rendering_path <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a><br>Above describes the process of building the DOM tree.</li>
+</ul>
+<p>CRP: Critical Rendering Path</p>
+<p>Web Performance includes the following:</p>
+<ul>
+<li>server requests and responses</li>
+<li>loading</li>
+<li>scripting</li>
+<li>rendering</li>
+<li>layout</li>
+<li>painting</li>
+</ul>
+<p>The CRP is the sequence of steps the browser goes through to convert the HTML, CSS, and JavaScript into pixels on the screen.<br>A request for a web page or app starts with an HTTP request. The server sends a response containing the HTML. The browser then begins parsing the HTML, converting the received bytes to the DOM tree. The browser initiates requests every time it finds links to external resources, be it stylesheets, scripts, or embedded image references. Some requests are blocking, which means the parsing of the rest of the HTML is halted until the imported asset is handled. The browser continues to parse the HTML making requests and building the DOM, until it gets to the end, at which point it constructs the CSS object model. With the DOM and CSSOM complete, the browser builds the render tree, computing the styles for all the visible content. After the render tree is complete, layout occurs, defining the location and size of all the render tree elements. Once complete, the page is rendered, or ‘painted’ on the screen.</p>
+<h4 id="Document-Object-Model-DOM"><a href="#Document-Object-Model-DOM" class="headerlink" title="Document Object Model (DOM)"></a>Document Object Model (DOM)</h4><p>DOM construction is incremental.</p>
+<h4 id="CSS-Object-Model-CSSOM"><a href="#CSS-Object-Model-CSSOM" class="headerlink" title="CSS Object Model (CSSOM)"></a>CSS Object Model (CSSOM)</h4><p>CSSOM construction is incremental.CSS is render blocking.</p>
+<h4 id="Render-tree"><a href="#Render-tree" class="headerlink" title="Render tree"></a>Render tree</h4><p>The render tree is the combination of the DOM and CSSOM. It is used to render the page.<br>To contrcut the render tree, the browser will:</p>
+<ul>
+<li>Traverse the DOM tree</li>
+<li>Match the CSSOM rules to the DOM nodes</li>
+<li>Apply the CSSOM rules to the DOM nodes</li>
+<li>Construct the render tree</li>
+</ul>
+<h4 id="Layout"><a href="#Layout" class="headerlink" title="Layout"></a>Layout</h4><p>Layout is the process of determining the size and position of each element on the page. The browser will:</p>
+<ul>
+<li>Traverse the render tree</li>
+<li>Calculate the size and position of each element</li>
+<li>Determine the flow of the page</li>
+</ul>
+<h4 id="Painting"><a href="#Painting" class="headerlink" title="Painting"></a>Painting</h4><p>Painting is the process of filling in pixels on the screen. The browser will:</p>
+<ul>
+<li>Traverse the render tree</li>
+<li>Paint the pixels on the screen</li>
+</ul>
+]]></content>
+  </entry>
+  <entry>
     <title>前端路由hash和history</title>
     <url>/Yuyang/hash_history/</url>
     <content><![CDATA[<p>前端路由hash和history</p>
@@ -1275,91 +1662,6 @@
 ]]></content>
   </entry>
   <entry>
-    <title></title>
-    <url>/undefined/helloalgo/</url>
-    <content><![CDATA[<h2 id="速刷hello-algo"><a href="#速刷hello-algo" class="headerlink" title="速刷hello-algo"></a>速刷hello-algo</h2><h3 id="Framework"><a href="#Framework" class="headerlink" title="Framework"></a>Framework</h3><p>复杂度分析: 时间复杂度、空间复杂度<br>数据结构: 数组、链表、栈、队列、哈希表、树、堆、图<br>算法: 搜索、排序、分治、回溯、动态规划、贪心<br><a class="link"   href="https://www.hello-algo.com/" >https://www.hello-algo.com/ <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a><br><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="https://raw.githubusercontent.com/YuZeZhang/myImgslib/main/202410251743992.png"
-                      alt="image-20241025174311243"
-                ></p>
-<p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="https://raw.githubusercontent.com/YuZeZhang/myImgslib/main/202410251749524.png"
-                      alt="image-20241025174936400"
-                ></p>
-]]></content>
-  </entry>
-  <entry>
-    <title>How Browsers Work</title>
-    <url>/Yuyang/howbrowserswork/</url>
-    <content><![CDATA[<p>Users want web experiences with content that is fast to load and smooth to interact with.They are two goals we want to achieve.</p>
-<p>To better achieve these goals, we need to understand how browsers work.</p>
-<h2 id="How-Browsers-Work"><a href="#How-Browsers-Work" class="headerlink" title="How Browsers Work"></a>How Browsers Work</h2><p>Two major issues in web performance are issues having to do with network latency and issues having to do with the fact that for the most part, browsers are single-threaded.</p>
-<h3 id="Navigation"><a href="#Navigation" class="headerlink" title="Navigation"></a>Navigation</h3><p>Navigation is the process of loading a web page. It involves the following steps:</p>
-<ol>
-<li>DNS lookup<br>The first step in the navigation process is to look up the IP address of the server that hosts the website. This is done using the Domain Name System (DNS).If you navigate to <a class="link"   href="https://example.com/" >https://example.com <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a>, the HTML page is located on the server with IP address of 93.184.216.34. If you’ve never visited this site, a DNS lookup must happen.<br>After this initial request, the IP will likely be cached for a time, which speeds up subsequent requests by retrieving the IP address from the cache instead of contacting a name server again.</li>
-</ol>
-<p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="https://raw.githubusercontent.com/YuZeZhang/myImgslib/main/202408180700896.jpeg"
-                      alt="img"
-                ><br>This can be problematic for performance, particularly on mobile networks. When a user is on a mobile network, each DNS lookup has to go from the phone to the cell tower to reach an authoritative DNS server. The distance between a phone, a cell tower, and the name server can add significant latency.</p>
-<ol start="2">
-<li>TCP handshake<br>Once the browser has the IP address, it can establish a connection to the server. This is done using the Transmission Control Protocol (TCP). The browser sends a SYN packet to the server, which responds with a SYN-ACK packet, and the browser sends an ACK packet back. This is known as the TCP handshake.</li>
-</ol>
-<p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="https://raw.githubusercontent.com/YuZeZhang/myImgslib/main/202408180705057.png"
-                      alt="img"
-                ></p>
-<ol start="3">
-<li>TLS negotiation<br>If the website uses HTTPS, the browser and server must negotiate a secure connection. This is done using the Transport Layer Security (TLS) protocol. The browser sends a ClientHello message to the server, which responds with a ServerHello message, and the browser sends a Finished message. This is known as the TLS handshake.</li>
-</ol>
-<h3 id="Response"><a href="#Response" class="headerlink" title="Response"></a>Response</h3><p>Once we have established a connection to the server, we can request the HTML page. The server responds with the HTML page, which the browser parses and renders.</p>
-<h4 id="Congestion-control-TCP-slow-start"><a href="#Congestion-control-TCP-slow-start" class="headerlink" title="Congestion control &#x2F; TCP slow start"></a>Congestion control &#x2F; TCP slow start</h4><p>During the TCP handshake, the browser and server negotiate the maximum segment size (MSS) for the connection. The browser starts by sending a small number of segments and increases the number of segments it sends until it reaches the maximum segment size. This is known as TCP slow start.</p>
-<h3 id="Parsing"><a href="#Parsing" class="headerlink" title="Parsing"></a>Parsing</h3><p>Once the browser receives the first chunk of data, it can begin parsing the information.Parsing is the step the browser takes to turn the data it receives over the network into a Document Object Model (DOM) tree and a CSS Object Model (CSSOM), which are used to render the page.  </p>
-<p>The browser will begin parsing and attempting to render the page as soon as it receives the first chunk of data. This is known as incremental rendering.</p>
-<ul>
-<li>Building the DOM tree<br><a class="link"   href="https://developer.mozilla.org/zh-CN/docs/Web/Performance/Critical_rendering_path" >https://developer.mozilla.org/zh-CN/docs/Web/Performance/Critical_rendering_path <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a><br>Above describes the process of building the DOM tree.</li>
-</ul>
-<p>CRP: Critical Rendering Path</p>
-<p>Web Performance includes the following:</p>
-<ul>
-<li>server requests and responses</li>
-<li>loading</li>
-<li>scripting</li>
-<li>rendering</li>
-<li>layout</li>
-<li>painting</li>
-</ul>
-<p>The CRP is the sequence of steps the browser goes through to convert the HTML, CSS, and JavaScript into pixels on the screen.<br>A request for a web page or app starts with an HTTP request. The server sends a response containing the HTML. The browser then begins parsing the HTML, converting the received bytes to the DOM tree. The browser initiates requests every time it finds links to external resources, be it stylesheets, scripts, or embedded image references. Some requests are blocking, which means the parsing of the rest of the HTML is halted until the imported asset is handled. The browser continues to parse the HTML making requests and building the DOM, until it gets to the end, at which point it constructs the CSS object model. With the DOM and CSSOM complete, the browser builds the render tree, computing the styles for all the visible content. After the render tree is complete, layout occurs, defining the location and size of all the render tree elements. Once complete, the page is rendered, or ‘painted’ on the screen.</p>
-<h4 id="Document-Object-Model-DOM"><a href="#Document-Object-Model-DOM" class="headerlink" title="Document Object Model (DOM)"></a>Document Object Model (DOM)</h4><p>DOM construction is incremental.</p>
-<h4 id="CSS-Object-Model-CSSOM"><a href="#CSS-Object-Model-CSSOM" class="headerlink" title="CSS Object Model (CSSOM)"></a>CSS Object Model (CSSOM)</h4><p>CSSOM construction is incremental.CSS is render blocking.</p>
-<h4 id="Render-tree"><a href="#Render-tree" class="headerlink" title="Render tree"></a>Render tree</h4><p>The render tree is the combination of the DOM and CSSOM. It is used to render the page.<br>To contrcut the render tree, the browser will:</p>
-<ul>
-<li>Traverse the DOM tree</li>
-<li>Match the CSSOM rules to the DOM nodes</li>
-<li>Apply the CSSOM rules to the DOM nodes</li>
-<li>Construct the render tree</li>
-</ul>
-<h4 id="Layout"><a href="#Layout" class="headerlink" title="Layout"></a>Layout</h4><p>Layout is the process of determining the size and position of each element on the page. The browser will:</p>
-<ul>
-<li>Traverse the render tree</li>
-<li>Calculate the size and position of each element</li>
-<li>Determine the flow of the page</li>
-</ul>
-<h4 id="Painting"><a href="#Painting" class="headerlink" title="Painting"></a>Painting</h4><p>Painting is the process of filling in pixels on the screen. The browser will:</p>
-<ul>
-<li>Traverse the render tree</li>
-<li>Paint the pixels on the screen</li>
-</ul>
-]]></content>
-  </entry>
-  <entry>
     <title>JS模块化</title>
     <url>/Yuyang/jsModule/</url>
     <content><![CDATA[<p>JS模块化</p>
@@ -1460,6 +1762,176 @@
                       alt="image-20241104230111263"
                 ></p>
 ]]></content>
+  </entry>
+  <entry>
+    <title>Process and Thread</title>
+    <url>/Yuyang/processandthread/</url>
+    <content><![CDATA[<h2 id="Process-and-Thread"><a href="#Process-and-Thread" class="headerlink" title="Process and Thread"></a>Process and Thread</h2><p>What is process and thread?And what is the difference between them?In this article, we will discuss the concept of process and thread.To better understand the concept of process and thread, we need to understand the concept of program.</p>
+<h3 id="What-program-is"><a href="#What-program-is" class="headerlink" title="What program is"></a>What program is</h3><p>A program is a excutable file that is stored on disk and is loaded into memory when it is run.<br>When a program is loaded into memory, it becomes a process. </p>
+<h4 id="Process"><a href="#Process" class="headerlink" title="Process"></a>Process</h4><p>Process is a program in execution. A process is an instance of a program running on a computer. When a program is executed, it is loaded into memory and becomes a process. A process is an independent entity to which system resources (such as CPU time and memory) are allocated. Each process is executed in a separate address space, and one process cannot access the variables and data structures of another process. If a process wishes to access another process’ resources, inter-process communications have to be used. These include pipes, files, sockets, and other forms.</p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://raw.githubusercontent.com/YuZeZhang/myImgslib/main/202408180633691.png"
+                      alt="image-20240818063319857"
+                ></p>
+<h4 id="Thread"><a href="#Thread" class="headerlink" title="Thread"></a>Thread</h4><p>Thread is a basic unit of CPU utilization, consisting of a program counter, a stack, and a set of registers, (and a thread ID.) Each thread shares with other threads belonging to the same process its code section, data section, and other operating-system resources, such as open files and signals.</p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://raw.githubusercontent.com/YuZeZhang/myImgslib/main/202408180632067.png"
+                      alt="image-20240818063237021"
+                ></p>
+<h3 id="How-does-the-operating-system-manage-processes-and-threads"><a href="#How-does-the-operating-system-manage-processes-and-threads" class="headerlink" title="How does the operating system manage processes and threads"></a>How does the operating system manage processes and threads</h3><p>This is handled by the context switching mechanism, which enables the CPU to switch rapidly from one thread to another. This is done by saving the context of the thread that is currently running and loading the saved context of the thread that is to be executed. The operating system is responsible for managing the execution of processes and threads, and it does this by scheduling them to run on the CPU.</p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://raw.githubusercontent.com/YuZeZhang/myImgslib/main/202408180634154.png"
+                      alt="image-20240818063447864"
+                ></p>
+<p>![image-20240818064017828](..&#x2F;..&#x2F;..&#x2F;..&#x2F;..&#x2F;Library&#x2F;Application Support&#x2F;typora-user-images&#x2F;image-20240818064017828.png)</p>
+<p>The thread switching is also need context switching, but the thread switching is faster than the process switching.</p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://raw.githubusercontent.com/YuZeZhang/myImgslib/main/202408180642421.png"
+                      alt="image-20240818064201566"
+                ></p>
+<p>Because the expansive cost of context switching, there also have some other ways, such as fiber, coroutine, etc.</p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://raw.githubusercontent.com/YuZeZhang/myImgslib/main/202408180645121.png"
+                      alt="image-20240818064530759"
+                ></p>
+<p>Thanks <a class="link"   href="https://www.youtube.com/watch?v=4rLW7zg21gI" >https://www.youtube.com/watch?v=4rLW7zg21gI <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a>.</p>
+]]></content>
+  </entry>
+  <entry>
+    <title>原型和原型链</title>
+    <url>/Yuyang/prototype/</url>
+    <content><![CDATA[<h2 id="原型"><a href="#原型" class="headerlink" title="原型"></a>原型</h2><p>什么是原型？什么是构造函数、实例原型、实例？它们的关系是什么？</p>
+<h3 id="原型（Prototype）"><a href="#原型（Prototype）" class="headerlink" title="原型（Prototype）"></a>原型（Prototype）</h3><p>每个 JavaScript 对象都有一个内部链接到另一个对象的引用，这个对象被称为原型。当试图访问一个对象的属性时，JavaScript 会首先在这个对象自身上寻找该属性，如果找不到，则会查找该对象的原型，如此递归下去，直到找到该属性或达到原型链的末端。</p>
+<h3 id="构造函数（Constructor）"><a href="#构造函数（Constructor）" class="headerlink" title="构造函数（Constructor）"></a>构造函数（Constructor）</h3><p>构造函数是用于创建对象的函数。通过 new 操作符调用构造函数时，它会创建一个新对象，并将这个新对象的内部 [[Prototype]] 连接到构造函数的 prototype 属性。</p>
+<div class="highlight-container" data-rel="Javascript"><figure class="iseeu highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">Person</span>(<span class="params">name</span>) &#123;</span><br><span class="line">  <span class="variable language_">this</span>.<span class="property">name</span> = name;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> person = <span class="keyword">new</span> <span class="title class_">Person</span>(<span class="string">&#x27;Yuyang&#x27;</span>);</span><br></pre></td></tr></table></figure></div>
+
+<p>Person是构造函数，person是创建的对象</p>
+<h3 id="实例原型（Instance-Prototype）"><a href="#实例原型（Instance-Prototype）" class="headerlink" title="实例原型（Instance Prototype）"></a>实例原型（Instance Prototype）</h3><p>实例原型是由构造函数的 <code>prototype</code> 属性引用的对象。所有由该构造函数创建的实例对象都将共享这个实例原型对象的属性和方法。</p>
+<div class="highlight-container" data-rel="Javascript"><figure class="iseeu highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">Person</span>(<span class="params">name</span>) &#123;</span><br><span class="line">  <span class="variable language_">this</span>.<span class="property">name</span> = name;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="title class_">Person</span>.<span class="property"><span class="keyword">prototype</span></span>.<span class="property">callName</span> = <span class="keyword">function</span>(<span class="params"></span>)&#123;</span><br><span class="line">	<span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;zyz&quot;</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> person1 = <span class="keyword">new</span> <span class="title class_">Person</span>(<span class="string">&quot;Yuyang&quot;</span>);</span><br><span class="line"><span class="keyword">const</span> person2 = <span class="keyword">new</span> <span class="title class_">Person</span>(<span class="string">&quot;YuyangA&quot;</span>);</span><br><span class="line">person1.<span class="property">callName</span> = <span class="keyword">function</span>(<span class="params"></span>)&#123;</span><br><span class="line">	<span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="variable language_">this</span>.<span class="property">name</span>)</span><br><span class="line">&#125;</span><br><span class="line">person1.<span class="title function_">callName</span>();</span><br><span class="line">person2.<span class="title function_">callName</span>();</span><br></pre></td></tr></table></figure></div>
+
+<h3 id="实例（Instance）"><a href="#实例（Instance）" class="headerlink" title="实例（Instance）"></a>实例（Instance）</h3><p>实例是通过构造函数创建的具体对象。每个实例都有一个内部链接到它的构造函数的 <code>prototype</code> 属性的引用，这个链接可以通过 <code>__proto__</code>（非标准）或 <code>Object.getPrototypeOf</code> 方法来访问。</p>
+<div class="highlight-container" data-rel="Javascript"><figure class="iseeu highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> person3 = <span class="keyword">new</span> <span class="title class_">Person</span>(<span class="string">&#x27;Charlie&#x27;</span>);</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(person3.<span class="property">__proto__</span> === <span class="title class_">Person</span>.<span class="property"><span class="keyword">prototype</span></span>); <span class="comment">// 输出：true</span></span><br></pre></td></tr></table></figure></div>
+
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://raw.githubusercontent.com/YuZeZhang/myImgslib/main/202407121647943.png"
+                      alt="image.png"
+                ></p>
+<h2 id="原型链"><a href="#原型链" class="headerlink" title="原型链"></a>原型链</h2><p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://raw.githubusercontent.com/YuZeZhang/myImgslib/main/202407121648478.png"
+                      alt="image.png"
+                ></p>
+<h2 id="词法作用域"><a href="#词法作用域" class="headerlink" title="词法作用域"></a>词法作用域</h2><p><strong>JavaScript 采用词法作用域(lexical scoping)，也就是静态作用域。</strong></p>
+<h2 id="this"><a href="#this" class="headerlink" title="this"></a>this</h2><p>JavaScript中的this总是指向一个对象，而具体指向哪个对象是在运行时基于函数的执行环境动态绑定的，而非函数被声明时的环境。</p>
+<h3 id="this的指向"><a href="#this的指向" class="headerlink" title="this的指向"></a>this的指向</h3><ul>
+<li>作为对象的方法调用</li>
+<li>作为普通函数调用</li>
+<li>构造器调用</li>
+<li>Function.prototype.call 或 Function.prototype.apply 调用</li>
+</ul>
+<h4 id="作为对象的方法调用："><a href="#作为对象的方法调用：" class="headerlink" title="作为对象的方法调用："></a>作为对象的方法调用：</h4><p>函数作为对象的方法被调用时，this指向该对象：</p>
+<div class="highlight-container" data-rel="Javascript"><figure class="iseeu highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> obj = &#123;</span><br><span class="line">    <span class="attr">a</span>: <span class="number">1</span>,</span><br><span class="line">    <span class="attr">getA</span>: <span class="keyword">function</span> (<span class="params"></span>) &#123;</span><br><span class="line">        <span class="title function_">alert</span>(<span class="variable language_">this</span> === obj);</span><br><span class="line">        <span class="title function_">alert</span>(<span class="variable language_">this</span>.<span class="property">a</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">obj.<span class="title function_">getA</span>();</span><br></pre></td></tr></table></figure></div>
+
+<h4 id="作为普通函数调用："><a href="#作为普通函数调用：" class="headerlink" title="作为普通函数调用："></a>作为普通函数调用：</h4><p>当函数不作为对象的属性被调用时，此时的this总是指向全局对象。在浏览器的javascript里，这个全局对象是window对象。</p>
+<div class="highlight-container" data-rel="Javascript"><figure class="iseeu highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="variable language_">window</span>.<span class="property">name</span> = <span class="string">&quot;globalName&quot;</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> getName = <span class="keyword">function</span>(<span class="params"></span>)&#123;</span><br><span class="line">	<span class="keyword">return</span> <span class="variable language_">this</span>.<span class="property">name</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="title function_">getName</span>()); <span class="comment">//输出: globalName</span></span><br><span class="line"></span><br></pre></td></tr></table></figure></div>
+
+<div class="highlight-container" data-rel="Javascript"><figure class="iseeu highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="variable language_">window</span>.<span class="property">name</span> = <span class="string">&quot;globalName&quot;</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> myObject = &#123;</span><br><span class="line">	<span class="attr">name</span>: <span class="string">&quot;sven&quot;</span>,</span><br><span class="line">	<span class="attr">getName</span>: <span class="keyword">function</span>(<span class="params"></span>)&#123;</span><br><span class="line">		<span class="keyword">return</span> <span class="variable language_">this</span>.<span class="property">name</span>;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> getName = myObject.<span class="property">getName</span>;</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="title function_">getName</span>()); <span class="comment">// globalName</span></span><br><span class="line"></span><br></pre></td></tr></table></figure></div>
+
+
+
+<div class="highlight-container" data-rel="Javascript"><figure class="iseeu highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="variable language_">window</span>.<span class="property">id</span> = <span class="string">&quot;window&quot;</span>;</span><br><span class="line"><span class="variable language_">document</span>.<span class="title function_">getElementById</span>(<span class="string">&quot;div1&quot;</span>).<span class="title function_">addEventListener</span>(<span class="string">&quot;click&quot;</span>, <span class="keyword">function</span>(<span class="params"></span>) &#123;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;🚀 ~ window.id:&quot;</span>, <span class="variable language_">this</span>.<span class="property">id</span>, <span class="variable language_">this</span>) </span><br><span class="line">  <span class="keyword">var</span> callback = <span class="keyword">function</span>(<span class="params"></span>)&#123;</span><br><span class="line">     <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;🚀 ~ window.id:&quot;</span>, <span class="variable language_">this</span>.<span class="property">id</span>, <span class="variable language_">this</span>)</span><br><span class="line">  &#125;        </span><br><span class="line">  <span class="title function_">callback</span>()</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line"><span class="comment">// callback中的this指向window</span></span><br><span class="line"></span><br><span class="line"><span class="variable language_">document</span>.<span class="title function_">getElementById</span>(<span class="string">&quot;div1&quot;</span>).<span class="title function_">addEventListener</span>(<span class="string">&quot;click&quot;</span>, <span class="keyword">function</span>(<span class="params"></span>) &#123;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;🚀 ~ window.id:&quot;</span>, <span class="variable language_">this</span>.<span class="property">id</span>, <span class="variable language_">this</span>);</span><br><span class="line">  <span class="keyword">var</span> <span class="title function_">callback</span> = (<span class="params"></span>) =&gt; &#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;🚀 ~ window.id:&quot;</span>, <span class="variable language_">this</span>.<span class="property">id</span>, <span class="variable language_">this</span>);</span><br><span class="line">  &#125;;        </span><br><span class="line">  <span class="title function_">callback</span>();</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 箭头函数没有this 捕获其上下文的this值</span></span><br><span class="line"></span><br><span class="line"><span class="variable language_">document</span>.<span class="title function_">getElementById</span>(<span class="string">&quot;div1&quot;</span>).<span class="title function_">addEventListener</span>(<span class="string">&quot;click&quot;</span>, <span class="keyword">function</span>(<span class="params"></span>) &#123;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;🚀 ~ window.id:&quot;</span>, <span class="variable language_">this</span>.<span class="property">id</span>, <span class="variable language_">this</span>);</span><br><span class="line">  <span class="keyword">var</span> callback = <span class="keyword">function</span>(<span class="params"></span>)&#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;🚀 ~ window.id:&quot;</span>, <span class="variable language_">this</span>.<span class="property">id</span>, <span class="variable language_">this</span>);</span><br><span class="line">  &#125;.<span class="title function_">bind</span>(<span class="variable language_">this</span>);        </span><br><span class="line">  <span class="title function_">callback</span>();</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 使用 bind 显式地将 this 绑定到 div1</span></span><br><span class="line"></span><br><span class="line"><span class="variable language_">document</span>.<span class="title function_">getElementById</span>(<span class="string">&quot;div1&quot;</span>).<span class="title function_">addEventListener</span>(<span class="string">&quot;click&quot;</span>, <span class="keyword">function</span>(<span class="params"></span>) &#123;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;🚀 ~ window.id:&quot;</span>, <span class="variable language_">this</span>.<span class="property">id</span>, <span class="variable language_">this</span>);</span><br><span class="line">  <span class="keyword">var</span> self = <span class="variable language_">this</span>;</span><br><span class="line">  <span class="keyword">var</span> callback = <span class="keyword">function</span>(<span class="params"></span>)&#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;🚀 ~ window.id:&quot;</span>, self.<span class="property">id</span>, self);</span><br><span class="line">  &#125;;        </span><br><span class="line">  <span class="title function_">callback</span>();</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 暂存this</span></span><br></pre></td></tr></table></figure></div>
+
+<h4 id="构造器调用："><a href="#构造器调用：" class="headerlink" title="构造器调用："></a>构造器调用：</h4><p>用new调用函数时，该函数会返回一个对象，通常情况下，构造器的this就会指向返回的这个对象，</p>
+<div class="highlight-container" data-rel="Javascript"><figure class="iseeu highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> <span class="title class_">MyClass</span> = <span class="keyword">function</span>(<span class="params"></span>)&#123;</span><br><span class="line">	<span class="variable language_">this</span>.<span class="property">name</span> = <span class="string">&quot;seven&quot;</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> obj = <span class="keyword">new</span> <span class="title class_">MyClass</span>();</span><br><span class="line"><span class="title function_">alert</span>(obj.<span class="property">name</span>);</span><br></pre></td></tr></table></figure></div>
+
+<p>当构造器显式的返回一个对象时，那么此次运算结果最终会返回这个对象，而不是我们之前期待的this</p>
+<div class="highlight-container" data-rel="Javascript"><figure class="iseeu highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> <span class="title class_">MyClass</span> = <span class="keyword">function</span>(<span class="params"></span>)&#123;</span><br><span class="line">	<span class="variable language_">this</span>.<span class="property">name</span> = <span class="string">&quot;sven&quot;</span>;</span><br><span class="line">	<span class="keyword">return</span> &#123;</span><br><span class="line">		<span class="attr">name</span>: <span class="string">&quot;anne&quot;</span></span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> obj = <span class="keyword">new</span> <span class="title class_">MyClass</span>();</span><br><span class="line"><span class="title function_">alert</span>(obj.<span class="property">name</span>); <span class="comment">//anne</span></span><br></pre></td></tr></table></figure></div>
+
+<h4 id="Function-prototype-call-或-Function-prototype-apply-调用"><a href="#Function-prototype-call-或-Function-prototype-apply-调用" class="headerlink" title="Function.prototype.call 或 Function.prototype.apply 调用:"></a>Function.prototype.call 或 Function.prototype.apply 调用:</h4><div class="highlight-container" data-rel="Javascript"><figure class="iseeu highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> obj1 = &#123;</span><br><span class="line">  <span class="attr">name</span>: <span class="string">&#x27;seven&#x27;</span>,</span><br><span class="line">  <span class="attr">getName</span>: <span class="keyword">function</span>(<span class="params"></span>)&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="variable language_">this</span>.<span class="property">name</span>;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> obj2 = &#123;</span><br><span class="line">  <span class="attr">name</span>: <span class="string">&#x27;anne&#x27;</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(obj1.<span class="title function_">getName</span>()) <span class="comment">// seven</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(obj1.<span class="property">getName</span>.<span class="title function_">call</span>(obj2)) <span class="comment">// anne</span></span><br></pre></td></tr></table></figure></div>
+
+<p><code>call</code> 方法调用一个函数，并显式地指定 <code>this</code> 值和传递的参数。</p>
+<p>call源码实现：</p>
+<div class="highlight-container" data-rel="Javascript"><figure class="iseeu highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="title class_">Function</span>.<span class="property"><span class="keyword">prototype</span></span>.<span class="property">myCall</span> = <span class="keyword">function</span>(<span class="params">context, ...args</span>) &#123;</span><br><span class="line">  <span class="comment">// 如果没有提供 context，默认设置为全局对象（在浏览器中是 window）</span></span><br><span class="line">  context = context || globalThis;</span><br><span class="line">  </span><br><span class="line">  <span class="comment">// 为 context 创建一个唯一的临时属性来存储函数</span></span><br><span class="line">  <span class="keyword">const</span> fnSymbol = <span class="title class_">Symbol</span>();</span><br><span class="line">  context[fnSymbol] = <span class="variable language_">this</span>;</span><br><span class="line">  </span><br><span class="line">  <span class="comment">// 使用 context 调用函数，并传递参数</span></span><br><span class="line">  <span class="keyword">const</span> result = context[fnSymbol](...args);</span><br><span class="line">  </span><br><span class="line">  <span class="comment">// 删除临时属性</span></span><br><span class="line">  <span class="keyword">delete</span> context[fnSymbol];</span><br><span class="line">  </span><br><span class="line">  <span class="keyword">return</span> result;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 示例使用 myCall</span></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">greet</span>(<span class="params">greeting, punctuation</span>) &#123;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(greeting + <span class="string">&#x27;, &#x27;</span> + <span class="variable language_">this</span>.<span class="property">name</span> + punctuation);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> person = &#123; <span class="attr">name</span>: <span class="string">&#x27;Alice&#x27;</span> &#125;;</span><br><span class="line">greet.<span class="title function_">myCall</span>(person, <span class="string">&#x27;Hello&#x27;</span>, <span class="string">&#x27;!&#x27;</span>);  <span class="comment">// 输出: &quot;Hello, Alice!&quot;</span></span><br><span class="line"></span><br></pre></td></tr></table></figure></div>
+
+<p> <strong>call() 方法接受的是参数列表，而 apply() 方法接受的是一个参数数组</strong>。</p>
+<p>call：</p>
+<blockquote>
+<p><em>function</em>.call(<em>thisArg</em>, <em>arg1</em>, <em>arg2</em>, …)</p>
+</blockquote>
+<p>apply：</p>
+<blockquote>
+<p><em>func</em>.apply(<em>thisArg, [argsArray</em>])</p>
+</blockquote>
+<p><code>bind</code> 方法创建一个新的函数，该函数在调用时，其 <code>this</code> 值和传递的参数被预先设置。与 <code>call</code> 方法不同，<code>bind</code> 不会立即调用函数，而是返回一个新的函数。</p>
+<div class="highlight-container" data-rel="Javascript"><figure class="iseeu highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> foo = &#123;</span><br><span class="line">  <span class="attr">value</span>: <span class="number">1</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="title class_">Function</span>.<span class="property"><span class="keyword">prototype</span></span>.<span class="property">bind2</span> = <span class="keyword">function</span>(<span class="params">context</span>)&#123;</span><br><span class="line">  <span class="keyword">var</span> _this = <span class="variable language_">this</span>;</span><br><span class="line">  <span class="keyword">return</span> <span class="keyword">function</span>(<span class="params"></span>)&#123;</span><br><span class="line">    _this.<span class="title function_">apply</span>(context);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> bindFoo2 = bar.<span class="title function_">bind2</span>(foo);</span><br></pre></td></tr></table></figure></div>
+
+<h3 id="丢失的this"><a href="#丢失的this" class="headerlink" title="丢失的this"></a>丢失的this</h3>]]></content>
+  </entry>
+  <entry>
+    <title></title>
+    <url>/undefined/redbook/</url>
+    <content><![CDATA[<h2 id="问题准备"><a href="#问题准备" class="headerlink" title="问题准备"></a>问题准备</h2><h2 id="Vite构建"><a href="#Vite构建" class="headerlink" title="Vite构建"></a>Vite构建</h2><p>几大特点</p>
+<p>1、冷启动<br>2、快速热更新<br>3、bundleless<br>4、优化构建</p>
+<p>特性说明：<br>1、开发环境冷启动，构建基于ESBuild，线上产物构建 rollup<br>2、本地HMR，做了很多优化，webpack是不是需要分析依赖图（耗时的），因为开发环境ESM方式请求资源文件<br>3、配置简单，比parcel还是复杂点</p>
+<p>区分环境构建</p>
+<p>开发环境 esbuild，bundleless方案进行构建<br>开发环境 rollup<br>如果你想在低版本浏览器调试，不好意思，vite不支持，因为vite是基于ESM的，低版本浏览器不支持ESM</p>
+<p>热更新原理</p>
+<p>建立长链接，websocket</p>
+<p>vite&#x2F;client 插入到客户端<br>vite websocket 服务</p>
+<p>浏览器的热更新需要结合，定义一些事件来处理：connect、disconnect、message<br>vite&#x2F;client 会监听文件变化，然后通知vite服务，vite服务会推送到客户端</p>
+<p>turbopack</p>
+<h2 id="前端工程化"><a href="#前端工程化" class="headerlink" title="前端工程化"></a>前端工程化</h2><h3 id="前端工程化方向"><a href="#前端工程化方向" class="headerlink" title="前端工程化方向"></a>前端工程化方向</h3><p>1、构建工具<br>2、自动化测试<br>3、代码规范<br>4、性能优化<br>5、持续集成<br>6、部署</p>
+<h2 id="React性能优化，性能优化指标采集"><a href="#React性能优化，性能优化指标采集" class="headerlink" title="React性能优化，性能优化指标采集"></a>React性能优化，性能优化指标采集</h2><p>React性能优化Hooks<br>1、React.memo<br>React.memo是一个高阶组件，类似于React.PureComponent，用于函数组件的性能优化，它只会在props发生变化时重新渲染组件，如果props没有发生变化，它会返回上一次的渲染结果，从而避免不必要的渲染。<br>2、useMemo<br>useMemo是一个自定义Hook，用于缓存计算结果，它接收一个函数和一个依赖数组，只有依赖数组中的值发生变化时，useMemo才会重新计算结果，否则直接返回上一次的计算结果。<br>3、useCallback<br>useCallback是一个自定义Hook，用于缓存函数，它接收一个函数和一个依赖数组，只有依赖数组中的值发生变化时，useCallback才会返回新的函数，否则直接返回上一次的函数。<br>4、useEffect<br>useEffect是一个自定义Hook，用于处理副作用，它接收一个函数和一个依赖数组，只有依赖数组中的值发生变化时，useEffect才会执行函数，否则直接返回上一次的执行结果。<br>5、useLayoutEffect<br>useLayoutEffect是一个自定义Hook，用于处理副作用，它接收一个函数和一个依赖数组，只有依赖数组中的值发生变化时，useLayoutEffect才会执行函数，否则直接返回上一次的执行结果。</p>
+<h2 id="React-Hooks实现原理-useEffect的实现原理以及执行时机"><a href="#React-Hooks实现原理-useEffect的实现原理以及执行时机" class="headerlink" title="React Hooks实现原理 useEffect的实现原理以及执行时机"></a>React Hooks实现原理 useEffect的实现原理以及执行时机</h2><p>React Hooks实现原理:</p>
+<h2 id="function组件如何保存状态"><a href="#function组件如何保存状态" class="headerlink" title="function组件如何保存状态"></a>function组件如何保存状态</h2><p>1、useState<br>2、useReducer<br>3、useRef<br>4、useMemo<br>5、useCallback</p>
+<h2 id="React事件处理机制是什么？以及为什么？"><a href="#React事件处理机制是什么？以及为什么？" class="headerlink" title="React事件处理机制是什么？以及为什么？"></a>React事件处理机制是什么？以及为什么？</h2><p>React事件处理机制是基于合成事件的，React会将原生事件封装成合成事件，然后通过事件委托的方式统一管理事件，从而提高性能。</p>
+<h2 id="输入url到页面呈现的过程，以及render树是怎么渲染的"><a href="#输入url到页面呈现的过程，以及render树是怎么渲染的" class="headerlink" title="输入url到页面呈现的过程，以及render树是怎么渲染的"></a>输入url到页面呈现的过程，以及render树是怎么渲染的</h2><h2 id="script-async和defer的区别"><a href="#script-async和defer的区别" class="headerlink" title="script async和defer的区别"></a>script async和defer的区别</h2><p>script async和script defer都是用于异步加载脚本的，但是它们之间有一些区别：<br>1、执行时机<br>script async是在下载完成后立即执行脚本，不会阻塞页面的渲染，但是执行顺序不确定；<br>script defer是在DOM解析完成后按照顺序执行脚本，不会阻塞页面的渲染，但是执行顺序是按照顺序执行的。</p>
+<h2 id="微任务和红任务"><a href="#微任务和红任务" class="headerlink" title="微任务和红任务"></a>微任务和红任务</h2><h2 id="css绘制同心圆"><a href="#css绘制同心圆" class="headerlink" title="css绘制同心圆"></a>css绘制同心圆</h2><h2 id="三数之和"><a href="#三数之和" class="headerlink" title="三数之和"></a>三数之和</h2><h2 id="状态码"><a href="#状态码" class="headerlink" title="状态码"></a>状态码</h2><h2 id="跨域"><a href="#跨域" class="headerlink" title="跨域"></a>跨域</h2><h2 id="Promise-all-和-Promise-allSettled"><a href="#Promise-all-和-Promise-allSettled" class="headerlink" title="Promise.all 和 Promise.allSettled"></a>Promise.all 和 Promise.allSettled</h2><p>function myPromiseAll(promises) {<br>  return new Promise((resolve, reject) &#x3D;&gt; {<br>    if (!Array.isArray(promises)) {<br>      return reject(new TypeError(“Argument must be an array”));<br>    }</p>
+<pre><code>const resultArray = [];
+let resolvedCount = 0;
+
+promises.forEach((promise, index) =&gt; &#123;
+  // 处理非 Promise 对象
+  Promise.resolve(promise)
+    .then((value) =&gt; &#123;
+      resultArray[index] = value; // 保存结果在对应位置
+      resolvedCount++; // 记录已成功的 Promise 数量
+
+      // 如果所有 Promise 都成功，resolve 返回结果
+      if (resolvedCount === promises.length) &#123;
+        resolve(resultArray);
+      &#125;
+    &#125;)
+    .catch((error) =&gt; &#123;
+      reject(error); // 一旦有 Promise 失败，立即 reject
+    &#125;);
+&#125;);
+
+// 如果传入空数组，直接 resolve
+if (promises.length === 0) &#123;
+  resolve(resultArray);
+&#125;
+</code></pre>
+<p>  });<br>}</p>
+<p>&#x2F;&#x2F; 测试用例<br>const p1 &#x3D; Promise.resolve(1);<br>const p2 &#x3D; Promise.resolve(2);<br>const p3 &#x3D; Promise.resolve(3);</p>
+<p>myPromiseAll([p1, p2, p3])<br>  .then((result) &#x3D;&gt; console.log(“成功:”, result)) &#x2F;&#x2F; 成功: [1, 2, 3]<br>  .catch((error) &#x3D;&gt; console.log(“失败:”, error));</p>
+<h2 id="实现一个URL解析"><a href="#实现一个URL解析" class="headerlink" title="实现一个URL解析"></a>实现一个URL解析</h2><p>url解析是一个比较复杂的过程，需要考虑很多情况，比如协议、主机、端口、路径、查询参数、锚点等，下面是一个简单的实现：</p>
+<div class="highlight-container" data-rel="Javascript"><figure class="iseeu highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">parseUrl</span>(<span class="params">url</span>) &#123;</span><br><span class="line">  <span class="keyword">const</span> urlObject = <span class="keyword">new</span> <span class="title function_">URL</span>(url); <span class="comment">// 使用 URL 构造函数解析</span></span><br><span class="line"></span><br><span class="line">  <span class="keyword">return</span> &#123;</span><br><span class="line">    <span class="attr">protocol</span>: urlObject.<span class="property">protocol</span>,  <span class="comment">// 协议，如 &#x27;https:&#x27;</span></span><br><span class="line">    <span class="attr">host</span>: urlObject.<span class="property">host</span>,          <span class="comment">// 主机名和端口号，如 &#x27;example.com:8080&#x27;</span></span><br><span class="line">    <span class="attr">hostname</span>: urlObject.<span class="property">hostname</span>,  <span class="comment">// 主机名，如 &#x27;example.com&#x27;</span></span><br><span class="line">    <span class="attr">port</span>: urlObject.<span class="property">port</span>,          <span class="comment">// 端口号，如 &#x27;8080&#x27;</span></span><br><span class="line">    <span class="attr">pathname</span>: urlObject.<span class="property">pathname</span>,  <span class="comment">// 路径，如 &#x27;/path/to/resource&#x27;</span></span><br><span class="line">    <span class="attr">search</span>: urlObject.<span class="property">search</span>,      <span class="comment">// 查询字符串，如 &#x27;?name=John&amp;age=30&#x27;</span></span><br><span class="line">    <span class="attr">params</span>: <span class="title class_">Object</span>.<span class="title function_">fromEntries</span>(<span class="keyword">new</span> <span class="title class_">URLSearchParams</span>(urlObject.<span class="property">search</span>)), <span class="comment">// 查询参数对象</span></span><br><span class="line">    <span class="attr">hash</span>: urlObject.<span class="property">hash</span>           <span class="comment">// 锚点，如 &#x27;#section1&#x27;</span></span><br><span class="line">  &#125;;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 测试用例</span></span><br><span class="line"><span class="keyword">const</span> url = <span class="string">&#x27;https://example.com:8080/path/to/resource?name=John&amp;age=30#section1&#x27;</span>;</span><br><span class="line"><span class="keyword">const</span> result = <span class="title function_">parseUrl</span>(url);</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(result);</span><br></pre></td></tr></table></figure></div>
+
+<h2 id="React-memo-useCallback-useEffect"><a href="#React-memo-useCallback-useEffect" class="headerlink" title="React.memo&#x2F;useCallback&#x2F;useEffect"></a>React.memo&#x2F;useCallback&#x2F;useEffect</h2><h2 id="介绍created和beforeRouteEnter区别-优劣"><a href="#介绍created和beforeRouteEnter区别-优劣" class="headerlink" title="介绍created和beforeRouteEnter区别 优劣"></a>介绍created和beforeRouteEnter区别 优劣</h2><h2 id="父子组建生命周期的顺序，为什么是这样的-为什么是在beforeMount的时候渲染子组件"><a href="#父子组建生命周期的顺序，为什么是这样的-为什么是在beforeMount的时候渲染子组件" class="headerlink" title="父子组建生命周期的顺序，为什么是这样的?为什么是在beforeMount的时候渲染子组件?"></a>父子组建生命周期的顺序，为什么是这样的?为什么是在beforeMount的时候渲染子组件?</h2><h2 id="http和tcp的关系"><a href="#http和tcp的关系" class="headerlink" title="http和tcp的关系"></a>http和tcp的关系</h2><h2 id="http状态码以及常见状态码"><a href="#http状态码以及常见状态码" class="headerlink" title="http状态码以及常见状态码"></a>http状态码以及常见状态码</h2><h2 id="介绍下三次握手"><a href="#介绍下三次握手" class="headerlink" title="介绍下三次握手"></a>介绍下三次握手</h2><h2 id="为什么需要三次"><a href="#为什么需要三次" class="headerlink" title="为什么需要三次"></a>为什么需要三次</h2><h2 id="二叉树-求根节点到叶子节点的路径之间数字构成的数总和，如路径4-1-5-表示415，故答案为414-415-436"><a href="#二叉树-求根节点到叶子节点的路径之间数字构成的数总和，如路径4-1-5-表示415，故答案为414-415-436" class="headerlink" title="二叉树 求根节点到叶子节点的路径之间数字构成的数总和，如路径4-&gt;1-&gt;5 表示415，故答案为414+415+436"></a>二叉树 求根节点到叶子节点的路径之间数字构成的数总和，如路径4-&gt;1-&gt;5 表示415，故答案为414+415+436</h2>]]></content>
   </entry>
   <entry>
     <title>node_modules困境以及pnpm</title>
@@ -1667,176 +2139,6 @@
 ]]></content>
   </entry>
   <entry>
-    <title>Process and Thread</title>
-    <url>/Yuyang/processandthread/</url>
-    <content><![CDATA[<h2 id="Process-and-Thread"><a href="#Process-and-Thread" class="headerlink" title="Process and Thread"></a>Process and Thread</h2><p>What is process and thread?And what is the difference between them?In this article, we will discuss the concept of process and thread.To better understand the concept of process and thread, we need to understand the concept of program.</p>
-<h3 id="What-program-is"><a href="#What-program-is" class="headerlink" title="What program is"></a>What program is</h3><p>A program is a excutable file that is stored on disk and is loaded into memory when it is run.<br>When a program is loaded into memory, it becomes a process. </p>
-<h4 id="Process"><a href="#Process" class="headerlink" title="Process"></a>Process</h4><p>Process is a program in execution. A process is an instance of a program running on a computer. When a program is executed, it is loaded into memory and becomes a process. A process is an independent entity to which system resources (such as CPU time and memory) are allocated. Each process is executed in a separate address space, and one process cannot access the variables and data structures of another process. If a process wishes to access another process’ resources, inter-process communications have to be used. These include pipes, files, sockets, and other forms.</p>
-<p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="https://raw.githubusercontent.com/YuZeZhang/myImgslib/main/202408180633691.png"
-                      alt="image-20240818063319857"
-                ></p>
-<h4 id="Thread"><a href="#Thread" class="headerlink" title="Thread"></a>Thread</h4><p>Thread is a basic unit of CPU utilization, consisting of a program counter, a stack, and a set of registers, (and a thread ID.) Each thread shares with other threads belonging to the same process its code section, data section, and other operating-system resources, such as open files and signals.</p>
-<p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="https://raw.githubusercontent.com/YuZeZhang/myImgslib/main/202408180632067.png"
-                      alt="image-20240818063237021"
-                ></p>
-<h3 id="How-does-the-operating-system-manage-processes-and-threads"><a href="#How-does-the-operating-system-manage-processes-and-threads" class="headerlink" title="How does the operating system manage processes and threads"></a>How does the operating system manage processes and threads</h3><p>This is handled by the context switching mechanism, which enables the CPU to switch rapidly from one thread to another. This is done by saving the context of the thread that is currently running and loading the saved context of the thread that is to be executed. The operating system is responsible for managing the execution of processes and threads, and it does this by scheduling them to run on the CPU.</p>
-<p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="https://raw.githubusercontent.com/YuZeZhang/myImgslib/main/202408180634154.png"
-                      alt="image-20240818063447864"
-                ></p>
-<p>![image-20240818064017828](..&#x2F;..&#x2F;..&#x2F;..&#x2F;..&#x2F;Library&#x2F;Application Support&#x2F;typora-user-images&#x2F;image-20240818064017828.png)</p>
-<p>The thread switching is also need context switching, but the thread switching is faster than the process switching.</p>
-<p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="https://raw.githubusercontent.com/YuZeZhang/myImgslib/main/202408180642421.png"
-                      alt="image-20240818064201566"
-                ></p>
-<p>Because the expansive cost of context switching, there also have some other ways, such as fiber, coroutine, etc.</p>
-<p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="https://raw.githubusercontent.com/YuZeZhang/myImgslib/main/202408180645121.png"
-                      alt="image-20240818064530759"
-                ></p>
-<p>Thanks <a class="link"   href="https://www.youtube.com/watch?v=4rLW7zg21gI" >https://www.youtube.com/watch?v=4rLW7zg21gI <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a>.</p>
-]]></content>
-  </entry>
-  <entry>
-    <title>原型和原型链</title>
-    <url>/Yuyang/prototype/</url>
-    <content><![CDATA[<h2 id="原型"><a href="#原型" class="headerlink" title="原型"></a>原型</h2><p>什么是原型？什么是构造函数、实例原型、实例？它们的关系是什么？</p>
-<h3 id="原型（Prototype）"><a href="#原型（Prototype）" class="headerlink" title="原型（Prototype）"></a>原型（Prototype）</h3><p>每个 JavaScript 对象都有一个内部链接到另一个对象的引用，这个对象被称为原型。当试图访问一个对象的属性时，JavaScript 会首先在这个对象自身上寻找该属性，如果找不到，则会查找该对象的原型，如此递归下去，直到找到该属性或达到原型链的末端。</p>
-<h3 id="构造函数（Constructor）"><a href="#构造函数（Constructor）" class="headerlink" title="构造函数（Constructor）"></a>构造函数（Constructor）</h3><p>构造函数是用于创建对象的函数。通过 new 操作符调用构造函数时，它会创建一个新对象，并将这个新对象的内部 [[Prototype]] 连接到构造函数的 prototype 属性。</p>
-<div class="highlight-container" data-rel="Javascript"><figure class="iseeu highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">Person</span>(<span class="params">name</span>) &#123;</span><br><span class="line">  <span class="variable language_">this</span>.<span class="property">name</span> = name;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> person = <span class="keyword">new</span> <span class="title class_">Person</span>(<span class="string">&#x27;Yuyang&#x27;</span>);</span><br></pre></td></tr></table></figure></div>
-
-<p>Person是构造函数，person是创建的对象</p>
-<h3 id="实例原型（Instance-Prototype）"><a href="#实例原型（Instance-Prototype）" class="headerlink" title="实例原型（Instance Prototype）"></a>实例原型（Instance Prototype）</h3><p>实例原型是由构造函数的 <code>prototype</code> 属性引用的对象。所有由该构造函数创建的实例对象都将共享这个实例原型对象的属性和方法。</p>
-<div class="highlight-container" data-rel="Javascript"><figure class="iseeu highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">Person</span>(<span class="params">name</span>) &#123;</span><br><span class="line">  <span class="variable language_">this</span>.<span class="property">name</span> = name;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="title class_">Person</span>.<span class="property"><span class="keyword">prototype</span></span>.<span class="property">callName</span> = <span class="keyword">function</span>(<span class="params"></span>)&#123;</span><br><span class="line">	<span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;zyz&quot;</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> person1 = <span class="keyword">new</span> <span class="title class_">Person</span>(<span class="string">&quot;Yuyang&quot;</span>);</span><br><span class="line"><span class="keyword">const</span> person2 = <span class="keyword">new</span> <span class="title class_">Person</span>(<span class="string">&quot;YuyangA&quot;</span>);</span><br><span class="line">person1.<span class="property">callName</span> = <span class="keyword">function</span>(<span class="params"></span>)&#123;</span><br><span class="line">	<span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="variable language_">this</span>.<span class="property">name</span>)</span><br><span class="line">&#125;</span><br><span class="line">person1.<span class="title function_">callName</span>();</span><br><span class="line">person2.<span class="title function_">callName</span>();</span><br></pre></td></tr></table></figure></div>
-
-<h3 id="实例（Instance）"><a href="#实例（Instance）" class="headerlink" title="实例（Instance）"></a>实例（Instance）</h3><p>实例是通过构造函数创建的具体对象。每个实例都有一个内部链接到它的构造函数的 <code>prototype</code> 属性的引用，这个链接可以通过 <code>__proto__</code>（非标准）或 <code>Object.getPrototypeOf</code> 方法来访问。</p>
-<div class="highlight-container" data-rel="Javascript"><figure class="iseeu highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> person3 = <span class="keyword">new</span> <span class="title class_">Person</span>(<span class="string">&#x27;Charlie&#x27;</span>);</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(person3.<span class="property">__proto__</span> === <span class="title class_">Person</span>.<span class="property"><span class="keyword">prototype</span></span>); <span class="comment">// 输出：true</span></span><br></pre></td></tr></table></figure></div>
-
-<p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="https://raw.githubusercontent.com/YuZeZhang/myImgslib/main/202407121647943.png"
-                      alt="image.png"
-                ></p>
-<h2 id="原型链"><a href="#原型链" class="headerlink" title="原型链"></a>原型链</h2><p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="https://raw.githubusercontent.com/YuZeZhang/myImgslib/main/202407121648478.png"
-                      alt="image.png"
-                ></p>
-<h2 id="词法作用域"><a href="#词法作用域" class="headerlink" title="词法作用域"></a>词法作用域</h2><p><strong>JavaScript 采用词法作用域(lexical scoping)，也就是静态作用域。</strong></p>
-<h2 id="this"><a href="#this" class="headerlink" title="this"></a>this</h2><p>JavaScript中的this总是指向一个对象，而具体指向哪个对象是在运行时基于函数的执行环境动态绑定的，而非函数被声明时的环境。</p>
-<h3 id="this的指向"><a href="#this的指向" class="headerlink" title="this的指向"></a>this的指向</h3><ul>
-<li>作为对象的方法调用</li>
-<li>作为普通函数调用</li>
-<li>构造器调用</li>
-<li>Function.prototype.call 或 Function.prototype.apply 调用</li>
-</ul>
-<h4 id="作为对象的方法调用："><a href="#作为对象的方法调用：" class="headerlink" title="作为对象的方法调用："></a>作为对象的方法调用：</h4><p>函数作为对象的方法被调用时，this指向该对象：</p>
-<div class="highlight-container" data-rel="Javascript"><figure class="iseeu highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> obj = &#123;</span><br><span class="line">    <span class="attr">a</span>: <span class="number">1</span>,</span><br><span class="line">    <span class="attr">getA</span>: <span class="keyword">function</span> (<span class="params"></span>) &#123;</span><br><span class="line">        <span class="title function_">alert</span>(<span class="variable language_">this</span> === obj);</span><br><span class="line">        <span class="title function_">alert</span>(<span class="variable language_">this</span>.<span class="property">a</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">obj.<span class="title function_">getA</span>();</span><br></pre></td></tr></table></figure></div>
-
-<h4 id="作为普通函数调用："><a href="#作为普通函数调用：" class="headerlink" title="作为普通函数调用："></a>作为普通函数调用：</h4><p>当函数不作为对象的属性被调用时，此时的this总是指向全局对象。在浏览器的javascript里，这个全局对象是window对象。</p>
-<div class="highlight-container" data-rel="Javascript"><figure class="iseeu highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="variable language_">window</span>.<span class="property">name</span> = <span class="string">&quot;globalName&quot;</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> getName = <span class="keyword">function</span>(<span class="params"></span>)&#123;</span><br><span class="line">	<span class="keyword">return</span> <span class="variable language_">this</span>.<span class="property">name</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="title function_">getName</span>()); <span class="comment">//输出: globalName</span></span><br><span class="line"></span><br></pre></td></tr></table></figure></div>
-
-<div class="highlight-container" data-rel="Javascript"><figure class="iseeu highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="variable language_">window</span>.<span class="property">name</span> = <span class="string">&quot;globalName&quot;</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> myObject = &#123;</span><br><span class="line">	<span class="attr">name</span>: <span class="string">&quot;sven&quot;</span>,</span><br><span class="line">	<span class="attr">getName</span>: <span class="keyword">function</span>(<span class="params"></span>)&#123;</span><br><span class="line">		<span class="keyword">return</span> <span class="variable language_">this</span>.<span class="property">name</span>;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> getName = myObject.<span class="property">getName</span>;</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="title function_">getName</span>()); <span class="comment">// globalName</span></span><br><span class="line"></span><br></pre></td></tr></table></figure></div>
-
-
-
-<div class="highlight-container" data-rel="Javascript"><figure class="iseeu highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="variable language_">window</span>.<span class="property">id</span> = <span class="string">&quot;window&quot;</span>;</span><br><span class="line"><span class="variable language_">document</span>.<span class="title function_">getElementById</span>(<span class="string">&quot;div1&quot;</span>).<span class="title function_">addEventListener</span>(<span class="string">&quot;click&quot;</span>, <span class="keyword">function</span>(<span class="params"></span>) &#123;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;🚀 ~ window.id:&quot;</span>, <span class="variable language_">this</span>.<span class="property">id</span>, <span class="variable language_">this</span>) </span><br><span class="line">  <span class="keyword">var</span> callback = <span class="keyword">function</span>(<span class="params"></span>)&#123;</span><br><span class="line">     <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;🚀 ~ window.id:&quot;</span>, <span class="variable language_">this</span>.<span class="property">id</span>, <span class="variable language_">this</span>)</span><br><span class="line">  &#125;        </span><br><span class="line">  <span class="title function_">callback</span>()</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line"><span class="comment">// callback中的this指向window</span></span><br><span class="line"></span><br><span class="line"><span class="variable language_">document</span>.<span class="title function_">getElementById</span>(<span class="string">&quot;div1&quot;</span>).<span class="title function_">addEventListener</span>(<span class="string">&quot;click&quot;</span>, <span class="keyword">function</span>(<span class="params"></span>) &#123;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;🚀 ~ window.id:&quot;</span>, <span class="variable language_">this</span>.<span class="property">id</span>, <span class="variable language_">this</span>);</span><br><span class="line">  <span class="keyword">var</span> <span class="title function_">callback</span> = (<span class="params"></span>) =&gt; &#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;🚀 ~ window.id:&quot;</span>, <span class="variable language_">this</span>.<span class="property">id</span>, <span class="variable language_">this</span>);</span><br><span class="line">  &#125;;        </span><br><span class="line">  <span class="title function_">callback</span>();</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 箭头函数没有this 捕获其上下文的this值</span></span><br><span class="line"></span><br><span class="line"><span class="variable language_">document</span>.<span class="title function_">getElementById</span>(<span class="string">&quot;div1&quot;</span>).<span class="title function_">addEventListener</span>(<span class="string">&quot;click&quot;</span>, <span class="keyword">function</span>(<span class="params"></span>) &#123;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;🚀 ~ window.id:&quot;</span>, <span class="variable language_">this</span>.<span class="property">id</span>, <span class="variable language_">this</span>);</span><br><span class="line">  <span class="keyword">var</span> callback = <span class="keyword">function</span>(<span class="params"></span>)&#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;🚀 ~ window.id:&quot;</span>, <span class="variable language_">this</span>.<span class="property">id</span>, <span class="variable language_">this</span>);</span><br><span class="line">  &#125;.<span class="title function_">bind</span>(<span class="variable language_">this</span>);        </span><br><span class="line">  <span class="title function_">callback</span>();</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 使用 bind 显式地将 this 绑定到 div1</span></span><br><span class="line"></span><br><span class="line"><span class="variable language_">document</span>.<span class="title function_">getElementById</span>(<span class="string">&quot;div1&quot;</span>).<span class="title function_">addEventListener</span>(<span class="string">&quot;click&quot;</span>, <span class="keyword">function</span>(<span class="params"></span>) &#123;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;🚀 ~ window.id:&quot;</span>, <span class="variable language_">this</span>.<span class="property">id</span>, <span class="variable language_">this</span>);</span><br><span class="line">  <span class="keyword">var</span> self = <span class="variable language_">this</span>;</span><br><span class="line">  <span class="keyword">var</span> callback = <span class="keyword">function</span>(<span class="params"></span>)&#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;🚀 ~ window.id:&quot;</span>, self.<span class="property">id</span>, self);</span><br><span class="line">  &#125;;        </span><br><span class="line">  <span class="title function_">callback</span>();</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 暂存this</span></span><br></pre></td></tr></table></figure></div>
-
-<h4 id="构造器调用："><a href="#构造器调用：" class="headerlink" title="构造器调用："></a>构造器调用：</h4><p>用new调用函数时，该函数会返回一个对象，通常情况下，构造器的this就会指向返回的这个对象，</p>
-<div class="highlight-container" data-rel="Javascript"><figure class="iseeu highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> <span class="title class_">MyClass</span> = <span class="keyword">function</span>(<span class="params"></span>)&#123;</span><br><span class="line">	<span class="variable language_">this</span>.<span class="property">name</span> = <span class="string">&quot;seven&quot;</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> obj = <span class="keyword">new</span> <span class="title class_">MyClass</span>();</span><br><span class="line"><span class="title function_">alert</span>(obj.<span class="property">name</span>);</span><br></pre></td></tr></table></figure></div>
-
-<p>当构造器显式的返回一个对象时，那么此次运算结果最终会返回这个对象，而不是我们之前期待的this</p>
-<div class="highlight-container" data-rel="Javascript"><figure class="iseeu highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> <span class="title class_">MyClass</span> = <span class="keyword">function</span>(<span class="params"></span>)&#123;</span><br><span class="line">	<span class="variable language_">this</span>.<span class="property">name</span> = <span class="string">&quot;sven&quot;</span>;</span><br><span class="line">	<span class="keyword">return</span> &#123;</span><br><span class="line">		<span class="attr">name</span>: <span class="string">&quot;anne&quot;</span></span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> obj = <span class="keyword">new</span> <span class="title class_">MyClass</span>();</span><br><span class="line"><span class="title function_">alert</span>(obj.<span class="property">name</span>); <span class="comment">//anne</span></span><br></pre></td></tr></table></figure></div>
-
-<h4 id="Function-prototype-call-或-Function-prototype-apply-调用"><a href="#Function-prototype-call-或-Function-prototype-apply-调用" class="headerlink" title="Function.prototype.call 或 Function.prototype.apply 调用:"></a>Function.prototype.call 或 Function.prototype.apply 调用:</h4><div class="highlight-container" data-rel="Javascript"><figure class="iseeu highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> obj1 = &#123;</span><br><span class="line">  <span class="attr">name</span>: <span class="string">&#x27;seven&#x27;</span>,</span><br><span class="line">  <span class="attr">getName</span>: <span class="keyword">function</span>(<span class="params"></span>)&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="variable language_">this</span>.<span class="property">name</span>;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> obj2 = &#123;</span><br><span class="line">  <span class="attr">name</span>: <span class="string">&#x27;anne&#x27;</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(obj1.<span class="title function_">getName</span>()) <span class="comment">// seven</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(obj1.<span class="property">getName</span>.<span class="title function_">call</span>(obj2)) <span class="comment">// anne</span></span><br></pre></td></tr></table></figure></div>
-
-<p><code>call</code> 方法调用一个函数，并显式地指定 <code>this</code> 值和传递的参数。</p>
-<p>call源码实现：</p>
-<div class="highlight-container" data-rel="Javascript"><figure class="iseeu highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="title class_">Function</span>.<span class="property"><span class="keyword">prototype</span></span>.<span class="property">myCall</span> = <span class="keyword">function</span>(<span class="params">context, ...args</span>) &#123;</span><br><span class="line">  <span class="comment">// 如果没有提供 context，默认设置为全局对象（在浏览器中是 window）</span></span><br><span class="line">  context = context || globalThis;</span><br><span class="line">  </span><br><span class="line">  <span class="comment">// 为 context 创建一个唯一的临时属性来存储函数</span></span><br><span class="line">  <span class="keyword">const</span> fnSymbol = <span class="title class_">Symbol</span>();</span><br><span class="line">  context[fnSymbol] = <span class="variable language_">this</span>;</span><br><span class="line">  </span><br><span class="line">  <span class="comment">// 使用 context 调用函数，并传递参数</span></span><br><span class="line">  <span class="keyword">const</span> result = context[fnSymbol](...args);</span><br><span class="line">  </span><br><span class="line">  <span class="comment">// 删除临时属性</span></span><br><span class="line">  <span class="keyword">delete</span> context[fnSymbol];</span><br><span class="line">  </span><br><span class="line">  <span class="keyword">return</span> result;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 示例使用 myCall</span></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">greet</span>(<span class="params">greeting, punctuation</span>) &#123;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(greeting + <span class="string">&#x27;, &#x27;</span> + <span class="variable language_">this</span>.<span class="property">name</span> + punctuation);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> person = &#123; <span class="attr">name</span>: <span class="string">&#x27;Alice&#x27;</span> &#125;;</span><br><span class="line">greet.<span class="title function_">myCall</span>(person, <span class="string">&#x27;Hello&#x27;</span>, <span class="string">&#x27;!&#x27;</span>);  <span class="comment">// 输出: &quot;Hello, Alice!&quot;</span></span><br><span class="line"></span><br></pre></td></tr></table></figure></div>
-
-<p> <strong>call() 方法接受的是参数列表，而 apply() 方法接受的是一个参数数组</strong>。</p>
-<p>call：</p>
-<blockquote>
-<p><em>function</em>.call(<em>thisArg</em>, <em>arg1</em>, <em>arg2</em>, …)</p>
-</blockquote>
-<p>apply：</p>
-<blockquote>
-<p><em>func</em>.apply(<em>thisArg, [argsArray</em>])</p>
-</blockquote>
-<p><code>bind</code> 方法创建一个新的函数，该函数在调用时，其 <code>this</code> 值和传递的参数被预先设置。与 <code>call</code> 方法不同，<code>bind</code> 不会立即调用函数，而是返回一个新的函数。</p>
-<div class="highlight-container" data-rel="Javascript"><figure class="iseeu highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> foo = &#123;</span><br><span class="line">  <span class="attr">value</span>: <span class="number">1</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="title class_">Function</span>.<span class="property"><span class="keyword">prototype</span></span>.<span class="property">bind2</span> = <span class="keyword">function</span>(<span class="params">context</span>)&#123;</span><br><span class="line">  <span class="keyword">var</span> _this = <span class="variable language_">this</span>;</span><br><span class="line">  <span class="keyword">return</span> <span class="keyword">function</span>(<span class="params"></span>)&#123;</span><br><span class="line">    _this.<span class="title function_">apply</span>(context);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> bindFoo2 = bar.<span class="title function_">bind2</span>(foo);</span><br></pre></td></tr></table></figure></div>
-
-<h3 id="丢失的this"><a href="#丢失的this" class="headerlink" title="丢失的this"></a>丢失的this</h3>]]></content>
-  </entry>
-  <entry>
-    <title></title>
-    <url>/undefined/redbook/</url>
-    <content><![CDATA[<h2 id="问题准备"><a href="#问题准备" class="headerlink" title="问题准备"></a>问题准备</h2><h2 id="Vite构建"><a href="#Vite构建" class="headerlink" title="Vite构建"></a>Vite构建</h2><p>几大特点</p>
-<p>1、冷启动<br>2、快速热更新<br>3、bundleless<br>4、优化构建</p>
-<p>特性说明：<br>1、开发环境冷启动，构建基于ESBuild，线上产物构建 rollup<br>2、本地HMR，做了很多优化，webpack是不是需要分析依赖图（耗时的），因为开发环境ESM方式请求资源文件<br>3、配置简单，比parcel还是复杂点</p>
-<p>区分环境构建</p>
-<p>开发环境 esbuild，bundleless方案进行构建<br>开发环境 rollup<br>如果你想在低版本浏览器调试，不好意思，vite不支持，因为vite是基于ESM的，低版本浏览器不支持ESM</p>
-<p>热更新原理</p>
-<p>建立长链接，websocket</p>
-<p>vite&#x2F;client 插入到客户端<br>vite websocket 服务</p>
-<p>浏览器的热更新需要结合，定义一些事件来处理：connect、disconnect、message<br>vite&#x2F;client 会监听文件变化，然后通知vite服务，vite服务会推送到客户端</p>
-<p>turbopack</p>
-<h2 id="前端工程化"><a href="#前端工程化" class="headerlink" title="前端工程化"></a>前端工程化</h2><h3 id="前端工程化方向"><a href="#前端工程化方向" class="headerlink" title="前端工程化方向"></a>前端工程化方向</h3><p>1、构建工具<br>2、自动化测试<br>3、代码规范<br>4、性能优化<br>5、持续集成<br>6、部署</p>
-<h2 id="React性能优化，性能优化指标采集"><a href="#React性能优化，性能优化指标采集" class="headerlink" title="React性能优化，性能优化指标采集"></a>React性能优化，性能优化指标采集</h2><p>React性能优化Hooks<br>1、React.memo<br>React.memo是一个高阶组件，类似于React.PureComponent，用于函数组件的性能优化，它只会在props发生变化时重新渲染组件，如果props没有发生变化，它会返回上一次的渲染结果，从而避免不必要的渲染。<br>2、useMemo<br>useMemo是一个自定义Hook，用于缓存计算结果，它接收一个函数和一个依赖数组，只有依赖数组中的值发生变化时，useMemo才会重新计算结果，否则直接返回上一次的计算结果。<br>3、useCallback<br>useCallback是一个自定义Hook，用于缓存函数，它接收一个函数和一个依赖数组，只有依赖数组中的值发生变化时，useCallback才会返回新的函数，否则直接返回上一次的函数。<br>4、useEffect<br>useEffect是一个自定义Hook，用于处理副作用，它接收一个函数和一个依赖数组，只有依赖数组中的值发生变化时，useEffect才会执行函数，否则直接返回上一次的执行结果。<br>5、useLayoutEffect<br>useLayoutEffect是一个自定义Hook，用于处理副作用，它接收一个函数和一个依赖数组，只有依赖数组中的值发生变化时，useLayoutEffect才会执行函数，否则直接返回上一次的执行结果。</p>
-<h2 id="React-Hooks实现原理-useEffect的实现原理以及执行时机"><a href="#React-Hooks实现原理-useEffect的实现原理以及执行时机" class="headerlink" title="React Hooks实现原理 useEffect的实现原理以及执行时机"></a>React Hooks实现原理 useEffect的实现原理以及执行时机</h2><p>React Hooks实现原理:</p>
-<h2 id="function组件如何保存状态"><a href="#function组件如何保存状态" class="headerlink" title="function组件如何保存状态"></a>function组件如何保存状态</h2><p>1、useState<br>2、useReducer<br>3、useRef<br>4、useMemo<br>5、useCallback</p>
-<h2 id="React事件处理机制是什么？以及为什么？"><a href="#React事件处理机制是什么？以及为什么？" class="headerlink" title="React事件处理机制是什么？以及为什么？"></a>React事件处理机制是什么？以及为什么？</h2><p>React事件处理机制是基于合成事件的，React会将原生事件封装成合成事件，然后通过事件委托的方式统一管理事件，从而提高性能。</p>
-<h2 id="输入url到页面呈现的过程，以及render树是怎么渲染的"><a href="#输入url到页面呈现的过程，以及render树是怎么渲染的" class="headerlink" title="输入url到页面呈现的过程，以及render树是怎么渲染的"></a>输入url到页面呈现的过程，以及render树是怎么渲染的</h2><h2 id="script-async和defer的区别"><a href="#script-async和defer的区别" class="headerlink" title="script async和defer的区别"></a>script async和defer的区别</h2><p>script async和script defer都是用于异步加载脚本的，但是它们之间有一些区别：<br>1、执行时机<br>script async是在下载完成后立即执行脚本，不会阻塞页面的渲染，但是执行顺序不确定；<br>script defer是在DOM解析完成后按照顺序执行脚本，不会阻塞页面的渲染，但是执行顺序是按照顺序执行的。</p>
-<h2 id="微任务和红任务"><a href="#微任务和红任务" class="headerlink" title="微任务和红任务"></a>微任务和红任务</h2><h2 id="css绘制同心圆"><a href="#css绘制同心圆" class="headerlink" title="css绘制同心圆"></a>css绘制同心圆</h2><h2 id="三数之和"><a href="#三数之和" class="headerlink" title="三数之和"></a>三数之和</h2><h2 id="状态码"><a href="#状态码" class="headerlink" title="状态码"></a>状态码</h2><h2 id="跨域"><a href="#跨域" class="headerlink" title="跨域"></a>跨域</h2><h2 id="Promise-all-和-Promise-allSettled"><a href="#Promise-all-和-Promise-allSettled" class="headerlink" title="Promise.all 和 Promise.allSettled"></a>Promise.all 和 Promise.allSettled</h2><p>function myPromiseAll(promises) {<br>  return new Promise((resolve, reject) &#x3D;&gt; {<br>    if (!Array.isArray(promises)) {<br>      return reject(new TypeError(“Argument must be an array”));<br>    }</p>
-<pre><code>const resultArray = [];
-let resolvedCount = 0;
-
-promises.forEach((promise, index) =&gt; &#123;
-  // 处理非 Promise 对象
-  Promise.resolve(promise)
-    .then((value) =&gt; &#123;
-      resultArray[index] = value; // 保存结果在对应位置
-      resolvedCount++; // 记录已成功的 Promise 数量
-
-      // 如果所有 Promise 都成功，resolve 返回结果
-      if (resolvedCount === promises.length) &#123;
-        resolve(resultArray);
-      &#125;
-    &#125;)
-    .catch((error) =&gt; &#123;
-      reject(error); // 一旦有 Promise 失败，立即 reject
-    &#125;);
-&#125;);
-
-// 如果传入空数组，直接 resolve
-if (promises.length === 0) &#123;
-  resolve(resultArray);
-&#125;
-</code></pre>
-<p>  });<br>}</p>
-<p>&#x2F;&#x2F; 测试用例<br>const p1 &#x3D; Promise.resolve(1);<br>const p2 &#x3D; Promise.resolve(2);<br>const p3 &#x3D; Promise.resolve(3);</p>
-<p>myPromiseAll([p1, p2, p3])<br>  .then((result) &#x3D;&gt; console.log(“成功:”, result)) &#x2F;&#x2F; 成功: [1, 2, 3]<br>  .catch((error) &#x3D;&gt; console.log(“失败:”, error));</p>
-<h2 id="实现一个URL解析"><a href="#实现一个URL解析" class="headerlink" title="实现一个URL解析"></a>实现一个URL解析</h2><p>url解析是一个比较复杂的过程，需要考虑很多情况，比如协议、主机、端口、路径、查询参数、锚点等，下面是一个简单的实现：</p>
-<div class="highlight-container" data-rel="Javascript"><figure class="iseeu highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">parseUrl</span>(<span class="params">url</span>) &#123;</span><br><span class="line">  <span class="keyword">const</span> urlObject = <span class="keyword">new</span> <span class="title function_">URL</span>(url); <span class="comment">// 使用 URL 构造函数解析</span></span><br><span class="line"></span><br><span class="line">  <span class="keyword">return</span> &#123;</span><br><span class="line">    <span class="attr">protocol</span>: urlObject.<span class="property">protocol</span>,  <span class="comment">// 协议，如 &#x27;https:&#x27;</span></span><br><span class="line">    <span class="attr">host</span>: urlObject.<span class="property">host</span>,          <span class="comment">// 主机名和端口号，如 &#x27;example.com:8080&#x27;</span></span><br><span class="line">    <span class="attr">hostname</span>: urlObject.<span class="property">hostname</span>,  <span class="comment">// 主机名，如 &#x27;example.com&#x27;</span></span><br><span class="line">    <span class="attr">port</span>: urlObject.<span class="property">port</span>,          <span class="comment">// 端口号，如 &#x27;8080&#x27;</span></span><br><span class="line">    <span class="attr">pathname</span>: urlObject.<span class="property">pathname</span>,  <span class="comment">// 路径，如 &#x27;/path/to/resource&#x27;</span></span><br><span class="line">    <span class="attr">search</span>: urlObject.<span class="property">search</span>,      <span class="comment">// 查询字符串，如 &#x27;?name=John&amp;age=30&#x27;</span></span><br><span class="line">    <span class="attr">params</span>: <span class="title class_">Object</span>.<span class="title function_">fromEntries</span>(<span class="keyword">new</span> <span class="title class_">URLSearchParams</span>(urlObject.<span class="property">search</span>)), <span class="comment">// 查询参数对象</span></span><br><span class="line">    <span class="attr">hash</span>: urlObject.<span class="property">hash</span>           <span class="comment">// 锚点，如 &#x27;#section1&#x27;</span></span><br><span class="line">  &#125;;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 测试用例</span></span><br><span class="line"><span class="keyword">const</span> url = <span class="string">&#x27;https://example.com:8080/path/to/resource?name=John&amp;age=30#section1&#x27;</span>;</span><br><span class="line"><span class="keyword">const</span> result = <span class="title function_">parseUrl</span>(url);</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(result);</span><br></pre></td></tr></table></figure></div>
-
-<h2 id="React-memo-useCallback-useEffect"><a href="#React-memo-useCallback-useEffect" class="headerlink" title="React.memo&#x2F;useCallback&#x2F;useEffect"></a>React.memo&#x2F;useCallback&#x2F;useEffect</h2><h2 id="介绍created和beforeRouteEnter区别-优劣"><a href="#介绍created和beforeRouteEnter区别-优劣" class="headerlink" title="介绍created和beforeRouteEnter区别 优劣"></a>介绍created和beforeRouteEnter区别 优劣</h2><h2 id="父子组建生命周期的顺序，为什么是这样的-为什么是在beforeMount的时候渲染子组件"><a href="#父子组建生命周期的顺序，为什么是这样的-为什么是在beforeMount的时候渲染子组件" class="headerlink" title="父子组建生命周期的顺序，为什么是这样的?为什么是在beforeMount的时候渲染子组件?"></a>父子组建生命周期的顺序，为什么是这样的?为什么是在beforeMount的时候渲染子组件?</h2><h2 id="http和tcp的关系"><a href="#http和tcp的关系" class="headerlink" title="http和tcp的关系"></a>http和tcp的关系</h2><h2 id="http状态码以及常见状态码"><a href="#http状态码以及常见状态码" class="headerlink" title="http状态码以及常见状态码"></a>http状态码以及常见状态码</h2><h2 id="介绍下三次握手"><a href="#介绍下三次握手" class="headerlink" title="介绍下三次握手"></a>介绍下三次握手</h2><h2 id="为什么需要三次"><a href="#为什么需要三次" class="headerlink" title="为什么需要三次"></a>为什么需要三次</h2><h2 id="二叉树-求根节点到叶子节点的路径之间数字构成的数总和，如路径4-1-5-表示415，故答案为414-415-436"><a href="#二叉树-求根节点到叶子节点的路径之间数字构成的数总和，如路径4-1-5-表示415，故答案为414-415-436" class="headerlink" title="二叉树 求根节点到叶子节点的路径之间数字构成的数总和，如路径4-&gt;1-&gt;5 表示415，故答案为414+415+436"></a>二叉树 求根节点到叶子节点的路径之间数字构成的数总和，如路径4-&gt;1-&gt;5 表示415，故答案为414+415+436</h2>]]></content>
-  </entry>
-  <entry>
     <title>正则表达式</title>
     <url>/Yuyang/reg/</url>
     <content><![CDATA[<h2 id="正则表达式"><a href="#正则表达式" class="headerlink" title="正则表达式"></a>正则表达式</h2><p>正则表达式是一种用来匹配字符串的强有力的武器。它的设计思想是用一种描述性的语言来给字符串定义一个规则，凡是符合规则的字符串，我们就认为它“匹配”了，否则，该字符串就是不合法的。具有强大的模式匹配和文本检索与替换功能。</p>
@@ -2014,307 +2316,5 @@ if (promises.length === 0) &#123;
 <p>浏览器的热更新需要结合，定义一些事件来处理：connect、disconnect、message<br>vite&#x2F;client 会监听文件变化，然后通知vite服务，vite服务会推送到客户端</p>
 <p>turbopack</p>
 ]]></content>
-  </entry>
-  <entry>
-    <title>2024-11-12 日报 Day4</title>
-    <url>/undefined/2024-11-12/</url>
-    <content><![CDATA[
-  <div class="note-large red">
-    <div class="notel-title rounded-t-lg p-3 font-bold text-lg flex flex-row gap-2 items-center">
-      <p>今日的鸡汤</p>
-
-    </div>
-    <div class="notel-content">
-      <p>流水不争先，争的是滔滔不绝。</p>
-<p>姜子牙年轻时也做过屠夫卖过酒，直到暮年遇到周文王才得以大展宏图。</p>
-
-    </div>
-  </div>
-
-<h3 id="今日学习内容"><a href="#今日学习内容" class="headerlink" title="今日学习内容"></a>今日学习内容</h3><pre><code>1、《图解HTTP》 P1-140
-</code></pre>
-<h3 id="今日笔记"><a href="#今日笔记" class="headerlink" title="今日笔记"></a>今日笔记</h3><ul>
-<li><p>1、TCP&#x2F;IP协议族分为以下4层: 应用层、传输层、网络层、数据链路层。</p>
-<p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="https://raw.githubusercontent.com/YuZeZhang/myImgslib/main/202411121823887.png"
-                      alt="network"
-                ></p>
-</li>
-<li><p>2、请求报文是由请求方法、请求URI、协议版本、可选的请求首部字段和内容实体构成。</p>
-</li>
-<li><p>3、响应报文是由协议版本、状态码、用以解释状态码的原因短语、可选的响应首部字段以及实体主体构成。</p>
-</li>
-<li><p>4、HTTP是一种无状态(stateless)协议，HTTP&#x2F;1.1引入了Cookie技术。Cookie通过在请求和响应报文中写入Cookie信息来控制客户端的状态。</p>
-</li>
-<li><p>5、Cookie会根据服务端发送的响应报文内的一个叫做Set-Cookie的首部字段信息，通知客户端保存Cookie。当下次客户端再往服务端发送请求时，客户端会自动在请求报文中加入Cookie值后发送出去。</p>
-</li>
-<li><p>6、内容协商机制(Content Negotiation)是指客户端和服务端就响应的资源内容进行交涉，然后提供给客户端最为适合的资源。内容协商机制有3种类型：</p>
-<p>​	服务器驱动协商: 以请求的首部字段为参考，在服务器端自动处理。</p>
-<p>​	客户端驱动协商: 比如按OS类型或浏览器类型自行切换成PC版页面或手机版页面。</p>
-<p>​	透明协商</p>
-</li>
-<li><p>7、状态码类型：</p>
-<table>
-<thead>
-<tr>
-<th></th>
-<th>类别</th>
-<th>原因短语</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>1XX</td>
-<td>Informational(信息性状态码)</td>
-<td>接收的请求正在处理</td>
-</tr>
-<tr>
-<td>2XX</td>
-<td>Success(成功状态码)</td>
-<td>请求正常处理完毕</td>
-</tr>
-<tr>
-<td>3XX</td>
-<td>Redirection(重定向状态码)</td>
-<td>需要进行附加操作以完成请求</td>
-</tr>
-<tr>
-<td>4XX</td>
-<td>Client Error(客户端错误状态码)</td>
-<td>服务器无法处理请求</td>
-</tr>
-<tr>
-<td>5XX</td>
-<td>Server Error(服务端错误状态码)</td>
-<td>服务器处理请求出错</td>
-</tr>
-</tbody></table>
-<table>
-<thead>
-<tr>
-<th>具体状态码</th>
-<th>状态名称</th>
-<th>状态描述</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>200</td>
-<td>OK</td>
-<td></td>
-</tr>
-<tr>
-<td>204</td>
-<td>No Content</td>
-<td>请求成功但无资源返回</td>
-</tr>
-<tr>
-<td>206</td>
-<td>Partial Content</td>
-<td></td>
-</tr>
-<tr>
-<td>301</td>
-<td>Moved Permanently</td>
-<td></td>
-</tr>
-<tr>
-<td>302</td>
-<td>Found</td>
-<td></td>
-</tr>
-<tr>
-<td>303</td>
-<td>See Other</td>
-<td></td>
-</tr>
-<tr>
-<td>304</td>
-<td>Not Modified</td>
-<td></td>
-</tr>
-<tr>
-<td>307</td>
-<td>Temporary Redirect</td>
-<td></td>
-</tr>
-<tr>
-<td>400</td>
-<td>Bad Request</td>
-<td></td>
-</tr>
-<tr>
-<td>401</td>
-<td>Unauthorized</td>
-<td></td>
-</tr>
-<tr>
-<td>403</td>
-<td>Forbidden</td>
-<td></td>
-</tr>
-<tr>
-<td>404</td>
-<td>Not Found</td>
-<td></td>
-</tr>
-<tr>
-<td>500</td>
-<td>Internal Server Error</td>
-<td></td>
-</tr>
-<tr>
-<td>503</td>
-<td>Service Unavailable</td>
-<td></td>
-</tr>
-</tbody></table>
-</li>
-<li><p>8、通信数据转发程序: 代理、网关、隧道。</p>
-</li>
-<li><p>9、为Cookie服务的首部字段</p>
-<table>
-<thead>
-<tr>
-<th>首部字段名</th>
-<th>说明</th>
-<th>首部类型</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>Set-Cookie</td>
-<td>开始状态管理所使用的Cookie信息</td>
-<td>响应首部字段</td>
-</tr>
-<tr>
-<td>Cookie</td>
-<td>服务器接收到的Cookie信息</td>
-<td>请求首部字段</td>
-</tr>
-</tbody></table>
-</li>
-<li><p>10、Set-Cookie字段的属性</p>
-<table>
-<thead>
-<tr>
-<th>属性</th>
-<th>说明</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>NAME&#x3D;VALUE</td>
-<td>赋予Cookie的名称和值</td>
-</tr>
-<tr>
-<td>expires&#x3D;DATE</td>
-<td>Cookie的有效期</td>
-</tr>
-<tr>
-<td>path&#x3D;PATH</td>
-<td></td>
-</tr>
-<tr>
-<td>domain&#x3D;域名</td>
-<td>Cookie适用对象的域名</td>
-</tr>
-<tr>
-<td>Secure</td>
-<td>仅在HTTPS安全通信时才会发送Cookie</td>
-</tr>
-<tr>
-<td>HttpOnly</td>
-<td>加以限制，使Cookie不能被JavaScript脚本访问</td>
-</tr>
-</tbody></table>
-</li>
-</ul>
-<h3 id="术语"><a href="#术语" class="headerlink" title="术语"></a>术语</h3><ul>
-<li>HTTP(HyperText Transfer Protocol): 超文本传输协议</li>
-</ul>
-]]></content>
-      <categories>
-        <category>journal</category>
-      </categories>
-      <tags>
-        <tag>journal</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>2024-11-13 日报 Day5</title>
-    <url>/undefined/2024-11-13/</url>
-    <content><![CDATA[
-  <div class="note-large red">
-    <div class="notel-title rounded-t-lg p-3 font-bold text-lg flex flex-row gap-2 items-center">
-      <p>今日的鸡汤</p>
-
-    </div>
-    <div class="notel-content">
-      <p>理想是赶路人的月，是逆流者的桨<br>是荆棘尽处的繁华，是万仞山上的日出<br>让人在现实的泥沼中甘愿苦苦跋涉</p>
-
-    </div>
-  </div>
-
-<h3 id="今日学习内容"><a href="#今日学习内容" class="headerlink" title="今日学习内容"></a>今日学习内容</h3><pre><code>1、《图解HTTP》 P141-200
-</code></pre>
-<h3 id="今日笔记"><a href="#今日笔记" class="headerlink" title="今日笔记"></a>今日笔记</h3><ul>
-<li>1、在HTTP协议中有可能存在信息窃听或身份伪装等安全问题。使用HTTPS通信机制可以有效地防止这些问题。</li>
-<li>2、HTTP的缺点:<br>  通信使用明文(不加密)，内容可能会被窃听。<br>  不验证通信方的身份，因此有可能遭遇伪装。<br>  无法证明报文的完整性，所以有可能已遭篡改。</li>
-<li>3、HTTP协议中没有加密机制，但可以通过和SSL(Secure Socket Layer, 安全套接层)或TLS(Transport Layer Security, 传输层安全)的组合使用，加密HTTP的通信内容。</li>
-<li>4、认证本人核对的信息通常是指:<ul>
-<li>密码: 只有本人才知道的字符串信息。</li>
-<li>动态令牌: 仅限本人持有的设备内显示的一次性密码。</li>
-<li>数字证书: 仅限本人(终端)持有的信息。</li>
-<li>生物认证: 指纹和虹膜等本人的生理信息。</li>
-<li>IC卡等: 仅限本人持有的信息。</li>
-</ul>
-</li>
-<li>5、HTTP&#x2F;1.1使用的认证方式:<ul>
-<li>BASIC认证（基本认证）</li>
-<li>DIGEST认证（摘要认证）</li>
-<li>SSL客户端认证</li>
-<li>FormBase认证（基于表单认证）</li>
-</ul>
-</li>
-<li>6、WebSocket是一种在单个TCP连接上进行全双工通信的协议。通过WebSocket，浏览器和服务器之间的数据交换变得更加高效。为实现WebSocket通信，需要借助于HTTP协议。<br>HTTP的Upgrade首部字段可以将通信的协议切换为其他协议。通过发送Upgrade: websocket首部字段，通信过程从HTTP协议变成了WebSocket协议。同时Connection也会变为Upgrade。</li>
-<li>7、HTTP防火墙(80&#x2F;tcp)和HTTPS防火墙(443&#x2F;tcp)</li>
-</ul>
-]]></content>
-      <categories>
-        <category>journal</category>
-      </categories>
-      <tags>
-        <tag>journal</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>2024-11-14 日报 Day6</title>
-    <url>/undefined/2024-11-14/</url>
-    <content><![CDATA[
-  <div class="note-large red">
-    <div class="notel-title rounded-t-lg p-3 font-bold text-lg flex flex-row gap-2 items-center">
-      <p>今日的鸡汤</p>
-
-    </div>
-    <div class="notel-content">
-      <p>遇见，获得，失去，成长，释怀，完结<br>我与旧事归于尽，来年依旧迎花开</p>
-<p>Encounter, gain, loss, growth, release, and completion.<br>I am at the end of old things, and the next year will still welcome the blooming flowers.</p>
-
-    </div>
-  </div>
-
-<h3 id="今日学习内容"><a href="#今日学习内容" class="headerlink" title="今日学习内容"></a>今日学习内容</h3><pre><code>1、《图解HTTP》 P141-完结
-</code></pre>
-<h3 id="今日笔记"><a href="#今日笔记" class="headerlink" title="今日笔记"></a>今日笔记</h3><p>1、CGI(Common Gateway Interface)是一种Web服务器和应用程序之间的接口标准。通过CGI，Web服务器可以调用外部程序处理客户端发送的请求。CGI程序是一种独立于服务器的程序，可以用任何语言编写。<br>2、Java Servlet可以处理 HTTP 请求并生成动态响应。与 CGI 不同，Servlet 直接运行在服务器中，无需每次请求都启动新的进程，因此性能更高。Servlet 部署在 Servlet 容器中（如 Apache Tomcat）。</p>
-<h3 id="术语"><a href="#术语" class="headerlink" title="术语"></a>术语</h3><ul>
-<li>CGI(Common Gateway Interface): 通用网关接口</li>
-<li>XSS(Cross-Site Scripting): 跨站脚本攻击</li>
-</ul>
-]]></content>
-      <categories>
-        <category>journal</category>
-      </categories>
-      <tags>
-        <tag>journal</tag>
-      </tags>
   </entry>
 </search>
