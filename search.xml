@@ -2286,4 +2286,35 @@ if (promises.length === 0) &#123;
         <tag>journal</tag>
       </tags>
   </entry>
+  <entry>
+    <title>2024-11-14 日报 Day6</title>
+    <url>/undefined/2024-11-14/</url>
+    <content><![CDATA[
+  <div class="note-large red">
+    <div class="notel-title rounded-t-lg p-3 font-bold text-lg flex flex-row gap-2 items-center">
+      <p>今日的鸡汤</p>
+
+    </div>
+    <div class="notel-content">
+      <p>遇见，获得，失去，成长，释怀，完结<br>我与旧事归于尽，来年依旧迎花开</p>
+<p>Encounter, gain, loss, growth, release, and completion.<br>I am at the end of old things, and the next year will still welcome the blooming flowers.</p>
+
+    </div>
+  </div>
+
+<h3 id="今日学习内容"><a href="#今日学习内容" class="headerlink" title="今日学习内容"></a>今日学习内容</h3><pre><code>1、《图解HTTP》 P141-完结
+</code></pre>
+<h3 id="今日笔记"><a href="#今日笔记" class="headerlink" title="今日笔记"></a>今日笔记</h3><p>1、CGI(Common Gateway Interface)是一种Web服务器和应用程序之间的接口标准。通过CGI，Web服务器可以调用外部程序处理客户端发送的请求。CGI程序是一种独立于服务器的程序，可以用任何语言编写。<br>2、Java Servlet可以处理 HTTP 请求并生成动态响应。与 CGI 不同，Servlet 直接运行在服务器中，无需每次请求都启动新的进程，因此性能更高。Servlet 部署在 Servlet 容器中（如 Apache Tomcat）。</p>
+<h3 id="术语"><a href="#术语" class="headerlink" title="术语"></a>术语</h3><ul>
+<li>CGI(Common Gateway Interface): 通用网关接口</li>
+<li>XSS(Cross-Site Scripting): 跨站脚本攻击</li>
+</ul>
+]]></content>
+      <categories>
+        <category>journal</category>
+      </categories>
+      <tags>
+        <tag>journal</tag>
+      </tags>
+  </entry>
 </search>
