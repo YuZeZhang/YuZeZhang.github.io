@@ -2332,7 +2332,7 @@ if (promises.length === 0) &#123;
     </div>
   </div>
 
-<h3 id="今日学习内容"><a href="#今日学习内容" class="headerlink" title="今日学习内容"></a>今日学习内容</h3><pre><code>1、《JavaScript数据结构与算法》 P1
+<h3 id="今日学习内容"><a href="#今日学习内容" class="headerlink" title="今日学习内容"></a>今日学习内容</h3><pre><code>1、《JavaScript数据结构与算法》 P1-53
 </code></pre>
 <h3 id="今日笔记"><a href="#今日笔记" class="headerlink" title="今日笔记"></a>今日笔记</h3><p>1、JS的基本数据类型有: Undefined、Null、Boolean、Number、String、Symbol、BigInt。<br>2、JS的引用数据类型有: Object、Array、Function、Date、RegExp、Error。<br>3、JS中的真值和假值: </p>
 <table>
@@ -2504,6 +2504,96 @@ if (promises.length === 0) &#123;
 <div class="highlight-container" data-rel="Javascript"><figure class="iseeu highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">restParamaterFunction</span> (x, y) &#123;</span><br><span class="line"> <span class="keyword">var</span> a = <span class="title class_">Array</span>.<span class="property"><span class="keyword">prototype</span></span>.<span class="property">slice</span>.<span class="title function_">call</span>(<span class="variable language_">arguments</span>, <span class="number">2</span>);</span><br><span class="line"> <span class="keyword">return</span> (x + y) * a.<span class="property">length</span>;</span><br><span class="line">&#125;; </span><br></pre></td></tr></table></figure></div>
 <p>7、ES6引入了数组解构的概念，可以用来一次初始化多个变量。<br>8、虽然ES6引入了声明类的方法但是JavaScript仍然是基于原型的。类只是原型的语法糖。使用新的类语法可以为属性创建存取器函数。</p>
 <div class="highlight-container" data-rel="Javascript"><figure class="iseeu highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Person</span> &#123;</span><br><span class="line">    <span class="title function_">constructor</span>(<span class="params">name</span>) &#123;</span><br><span class="line">        <span class="variable language_">this</span>.<span class="property">_name</span> = name;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">get</span> <span class="title function_">name</span>() &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="variable language_">this</span>.<span class="property">_name</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">set</span> <span class="title function_">name</span>(<span class="params">value</span>) &#123;</span><br><span class="line">        <span class="variable language_">this</span>.<span class="property">_name</span> = value;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>]]></content>
+      <categories>
+        <category>journal</category>
+      </categories>
+      <tags>
+        <tag>journal</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>2024-11-15 日报 Day7</title>
+    <url>/undefined/2024-11-16/</url>
+    <content><![CDATA[
+  <div class="note-large red">
+    <div class="notel-title rounded-t-lg p-3 font-bold text-lg flex flex-row gap-2 items-center">
+      <p>今日的鸡汤</p>
+
+    </div>
+    <div class="notel-content">
+      <p>心存希冀，目有繁星；<br>追光而遇，沐光而行。</p>
+
+    </div>
+  </div>
+
+<h3 id="今日学习内容"><a href="#今日学习内容" class="headerlink" title="今日学习内容"></a>今日学习内容</h3><pre><code>1、《JavaScript数据结构与算法》 P54-
+</code></pre>
+<h3 id="今日笔记"><a href="#今日笔记" class="headerlink" title="今日笔记"></a>今日笔记</h3><p>1、</p>
+<table>
+<thead>
+<tr>
+<th>方法名</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>concat</td>
+<td>连接2个或更多数组，并返回结果</td>
+</tr>
+<tr>
+<td>every</td>
+<td>对数组中的每一项运行给定函数，如果该函数对每一项都返回true，则返回true</td>
+</tr>
+<tr>
+<td>filter</td>
+<td>对数组中的每一项运行给定函数，返回该函数会返回true的项组成的数组</td>
+</tr>
+<tr>
+<td>forEach</td>
+<td>对数组中的每一项运行给定函数。这个方法没有返回值</td>
+</tr>
+<tr>
+<td>join</td>
+<td>将所有的数组元素连接成一个字符串</td>
+</tr>
+<tr>
+<td>indexOf</td>
+<td>返回第一个与给定参数相等的数组元素的索引，没有找到则返回-1</td>
+</tr>
+<tr>
+<td>lastIndexOf</td>
+<td>返回在数组中搜索到的与给定参数相等的元素的索引里最大的值</td>
+</tr>
+<tr>
+<td>map</td>
+<td>对数组中的每一项运行给定函数，返回每次函数调用的结果组成的数组</td>
+</tr>
+<tr>
+<td>reverse</td>
+<td>颠倒数组中元素的顺序，原先第一个元素现在变成最后一个，同样原先的最后一个元素变成了现在 的第一个</td>
+</tr>
+<tr>
+<td>slice</td>
+<td>传入索引值，将数组里对应索引范围内的元素作为新数组返回</td>
+</tr>
+<tr>
+<td>some</td>
+<td>对数组中的每一项运行给定函数，如果任一项返回true，则返回true</td>
+</tr>
+<tr>
+<td>sort</td>
+<td>按照字母顺序对数组排序，支持传入指定排序方法的函数作为参数</td>
+</tr>
+<tr>
+<td>toString</td>
+<td>将数组作为字符串返回</td>
+</tr>
+<tr>
+<td>valueOf</td>
+<td>和toString类似，将数组作为字符串返回</td>
+</tr>
+</tbody></table>
+]]></content>
       <categories>
         <category>journal</category>
       </categories>
