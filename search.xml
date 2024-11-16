@@ -2512,7 +2512,7 @@ if (promises.length === 0) &#123;
       </tags>
   </entry>
   <entry>
-    <title>2024-11-15 日报 Day7</title>
+    <title>2024-11-16 日报 Day8</title>
     <url>/undefined/2024-11-16/</url>
     <content><![CDATA[
   <div class="note-large red">
@@ -2526,9 +2526,9 @@ if (promises.length === 0) &#123;
     </div>
   </div>
 
-<h3 id="今日学习内容"><a href="#今日学习内容" class="headerlink" title="今日学习内容"></a>今日学习内容</h3><pre><code>1、《JavaScript数据结构与算法》 P54-
+<h3 id="今日学习内容"><a href="#今日学习内容" class="headerlink" title="今日学习内容"></a>今日学习内容</h3><pre><code>1、《JavaScript数据结构与算法》 P54-78
 </code></pre>
-<h3 id="今日笔记"><a href="#今日笔记" class="headerlink" title="今日笔记"></a>今日笔记</h3><p>1、</p>
+<h3 id="今日笔记"><a href="#今日笔记" class="headerlink" title="今日笔记"></a>今日笔记</h3><p>1、数据方法: </p>
 <table>
 <thead>
 <tr>
@@ -2592,7 +2592,58 @@ if (promises.length === 0) &#123;
 <td>valueOf</td>
 <td>和toString类似，将数组作为字符串返回</td>
 </tr>
+<tr>
+<td>reduce</td>
+<td>array.reduce(callback, initialValue) callback接收四个参数 。accumulator：累加器，保存回调函数的返回值，并将其在下一次迭代中传递。currentValue：当前处理的数组元素。currentIndex：当前元素的索引（可选）。array：调用 reduce 的数组本身（可选）。</td>
+</tr>
 </tbody></table>
+<p>2、栈</p>
+<p>栈实现</p>
+<p>最简单的: 存在的缺点 希望Stack类的用户只能访问暴露给类的方法。否则，就有 可能从栈的中间移除元素（因为我们用数组来存储其值），这不是我们希望看到的。</p>
+<div class="highlight-container" data-rel="Javascript"><figure class="iseeu highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Stack</span> &#123;</span><br><span class="line">    <span class="title function_">constructor</span>(<span class="params"></span>) &#123;</span><br><span class="line">        <span class="variable language_">this</span>.<span class="property">items</span> = []; <span class="comment">// 用数组存储栈元素</span></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 入栈操作：添加一个元素到栈顶</span></span><br><span class="line">    <span class="title function_">push</span>(<span class="params">element</span>) &#123;</span><br><span class="line">        <span class="variable language_">this</span>.<span class="property">items</span>.<span class="title function_">push</span>(element);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 出栈操作：移除并返回栈顶元素</span></span><br><span class="line">    <span class="title function_">pop</span>(<span class="params"></span>) &#123;</span><br><span class="line">        <span class="keyword">if</span> (<span class="variable language_">this</span>.<span class="title function_">isEmpty</span>()) &#123;</span><br><span class="line">            <span class="keyword">throw</span> <span class="keyword">new</span> <span class="title class_">Error</span>(<span class="string">&quot;Stack is empty, cannot pop&quot;</span>);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="variable language_">this</span>.<span class="property">items</span>.<span class="title function_">pop</span>();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 查看栈顶元素</span></span><br><span class="line">    <span class="title function_">peek</span>(<span class="params"></span>) &#123;</span><br><span class="line">        <span class="keyword">if</span> (<span class="variable language_">this</span>.<span class="title function_">isEmpty</span>()) &#123;</span><br><span class="line">            <span class="keyword">throw</span> <span class="keyword">new</span> <span class="title class_">Error</span>(<span class="string">&quot;Stack is empty, no top element&quot;</span>);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="variable language_">this</span>.<span class="property">items</span>[<span class="variable language_">this</span>.<span class="property">items</span>.<span class="property">length</span> - <span class="number">1</span>];</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 检查栈是否为空</span></span><br><span class="line">    <span class="title function_">isEmpty</span>(<span class="params"></span>) &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="variable language_">this</span>.<span class="property">items</span>.<span class="property">length</span> === <span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 获取栈的大小</span></span><br><span class="line">    <span class="title function_">size</span>(<span class="params"></span>) &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="variable language_">this</span>.<span class="property">items</span>.<span class="property">length</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 清空栈</span></span><br><span class="line">    <span class="title function_">clear</span>(<span class="params"></span>) &#123;</span><br><span class="line">        <span class="variable language_">this</span>.<span class="property">items</span> = [];</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+
+<p>用ES6的限定作用域Symbol实现</p>
+<div class="highlight-container" data-rel="Javascript"><figure class="iseeu highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">let</span> _items = <span class="title class_">Symbol</span>();</span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Stack</span> &#123;</span><br><span class="line"> <span class="title function_">constructor</span> () &#123;</span><br><span class="line"> <span class="variable language_">this</span>[_items] = []; <span class="comment">//&#123;2&#125;</span></span><br><span class="line"> &#125;</span><br><span class="line"> <span class="comment">//Stack方法</span></span><br><span class="line">&#125; </span><br><span class="line"><span class="keyword">let</span> stack = <span class="keyword">new</span> <span class="title class_">Stack</span>();</span><br><span class="line">stack.<span class="title function_">push</span>(<span class="number">5</span>);</span><br><span class="line">stack.<span class="title function_">push</span>(<span class="number">8</span>);</span><br><span class="line"><span class="keyword">let</span> objectSymbols = <span class="title class_">Object</span>.<span class="title function_">getOwnPropertySymbols</span>(stack);</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(objectSymbols.<span class="property">length</span>); <span class="comment">// 1</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(objectSymbols); <span class="comment">// [Symbol()]</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(objectSymbols[<span class="number">0</span>]); <span class="comment">// Symbol()</span></span><br><span class="line">stack[objectSymbols[<span class="number">0</span>]].<span class="title function_">push</span>(<span class="number">1</span>);</span><br><span class="line">stack.<span class="title function_">print</span>(); <span class="comment">//输出 5, 8, 1</span></span><br></pre></td></tr></table></figure></div>
+
+<p>虽然创建了一个symbol属性 但是依然可以获取到数组</p>
+<p>用ES6的WeakMap</p>
+<div class="highlight-container" data-rel="Javascript"><figure class="iseeu highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> items = <span class="keyword">new</span> <span class="title class_">WeakMap</span>(); <span class="comment">//&#123;1&#125;</span></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Stack</span> &#123;</span><br><span class="line"> <span class="title function_">constructor</span> () &#123;</span><br><span class="line"> items.<span class="title function_">set</span>(<span class="variable language_">this</span>, []); <span class="comment">//&#123;2&#125;</span></span><br><span class="line"> &#125;</span><br><span class="line"> <span class="title function_">push</span>(<span class="params">element</span>) &#123;</span><br><span class="line"> <span class="keyword">let</span> s = items.<span class="title function_">get</span>(<span class="variable language_">this</span>); <span class="comment">//&#123;3&#125;</span></span><br><span class="line"> s.<span class="title function_">push</span>(element);</span><br><span class="line"> &#125;</span><br><span class="line"> <span class="title function_">pop</span>(<span class="params"></span>) &#123;</span><br><span class="line"> <span class="keyword">let</span> s = items.<span class="title function_">get</span>(<span class="variable language_">this</span>);</span><br><span class="line"> <span class="keyword">let</span> r = s.<span class="title function_">pop</span>();</span><br><span class="line"> <span class="keyword">return</span> r;</span><br><span class="line"> &#125;</span><br><span class="line"> <span class="comment">//其他方法</span></span><br><span class="line">&#125; </span><br></pre></td></tr></table></figure></div>
+
+<h3 id="数据结构总结"><a href="#数据结构总结" class="headerlink" title="数据结构总结"></a>数据结构总结</h3><p>栈: 例子(书堆) 先进后出(LIFO)<br>方法包含: push、pop、peek、isEmpty、getSize、clear<br>应用: 回溯问题中，它可以存储访问过的任务或路径、撤销的操作（后<br>面的章节讨论图和回溯问题时，</p>
+]]></content>
+      <categories>
+        <category>journal</category>
+      </categories>
+      <tags>
+        <tag>journal</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>2024-11-17 日报 Day9</title>
+    <url>/undefined/2024-11-17/</url>
+    <content><![CDATA[
+  <div class="note-large red">
+    <div class="notel-title rounded-t-lg p-3 font-bold text-lg flex flex-row gap-2 items-center">
+      <p>今日的鸡汤</p>
+
+    </div>
+    <div class="notel-content">
+      <p>少年应有鸿鹄志，当骑骏马踏平川。</p>
+
+    </div>
+  </div>
+
+<h3 id="今日学习内容"><a href="#今日学习内容" class="headerlink" title="今日学习内容"></a>今日学习内容</h3><pre><code>1、《JavaScript数据结构与算法》 P79-88
+</code></pre>
+<h3 id="今日笔记"><a href="#今日笔记" class="headerlink" title="今日笔记"></a>今日笔记</h3><p>1、队列是一种遵循先进先出（FIFO）原则的有序集合。队列在尾部添加新元素，并从顶部移除元素。最新添加的元素必须排在队列的末尾。</p>
+<ul>
+<li>enqueue(element(s))：向队列尾部添加一个（或多个）新的项。</li>
+<li>dequeue()：移除队列的第一（即排在队列最前面的）项，并返回被移除的元素。</li>
+<li>front()：返回队列中第一个元素——最先被添加，也将是最先被移除的元素。队列不做任何变动（不移除元素，只返回元素信息——与Stack类的peek方法非常类似）。</li>
+<li>isEmpty()：如果队列中不包含任何元素，返回true，否则返回false。</li>
+<li>size()：返回队列包含的元素个数，与数组的length属性类似。<br>2、普通队列类实现<div class="highlight-container" data-rel="Javascript"><figure class="iseeu highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Queue</span> &#123;</span><br><span class="line">    <span class="title function_">constructor</span>(<span class="params"></span>) &#123;</span><br><span class="line">        <span class="variable language_">this</span>.<span class="property">items</span> = [];</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="title function_">enqueue</span>(<span class="params">element</span>) &#123;</span><br><span class="line">        <span class="variable language_">this</span>.<span class="property">items</span>.<span class="title function_">push</span>(element);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="title function_">dequeue</span>(<span class="params"></span>) &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="variable language_">this</span>.<span class="property">items</span>.<span class="title function_">shift</span>();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="title function_">front</span>(<span class="params"></span>) &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="variable language_">this</span>.<span class="property">items</span>[<span class="number">0</span>];</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="title function_">isEmpty</span>(<span class="params"></span>) &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="variable language_">this</span>.<span class="property">items</span>.<span class="property">length</span> === <span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="title function_">size</span>(<span class="params"></span>) &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="variable language_">this</span>.<span class="property">items</span>.<span class="property">length</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div></li>
+</ul>
+<h3 id="数据结构总结"><a href="#数据结构总结" class="headerlink" title="数据结构总结"></a>数据结构总结</h3><p>队列: 先进先出(FIFO)<br>方法包含: enqueue, dequeue, front, isEmpty, size<br>应用: 任务队列，因为每个标签页都是单线程处理的，它被称为事件循环。</p>
 ]]></content>
       <categories>
         <category>journal</category>
