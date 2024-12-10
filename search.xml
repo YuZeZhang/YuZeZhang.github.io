@@ -2721,4 +2721,27 @@ if (promises.length === 0) &#123;
 <p>turbopack</p>
 ]]></content>
   </entry>
+  <entry>
+    <title>2024-12-10 日报 Day12</title>
+    <url>/undefined/2024-12-10/</url>
+    <content><![CDATA[
+  <div class="note-large red">
+    <div class="notel-title rounded-t-lg p-3 font-bold text-lg flex flex-row gap-2 items-center">
+      <p>今日的鸡汤</p>
+
+    </div>
+    <div class="notel-content">
+      <p>每次归程，都是为了更好出发;<br>每次停歇，都是为了积攒力量。</p>
+
+    </div>
+  </div>
+
+]]></content>
+      <categories>
+        <category>journal</category>
+      </categories>
+      <tags>
+        <tag>journal</tag>
+      </tags>
+  </entry>
 </search>
