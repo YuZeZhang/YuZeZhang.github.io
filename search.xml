@@ -2961,7 +2961,7 @@ if (promises.length === 0) &#123;
       </tags>
   </entry>
   <entry>
-    <title>2024-12-14 日报 Day16</title>
+    <title>2024-12-15 日报 Day17</title>
     <url>/undefined/2024-12-15/</url>
     <content><![CDATA[
   <div class="note-large red">
@@ -2975,7 +2975,7 @@ if (promises.length === 0) &#123;
     </div>
   </div>
 
-<h3 id="今日学习内容"><a href="#今日学习内容" class="headerlink" title="今日学习内容"></a>今日学习内容</h3><pre><code>1、《JavaScript数据结构与算法》 P170-
+<h3 id="今日学习内容"><a href="#今日学习内容" class="headerlink" title="今日学习内容"></a>今日学习内容</h3><pre><code>1、《JavaScript数据结构与算法》 P170-174
 </code></pre>
 <h3 id="今日笔记"><a href="#今日笔记" class="headerlink" title="今日笔记"></a>今日笔记</h3><p>1、排序和搜索算法</p>
 <ul>
@@ -3010,6 +3010,34 @@ if (promises.length === 0) &#123;
 冒泡排序的时间复杂度是O(n2)。<br>3、选择排序<br>选择排序算法是一种原址比较排序算法。选择排序大致的思路是找到数据结构中的最小值并将其放在第一位，接着找到第二小的值并将其放在第二位，以此类推。<div class="highlight-container" data-rel="Javascript"><figure class="iseeu highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="variable language_">this</span>.<span class="property">selectionSort</span> = <span class="keyword">function</span>(<span class="params"></span>)&#123;</span><br><span class="line">    <span class="keyword">var</span> length = array.<span class="property">length</span>,</span><br><span class="line">        indexMin;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">0</span>; i&lt;length-<span class="number">1</span>; i++)&#123;</span><br><span class="line">        indexMin = i;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">var</span> j=i; j&lt;length; j++)&#123;</span><br><span class="line">            <span class="keyword">if</span>(array[indexMin] &gt; array[j])&#123;</span><br><span class="line">                indexMin = j;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span>(i !== indexMin)&#123;</span><br><span class="line">            <span class="title function_">swap</span>(i, indexMin);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></div>
 选择排序同样也是一个复杂度为O(n2)的算法。</li>
 </ol>
+]]></content>
+      <categories>
+        <category>journal</category>
+      </categories>
+      <tags>
+        <tag>journal</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>2024-12-16 日报 Day18</title>
+    <url>/undefined/2024-12-16/</url>
+    <content><![CDATA[
+  <div class="note-large red">
+    <div class="notel-title rounded-t-lg p-3 font-bold text-lg flex flex-row gap-2 items-center">
+      <p>今日的鸡汤</p>
+
+    </div>
+    <div class="notel-content">
+      <p>且以青春赴山海,<br>青舟无惧万重山。</p>
+
+    </div>
+  </div>
+
+<h3 id="今日学习内容"><a href="#今日学习内容" class="headerlink" title="今日学习内容"></a>今日学习内容</h3><pre><code>1、《JavaScript数据结构与算法》 P174-
+</code></pre>
+<h3 id="今日笔记"><a href="#今日笔记" class="headerlink" title="今日笔记"></a>今日笔记</h3><p>1、插入排序: 插入排序是一种最简单的排序算法，其原理是通过构建有序序列，对于未排序数据，在已排序序列中从后向前扫描，找到相应位置并插入。</p>
+<div class="highlight-container" data-rel="Javascript"><figure class="iseeu highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="variable language_">this</span>.<span class="property">insertionSort</span> = <span class="keyword">function</span>(<span class="params"></span>)&#123;</span><br><span class="line">    <span class="keyword">var</span> length = array.<span class="property">length</span>,</span><br><span class="line">        j, temp;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">1</span>; i&lt;length; i++)&#123;</span><br><span class="line">        j = i;</span><br><span class="line">        temp = array[i];</span><br><span class="line">        <span class="keyword">while</span>(j&gt;<span class="number">0</span> &amp;&amp; array[j-<span class="number">1</span>] &gt; temp)&#123;</span><br><span class="line">            array[j] = array[j-<span class="number">1</span>];</span><br><span class="line">            j--;</span><br><span class="line">        &#125;</span><br><span class="line">        array[j] = temp;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></div>
+<p>时间复杂度: O(n^2)<br>空间复杂度: O(1)</p>
 ]]></content>
       <categories>
         <category>journal</category>
