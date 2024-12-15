@@ -2792,9 +2792,51 @@ if (promises.length === 0) &#123;
 ]]></content>
   </entry>
   <entry>
-    <title></title>
+    <title>2024-12-13 日报 Day15</title>
     <url>/undefined/2024-12-13/</url>
-    <content><![CDATA[]]></content>
+    <content><![CDATA[
+  <div class="note-large red">
+    <div class="notel-title rounded-t-lg p-3 font-bold text-lg flex flex-row gap-2 items-center">
+      <p>今日的鸡汤</p>
+
+    </div>
+    <div class="notel-content">
+      <p>少欲则心静，心静则事简，只有这样方能够挣脱繁华虚妄的羁绊，拥抱明确而简单的生活。</p>
+
+    </div>
+  </div>
+
+<h3 id="今日学习内容"><a href="#今日学习内容" class="headerlink" title="今日学习内容"></a>今日学习内容</h3><pre><code>1、《JavaScript数据结构与算法》 P161-166
+</code></pre>
+<h3 id="今日笔记"><a href="#今日笔记" class="headerlink" title="今日笔记"></a>今日笔记</h3><p>1、非线形数据结构-图。图是由一组由边连接的节点(或顶点)。<br>图由G&#x3D;(V,E)组成，其中V是顶点的集合，E是边的集合。<br>由一条边连接在一起的顶点称为相邻顶点。<br>一个顶点的度是其相邻顶点的数量。<br>路径是顶点v1,v2,…,vk的一个连续序列，其中vi和vi+1是相邻的。<br>简单路径要求不包含重复的顶点。<br>图分为有向图和无向图。图还可以是加权的或非加权的。<br>2、图的表示: 从数据结构上来说可以用多种方式来表示图，不存在绝对的正确表示方法，取决于待解决的问题和图的类型。</p>
+<ul>
+<li>邻接矩阵: 二维数组，其中的元素表示两个顶点之间是否有一条边。如果索引为i的节点和索引为j的节点相邻，则matrix[i][j]为1，否则为0。</li>
+<li>邻接表: 用列表(数组)、链表，甚至是散列表或是字典来表示相邻顶点列表。</li>
+<li>关联矩阵: 二维数组，其中的元素表示顶点和边的关系。行表示顶点，列表示边，元素表示顶点和边的关系。可以使用二维数组来表示两者之间的连通性，<br>如果顶点v是边e的入射点，则array[v][e]为1，否则为0。关联矩阵通常用于边的数量比顶点多的情况下，以节省空间和内存。<br>3、创建Graph类<div class="highlight-container" data-rel="Javascript"><figure class="iseeu highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">Graph</span>(<span class="params"></span>)&#123;</span><br><span class="line">  <span class="keyword">var</span> vertices = [];</span><br><span class="line">  <span class="keyword">var</span> adjList = <span class="keyword">new</span> <span class="title class_">Dictionary</span>();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+其中vertices数组用来存储图中所有顶点的名字，adjList用来存储邻接表。图类需要实现三个方法:</li>
+<li>addVertex: 向图中添加一个新的顶点。<div class="highlight-container" data-rel="Javascript"><figure class="iseeu highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="variable language_">this</span>.<span class="property">addVertex</span> = <span class="keyword">function</span>(<span class="params">v</span>)&#123;</span><br><span class="line">  vertices.<span class="title function_">push</span>(v);</span><br><span class="line">  adjList.<span class="title function_">set</span>(v, []);</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></div></li>
+<li>addEdge: 添加一条边。<div class="highlight-container" data-rel="Javascript"><figure class="iseeu highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="variable language_">this</span>.<span class="property">addEdge</span> = <span class="keyword">function</span>(<span class="params">v, w</span>)&#123;</span><br><span class="line">  adjList.<span class="title function_">get</span>(v).<span class="title function_">push</span>(w);</span><br><span class="line">  adjList.<span class="title function_">get</span>(w).<span class="title function_">push</span>(v);</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></div></li>
+<li>toString: 输出图的顶点和邻接表。</li>
+</ul>
+<pre><code class="javascript">this.toString = function()&#123;
+  var s = &#39;&#39;;
+  for(var i=0; i&lt;vertices.length; i++)&#123;
+    s += vertices[i] + &#39; -&gt; &#39;;
+    var neighbors = adjList.get(vertices[i]);
+    for(var j=0; j&lt;neighbors.length; j++)&#123;
+      s += neighbors[j] + &#39; &#39;;
+    &#125;
+    s += &#39;\n&#39;;
+  &#125;
+&#125;
+</code></pre>
+]]></content>
+      <categories>
+        <category>journal</category>
+      </categories>
+      <tags>
+        <tag>journal</tag>
+      </tags>
   </entry>
   <entry>
     <title>2024-12-12 日报 Day14</title>
