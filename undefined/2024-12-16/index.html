@@ -26,9 +26,10 @@
 <meta property="og:description" content="今日的鸡汤                  且以青春赴山海,青舟无惧万重山。           今日学习内容1、《JavaScript数据结构与算法》 P174-  今日笔记1、插入排序: 插入排序是一种最简单的排序算法，其原理是通过构建有序序列，对于未排序数据，在已排序序列中从后向前扫描，找到相应位置并插入。 12345678910111213this.inse">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2024-12-15T16:00:00.000Z">
-<meta property="article:modified_time" content="2024-12-15T17:25:00.705Z">
+<meta property="article:modified_time" content="2024-12-15T21:56:32.046Z">
 <meta property="article:author" content="Yuyang">
 <meta property="article:tag" content="journal">
+<meta property="article:tag" content="lowcode">
 <meta name="twitter:card" content="summary">
     
     
@@ -484,15 +485,15 @@
 
         <div class="statistics flex justify-around my-2.5">
     <a class="item tag-count-item flex flex-col justify-center items-center w-20" href="/tags">
-        <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">2</div>
+        <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">3</div>
         <div class="label text-third-text-color text-sm">标签</div>
     </a>
     <a class="item tag-count-item flex flex-col justify-center items-center w-20" href="/categories">
-        <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">1</div>
+        <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">2</div>
         <div class="label text-third-text-color text-sm">分类</div>
     </a>
     <a class="item tag-count-item flex flex-col justify-center items-center w-20" href="/archives">
-        <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">45</div>
+        <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">52</div>
         <div class="label text-third-text-color text-sm">文章</div>
     </a>
 </div>
@@ -550,8 +551,8 @@
     
         <span class="article-date article-meta-item">
             <i class="fa-regular fa-wrench"></i>&nbsp;
-            <span class="desktop">2024-12-16 01:25</span>
-            <span class="mobile">2024-12-16 01:25</span>
+            <span class="desktop">2024-12-16 05:56:32</span>
+            <span class="mobile">2024-12-16 05:56:32</span>
             <span class="hover-info">更新</span>
         </span>
     
@@ -570,6 +571,16 @@
                     
                     
                 
+                    
+                        
+                            <li>></li>
+                        
+                        <li>
+                            <a href="/categories/journal/lowcode/">lowcode</a>&nbsp;
+                        </li>
+                    
+                    
+                
             </ul>
         </span>
     
@@ -580,6 +591,10 @@
                 
                     <li>
                         <a href="/tags/journal/">journal</a>&nbsp;
+                    </li>
+                
+                    <li>
+                        | <a href="/tags/lowcode/">lowcode</a>&nbsp;
                     </li>
                 
             </ul>
@@ -622,6 +637,236 @@
 <h3 id="今日笔记"><a href="#今日笔记" class="headerlink" title="今日笔记"></a>今日笔记</h3><p>1、插入排序: 插入排序是一种最简单的排序算法，其原理是通过构建有序序列，对于未排序数据，在已排序序列中从后向前扫描，找到相应位置并插入。</p>
 <div class="highlight-container" data-rel="Javascript"><figure class="iseeu highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable language_">this</span>.<span class="property">insertionSort</span> = <span class="keyword">function</span>(<span class="params"></span>)&#123;</span><br><span class="line">    <span class="keyword">var</span> length = array.<span class="property">length</span>,</span><br><span class="line">        j, temp;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">1</span>; i&lt;length; i++)&#123;</span><br><span class="line">        j = i;</span><br><span class="line">        temp = array[i];</span><br><span class="line">        <span class="keyword">while</span>(j&gt;<span class="number">0</span> &amp;&amp; array[j-<span class="number">1</span>] &gt; temp)&#123;</span><br><span class="line">            array[j] = array[j-<span class="number">1</span>];</span><br><span class="line">            j--;</span><br><span class="line">        &#125;</span><br><span class="line">        array[j] = temp;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></div>
 <p>时间复杂度: O(n^2)<br>空间复杂度: O(1)</p>
+<h3 id="低代码平台学习"><a href="#低代码平台学习" class="headerlink" title="低代码平台学习"></a>低代码平台学习</h3><p>1、以<a href="https://github.com/alibaba/lowcode-demo%E6%8F%90%E4%BE%9B%E7%9A%84https://lowcode-engine.cn/index">https://github.com/alibaba/lowcode-demo提供的https://lowcode-engine.cn/index</a> 模版学习<br>主要了解低代码平台所包含的主要模块和分包各自功能实现。对整体框架有一个简单的认识。<br>2、首先以demo-basic-antd为例进行学习，了解其基本功能和实现方式。<br>demo-basic-antd引入的包:</p>
+<div class="highlight-container" data-rel="Json"><figure class="iseeu highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">&quot;@alilc/lowcode-datasource-fetch-handler&quot;</span><span class="punctuation">:</span> <span class="string">&quot;^1.0.1&quot;</span><span class="punctuation">,</span></span><br><span class="line"><span class="attr">&quot;@alilc/lowcode-plugin-code-editor&quot;</span><span class="punctuation">:</span> <span class="string">&quot;^1.0.3&quot;</span><span class="punctuation">,</span></span><br><span class="line"><span class="attr">&quot;@alilc/lowcode-plugin-code-generator&quot;</span><span class="punctuation">:</span> <span class="string">&quot;^1.0.4&quot;</span><span class="punctuation">,</span></span><br><span class="line"><span class="attr">&quot;@alilc/lowcode-plugin-components-pane&quot;</span><span class="punctuation">:</span> <span class="string">&quot;^2.0.0&quot;</span><span class="punctuation">,</span></span><br><span class="line"><span class="attr">&quot;@alilc/lowcode-plugin-datasource-pane&quot;</span><span class="punctuation">:</span> <span class="string">&quot;^1.0.9&quot;</span><span class="punctuation">,</span></span><br><span class="line"><span class="attr">&quot;@alilc/lowcode-plugin-inject&quot;</span><span class="punctuation">:</span> <span class="string">&quot;^1.2.1&quot;</span><span class="punctuation">,</span></span><br><span class="line"><span class="attr">&quot;@alilc/lowcode-plugin-manual&quot;</span><span class="punctuation">:</span> <span class="string">&quot;^1.0.4&quot;</span><span class="punctuation">,</span></span><br><span class="line"><span class="attr">&quot;@alilc/lowcode-plugin-schema&quot;</span><span class="punctuation">:</span> <span class="string">&quot;^1.0.2&quot;</span><span class="punctuation">,</span></span><br><span class="line"><span class="attr">&quot;@alilc/lowcode-plugin-simulator-select&quot;</span><span class="punctuation">:</span> <span class="string">&quot;^1.0.2&quot;</span><span class="punctuation">,</span></span><br><span class="line"><span class="attr">&quot;@alilc/lowcode-plugin-undo-redo&quot;</span><span class="punctuation">:</span> <span class="string">&quot;^1.0.0&quot;</span><span class="punctuation">,</span></span><br><span class="line"><span class="attr">&quot;@alilc/lowcode-plugin-zh-en&quot;</span><span class="punctuation">:</span> <span class="string">&quot;^1.0.0&quot;</span><span class="punctuation">,</span></span><br><span class="line"><span class="attr">&quot;@alilc/lowcode-plugin-set-ref-prop&quot;</span><span class="punctuation">:</span> <span class="string">&quot;^1.0.1&quot;</span><span class="punctuation">,</span></span><br><span class="line"><span class="attr">&quot;@alilc/lowcode-react-renderer&quot;</span><span class="punctuation">:</span> <span class="string">&quot;^1.1.2&quot;</span><span class="punctuation">,</span></span><br><span class="line"><span class="attr">&quot;@alilc/lowcode-setter-behavior&quot;</span><span class="punctuation">:</span> <span class="string">&quot;^1.0.0&quot;</span><span class="punctuation">,</span></span><br><span class="line"><span class="attr">&quot;@alilc/lowcode-setter-title&quot;</span><span class="punctuation">:</span> <span class="string">&quot;^1.0.2&quot;</span><span class="punctuation">,</span></span><br></pre></td></tr></table></figure></div>
+<p>接下来对各个包的功能进行简单的分析:</p>
+<ul>
+<li>lowcode-datasource-fetch-handler: 数据源获取处理 </li>
+<li>lowcode-plugin-code-editor: 代码编辑器 <a href="https://github.com/alibaba/lowcode-plugins">https://github.com/alibaba/lowcode-plugins</a></li>
+<li>lowcode-plugin-code-generator: 出码器 <a href="https://github.com/alibaba/lowcode-code-generator-demo">https://github.com/alibaba/lowcode-code-generator-demo</a> 有demo但应该不是完整的</li>
+<li>lowcode-plugin-components-pane: 低代码组件面板 <a href="https://github.com/alibaba/lowcode-plugins.git">https://github.com/alibaba/lowcode-plugins.git</a></li>
+<li>lowcode-plugin-datasource-pane: 数据源面板 <a href="https://github.com/alibaba/lowcode-plugins.git">https://github.com/alibaba/lowcode-plugins.git</a></li>
+<li>lowcode-plugin-inject: 低代码引擎生态元素项目内调试用插件 <a href="https://github.com/alibaba/lowcode-tools.git">https://github.com/alibaba/lowcode-tools.git</a></li>
+<li>lowcode-plugin-manual: 低代码产品使用手册 <a href="https://github.com/alibaba/lowcode-plugins.git">https://github.com/alibaba/lowcode-plugins.git</a></li>
+<li>lowcode-plugin-schema: 查看低代码引擎 schema <a href="https://github.com/alibaba/lowcode-plugins.git">https://github.com/alibaba/lowcode-plugins.git</a></li>
+<li>lowcode-plugin-simulator-select: 画布切换 <a href="https://github.com/alibaba/lowcode-plugins.git">https://github.com/alibaba/lowcode-plugins.git</a></li>
+<li>lowcode-plugin-undo-redo: alibaba lowcode editor undo redo plugin <a href="https://github.com/alibaba/lowcode-plugins.git">https://github.com/alibaba/lowcode-plugins.git</a></li>
+<li>lowcode-plugin-zh-en: alibaba lowcode editor zhong english plugin <a href="https://github.com/alibaba/lowcode-plugins.git">https://github.com/alibaba/lowcode-plugins.git</a></li>
+<li>lowcode-plugin-set-ref-prop: alibaba lowcode editor plugin for setting ref-id <a href="https://github.com/alibaba/lowcode-plugins.git">https://github.com/alibaba/lowcode-plugins.git</a></li>
+<li>lowcode-react-renderer: react renderer for ali lowcode engine <a href="https://github.com/alibaba/lowcode-engine/tree/main/packages/react-renderer">https://github.com/alibaba/lowcode-engine/tree/main/packages/react-renderer</a></li>
+<li>lowcode-setter-behavior: 交互 setter</li>
+<li>lowcode-setter-title: 标题 setter</li>
+</ul>
+<p>找到了npm包对应源码的地址</p>
+<table>
+<thead>
+<tr>
+<th><strong>包名</strong></th>
+<th><strong>仓库</strong></th>
+<th><strong>路径</strong></th>
+</tr>
+</thead>
+<tbody><tr>
+<td>@alilc&#x2F;lowcode-code-generator</td>
+<td><a href="https://github.com/alibaba/lowcode-engine">https://github.com/alibaba/lowcode-engine</a></td>
+<td>modules&#x2F;code-generator</td>
+</tr>
+<tr>
+<td>@alilc&#x2F;lowcode-material-parser</td>
+<td><a href="https://github.com/alibaba/lowcode-engine">https://github.com/alibaba/lowcode-engine</a></td>
+<td>modules&#x2F;material-parser</td>
+</tr>
+<tr>
+<td>@alilc&#x2F;lowcode-designer</td>
+<td><a href="https://github.com/alibaba/lowcode-engine">https://github.com/alibaba/lowcode-engine</a></td>
+<td>packages&#x2F;designer</td>
+</tr>
+<tr>
+<td>@alilc&#x2F;lowcode-editor-core</td>
+<td><a href="https://github.com/alibaba/lowcode-engine">https://github.com/alibaba/lowcode-engine</a></td>
+<td>packages&#x2F;editor-core</td>
+</tr>
+<tr>
+<td>@alilc&#x2F;lowcode-editor-skeleton</td>
+<td><a href="https://github.com/alibaba/lowcode-engine">https://github.com/alibaba/lowcode-engine</a></td>
+<td>packages&#x2F;editor-skeleton</td>
+</tr>
+<tr>
+<td>@alilc&#x2F;lowcode-engine</td>
+<td><a href="https://github.com/alibaba/lowcode-engine">https://github.com/alibaba/lowcode-engine</a></td>
+<td>packages&#x2F;engine</td>
+</tr>
+<tr>
+<td>@alilc&#x2F;lowcode-plugin-designer</td>
+<td><a href="https://github.com/alibaba/lowcode-engine">https://github.com/alibaba/lowcode-engine</a></td>
+<td>packages&#x2F;plugin-designer</td>
+</tr>
+<tr>
+<td>@alilc&#x2F;lowcode-plugin-outline-pane</td>
+<td><a href="https://github.com/alibaba/lowcode-engine">https://github.com/alibaba/lowcode-engine</a></td>
+<td>packages&#x2F;plugin-outline-pane</td>
+</tr>
+<tr>
+<td>@alilc&#x2F;lowcode-react-renderer</td>
+<td><a href="https://github.com/alibaba/lowcode-engine">https://github.com/alibaba/lowcode-engine</a></td>
+<td>packages&#x2F;react-renderer</td>
+</tr>
+<tr>
+<td>@alilc&#x2F;lowcode-react-simulator-renderer</td>
+<td><a href="https://github.com/alibaba/lowcode-engine">https://github.com/alibaba/lowcode-engine</a></td>
+<td>packages&#x2F;react-simulator-renderer</td>
+</tr>
+<tr>
+<td>@alilc&#x2F;lowcode-renderer-core</td>
+<td><a href="https://github.com/alibaba/lowcode-engine">https://github.com/alibaba/lowcode-engine</a></td>
+<td>packages&#x2F;renderer-core</td>
+</tr>
+<tr>
+<td>@alilc&#x2F;lowcode-shell</td>
+<td><a href="https://github.com/alibaba/lowcode-engine">https://github.com/alibaba/lowcode-engine</a></td>
+<td>packages&#x2F;shell</td>
+</tr>
+<tr>
+<td>@alilc&#x2F;lowcode-types</td>
+<td><a href="https://github.com/alibaba/lowcode-engine">https://github.com/alibaba/lowcode-engine</a></td>
+<td>packages&#x2F;types</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>@alilc&#x2F;lowcode-utils</td>
+<td><a href="https://github.com/alibaba/lowcode-engine">https://github.com/alibaba/lowcode-engine</a></td>
+<td>packages&#x2F;utils</td>
+</tr>
+<tr>
+<td>@alilc&#x2F;lowcode-datasource-engine</td>
+<td><a href="https://github.com/alibaba/lowcode-datasource">https://github.com/alibaba/lowcode-datasource</a></td>
+<td>packages&#x2F;datasource-engine</td>
+</tr>
+<tr>
+<td>@alilc&#x2F;lowcode-datasource-fetch-handler</td>
+<td><a href="https://github.com/alibaba/lowcode-datasource">https://github.com/alibaba/lowcode-datasource</a></td>
+<td>packages&#x2F;datasource-fetch-handler</td>
+</tr>
+<tr>
+<td>@alilc&#x2F;lowcode-datasource-jsonp-handler</td>
+<td><a href="https://github.com/alibaba/lowcode-datasource">https://github.com/alibaba/lowcode-datasource</a></td>
+<td>packages&#x2F;datasource-jsonp-handler</td>
+</tr>
+<tr>
+<td>@alilc&#x2F;lowcode-datasource-mopen-handler</td>
+<td><a href="https://github.com/alibaba/lowcode-datasource">https://github.com/alibaba/lowcode-datasource</a></td>
+<td>packages&#x2F;datasource-mopen-handler</td>
+</tr>
+<tr>
+<td>@alilc&#x2F;lowcode-datasource-mtop-handler</td>
+<td><a href="https://github.com/alibaba/lowcode-datasource">https://github.com/alibaba/lowcode-datasource</a></td>
+<td>packages&#x2F;datasource-mtop-handler</td>
+</tr>
+<tr>
+<td>@alilc&#x2F;lowcode-datasource-types</td>
+<td><a href="https://github.com/alibaba/lowcode-datasource">https://github.com/alibaba/lowcode-datasource</a></td>
+<td>packages&#x2F;datasource-types</td>
+</tr>
+<tr>
+<td>@alilc&#x2F;lowcode-datasource-universal-mtop-handler</td>
+<td><a href="https://github.com/alibaba/lowcode-datasource">https://github.com/alibaba/lowcode-datasource</a></td>
+<td>packages&#x2F;datasource-universal-mtop-handler</td>
+</tr>
+<tr>
+<td>@alilc&#x2F;lowcode-datasource-url-params-handler</td>
+<td><a href="https://github.com/alibaba/lowcode-datasource">https://github.com/alibaba/lowcode-datasource</a></td>
+<td>packages&#x2F;datasource-url-params-handler</td>
+</tr>
+<tr>
+<td>@alilc&#x2F;build-plugin-alt</td>
+<td><a href="https://github.com/alibaba/lowcode-tools">https://github.com/alibaba/lowcode-tools</a></td>
+<td>packages&#x2F;build-plugin-alt</td>
+</tr>
+<tr>
+<td>@alilc&#x2F;create-element</td>
+<td><a href="https://github.com/alibaba/lowcode-tools">https://github.com/alibaba/lowcode-tools</a></td>
+<td>packages&#x2F;create-element</td>
+</tr>
+<tr>
+<td>@alilc&#x2F;lowcode-plugin-inject</td>
+<td><a href="https://github.com/alibaba/lowcode-tools">https://github.com/alibaba/lowcode-tools</a></td>
+<td>packages&#x2F;lowcode-plugin-inject</td>
+</tr>
+<tr>
+<td>@alilc&#x2F;action-block</td>
+<td><a href="https://github.com/alibaba/lowcode-plugins">https://github.com/alibaba/lowcode-plugins</a></td>
+<td>packages&#x2F;action-block</td>
+</tr>
+<tr>
+<td>@alilc&#x2F;lowcode-plugin-base-monaco-editor</td>
+<td><a href="https://github.com/alibaba/lowcode-plugins">https://github.com/alibaba/lowcode-plugins</a></td>
+<td>packages&#x2F;plugin-base-monaco-editor</td>
+</tr>
+<tr>
+<td>@alilc&#x2F;lowcode-plugin-block</td>
+<td><a href="https://github.com/alibaba/lowcode-plugins">https://github.com/alibaba/lowcode-plugins</a></td>
+<td>packages&#x2F;plugin-block</td>
+</tr>
+<tr>
+<td>@alilc&#x2F;lowcode-plugin-code-editor</td>
+<td><a href="https://github.com/alibaba/lowcode-plugins">https://github.com/alibaba/lowcode-plugins</a></td>
+<td>packages&#x2F;plugin-code-editor</td>
+</tr>
+<tr>
+<td>@alilc&#x2F;lowcode-plugin-components-pane</td>
+<td><a href="https://github.com/alibaba/lowcode-plugins">https://github.com/alibaba/lowcode-plugins</a></td>
+<td>packages&#x2F;plugin-components-pane</td>
+</tr>
+<tr>
+<td>@alilc&#x2F;lowcode-plugin-datasource-pane</td>
+<td><a href="https://github.com/alibaba/lowcode-plugins">https://github.com/alibaba/lowcode-plugins</a></td>
+<td>packages&#x2F;plugin-datasource-pane</td>
+</tr>
+<tr>
+<td>@alilc&#x2F;lowcode-plugin-manual</td>
+<td><a href="https://github.com/alibaba/lowcode-plugins">https://github.com/alibaba/lowcode-plugins</a></td>
+<td>packages&#x2F;plugin-manual</td>
+</tr>
+<tr>
+<td>@alilc&#x2F;lowcode-plugin-schema</td>
+<td><a href="https://github.com/alibaba/lowcode-plugins">https://github.com/alibaba/lowcode-plugins</a></td>
+<td>packages&#x2F;plugin-schema</td>
+</tr>
+<tr>
+<td>@alilc&#x2F;lowcode-plugin-undo-redo</td>
+<td><a href="https://github.com/alibaba/lowcode-plugins">https://github.com/alibaba/lowcode-plugins</a></td>
+<td>packages&#x2F;plugin-undo-redo</td>
+</tr>
+<tr>
+<td>@alilc&#x2F;lowcode-plugin-zh-en</td>
+<td><a href="https://github.com/alibaba/lowcode-plugins">https://github.com/alibaba/lowcode-plugins</a></td>
+<td>packages&#x2F;plugin-zh-en</td>
+</tr>
+<tr>
+<td>@alifd&#x2F;fusion-ui</td>
+<td><a href="https://github.com/alibaba/lowcode-materials">https://github.com/alibaba/lowcode-materials</a></td>
+<td>packages&#x2F;fusion-ui</td>
+</tr>
+<tr>
+<td>@alilc&#x2F;lowcode-materials</td>
+<td><a href="https://github.com/alibaba/lowcode-materials">https://github.com/alibaba/lowcode-materials</a></td>
+<td>packages&#x2F;fusion-lowcode-materials</td>
+</tr>
+<tr>
+<td>@alilc&#x2F;antd-lowcode-materials</td>
+<td><a href="https://github.com/alibaba/lowcode-materials">https://github.com/alibaba/lowcode-materials</a></td>
+<td>packages&#x2F;antd-lowcode-materials</td>
+</tr>
+<tr>
+<td>@alifd&#x2F;layout（原 @alifd&#x2F;pro-layout 升级后的版本）</td>
+<td><a href="https://github.com/alibaba-fusion/layout">https://github.com/alibaba-fusion/layout</a></td>
+<td></td>
+</tr>
+</tbody></table>
 
         </div>
 
@@ -634,6 +879,10 @@
                         <a href="/tags/journal/">#journal</a>&nbsp;
                     </li>
                 
+                    <li class="tag-item mx-0.5">
+                        <a href="/tags/lowcode/">#lowcode</a>&nbsp;
+                    </li>
+                
             </ul>
         
 
@@ -641,6 +890,21 @@
 
         
             <div class="article-nav my-8 flex justify-between items-center px-2 sm:px-6 md:px-8">
+                
+                    <div class="article-prev border-border-color shadow-redefine-flat shadow-shadow-color-2 rounded-medium px-4 py-2 hover:shadow-redefine-flat-hover hover:shadow-shadow-color-2">
+                        <a class="prev"
+                        rel="prev"
+                        href="/undefined/2025-03-04/"
+                        >
+                            <span class="left arrow-icon flex justify-center items-center">
+                                <i class="fa-solid fa-chevron-left"></i>
+                            </span>
+                            <span class="title flex justify-center items-center">
+                                <span class="post-nav-title-item">2025-03-04 日报 Day19</span>
+                                <span class="post-nav-item">上一篇</span>
+                            </span>
+                        </a>
+                    </div>
                 
                 
                     <div class="article-next border-border-color shadow-redefine-flat shadow-shadow-color-2 rounded-medium px-4 py-2 hover:shadow-redefine-flat-hover hover:shadow-shadow-color-2">
@@ -671,7 +935,7 @@
     <div class="post-toc">
         <div class="toc-title">此页目录</div>
         <div class="page-title">2024-12-16 日报 Day18</div>
-        <ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BB%8A%E6%97%A5%E5%AD%A6%E4%B9%A0%E5%86%85%E5%AE%B9"><span class="nav-text">今日学习内容</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BB%8A%E6%97%A5%E7%AC%94%E8%AE%B0"><span class="nav-text">今日笔记</span></a></li></ol>
+        <ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BB%8A%E6%97%A5%E5%AD%A6%E4%B9%A0%E5%86%85%E5%AE%B9"><span class="nav-text">今日学习内容</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BB%8A%E6%97%A5%E7%AC%94%E8%AE%B0"><span class="nav-text">今日笔记</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BD%8E%E4%BB%A3%E7%A0%81%E5%B9%B3%E5%8F%B0%E5%AD%A6%E4%B9%A0"><span class="nav-text">低代码平台学习</span></a></li></ol>
 
     </div>
 </div>
@@ -699,12 +963,12 @@
               <span>2022</span>
               -
             
-            2024&nbsp;&nbsp;<i class="fa-solid fa-heart fa-beat" style="--fa-animation-duration: 0.5s; color: #f54545"></i>&nbsp;&nbsp;<a href="/">Yuyang</a>
+            2025&nbsp;&nbsp;<i class="fa-solid fa-heart fa-beat" style="--fa-animation-duration: 0.5s; color: #f54545"></i>&nbsp;&nbsp;<a href="/">Yuyang</a>
             
                 
                 <p class="post-count space-x-0.5">
                     <span>
-                        共 45 篇文章
+                        共 52 篇文章
                     </span>
                     
                 </p>
