@@ -1,0 +1,1285 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="keywords" content="Hexo Theme Redefine">
+    
+    <meta name="author" content="Yuyang">
+    <!-- preconnect -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    
+    <!--- Seo Part-->
+    
+    <link rel="canonical" href="https://github.com/YuZeZhang/YuZeZhang.github.io/undefined/2024-12-18/"/>
+    <meta name="robots" content="index,follow">
+    <meta name="googlebot" content="index,follow">
+    <meta name="revisit-after" content="1 days">
+    
+        <meta name="description" content="今日的鸡汤                  在哪里付出，就在哪里得到；在哪里打磨，就在哪里闪耀。           今日学习内容1、JS红皮书P103-108 第五章：基本引用类型 今日笔记1、对象被认为是某个特定引用类型的实例。新对象通过使用 new 操作符后跟一个构造函数（constructor）来创建。构造函数就是用来创建新对象的函数，比如下面这行代码：le">
+<meta property="og:type" content="article">
+<meta property="og:title" content="2024-12-18 日报 Day39">
+<meta property="og:url" content="https://github.com/YuZeZhang/YuZeZhang.github.io/undefined/2024-12-18/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="今日的鸡汤                  在哪里付出，就在哪里得到；在哪里打磨，就在哪里闪耀。           今日学习内容1、JS红皮书P103-108 第五章：基本引用类型 今日笔记1、对象被认为是某个特定引用类型的实例。新对象通过使用 new 操作符后跟一个构造函数（constructor）来创建。构造函数就是用来创建新对象的函数，比如下面这行代码：le">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2024-12-17T16:00:00.000Z">
+<meta property="article:modified_time" content="2025-03-26T19:16:38.673Z">
+<meta property="article:author" content="Yuyang">
+<meta property="article:tag" content="journal">
+<meta name="twitter:card" content="summary">
+    
+    
+    <!--- Icon Part-->
+    <link rel="icon" type="image/png" href="https://raw.githubusercontent.com/YuZeZhang/myImgslib/main/202406232019880.png" sizes="192x192">
+    <link rel="apple-touch-icon" sizes="180x180" href="https://raw.githubusercontent.com/YuZeZhang/myImgslib/main/202406232019880.png">
+    <meta name="theme-color" content="#A31F34">
+    <link rel="shortcut icon" href="https://raw.githubusercontent.com/YuZeZhang/myImgslib/main/202406232019880.png">
+    <!--- Page Info-->
+    
+    <title>
+        
+            2024-12-18 日报 Day39 -
+        
+        Welcome to Yuyang&#39;s Blog
+    </title>
+
+    
+<link rel="stylesheet" href="/fonts/Chillax/chillax.css">
+
+
+    <!--- Inject Part-->
+    
+
+    
+<link rel="stylesheet" href="/css/style.css">
+
+
+    
+        
+<link rel="stylesheet" href="/assets/build/styles.css">
+
+    
+
+    
+<link rel="stylesheet" href="/fonts/GeistMono/geist-mono.css">
+
+    
+<link rel="stylesheet" href="/fonts/Geist/geist.css">
+
+    <!--- Font Part-->
+    
+    
+    
+    
+
+    
+        
+<script src="/js/libs/anime.min.js"></script>
+
+    
+
+    <script id="hexo-configurations">
+    window.config = {"hostname":"github.com","root":"/","language":"zh-CN","path":"search.xml"};
+    window.theme = {"articles":{"style":{"font_size":"16px","line_height":1.5,"image_border_radius":"14px","image_alignment":"center","image_caption":false,"link_icon":true,"title_alignment":"left","headings_top_spacing":{"h1":"3.2rem","h2":"2.4rem","h3":"1.9rem","h4":"1.6rem","h5":"1.4rem","h6":"1.3rem"}},"word_count":{"enable":true,"count":true,"min2read":true},"author_label":{"enable":true,"auto":false,"list":["前端小白🥬"]},"code_block":{"copy":true,"style":"mac","font":{"enable":false,"family":null,"url":null}},"toc":{"enable":true,"max_depth":3,"number":false,"expand":true,"init_open":true},"copyright":{"enable":false,"default":"cc_by_nc_sa"},"lazyload":true,"recommendation":{"enable":false,"title":"推荐阅读","limit":3,"mobile_limit":2,"placeholder":"/images/wallhaven-wqery6-light.webp","skip_dirs":[]}},"colors":{"primary":"#A31F34","secondary":null,"default_mode":"light"},"global":{"fonts":{"chinese":{"enable":false,"family":null,"url":null},"english":{"enable":false,"family":null,"url":null}},"content_max_width":"1000px","sidebar_width":"210px","hover":{"shadow":true,"scale":false},"scroll_progress":{"bar":true,"percentage":true},"website_counter":{"url":"https://cn.vercount.one/js","enable":true,"site_pv":true,"site_uv":true,"post_pv":true},"single_page":true,"preloader":true,"open_graph":true,"google_analytics":{"enable":false,"id":null}},"home_banner":{"enable":true,"style":"fixed","image":{"light":"/images/wallhaven-wqery6-light.webp","dark":"/images/wallhaven-wqery6-dark.webp"},"title":"Yuyang's Blog","subtitle":{"text":["马无夜草不肥，人无横财不富","富贵险中求"],"hitokoto":{"enable":false,"api":"https://v1.hitokoto.cn"},"typing_speed":100,"backing_speed":80,"starting_delay":500,"backing_delay":1500,"loop":true,"smart_backspace":true},"text_color":{"light":"#fff","dark":"#d1d1b6"},"text_style":{"title_size":"2.8rem","subtitle_size":"1.5rem","line_height":1.2},"custom_font":{"enable":false,"family":null,"url":null},"social_links":{"enable":false,"style":"default","links":{"github":null,"instagram":null,"zhihu":null,"twitter":null,"email":null},"qrs":{"weixin":null}}},"plugins":{"feed":{"enable":false},"aplayer":{"enable":false,"type":"fixed","audios":[{"name":null,"artist":null,"url":null,"cover":null,"lrc":null}]},"mermaid":{"enable":false,"version":"9.3.0"}},"version":"2.6.4","navbar":{"auto_hide":false,"color":{"left":"#f78736","right":"#367df7","transparency":35},"width":{"home":"1200px","pages":"1000px"},"links":{"Home":{"path":"/","icon":"fa-regular fa-house"},"GitHub":{"path":"https://github.com/YuZeZhang","icon":"fa-brands fa-github"},"CSDN":{"path":"https://blog.csdn.net/weixin_57301463","icon":"fa-solid fa-rocket-launch"}},"search":{"enable":true,"preload":true},"tags":{"Tags":{"icon":"fa-solid fa-tags","path":"/tags/"}},"Categories":{"path":"/categories/","icon":"fa-solid fa-folder"}},"page_templates":{"friends_column":2,"tags_style":"blur"},"home":{"sidebar":{"enable":true,"position":"left","first_item":"menu","announcement":null,"show_on_mobile":true,"links":{"Archives":{"path":"/archives","icon":"fa-regular fa-archive"},"Tags":{"path":"/tags","icon":"fa-regular fa-tags"},"Categories":{"path":"/categories","icon":"fa-regular fa-folder"}}},"article_date_format":"auto","categories":{"enable":true,"limit":3},"tags":{"enable":true,"limit":3}},"footerStart":"2022/8/17 11:45:14"};
+    window.lang_ago = {"second":"%s 秒前","minute":"%s 分钟前","hour":"%s 小时前","day":"%s 天前","week":"%s 周前","month":"%s 个月前","year":"%s 年前"};
+    window.data = {"masonry":false};
+  </script>
+    
+    <!--- Fontawesome Part-->
+    
+<link rel="stylesheet" href="/fontawesome/fontawesome.min.css">
+
+    
+<link rel="stylesheet" href="/fontawesome/brands.min.css">
+
+    
+<link rel="stylesheet" href="/fontawesome/solid.min.css">
+
+    
+<link rel="stylesheet" href="/fontawesome/regular.min.css">
+
+    
+        
+<link rel="stylesheet" href="/fontawesome/thin.min.css">
+
+    
+    
+        
+<link rel="stylesheet" href="/fontawesome/light.min.css">
+
+    
+    
+        
+<link rel="stylesheet" href="/fontawesome/duotone.min.css">
+
+    
+    
+        
+<link rel="stylesheet" href="/fontawesome/sharp-solid.min.css">
+
+    
+<meta name="generator" content="Hexo 7.2.0"></head>
+
+
+<body>
+<div class="progress-bar-container">
+    
+        <span class="scroll-progress-bar"></span>
+    
+
+    
+        <span class="pjax-progress-bar"></span>
+<!--        <span class="swup-progress-icon">-->
+<!--            <i class="fa-solid fa-circle-notch fa-spin"></i>-->
+<!--        </span>-->
+    
+</div>
+
+
+
+    <style>
+    :root {
+        --preloader-background-color: #fff;
+        --preloader-text-color: #000;
+    }
+
+    @media (prefers-color-scheme: dark) {
+        :root {
+            --preloader-background-color: #202124;
+            --preloader-text-color: #fff;
+        }
+    }
+
+    @media (prefers-color-scheme: light) {
+        :root {
+            --preloader-background-color: #fff;
+            --preloader-text-color: #000;
+        }
+    }
+
+    @media (max-width: 600px) {
+        .ml13 {
+            font-size: 2.6rem !important; /* Adjust this value as needed */
+        }
+    }
+
+    .preloader {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem; /* Tailwind 'gap-4' is 1rem */
+        align-items: center;
+        justify-content: center;
+        position: fixed;
+        padding: 12px;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh; /* 'h-screen' is 100% of the viewport height */
+        background-color: var(--preloader-background-color);
+        z-index: 1100; /* 'z-[1100]' sets the z-index */
+        transition: opacity 0.2s ease-in-out;
+    }
+
+    .ml13 {
+        font-size: 3.2rem;
+        /* text-transform: uppercase; */
+        color: var(--preloader-text-color);
+        letter-spacing: -1px;
+        font-weight: 500;
+        font-family: 'Chillax-Variable', sans-serif;
+        text-align: center;
+    }
+
+    .ml13 .word {
+        display: inline-flex;
+        flex-wrap: wrap;
+        white-space: nowrap;
+    }
+
+    .ml13 .letter {
+        display: inline-block;
+        line-height: 1em;
+    }
+</style>
+
+<div class="preloader">
+    <h2 class="ml13">
+        Welcome to Yuyang&#39;s Blog
+    </h2>
+    <script>
+        var textWrapper = document.querySelector('.ml13');
+        // Split text into words
+        var words = textWrapper.textContent.trim().split(' ');
+
+        // Clear the existing content
+        textWrapper.innerHTML = '';
+
+        // Wrap each word and its letters in spans
+        words.forEach(function(word) {
+            var wordSpan = document.createElement('span');
+            wordSpan.classList.add('word');
+            wordSpan.innerHTML = word.replace(/\S/g, "<span class='letter'>$&</span>");
+            textWrapper.appendChild(wordSpan);
+            textWrapper.appendChild(document.createTextNode(' ')); // Add space between words
+        });
+
+        var animation = anime.timeline({loop: true})
+            .add({
+                targets: '.ml13 .letter',
+                translateY: [40,0],
+                translateZ: 0,
+                opacity: [0,1],
+                filter: ['blur(5px)', 'blur(0px)'], // Starting from blurred to unblurred
+                easing: "easeOutExpo",
+                duration: 1400,
+                delay: (el, i) => 300 + 30 * i,
+            }).add({
+                targets: '.ml13 .letter',
+                translateY: [0,-40],
+                opacity: [1,0],
+                filter: ['blur(0px)', 'blur(5px)'], // Ending from unblurred to blurred
+                easing: "easeInExpo",
+                duration: 1200,
+                delay: (el, i) => 100 + 30 * i,
+                complete: function() {
+                    hidePreloader(); // Call hidePreloader after the animation completes
+                }
+            });
+
+        let themeStatus = JSON.parse(localStorage.getItem('REDEFINE-THEME-STATUS'))?.isDark;
+
+        // If the theme status is not found in local storage, check the preferred color scheme
+        if (themeStatus === undefined || themeStatus === null) {
+            if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+                themeStatus = 'dark';
+            } else {
+                themeStatus = 'light';
+            }
+        }
+
+        // Now you can use the themeStatus variable in your code
+        if (themeStatus) {
+            document.documentElement.style.setProperty('--preloader-background-color', '#202124');
+            document.documentElement.style.setProperty('--preloader-text-color', '#fff');
+        } else {
+            document.documentElement.style.setProperty('--preloader-background-color', '#fff');
+            document.documentElement.style.setProperty('--preloader-text-color', '#000');
+        }
+
+        window.addEventListener('load', function () {
+            setTimeout(hidePreloader, 5000); // Call hidePreloader after 5000 milliseconds if not already called by animation
+        });
+
+        function hidePreloader() {
+            var preloader = document.querySelector('.preloader');
+            preloader.style.opacity = '0';
+            setTimeout(function () {
+                preloader.style.display = 'none';
+            }, 200);
+        }
+    </script>
+</div>
+
+<main class="page-container" id="swup">
+
+    
+
+    <div class="main-content-container">
+
+
+        <div class="main-content-header">
+            <header class="navbar-container px-6 md:px-12">
+
+    <div class="navbar-content ">
+        <div class="left">
+            
+            <a class="logo-title" href="/">
+                
+                Welcome to Yuyang&#39;s Blog
+                
+            </a>
+        </div>
+
+        <div class="right">
+            <!-- PC -->
+            <div class="desktop">
+                <ul class="navbar-list">
+                    
+                        
+                            
+
+                            <li class="navbar-item">
+                                <!-- Menu -->
+                                <a class=""
+                                   href="/"
+                                        >
+                                    <i class="fa-regular fa-house fa-fw"></i>
+                                    首页
+                                    
+                                </a>
+
+                                <!-- Submenu -->
+                                
+                            </li>
+                    
+                        
+                            
+
+                            <li class="navbar-item">
+                                <!-- Menu -->
+                                <a class=""
+                                   href="https://github.com/YuZeZhang"
+                                        >
+                                    <i class="fa-brands fa-github fa-fw"></i>
+                                    GITHUB
+                                    
+                                </a>
+
+                                <!-- Submenu -->
+                                
+                            </li>
+                    
+                        
+                            
+
+                            <li class="navbar-item">
+                                <!-- Menu -->
+                                <a class=""
+                                   target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_57301463"
+                                        >
+                                    <i class="fa-solid fa-rocket-launch fa-fw"></i>
+                                    CSDN
+                                    
+                                </a>
+
+                                <!-- Submenu -->
+                                
+                            </li>
+                    
+                    
+                        <li class="navbar-item search search-popup-trigger">
+                            <i class="fa-solid fa-magnifying-glass"></i>
+                        </li>
+                    
+                </ul>
+            </div>
+            <!-- Mobile -->
+            <div class="mobile">
+                
+                    <div class="icon-item search search-popup-trigger"><i class="fa-solid fa-magnifying-glass"></i>
+                    </div>
+                
+                <div class="icon-item navbar-bar">
+                    <div class="navbar-bar-middle"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Mobile sheet -->
+    <div class="navbar-drawer h-screen w-full absolute top-0 left-0 bg-background-color flex flex-col justify-between">
+        <ul class="drawer-navbar-list flex flex-col px-4 justify-center items-start">
+            
+                
+                    
+
+                    <li class="drawer-navbar-item text-base my-1.5 flex flex-col w-full">
+                        
+                        <a class="py-1.5 px-2 flex flex-row items-center justify-between gap-1 hover:!text-primary active:!text-primary text-2xl font-semibold group border-b border-border-color hover:border-primary w-full "
+                           href="/"
+                        >
+                            <span>
+                                首页
+                            </span>
+                            
+                                <i class="fa-regular fa-house fa-sm fa-fw"></i>
+                            
+                        </a>
+                        
+
+                        
+                    </li>
+            
+                
+                    
+
+                    <li class="drawer-navbar-item text-base my-1.5 flex flex-col w-full">
+                        
+                        <a class="py-1.5 px-2 flex flex-row items-center justify-between gap-1 hover:!text-primary active:!text-primary text-2xl font-semibold group border-b border-border-color hover:border-primary w-full "
+                           href="https://github.com/YuZeZhang"
+                        >
+                            <span>
+                                GITHUB
+                            </span>
+                            
+                                <i class="fa-brands fa-github fa-sm fa-fw"></i>
+                            
+                        </a>
+                        
+
+                        
+                    </li>
+            
+                
+                    
+
+                    <li class="drawer-navbar-item text-base my-1.5 flex flex-col w-full">
+                        
+                        <a class="py-1.5 px-2 flex flex-row items-center justify-between gap-1 hover:!text-primary active:!text-primary text-2xl font-semibold group border-b border-border-color hover:border-primary w-full "
+                           target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_57301463"
+                        >
+                            <span>
+                                CSDN
+                            </span>
+                            
+                                <i class="fa-solid fa-rocket-launch fa-sm fa-fw"></i>
+                            
+                        </a>
+                        
+
+                        
+                    </li>
+            
+
+            
+            
+                
+                    
+                    <li class="drawer-navbar-item text-base my-1.5 flex flex-col w-full">
+                        <a class="py-1.5 px-2 flex flex-row items-center justify-between gap-1 hover:!text-primary active:!text-primary text-2xl font-semibold group border-b border-border-color hover:border-primary w-full active"
+                           href="/archives"
+                        >
+                            <span>Archives</span>
+                            <i class="fa-regular fa-archive fa-sm fa-fw"></i>
+                        </a>
+                    </li>
+                
+                    
+                    <li class="drawer-navbar-item text-base my-1.5 flex flex-col w-full">
+                        <a class="py-1.5 px-2 flex flex-row items-center justify-between gap-1 hover:!text-primary active:!text-primary text-2xl font-semibold group border-b border-border-color hover:border-primary w-full active"
+                           href="/tags"
+                        >
+                            <span>Tags</span>
+                            <i class="fa-regular fa-tags fa-sm fa-fw"></i>
+                        </a>
+                    </li>
+                
+                    
+                    <li class="drawer-navbar-item text-base my-1.5 flex flex-col w-full">
+                        <a class="py-1.5 px-2 flex flex-row items-center justify-between gap-1 hover:!text-primary active:!text-primary text-2xl font-semibold group border-b border-border-color hover:border-primary w-full active"
+                           href="/categories"
+                        >
+                            <span>Categories</span>
+                            <i class="fa-regular fa-folder fa-sm fa-fw"></i>
+                        </a>
+                    </li>
+                
+            
+        </ul>
+
+        <div class="statistics flex justify-around my-2.5">
+    <a class="item tag-count-item flex flex-col justify-center items-center w-20" href="/tags">
+        <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">3</div>
+        <div class="label text-third-text-color text-sm">标签</div>
+    </a>
+    <a class="item tag-count-item flex flex-col justify-center items-center w-20" href="/categories">
+        <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">2</div>
+        <div class="label text-third-text-color text-sm">分类</div>
+    </a>
+    <a class="item tag-count-item flex flex-col justify-center items-center w-20" href="/archives">
+        <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">100</div>
+        <div class="label text-third-text-color text-sm">文章</div>
+    </a>
+</div>
+    </div>
+
+    <div class="window-mask"></div>
+
+</header>
+
+
+        </div>
+
+        <div class="main-content-body">
+
+            
+
+            <div class="main-content">
+
+                
+                    <div class="post-page-container flex relative justify-between box-border w-full h-full">
+    <div class="article-content-container">
+
+        <div class="article-title relative w-full">
+            
+                
+                
+                <img src="https://raw.githubusercontent.com/YuZeZhang/myImgslib/main/202503072239946.jpeg" alt="2024-12-18 日报 Day39" class="w-full h-60 sm:h-72 md:h-80 object-cover sm:rounded-t-large dark:brightness-75"/>
+                
+                <div class="w-full flex items-center absolute bottom-0 justify-start">
+                    <h1 class="article-title-cover text-center mx-6 my-6 text-second-text-color bg-background-color-transparent px-4 py-3 text-3xl sm:text-4xl md:text-5xl font-semibold backdrop-blur-lg rounded-xl border border-border-color ">2024-12-18 日报 Day39</h1>
+                </div>
+            
+            </div>
+
+        
+            <div class="article-header flex flex-row gap-2 items-center px-2 sm:px-6 md:px-8">
+                <div class="avatar w-[46px] h-[46px] flex-shrink-0 rounded-medium border border-border-color p-[1px]">
+                    <img src="https://raw.githubusercontent.com/YuZeZhang/myImgslib/main/202406232019880.png">
+                </div>
+                <div class="info flex flex-col justify-between">
+                    <div class="author flex items-center">
+                        <span class="name text-default-text-color text-lg font-semibold">Yuyang</span>
+                        
+                            <span class="author-label ml-1.5 text-xs px-2 py-0.5 rounded-small text-third-text-color border border-shadow-color-1">前端小白🥬</span>
+                        
+                    </div>
+                    <div class="meta-info">
+                        <div class="article-meta-info">
+    <span class="article-date article-meta-item">
+        <i class="fa-regular fa-pen-fancy"></i>&nbsp;
+        <span class="desktop">2024-12-18</span>
+        <span class="mobile">2024-12-18</span>
+        <span class="hover-info">创建</span>
+    </span>
+    
+        <span class="article-date article-meta-item">
+            <i class="fa-regular fa-wrench"></i>&nbsp;
+            <span class="desktop">2025-03-27 03:16:38</span>
+            <span class="mobile">2025-03-27 03:16:38</span>
+            <span class="hover-info">更新</span>
+        </span>
+    
+
+    
+        <span class="article-categories article-meta-item">
+            <i class="fa-regular fa-folders"></i>&nbsp;
+            <ul>
+                
+                
+                    
+                        
+                        <li>
+                            <a href="/categories/journal/">journal</a>&nbsp;
+                        </li>
+                    
+                    
+                
+            </ul>
+        </span>
+    
+    
+        <span class="article-tags article-meta-item">
+            <i class="fa-regular fa-tags"></i>&nbsp;
+            <ul>
+                
+                    <li>
+                        <a href="/tags/journal/">journal</a>&nbsp;
+                    </li>
+                
+            </ul>
+        </span>
+    
+
+    
+    
+    
+    
+        <span class="article-pv article-meta-item">
+            <i class="fa-regular fa-eye"></i>&nbsp;<span id="busuanzi_value_page_pv"></span>
+        </span>
+    
+</div>
+
+                    </div>
+                </div>
+            </div>
+        
+
+        
+
+
+        <div class="article-content markdown-body px-2 sm:px-6 md:px-8 pb-8">
+            
+  <div class="note-large red">
+    <div class="notel-title rounded-t-lg p-3 font-bold text-lg flex flex-row gap-2 items-center">
+      <p>今日的鸡汤</p>
+
+    </div>
+    <div class="notel-content">
+      <p>在哪里付出，就在哪里得到；在哪里打磨，就在哪里闪耀。</p>
+
+    </div>
+  </div>
+
+<h3 id="今日学习内容"><a href="#今日学习内容" class="headerlink" title="今日学习内容"></a>今日学习内容</h3><p>1、JS红皮书P103-108 第五章：基本引用类型</p>
+<h3 id="今日笔记"><a href="#今日笔记" class="headerlink" title="今日笔记"></a>今日笔记</h3><p>1、对象被认为是某个特定引用类型的实例。新对象通过使用 new 操作符后跟一个构造函数（constructor）来创建。构造函数就是用来创建新对象的函数，比如下面这行代码：let now &#x3D; new Date();函数也是一种引用类型。<br>2、Date 类型将日期保存为自协调世界时（UTC，Universal Time Coordinated）时间 1970 年 1 月 1 日午夜（零时）至今所经过的毫秒数。要创建日期对象，就使用 new 操作符来调用 Date 构造函数：<br>let now &#x3D; new Date();<br>Date.parse()方法接收一个表示日期的字符串参数，尝试将这个字符串转换为表示该日期的毫秒数。ECMA-262 第 5 版定义了 Date.parse()应该支持的日期格式，填充了第 3 版遗留的空白。所有实现都必须支持下列日期格式：<br>“月&#x2F;日&#x2F;年”，如”5&#x2F;23&#x2F;2019”；<br>“月名 日, 年”，如”May 23, 2019”；<br>“周几 月名 日 年 时:分:秒 时区”，如”Tue May 23 2019 00:00:00 GMT-0700”；<br> ISO 8601 扩展格式“YYYY-MM-DDTHH:mm:ss.sssZ”，如 2019-05-23T00:00:00（只适用于兼容 ES5 的实现）。<br>比如，要创建一个表示“2019 年 5 月 23 日”的日期对象，可以使用以下代码：<br>let someDate &#x3D; new Date(Date.parse(“May 23, 2019”));<br>如果传给 Date.parse()的字符串并不表示日期，则该方法会返回 NaN。如果直接把表示日期的字符串传给 Date 构造函数，那么 Date 会在后台调用 Date.parse()。换句话说，下面这行代码跟前面那行代码是等价的：<br>let someDate &#x3D; new Date(“May 23, 2019”);<br>这两行代码得到的日期对象相同。<br>Date.UTC()方法也返回日期的毫秒表示，但使用的是跟 Date.parse()不同的信息来生成这个值。传给 Date.UTC()的参数是年、零起点月数（1 月是 0，2 月是 1，以此类推）、日（1<del>31）、时（0</del>23）、分、秒和毫秒。这些参数中，只有前两个（年和月）是必需的。如果不提供日，那么默认为 1 日。其他参数的默认值都是 0。下面是使用 Date.UTC()的两个例子：<br>&#x2F;&#x2F; GMT 时间 2000 年 1 月 1 日零点<br>let y2k &#x3D; new Date(Date.UTC(2000, 0));<br>&#x2F;&#x2F; GMT 时间 2005 年 5 月 5 日下午 5 点 55 分 55 秒<br>let allFives &#x3D; new Date(Date.UTC(2005, 4, 5, 17, 55, 55));<br>ECMAScript 还提供了 Date.now()方法，返回表示方法执行时日期和时间的毫秒数。这个方法可以方便地用在代码分析中：<br>&#x2F;&#x2F; 起始时间<br>let start &#x3D; Date.now();<br>&#x2F;&#x2F; 调用函数<br>doSomething();<br>&#x2F;&#x2F; 结束时间<br>let stop &#x3D; Date.now(),<br>result &#x3D; stop - start;<br>3、继承的方式：Date 类型重写了 toLocaleString()、toString()和 valueOf()方法。Date 类型的 toLocaleString()方法返回与浏览器运行的本地环境一致的日期和时间。这通常意味着格式中包含针对时间的 AM（上午）或 PM（下午），但不包含时区信息（具体格式可能因浏览器而不同）。toString()方法通常返回带时区信息的日期和时间，而时间也是以 24 小时制（0~23）表示的。下面给出了 toLocaleString()和 toString()返回的2019 年 2 月 1 日零点的示例（地区为”en-US”的 PST，即 Pacific Standard Time，太平洋标准时间）：<br>toLocaleString() - 2&#x2F;1&#x2F;2019 12:00:00 AM<br>toString() - Thu Feb 1 2019 00:00:00 GMT-0800 (Pacific Standard Time)<br>现代浏览器在这两个方法的输出上已经趋于一致。在比较老的浏览器上，每个方法返回的结果可能在每个浏览器上都是不同的。这些差异意味着 toLocaleString()和 toString()可能只对调试有用，不能用于显示。<br>Date 类型的 valueOf()方法根本就不返回字符串，这个方法被重写后返回的是日期的毫秒表示。因此，操作符（如小于号和大于号）可以直接使用它返回的值。比如下面的例子：<br>let date1 &#x3D; new Date(2019, 0, 1); &#x2F;&#x2F; 2019 年 1 月 1 日<br>let date2 &#x3D; new Date(2019, 1, 1); &#x2F;&#x2F; 2019 年 2 月 1 日<br>console.log(date1 &lt; date2); &#x2F;&#x2F; true<br>console.log(date1 &gt; date2); &#x2F;&#x2F; false<br>4、日期格式化方法：<br>Date 类型有几个专门用于格式化日期的方法，它们都会返回字符串：<br> toDateString()显示日期中的周几、月、日、年（格式特定于实现）；<br> toTimeString()显示日期中的时、分、秒和时区（格式特定于实现）；<br> toLocaleDateString()显示日期中的周几、月、日、年（格式特定于实现和地区）；<br> toLocaleTimeString()显示日期中的时、分、秒（格式特定于实现和地区）；<br> toUTCString()显示完整的 UTC 日期（格式特定于实现）。<br>5、日期&#x2F;时间组件方法：Date 类型剩下的方法（见下表）直接涉及取得或设置日期值的特定部分。注意表中“UTC 日期”，指的是没有时区偏移（将日期转换为 GMT）时的日期。</p>
+<table>
+<thead>
+<tr>
+<th align="center">方法</th>
+<th align="center">说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">getTime()</td>
+<td align="center">返回日期的毫秒表示；与 valueOf()相同</td>
+</tr>
+<tr>
+<td align="center">setTime(<em>milliseconds</em>)</td>
+<td align="center">设置日期的毫秒表示，从而修改整个日期</td>
+</tr>
+<tr>
+<td align="center">getFullYear()</td>
+<td align="center">返回 4 位数年（即 2019 而不是 19）</td>
+</tr>
+<tr>
+<td align="center">getUTCFullYear()</td>
+<td align="center">返回 UTC 日期的 4 位数年</td>
+</tr>
+<tr>
+<td align="center">setFullYear(<em>year</em>)</td>
+<td align="center">设置日期的年（<em>year</em> 必须是 4 位数）</td>
+</tr>
+<tr>
+<td align="center">setUTCFullYear(<em>year</em>)</td>
+<td align="center">设置 UTC 日期的年（<em>year</em> 必须是 4 位数）</td>
+</tr>
+<tr>
+<td align="center">getMonth()</td>
+<td align="center">返回日期的月（0 表示 1 月，11 表示 12 月）</td>
+</tr>
+<tr>
+<td align="center">getUTCMonth()</td>
+<td align="center">返回 UTC 日期的月（0 表示 1 月）</td>
+</tr>
+<tr>
+<td align="center">setMonth(<em>month</em>)</td>
+<td align="center">设置日期的月（0 表示 1 月，11 表示 12 月）</td>
+</tr>
+<tr>
+<td align="center">setUTCMonth(<em>month</em>)</td>
+<td align="center">设置 UTC 日期的月（0 表示 1 月，11 表示 12 月）</td>
+</tr>
+<tr>
+<td align="center">getDate()</td>
+<td align="center">返回日期的日（月中的某一天）</td>
+</tr>
+<tr>
+<td align="center">getUTCDate()</td>
+<td align="center">返回 UTC 日期的日（月中的某一天）</td>
+</tr>
+<tr>
+<td align="center">setDate(<em>date</em>)</td>
+<td align="center">设置日期的日（月中的某一天）</td>
+</tr>
+<tr>
+<td align="center">setUTCDate(<em>date</em>)</td>
+<td align="center">设置 UTC 日期的日（月中的某一天）</td>
+</tr>
+<tr>
+<td align="center">getDay()</td>
+<td align="center">返回日期中的星期几（0 表示星期日，6 表示星期六）</td>
+</tr>
+<tr>
+<td align="center">getUTCDay()</td>
+<td align="center">返回 UTC 日期中的星期几（0 表示星期日，6 表示星期六）</td>
+</tr>
+<tr>
+<td align="center">getHours()</td>
+<td align="center">返回日期的小时（0~23）</td>
+</tr>
+<tr>
+<td align="center">getUTCHours()</td>
+<td align="center">返回 UTC 日期的小时（0~23）</td>
+</tr>
+<tr>
+<td align="center">setHours(<em>hours</em>)</td>
+<td align="center">设置日期的小时（0~23）</td>
+</tr>
+<tr>
+<td align="center">setUTCHours(<em>hours</em>)</td>
+<td align="center">设置 UTC 日期的小时（0~23）</td>
+</tr>
+<tr>
+<td align="center">getMinutes()</td>
+<td align="center">返回日期的分钟（0~59）</td>
+</tr>
+<tr>
+<td align="center">getUTCMinutes()</td>
+<td align="center">返回 UTC 日期的分钟（0~59）</td>
+</tr>
+<tr>
+<td align="center">setMinutes(<em>minutes</em>)</td>
+<td align="center">设置日期的分钟（0~59）</td>
+</tr>
+<tr>
+<td align="center">setUTCMinutes(<em>minutes</em>)</td>
+<td align="center">设置 UTC 日期的分钟（0~59）</td>
+</tr>
+<tr>
+<td align="center">getSeconds()</td>
+<td align="center">返回日期的秒（0~59）</td>
+</tr>
+<tr>
+<td align="center">getUTCSeconds()</td>
+<td align="center">返回 UTC 日期的秒（0~59）</td>
+</tr>
+<tr>
+<td align="center">setSeconds(<em>seconds</em>)</td>
+<td align="center">设置日期的秒（0~59）</td>
+</tr>
+<tr>
+<td align="center">setUTCSeconds(<em>seconds</em>)</td>
+<td align="center">设置 UTC 日期的秒（0~59）</td>
+</tr>
+<tr>
+<td align="center">getMilliseconds()</td>
+<td align="center">返回日期的毫秒（0~999）</td>
+</tr>
+<tr>
+<td align="center">getUTCMilliseconds()</td>
+<td align="center">返回 UTC 日期的毫秒（0~999）</td>
+</tr>
+<tr>
+<td align="center">setMilliseconds(<em>milliseconds</em>)</td>
+<td align="center">设置日期的毫秒（0~999）</td>
+</tr>
+<tr>
+<td align="center">setUTCMilliseconds(<em>milliseconds</em>)</td>
+<td align="center">设置 UTC 日期的毫秒（0~999）</td>
+</tr>
+<tr>
+<td align="center">getTimezoneOffset()</td>
+<td align="center">返回本地时间与 UTC 时间相差的分钟数</td>
+</tr>
+<tr>
+<td align="center">6、RegExp：ECMAScript 通过 RegExp 类型支持正则表达式。正则表达式使用类似 Perl 的简洁语法来创建：</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">let expression &#x3D; &#x2F;pattern&#x2F;flags;</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">这个正则表达式的 pattern（模式）可以是任何简单或复杂的正则表达式，包括字符类、限定符、分组、向前查找和反向引用。每个正则表达式可以带零个或多个 flags（标记），用于控制正则表达式的行为。下面给出了表示匹配模式的标记。</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center"> g：全局模式，表示查找字符串的全部内容，而不是找到第一个匹配的内容就结束。</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center"> i：不区分大小写，表示在查找匹配时忽略 pattern 和字符串的大小写。</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center"> m：多行模式，表示查找到一行文本末尾时会继续查找。</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center"> y：粘附模式，表示只查找从 lastIndex 开始及之后的字符串。</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center"> u：Unicode 模式，启用 Unicode 匹配。</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center"> s：dotAll 模式，表示元字符.匹配任何字符（包括\n 或\r）。</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">使用不同模式和标记可以创建出各种正则表达式，比如：</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">&#x2F;&#x2F; 匹配字符串中的所有”at”</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">let pattern1 &#x3D; &#x2F;at&#x2F;g;</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">&#x2F;&#x2F; 匹配第一个”bat”或”cat”，忽略大小写</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">let pattern2 &#x3D; &#x2F;[bc]at&#x2F;i;</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">&#x2F;&#x2F; 匹配所有以”at”结尾的三字符组合，忽略大小写</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">let pattern3 &#x3D; &#x2F;.at&#x2F;gi;</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">与其他语言中的正则表达式类似，所有元字符在模式中也必须转义，包括：</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">( [ { \ ^ $</td>
+<td align="center">) ] } ? * + .</td>
+</tr>
+<tr>
+<td align="center">元字符在正则表达式中都有一种或多种特殊功能，所以要匹配上面这些字符本身，就必须使用反斜杠来转义。下面是几个例子：</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">&#x2F;&#x2F; 匹配第一个”bat”或”cat”，忽略大小写</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">let pattern1 &#x3D; &#x2F;[bc]at&#x2F;i;</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">&#x2F;&#x2F; 匹配第一个”[bc]at”，忽略大小写</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">let pattern2 &#x3D; &#x2F;[bc]at&#x2F;i;</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">&#x2F;&#x2F; 匹配所有以”at”结尾的三字符组合，忽略大小写</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">let pattern3 &#x3D; &#x2F;.at&#x2F;gi;</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">&#x2F;&#x2F; 匹配所有”.at”，忽略大小写</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">let pattern4 &#x3D; &#x2F;.at&#x2F;gi;</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">这里的 pattern1 匹配”bat”或”cat”，不区分大小写。要直接匹配”[bc]at”，左右中括号都必须像 pattern2 中那样使用反斜杠转义。在 pattern3 中，点号表示”at”前面的任意字符都可以匹配。如果想匹配”.at”，那么要像 pattern4 中那样对点号进行转义。</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">前面例子中的正则表达式都是使用字面量形式定义的。正则表达式也可以使用 RegExp 构造函数来创建，它接收两个参数：模式字符串和（可选的）标记字符串。任何使用字面量定义的正则表达式也可以通过构造函数来创建，比如：</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">&#x2F;&#x2F; 匹配第一个”bat”或”cat”，忽略大小写</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">let pattern1 &#x3D; &#x2F;[bc]at&#x2F;i;</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">&#x2F;&#x2F; 跟 pattern1 一样，只不过是用构造函数创建的</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">let pattern2 &#x3D; new RegExp(“[bc]at”, “i”);</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">这里的 pattern1 和 pattern2 是等效的正则表达式。注意，RegExp 构造函数的两个参数都是字符串。因为 RegExp 的模式参数是字符串，所以在某些情况下需要二次转义。所有元字符都必须二次转义，包括转义字符序列，如\n（\转义后的字符串是\，在正则表达式字符串中则要写成\\）。下表展示了几个正则表达式的字面量形式，以及使用 RegExp 构造函数创建时对应的模式字符串。</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">｜ 字面量模式 ｜ 对应的字符串 ｜</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">｜ &#x2F;[bc]at&#x2F; ｜  “\[bc\]at” ｜</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">｜ &#x2F;.at&#x2F; ｜ “\.at” ｜</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">｜ &#x2F;name/age&#x2F; ｜ “name\&#x2F;age” ｜</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">｜ &#x2F;\d.\d{1,2}&#x2F; ｜ “\d.\d{1,2}” ｜</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">｜ &#x2F;\w\hello\123&#x2F; ｜ “\w\\hello\\123” ｜</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">此外，使用 RegExp 也可以基于已有的正则表达式实例，并可选择性地修改它们的标记：</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">const re1 &#x3D; &#x2F;cat&#x2F;g;</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">console.log(re1); &#x2F;&#x2F; “&#x2F;cat&#x2F;g”</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">const re2 &#x3D; new RegExp(re1);</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">console.log(re2); &#x2F;&#x2F; “&#x2F;cat&#x2F;g”</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">const re3 &#x3D; new RegExp(re1, “i”);</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">console.log(re3); &#x2F;&#x2F; “&#x2F;cat&#x2F;i”</td>
+<td align="center"></td>
+</tr>
+</tbody></table>
+
+        </div>
+
+        
+
+        
+            <ul class="post-tags-box text-lg mt-1.5 flex-wrap justify-center flex md:hidden">
+                
+                    <li class="tag-item mx-0.5">
+                        <a href="/tags/journal/">#journal</a>&nbsp;
+                    </li>
+                
+            </ul>
+        
+
+        
+
+        
+            <div class="article-nav my-8 flex justify-between items-center px-2 sm:px-6 md:px-8">
+                
+                    <div class="article-prev border-border-color shadow-redefine-flat shadow-shadow-color-2 rounded-medium px-4 py-2 hover:shadow-redefine-flat-hover hover:shadow-shadow-color-2">
+                        <a class="prev"
+                        rel="prev"
+                        href="/undefined/2024-12-19/"
+                        >
+                            <span class="left arrow-icon flex justify-center items-center">
+                                <i class="fa-solid fa-chevron-left"></i>
+                            </span>
+                            <span class="title flex justify-center items-center">
+                                <span class="post-nav-title-item">2024-12-19 日报 Day40</span>
+                                <span class="post-nav-item">上一篇</span>
+                            </span>
+                        </a>
+                    </div>
+                
+                
+                    <div class="article-next border-border-color shadow-redefine-flat shadow-shadow-color-2 rounded-medium px-4 py-2 hover:shadow-redefine-flat-hover hover:shadow-shadow-color-2">
+                        <a class="next"
+                        rel="next"
+                        href="/undefined/2024-12-17/"
+                        >
+                            <span class="title flex justify-center items-center">
+                                <span class="post-nav-title-item">2024-12-17 日报 Day38</span>
+                                <span class="post-nav-item">下一篇</span>
+                            </span>
+                            <span class="right arrow-icon flex justify-center items-center">
+                                <i class="fa-solid fa-chevron-right"></i>
+                            </span>
+                        </a>
+                    </div>
+                
+            </div>
+        
+
+
+        
+    </div>
+
+    
+        <div class="toc-content-container">
+            <div class="post-toc-wrap">
+    <div class="post-toc">
+        <div class="toc-title">此页目录</div>
+        <div class="page-title">2024-12-18 日报 Day39</div>
+        <ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BB%8A%E6%97%A5%E5%AD%A6%E4%B9%A0%E5%86%85%E5%AE%B9"><span class="nav-text">今日学习内容</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BB%8A%E6%97%A5%E7%AC%94%E8%AE%B0"><span class="nav-text">今日笔记</span></a></li></ol>
+
+    </div>
+</div>
+        </div>
+    
+</div>
+
+
+
+                
+
+            </div>
+
+            
+
+        </div>
+
+        <div class="main-content-footer">
+            <footer class="footer mt-5 py-5 h-auto text-base text-third-text-color relative border-t-2 border-t-border-color">
+    <div class="info-container py-3 text-center">
+        
+        <div class="text-center">
+            &copy;
+            
+              <span>2022</span>
+              -
+            
+            2025&nbsp;&nbsp;<i class="fa-solid fa-heart fa-beat" style="--fa-animation-duration: 0.5s; color: #f54545"></i>&nbsp;&nbsp;<a href="/">Yuyang</a>
+            
+                
+                <p class="post-count space-x-0.5">
+                    <span>
+                        共 100 篇文章
+                    </span>
+                    
+                </p>
+            
+        </div>
+        
+            <script data-swup-reload-script src="https://cn.vercount.one/js"></script>
+            <div class="relative text-center lg:absolute lg:right-[20px] lg:top-1/2 lg:-translate-y-1/2 lg:text-right">
+                
+                    <span id="busuanzi_container_site_uv" class="lg:!block">
+                        <span class="text-sm">访问人数</span>
+                        <span id="busuanzi_value_site_uv"></span>
+                    </span>
+                
+                
+                    <span id="busuanzi_container_site_pv" class="lg:!block">
+                        <span class="text-sm">总访问量</span>
+                        <span id="busuanzi_value_site_pv"></span>
+                    </span>
+                
+            </div>
+        
+        <div class="relative text-center lg:absolute lg:left-[20px] lg:top-1/2 lg:-translate-y-1/2 lg:text-left">
+            <span class="lg:block text-sm">由 <?xml version="1.0" encoding="utf-8"?><!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"><svg class="relative top-[2px] inline-block align-baseline" version="1.1" id="圖層_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="1rem" height="1rem" viewBox="0 0 512 512" enable-background="new 0 0 512 512" xml:space="preserve"><path fill="#0E83CD" d="M256.4,25.8l-200,115.5L56,371.5l199.6,114.7l200-115.5l0.4-230.2L256.4,25.8z M349,354.6l-18.4,10.7l-18.6-11V275H200v79.6l-18.4,10.7l-18.6-11v-197l18.5-10.6l18.5,10.8V237h112v-79.6l18.5-10.6l18.5,10.8V354.6z"/></svg><a target="_blank" class="text-base" href="https://hexo.io">Hexo</a> 驱动</span>
+            <span class="text-sm lg:block">主题&nbsp;<a class="text-base" target="_blank" href="https://github.com/EvanNotFound/hexo-theme-redefine">Redefine v2.6.4</a></span>
+        </div>
+        
+        
+        
+        
+        
+    </div>  
+</footer>
+        </div>
+    </div>
+
+    
+        <div class="post-tools">
+            <div class="post-tools-container">
+    <ul class="article-tools-list">
+        <!-- TOC aside toggle -->
+        
+            <li class="right-bottom-tools page-aside-toggle">
+                <i class="fa-regular fa-outdent"></i>
+            </li>
+        
+
+        <!-- go comment -->
+        
+    </ul>
+</div>
+
+        </div>
+    
+
+    <div class="right-side-tools-container">
+        <div class="side-tools-container">
+    <ul class="hidden-tools-list">
+        <li class="right-bottom-tools tool-font-adjust-plus flex justify-center items-center">
+            <i class="fa-regular fa-magnifying-glass-plus"></i>
+        </li>
+
+        <li class="right-bottom-tools tool-font-adjust-minus flex justify-center items-center">
+            <i class="fa-regular fa-magnifying-glass-minus"></i>
+        </li>
+
+        <li class="right-bottom-tools tool-dark-light-toggle flex justify-center items-center">
+            <i class="fa-regular fa-moon"></i>
+        </li>
+
+        <!-- rss -->
+        
+
+        
+
+        <li class="right-bottom-tools tool-scroll-to-bottom flex justify-center items-center">
+            <i class="fa-regular fa-arrow-down"></i>
+        </li>
+    </ul>
+
+    <ul class="visible-tools-list">
+        <li class="right-bottom-tools toggle-tools-list flex justify-center items-center">
+            <i class="fa-regular fa-cog fa-spin"></i>
+        </li>
+        
+            <li class="right-bottom-tools tool-scroll-to-top flex justify-center items-center">
+                <i class="arrow-up fas fa-arrow-up"></i>
+                <span class="percent"></span>
+            </li>
+        
+        
+    </ul>
+</div>
+
+    </div>
+
+    <div class="image-viewer-container">
+    <img src="">
+</div>
+
+
+    
+        <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+          <span class="search-input-field-pre">
+            <i class="fa-solid fa-keyboard"></i>
+          </span>
+            <div class="search-input-container">
+                <input autocomplete="off"
+                       autocorrect="off"
+                       autocapitalize="off"
+                       placeholder="搜索..."
+                       spellcheck="false"
+                       type="search"
+                       class="search-input"
+                >
+            </div>
+            <span class="popup-btn-close">
+                <i class="fa-solid fa-times"></i>
+            </span>
+        </div>
+        <div id="search-result">
+            <div id="no-result">
+                <i class="fa-solid fa-spinner fa-spin-pulse fa-5x fa-fw"></i>
+            </div>
+        </div>
+    </div>
+</div>
+
+    
+
+</main>
+
+
+    
+<script src="/js/libs/Swup.min.js"></script>
+
+<script src="/js/libs/SwupSlideTheme.min.js"></script>
+
+<script src="/js/libs/SwupScriptsPlugin.min.js"></script>
+
+<script src="/js/libs/SwupProgressPlugin.min.js"></script>
+
+<script src="/js/libs/SwupScrollPlugin.min.js"></script>
+
+<script src="/js/libs/SwupPreloadPlugin.min.js"></script>
+
+<script>
+    const swup = new Swup({
+        plugins: [
+            new SwupScriptsPlugin({
+                optin: true,
+            }),
+            new SwupProgressPlugin(),
+            new SwupScrollPlugin({
+                offset: 80,
+            }),
+            new SwupSlideTheme({
+                mainElement: ".main-content-body",
+            }),
+            new SwupPreloadPlugin(),
+        ],
+        containers: ["#swup"],
+    });
+</script>
+
+
+
+
+
+
+
+<script src="/js/tools/imageViewer.js" type="module"></script>
+
+<script src="/js/utils.js" type="module"></script>
+
+<script src="/js/main.js" type="module"></script>
+
+<script src="/js/layouts/navbarShrink.js" type="module"></script>
+
+<script src="/js/tools/scrollTopBottom.js" type="module"></script>
+
+<script src="/js/tools/lightDarkSwitch.js" type="module"></script>
+
+<script src="/js/layouts/categoryList.js" type="module"></script>
+
+
+
+    
+<script src="/js/tools/localSearch.js" type="module"></script>
+
+
+
+
+    
+<script src="/js/tools/codeBlock.js" type="module"></script>
+
+
+
+
+    
+<script src="/js/layouts/lazyload.js" type="module"></script>
+
+
+
+
+
+
+  
+<script src="/js/libs/Typed.min.js"></script>
+
+  
+<script src="/js/plugins/typed.js" type="module"></script>
+
+
+
+
+
+
+
+
+
+<div class="post-scripts" data-swup-reload-script>
+    
+        
+<script src="/js/tools/tocToggle.js" type="module"></script>
+
+<script src="/js/layouts/toc.js" type="module"></script>
+
+<script src="/js/plugins/tabs.js" type="module"></script>
+
+    
+</div>
+
+
+</body>
+</html>
