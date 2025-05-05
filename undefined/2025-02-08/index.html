@@ -1,0 +1,1001 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="keywords" content="Hexo Theme Redefine">
+    
+    <meta name="author" content="Yuyang">
+    <!-- preconnect -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    
+    <!--- Seo Part-->
+    
+    <link rel="canonical" href="https://github.com/YuZeZhang/YuZeZhang.github.io/undefined/2025-02-08/"/>
+    <meta name="robots" content="index,follow">
+    <meta name="googlebot" content="index,follow">
+    <meta name="revisit-after" content="1 days">
+    
+        <meta name="description" content="今日的鸡汤                  在孤独的时候忍耐，在迷茫的时候坚持，在暂时困难的日子里善待自己，在黑暗的深夜里为自己点一盏心灯。           今日学习内容1、JS 红皮书 P322-331 第十一章：期约与异步函数 今日笔记1、ECMAScript 6 新增了正式的 Promise（期约）引用类型，支持优雅地定义和组织异步逻辑。接下来几个版本增加">
+<meta property="og:type" content="article">
+<meta property="og:title" content="2025-02-08 日报 Day91">
+<meta property="og:url" content="https://github.com/YuZeZhang/YuZeZhang.github.io/undefined/2025-02-08/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="今日的鸡汤                  在孤独的时候忍耐，在迷茫的时候坚持，在暂时困难的日子里善待自己，在黑暗的深夜里为自己点一盏心灯。           今日学习内容1、JS 红皮书 P322-331 第十一章：期约与异步函数 今日笔记1、ECMAScript 6 新增了正式的 Promise（期约）引用类型，支持优雅地定义和组织异步逻辑。接下来几个版本增加">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2025-02-07T16:00:00.000Z">
+<meta property="article:modified_time" content="2025-04-17T07:52:02.966Z">
+<meta property="article:author" content="Yuyang">
+<meta property="article:tag" content="journal">
+<meta name="twitter:card" content="summary">
+    
+    
+    <!--- Icon Part-->
+    <link rel="icon" type="image/png" href="https://raw.githubusercontent.com/YuZeZhang/myImgslib/main/202406232019880.png" sizes="192x192">
+    <link rel="apple-touch-icon" sizes="180x180" href="https://raw.githubusercontent.com/YuZeZhang/myImgslib/main/202406232019880.png">
+    <meta name="theme-color" content="#A31F34">
+    <link rel="shortcut icon" href="https://raw.githubusercontent.com/YuZeZhang/myImgslib/main/202406232019880.png">
+    <!--- Page Info-->
+    
+    <title>
+        
+            2025-02-08 日报 Day91 -
+        
+        Welcome to Yuyang&#39;s Blog
+    </title>
+
+    
+<link rel="stylesheet" href="/fonts/Chillax/chillax.css">
+
+
+    <!--- Inject Part-->
+    
+
+    
+<link rel="stylesheet" href="/css/style.css">
+
+
+    
+        
+<link rel="stylesheet" href="/assets/build/styles.css">
+
+    
+
+    
+<link rel="stylesheet" href="/fonts/GeistMono/geist-mono.css">
+
+    
+<link rel="stylesheet" href="/fonts/Geist/geist.css">
+
+    <!--- Font Part-->
+    
+    
+    
+    
+
+    
+        
+<script src="/js/libs/anime.min.js"></script>
+
+    
+
+    <script id="hexo-configurations">
+    window.config = {"hostname":"github.com","root":"/","language":"zh-CN","path":"search.xml"};
+    window.theme = {"articles":{"style":{"font_size":"16px","line_height":1.5,"image_border_radius":"14px","image_alignment":"center","image_caption":false,"link_icon":true,"title_alignment":"left","headings_top_spacing":{"h1":"3.2rem","h2":"2.4rem","h3":"1.9rem","h4":"1.6rem","h5":"1.4rem","h6":"1.3rem"}},"word_count":{"enable":true,"count":true,"min2read":true},"author_label":{"enable":true,"auto":false,"list":["前端小白🥬"]},"code_block":{"copy":true,"style":"mac","font":{"enable":false,"family":null,"url":null}},"toc":{"enable":true,"max_depth":3,"number":false,"expand":true,"init_open":true},"copyright":{"enable":false,"default":"cc_by_nc_sa"},"lazyload":true,"recommendation":{"enable":false,"title":"推荐阅读","limit":3,"mobile_limit":2,"placeholder":"/images/wallhaven-wqery6-light.webp","skip_dirs":[]}},"colors":{"primary":"#A31F34","secondary":null,"default_mode":"light"},"global":{"fonts":{"chinese":{"enable":false,"family":null,"url":null},"english":{"enable":false,"family":null,"url":null}},"content_max_width":"1000px","sidebar_width":"210px","hover":{"shadow":true,"scale":false},"scroll_progress":{"bar":true,"percentage":true},"website_counter":{"url":"https://cn.vercount.one/js","enable":true,"site_pv":true,"site_uv":true,"post_pv":true},"single_page":true,"preloader":true,"open_graph":true,"google_analytics":{"enable":false,"id":null}},"home_banner":{"enable":true,"style":"fixed","image":{"light":"/images/wallhaven-wqery6-light.webp","dark":"/images/wallhaven-wqery6-dark.webp"},"title":"Yuyang's Blog","subtitle":{"text":["马无夜草不肥，人无横财不富","富贵险中求"],"hitokoto":{"enable":false,"api":"https://v1.hitokoto.cn"},"typing_speed":100,"backing_speed":80,"starting_delay":500,"backing_delay":1500,"loop":true,"smart_backspace":true},"text_color":{"light":"#fff","dark":"#d1d1b6"},"text_style":{"title_size":"2.8rem","subtitle_size":"1.5rem","line_height":1.2},"custom_font":{"enable":false,"family":null,"url":null},"social_links":{"enable":false,"style":"default","links":{"github":null,"instagram":null,"zhihu":null,"twitter":null,"email":null},"qrs":{"weixin":null}}},"plugins":{"feed":{"enable":false},"aplayer":{"enable":false,"type":"fixed","audios":[{"name":null,"artist":null,"url":null,"cover":null,"lrc":null}]},"mermaid":{"enable":false,"version":"9.3.0"}},"version":"2.6.4","navbar":{"auto_hide":false,"color":{"left":"#f78736","right":"#367df7","transparency":35},"width":{"home":"1200px","pages":"1000px"},"links":{"Home":{"path":"/","icon":"fa-regular fa-house"},"GitHub":{"path":"https://github.com/YuZeZhang","icon":"fa-brands fa-github"},"CSDN":{"path":"https://blog.csdn.net/weixin_57301463","icon":"fa-solid fa-rocket-launch"}},"search":{"enable":true,"preload":true},"tags":{"Tags":{"icon":"fa-solid fa-tags","path":"/tags/"}},"Categories":{"path":"/categories/","icon":"fa-solid fa-folder"}},"page_templates":{"friends_column":2,"tags_style":"blur"},"home":{"sidebar":{"enable":true,"position":"left","first_item":"menu","announcement":null,"show_on_mobile":true,"links":{"Archives":{"path":"/archives","icon":"fa-regular fa-archive"},"Tags":{"path":"/tags","icon":"fa-regular fa-tags"},"Categories":{"path":"/categories","icon":"fa-regular fa-folder"}}},"article_date_format":"auto","categories":{"enable":true,"limit":3},"tags":{"enable":true,"limit":3}},"footerStart":"2022/8/17 11:45:14"};
+    window.lang_ago = {"second":"%s 秒前","minute":"%s 分钟前","hour":"%s 小时前","day":"%s 天前","week":"%s 周前","month":"%s 个月前","year":"%s 年前"};
+    window.data = {"masonry":false};
+  </script>
+    
+    <!--- Fontawesome Part-->
+    
+<link rel="stylesheet" href="/fontawesome/fontawesome.min.css">
+
+    
+<link rel="stylesheet" href="/fontawesome/brands.min.css">
+
+    
+<link rel="stylesheet" href="/fontawesome/solid.min.css">
+
+    
+<link rel="stylesheet" href="/fontawesome/regular.min.css">
+
+    
+        
+<link rel="stylesheet" href="/fontawesome/thin.min.css">
+
+    
+    
+        
+<link rel="stylesheet" href="/fontawesome/light.min.css">
+
+    
+    
+        
+<link rel="stylesheet" href="/fontawesome/duotone.min.css">
+
+    
+    
+        
+<link rel="stylesheet" href="/fontawesome/sharp-solid.min.css">
+
+    
+<meta name="generator" content="Hexo 7.2.0"></head>
+
+
+<body>
+<div class="progress-bar-container">
+    
+        <span class="scroll-progress-bar"></span>
+    
+
+    
+        <span class="pjax-progress-bar"></span>
+<!--        <span class="swup-progress-icon">-->
+<!--            <i class="fa-solid fa-circle-notch fa-spin"></i>-->
+<!--        </span>-->
+    
+</div>
+
+
+
+    <style>
+    :root {
+        --preloader-background-color: #fff;
+        --preloader-text-color: #000;
+    }
+
+    @media (prefers-color-scheme: dark) {
+        :root {
+            --preloader-background-color: #202124;
+            --preloader-text-color: #fff;
+        }
+    }
+
+    @media (prefers-color-scheme: light) {
+        :root {
+            --preloader-background-color: #fff;
+            --preloader-text-color: #000;
+        }
+    }
+
+    @media (max-width: 600px) {
+        .ml13 {
+            font-size: 2.6rem !important; /* Adjust this value as needed */
+        }
+    }
+
+    .preloader {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem; /* Tailwind 'gap-4' is 1rem */
+        align-items: center;
+        justify-content: center;
+        position: fixed;
+        padding: 12px;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh; /* 'h-screen' is 100% of the viewport height */
+        background-color: var(--preloader-background-color);
+        z-index: 1100; /* 'z-[1100]' sets the z-index */
+        transition: opacity 0.2s ease-in-out;
+    }
+
+    .ml13 {
+        font-size: 3.2rem;
+        /* text-transform: uppercase; */
+        color: var(--preloader-text-color);
+        letter-spacing: -1px;
+        font-weight: 500;
+        font-family: 'Chillax-Variable', sans-serif;
+        text-align: center;
+    }
+
+    .ml13 .word {
+        display: inline-flex;
+        flex-wrap: wrap;
+        white-space: nowrap;
+    }
+
+    .ml13 .letter {
+        display: inline-block;
+        line-height: 1em;
+    }
+</style>
+
+<div class="preloader">
+    <h2 class="ml13">
+        Welcome to Yuyang&#39;s Blog
+    </h2>
+    <script>
+        var textWrapper = document.querySelector('.ml13');
+        // Split text into words
+        var words = textWrapper.textContent.trim().split(' ');
+
+        // Clear the existing content
+        textWrapper.innerHTML = '';
+
+        // Wrap each word and its letters in spans
+        words.forEach(function(word) {
+            var wordSpan = document.createElement('span');
+            wordSpan.classList.add('word');
+            wordSpan.innerHTML = word.replace(/\S/g, "<span class='letter'>$&</span>");
+            textWrapper.appendChild(wordSpan);
+            textWrapper.appendChild(document.createTextNode(' ')); // Add space between words
+        });
+
+        var animation = anime.timeline({loop: true})
+            .add({
+                targets: '.ml13 .letter',
+                translateY: [40,0],
+                translateZ: 0,
+                opacity: [0,1],
+                filter: ['blur(5px)', 'blur(0px)'], // Starting from blurred to unblurred
+                easing: "easeOutExpo",
+                duration: 1400,
+                delay: (el, i) => 300 + 30 * i,
+            }).add({
+                targets: '.ml13 .letter',
+                translateY: [0,-40],
+                opacity: [1,0],
+                filter: ['blur(0px)', 'blur(5px)'], // Ending from unblurred to blurred
+                easing: "easeInExpo",
+                duration: 1200,
+                delay: (el, i) => 100 + 30 * i,
+                complete: function() {
+                    hidePreloader(); // Call hidePreloader after the animation completes
+                }
+            });
+
+        let themeStatus = JSON.parse(localStorage.getItem('REDEFINE-THEME-STATUS'))?.isDark;
+
+        // If the theme status is not found in local storage, check the preferred color scheme
+        if (themeStatus === undefined || themeStatus === null) {
+            if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+                themeStatus = 'dark';
+            } else {
+                themeStatus = 'light';
+            }
+        }
+
+        // Now you can use the themeStatus variable in your code
+        if (themeStatus) {
+            document.documentElement.style.setProperty('--preloader-background-color', '#202124');
+            document.documentElement.style.setProperty('--preloader-text-color', '#fff');
+        } else {
+            document.documentElement.style.setProperty('--preloader-background-color', '#fff');
+            document.documentElement.style.setProperty('--preloader-text-color', '#000');
+        }
+
+        window.addEventListener('load', function () {
+            setTimeout(hidePreloader, 5000); // Call hidePreloader after 5000 milliseconds if not already called by animation
+        });
+
+        function hidePreloader() {
+            var preloader = document.querySelector('.preloader');
+            preloader.style.opacity = '0';
+            setTimeout(function () {
+                preloader.style.display = 'none';
+            }, 200);
+        }
+    </script>
+</div>
+
+<main class="page-container" id="swup">
+
+    
+
+    <div class="main-content-container">
+
+
+        <div class="main-content-header">
+            <header class="navbar-container px-6 md:px-12">
+
+    <div class="navbar-content ">
+        <div class="left">
+            
+            <a class="logo-title" href="/">
+                
+                Welcome to Yuyang&#39;s Blog
+                
+            </a>
+        </div>
+
+        <div class="right">
+            <!-- PC -->
+            <div class="desktop">
+                <ul class="navbar-list">
+                    
+                        
+                            
+
+                            <li class="navbar-item">
+                                <!-- Menu -->
+                                <a class=""
+                                   href="/"
+                                        >
+                                    <i class="fa-regular fa-house fa-fw"></i>
+                                    首页
+                                    
+                                </a>
+
+                                <!-- Submenu -->
+                                
+                            </li>
+                    
+                        
+                            
+
+                            <li class="navbar-item">
+                                <!-- Menu -->
+                                <a class=""
+                                   href="https://github.com/YuZeZhang"
+                                        >
+                                    <i class="fa-brands fa-github fa-fw"></i>
+                                    GITHUB
+                                    
+                                </a>
+
+                                <!-- Submenu -->
+                                
+                            </li>
+                    
+                        
+                            
+
+                            <li class="navbar-item">
+                                <!-- Menu -->
+                                <a class=""
+                                   target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_57301463"
+                                        >
+                                    <i class="fa-solid fa-rocket-launch fa-fw"></i>
+                                    CSDN
+                                    
+                                </a>
+
+                                <!-- Submenu -->
+                                
+                            </li>
+                    
+                    
+                        <li class="navbar-item search search-popup-trigger">
+                            <i class="fa-solid fa-magnifying-glass"></i>
+                        </li>
+                    
+                </ul>
+            </div>
+            <!-- Mobile -->
+            <div class="mobile">
+                
+                    <div class="icon-item search search-popup-trigger"><i class="fa-solid fa-magnifying-glass"></i>
+                    </div>
+                
+                <div class="icon-item navbar-bar">
+                    <div class="navbar-bar-middle"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Mobile sheet -->
+    <div class="navbar-drawer h-screen w-full absolute top-0 left-0 bg-background-color flex flex-col justify-between">
+        <ul class="drawer-navbar-list flex flex-col px-4 justify-center items-start">
+            
+                
+                    
+
+                    <li class="drawer-navbar-item text-base my-1.5 flex flex-col w-full">
+                        
+                        <a class="py-1.5 px-2 flex flex-row items-center justify-between gap-1 hover:!text-primary active:!text-primary text-2xl font-semibold group border-b border-border-color hover:border-primary w-full "
+                           href="/"
+                        >
+                            <span>
+                                首页
+                            </span>
+                            
+                                <i class="fa-regular fa-house fa-sm fa-fw"></i>
+                            
+                        </a>
+                        
+
+                        
+                    </li>
+            
+                
+                    
+
+                    <li class="drawer-navbar-item text-base my-1.5 flex flex-col w-full">
+                        
+                        <a class="py-1.5 px-2 flex flex-row items-center justify-between gap-1 hover:!text-primary active:!text-primary text-2xl font-semibold group border-b border-border-color hover:border-primary w-full "
+                           href="https://github.com/YuZeZhang"
+                        >
+                            <span>
+                                GITHUB
+                            </span>
+                            
+                                <i class="fa-brands fa-github fa-sm fa-fw"></i>
+                            
+                        </a>
+                        
+
+                        
+                    </li>
+            
+                
+                    
+
+                    <li class="drawer-navbar-item text-base my-1.5 flex flex-col w-full">
+                        
+                        <a class="py-1.5 px-2 flex flex-row items-center justify-between gap-1 hover:!text-primary active:!text-primary text-2xl font-semibold group border-b border-border-color hover:border-primary w-full "
+                           target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_57301463"
+                        >
+                            <span>
+                                CSDN
+                            </span>
+                            
+                                <i class="fa-solid fa-rocket-launch fa-sm fa-fw"></i>
+                            
+                        </a>
+                        
+
+                        
+                    </li>
+            
+
+            
+            
+                
+                    
+                    <li class="drawer-navbar-item text-base my-1.5 flex flex-col w-full">
+                        <a class="py-1.5 px-2 flex flex-row items-center justify-between gap-1 hover:!text-primary active:!text-primary text-2xl font-semibold group border-b border-border-color hover:border-primary w-full active"
+                           href="/archives"
+                        >
+                            <span>Archives</span>
+                            <i class="fa-regular fa-archive fa-sm fa-fw"></i>
+                        </a>
+                    </li>
+                
+                    
+                    <li class="drawer-navbar-item text-base my-1.5 flex flex-col w-full">
+                        <a class="py-1.5 px-2 flex flex-row items-center justify-between gap-1 hover:!text-primary active:!text-primary text-2xl font-semibold group border-b border-border-color hover:border-primary w-full active"
+                           href="/tags"
+                        >
+                            <span>Tags</span>
+                            <i class="fa-regular fa-tags fa-sm fa-fw"></i>
+                        </a>
+                    </li>
+                
+                    
+                    <li class="drawer-navbar-item text-base my-1.5 flex flex-col w-full">
+                        <a class="py-1.5 px-2 flex flex-row items-center justify-between gap-1 hover:!text-primary active:!text-primary text-2xl font-semibold group border-b border-border-color hover:border-primary w-full active"
+                           href="/categories"
+                        >
+                            <span>Categories</span>
+                            <i class="fa-regular fa-folder fa-sm fa-fw"></i>
+                        </a>
+                    </li>
+                
+            
+        </ul>
+
+        <div class="statistics flex justify-around my-2.5">
+    <a class="item tag-count-item flex flex-col justify-center items-center w-20" href="/tags">
+        <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">3</div>
+        <div class="label text-third-text-color text-sm">标签</div>
+    </a>
+    <a class="item tag-count-item flex flex-col justify-center items-center w-20" href="/categories">
+        <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">2</div>
+        <div class="label text-third-text-color text-sm">分类</div>
+    </a>
+    <a class="item tag-count-item flex flex-col justify-center items-center w-20" href="/archives">
+        <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">159</div>
+        <div class="label text-third-text-color text-sm">文章</div>
+    </a>
+</div>
+    </div>
+
+    <div class="window-mask"></div>
+
+</header>
+
+
+        </div>
+
+        <div class="main-content-body">
+
+            
+
+            <div class="main-content">
+
+                
+                    <div class="post-page-container flex relative justify-between box-border w-full h-full">
+    <div class="article-content-container">
+
+        <div class="article-title relative w-full">
+            
+                
+                
+                <img src="https://raw.githubusercontent.com/YuZeZhang/myImgslib/main/202503072239946.jpeg" alt="2025-02-08 日报 Day91" class="w-full h-60 sm:h-72 md:h-80 object-cover sm:rounded-t-large dark:brightness-75"/>
+                
+                <div class="w-full flex items-center absolute bottom-0 justify-start">
+                    <h1 class="article-title-cover text-center mx-6 my-6 text-second-text-color bg-background-color-transparent px-4 py-3 text-3xl sm:text-4xl md:text-5xl font-semibold backdrop-blur-lg rounded-xl border border-border-color ">2025-02-08 日报 Day91</h1>
+                </div>
+            
+            </div>
+
+        
+            <div class="article-header flex flex-row gap-2 items-center px-2 sm:px-6 md:px-8">
+                <div class="avatar w-[46px] h-[46px] flex-shrink-0 rounded-medium border border-border-color p-[1px]">
+                    <img src="https://raw.githubusercontent.com/YuZeZhang/myImgslib/main/202406232019880.png">
+                </div>
+                <div class="info flex flex-col justify-between">
+                    <div class="author flex items-center">
+                        <span class="name text-default-text-color text-lg font-semibold">Yuyang</span>
+                        
+                            <span class="author-label ml-1.5 text-xs px-2 py-0.5 rounded-small text-third-text-color border border-shadow-color-1">前端小白🥬</span>
+                        
+                    </div>
+                    <div class="meta-info">
+                        <div class="article-meta-info">
+    <span class="article-date article-meta-item">
+        <i class="fa-regular fa-pen-fancy"></i>&nbsp;
+        <span class="desktop">2025-02-08</span>
+        <span class="mobile">2025-02-08</span>
+        <span class="hover-info">创建</span>
+    </span>
+    
+        <span class="article-date article-meta-item">
+            <i class="fa-regular fa-wrench"></i>&nbsp;
+            <span class="desktop">2025-04-17 15:52:02</span>
+            <span class="mobile">2025-04-17 15:52:02</span>
+            <span class="hover-info">更新</span>
+        </span>
+    
+
+    
+        <span class="article-categories article-meta-item">
+            <i class="fa-regular fa-folders"></i>&nbsp;
+            <ul>
+                
+                
+                    
+                        
+                        <li>
+                            <a href="/categories/journal/">journal</a>&nbsp;
+                        </li>
+                    
+                    
+                
+            </ul>
+        </span>
+    
+    
+        <span class="article-tags article-meta-item">
+            <i class="fa-regular fa-tags"></i>&nbsp;
+            <ul>
+                
+                    <li>
+                        <a href="/tags/journal/">journal</a>&nbsp;
+                    </li>
+                
+            </ul>
+        </span>
+    
+
+    
+    
+    
+    
+        <span class="article-pv article-meta-item">
+            <i class="fa-regular fa-eye"></i>&nbsp;<span id="busuanzi_value_page_pv"></span>
+        </span>
+    
+</div>
+
+                    </div>
+                </div>
+            </div>
+        
+
+        
+
+
+        <div class="article-content markdown-body px-2 sm:px-6 md:px-8 pb-8">
+            
+  <div class="note-large red">
+    <div class="notel-title rounded-t-lg p-3 font-bold text-lg flex flex-row gap-2 items-center">
+      <p>今日的鸡汤</p>
+
+    </div>
+    <div class="notel-content">
+      <p>在孤独的时候忍耐，在迷茫的时候坚持，在暂时困难的日子里善待自己，在黑暗的深夜里为自己点一盏心灯。</p>
+
+    </div>
+  </div>
+
+<h3 id="今日学习内容"><a href="#今日学习内容" class="headerlink" title="今日学习内容"></a>今日学习内容</h3><p>1、JS 红皮书 P322-331 第十一章：期约与异步函数</p>
+<h3 id="今日笔记"><a href="#今日笔记" class="headerlink" title="今日笔记"></a>今日笔记</h3><p>1、ECMAScript 6 新增了正式的 Promise（期约）引用类型，支持优雅地定义和组织异步逻辑。接下来几个版本增加了使用 async 和 await 关键字定义异步函数的机制。<br>异步编程: 特别是在 JavaScript 这种单线程事件循环模型中，同步操作与异步操作更是代码所要依赖的核心机制。异步行为是为了优化因计算量大而时间长的操作。如果在等待其他操作完成的同时，即使运行其他指令，系统也能保持稳定，那么这样做就是务实的。<br>重要的是，异步操作并不一定计算量大或要等很长时间。只要你不想为等待某个异步操作而阻塞线程执行，那么任何时候都可以使用。<br>2、同步与异步: 同步行为对应内存中顺序执行的处理器指令。每条指令都会严格按照它们出现的顺序来执行，而每条指令执行后也能立即获得存储在系统本地（如寄存器或系统内存）的信息。这样的执行流程容易分析程序在执行到代码任意位置时的状态（比如变量的值）。<br>以前的异步编程模式:</p>
+<div class="highlight-container" data-rel="Js"><figure class="iseeu highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">double</span>(<span class="params">value</span>) &#123;</span><br><span class="line">  <span class="built_in">setTimeout</span>(<span class="function">() =&gt;</span> <span class="built_in">setTimeout</span>(<span class="variable language_">console</span>.<span class="property">log</span>, <span class="number">0</span>, value * <span class="number">2</span>), <span class="number">1000</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="title function_">double</span>(<span class="number">3</span>);</span><br><span class="line"><span class="comment">// 6（大约 1000 毫秒之后）</span></span><br></pre></td></tr></table></figure></div>
+
+<p>这里的代码没什么神秘的，但关键是理解为什么说它是一个异步函数。setTimeout 可以定义一个在指定时间之后会被调度执行的回调函数。对这个例子而言，1000 毫秒之后，JavaScript 运行时会把回调函数推到自己的消息队列上去等待执行。推到队列之后，回调什么时候出列被执行对 JavaScript 代码就完全不可见了。还有一点，double()函数在 setTimeout 成功调度异步操作之后会立即退出。</p>
+<ul>
+<li>异步返回值: 假设 setTimeout 操作会返回一个有用的值。给异步操作提供一个回调，这个回调中包含要使用异步返回值的代码（作为回调的参数）。</li>
+</ul>
+<div class="highlight-container" data-rel="Js"><figure class="iseeu highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">double</span>(<span class="params">value, callback</span>) &#123;</span><br><span class="line">  <span class="built_in">setTimeout</span>(<span class="function">() =&gt;</span> <span class="title function_">callback</span>(value * <span class="number">2</span>), <span class="number">1000</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="title function_">double</span>(<span class="number">3</span>, <span class="function">(<span class="params">x</span>) =&gt;</span> <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">`I was given: <span class="subst">$&#123;x&#125;</span>`</span>));</span><br><span class="line"><span class="comment">// I was given: 6（大约 1000 毫秒之后）</span></span><br></pre></td></tr></table></figure></div>
+
+<p>这里的 setTimeout 调用告诉 JavaScript 运行时在 1000 毫秒之后把一个函数推到消息队列上。这个函数会由运行时负责异步调度执行。而位于函数闭包中的回调及其参数在异步执行时仍然是可用的。</p>
+<ul>
+<li>失败处理: 异步操作的失败处理在回调模型中也要考虑，因此自然就出现了成功回调和失败回调：</li>
+</ul>
+<div class="highlight-container" data-rel="Js"><figure class="iseeu highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">double</span>(<span class="params">value, success, failure</span>) &#123;</span><br><span class="line">  <span class="built_in">setTimeout</span>(<span class="function">() =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">try</span> &#123;</span><br><span class="line">      <span class="keyword">if</span> (<span class="keyword">typeof</span> value !== <span class="string">&quot;number&quot;</span>) &#123;</span><br><span class="line">        <span class="keyword">throw</span> <span class="string">&quot;Must provide number as first argument&quot;</span>;</span><br><span class="line">      &#125;</span><br><span class="line">      <span class="title function_">success</span>(<span class="number">2</span> * value);</span><br><span class="line">    &#125; <span class="keyword">catch</span> (e) &#123;</span><br><span class="line">      <span class="title function_">failure</span>(e);</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;, <span class="number">1000</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">const</span> <span class="title function_">successCallback</span> = (<span class="params">x</span>) =&gt; <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">`Success: <span class="subst">$&#123;x&#125;</span>`</span>);</span><br><span class="line"><span class="keyword">const</span> <span class="title function_">failureCallback</span> = (<span class="params">e</span>) =&gt; <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">`Failure: <span class="subst">$&#123;e&#125;</span>`</span>);</span><br><span class="line"><span class="title function_">double</span>(<span class="number">3</span>, successCallback, failureCallback);</span><br><span class="line"><span class="title function_">double</span>(<span class="string">&quot;b&quot;</span>, successCallback, failureCallback);</span><br><span class="line"><span class="comment">// Success: 6（大约 1000 毫秒之后）</span></span><br><span class="line"><span class="comment">// Failure: Must provide number as first argument（大约 1000 毫秒之后）</span></span><br></pre></td></tr></table></figure></div>
+
+<ul>
+<li>嵌套异步回调: 如果异步返值又依赖另一个异步返回值，那么回调的情况还会进一步变复杂。在实际的代码中，这就要求嵌套回调：</li>
+</ul>
+<div class="highlight-container" data-rel="Js"><figure class="iseeu highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">double</span>(<span class="params">value, success, failure</span>) &#123;</span><br><span class="line">  <span class="built_in">setTimeout</span>(<span class="function">() =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">try</span> &#123;</span><br><span class="line">      <span class="keyword">if</span> (<span class="keyword">typeof</span> value !== <span class="string">&quot;number&quot;</span>) &#123;</span><br><span class="line">        <span class="keyword">throw</span> <span class="string">&quot;Must provide number as first argument&quot;</span>;</span><br><span class="line">      &#125;</span><br><span class="line">      <span class="title function_">success</span>(<span class="number">2</span> * value);</span><br><span class="line">    &#125; <span class="keyword">catch</span> (e) &#123;</span><br><span class="line">      <span class="title function_">failure</span>(e);</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;, <span class="number">1000</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">const</span> <span class="title function_">successCallback</span> = (<span class="params">x</span>) =&gt; &#123;</span><br><span class="line">  <span class="title function_">double</span>(x, <span class="function">(<span class="params">y</span>) =&gt;</span> <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">`Success: <span class="subst">$&#123;y&#125;</span>`</span>));</span><br><span class="line">&#125;;</span><br><span class="line"><span class="keyword">const</span> <span class="title function_">failureCallback</span> = (<span class="params">e</span>) =&gt; <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">`Failure: <span class="subst">$&#123;e&#125;</span>`</span>);</span><br><span class="line"><span class="title function_">double</span>(<span class="number">3</span>, successCallback, failureCallback);</span><br><span class="line"><span class="comment">// Success: 12（大约 2000 毫秒之后）</span></span><br></pre></td></tr></table></figure></div>
+
+<p>3、期约: 期约是对尚不存在结果的一个替身。ECMAScript 6 增加了对 Promises&#x2F;A+规范的完善支持，即 Promise 类型。一经推出，Promise 就大受欢迎，成为了主导性的异步编程机制。所有现代浏览器都支持 ES6 期约，很多其他浏览器 API（如fetch()和 Battery Status API）也以期约为基础。<br>期约基础: ECMAScript 6 新增的引用类型 Promise，可以通过 new 操作符来实例化。创建新期约时需要传入执行器（executor）函数作为参数（后面马上会介绍），下面的例子使用了一个空函数对象来应付一下解释器：</p>
+<div class="highlight-container" data-rel="Js"><figure class="iseeu highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> p = <span class="keyword">new</span> <span class="title class_">Promise</span>(<span class="function">() =&gt;</span> &#123;&#125;); </span><br><span class="line"><span class="built_in">setTimeout</span>(<span class="variable language_">console</span>.<span class="property">log</span>, <span class="number">0</span>, p); <span class="comment">// Promise &lt;pending&gt; </span></span><br></pre></td></tr></table></figure></div>
+<p>之所以说是应付解释器，是因为如果不提供执行器函数，就会抛出 SyntaxError。</p>
+<ul>
+<li>期约状态机: 在把一个期约实例传给 console.log()时，控制台输出（可能因浏览器不同而略有差异）表明该实例处于待定（pending）状态。如前所述，期约是一个有状态的对象，可能处于如下 3 种状态之一：<br> 待定（pending）<br> 兑现（fulfilled，有时候也称为“解决”，resolved）<br> 拒绝（rejected）</li>
+<li>解决值、拒绝理由及期约用例: 期约主要有两大用途。首先是抽象地表示一个异步操作。期约的状态代表期约是否完成。“待定”表示尚未开始或者正在执行中。“兑现”表示已经成功完成，而“拒绝”则表示没有成功完成。为了支持这两种用例，每个期约只要状态切换为兑现，就会有一个私有的内部值（value）。类似地，每个期约只要状态切换为拒绝，就会有一个私有的内部理由（reason）。无论是值还是理由，都是包含原始值或对象的不可修改的引用。二者都是可选的，而且默认值为 undefined。在期约到达某个落定状态时执行的异步代码始终会收到这个值或理由。</li>
+<li>通过执行函数控制期约状态: 由于期约的状态是私有的，所以只能在内部进行操作。内部操作在期约的执行器函数中完成。执行器函数主要有两项职责：初始化期约的异步行为和控制状态的最终转换。其中，控制期约状态的转换是通过调用它的两个函数参数实现的。这两个函数参数通常都命名为 resolve()和 reject()。调用resolve()会把状态切换为兑现，调用 reject()会把状态切换为拒绝。另外，调用 reject()也会抛出错误（后面会讨论这个错误）。<div class="highlight-container" data-rel="Js"><figure class="iseeu highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> p1 = <span class="keyword">new</span> <span class="title class_">Promise</span>(<span class="function">(<span class="params">resolve, reject</span>) =&gt;</span> <span class="title function_">resolve</span>()); </span><br><span class="line"><span class="built_in">setTimeout</span>(<span class="variable language_">console</span>.<span class="property">log</span>, <span class="number">0</span>, p1); <span class="comment">// Promise &lt;resolved&gt; </span></span><br><span class="line"><span class="keyword">let</span> p2 = <span class="keyword">new</span> <span class="title class_">Promise</span>(<span class="function">(<span class="params">resolve, reject</span>) =&gt;</span> <span class="title function_">reject</span>()); </span><br><span class="line"><span class="built_in">setTimeout</span>(<span class="variable language_">console</span>.<span class="property">log</span>, <span class="number">0</span>, p2); <span class="comment">// Promise &lt;rejected&gt;</span></span><br><span class="line"><span class="comment">// Uncaught error (in promise)</span></span><br></pre></td></tr></table></figure></div>
+执行器函数是同步执行的。这是因为执行器函数是期约的初始化程序。通过下面的例子可以看出上面代码的执行顺序：<div class="highlight-container" data-rel="Js"><figure class="iseeu highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">new</span> <span class="title class_">Promise</span>(<span class="function">() =&gt;</span> <span class="built_in">setTimeout</span>(<span class="variable language_">console</span>.<span class="property">log</span>, <span class="number">0</span>, <span class="string">&#x27;executor&#x27;</span>)); </span><br><span class="line"><span class="built_in">setTimeout</span>(<span class="variable language_">console</span>.<span class="property">log</span>, <span class="number">0</span>, <span class="string">&#x27;promise initialized&#x27;</span>); </span><br><span class="line"><span class="comment">// executor </span></span><br><span class="line"><span class="comment">// promise initialized</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 添加 setTimeout 可以推迟切换状态：</span></span><br><span class="line"><span class="keyword">let</span> p = <span class="keyword">new</span> <span class="title class_">Promise</span>(<span class="function">(<span class="params">resolve, reject</span>) =&gt;</span> <span class="built_in">setTimeout</span>(resolve, <span class="number">1000</span>)); </span><br><span class="line"><span class="comment">// 在 console.log 打印期约实例的时候，还不会执行超时回调（即 resolve()）</span></span><br><span class="line"><span class="built_in">setTimeout</span>(<span class="variable language_">console</span>.<span class="property">log</span>, <span class="number">0</span>, p); <span class="comment">// Promise &lt;pending&gt;</span></span><br><span class="line"><span class="comment">// 无论 resolve()和 reject()中的哪个被调用，状态转换都不可撤销了。</span></span><br><span class="line"><span class="keyword">let</span> p = <span class="keyword">new</span> <span class="title class_">Promise</span>(<span class="function">(<span class="params">resolve, reject</span>) =&gt;</span> &#123; </span><br><span class="line"> <span class="title function_">resolve</span>();</span><br><span class="line"> <span class="title function_">reject</span>(); <span class="comment">// 没有效果</span></span><br><span class="line">&#125;); </span><br><span class="line"><span class="built_in">setTimeout</span>(<span class="variable language_">console</span>.<span class="property">log</span>, <span class="number">0</span>, p); <span class="comment">// Promise &lt;resolved&gt;</span></span><br></pre></td></tr></table></figure></div>
+为避免期约卡在待定状态，可以添加一个定时退出功能。比如，可以通过 setTimeout 设置一个10 秒钟后无论如何都会拒绝期约的回调：<div class="highlight-container" data-rel="Js"><figure class="iseeu highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> p = <span class="keyword">new</span> <span class="title class_">Promise</span>(<span class="function">(<span class="params">resolve, reject</span>) =&gt;</span> &#123; </span><br><span class="line"> <span class="built_in">setTimeout</span>(reject, <span class="number">10000</span>); <span class="comment">// 10 秒后调用 reject() </span></span><br><span class="line"> <span class="comment">// 执行函数的逻辑</span></span><br><span class="line">&#125;); </span><br><span class="line"><span class="built_in">setTimeout</span>(<span class="variable language_">console</span>.<span class="property">log</span>, <span class="number">0</span>, p); <span class="comment">// Promise &lt;pending&gt; </span></span><br><span class="line"><span class="built_in">setTimeout</span>(<span class="variable language_">console</span>.<span class="property">log</span>, <span class="number">11000</span>, p); <span class="comment">// 11 秒后再检查状态</span></span><br><span class="line"><span class="comment">// (After 10 seconds) Uncaught error </span></span><br><span class="line"><span class="comment">// (After 11 seconds) Promise &lt;rejected&gt;</span></span><br></pre></td></tr></table></figure></div></li>
+<li>Promise.resolve(): 期约并非一开始就必须处于待定状态，然后通过执行器函数才能转换为落定状态。通过调用Promise.resolve()静态方法，可以实例化一个解决的期约。下面两个期约实例实际上是一样的：<div class="highlight-container" data-rel="Js"><figure class="iseeu highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> p1 = <span class="keyword">new</span> <span class="title class_">Promise</span>(<span class="function">(<span class="params">resolve, reject</span>) =&gt;</span> <span class="title function_">resolve</span>()); </span><br><span class="line"><span class="keyword">let</span> p2 = <span class="title class_">Promise</span>.<span class="title function_">resolve</span>();</span><br></pre></td></tr></table></figure></div>
+这个解决的期约的值对应着传给 Promise.resolve()的第一个参数。使用这个静态方法，实际上可以把任何值都转换为一个期约：<div class="highlight-container" data-rel="Js"><figure class="iseeu highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">setTimeout</span>(<span class="variable language_">console</span>.<span class="property">log</span>, <span class="number">0</span>, <span class="title class_">Promise</span>.<span class="title function_">resolve</span>()); </span><br><span class="line"><span class="comment">// Promise &lt;resolved&gt;: undefined </span></span><br><span class="line"><span class="built_in">setTimeout</span>(<span class="variable language_">console</span>.<span class="property">log</span>, <span class="number">0</span>, <span class="title class_">Promise</span>.<span class="title function_">resolve</span>(<span class="number">3</span>));</span><br><span class="line"><span class="comment">// Promise &lt;resolved&gt;: 3 </span></span><br><span class="line"><span class="comment">// 多余的参数会忽略</span></span><br><span class="line"><span class="built_in">setTimeout</span>(<span class="variable language_">console</span>.<span class="property">log</span>, <span class="number">0</span>, <span class="title class_">Promise</span>.<span class="title function_">resolve</span>(<span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>)); </span><br><span class="line"><span class="comment">// Promise &lt;resolved&gt;: 4</span></span><br></pre></td></tr></table></figure></div>
+对这个静态方法而言，如果传入的参数本身是一个期约，那它的行为就类似于一个空包装。因此，Promise.resolve()可以说是一个幂等方法，如下所示：<div class="highlight-container" data-rel="Js"><figure class="iseeu highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> p = <span class="title class_">Promise</span>.<span class="title function_">resolve</span>(<span class="number">7</span>); </span><br><span class="line"><span class="built_in">setTimeout</span>(<span class="variable language_">console</span>.<span class="property">log</span>, <span class="number">0</span>, p === <span class="title class_">Promise</span>.<span class="title function_">resolve</span>(p)); </span><br><span class="line"><span class="comment">// true </span></span><br><span class="line"><span class="built_in">setTimeout</span>(<span class="variable language_">console</span>.<span class="property">log</span>, <span class="number">0</span>, p === <span class="title class_">Promise</span>.<span class="title function_">resolve</span>(<span class="title class_">Promise</span>.<span class="title function_">resolve</span>(p))); </span><br><span class="line"><span class="comment">// true</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 这个幂等性会保留传入期约的状态：</span></span><br><span class="line"><span class="keyword">let</span> p = <span class="keyword">new</span> <span class="title class_">Promise</span>(<span class="function">() =&gt;</span> &#123;&#125;); </span><br><span class="line"><span class="built_in">setTimeout</span>(<span class="variable language_">console</span>.<span class="property">log</span>, <span class="number">0</span>, p); <span class="comment">// Promise &lt;pending&gt; </span></span><br><span class="line"><span class="built_in">setTimeout</span>(<span class="variable language_">console</span>.<span class="property">log</span>, <span class="number">0</span>, <span class="title class_">Promise</span>.<span class="title function_">resolve</span>(p)); <span class="comment">// Promise &lt;pending&gt; </span></span><br><span class="line"><span class="built_in">setTimeout</span>(<span class="variable language_">console</span>.<span class="property">log</span>, <span class="number">0</span>, p === <span class="title class_">Promise</span>.<span class="title function_">resolve</span>(p)); <span class="comment">// true</span></span><br></pre></td></tr></table></figure></div></li>
+<li>Promise.reject(): 与 Promise.resolve()类似，Promise.reject()会实例化一个拒绝的期约并抛出一个异步错误（这个错误不能通过 try&#x2F;catch 捕获，而只能通过拒绝处理程序捕获）。下面的两个期约实例实际上是一样的：<div class="highlight-container" data-rel="Js"><figure class="iseeu highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> p1 = <span class="keyword">new</span> <span class="title class_">Promise</span>(<span class="function">(<span class="params">resolve, reject</span>) =&gt;</span> <span class="title function_">reject</span>()); </span><br><span class="line"><span class="keyword">let</span> p2 = <span class="title class_">Promise</span>.<span class="title function_">reject</span>();</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> p = <span class="title class_">Promise</span>.<span class="title function_">reject</span>(<span class="number">3</span>); </span><br><span class="line"><span class="built_in">setTimeout</span>(<span class="variable language_">console</span>.<span class="property">log</span>, <span class="number">0</span>, p); <span class="comment">// Promise &lt;rejected&gt;: 3 </span></span><br><span class="line">p.<span class="title function_">then</span>(<span class="literal">null</span>, <span class="function">(<span class="params">e</span>) =&gt;</span> <span class="built_in">setTimeout</span>(<span class="variable language_">console</span>.<span class="property">log</span>, <span class="number">0</span>, e)); <span class="comment">// 3</span></span><br></pre></td></tr></table></figure></div>
+关键在于，Promise.reject()并没有照搬 Promise.resolve()的幂等逻辑。如果给它传一个期约对象，则这个期约会成为它返回的拒绝期约的理由：<div class="highlight-container" data-rel="Js"><figure class="iseeu highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">setTimeout</span>(<span class="variable language_">console</span>.<span class="property">log</span>, <span class="number">0</span>, <span class="title class_">Promise</span>.<span class="title function_">reject</span>(<span class="title class_">Promise</span>.<span class="title function_">resolve</span>())); </span><br><span class="line"><span class="comment">// Promise &lt;rejected&gt;: Promise &lt;resolved&gt;</span></span><br></pre></td></tr></table></figure></div></li>
+<li>同步&#x2F;异步执行的二元性:<br>Promise 的设计很大程度上会导致一种完全不同于 JavaScript 的计算模式。下面的例子完美地展示了这一点，其中包含了两种模式下抛出错误的情形：<div class="highlight-container" data-rel="Js"><figure class="iseeu highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">try</span> &#123; </span><br><span class="line"> <span class="keyword">throw</span> <span class="keyword">new</span> <span class="title class_">Error</span>(<span class="string">&#x27;foo&#x27;</span>); </span><br><span class="line">&#125; <span class="keyword">catch</span>(e) &#123; </span><br><span class="line"> <span class="variable language_">console</span>.<span class="title function_">log</span>(e); <span class="comment">// Error: foo </span></span><br><span class="line">&#125; </span><br><span class="line"><span class="keyword">try</span> &#123; </span><br><span class="line"> <span class="title class_">Promise</span>.<span class="title function_">reject</span>(<span class="keyword">new</span> <span class="title class_">Error</span>(<span class="string">&#x27;bar&#x27;</span>)); </span><br><span class="line">&#125; <span class="keyword">catch</span>(e) &#123; </span><br><span class="line"> <span class="variable language_">console</span>.<span class="title function_">log</span>(e); </span><br><span class="line">&#125; </span><br><span class="line"><span class="comment">// Uncaught (in promise) Error: bar</span></span><br></pre></td></tr></table></figure></div>
+第一个 try&#x2F;catch 抛出并捕获了错误，第二个 try&#x2F;catch 抛出错误却没有捕获到。乍一看这可能有点违反直觉，因为代码中确实是同步创建了一个拒绝的期约实例，而这个实例也抛出了包含拒绝理由的错误。这里的同步代码之所以没有捕获期约抛出的错误，是因为它没有通过异步模式捕获错误。从这里就可以看出期约真正的异步特性：它们是同步对象（在同步执行模式中使用），但也是异步执行模式的媒介。<br>在前面的例子中，拒绝期约的错误并没有抛到执行同步代码的线程里，而是通过浏览器异步消息队列来处理的。因此，try&#x2F;catch 块并不能捕获该错误。代码一旦开始以异步模式执行，则唯一与之交互的方式就是使用异步结构——更具体地说，就是期约的方法。</li>
+</ul>
+<p>4、期约的实例方法: 期约实例的方法是连接外部同步代码与内部异步代码之间的桥梁。这些方法可以访问异步操作返回的数据，处理期约成功和失败的结果，连续对期约求值，或者添加只有期约进入终止状态时才会执行的代码。</p>
+<ul>
+<li>实现Thenable接口: 在 ECMAScript 暴露的异步结构中，任何对象都有一个 then()方法。这个方法被认为实现了Thenable 接口。下面的例子展示了实现这一接口的最简单的类：<div class="highlight-container" data-rel="Js"><figure class="iseeu highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">MyThenable</span> &#123; </span><br><span class="line"> <span class="title function_">then</span>(<span class="params"></span>) &#123;&#125; </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div></li>
+<li>Promise.prototype.then(): Promise.prototype.then()是为期约实例添加处理程序的主要方法。这个 then()方法接收最多两个参数：onResolved 处理程序和 onRejected 处理程序。这两个参数都是可选的，如果提供的话，则会在期约分别进入“兑现”和“拒绝”状态时执行。<div class="highlight-container" data-rel="Js"><figure class="iseeu highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">onResolved</span>(<span class="params">id</span>) &#123; </span><br><span class="line"> <span class="built_in">setTimeout</span>(<span class="variable language_">console</span>.<span class="property">log</span>, <span class="number">0</span>, id, <span class="string">&#x27;resolved&#x27;</span>);</span><br><span class="line"> &#125; </span><br><span class="line"><span class="keyword">function</span> <span class="title function_">onRejected</span>(<span class="params">id</span>) &#123; </span><br><span class="line"> <span class="built_in">setTimeout</span>(<span class="variable language_">console</span>.<span class="property">log</span>, <span class="number">0</span>, id, <span class="string">&#x27;rejected&#x27;</span>); </span><br><span class="line">&#125; </span><br><span class="line"><span class="keyword">let</span> p1 = <span class="keyword">new</span> <span class="title class_">Promise</span>(<span class="function">(<span class="params">resolve, reject</span>) =&gt;</span> <span class="built_in">setTimeout</span>(resolve, <span class="number">3000</span>)); </span><br><span class="line"><span class="keyword">let</span> p2 = <span class="keyword">new</span> <span class="title class_">Promise</span>(<span class="function">(<span class="params">resolve, reject</span>) =&gt;</span> <span class="built_in">setTimeout</span>(reject, <span class="number">3000</span>)); </span><br><span class="line">p1.<span class="title function_">then</span>(<span class="function">() =&gt;</span> <span class="title function_">onResolved</span>(<span class="string">&#x27;p1&#x27;</span>), </span><br><span class="line"> <span class="function">() =&gt;</span> <span class="title function_">onRejected</span>(<span class="string">&#x27;p1&#x27;</span>)); </span><br><span class="line">p2.<span class="title function_">then</span>(<span class="function">() =&gt;</span> <span class="title function_">onResolved</span>(<span class="string">&#x27;p2&#x27;</span>), </span><br><span class="line"> <span class="function">() =&gt;</span> <span class="title function_">onRejected</span>(<span class="string">&#x27;p2&#x27;</span>)); </span><br><span class="line"><span class="comment">//（3 秒后）</span></span><br><span class="line"><span class="comment">// p1 resolved </span></span><br><span class="line"><span class="comment">// p2 rejected</span></span><br></pre></td></tr></table></figure></div>
+<div class="highlight-container" data-rel="Js"><figure class="iseeu highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">onResolved</span>(<span class="params">id</span>) &#123; </span><br><span class="line"> <span class="built_in">setTimeout</span>(<span class="variable language_">console</span>.<span class="property">log</span>, <span class="number">0</span>, id, <span class="string">&#x27;resolved&#x27;</span>); </span><br><span class="line">&#125; </span><br><span class="line"><span class="keyword">function</span> <span class="title function_">onRejected</span>(<span class="params">id</span>) &#123; </span><br><span class="line"> <span class="built_in">setTimeout</span>(<span class="variable language_">console</span>.<span class="property">log</span>, <span class="number">0</span>, id, <span class="string">&#x27;rejected&#x27;</span>); </span><br><span class="line">&#125; </span><br><span class="line"><span class="keyword">let</span> p1 = <span class="keyword">new</span> <span class="title class_">Promise</span>(<span class="function">(<span class="params">resolve, reject</span>) =&gt;</span> <span class="built_in">setTimeout</span>(resolve, <span class="number">3000</span>)); </span><br><span class="line"><span class="keyword">let</span> p2 = <span class="keyword">new</span> <span class="title class_">Promise</span>(<span class="function">(<span class="params">resolve, reject</span>) =&gt;</span> <span class="built_in">setTimeout</span>(reject, <span class="number">3000</span>)); </span><br><span class="line"><span class="comment">// 非函数处理程序会被静默忽略，不推荐</span></span><br><span class="line">p1.<span class="title function_">then</span>(<span class="string">&#x27;gobbeltygook&#x27;</span>); </span><br><span class="line"><span class="comment">// 不传 onResolved 处理程序的规范写法</span></span><br><span class="line">p2.<span class="title function_">then</span>(<span class="literal">null</span>, <span class="function">() =&gt;</span> <span class="title function_">onRejected</span>(<span class="string">&#x27;p2&#x27;</span>)); </span><br><span class="line"><span class="comment">// p2 rejected（3 秒后）</span></span><br><span class="line"><span class="comment">// Promise.prototype.then()方法返回一个新的期约实例：</span></span><br><span class="line"><span class="keyword">let</span> p1 = <span class="keyword">new</span> <span class="title class_">Promise</span>(<span class="function">() =&gt;</span> &#123;&#125;); </span><br><span class="line"><span class="keyword">let</span> p2 = p1.<span class="title function_">then</span>(); </span><br><span class="line"><span class="built_in">setTimeout</span>(<span class="variable language_">console</span>.<span class="property">log</span>, <span class="number">0</span>, p1); <span class="comment">// Promise &lt;pending&gt; </span></span><br><span class="line"><span class="built_in">setTimeout</span>(<span class="variable language_">console</span>.<span class="property">log</span>, <span class="number">0</span>, p2); <span class="comment">// Promise &lt;pending&gt; </span></span><br><span class="line"><span class="built_in">setTimeout</span>(<span class="variable language_">console</span>.<span class="property">log</span>, <span class="number">0</span>, p1 === p2); <span class="comment">// false</span></span><br></pre></td></tr></table></figure></div></li>
+</ul>
+<div class="highlight-container" data-rel="Js"><figure class="iseeu highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> p1 = <span class="title class_">Promise</span>.<span class="title function_">resolve</span>(<span class="string">&#x27;foo&#x27;</span>); </span><br><span class="line"><span class="comment">// 若调用 then()时不传处理程序，则原样向后传</span></span><br><span class="line"><span class="keyword">let</span> p2 = p1.<span class="title function_">then</span>();</span><br><span class="line"></span><br><span class="line"><span class="built_in">setTimeout</span>(<span class="variable language_">console</span>.<span class="property">log</span>, <span class="number">0</span>, p2); <span class="comment">// Promise &lt;resolved&gt;: foo </span></span><br><span class="line"><span class="comment">// 这些都一样</span></span><br><span class="line"><span class="keyword">let</span> p3 = p1.<span class="title function_">then</span>(<span class="function">() =&gt;</span> <span class="literal">undefined</span>); </span><br><span class="line"><span class="keyword">let</span> p4 = p1.<span class="title function_">then</span>(<span class="function">() =&gt;</span> &#123;&#125;); </span><br><span class="line"><span class="keyword">let</span> p5 = p1.<span class="title function_">then</span>(<span class="function">() =&gt;</span> <span class="title class_">Promise</span>.<span class="title function_">resolve</span>()); </span><br><span class="line"><span class="built_in">setTimeout</span>(<span class="variable language_">console</span>.<span class="property">log</span>, <span class="number">0</span>, p3); <span class="comment">// Promise &lt;resolved&gt;: undefined </span></span><br><span class="line"><span class="built_in">setTimeout</span>(<span class="variable language_">console</span>.<span class="property">log</span>, <span class="number">0</span>, p4); <span class="comment">// Promise &lt;resolved&gt;: undefined </span></span><br><span class="line"><span class="built_in">setTimeout</span>(<span class="variable language_">console</span>.<span class="property">log</span>, <span class="number">0</span>, p5); <span class="comment">// Promise &lt;resolved&gt;: undefined</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 如果有显式的返回值，则 Promise.resolve()会包装这个值：</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 这些都一样</span></span><br><span class="line"><span class="keyword">let</span> p6 = p1.<span class="title function_">then</span>(<span class="function">() =&gt;</span> <span class="string">&#x27;bar&#x27;</span>); </span><br><span class="line"><span class="keyword">let</span> p7 = p1.<span class="title function_">then</span>(<span class="function">() =&gt;</span> <span class="title class_">Promise</span>.<span class="title function_">resolve</span>(<span class="string">&#x27;bar&#x27;</span>)); </span><br><span class="line"><span class="built_in">setTimeout</span>(<span class="variable language_">console</span>.<span class="property">log</span>, <span class="number">0</span>, p6); <span class="comment">// Promise &lt;resolved&gt;: bar </span></span><br><span class="line"><span class="built_in">setTimeout</span>(<span class="variable language_">console</span>.<span class="property">log</span>, <span class="number">0</span>, p7); <span class="comment">// Promise &lt;resolved&gt;: bar </span></span><br><span class="line"><span class="comment">// Promise.resolve()保留返回的期约</span></span><br><span class="line"><span class="keyword">let</span> p8 = p1.<span class="title function_">then</span>(<span class="function">() =&gt;</span> <span class="keyword">new</span> <span class="title class_">Promise</span>(<span class="function">() =&gt;</span> &#123;&#125;)); </span><br><span class="line"><span class="keyword">let</span> p9 = p1.<span class="title function_">then</span>(<span class="function">() =&gt;</span> <span class="title class_">Promise</span>.<span class="title function_">reject</span>()); </span><br><span class="line"><span class="comment">// Uncaught (in promise): undefined </span></span><br><span class="line"><span class="built_in">setTimeout</span>(<span class="variable language_">console</span>.<span class="property">log</span>, <span class="number">0</span>, p8); <span class="comment">// Promise &lt;pending&gt; </span></span><br><span class="line"><span class="built_in">setTimeout</span>(<span class="variable language_">console</span>.<span class="property">log</span>, <span class="number">0</span>, p9); <span class="comment">// Promise &lt;rejected&gt;: undefined</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 抛出异常会返回拒绝的期约：</span></span><br><span class="line"><span class="keyword">let</span> p10 = p1.<span class="title function_">then</span>(<span class="function">() =&gt;</span> &#123; <span class="keyword">throw</span> <span class="string">&#x27;baz&#x27;</span>; &#125;); </span><br><span class="line"><span class="comment">// Uncaught (in promise) baz </span></span><br><span class="line"><span class="built_in">setTimeout</span>(<span class="variable language_">console</span>.<span class="property">log</span>, <span class="number">0</span>, p10); <span class="comment">// Promise &lt;rejected&gt; baz</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 注意，返回错误值不会触发上面的拒绝行为，而会把错误对象包装在一个解决的期约中：</span></span><br><span class="line"><span class="keyword">let</span> p11 = p1.<span class="title function_">then</span>(<span class="function">() =&gt;</span> <span class="title class_">Error</span>(<span class="string">&#x27;qux&#x27;</span>)); </span><br><span class="line"><span class="built_in">setTimeout</span>(<span class="variable language_">console</span>.<span class="property">log</span>, <span class="number">0</span>, p11); <span class="comment">// Promise &lt;resolved&gt;: Error: qux</span></span><br></pre></td></tr></table></figure></div>
+
+<div class="highlight-container" data-rel="Js"><figure class="iseeu highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> p1 = <span class="title class_">Promise</span>.<span class="title function_">reject</span>(<span class="string">&#x27;foo&#x27;</span>);</span><br><span class="line"><span class="comment">// 调用 then()时不传处理程序则原样向后传</span></span><br><span class="line"><span class="keyword">let</span> p2 = p1.<span class="title function_">then</span>(); </span><br><span class="line"><span class="comment">// Uncaught (in promise) foo</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">setTimeout</span>(<span class="variable language_">console</span>.<span class="property">log</span>, <span class="number">0</span>, p2); <span class="comment">// Promise &lt;rejected&gt;: foo </span></span><br><span class="line"><span class="comment">// 这些都一样</span></span><br><span class="line"><span class="keyword">let</span> p3 = p1.<span class="title function_">then</span>(<span class="literal">null</span>, <span class="function">() =&gt;</span> <span class="literal">undefined</span>); </span><br><span class="line"><span class="keyword">let</span> p4 = p1.<span class="title function_">then</span>(<span class="literal">null</span>, <span class="function">() =&gt;</span> &#123;&#125;); </span><br><span class="line"><span class="keyword">let</span> p5 = p1.<span class="title function_">then</span>(<span class="literal">null</span>, <span class="function">() =&gt;</span> <span class="title class_">Promise</span>.<span class="title function_">resolve</span>()); </span><br><span class="line"><span class="built_in">setTimeout</span>(<span class="variable language_">console</span>.<span class="property">log</span>, <span class="number">0</span>, p3); <span class="comment">// Promise &lt;resolved&gt;: undefined </span></span><br><span class="line"><span class="built_in">setTimeout</span>(<span class="variable language_">console</span>.<span class="property">log</span>, <span class="number">0</span>, p4); <span class="comment">// Promise &lt;resolved&gt;: undefined </span></span><br><span class="line"><span class="built_in">setTimeout</span>(<span class="variable language_">console</span>.<span class="property">log</span>, <span class="number">0</span>, p5); <span class="comment">// Promise &lt;resolved&gt;: undefined </span></span><br><span class="line"><span class="comment">// 这些都一样</span></span><br><span class="line"><span class="keyword">let</span> p6 = p1.<span class="title function_">then</span>(<span class="literal">null</span>, <span class="function">() =&gt;</span> <span class="string">&#x27;bar&#x27;</span>); </span><br><span class="line"><span class="keyword">let</span> p7 = p1.<span class="title function_">then</span>(<span class="literal">null</span>, <span class="function">() =&gt;</span> <span class="title class_">Promise</span>.<span class="title function_">resolve</span>(<span class="string">&#x27;bar&#x27;</span>)); </span><br><span class="line"><span class="built_in">setTimeout</span>(<span class="variable language_">console</span>.<span class="property">log</span>, <span class="number">0</span>, p6); <span class="comment">// Promise &lt;resolved&gt;: bar </span></span><br><span class="line"><span class="built_in">setTimeout</span>(<span class="variable language_">console</span>.<span class="property">log</span>, <span class="number">0</span>, p7); <span class="comment">// Promise &lt;resolved&gt;: bar </span></span><br><span class="line"><span class="comment">// Promise.resolve()保留返回的期约</span></span><br><span class="line"><span class="keyword">let</span> p8 = p1.<span class="title function_">then</span>(<span class="literal">null</span>, <span class="function">() =&gt;</span> <span class="keyword">new</span> <span class="title class_">Promise</span>(<span class="function">() =&gt;</span> &#123;&#125;)); </span><br><span class="line"><span class="keyword">let</span> p9 = p1.<span class="title function_">then</span>(<span class="literal">null</span>, <span class="function">() =&gt;</span> <span class="title class_">Promise</span>.<span class="title function_">reject</span>()); </span><br><span class="line"><span class="comment">// Uncaught (in promise): undefined </span></span><br><span class="line"><span class="built_in">setTimeout</span>(<span class="variable language_">console</span>.<span class="property">log</span>, <span class="number">0</span>, p8); <span class="comment">// Promise &lt;pending&gt; </span></span><br><span class="line"><span class="built_in">setTimeout</span>(<span class="variable language_">console</span>.<span class="property">log</span>, <span class="number">0</span>, p9); <span class="comment">// Promise &lt;rejected&gt;: undefined </span></span><br><span class="line"><span class="keyword">let</span> p10 = p1.<span class="title function_">then</span>(<span class="literal">null</span>, <span class="function">() =&gt;</span> &#123; <span class="keyword">throw</span> <span class="string">&#x27;baz&#x27;</span>; &#125;); </span><br><span class="line"><span class="comment">// Uncaught (in promise) baz </span></span><br><span class="line"><span class="built_in">setTimeout</span>(<span class="variable language_">console</span>.<span class="property">log</span>, <span class="number">0</span>, p10); <span class="comment">// Promise &lt;rejected&gt;: baz </span></span><br><span class="line"><span class="keyword">let</span> p11 = p1.<span class="title function_">then</span>(<span class="literal">null</span>, <span class="function">() =&gt;</span> <span class="title class_">Error</span>(<span class="string">&#x27;qux&#x27;</span>)); </span><br><span class="line"><span class="built_in">setTimeout</span>(<span class="variable language_">console</span>.<span class="property">log</span>, <span class="number">0</span>, p11); <span class="comment">// Promise &lt;resolved&gt;: Error: qux</span></span><br></pre></td></tr></table></figure></div>
+        </div>
+
+        
+
+        
+            <ul class="post-tags-box text-lg mt-1.5 flex-wrap justify-center flex md:hidden">
+                
+                    <li class="tag-item mx-0.5">
+                        <a href="/tags/journal/">#journal</a>&nbsp;
+                    </li>
+                
+            </ul>
+        
+
+        
+
+        
+            <div class="article-nav my-8 flex justify-between items-center px-2 sm:px-6 md:px-8">
+                
+                    <div class="article-prev border-border-color shadow-redefine-flat shadow-shadow-color-2 rounded-medium px-4 py-2 hover:shadow-redefine-flat-hover hover:shadow-shadow-color-2">
+                        <a class="prev"
+                        rel="prev"
+                        href="/undefined/2025-02-09/"
+                        >
+                            <span class="left arrow-icon flex justify-center items-center">
+                                <i class="fa-solid fa-chevron-left"></i>
+                            </span>
+                            <span class="title flex justify-center items-center">
+                                <span class="post-nav-title-item">2025-02-09 日报 Day92</span>
+                                <span class="post-nav-item">上一篇</span>
+                            </span>
+                        </a>
+                    </div>
+                
+                
+                    <div class="article-next border-border-color shadow-redefine-flat shadow-shadow-color-2 rounded-medium px-4 py-2 hover:shadow-redefine-flat-hover hover:shadow-shadow-color-2">
+                        <a class="next"
+                        rel="next"
+                        href="/undefined/2025-02-07/"
+                        >
+                            <span class="title flex justify-center items-center">
+                                <span class="post-nav-title-item">2025-02-07 日报 Day90</span>
+                                <span class="post-nav-item">下一篇</span>
+                            </span>
+                            <span class="right arrow-icon flex justify-center items-center">
+                                <i class="fa-solid fa-chevron-right"></i>
+                            </span>
+                        </a>
+                    </div>
+                
+            </div>
+        
+
+
+        
+    </div>
+
+    
+        <div class="toc-content-container">
+            <div class="post-toc-wrap">
+    <div class="post-toc">
+        <div class="toc-title">此页目录</div>
+        <div class="page-title">2025-02-08 日报 Day91</div>
+        <ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BB%8A%E6%97%A5%E5%AD%A6%E4%B9%A0%E5%86%85%E5%AE%B9"><span class="nav-text">今日学习内容</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BB%8A%E6%97%A5%E7%AC%94%E8%AE%B0"><span class="nav-text">今日笔记</span></a></li></ol>
+
+    </div>
+</div>
+        </div>
+    
+</div>
+
+
+
+                
+
+            </div>
+
+            
+
+        </div>
+
+        <div class="main-content-footer">
+            <footer class="footer mt-5 py-5 h-auto text-base text-third-text-color relative border-t-2 border-t-border-color">
+    <div class="info-container py-3 text-center">
+        
+        <div class="text-center">
+            &copy;
+            
+              <span>2022</span>
+              -
+            
+            2025&nbsp;&nbsp;<i class="fa-solid fa-heart fa-beat" style="--fa-animation-duration: 0.5s; color: #f54545"></i>&nbsp;&nbsp;<a href="/">Yuyang</a>
+            
+                
+                <p class="post-count space-x-0.5">
+                    <span>
+                        共 159 篇文章
+                    </span>
+                    
+                </p>
+            
+        </div>
+        
+            <script data-swup-reload-script src="https://cn.vercount.one/js"></script>
+            <div class="relative text-center lg:absolute lg:right-[20px] lg:top-1/2 lg:-translate-y-1/2 lg:text-right">
+                
+                    <span id="busuanzi_container_site_uv" class="lg:!block">
+                        <span class="text-sm">访问人数</span>
+                        <span id="busuanzi_value_site_uv"></span>
+                    </span>
+                
+                
+                    <span id="busuanzi_container_site_pv" class="lg:!block">
+                        <span class="text-sm">总访问量</span>
+                        <span id="busuanzi_value_site_pv"></span>
+                    </span>
+                
+            </div>
+        
+        <div class="relative text-center lg:absolute lg:left-[20px] lg:top-1/2 lg:-translate-y-1/2 lg:text-left">
+            <span class="lg:block text-sm">由 <?xml version="1.0" encoding="utf-8"?><!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"><svg class="relative top-[2px] inline-block align-baseline" version="1.1" id="圖層_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="1rem" height="1rem" viewBox="0 0 512 512" enable-background="new 0 0 512 512" xml:space="preserve"><path fill="#0E83CD" d="M256.4,25.8l-200,115.5L56,371.5l199.6,114.7l200-115.5l0.4-230.2L256.4,25.8z M349,354.6l-18.4,10.7l-18.6-11V275H200v79.6l-18.4,10.7l-18.6-11v-197l18.5-10.6l18.5,10.8V237h112v-79.6l18.5-10.6l18.5,10.8V354.6z"/></svg><a target="_blank" class="text-base" href="https://hexo.io">Hexo</a> 驱动</span>
+            <span class="text-sm lg:block">主题&nbsp;<a class="text-base" target="_blank" href="https://github.com/EvanNotFound/hexo-theme-redefine">Redefine v2.6.4</a></span>
+        </div>
+        
+        
+        
+        
+        
+    </div>  
+</footer>
+        </div>
+    </div>
+
+    
+        <div class="post-tools">
+            <div class="post-tools-container">
+    <ul class="article-tools-list">
+        <!-- TOC aside toggle -->
+        
+            <li class="right-bottom-tools page-aside-toggle">
+                <i class="fa-regular fa-outdent"></i>
+            </li>
+        
+
+        <!-- go comment -->
+        
+    </ul>
+</div>
+
+        </div>
+    
+
+    <div class="right-side-tools-container">
+        <div class="side-tools-container">
+    <ul class="hidden-tools-list">
+        <li class="right-bottom-tools tool-font-adjust-plus flex justify-center items-center">
+            <i class="fa-regular fa-magnifying-glass-plus"></i>
+        </li>
+
+        <li class="right-bottom-tools tool-font-adjust-minus flex justify-center items-center">
+            <i class="fa-regular fa-magnifying-glass-minus"></i>
+        </li>
+
+        <li class="right-bottom-tools tool-dark-light-toggle flex justify-center items-center">
+            <i class="fa-regular fa-moon"></i>
+        </li>
+
+        <!-- rss -->
+        
+
+        
+
+        <li class="right-bottom-tools tool-scroll-to-bottom flex justify-center items-center">
+            <i class="fa-regular fa-arrow-down"></i>
+        </li>
+    </ul>
+
+    <ul class="visible-tools-list">
+        <li class="right-bottom-tools toggle-tools-list flex justify-center items-center">
+            <i class="fa-regular fa-cog fa-spin"></i>
+        </li>
+        
+            <li class="right-bottom-tools tool-scroll-to-top flex justify-center items-center">
+                <i class="arrow-up fas fa-arrow-up"></i>
+                <span class="percent"></span>
+            </li>
+        
+        
+    </ul>
+</div>
+
+    </div>
+
+    <div class="image-viewer-container">
+    <img src="">
+</div>
+
+
+    
+        <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+          <span class="search-input-field-pre">
+            <i class="fa-solid fa-keyboard"></i>
+          </span>
+            <div class="search-input-container">
+                <input autocomplete="off"
+                       autocorrect="off"
+                       autocapitalize="off"
+                       placeholder="搜索..."
+                       spellcheck="false"
+                       type="search"
+                       class="search-input"
+                >
+            </div>
+            <span class="popup-btn-close">
+                <i class="fa-solid fa-times"></i>
+            </span>
+        </div>
+        <div id="search-result">
+            <div id="no-result">
+                <i class="fa-solid fa-spinner fa-spin-pulse fa-5x fa-fw"></i>
+            </div>
+        </div>
+    </div>
+</div>
+
+    
+
+</main>
+
+
+    
+<script src="/js/libs/Swup.min.js"></script>
+
+<script src="/js/libs/SwupSlideTheme.min.js"></script>
+
+<script src="/js/libs/SwupScriptsPlugin.min.js"></script>
+
+<script src="/js/libs/SwupProgressPlugin.min.js"></script>
+
+<script src="/js/libs/SwupScrollPlugin.min.js"></script>
+
+<script src="/js/libs/SwupPreloadPlugin.min.js"></script>
+
+<script>
+    const swup = new Swup({
+        plugins: [
+            new SwupScriptsPlugin({
+                optin: true,
+            }),
+            new SwupProgressPlugin(),
+            new SwupScrollPlugin({
+                offset: 80,
+            }),
+            new SwupSlideTheme({
+                mainElement: ".main-content-body",
+            }),
+            new SwupPreloadPlugin(),
+        ],
+        containers: ["#swup"],
+    });
+</script>
+
+
+
+
+
+
+
+<script src="/js/tools/imageViewer.js" type="module"></script>
+
+<script src="/js/utils.js" type="module"></script>
+
+<script src="/js/main.js" type="module"></script>
+
+<script src="/js/layouts/navbarShrink.js" type="module"></script>
+
+<script src="/js/tools/scrollTopBottom.js" type="module"></script>
+
+<script src="/js/tools/lightDarkSwitch.js" type="module"></script>
+
+<script src="/js/layouts/categoryList.js" type="module"></script>
+
+
+
+    
+<script src="/js/tools/localSearch.js" type="module"></script>
+
+
+
+
+    
+<script src="/js/tools/codeBlock.js" type="module"></script>
+
+
+
+
+    
+<script src="/js/layouts/lazyload.js" type="module"></script>
+
+
+
+
+
+
+  
+<script src="/js/libs/Typed.min.js"></script>
+
+  
+<script src="/js/plugins/typed.js" type="module"></script>
+
+
+
+
+
+
+
+
+
+<div class="post-scripts" data-swup-reload-script>
+    
+        
+<script src="/js/tools/tocToggle.js" type="module"></script>
+
+<script src="/js/layouts/toc.js" type="module"></script>
+
+<script src="/js/plugins/tabs.js" type="module"></script>
+
+    
+</div>
+
+
+</body>
+</html>

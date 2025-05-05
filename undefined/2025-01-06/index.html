@@ -1,0 +1,982 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="keywords" content="Hexo Theme Redefine">
+    
+    <meta name="author" content="Yuyang">
+    <!-- preconnect -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    
+    <!--- Seo Part-->
+    
+    <link rel="canonical" href="https://github.com/YuZeZhang/YuZeZhang.github.io/undefined/2025-01-06/"/>
+    <meta name="robots" content="index,follow">
+    <meta name="googlebot" content="index,follow">
+    <meta name="revisit-after" content="1 days">
+    
+        <meta name="description" content="今日的鸡汤                  生活无关他人，只有你是自己人生的主角，与其取悦别人，不如好好爱自己。           今日学习内容1、JS 红皮书 P183-189 第六章：集合引用类型 今日笔记1、在软件开发领域，“迭代”的意思是按照顺序反复多次执行一段程序，通常会有明确的终止条件。ECMAScript 6 规范新增了两个高级特性：迭代器和生成器。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="2025-01-06 日报 Day58">
+<meta property="og:url" content="https://github.com/YuZeZhang/YuZeZhang.github.io/undefined/2025-01-06/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="今日的鸡汤                  生活无关他人，只有你是自己人生的主角，与其取悦别人，不如好好爱自己。           今日学习内容1、JS 红皮书 P183-189 第六章：集合引用类型 今日笔记1、在软件开发领域，“迭代”的意思是按照顺序反复多次执行一段程序，通常会有明确的终止条件。ECMAScript 6 规范新增了两个高级特性：迭代器和生成器。">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2025-01-05T16:00:00.000Z">
+<meta property="article:modified_time" content="2025-03-31T17:55:23.481Z">
+<meta property="article:author" content="Yuyang">
+<meta property="article:tag" content="journal">
+<meta name="twitter:card" content="summary">
+    
+    
+    <!--- Icon Part-->
+    <link rel="icon" type="image/png" href="https://raw.githubusercontent.com/YuZeZhang/myImgslib/main/202406232019880.png" sizes="192x192">
+    <link rel="apple-touch-icon" sizes="180x180" href="https://raw.githubusercontent.com/YuZeZhang/myImgslib/main/202406232019880.png">
+    <meta name="theme-color" content="#A31F34">
+    <link rel="shortcut icon" href="https://raw.githubusercontent.com/YuZeZhang/myImgslib/main/202406232019880.png">
+    <!--- Page Info-->
+    
+    <title>
+        
+            2025-01-06 日报 Day58 -
+        
+        Welcome to Yuyang&#39;s Blog
+    </title>
+
+    
+<link rel="stylesheet" href="/fonts/Chillax/chillax.css">
+
+
+    <!--- Inject Part-->
+    
+
+    
+<link rel="stylesheet" href="/css/style.css">
+
+
+    
+        
+<link rel="stylesheet" href="/assets/build/styles.css">
+
+    
+
+    
+<link rel="stylesheet" href="/fonts/GeistMono/geist-mono.css">
+
+    
+<link rel="stylesheet" href="/fonts/Geist/geist.css">
+
+    <!--- Font Part-->
+    
+    
+    
+    
+
+    
+        
+<script src="/js/libs/anime.min.js"></script>
+
+    
+
+    <script id="hexo-configurations">
+    window.config = {"hostname":"github.com","root":"/","language":"zh-CN","path":"search.xml"};
+    window.theme = {"articles":{"style":{"font_size":"16px","line_height":1.5,"image_border_radius":"14px","image_alignment":"center","image_caption":false,"link_icon":true,"title_alignment":"left","headings_top_spacing":{"h1":"3.2rem","h2":"2.4rem","h3":"1.9rem","h4":"1.6rem","h5":"1.4rem","h6":"1.3rem"}},"word_count":{"enable":true,"count":true,"min2read":true},"author_label":{"enable":true,"auto":false,"list":["前端小白🥬"]},"code_block":{"copy":true,"style":"mac","font":{"enable":false,"family":null,"url":null}},"toc":{"enable":true,"max_depth":3,"number":false,"expand":true,"init_open":true},"copyright":{"enable":false,"default":"cc_by_nc_sa"},"lazyload":true,"recommendation":{"enable":false,"title":"推荐阅读","limit":3,"mobile_limit":2,"placeholder":"/images/wallhaven-wqery6-light.webp","skip_dirs":[]}},"colors":{"primary":"#A31F34","secondary":null,"default_mode":"light"},"global":{"fonts":{"chinese":{"enable":false,"family":null,"url":null},"english":{"enable":false,"family":null,"url":null}},"content_max_width":"1000px","sidebar_width":"210px","hover":{"shadow":true,"scale":false},"scroll_progress":{"bar":true,"percentage":true},"website_counter":{"url":"https://cn.vercount.one/js","enable":true,"site_pv":true,"site_uv":true,"post_pv":true},"single_page":true,"preloader":true,"open_graph":true,"google_analytics":{"enable":false,"id":null}},"home_banner":{"enable":true,"style":"fixed","image":{"light":"/images/wallhaven-wqery6-light.webp","dark":"/images/wallhaven-wqery6-dark.webp"},"title":"Yuyang's Blog","subtitle":{"text":["马无夜草不肥，人无横财不富","富贵险中求"],"hitokoto":{"enable":false,"api":"https://v1.hitokoto.cn"},"typing_speed":100,"backing_speed":80,"starting_delay":500,"backing_delay":1500,"loop":true,"smart_backspace":true},"text_color":{"light":"#fff","dark":"#d1d1b6"},"text_style":{"title_size":"2.8rem","subtitle_size":"1.5rem","line_height":1.2},"custom_font":{"enable":false,"family":null,"url":null},"social_links":{"enable":false,"style":"default","links":{"github":null,"instagram":null,"zhihu":null,"twitter":null,"email":null},"qrs":{"weixin":null}}},"plugins":{"feed":{"enable":false},"aplayer":{"enable":false,"type":"fixed","audios":[{"name":null,"artist":null,"url":null,"cover":null,"lrc":null}]},"mermaid":{"enable":false,"version":"9.3.0"}},"version":"2.6.4","navbar":{"auto_hide":false,"color":{"left":"#f78736","right":"#367df7","transparency":35},"width":{"home":"1200px","pages":"1000px"},"links":{"Home":{"path":"/","icon":"fa-regular fa-house"},"GitHub":{"path":"https://github.com/YuZeZhang","icon":"fa-brands fa-github"},"CSDN":{"path":"https://blog.csdn.net/weixin_57301463","icon":"fa-solid fa-rocket-launch"}},"search":{"enable":true,"preload":true},"tags":{"Tags":{"icon":"fa-solid fa-tags","path":"/tags/"}},"Categories":{"path":"/categories/","icon":"fa-solid fa-folder"}},"page_templates":{"friends_column":2,"tags_style":"blur"},"home":{"sidebar":{"enable":true,"position":"left","first_item":"menu","announcement":null,"show_on_mobile":true,"links":{"Archives":{"path":"/archives","icon":"fa-regular fa-archive"},"Tags":{"path":"/tags","icon":"fa-regular fa-tags"},"Categories":{"path":"/categories","icon":"fa-regular fa-folder"}}},"article_date_format":"auto","categories":{"enable":true,"limit":3},"tags":{"enable":true,"limit":3}},"footerStart":"2022/8/17 11:45:14"};
+    window.lang_ago = {"second":"%s 秒前","minute":"%s 分钟前","hour":"%s 小时前","day":"%s 天前","week":"%s 周前","month":"%s 个月前","year":"%s 年前"};
+    window.data = {"masonry":false};
+  </script>
+    
+    <!--- Fontawesome Part-->
+    
+<link rel="stylesheet" href="/fontawesome/fontawesome.min.css">
+
+    
+<link rel="stylesheet" href="/fontawesome/brands.min.css">
+
+    
+<link rel="stylesheet" href="/fontawesome/solid.min.css">
+
+    
+<link rel="stylesheet" href="/fontawesome/regular.min.css">
+
+    
+        
+<link rel="stylesheet" href="/fontawesome/thin.min.css">
+
+    
+    
+        
+<link rel="stylesheet" href="/fontawesome/light.min.css">
+
+    
+    
+        
+<link rel="stylesheet" href="/fontawesome/duotone.min.css">
+
+    
+    
+        
+<link rel="stylesheet" href="/fontawesome/sharp-solid.min.css">
+
+    
+<meta name="generator" content="Hexo 7.2.0"></head>
+
+
+<body>
+<div class="progress-bar-container">
+    
+        <span class="scroll-progress-bar"></span>
+    
+
+    
+        <span class="pjax-progress-bar"></span>
+<!--        <span class="swup-progress-icon">-->
+<!--            <i class="fa-solid fa-circle-notch fa-spin"></i>-->
+<!--        </span>-->
+    
+</div>
+
+
+
+    <style>
+    :root {
+        --preloader-background-color: #fff;
+        --preloader-text-color: #000;
+    }
+
+    @media (prefers-color-scheme: dark) {
+        :root {
+            --preloader-background-color: #202124;
+            --preloader-text-color: #fff;
+        }
+    }
+
+    @media (prefers-color-scheme: light) {
+        :root {
+            --preloader-background-color: #fff;
+            --preloader-text-color: #000;
+        }
+    }
+
+    @media (max-width: 600px) {
+        .ml13 {
+            font-size: 2.6rem !important; /* Adjust this value as needed */
+        }
+    }
+
+    .preloader {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem; /* Tailwind 'gap-4' is 1rem */
+        align-items: center;
+        justify-content: center;
+        position: fixed;
+        padding: 12px;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh; /* 'h-screen' is 100% of the viewport height */
+        background-color: var(--preloader-background-color);
+        z-index: 1100; /* 'z-[1100]' sets the z-index */
+        transition: opacity 0.2s ease-in-out;
+    }
+
+    .ml13 {
+        font-size: 3.2rem;
+        /* text-transform: uppercase; */
+        color: var(--preloader-text-color);
+        letter-spacing: -1px;
+        font-weight: 500;
+        font-family: 'Chillax-Variable', sans-serif;
+        text-align: center;
+    }
+
+    .ml13 .word {
+        display: inline-flex;
+        flex-wrap: wrap;
+        white-space: nowrap;
+    }
+
+    .ml13 .letter {
+        display: inline-block;
+        line-height: 1em;
+    }
+</style>
+
+<div class="preloader">
+    <h2 class="ml13">
+        Welcome to Yuyang&#39;s Blog
+    </h2>
+    <script>
+        var textWrapper = document.querySelector('.ml13');
+        // Split text into words
+        var words = textWrapper.textContent.trim().split(' ');
+
+        // Clear the existing content
+        textWrapper.innerHTML = '';
+
+        // Wrap each word and its letters in spans
+        words.forEach(function(word) {
+            var wordSpan = document.createElement('span');
+            wordSpan.classList.add('word');
+            wordSpan.innerHTML = word.replace(/\S/g, "<span class='letter'>$&</span>");
+            textWrapper.appendChild(wordSpan);
+            textWrapper.appendChild(document.createTextNode(' ')); // Add space between words
+        });
+
+        var animation = anime.timeline({loop: true})
+            .add({
+                targets: '.ml13 .letter',
+                translateY: [40,0],
+                translateZ: 0,
+                opacity: [0,1],
+                filter: ['blur(5px)', 'blur(0px)'], // Starting from blurred to unblurred
+                easing: "easeOutExpo",
+                duration: 1400,
+                delay: (el, i) => 300 + 30 * i,
+            }).add({
+                targets: '.ml13 .letter',
+                translateY: [0,-40],
+                opacity: [1,0],
+                filter: ['blur(0px)', 'blur(5px)'], // Ending from unblurred to blurred
+                easing: "easeInExpo",
+                duration: 1200,
+                delay: (el, i) => 100 + 30 * i,
+                complete: function() {
+                    hidePreloader(); // Call hidePreloader after the animation completes
+                }
+            });
+
+        let themeStatus = JSON.parse(localStorage.getItem('REDEFINE-THEME-STATUS'))?.isDark;
+
+        // If the theme status is not found in local storage, check the preferred color scheme
+        if (themeStatus === undefined || themeStatus === null) {
+            if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+                themeStatus = 'dark';
+            } else {
+                themeStatus = 'light';
+            }
+        }
+
+        // Now you can use the themeStatus variable in your code
+        if (themeStatus) {
+            document.documentElement.style.setProperty('--preloader-background-color', '#202124');
+            document.documentElement.style.setProperty('--preloader-text-color', '#fff');
+        } else {
+            document.documentElement.style.setProperty('--preloader-background-color', '#fff');
+            document.documentElement.style.setProperty('--preloader-text-color', '#000');
+        }
+
+        window.addEventListener('load', function () {
+            setTimeout(hidePreloader, 5000); // Call hidePreloader after 5000 milliseconds if not already called by animation
+        });
+
+        function hidePreloader() {
+            var preloader = document.querySelector('.preloader');
+            preloader.style.opacity = '0';
+            setTimeout(function () {
+                preloader.style.display = 'none';
+            }, 200);
+        }
+    </script>
+</div>
+
+<main class="page-container" id="swup">
+
+    
+
+    <div class="main-content-container">
+
+
+        <div class="main-content-header">
+            <header class="navbar-container px-6 md:px-12">
+
+    <div class="navbar-content ">
+        <div class="left">
+            
+            <a class="logo-title" href="/">
+                
+                Welcome to Yuyang&#39;s Blog
+                
+            </a>
+        </div>
+
+        <div class="right">
+            <!-- PC -->
+            <div class="desktop">
+                <ul class="navbar-list">
+                    
+                        
+                            
+
+                            <li class="navbar-item">
+                                <!-- Menu -->
+                                <a class=""
+                                   href="/"
+                                        >
+                                    <i class="fa-regular fa-house fa-fw"></i>
+                                    首页
+                                    
+                                </a>
+
+                                <!-- Submenu -->
+                                
+                            </li>
+                    
+                        
+                            
+
+                            <li class="navbar-item">
+                                <!-- Menu -->
+                                <a class=""
+                                   href="https://github.com/YuZeZhang"
+                                        >
+                                    <i class="fa-brands fa-github fa-fw"></i>
+                                    GITHUB
+                                    
+                                </a>
+
+                                <!-- Submenu -->
+                                
+                            </li>
+                    
+                        
+                            
+
+                            <li class="navbar-item">
+                                <!-- Menu -->
+                                <a class=""
+                                   target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_57301463"
+                                        >
+                                    <i class="fa-solid fa-rocket-launch fa-fw"></i>
+                                    CSDN
+                                    
+                                </a>
+
+                                <!-- Submenu -->
+                                
+                            </li>
+                    
+                    
+                        <li class="navbar-item search search-popup-trigger">
+                            <i class="fa-solid fa-magnifying-glass"></i>
+                        </li>
+                    
+                </ul>
+            </div>
+            <!-- Mobile -->
+            <div class="mobile">
+                
+                    <div class="icon-item search search-popup-trigger"><i class="fa-solid fa-magnifying-glass"></i>
+                    </div>
+                
+                <div class="icon-item navbar-bar">
+                    <div class="navbar-bar-middle"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Mobile sheet -->
+    <div class="navbar-drawer h-screen w-full absolute top-0 left-0 bg-background-color flex flex-col justify-between">
+        <ul class="drawer-navbar-list flex flex-col px-4 justify-center items-start">
+            
+                
+                    
+
+                    <li class="drawer-navbar-item text-base my-1.5 flex flex-col w-full">
+                        
+                        <a class="py-1.5 px-2 flex flex-row items-center justify-between gap-1 hover:!text-primary active:!text-primary text-2xl font-semibold group border-b border-border-color hover:border-primary w-full "
+                           href="/"
+                        >
+                            <span>
+                                首页
+                            </span>
+                            
+                                <i class="fa-regular fa-house fa-sm fa-fw"></i>
+                            
+                        </a>
+                        
+
+                        
+                    </li>
+            
+                
+                    
+
+                    <li class="drawer-navbar-item text-base my-1.5 flex flex-col w-full">
+                        
+                        <a class="py-1.5 px-2 flex flex-row items-center justify-between gap-1 hover:!text-primary active:!text-primary text-2xl font-semibold group border-b border-border-color hover:border-primary w-full "
+                           href="https://github.com/YuZeZhang"
+                        >
+                            <span>
+                                GITHUB
+                            </span>
+                            
+                                <i class="fa-brands fa-github fa-sm fa-fw"></i>
+                            
+                        </a>
+                        
+
+                        
+                    </li>
+            
+                
+                    
+
+                    <li class="drawer-navbar-item text-base my-1.5 flex flex-col w-full">
+                        
+                        <a class="py-1.5 px-2 flex flex-row items-center justify-between gap-1 hover:!text-primary active:!text-primary text-2xl font-semibold group border-b border-border-color hover:border-primary w-full "
+                           target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_57301463"
+                        >
+                            <span>
+                                CSDN
+                            </span>
+                            
+                                <i class="fa-solid fa-rocket-launch fa-sm fa-fw"></i>
+                            
+                        </a>
+                        
+
+                        
+                    </li>
+            
+
+            
+            
+                
+                    
+                    <li class="drawer-navbar-item text-base my-1.5 flex flex-col w-full">
+                        <a class="py-1.5 px-2 flex flex-row items-center justify-between gap-1 hover:!text-primary active:!text-primary text-2xl font-semibold group border-b border-border-color hover:border-primary w-full active"
+                           href="/archives"
+                        >
+                            <span>Archives</span>
+                            <i class="fa-regular fa-archive fa-sm fa-fw"></i>
+                        </a>
+                    </li>
+                
+                    
+                    <li class="drawer-navbar-item text-base my-1.5 flex flex-col w-full">
+                        <a class="py-1.5 px-2 flex flex-row items-center justify-between gap-1 hover:!text-primary active:!text-primary text-2xl font-semibold group border-b border-border-color hover:border-primary w-full active"
+                           href="/tags"
+                        >
+                            <span>Tags</span>
+                            <i class="fa-regular fa-tags fa-sm fa-fw"></i>
+                        </a>
+                    </li>
+                
+                    
+                    <li class="drawer-navbar-item text-base my-1.5 flex flex-col w-full">
+                        <a class="py-1.5 px-2 flex flex-row items-center justify-between gap-1 hover:!text-primary active:!text-primary text-2xl font-semibold group border-b border-border-color hover:border-primary w-full active"
+                           href="/categories"
+                        >
+                            <span>Categories</span>
+                            <i class="fa-regular fa-folder fa-sm fa-fw"></i>
+                        </a>
+                    </li>
+                
+            
+        </ul>
+
+        <div class="statistics flex justify-around my-2.5">
+    <a class="item tag-count-item flex flex-col justify-center items-center w-20" href="/tags">
+        <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">3</div>
+        <div class="label text-third-text-color text-sm">标签</div>
+    </a>
+    <a class="item tag-count-item flex flex-col justify-center items-center w-20" href="/categories">
+        <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">2</div>
+        <div class="label text-third-text-color text-sm">分类</div>
+    </a>
+    <a class="item tag-count-item flex flex-col justify-center items-center w-20" href="/archives">
+        <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">159</div>
+        <div class="label text-third-text-color text-sm">文章</div>
+    </a>
+</div>
+    </div>
+
+    <div class="window-mask"></div>
+
+</header>
+
+
+        </div>
+
+        <div class="main-content-body">
+
+            
+
+            <div class="main-content">
+
+                
+                    <div class="post-page-container flex relative justify-between box-border w-full h-full">
+    <div class="article-content-container">
+
+        <div class="article-title relative w-full">
+            
+                
+                
+                <img src="https://raw.githubusercontent.com/YuZeZhang/myImgslib/main/202503072239946.jpeg" alt="2025-01-06 日报 Day58" class="w-full h-60 sm:h-72 md:h-80 object-cover sm:rounded-t-large dark:brightness-75"/>
+                
+                <div class="w-full flex items-center absolute bottom-0 justify-start">
+                    <h1 class="article-title-cover text-center mx-6 my-6 text-second-text-color bg-background-color-transparent px-4 py-3 text-3xl sm:text-4xl md:text-5xl font-semibold backdrop-blur-lg rounded-xl border border-border-color ">2025-01-06 日报 Day58</h1>
+                </div>
+            
+            </div>
+
+        
+            <div class="article-header flex flex-row gap-2 items-center px-2 sm:px-6 md:px-8">
+                <div class="avatar w-[46px] h-[46px] flex-shrink-0 rounded-medium border border-border-color p-[1px]">
+                    <img src="https://raw.githubusercontent.com/YuZeZhang/myImgslib/main/202406232019880.png">
+                </div>
+                <div class="info flex flex-col justify-between">
+                    <div class="author flex items-center">
+                        <span class="name text-default-text-color text-lg font-semibold">Yuyang</span>
+                        
+                            <span class="author-label ml-1.5 text-xs px-2 py-0.5 rounded-small text-third-text-color border border-shadow-color-1">前端小白🥬</span>
+                        
+                    </div>
+                    <div class="meta-info">
+                        <div class="article-meta-info">
+    <span class="article-date article-meta-item">
+        <i class="fa-regular fa-pen-fancy"></i>&nbsp;
+        <span class="desktop">2025-01-06</span>
+        <span class="mobile">2025-01-06</span>
+        <span class="hover-info">创建</span>
+    </span>
+    
+        <span class="article-date article-meta-item">
+            <i class="fa-regular fa-wrench"></i>&nbsp;
+            <span class="desktop">2025-04-01 01:55:23</span>
+            <span class="mobile">2025-04-01 01:55:23</span>
+            <span class="hover-info">更新</span>
+        </span>
+    
+
+    
+        <span class="article-categories article-meta-item">
+            <i class="fa-regular fa-folders"></i>&nbsp;
+            <ul>
+                
+                
+                    
+                        
+                        <li>
+                            <a href="/categories/journal/">journal</a>&nbsp;
+                        </li>
+                    
+                    
+                
+            </ul>
+        </span>
+    
+    
+        <span class="article-tags article-meta-item">
+            <i class="fa-regular fa-tags"></i>&nbsp;
+            <ul>
+                
+                    <li>
+                        <a href="/tags/journal/">journal</a>&nbsp;
+                    </li>
+                
+            </ul>
+        </span>
+    
+
+    
+    
+    
+    
+        <span class="article-pv article-meta-item">
+            <i class="fa-regular fa-eye"></i>&nbsp;<span id="busuanzi_value_page_pv"></span>
+        </span>
+    
+</div>
+
+                    </div>
+                </div>
+            </div>
+        
+
+        
+
+
+        <div class="article-content markdown-body px-2 sm:px-6 md:px-8 pb-8">
+            
+  <div class="note-large red">
+    <div class="notel-title rounded-t-lg p-3 font-bold text-lg flex flex-row gap-2 items-center">
+      <p>今日的鸡汤</p>
+
+    </div>
+    <div class="notel-content">
+      <p>生活无关他人，只有你是自己人生的主角，与其取悦别人，不如好好爱自己。</p>
+
+    </div>
+  </div>
+
+<h3 id="今日学习内容"><a href="#今日学习内容" class="headerlink" title="今日学习内容"></a>今日学习内容</h3><p>1、JS 红皮书 P183-189 第六章：集合引用类型</p>
+<h3 id="今日笔记"><a href="#今日笔记" class="headerlink" title="今日笔记"></a>今日笔记</h3><p>1、在软件开发领域，“迭代”的意思是按照顺序反复多次执行一段程序，通常会有明确的终止条件。ECMAScript 6 规范新增了两个高级特性：迭代器和生成器。使用这两个特性，能够更清晰、高效、方便地实现迭代。<br>在 JavaScript 中，计数循环就是一种最简单的迭代：</p>
+<div class="highlight-container" data-rel="Js"><figure class="iseeu highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">1</span>; i &lt;= <span class="number">10</span>; ++i) &#123; </span><br><span class="line"> <span class="variable language_">console</span>.<span class="title function_">log</span>(i); </span><br><span class="line">&#125; </span><br></pre></td></tr></table></figure></div>
+<p>循环是迭代机制的基础，这是因为它可以指定迭代的次数，以及每次迭代要执行什么操作。每次循环都会在下一次迭代开始之前完成，而每次迭代的顺序都是事先定义好的。<br>迭代会在一个有序集合上进行。（“有序”可以理解为集合中所有项都可以按照既定的顺序被遍历到，特别是开始和结束项有明确的定义。）数组是 JavaScript 中有序集合的最典型例子。</p>
+<div class="highlight-container" data-rel="Js"><figure class="iseeu highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> collection = [<span class="string">&#x27;foo&#x27;</span>, <span class="string">&#x27;bar&#x27;</span>, <span class="string">&#x27;baz&#x27;</span>]; </span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">let</span> index = <span class="number">0</span>; index &lt; collection.<span class="property">length</span>; ++index) &#123; </span><br><span class="line"> <span class="variable language_">console</span>.<span class="title function_">log</span>(collection[index]); </span><br><span class="line">&#125; </span><br></pre></td></tr></table></figure></div>
+<p>因为数组有已知的长度，且数组每一项都可以通过索引获取，所以整个数组可以通过递增索引来遍历。由于如下原因，通过这种循环来执行例程并不理想。<br> 迭代之前需要事先知道如何使用数据结构。数组中的每一项都只能先通过引用取得数组对象，然后再通过[]操作符取得特定索引位置上的项。这种情况并不适用于所有数据结构。<br> 遍历顺序并不是数据结构固有的。通过递增索引来访问数据是特定于数组类型的方式，并不适用于其他具有隐式顺序的数据结构。<br>ES5 新增了 Array.prototype.forEach()方法，向通用迭代需求迈进了一步（但仍然不够理想）：</p>
+<div class="highlight-container" data-rel="Js"><figure class="iseeu highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> collection = [<span class="string">&#x27;foo&#x27;</span>, <span class="string">&#x27;bar&#x27;</span>, <span class="string">&#x27;baz&#x27;</span>]; </span><br><span class="line">collection.<span class="title function_">forEach</span>(<span class="function">(<span class="params">item</span>) =&gt;</span> <span class="variable language_">console</span>.<span class="title function_">log</span>(item));</span><br><span class="line"><span class="comment">// foo </span></span><br><span class="line"><span class="comment">// bar </span></span><br><span class="line"><span class="comment">// baz</span></span><br></pre></td></tr></table></figure></div>
+<p>这个方法解决了单独记录索引和通过数组对象取得值的问题。不过，没有办法标识迭代何时终止。因此这个方法只适用于数组，而且回调结构也比较笨拙。<br>在 ECMAScript 较早的版本中，执行迭代必须使用循环或其他辅助结构。随着代码量增加，代码会变得越发混乱。很多语言都通过原生语言结构解决了这个问题，开发者无须事先知道如何迭代就能实现迭代操作。这个解决方案就是迭代器模式。Python、Java、C++，还有其他很多语言都对这个模式提供了完备的支持。JavaScript 在 ECMAScript 6 以后也支持了迭代器模式。<br>2、迭代器模式（特别是在 ECMAScript 这个语境下）描述了一个方案，即可以把有些结构称为“可迭代对象”（iterable），因为它们实现了正式的 Iterable 接口，而且可以通过迭代器 Iterator 消费。<br>可迭代对象是一种抽象的说法。基本上，可以把可迭代对象理解成数组或集合这样的集合类型的对象。它们包含的元素都是有限的，而且都具有无歧义的遍历顺序：</p>
+<div class="highlight-container" data-rel="Js"><figure class="iseeu highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 数组的元素是有限的</span></span><br><span class="line"><span class="comment">// 递增索引可以按序访问每个元素</span></span><br><span class="line"><span class="keyword">let</span> arr = [<span class="number">3</span>, <span class="number">1</span>, <span class="number">4</span>]; </span><br><span class="line"><span class="comment">// 集合的元素是有限的</span></span><br><span class="line"><span class="comment">// 可以按插入顺序访问每个元素</span></span><br><span class="line"><span class="keyword">let</span> set = <span class="keyword">new</span> <span class="title class_">Set</span>().<span class="title function_">add</span>(<span class="number">3</span>).<span class="title function_">add</span>(<span class="number">1</span>).<span class="title function_">add</span>(<span class="number">4</span>);</span><br></pre></td></tr></table></figure></div>
+<p>任何实现 Iterable 接口的数据结构都可以被实现 Iterator 接口的结构“消费”（consume）。<br>2、实现 Iterable 接口（可迭代协议）要求同时具备两种能力：支持迭代的自我识别能力和创建实现Iterator 接口的对象的能力。在 ECMAScript 中，这意味着必须暴露一个属性作为“默认迭代器”，而且这个属性必须使用特殊的 Symbol.iterator 作为键。这个默认迭代器属性必须引用一个迭代器工厂函数，调用这个工厂函数必须返回一个新迭代器。<br>很多内置类型都实现了 Iterable 接口：<br> 字符串<br> 数组<br> 映射<br> 集合<br> arguments 对象<br> NodeList 等 DOM 集合类型<br>检查是否存在默认迭代器属性可以暴露这个工厂函数：</p>
+<div class="highlight-container" data-rel="Js"><figure class="iseeu highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> num = <span class="number">1</span>; </span><br><span class="line"><span class="keyword">let</span> obj = &#123;&#125;; </span><br><span class="line"><span class="comment">// 这两种类型没有实现迭代器工厂函数</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(num[<span class="title class_">Symbol</span>.<span class="property">iterator</span>]); <span class="comment">// undefined </span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(obj[<span class="title class_">Symbol</span>.<span class="property">iterator</span>]); <span class="comment">// undefined </span></span><br><span class="line"><span class="keyword">let</span> str = <span class="string">&#x27;abc&#x27;</span>; </span><br><span class="line"><span class="keyword">let</span> arr = [<span class="string">&#x27;a&#x27;</span>, <span class="string">&#x27;b&#x27;</span>, <span class="string">&#x27;c&#x27;</span>]; </span><br><span class="line"><span class="keyword">let</span> map = <span class="keyword">new</span> <span class="title class_">Map</span>().<span class="title function_">set</span>(<span class="string">&#x27;a&#x27;</span>, <span class="number">1</span>).<span class="title function_">set</span>(<span class="string">&#x27;b&#x27;</span>, <span class="number">2</span>).<span class="title function_">set</span>(<span class="string">&#x27;c&#x27;</span>, <span class="number">3</span>); </span><br><span class="line"><span class="keyword">let</span> set = <span class="keyword">new</span> <span class="title class_">Set</span>().<span class="title function_">add</span>(<span class="string">&#x27;a&#x27;</span>).<span class="title function_">add</span>(<span class="string">&#x27;b&#x27;</span>).<span class="title function_">add</span>(<span class="string">&#x27;c&#x27;</span>); </span><br><span class="line"><span class="keyword">let</span> els = <span class="variable language_">document</span>.<span class="title function_">querySelectorAll</span>(<span class="string">&#x27;div&#x27;</span>); </span><br><span class="line"><span class="comment">// 这些类型都实现了迭代器工厂函数</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(str[<span class="title class_">Symbol</span>.<span class="property">iterator</span>]); <span class="comment">// f values() &#123; [native code] &#125; </span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(arr[<span class="title class_">Symbol</span>.<span class="property">iterator</span>]); <span class="comment">// f values() &#123; [native code] &#125; </span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(map[<span class="title class_">Symbol</span>.<span class="property">iterator</span>]); <span class="comment">// f values() &#123; [native code] &#125; </span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(set[<span class="title class_">Symbol</span>.<span class="property">iterator</span>]); <span class="comment">// f values() &#123; [native code] &#125; </span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(els[<span class="title class_">Symbol</span>.<span class="property">iterator</span>]); <span class="comment">// f values() &#123; [native code] &#125; </span></span><br><span class="line"><span class="comment">// 调用这个工厂函数会生成一个迭代器</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(str[<span class="title class_">Symbol</span>.<span class="property">iterator</span>]()); <span class="comment">// StringIterator &#123;&#125; </span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(arr[<span class="title class_">Symbol</span>.<span class="property">iterator</span>]()); <span class="comment">// ArrayIterator &#123;&#125; </span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(map[<span class="title class_">Symbol</span>.<span class="property">iterator</span>]()); <span class="comment">// MapIterator &#123;&#125; </span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(set[<span class="title class_">Symbol</span>.<span class="property">iterator</span>]()); <span class="comment">// SetIterator &#123;&#125; </span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(els[<span class="title class_">Symbol</span>.<span class="property">iterator</span>]()); <span class="comment">// ArrayIterator &#123;&#125;</span></span><br></pre></td></tr></table></figure></div>
+<p>实际写代码过程中，不需要显式调用这个工厂函数来生成迭代器。实现可迭代协议的所有类型都会自动兼容接收可迭代对象的任何语言特性。接收可迭代对象的原生语言特性包括：<br> for-of 循环<br> 数组解构<br> 扩展操作符<br> Array.from()<br> 创建集合<br> 创建映射<br> Promise.all()接收由期约组成的可迭代对象<br> Promise.race()接收由期约组成的可迭代对象<br> yield*操作符，在生成器中使用</p>
+<div class="highlight-container" data-rel="Js"><figure class="iseeu highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> arr = [<span class="string">&#x27;foo&#x27;</span>, <span class="string">&#x27;bar&#x27;</span>, <span class="string">&#x27;baz&#x27;</span>]; </span><br><span class="line"><span class="comment">// for-of 循环</span></span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">let</span> el <span class="keyword">of</span> arr) &#123; </span><br><span class="line"> <span class="variable language_">console</span>.<span class="title function_">log</span>(el); </span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// foo </span></span><br><span class="line"><span class="comment">// bar </span></span><br><span class="line"><span class="comment">// baz </span></span><br><span class="line"><span class="comment">// 数组解构</span></span><br><span class="line"><span class="keyword">let</span> [a, b, c] = arr; </span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(a, b, c); <span class="comment">// foo, bar, baz </span></span><br><span class="line"><span class="comment">// 扩展操作符</span></span><br><span class="line"><span class="keyword">let</span> arr2 = [...arr]; </span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(arr2); <span class="comment">// [&#x27;foo&#x27;, &#x27;bar&#x27;, &#x27;baz&#x27;] </span></span><br><span class="line"><span class="comment">// Array.from() </span></span><br><span class="line"><span class="keyword">let</span> arr3 = <span class="title class_">Array</span>.<span class="title function_">from</span>(arr); </span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(arr3); <span class="comment">// [&#x27;foo&#x27;, &#x27;bar&#x27;, &#x27;baz&#x27;] </span></span><br><span class="line"><span class="comment">// Set 构造函数</span></span><br><span class="line"><span class="keyword">let</span> set = <span class="keyword">new</span> <span class="title class_">Set</span>(arr); </span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(set); <span class="comment">// Set(3) &#123;&#x27;foo&#x27;, &#x27;bar&#x27;, &#x27;baz&#x27;&#125; </span></span><br><span class="line"><span class="comment">// Map 构造函数</span></span><br><span class="line"><span class="keyword">let</span> pairs = arr.<span class="title function_">map</span>(<span class="function">(<span class="params">x, i</span>) =&gt;</span> [x, i]); </span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(pairs); <span class="comment">// [[&#x27;foo&#x27;, 0], [&#x27;bar&#x27;, 1], [&#x27;baz&#x27;, 2]] </span></span><br><span class="line"><span class="keyword">let</span> map = <span class="keyword">new</span> <span class="title class_">Map</span>(pairs); </span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(map); <span class="comment">// Map(3) &#123; &#x27;foo&#x27;=&gt;0, &#x27;bar&#x27;=&gt;1, &#x27;baz&#x27;=&gt;2 &#125;</span></span><br></pre></td></tr></table></figure></div>
+<p>如果对象原型链上的父类实现了 Iterable 接口，那这个对象也就实现了这个接口：</p>
+<div class="highlight-container" data-rel="Js"><figure class="iseeu highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">FooArray</span> <span class="keyword">extends</span> <span class="title class_ inherited__">Array</span> &#123;&#125; </span><br><span class="line"><span class="keyword">let</span> fooArr = <span class="keyword">new</span> <span class="title class_">FooArray</span>(<span class="string">&#x27;foo&#x27;</span>, <span class="string">&#x27;bar&#x27;</span>, <span class="string">&#x27;baz&#x27;</span>); </span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">let</span> el <span class="keyword">of</span> fooArr) &#123; </span><br><span class="line"> <span class="variable language_">console</span>.<span class="title function_">log</span>(el); </span><br><span class="line">&#125; </span><br><span class="line"><span class="comment">// foo </span></span><br><span class="line"><span class="comment">// bar </span></span><br><span class="line"><span class="comment">// baz</span></span><br></pre></td></tr></table></figure></div>
+<p>3、迭代器是一种一次性使用的对象，用于迭代与其关联的可迭代对象。迭代器 API 使用 next()方法在可迭代对象中遍历数据。每次成功调用 next()，都会返回一个 IteratorResult 对象，其中包含迭代器返回的下一个值。若不调用 next()，则无法知道迭代器的当前位置。<br>next()方法返回的迭代器对象 IteratorResult 包含两个属性：done 和 value。done 是一个布尔值，表示是否还可以再次调用 next()取得下一个值；value 包含可迭代对象的下一个值（done 为false），或者 undefined（done 为 true）。done: true 状态称为“耗尽”。可以通过以下简单的数组来演示：</p>
+<div class="highlight-container" data-rel="Js"><figure class="iseeu highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 可迭代对象</span></span><br><span class="line"><span class="keyword">let</span> arr = [<span class="string">&#x27;foo&#x27;</span>, <span class="string">&#x27;bar&#x27;</span>]; </span><br><span class="line"><span class="comment">// 迭代器工厂函数</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(arr[<span class="title class_">Symbol</span>.<span class="property">iterator</span>]); <span class="comment">// f values() &#123; [native code] &#125; </span></span><br><span class="line"><span class="comment">// 迭代器</span></span><br><span class="line"><span class="keyword">let</span> iter = arr[<span class="title class_">Symbol</span>.<span class="property">iterator</span>](); </span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(iter); <span class="comment">// ArrayIterator &#123;&#125; </span></span><br><span class="line"><span class="comment">// 执行迭代</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(iter.<span class="title function_">next</span>()); <span class="comment">// &#123; done: false, value: &#x27;foo&#x27; &#125; </span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(iter.<span class="title function_">next</span>()); <span class="comment">// &#123; done: false, value: &#x27;bar&#x27; &#125; </span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(iter.<span class="title function_">next</span>()); <span class="comment">// &#123; done: true, value: undefined &#125;</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> arr = [<span class="string">&#x27;foo&#x27;</span>]; </span><br><span class="line"><span class="keyword">let</span> iter = arr[<span class="title class_">Symbol</span>.<span class="property">iterator</span>](); </span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(iter.<span class="title function_">next</span>()); <span class="comment">// &#123; done: false, value: &#x27;foo&#x27; &#125; </span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(iter.<span class="title function_">next</span>()); <span class="comment">// &#123; done: true, value: undefined &#125; </span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(iter.<span class="title function_">next</span>()); <span class="comment">// &#123; done: true, value: undefined &#125; </span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(iter.<span class="title function_">next</span>()); <span class="comment">// &#123; done: true, value: undefined &#125;</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> arr = [<span class="string">&#x27;foo&#x27;</span>, <span class="string">&#x27;bar&#x27;</span>]; </span><br><span class="line"><span class="keyword">let</span> iter1 = arr[<span class="title class_">Symbol</span>.<span class="property">iterator</span>](); </span><br><span class="line"><span class="keyword">let</span> iter2 = arr[<span class="title class_">Symbol</span>.<span class="property">iterator</span>](); </span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(iter1.<span class="title function_">next</span>()); <span class="comment">// &#123; done: false, value: &#x27;foo&#x27; &#125; </span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(iter2.<span class="title function_">next</span>()); <span class="comment">// &#123; done: false, value: &#x27;foo&#x27; &#125; </span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(iter2.<span class="title function_">next</span>()); <span class="comment">// &#123; done: false, value: &#x27;bar&#x27; &#125; </span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(iter1.<span class="title function_">next</span>()); <span class="comment">// &#123; done: false, value: &#x27;bar&#x27; &#125;</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> arr = [<span class="string">&#x27;foo&#x27;</span>, <span class="string">&#x27;baz&#x27;</span>]; </span><br><span class="line"><span class="keyword">let</span> iter = arr[<span class="title class_">Symbol</span>.<span class="property">iterator</span>](); </span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(iter.<span class="title function_">next</span>()); <span class="comment">// &#123; done: false, value: &#x27;foo&#x27; &#125; </span></span><br><span class="line"><span class="comment">// 在数组中间插入值</span></span><br><span class="line">arr.<span class="title function_">splice</span>(<span class="number">1</span>, <span class="number">0</span>, <span class="string">&#x27;bar&#x27;</span>); </span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(iter.<span class="title function_">next</span>()); <span class="comment">// &#123; done: false, value: &#x27;bar&#x27; &#125; </span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(iter.<span class="title function_">next</span>()); <span class="comment">// &#123; done: false, value: &#x27;baz&#x27; &#125; </span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(iter.<span class="title function_">next</span>()); <span class="comment">// &#123; done: true, value: undefined &#125;</span></span><br></pre></td></tr></table></figure></div>
+<p>注意 迭代器维护着一个指向可迭代对象的引用，因此迭代器会阻止垃圾回收程序回收可迭代对象。</p>
+<div class="highlight-container" data-rel="Js"><figure class="iseeu highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 这个类实现了可迭代接口（Iterable） </span></span><br><span class="line"><span class="comment">// 调用默认的迭代器工厂函数会返回</span></span><br><span class="line"><span class="comment">// 一个实现迭代器接口（Iterator）的迭代器对象</span></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Foo</span> &#123;</span><br><span class="line">    [<span class="title class_">Symbol</span>.<span class="property">iterator</span>]() &#123; </span><br><span class="line">        <span class="keyword">return</span> &#123; </span><br><span class="line">            <span class="title function_">next</span>(<span class="params"></span>) &#123; </span><br><span class="line">                <span class="keyword">return</span> &#123; <span class="attr">done</span>: <span class="literal">false</span>, <span class="attr">value</span>: <span class="string">&#x27;foo&#x27;</span> &#125;; </span><br><span class="line">            &#125; </span><br><span class="line">        &#125; </span><br><span class="line"> &#125; </span><br><span class="line">&#125; </span><br><span class="line"><span class="keyword">let</span> f = <span class="keyword">new</span> <span class="title class_">Foo</span>(); </span><br><span class="line"><span class="comment">// 打印出实现了迭代器接口的对象</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(f[<span class="title class_">Symbol</span>.<span class="property">iterator</span>]()); <span class="comment">// &#123; next: f() &#123;&#125; &#125; </span></span><br><span class="line"><span class="comment">// Array 类型实现了可迭代接口（Iterable）</span></span><br><span class="line"><span class="comment">// 调用 Array 类型的默认迭代器工厂函数</span></span><br><span class="line"><span class="comment">// 会创建一个 ArrayIterator 的实例</span></span><br><span class="line"><span class="keyword">let</span> a = <span class="keyword">new</span> <span class="title class_">Array</span>(); </span><br><span class="line"><span class="comment">// 打印出 ArrayIterator 的实例</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(a[<span class="title class_">Symbol</span>.<span class="property">iterator</span>]()); <span class="comment">// Array Iterator &#123;&#125;</span></span><br></pre></td></tr></table></figure></div>
+<p>自定义迭代器: 与 Iterable 接口类似，任何实现 Iterator 接口的对象都可以作为迭代器使用。下面这个例子中的 Counter 类只能被迭代一定的次数：</p>
+<div class="highlight-container" data-rel="Js"><figure class="iseeu highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Counter</span> &#123; </span><br><span class="line"> <span class="comment">// Counter 的实例应该迭代 limit 次</span></span><br><span class="line"> <span class="title function_">constructor</span>(<span class="params">limit</span>) &#123; </span><br><span class="line">    <span class="variable language_">this</span>.<span class="property">count</span> = <span class="number">1</span>; </span><br><span class="line">    <span class="variable language_">this</span>.<span class="property">limit</span> = limit; </span><br><span class="line"> &#125; </span><br><span class="line"> <span class="title function_">next</span>(<span class="params"></span>) &#123; </span><br><span class="line">    <span class="keyword">if</span> (<span class="variable language_">this</span>.<span class="property">count</span> &lt;= <span class="variable language_">this</span>.<span class="property">limit</span>) &#123; </span><br><span class="line">        <span class="keyword">return</span> &#123; <span class="attr">done</span>: <span class="literal">false</span>, <span class="attr">value</span>: <span class="variable language_">this</span>.<span class="property">count</span>++ &#125;; </span><br><span class="line">    &#125; <span class="keyword">else</span> &#123; </span><br><span class="line">        <span class="keyword">return</span> &#123; <span class="attr">done</span>: <span class="literal">true</span>, <span class="attr">value</span>: <span class="literal">undefined</span> &#125;; </span><br><span class="line">    &#125; </span><br><span class="line"> &#125; </span><br><span class="line"> [<span class="title class_">Symbol</span>.<span class="property">iterator</span>]() &#123; </span><br><span class="line">    <span class="keyword">return</span> <span class="variable language_">this</span>; </span><br><span class="line"> &#125; </span><br><span class="line">&#125; </span><br><span class="line"><span class="keyword">let</span> counter = <span class="keyword">new</span> <span class="title class_">Counter</span>(<span class="number">3</span>); </span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">let</span> i <span class="keyword">of</span> counter) &#123; </span><br><span class="line"> <span class="variable language_">console</span>.<span class="title function_">log</span>(i); </span><br><span class="line">&#125; </span><br><span class="line"><span class="comment">// 1 </span></span><br><span class="line"><span class="comment">// 2 </span></span><br><span class="line"><span class="comment">// 3</span></span><br></pre></td></tr></table></figure></div>
+<p>这个类实现了 Iterator 接口，但不理想。这是因为它的每个实例只能被迭代一次：</p>
+<div class="highlight-container" data-rel="Js"><figure class="iseeu highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> (<span class="keyword">let</span> i <span class="keyword">of</span> counter) &#123; <span class="variable language_">console</span>.<span class="title function_">log</span>(i); &#125; </span><br><span class="line"><span class="comment">// 1</span></span><br><span class="line"><span class="comment">// 2 </span></span><br><span class="line"><span class="comment">// 3 </span></span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">let</span> i <span class="keyword">of</span> counter) &#123; <span class="variable language_">console</span>.<span class="title function_">log</span>(i); &#125; </span><br><span class="line"><span class="comment">// (nothing logged)</span></span><br></pre></td></tr></table></figure></div>
+<p>为了让一个可迭代对象能够创建多个迭代器，必须每创建一个迭代器就对应一个新计数器。为此，可以把计数器变量放到闭包里，然后通过闭包返回迭代器：</p>
+<div class="highlight-container" data-rel="Js"><figure class="iseeu highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Counter</span> &#123; </span><br><span class="line"> <span class="title function_">constructor</span>(<span class="params">limit</span>) &#123; </span><br><span class="line">        <span class="variable language_">this</span>.<span class="property">limit</span> = limit; </span><br><span class="line">    &#125; </span><br><span class="line">    [<span class="title class_">Symbol</span>.<span class="property">iterator</span>]() &#123; </span><br><span class="line">        <span class="keyword">let</span> count = <span class="number">1</span>, </span><br><span class="line">            limit = <span class="variable language_">this</span>.<span class="property">limit</span>; </span><br><span class="line">        <span class="keyword">return</span> &#123; </span><br><span class="line">            <span class="title function_">next</span>(<span class="params"></span>) &#123; </span><br><span class="line">            <span class="keyword">if</span> (count &lt;= limit) &#123; </span><br><span class="line">                <span class="keyword">return</span> &#123; <span class="attr">done</span>: <span class="literal">false</span>, <span class="attr">value</span>: count++ &#125;; </span><br><span class="line">            &#125; <span class="keyword">else</span> &#123; </span><br><span class="line">                <span class="keyword">return</span> &#123; <span class="attr">done</span>: <span class="literal">true</span>, <span class="attr">value</span>: <span class="literal">undefined</span> &#125;; </span><br><span class="line">            &#125; </span><br><span class="line">            &#125; </span><br><span class="line">        &#125;; </span><br><span class="line">    &#125; </span><br><span class="line">&#125; </span><br><span class="line"><span class="keyword">let</span> counter = <span class="keyword">new</span> <span class="title class_">Counter</span>(<span class="number">3</span>); </span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">let</span> i <span class="keyword">of</span> counter) &#123; <span class="variable language_">console</span>.<span class="title function_">log</span>(i); &#125; </span><br><span class="line"><span class="comment">// 1 </span></span><br><span class="line"><span class="comment">// 2 </span></span><br><span class="line"><span class="comment">// 3 </span></span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">let</span> i <span class="keyword">of</span> counter) &#123; <span class="variable language_">console</span>.<span class="title function_">log</span>(i); &#125; </span><br><span class="line"><span class="comment">// 1 </span></span><br><span class="line"><span class="comment">// 2 </span></span><br><span class="line"><span class="comment">// 3</span></span><br></pre></td></tr></table></figure></div>
+<p>每个以这种方式创建的迭代器也实现了 Iterable 接口。Symbol.iterator 属性引用的工厂函数会返回相同的迭代器：</p>
+<div class="highlight-container" data-rel="Js"><figure class="iseeu highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> arr = [<span class="string">&#x27;foo&#x27;</span>, <span class="string">&#x27;bar&#x27;</span>, <span class="string">&#x27;baz&#x27;</span>]; </span><br><span class="line"><span class="keyword">let</span> iter1 = arr[<span class="title class_">Symbol</span>.<span class="property">iterator</span>](); </span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(iter1[<span class="title class_">Symbol</span>.<span class="property">iterator</span>]); <span class="comment">// f values() &#123; [native code] &#125; </span></span><br><span class="line"><span class="keyword">let</span> iter2 = iter1[<span class="title class_">Symbol</span>.<span class="property">iterator</span>](); </span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(iter1 === iter2); <span class="comment">// true</span></span><br><span class="line"><span class="comment">// 因为每个迭代器也实现了 Iterable 接口，所以它们可以用在任何期待可迭代对象的地方，比如for-of 循环：</span></span><br><span class="line"><span class="keyword">let</span> arr = [<span class="number">3</span>, <span class="number">1</span>, <span class="number">4</span>]; </span><br><span class="line"><span class="keyword">let</span> iter = arr[<span class="title class_">Symbol</span>.<span class="property">iterator</span>]();</span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">let</span> item <span class="keyword">of</span> arr ) &#123; <span class="variable language_">console</span>.<span class="title function_">log</span>(item); &#125; </span><br><span class="line"><span class="comment">// 3 </span></span><br><span class="line"><span class="comment">// 1 </span></span><br><span class="line"><span class="comment">// 4 </span></span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">let</span> item <span class="keyword">of</span> iter ) &#123; <span class="variable language_">console</span>.<span class="title function_">log</span>(item); &#125; </span><br><span class="line"><span class="comment">// 3 </span></span><br><span class="line"><span class="comment">// 1 </span></span><br><span class="line"><span class="comment">// 4</span></span><br></pre></td></tr></table></figure></div>
+
+        </div>
+
+        
+
+        
+            <ul class="post-tags-box text-lg mt-1.5 flex-wrap justify-center flex md:hidden">
+                
+                    <li class="tag-item mx-0.5">
+                        <a href="/tags/journal/">#journal</a>&nbsp;
+                    </li>
+                
+            </ul>
+        
+
+        
+
+        
+            <div class="article-nav my-8 flex justify-between items-center px-2 sm:px-6 md:px-8">
+                
+                    <div class="article-prev border-border-color shadow-redefine-flat shadow-shadow-color-2 rounded-medium px-4 py-2 hover:shadow-redefine-flat-hover hover:shadow-shadow-color-2">
+                        <a class="prev"
+                        rel="prev"
+                        href="/undefined/2025-01-07/"
+                        >
+                            <span class="left arrow-icon flex justify-center items-center">
+                                <i class="fa-solid fa-chevron-left"></i>
+                            </span>
+                            <span class="title flex justify-center items-center">
+                                <span class="post-nav-title-item">2025-01-07 日报 Day59</span>
+                                <span class="post-nav-item">上一篇</span>
+                            </span>
+                        </a>
+                    </div>
+                
+                
+                    <div class="article-next border-border-color shadow-redefine-flat shadow-shadow-color-2 rounded-medium px-4 py-2 hover:shadow-redefine-flat-hover hover:shadow-shadow-color-2">
+                        <a class="next"
+                        rel="next"
+                        href="/undefined/2025-01-05/"
+                        >
+                            <span class="title flex justify-center items-center">
+                                <span class="post-nav-title-item">2025-01-05 日报 Day57</span>
+                                <span class="post-nav-item">下一篇</span>
+                            </span>
+                            <span class="right arrow-icon flex justify-center items-center">
+                                <i class="fa-solid fa-chevron-right"></i>
+                            </span>
+                        </a>
+                    </div>
+                
+            </div>
+        
+
+
+        
+    </div>
+
+    
+        <div class="toc-content-container">
+            <div class="post-toc-wrap">
+    <div class="post-toc">
+        <div class="toc-title">此页目录</div>
+        <div class="page-title">2025-01-06 日报 Day58</div>
+        <ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BB%8A%E6%97%A5%E5%AD%A6%E4%B9%A0%E5%86%85%E5%AE%B9"><span class="nav-text">今日学习内容</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BB%8A%E6%97%A5%E7%AC%94%E8%AE%B0"><span class="nav-text">今日笔记</span></a></li></ol>
+
+    </div>
+</div>
+        </div>
+    
+</div>
+
+
+
+                
+
+            </div>
+
+            
+
+        </div>
+
+        <div class="main-content-footer">
+            <footer class="footer mt-5 py-5 h-auto text-base text-third-text-color relative border-t-2 border-t-border-color">
+    <div class="info-container py-3 text-center">
+        
+        <div class="text-center">
+            &copy;
+            
+              <span>2022</span>
+              -
+            
+            2025&nbsp;&nbsp;<i class="fa-solid fa-heart fa-beat" style="--fa-animation-duration: 0.5s; color: #f54545"></i>&nbsp;&nbsp;<a href="/">Yuyang</a>
+            
+                
+                <p class="post-count space-x-0.5">
+                    <span>
+                        共 159 篇文章
+                    </span>
+                    
+                </p>
+            
+        </div>
+        
+            <script data-swup-reload-script src="https://cn.vercount.one/js"></script>
+            <div class="relative text-center lg:absolute lg:right-[20px] lg:top-1/2 lg:-translate-y-1/2 lg:text-right">
+                
+                    <span id="busuanzi_container_site_uv" class="lg:!block">
+                        <span class="text-sm">访问人数</span>
+                        <span id="busuanzi_value_site_uv"></span>
+                    </span>
+                
+                
+                    <span id="busuanzi_container_site_pv" class="lg:!block">
+                        <span class="text-sm">总访问量</span>
+                        <span id="busuanzi_value_site_pv"></span>
+                    </span>
+                
+            </div>
+        
+        <div class="relative text-center lg:absolute lg:left-[20px] lg:top-1/2 lg:-translate-y-1/2 lg:text-left">
+            <span class="lg:block text-sm">由 <?xml version="1.0" encoding="utf-8"?><!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"><svg class="relative top-[2px] inline-block align-baseline" version="1.1" id="圖層_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="1rem" height="1rem" viewBox="0 0 512 512" enable-background="new 0 0 512 512" xml:space="preserve"><path fill="#0E83CD" d="M256.4,25.8l-200,115.5L56,371.5l199.6,114.7l200-115.5l0.4-230.2L256.4,25.8z M349,354.6l-18.4,10.7l-18.6-11V275H200v79.6l-18.4,10.7l-18.6-11v-197l18.5-10.6l18.5,10.8V237h112v-79.6l18.5-10.6l18.5,10.8V354.6z"/></svg><a target="_blank" class="text-base" href="https://hexo.io">Hexo</a> 驱动</span>
+            <span class="text-sm lg:block">主题&nbsp;<a class="text-base" target="_blank" href="https://github.com/EvanNotFound/hexo-theme-redefine">Redefine v2.6.4</a></span>
+        </div>
+        
+        
+        
+        
+        
+    </div>  
+</footer>
+        </div>
+    </div>
+
+    
+        <div class="post-tools">
+            <div class="post-tools-container">
+    <ul class="article-tools-list">
+        <!-- TOC aside toggle -->
+        
+            <li class="right-bottom-tools page-aside-toggle">
+                <i class="fa-regular fa-outdent"></i>
+            </li>
+        
+
+        <!-- go comment -->
+        
+    </ul>
+</div>
+
+        </div>
+    
+
+    <div class="right-side-tools-container">
+        <div class="side-tools-container">
+    <ul class="hidden-tools-list">
+        <li class="right-bottom-tools tool-font-adjust-plus flex justify-center items-center">
+            <i class="fa-regular fa-magnifying-glass-plus"></i>
+        </li>
+
+        <li class="right-bottom-tools tool-font-adjust-minus flex justify-center items-center">
+            <i class="fa-regular fa-magnifying-glass-minus"></i>
+        </li>
+
+        <li class="right-bottom-tools tool-dark-light-toggle flex justify-center items-center">
+            <i class="fa-regular fa-moon"></i>
+        </li>
+
+        <!-- rss -->
+        
+
+        
+
+        <li class="right-bottom-tools tool-scroll-to-bottom flex justify-center items-center">
+            <i class="fa-regular fa-arrow-down"></i>
+        </li>
+    </ul>
+
+    <ul class="visible-tools-list">
+        <li class="right-bottom-tools toggle-tools-list flex justify-center items-center">
+            <i class="fa-regular fa-cog fa-spin"></i>
+        </li>
+        
+            <li class="right-bottom-tools tool-scroll-to-top flex justify-center items-center">
+                <i class="arrow-up fas fa-arrow-up"></i>
+                <span class="percent"></span>
+            </li>
+        
+        
+    </ul>
+</div>
+
+    </div>
+
+    <div class="image-viewer-container">
+    <img src="">
+</div>
+
+
+    
+        <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+          <span class="search-input-field-pre">
+            <i class="fa-solid fa-keyboard"></i>
+          </span>
+            <div class="search-input-container">
+                <input autocomplete="off"
+                       autocorrect="off"
+                       autocapitalize="off"
+                       placeholder="搜索..."
+                       spellcheck="false"
+                       type="search"
+                       class="search-input"
+                >
+            </div>
+            <span class="popup-btn-close">
+                <i class="fa-solid fa-times"></i>
+            </span>
+        </div>
+        <div id="search-result">
+            <div id="no-result">
+                <i class="fa-solid fa-spinner fa-spin-pulse fa-5x fa-fw"></i>
+            </div>
+        </div>
+    </div>
+</div>
+
+    
+
+</main>
+
+
+    
+<script src="/js/libs/Swup.min.js"></script>
+
+<script src="/js/libs/SwupSlideTheme.min.js"></script>
+
+<script src="/js/libs/SwupScriptsPlugin.min.js"></script>
+
+<script src="/js/libs/SwupProgressPlugin.min.js"></script>
+
+<script src="/js/libs/SwupScrollPlugin.min.js"></script>
+
+<script src="/js/libs/SwupPreloadPlugin.min.js"></script>
+
+<script>
+    const swup = new Swup({
+        plugins: [
+            new SwupScriptsPlugin({
+                optin: true,
+            }),
+            new SwupProgressPlugin(),
+            new SwupScrollPlugin({
+                offset: 80,
+            }),
+            new SwupSlideTheme({
+                mainElement: ".main-content-body",
+            }),
+            new SwupPreloadPlugin(),
+        ],
+        containers: ["#swup"],
+    });
+</script>
+
+
+
+
+
+
+
+<script src="/js/tools/imageViewer.js" type="module"></script>
+
+<script src="/js/utils.js" type="module"></script>
+
+<script src="/js/main.js" type="module"></script>
+
+<script src="/js/layouts/navbarShrink.js" type="module"></script>
+
+<script src="/js/tools/scrollTopBottom.js" type="module"></script>
+
+<script src="/js/tools/lightDarkSwitch.js" type="module"></script>
+
+<script src="/js/layouts/categoryList.js" type="module"></script>
+
+
+
+    
+<script src="/js/tools/localSearch.js" type="module"></script>
+
+
+
+
+    
+<script src="/js/tools/codeBlock.js" type="module"></script>
+
+
+
+
+    
+<script src="/js/layouts/lazyload.js" type="module"></script>
+
+
+
+
+
+
+  
+<script src="/js/libs/Typed.min.js"></script>
+
+  
+<script src="/js/plugins/typed.js" type="module"></script>
+
+
+
+
+
+
+
+
+
+<div class="post-scripts" data-swup-reload-script>
+    
+        
+<script src="/js/tools/tocToggle.js" type="module"></script>
+
+<script src="/js/layouts/toc.js" type="module"></script>
+
+<script src="/js/plugins/tabs.js" type="module"></script>
+
+    
+</div>
+
+
+</body>
+</html>
