@@ -1,0 +1,982 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="keywords" content="Hexo Theme Redefine">
+    
+    <meta name="author" content="Yuyang">
+    <!-- preconnect -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    
+    <!--- Seo Part-->
+    
+    <link rel="canonical" href="https://github.com/YuZeZhang/YuZeZhang.github.io/undefined/2025-04-10/"/>
+    <meta name="robots" content="index,follow">
+    <meta name="googlebot" content="index,follow">
+    <meta name="revisit-after" content="1 days">
+    
+        <meta name="description" content="今日的鸡汤                  一寸光阴一寸金，寸金难买寸光阴，时间买不到也租不来，惜时如金就是增进财富储量，因时制宜就是掌控发展变量，分秒必争就是创造价值增量。           今日学习内容1、JS 红皮书 P663-674 第二十章：JavaScript API 今日笔记1、 Web Cryptography API: Web Cryptogra">
+<meta property="og:type" content="article">
+<meta property="og:title" content="2025-04-10 日报 Day152">
+<meta property="og:url" content="https://github.com/YuZeZhang/YuZeZhang.github.io/undefined/2025-04-10/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="今日的鸡汤                  一寸光阴一寸金，寸金难买寸光阴，时间买不到也租不来，惜时如金就是增进财富储量，因时制宜就是掌控发展变量，分秒必争就是创造价值增量。           今日学习内容1、JS 红皮书 P663-674 第二十章：JavaScript API 今日笔记1、 Web Cryptography API: Web Cryptogra">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2025-04-09T16:00:00.000Z">
+<meta property="article:modified_time" content="2025-06-05T10:03:33.862Z">
+<meta property="article:author" content="Yuyang">
+<meta property="article:tag" content="journal">
+<meta name="twitter:card" content="summary">
+    
+    
+    <!--- Icon Part-->
+    <link rel="icon" type="image/png" href="https://raw.githubusercontent.com/YuZeZhang/myImgslib/main/202406232019880.png" sizes="192x192">
+    <link rel="apple-touch-icon" sizes="180x180" href="https://raw.githubusercontent.com/YuZeZhang/myImgslib/main/202406232019880.png">
+    <meta name="theme-color" content="#A31F34">
+    <link rel="shortcut icon" href="https://raw.githubusercontent.com/YuZeZhang/myImgslib/main/202406232019880.png">
+    <!--- Page Info-->
+    
+    <title>
+        
+            2025-04-10 日报 Day152 -
+        
+        Welcome to Yuyang&#39;s Blog
+    </title>
+
+    
+<link rel="stylesheet" href="/fonts/Chillax/chillax.css">
+
+
+    <!--- Inject Part-->
+    
+
+    
+<link rel="stylesheet" href="/css/style.css">
+
+
+    
+        
+<link rel="stylesheet" href="/assets/build/styles.css">
+
+    
+
+    
+<link rel="stylesheet" href="/fonts/GeistMono/geist-mono.css">
+
+    
+<link rel="stylesheet" href="/fonts/Geist/geist.css">
+
+    <!--- Font Part-->
+    
+    
+    
+    
+
+    
+        
+<script src="/js/libs/anime.min.js"></script>
+
+    
+
+    <script id="hexo-configurations">
+    window.config = {"hostname":"github.com","root":"/","language":"zh-CN","path":"search.xml"};
+    window.theme = {"articles":{"style":{"font_size":"16px","line_height":1.5,"image_border_radius":"14px","image_alignment":"center","image_caption":false,"link_icon":true,"title_alignment":"left","headings_top_spacing":{"h1":"3.2rem","h2":"2.4rem","h3":"1.9rem","h4":"1.6rem","h5":"1.4rem","h6":"1.3rem"}},"word_count":{"enable":true,"count":true,"min2read":true},"author_label":{"enable":true,"auto":false,"list":["前端小白🥬"]},"code_block":{"copy":true,"style":"mac","font":{"enable":false,"family":null,"url":null}},"toc":{"enable":true,"max_depth":3,"number":false,"expand":true,"init_open":true},"copyright":{"enable":false,"default":"cc_by_nc_sa"},"lazyload":true,"recommendation":{"enable":false,"title":"推荐阅读","limit":3,"mobile_limit":2,"placeholder":"/images/wallhaven-wqery6-light.webp","skip_dirs":[]}},"colors":{"primary":"#A31F34","secondary":null,"default_mode":"light"},"global":{"fonts":{"chinese":{"enable":false,"family":null,"url":null},"english":{"enable":false,"family":null,"url":null}},"content_max_width":"1000px","sidebar_width":"210px","hover":{"shadow":true,"scale":false},"scroll_progress":{"bar":true,"percentage":true},"website_counter":{"url":"https://cn.vercount.one/js","enable":true,"site_pv":true,"site_uv":true,"post_pv":true},"single_page":true,"preloader":true,"open_graph":true,"google_analytics":{"enable":false,"id":null}},"home_banner":{"enable":true,"style":"fixed","image":{"light":"/images/wallhaven-wqery6-light.webp","dark":"/images/wallhaven-wqery6-dark.webp"},"title":"Yuyang's Blog","subtitle":{"text":["马无夜草不肥，人无横财不富","富贵险中求"],"hitokoto":{"enable":false,"api":"https://v1.hitokoto.cn"},"typing_speed":100,"backing_speed":80,"starting_delay":500,"backing_delay":1500,"loop":true,"smart_backspace":true},"text_color":{"light":"#fff","dark":"#d1d1b6"},"text_style":{"title_size":"2.8rem","subtitle_size":"1.5rem","line_height":1.2},"custom_font":{"enable":false,"family":null,"url":null},"social_links":{"enable":false,"style":"default","links":{"github":null,"instagram":null,"zhihu":null,"twitter":null,"email":null},"qrs":{"weixin":null}}},"plugins":{"feed":{"enable":false},"aplayer":{"enable":false,"type":"fixed","audios":[{"name":null,"artist":null,"url":null,"cover":null,"lrc":null}]},"mermaid":{"enable":false,"version":"9.3.0"}},"version":"2.6.4","navbar":{"auto_hide":false,"color":{"left":"#f78736","right":"#367df7","transparency":35},"width":{"home":"1200px","pages":"1000px"},"links":{"Home":{"path":"/","icon":"fa-regular fa-house"},"GitHub":{"path":"https://github.com/YuZeZhang","icon":"fa-brands fa-github"},"CSDN":{"path":"https://blog.csdn.net/weixin_57301463","icon":"fa-solid fa-rocket-launch"}},"search":{"enable":true,"preload":true},"tags":{"Tags":{"icon":"fa-solid fa-tags","path":"/tags/"}},"Categories":{"path":"/categories/","icon":"fa-solid fa-folder"}},"page_templates":{"friends_column":2,"tags_style":"blur"},"home":{"sidebar":{"enable":true,"position":"left","first_item":"menu","announcement":null,"show_on_mobile":true,"links":{"Archives":{"path":"/archives","icon":"fa-regular fa-archive"},"Tags":{"path":"/tags","icon":"fa-regular fa-tags"},"Categories":{"path":"/categories","icon":"fa-regular fa-folder"}}},"article_date_format":"auto","categories":{"enable":true,"limit":3},"tags":{"enable":true,"limit":3}},"footerStart":"2022/8/17 11:45:14"};
+    window.lang_ago = {"second":"%s 秒前","minute":"%s 分钟前","hour":"%s 小时前","day":"%s 天前","week":"%s 周前","month":"%s 个月前","year":"%s 年前"};
+    window.data = {"masonry":false};
+  </script>
+    
+    <!--- Fontawesome Part-->
+    
+<link rel="stylesheet" href="/fontawesome/fontawesome.min.css">
+
+    
+<link rel="stylesheet" href="/fontawesome/brands.min.css">
+
+    
+<link rel="stylesheet" href="/fontawesome/solid.min.css">
+
+    
+<link rel="stylesheet" href="/fontawesome/regular.min.css">
+
+    
+        
+<link rel="stylesheet" href="/fontawesome/thin.min.css">
+
+    
+    
+        
+<link rel="stylesheet" href="/fontawesome/light.min.css">
+
+    
+    
+        
+<link rel="stylesheet" href="/fontawesome/duotone.min.css">
+
+    
+    
+        
+<link rel="stylesheet" href="/fontawesome/sharp-solid.min.css">
+
+    
+<meta name="generator" content="Hexo 7.2.0"></head>
+
+
+<body>
+<div class="progress-bar-container">
+    
+        <span class="scroll-progress-bar"></span>
+    
+
+    
+        <span class="pjax-progress-bar"></span>
+<!--        <span class="swup-progress-icon">-->
+<!--            <i class="fa-solid fa-circle-notch fa-spin"></i>-->
+<!--        </span>-->
+    
+</div>
+
+
+
+    <style>
+    :root {
+        --preloader-background-color: #fff;
+        --preloader-text-color: #000;
+    }
+
+    @media (prefers-color-scheme: dark) {
+        :root {
+            --preloader-background-color: #202124;
+            --preloader-text-color: #fff;
+        }
+    }
+
+    @media (prefers-color-scheme: light) {
+        :root {
+            --preloader-background-color: #fff;
+            --preloader-text-color: #000;
+        }
+    }
+
+    @media (max-width: 600px) {
+        .ml13 {
+            font-size: 2.6rem !important; /* Adjust this value as needed */
+        }
+    }
+
+    .preloader {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem; /* Tailwind 'gap-4' is 1rem */
+        align-items: center;
+        justify-content: center;
+        position: fixed;
+        padding: 12px;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh; /* 'h-screen' is 100% of the viewport height */
+        background-color: var(--preloader-background-color);
+        z-index: 1100; /* 'z-[1100]' sets the z-index */
+        transition: opacity 0.2s ease-in-out;
+    }
+
+    .ml13 {
+        font-size: 3.2rem;
+        /* text-transform: uppercase; */
+        color: var(--preloader-text-color);
+        letter-spacing: -1px;
+        font-weight: 500;
+        font-family: 'Chillax-Variable', sans-serif;
+        text-align: center;
+    }
+
+    .ml13 .word {
+        display: inline-flex;
+        flex-wrap: wrap;
+        white-space: nowrap;
+    }
+
+    .ml13 .letter {
+        display: inline-block;
+        line-height: 1em;
+    }
+</style>
+
+<div class="preloader">
+    <h2 class="ml13">
+        Welcome to Yuyang&#39;s Blog
+    </h2>
+    <script>
+        var textWrapper = document.querySelector('.ml13');
+        // Split text into words
+        var words = textWrapper.textContent.trim().split(' ');
+
+        // Clear the existing content
+        textWrapper.innerHTML = '';
+
+        // Wrap each word and its letters in spans
+        words.forEach(function(word) {
+            var wordSpan = document.createElement('span');
+            wordSpan.classList.add('word');
+            wordSpan.innerHTML = word.replace(/\S/g, "<span class='letter'>$&</span>");
+            textWrapper.appendChild(wordSpan);
+            textWrapper.appendChild(document.createTextNode(' ')); // Add space between words
+        });
+
+        var animation = anime.timeline({loop: true})
+            .add({
+                targets: '.ml13 .letter',
+                translateY: [40,0],
+                translateZ: 0,
+                opacity: [0,1],
+                filter: ['blur(5px)', 'blur(0px)'], // Starting from blurred to unblurred
+                easing: "easeOutExpo",
+                duration: 1400,
+                delay: (el, i) => 300 + 30 * i,
+            }).add({
+                targets: '.ml13 .letter',
+                translateY: [0,-40],
+                opacity: [1,0],
+                filter: ['blur(0px)', 'blur(5px)'], // Ending from unblurred to blurred
+                easing: "easeInExpo",
+                duration: 1200,
+                delay: (el, i) => 100 + 30 * i,
+                complete: function() {
+                    hidePreloader(); // Call hidePreloader after the animation completes
+                }
+            });
+
+        let themeStatus = JSON.parse(localStorage.getItem('REDEFINE-THEME-STATUS'))?.isDark;
+
+        // If the theme status is not found in local storage, check the preferred color scheme
+        if (themeStatus === undefined || themeStatus === null) {
+            if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+                themeStatus = 'dark';
+            } else {
+                themeStatus = 'light';
+            }
+        }
+
+        // Now you can use the themeStatus variable in your code
+        if (themeStatus) {
+            document.documentElement.style.setProperty('--preloader-background-color', '#202124');
+            document.documentElement.style.setProperty('--preloader-text-color', '#fff');
+        } else {
+            document.documentElement.style.setProperty('--preloader-background-color', '#fff');
+            document.documentElement.style.setProperty('--preloader-text-color', '#000');
+        }
+
+        window.addEventListener('load', function () {
+            setTimeout(hidePreloader, 5000); // Call hidePreloader after 5000 milliseconds if not already called by animation
+        });
+
+        function hidePreloader() {
+            var preloader = document.querySelector('.preloader');
+            preloader.style.opacity = '0';
+            setTimeout(function () {
+                preloader.style.display = 'none';
+            }, 200);
+        }
+    </script>
+</div>
+
+<main class="page-container" id="swup">
+
+    
+
+    <div class="main-content-container">
+
+
+        <div class="main-content-header">
+            <header class="navbar-container px-6 md:px-12">
+
+    <div class="navbar-content ">
+        <div class="left">
+            
+            <a class="logo-title" href="/">
+                
+                Welcome to Yuyang&#39;s Blog
+                
+            </a>
+        </div>
+
+        <div class="right">
+            <!-- PC -->
+            <div class="desktop">
+                <ul class="navbar-list">
+                    
+                        
+                            
+
+                            <li class="navbar-item">
+                                <!-- Menu -->
+                                <a class=""
+                                   href="/"
+                                        >
+                                    <i class="fa-regular fa-house fa-fw"></i>
+                                    首页
+                                    
+                                </a>
+
+                                <!-- Submenu -->
+                                
+                            </li>
+                    
+                        
+                            
+
+                            <li class="navbar-item">
+                                <!-- Menu -->
+                                <a class=""
+                                   href="https://github.com/YuZeZhang"
+                                        >
+                                    <i class="fa-brands fa-github fa-fw"></i>
+                                    GITHUB
+                                    
+                                </a>
+
+                                <!-- Submenu -->
+                                
+                            </li>
+                    
+                        
+                            
+
+                            <li class="navbar-item">
+                                <!-- Menu -->
+                                <a class=""
+                                   target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_57301463"
+                                        >
+                                    <i class="fa-solid fa-rocket-launch fa-fw"></i>
+                                    CSDN
+                                    
+                                </a>
+
+                                <!-- Submenu -->
+                                
+                            </li>
+                    
+                    
+                        <li class="navbar-item search search-popup-trigger">
+                            <i class="fa-solid fa-magnifying-glass"></i>
+                        </li>
+                    
+                </ul>
+            </div>
+            <!-- Mobile -->
+            <div class="mobile">
+                
+                    <div class="icon-item search search-popup-trigger"><i class="fa-solid fa-magnifying-glass"></i>
+                    </div>
+                
+                <div class="icon-item navbar-bar">
+                    <div class="navbar-bar-middle"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Mobile sheet -->
+    <div class="navbar-drawer h-screen w-full absolute top-0 left-0 bg-background-color flex flex-col justify-between">
+        <ul class="drawer-navbar-list flex flex-col px-4 justify-center items-start">
+            
+                
+                    
+
+                    <li class="drawer-navbar-item text-base my-1.5 flex flex-col w-full">
+                        
+                        <a class="py-1.5 px-2 flex flex-row items-center justify-between gap-1 hover:!text-primary active:!text-primary text-2xl font-semibold group border-b border-border-color hover:border-primary w-full "
+                           href="/"
+                        >
+                            <span>
+                                首页
+                            </span>
+                            
+                                <i class="fa-regular fa-house fa-sm fa-fw"></i>
+                            
+                        </a>
+                        
+
+                        
+                    </li>
+            
+                
+                    
+
+                    <li class="drawer-navbar-item text-base my-1.5 flex flex-col w-full">
+                        
+                        <a class="py-1.5 px-2 flex flex-row items-center justify-between gap-1 hover:!text-primary active:!text-primary text-2xl font-semibold group border-b border-border-color hover:border-primary w-full "
+                           href="https://github.com/YuZeZhang"
+                        >
+                            <span>
+                                GITHUB
+                            </span>
+                            
+                                <i class="fa-brands fa-github fa-sm fa-fw"></i>
+                            
+                        </a>
+                        
+
+                        
+                    </li>
+            
+                
+                    
+
+                    <li class="drawer-navbar-item text-base my-1.5 flex flex-col w-full">
+                        
+                        <a class="py-1.5 px-2 flex flex-row items-center justify-between gap-1 hover:!text-primary active:!text-primary text-2xl font-semibold group border-b border-border-color hover:border-primary w-full "
+                           target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_57301463"
+                        >
+                            <span>
+                                CSDN
+                            </span>
+                            
+                                <i class="fa-solid fa-rocket-launch fa-sm fa-fw"></i>
+                            
+                        </a>
+                        
+
+                        
+                    </li>
+            
+
+            
+            
+                
+                    
+                    <li class="drawer-navbar-item text-base my-1.5 flex flex-col w-full">
+                        <a class="py-1.5 px-2 flex flex-row items-center justify-between gap-1 hover:!text-primary active:!text-primary text-2xl font-semibold group border-b border-border-color hover:border-primary w-full active"
+                           href="/archives"
+                        >
+                            <span>Archives</span>
+                            <i class="fa-regular fa-archive fa-sm fa-fw"></i>
+                        </a>
+                    </li>
+                
+                    
+                    <li class="drawer-navbar-item text-base my-1.5 flex flex-col w-full">
+                        <a class="py-1.5 px-2 flex flex-row items-center justify-between gap-1 hover:!text-primary active:!text-primary text-2xl font-semibold group border-b border-border-color hover:border-primary w-full active"
+                           href="/tags"
+                        >
+                            <span>Tags</span>
+                            <i class="fa-regular fa-tags fa-sm fa-fw"></i>
+                        </a>
+                    </li>
+                
+                    
+                    <li class="drawer-navbar-item text-base my-1.5 flex flex-col w-full">
+                        <a class="py-1.5 px-2 flex flex-row items-center justify-between gap-1 hover:!text-primary active:!text-primary text-2xl font-semibold group border-b border-border-color hover:border-primary w-full active"
+                           href="/categories"
+                        >
+                            <span>Categories</span>
+                            <i class="fa-regular fa-folder fa-sm fa-fw"></i>
+                        </a>
+                    </li>
+                
+            
+        </ul>
+
+        <div class="statistics flex justify-around my-2.5">
+    <a class="item tag-count-item flex flex-col justify-center items-center w-20" href="/tags">
+        <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">3</div>
+        <div class="label text-third-text-color text-sm">标签</div>
+    </a>
+    <a class="item tag-count-item flex flex-col justify-center items-center w-20" href="/categories">
+        <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">2</div>
+        <div class="label text-third-text-color text-sm">分类</div>
+    </a>
+    <a class="item tag-count-item flex flex-col justify-center items-center w-20" href="/archives">
+        <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">183</div>
+        <div class="label text-third-text-color text-sm">文章</div>
+    </a>
+</div>
+    </div>
+
+    <div class="window-mask"></div>
+
+</header>
+
+
+        </div>
+
+        <div class="main-content-body">
+
+            
+
+            <div class="main-content">
+
+                
+                    <div class="post-page-container flex relative justify-between box-border w-full h-full">
+    <div class="article-content-container">
+
+        <div class="article-title relative w-full">
+            
+                
+                
+                <img src="https://raw.githubusercontent.com/YuZeZhang/myImgslib/main/202503072239946.jpeg" alt="2025-04-10 日报 Day152" class="w-full h-60 sm:h-72 md:h-80 object-cover sm:rounded-t-large dark:brightness-75"/>
+                
+                <div class="w-full flex items-center absolute bottom-0 justify-start">
+                    <h1 class="article-title-cover text-center mx-6 my-6 text-second-text-color bg-background-color-transparent px-4 py-3 text-3xl sm:text-4xl md:text-5xl font-semibold backdrop-blur-lg rounded-xl border border-border-color ">2025-04-10 日报 Day152</h1>
+                </div>
+            
+            </div>
+
+        
+            <div class="article-header flex flex-row gap-2 items-center px-2 sm:px-6 md:px-8">
+                <div class="avatar w-[46px] h-[46px] flex-shrink-0 rounded-medium border border-border-color p-[1px]">
+                    <img src="https://raw.githubusercontent.com/YuZeZhang/myImgslib/main/202406232019880.png">
+                </div>
+                <div class="info flex flex-col justify-between">
+                    <div class="author flex items-center">
+                        <span class="name text-default-text-color text-lg font-semibold">Yuyang</span>
+                        
+                            <span class="author-label ml-1.5 text-xs px-2 py-0.5 rounded-small text-third-text-color border border-shadow-color-1">前端小白🥬</span>
+                        
+                    </div>
+                    <div class="meta-info">
+                        <div class="article-meta-info">
+    <span class="article-date article-meta-item">
+        <i class="fa-regular fa-pen-fancy"></i>&nbsp;
+        <span class="desktop">2025-04-10</span>
+        <span class="mobile">2025-04-10</span>
+        <span class="hover-info">创建</span>
+    </span>
+    
+        <span class="article-date article-meta-item">
+            <i class="fa-regular fa-wrench"></i>&nbsp;
+            <span class="desktop">2025-06-05 18:03:33</span>
+            <span class="mobile">2025-06-05 18:03:33</span>
+            <span class="hover-info">更新</span>
+        </span>
+    
+
+    
+        <span class="article-categories article-meta-item">
+            <i class="fa-regular fa-folders"></i>&nbsp;
+            <ul>
+                
+                
+                    
+                        
+                        <li>
+                            <a href="/categories/journal/">journal</a>&nbsp;
+                        </li>
+                    
+                    
+                
+            </ul>
+        </span>
+    
+    
+        <span class="article-tags article-meta-item">
+            <i class="fa-regular fa-tags"></i>&nbsp;
+            <ul>
+                
+                    <li>
+                        <a href="/tags/journal/">journal</a>&nbsp;
+                    </li>
+                
+            </ul>
+        </span>
+    
+
+    
+    
+    
+    
+        <span class="article-pv article-meta-item">
+            <i class="fa-regular fa-eye"></i>&nbsp;<span id="busuanzi_value_page_pv"></span>
+        </span>
+    
+</div>
+
+                    </div>
+                </div>
+            </div>
+        
+
+        
+
+
+        <div class="article-content markdown-body px-2 sm:px-6 md:px-8 pb-8">
+            
+  <div class="note-large red">
+    <div class="notel-title rounded-t-lg p-3 font-bold text-lg flex flex-row gap-2 items-center">
+      <p>今日的鸡汤</p>
+
+    </div>
+    <div class="notel-content">
+      <p>一寸光阴一寸金，寸金难买寸光阴，时间买不到也租不来，惜时如金就是增进财富储量，因时制宜就是掌控发展变量，分秒必争就是创造价值增量。</p>
+
+    </div>
+  </div>
+
+<h3 id="今日学习内容"><a href="#今日学习内容" class="headerlink" title="今日学习内容"></a>今日学习内容</h3><p>1、JS 红皮书 P663-674 第二十章：JavaScript API</p>
+<h3 id="今日笔记"><a href="#今日笔记" class="headerlink" title="今日笔记"></a>今日笔记</h3><p>1、 Web Cryptography API: Web Cryptography API 描述了一套密码学工具，规范了 JavaScript 如何以安全和符合惯例的方式实现加密。这些工具包括生成、使用和应用加密密钥对，加密和解密消息，以及可靠地生成随机数。<br>2、生成随机数: 在需要生成随机值时，很多人会使用 Math.random()。这个方法在浏览器中是以伪随机数生成器（PRNG，PseudoRandom Number Generator）方式实现的。所谓“伪”指的是生成值的过程不是真的随机。PRNG 生成的值只是模拟了随机的特性。<br>由于算法本身是固定的，其输入只是之前的状态，因此随机数顺序也是确定的。xorshift128+使用 128 位内部状态，而算法的设计让任何初始状态在重复自身之前都会产生 2128–1 个伪随机值。这种循环被称为置换循环（permutation cycle），而这个循环的长度被称为一个周期（period）。很明显，如果攻击者知道 PRNG 的内部状态，就可以预测后续生成的伪随机值。如果开发者无意中使用 PRNG 生成了私有密钥用于加密，则攻击者就可以利用 PRNG 的这个特性算出私有密钥。<br>伪随机数生成器主要用于快速计算出看起来随机的值。不过并不适合用于加密计算。为解决这个问题，密码学安全伪随机数生成器（CSPRNG，Cryptographically Secure PseudoRandom Number Generator）额外增加了一个熵作为输入，例如测试硬件时间或其他无法预计行为的系统特性。这样一来，计算速度明显比常规 PRNG 慢很多，但 CSPRNG 生成的值就很难预测，可以用于加密了。<br>Web Cryptography API 引入了 CSPRNG，这个 CSPRNG 可以通过 crypto.getRandomValues()在全局 Crypto 对象上访问。</p>
+<div class="highlight-container" data-rel="Javascript"><figure class="iseeu highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> array = <span class="keyword">new</span> <span class="title class_">Uint8Array</span>(<span class="number">1</span>);</span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; <span class="number">5</span>; ++i) &#123;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(crypto.<span class="title function_">getRandomValues</span>(array));</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// Uint8Array [41]</span></span><br><span class="line"><span class="comment">// Uint8Array [250]</span></span><br><span class="line"><span class="comment">// Uint8Array [51]</span></span><br><span class="line"><span class="comment">// Uint8Array [129]</span></span><br><span class="line"><span class="comment">// Uint8Array [35]</span></span><br></pre></td></tr></table></figure></div>
+
+<p>要使用 CSPRNG 重新实现 Math.random()，可以通过生成一个随机的 32 位数值，然后用它去除最大的可能值 0xFFFFFFFF。这样就会得到一个介于 0 和 1 之间的值</p>
+<div class="highlight-container" data-rel="Javascript"><figure class="iseeu highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">randomFloat</span>(<span class="params"></span>) &#123;</span><br><span class="line">  <span class="comment">// 生成 32 位随机值</span></span><br><span class="line">  <span class="keyword">const</span> fooArray = <span class="keyword">new</span> <span class="title class_">Uint32Array</span>(<span class="number">1</span>);</span><br><span class="line">  <span class="comment">// 最大值是 2^32 –1</span></span><br><span class="line">  <span class="keyword">const</span> maxUint32 = <span class="number">0xffffffff</span>;</span><br><span class="line">  <span class="comment">// 用最大可能的值来除</span></span><br><span class="line">  <span class="keyword">return</span> crypto.<span class="title function_">getRandomValues</span>(fooArray)[<span class="number">0</span>] / maxUint32;</span><br><span class="line">&#125;</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="title function_">randomFloat</span>()); <span class="comment">// 0.5033651619458955</span></span><br></pre></td></tr></table></figure></div>
+
+<p>3、使用 SubtleCrypto 对象: Web Cryptography API 重头特性都暴露在了 SubtleCrypto 对象上，可以通过 window.crypto.subtle 访问：<br>console.log(crypto.subtle); &#x2F;&#x2F; SubtleCrypto {}<br>这个对象包含一组方法，用于执行常见的密码学功能，如加密、散列、签名和生成密钥。</p>
+<ul>
+<li>生成密码学摘要: 计算数据的密码学摘要是非常常用的密码学操作。这个规范支持 4 种摘要算法：SHA-1 和 3 种 SHA-2。<br> SHA-1（Secure Hash Algorithm 1）：架构类似 MD5 的散列函数。接收任意大小的输入，生成 160 位消息散列。由于容易受到碰撞攻击，这个算法已经不再安全。<br> SHA-2（Secure Hash Algorithm 2）：构建于相同耐碰撞单向压缩函数之上的一套散列函数。规范支持其中 3 种：SHA-256、SHA-384 和 SHA-512。生成的消息摘要可以是 256 位（SHA-256）、384 位（SHA-384）或 512 位（SHA-512）。这个算法被认为是安全的，广泛应用于很多领域和协议，包括 TLS、PGP 和加密货币（如比特币）。<br>SubtleCrypto.digest()方法用于生成消息摘要。要使用的散列算法通过字符串”SHA-1”、”SHA-256”、”SHA-384”或”SHA-512”指定。下面的代码展示了一个使用 SHA-256 为字符串”foo”生成消息摘要的例子：</li>
+</ul>
+<div class="highlight-container" data-rel="Javascript"><figure class="iseeu highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">(<span class="keyword">async</span> <span class="keyword">function</span> (<span class="params"></span>) &#123;</span><br><span class="line">  <span class="keyword">const</span> textEncoder = <span class="keyword">new</span> <span class="title class_">TextEncoder</span>();</span><br><span class="line">  <span class="keyword">const</span> message = textEncoder.<span class="title function_">encode</span>(<span class="string">&quot;foo&quot;</span>);</span><br><span class="line">  <span class="keyword">const</span> messageDigest = <span class="keyword">await</span> crypto.<span class="property">subtle</span>.<span class="title function_">digest</span>(<span class="string">&quot;SHA-256&quot;</span>, message);</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="keyword">new</span> <span class="title class_">Uint32Array</span>(messageDigest));</span><br><span class="line">&#125;)();</span><br><span class="line"><span class="comment">// Uint32Array(8) [1806968364, 2412183400, 1011194873, 876687389,</span></span><br><span class="line"><span class="comment">// 1882014227, 2696905572, 2287897337, 2934400610]</span></span><br></pre></td></tr></table></figure></div>
+
+<p>通常，在使用时，二进制的消息摘要会转换为十六进制字符串格式。通过将二进制数据按 8 位进行分割，然后再调用 toString(16)就可以把任何数组缓冲区转换为十六进制字符串：</p>
+<div class="highlight-container" data-rel="Javascript"><figure class="iseeu highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">(<span class="keyword">async</span> <span class="keyword">function</span> (<span class="params"></span>) &#123;</span><br><span class="line">  <span class="keyword">const</span> textEncoder = <span class="keyword">new</span> <span class="title class_">TextEncoder</span>();</span><br><span class="line">  <span class="keyword">const</span> message = textEncoder.<span class="title function_">encode</span>(<span class="string">&quot;foo&quot;</span>);</span><br><span class="line">  <span class="keyword">const</span> messageDigest = <span class="keyword">await</span> crypto.<span class="property">subtle</span>.<span class="title function_">digest</span>(<span class="string">&quot;SHA-256&quot;</span>, message);</span><br><span class="line">  <span class="keyword">const</span> hexDigest = <span class="title class_">Array</span>.<span class="title function_">from</span>(<span class="keyword">new</span> <span class="title class_">Uint8Array</span>(messageDigest))</span><br><span class="line">    .<span class="title function_">map</span>(<span class="function">(<span class="params">x</span>) =&gt;</span> x.<span class="title function_">toString</span>(<span class="number">16</span>).<span class="title function_">padStart</span>(<span class="number">2</span>, <span class="string">&quot;0&quot;</span>))</span><br><span class="line">    .<span class="title function_">join</span>(<span class="string">&quot;&quot;</span>);</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(hexDigest);</span><br><span class="line">&#125;)();</span><br><span class="line"><span class="comment">// 2c26b46b68ffc68ff99b453c1d30413413422d706483bfa0f98a5e886266e7ae</span></span><br></pre></td></tr></table></figure></div>
+
+<p>软件公司通常会公开自己软件二进制安装包的摘要，以便用户验证自己下载到的确实是该公司发布的版本（而不是被恶意软件篡改过的版本）。下面的例子演示了下载 Firefox v67.0，通过 SHA-512 计算其散列，再下载其 SHA-512 二进制验证摘要，最后检查两个十六进制字符串匹配：</p>
+<div class="highlight-container" data-rel="Javascript"><figure class="iseeu highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line">(<span class="keyword">async</span> <span class="keyword">function</span> (<span class="params"></span>) &#123;</span><br><span class="line">  <span class="keyword">const</span> mozillaCdnUrl =</span><br><span class="line">    <span class="string">&quot;// downloadorigin.cdn.mozilla.net/pub/firefox/releases/67.0 /&quot;</span>;</span><br><span class="line">  <span class="keyword">const</span> firefoxBinaryFilename = <span class="string">&quot;linux-x86_64/en-US/firefox-67.0.tar.bz2&quot;</span>;</span><br><span class="line">  <span class="keyword">const</span> firefoxShaFilename = <span class="string">&quot;SHA512SUMS&quot;</span>;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;Fetching Firefox binary...&quot;</span>);</span><br><span class="line">  <span class="keyword">const</span> fileArrayBuffer = <span class="keyword">await</span> (</span><br><span class="line">    <span class="keyword">await</span> <span class="title function_">fetch</span>(mozillaCdnUrl + firefoxBinaryFilename)</span><br><span class="line">  ).<span class="title function_">arrayBuffer</span>();</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;Calculating Firefox digest...&quot;</span>);</span><br><span class="line">  <span class="keyword">const</span> firefoxBinaryDigest = <span class="keyword">await</span> crypto.<span class="property">subtle</span>.<span class="title function_">digest</span>(</span><br><span class="line">    <span class="string">&quot;SHA-512&quot;</span>,</span><br><span class="line">    fileArrayBuffer</span><br><span class="line">  );</span><br><span class="line">  <span class="keyword">const</span> firefoxHexDigest = <span class="title class_">Array</span>.<span class="title function_">from</span>(<span class="keyword">new</span> <span class="title class_">Uint8Array</span>(firefoxBinaryDigest))</span><br><span class="line">    .<span class="title function_">map</span>(<span class="function">(<span class="params">x</span>) =&gt;</span> x.<span class="title function_">toString</span>(<span class="number">16</span>).<span class="title function_">padStart</span>(<span class="number">2</span>, <span class="string">&quot;0&quot;</span>))</span><br><span class="line">    .<span class="title function_">join</span>(<span class="string">&quot;&quot;</span>);</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;Fetching published binary digests...&quot;</span>);</span><br><span class="line">  <span class="comment">// SHA 文件包含此次发布的所有 Firefox 二进制文件的摘要，</span></span><br><span class="line">  <span class="comment">// 因此要根据其格式进制拆分</span></span><br><span class="line">  <span class="keyword">const</span> shaPairs = (</span><br><span class="line">    <span class="keyword">await</span> (<span class="keyword">await</span> <span class="title function_">fetch</span>(mozillaCdnUrl + firefoxShaFilename)).<span class="title function_">text</span>()</span><br><span class="line">  )</span><br><span class="line">    .<span class="title function_">split</span>(<span class="regexp">/\n/</span>)</span><br><span class="line">    .<span class="title function_">map</span>(<span class="function">(<span class="params">x</span>) =&gt;</span> x.<span class="title function_">split</span>(<span class="regexp">/\s+/</span>));</span><br><span class="line">  <span class="keyword">let</span> verified = <span class="literal">false</span>;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;Checking calculated digest against published digests...&quot;</span>);</span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">const</span> [sha, filename] <span class="keyword">of</span> shaPairs) &#123;</span><br><span class="line">    <span class="keyword">if</span> (filename === firefoxBinaryFilename) &#123;</span><br><span class="line">      <span class="keyword">if</span> (sha === firefoxHexDigest) &#123;</span><br><span class="line">        verified = <span class="literal">true</span>;</span><br><span class="line">        <span class="keyword">break</span>;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;Verified:&quot;</span>, verified);</span><br><span class="line">&#125;)();</span><br><span class="line"><span class="comment">// Fetching Firefox binary...</span></span><br><span class="line"><span class="comment">// Calculating Firefox digest...</span></span><br><span class="line"><span class="comment">// Fetching published binary digests...</span></span><br><span class="line"><span class="comment">// Checking calculated digest against published digests...</span></span><br><span class="line"><span class="comment">// Verified: true</span></span><br></pre></td></tr></table></figure></div>
+<ul>
+<li>CryptoKey与算法: 如果没了密钥，那密码学也就没什么意义了。SubtleCrypto 对象使用 CryptoKey 类的实例来生成密钥。CryptoKey 类支持多种加密算法，允许控制密钥抽取和使用。<br>CryptoKey 类支持以下算法，按各自的父密码系统归类。<br> RSA（Rivest-Shamir-Adleman）：公钥密码系统，使用两个大素数获得一对公钥和私钥，可用于签名&#x2F;验证或加密&#x2F;解密消息。RSA 的陷门函数被称为分解难题（factoring problem）。<br> RSASSA-PKCS1-v1_5：RSA 的一个应用，用于使用私钥给消息签名，允许使用公钥验证签名。<br> SSA（Signature Schemes with Appendix），表示算法支持签名生成和验证操作。<br> PKCS1（Public-Key Cryptography Standards #1），表示算法展示出的 RSA 密钥必需的数学特性。<br> RSASSA-PKCS1-v1_5 是确定性的，意味着同样的消息和密钥每次都会生成相同的签名。<br> RSA-PSS：RSA 的另一个应用，用于签名和验证消息。<br> PSS（Probabilistic Signature Scheme），表示生成签名时会加盐以得到随机签名。<br> 与 RSASSA-PKCS1-v1_5 不同，同样的消息和密钥每次都会生成不同的签名。<br> 与 RSASSA-PKCS1-v1_5 不同，RSA-PSS 有可能约简到 RSA 分解难题的难度。<br> 通常，虽然 RSASSA-PKCS1-v1_5 仍被认为是安全的，但 RSA-PSS 应该用于代替RSASSA-PKCS1-v1_5。<br> RSA-OAEP：RSA 的一个应用，用于使用公钥加密消息，用私钥来解密。<br> OAEP（Optimal Asymmetric Encryption Padding），表示算法利用了 Feistel 网络在加密前处理未加密的消息。<br> OAEP 主要将确定性 RSA 加密模式转换为概率性加密模式。<br> ECC（Elliptic-Curve Cryptography）：公钥密码系统，使用一个素数和一个椭圆曲线获得一对公钥和私钥，可用于签名&#x2F;验证消息。ECC 的陷门函数被称为椭圆曲线离散对数问题（elliptic curve discrete logarithm problem）。ECC 被认为优于 RSA。虽然 RSA 和 ECC 在密码学意义上都很强，但 ECC 密钥比 RSA 密钥短，而且 ECC 密码学操作比 RSA 操作快。<br> ECDSA（Elliptic Curve Digital Signature Algorithm）：ECC 的一个应用，用于签名和验证消息。这个算法是数字签名算法（DSA，Digital Signature Algorithm）的一个椭圆曲线风格的变体。<br> ECDH（Elliptic Curve Diffie-Hellman）：ECC 的密钥生成和密钥协商应用，允许两方通过公开通信渠道建立共享的机密。这个算法是 Diffie-Hellman 密钥交换（DH，Diffie-Hellman key exchange）协议的一个椭圆曲线风格的变体。<br> AES（Advanced Encryption Standard）：对称密钥密码系统，使用派生自置换组合网络的分组密码加密和解密数据。AES 在不同模式下使用，不同模式算法的特性也不同。<br> AES-CTR：AES 的计数器模式（counter mode）。这个模式使用递增计数器生成其密钥流，其行为类似密文流。使用时必须为其提供一个随机数，用作初始化向量。AES-CTR 加密&#x2F;解密可以并行。<br> AES-CBC：AES 的密码分组链模式（cipher block chaining mode）。在加密纯文本的每个分组之前，先使用之前密文分组求 XOR，也就是名字中的“链”。使用一个初始化向量作为第一个分组的 XOR 输入。<br> AES-GCM：AES 的伽罗瓦&#x2F;计数器模式（Galois&#x2F;Counter mode）。这个模式使用计数器和初始化向量生成一个值，这个值会与每个分组的纯文本计算 XOR。与 CBC 不同，这个模式的 XOR 输入不依赖之前分组密文。因此 GCM 模式可以并行。由于其卓越的性能，AES-GCM 在很多网络安全协议中得到了应用。<br> AES-KW：AES 的密钥包装模式（key wrapping mode）。这个算法将加密密钥包装为一个可移植且加密的格式，可以在不信任的渠道中传输。传输之后，接收方可以解包密钥。与其他 AES 模式不同，AES-KW 不需要初始化向量。<br> HMAC（Hash-Based Message Authentication Code）：用于生成消息认证码的算法，用于验证通过不可信网络接收的消息没有被修改过。两方使用散列函数和共享私钥来签名和验证消息。<br> KDF（Key Derivation Functions）：可以使用散列函数从主密钥获得一个或多个密钥的算法。KDF能够生成不同长度的密钥，也能把密钥转换为不同格式。<br> HKDF（HMAC-Based Key Derivation Function）：密钥推导函数，与高熵输入（如已有密钥）一起使用。<br> PBKDF2（Password-Based Key Derivation Function 2）：密钥推导函数，与低熵输入（如密钥字符串）一起使用。</li>
+<li>生成CryptoKey: 使用 SubtleCrypto.generateKey()方法可以生成随机 CryptoKey，这个方法返回一个期约，解决为一个或多个 CryptoKey 实例。使用时需要给这个方法传入一个指定目标算法的参数对象、一个表示密钥是否可以从 CryptoKey 对象中提取出来的布尔值，以及一个表示这个密钥可以与哪个SubtleCrypto 方法一起使用的字符串数组（keyUsages）。<br>-生成CryptoKey: 使用 SubtleCrypto.generateKey()方法可以生成随机 CryptoKey，这个方法返回一个期约，解决为一个或多个 CryptoKey 实例。使用时需要给这个方法传入一个指定目标算法的参数对象、一个表示密钥是否可以从 CryptoKey 对象中提取出来的布尔值，以及一个表示这个密钥可以与哪个SubtleCrypto 方法一起使用的字符串数组（keyUsages）。<br>由于不同的密码系统需要不同的输入来生成密钥，上述参数对象为每种密码系统都规定了必需的输入：<br> RSA 密码系统使用 RsaHashedKeyGenParams 对象；<br> ECC 密码系统使用 EcKeyGenParams 对象；<br> HMAC 密码系统使用 HmacKeyGenParams 对象；<br> AES 密码系统使用 AesKeyGenParams 对象。<br>keyUsages 对象用于说明密钥可以与哪个算法一起使用。至少要包含下列中的一个字符串：<br> encrypt<br> decrypt<br> sign<br> verify<br> deriveKey<br> deriveBits<br> wrapKey<br> unwrapKey<br>keyUsages 对象用于说明密钥可以与哪个算法一起使用。至少要包含下列中的一个字符串：<br> encrypt<br> decrypt<br> sign<br> verify<br> deriveKey<br> deriveBits<br> wrapKey<br> unwrapKey<br>假设要生成一个满足如下条件的对称密钥：<br> 支持 AES-CTR 算法；<br> 密钥长度 128 位；<br> 不能从 CryptoKey 对象中提取；<br> 可以跟 encrypt()和 decrypt()方法一起使用。<br>那么可以参考如下代码：<br>(async function() {<br> const params &#x3D; {<br> name: ‘AES-CTR’,<br> length: 128<br> };<br> const keyUsages &#x3D; [‘encrypt’, ‘decrypt’];<br> const key &#x3D; await crypto.subtle.generateKey(params, false, keyUsages);<br> console.log(key);<br> &#x2F;&#x2F; CryptoKey {type: “secret”, extractable: true, algorithm: {…}, usages: Array(2)}<br>})();</li>
+<li>导出和导入密钥: 如果密钥是可提取的，那么就可以在 CryptoKey 对象内部暴露密钥原始的二进制内容。使用exportKey()方法并指定目标格式（”raw”、”pkcs8”、”spki”或”jwk”）就可以取得密钥。这个方法返回一个期约，解决后的 ArrayBuffer 中包含密钥：<br>(async function() {<br> const params &#x3D; {<br> name: ‘AES-CTR’,<br> length: 128<br> };<br> const keyUsages &#x3D; [‘encrypt’, ‘decrypt’];<br> const key &#x3D; await crypto.subtle.generateKey(params, true, keyUsages);<br> const rawKey &#x3D; await crypto.subtle.exportKey(‘raw’, key);<br> console.log(new Uint8Array(rawKey));<br> &#x2F;&#x2F; Uint8Array[93, 122, 66, 135, 144, 182, 119, 196, 234, 73, 84, 7, 139, 43, 238,<br> &#x2F;&#x2F; 110]<br>})();<br>exportKey()相反的操作要使用 importKey()方法实现。importKey()方法的签名实际上是generateKey()和 exportKey()的组合。下面的方法会生成密钥、导出密钥，然后再导入密钥：</li>
+<li>从主密钥派生密钥: 使用 SubtleCrypto 对象可以通过可配置的属性从已有密钥获得新密钥。</li>
+<li>使用非对称密钥签名和验证消息: 通过 SubtleCrypto 对象可以使用公钥算法用私钥生成签名，或者用公钥验证签名。这两种操作分别通过 SubtleCrypto.sign()和 SubtleCrypto.verify()方法完成。</li>
+<li>使用对称密钥加密和解密: SubtleCrypto 对象支持使用公钥和对称算法加密和解密消息。这两种操作分别通过 SubtleCrypto.encrypt()和 SubtleCrypto.decrypt()方法完成。加密消息需要传入参数对象以指定算法和必要的值、加密密钥和要加密的数据。</li>
+<li>包装和解包密钥: SubtleCrypto 对象支持包装和解包密钥，以便在非信任渠道传输。这两种操作分别通过 SubtleCrypto.wrapKey()和 SubtleCrypto.unwrapKey()方法完成。<br>4、小结: 除了定义新标签，HTML5 还定义了一些 JavaScript API。这些 API 可以为开发者提供更便捷的 Web接口，暴露堪比桌面应用的能力。本章主要介绍了以下 API。<br> Atomics API 用于保护代码在多线程内存访问模式下不发生资源争用。<br> postMessage() API 支持从不同源跨文档发送消息，同时保证安全和遵循同源策略。<br> Encoding API 用于实现字符串与缓冲区之间的无缝转换（越来越常见的操作）。<br> File API 提供了发送、接收和读取大型二进制对象的可靠工具。<br> 媒体元素<audio>和<video>拥有自己的 API，用于操作音频和视频。并不是每个浏览器都会支持所有媒体格式，使用 canPlayType()方法可以检测浏览器支持情况。<br> 拖放 API 支持方便地将元素标识为可拖动，并在操作系统完成放置时给出回应。可以利用它创建自定义可拖动元素和放置目标。<br> Notifications API 提供了一种浏览器中立的方式，以此向用户展示消通知弹层。<br> Streams API 支持以全新的方式读取、写入和处理数据。<br> Timing API 提供了一组度量数据进出浏览器时间的可靠工具。<br> Web Components API 为元素重用和封装技术向前迈进提供了有力支撑。<br> Web Cryptography API 让生成随机数、加密和签名消息成为一类特性。</li>
+</ul>
+
+        </div>
+
+        
+
+        
+            <ul class="post-tags-box text-lg mt-1.5 flex-wrap justify-center flex md:hidden">
+                
+                    <li class="tag-item mx-0.5">
+                        <a href="/tags/journal/">#journal</a>&nbsp;
+                    </li>
+                
+            </ul>
+        
+
+        
+
+        
+            <div class="article-nav my-8 flex justify-between items-center px-2 sm:px-6 md:px-8">
+                
+                    <div class="article-prev border-border-color shadow-redefine-flat shadow-shadow-color-2 rounded-medium px-4 py-2 hover:shadow-redefine-flat-hover hover:shadow-shadow-color-2">
+                        <a class="prev"
+                        rel="prev"
+                        href="/undefined/2025-04-11/"
+                        >
+                            <span class="left arrow-icon flex justify-center items-center">
+                                <i class="fa-solid fa-chevron-left"></i>
+                            </span>
+                            <span class="title flex justify-center items-center">
+                                <span class="post-nav-title-item">2025-04-11 日报 Day153</span>
+                                <span class="post-nav-item">上一篇</span>
+                            </span>
+                        </a>
+                    </div>
+                
+                
+                    <div class="article-next border-border-color shadow-redefine-flat shadow-shadow-color-2 rounded-medium px-4 py-2 hover:shadow-redefine-flat-hover hover:shadow-shadow-color-2">
+                        <a class="next"
+                        rel="next"
+                        href="/undefined/2025-04-09/"
+                        >
+                            <span class="title flex justify-center items-center">
+                                <span class="post-nav-title-item">2025-04-09 日报 Day151</span>
+                                <span class="post-nav-item">下一篇</span>
+                            </span>
+                            <span class="right arrow-icon flex justify-center items-center">
+                                <i class="fa-solid fa-chevron-right"></i>
+                            </span>
+                        </a>
+                    </div>
+                
+            </div>
+        
+
+
+        
+    </div>
+
+    
+        <div class="toc-content-container">
+            <div class="post-toc-wrap">
+    <div class="post-toc">
+        <div class="toc-title">此页目录</div>
+        <div class="page-title">2025-04-10 日报 Day152</div>
+        <ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BB%8A%E6%97%A5%E5%AD%A6%E4%B9%A0%E5%86%85%E5%AE%B9"><span class="nav-text">今日学习内容</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BB%8A%E6%97%A5%E7%AC%94%E8%AE%B0"><span class="nav-text">今日笔记</span></a></li></ol>
+
+    </div>
+</div>
+        </div>
+    
+</div>
+
+
+
+                
+
+            </div>
+
+            
+
+        </div>
+
+        <div class="main-content-footer">
+            <footer class="footer mt-5 py-5 h-auto text-base text-third-text-color relative border-t-2 border-t-border-color">
+    <div class="info-container py-3 text-center">
+        
+        <div class="text-center">
+            &copy;
+            
+              <span>2022</span>
+              -
+            
+            2025&nbsp;&nbsp;<i class="fa-solid fa-heart fa-beat" style="--fa-animation-duration: 0.5s; color: #f54545"></i>&nbsp;&nbsp;<a href="/">Yuyang</a>
+            
+                
+                <p class="post-count space-x-0.5">
+                    <span>
+                        共 183 篇文章
+                    </span>
+                    
+                </p>
+            
+        </div>
+        
+            <script data-swup-reload-script src="https://cn.vercount.one/js"></script>
+            <div class="relative text-center lg:absolute lg:right-[20px] lg:top-1/2 lg:-translate-y-1/2 lg:text-right">
+                
+                    <span id="busuanzi_container_site_uv" class="lg:!block">
+                        <span class="text-sm">访问人数</span>
+                        <span id="busuanzi_value_site_uv"></span>
+                    </span>
+                
+                
+                    <span id="busuanzi_container_site_pv" class="lg:!block">
+                        <span class="text-sm">总访问量</span>
+                        <span id="busuanzi_value_site_pv"></span>
+                    </span>
+                
+            </div>
+        
+        <div class="relative text-center lg:absolute lg:left-[20px] lg:top-1/2 lg:-translate-y-1/2 lg:text-left">
+            <span class="lg:block text-sm">由 <?xml version="1.0" encoding="utf-8"?><!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"><svg class="relative top-[2px] inline-block align-baseline" version="1.1" id="圖層_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="1rem" height="1rem" viewBox="0 0 512 512" enable-background="new 0 0 512 512" xml:space="preserve"><path fill="#0E83CD" d="M256.4,25.8l-200,115.5L56,371.5l199.6,114.7l200-115.5l0.4-230.2L256.4,25.8z M349,354.6l-18.4,10.7l-18.6-11V275H200v79.6l-18.4,10.7l-18.6-11v-197l18.5-10.6l18.5,10.8V237h112v-79.6l18.5-10.6l18.5,10.8V354.6z"/></svg><a target="_blank" class="text-base" href="https://hexo.io">Hexo</a> 驱动</span>
+            <span class="text-sm lg:block">主题&nbsp;<a class="text-base" target="_blank" href="https://github.com/EvanNotFound/hexo-theme-redefine">Redefine v2.6.4</a></span>
+        </div>
+        
+        
+        
+        
+        
+    </div>  
+</footer>
+        </div>
+    </div>
+
+    
+        <div class="post-tools">
+            <div class="post-tools-container">
+    <ul class="article-tools-list">
+        <!-- TOC aside toggle -->
+        
+            <li class="right-bottom-tools page-aside-toggle">
+                <i class="fa-regular fa-outdent"></i>
+            </li>
+        
+
+        <!-- go comment -->
+        
+    </ul>
+</div>
+
+        </div>
+    
+
+    <div class="right-side-tools-container">
+        <div class="side-tools-container">
+    <ul class="hidden-tools-list">
+        <li class="right-bottom-tools tool-font-adjust-plus flex justify-center items-center">
+            <i class="fa-regular fa-magnifying-glass-plus"></i>
+        </li>
+
+        <li class="right-bottom-tools tool-font-adjust-minus flex justify-center items-center">
+            <i class="fa-regular fa-magnifying-glass-minus"></i>
+        </li>
+
+        <li class="right-bottom-tools tool-dark-light-toggle flex justify-center items-center">
+            <i class="fa-regular fa-moon"></i>
+        </li>
+
+        <!-- rss -->
+        
+
+        
+
+        <li class="right-bottom-tools tool-scroll-to-bottom flex justify-center items-center">
+            <i class="fa-regular fa-arrow-down"></i>
+        </li>
+    </ul>
+
+    <ul class="visible-tools-list">
+        <li class="right-bottom-tools toggle-tools-list flex justify-center items-center">
+            <i class="fa-regular fa-cog fa-spin"></i>
+        </li>
+        
+            <li class="right-bottom-tools tool-scroll-to-top flex justify-center items-center">
+                <i class="arrow-up fas fa-arrow-up"></i>
+                <span class="percent"></span>
+            </li>
+        
+        
+    </ul>
+</div>
+
+    </div>
+
+    <div class="image-viewer-container">
+    <img src="">
+</div>
+
+
+    
+        <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+          <span class="search-input-field-pre">
+            <i class="fa-solid fa-keyboard"></i>
+          </span>
+            <div class="search-input-container">
+                <input autocomplete="off"
+                       autocorrect="off"
+                       autocapitalize="off"
+                       placeholder="搜索..."
+                       spellcheck="false"
+                       type="search"
+                       class="search-input"
+                >
+            </div>
+            <span class="popup-btn-close">
+                <i class="fa-solid fa-times"></i>
+            </span>
+        </div>
+        <div id="search-result">
+            <div id="no-result">
+                <i class="fa-solid fa-spinner fa-spin-pulse fa-5x fa-fw"></i>
+            </div>
+        </div>
+    </div>
+</div>
+
+    
+
+</main>
+
+
+    
+<script src="/js/libs/Swup.min.js"></script>
+
+<script src="/js/libs/SwupSlideTheme.min.js"></script>
+
+<script src="/js/libs/SwupScriptsPlugin.min.js"></script>
+
+<script src="/js/libs/SwupProgressPlugin.min.js"></script>
+
+<script src="/js/libs/SwupScrollPlugin.min.js"></script>
+
+<script src="/js/libs/SwupPreloadPlugin.min.js"></script>
+
+<script>
+    const swup = new Swup({
+        plugins: [
+            new SwupScriptsPlugin({
+                optin: true,
+            }),
+            new SwupProgressPlugin(),
+            new SwupScrollPlugin({
+                offset: 80,
+            }),
+            new SwupSlideTheme({
+                mainElement: ".main-content-body",
+            }),
+            new SwupPreloadPlugin(),
+        ],
+        containers: ["#swup"],
+    });
+</script>
+
+
+
+
+
+
+
+<script src="/js/tools/imageViewer.js" type="module"></script>
+
+<script src="/js/utils.js" type="module"></script>
+
+<script src="/js/main.js" type="module"></script>
+
+<script src="/js/layouts/navbarShrink.js" type="module"></script>
+
+<script src="/js/tools/scrollTopBottom.js" type="module"></script>
+
+<script src="/js/tools/lightDarkSwitch.js" type="module"></script>
+
+<script src="/js/layouts/categoryList.js" type="module"></script>
+
+
+
+    
+<script src="/js/tools/localSearch.js" type="module"></script>
+
+
+
+
+    
+<script src="/js/tools/codeBlock.js" type="module"></script>
+
+
+
+
+    
+<script src="/js/layouts/lazyload.js" type="module"></script>
+
+
+
+
+
+
+  
+<script src="/js/libs/Typed.min.js"></script>
+
+  
+<script src="/js/plugins/typed.js" type="module"></script>
+
+
+
+
+
+
+
+
+
+<div class="post-scripts" data-swup-reload-script>
+    
+        
+<script src="/js/tools/tocToggle.js" type="module"></script>
+
+<script src="/js/layouts/toc.js" type="module"></script>
+
+<script src="/js/plugins/tabs.js" type="module"></script>
+
+    
+</div>
+
+
+</body>
+</html>
