@@ -1,0 +1,975 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="keywords" content="Hexo Theme Redefine">
+    
+    <meta name="author" content="Yuyang">
+    <!-- preconnect -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    
+    <!--- Seo Part-->
+    
+    <link rel="canonical" href="https://github.com/YuZeZhang/YuZeZhang.github.io/undefined/2025-04-15/"/>
+    <meta name="robots" content="index,follow">
+    <meta name="googlebot" content="index,follow">
+    <meta name="revisit-after" content="1 days">
+    
+        <meta name="description" content="今日的鸡汤                  将生活嚼得有滋有味，把日子过得活色生香，往往靠的不只是嘴，还要有一颗浸透人间烟火的心。           今日学习内容1、JS 红皮书 P718-734 第二十四章：网络请求与远程资源 今日笔记1、进度事件: Progress Events 是 W3C 的工作草案，定义了客户端服务器端通信。这些事件最初只针对 XHR，">
+<meta property="og:type" content="article">
+<meta property="og:title" content="2025-04-15 日报 Day157">
+<meta property="og:url" content="https://github.com/YuZeZhang/YuZeZhang.github.io/undefined/2025-04-15/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="今日的鸡汤                  将生活嚼得有滋有味，把日子过得活色生香，往往靠的不只是嘴，还要有一颗浸透人间烟火的心。           今日学习内容1、JS 红皮书 P718-734 第二十四章：网络请求与远程资源 今日笔记1、进度事件: Progress Events 是 W3C 的工作草案，定义了客户端服务器端通信。这些事件最初只针对 XHR，">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2025-04-14T16:00:00.000Z">
+<meta property="article:modified_time" content="2025-06-06T11:02:25.538Z">
+<meta property="article:author" content="Yuyang">
+<meta property="article:tag" content="journal">
+<meta name="twitter:card" content="summary">
+    
+    
+    <!--- Icon Part-->
+    <link rel="icon" type="image/png" href="https://raw.githubusercontent.com/YuZeZhang/myImgslib/main/202406232019880.png" sizes="192x192">
+    <link rel="apple-touch-icon" sizes="180x180" href="https://raw.githubusercontent.com/YuZeZhang/myImgslib/main/202406232019880.png">
+    <meta name="theme-color" content="#A31F34">
+    <link rel="shortcut icon" href="https://raw.githubusercontent.com/YuZeZhang/myImgslib/main/202406232019880.png">
+    <!--- Page Info-->
+    
+    <title>
+        
+            2025-04-15 日报 Day157 -
+        
+        Welcome to Yuyang&#39;s Blog
+    </title>
+
+    
+<link rel="stylesheet" href="/fonts/Chillax/chillax.css">
+
+
+    <!--- Inject Part-->
+    
+
+    
+<link rel="stylesheet" href="/css/style.css">
+
+
+    
+        
+<link rel="stylesheet" href="/assets/build/styles.css">
+
+    
+
+    
+<link rel="stylesheet" href="/fonts/GeistMono/geist-mono.css">
+
+    
+<link rel="stylesheet" href="/fonts/Geist/geist.css">
+
+    <!--- Font Part-->
+    
+    
+    
+    
+
+    
+        
+<script src="/js/libs/anime.min.js"></script>
+
+    
+
+    <script id="hexo-configurations">
+    window.config = {"hostname":"github.com","root":"/","language":"zh-CN","path":"search.xml"};
+    window.theme = {"articles":{"style":{"font_size":"16px","line_height":1.5,"image_border_radius":"14px","image_alignment":"center","image_caption":false,"link_icon":true,"title_alignment":"left","headings_top_spacing":{"h1":"3.2rem","h2":"2.4rem","h3":"1.9rem","h4":"1.6rem","h5":"1.4rem","h6":"1.3rem"}},"word_count":{"enable":true,"count":true,"min2read":true},"author_label":{"enable":true,"auto":false,"list":["前端小白🥬"]},"code_block":{"copy":true,"style":"mac","font":{"enable":false,"family":null,"url":null}},"toc":{"enable":true,"max_depth":3,"number":false,"expand":true,"init_open":true},"copyright":{"enable":false,"default":"cc_by_nc_sa"},"lazyload":true,"recommendation":{"enable":false,"title":"推荐阅读","limit":3,"mobile_limit":2,"placeholder":"/images/wallhaven-wqery6-light.webp","skip_dirs":[]}},"colors":{"primary":"#A31F34","secondary":null,"default_mode":"light"},"global":{"fonts":{"chinese":{"enable":false,"family":null,"url":null},"english":{"enable":false,"family":null,"url":null}},"content_max_width":"1000px","sidebar_width":"210px","hover":{"shadow":true,"scale":false},"scroll_progress":{"bar":true,"percentage":true},"website_counter":{"url":"https://cn.vercount.one/js","enable":true,"site_pv":true,"site_uv":true,"post_pv":true},"single_page":true,"preloader":true,"open_graph":true,"google_analytics":{"enable":false,"id":null}},"home_banner":{"enable":true,"style":"fixed","image":{"light":"/images/wallhaven-wqery6-light.webp","dark":"/images/wallhaven-wqery6-dark.webp"},"title":"Yuyang's Blog","subtitle":{"text":["马无夜草不肥，人无横财不富","富贵险中求"],"hitokoto":{"enable":false,"api":"https://v1.hitokoto.cn"},"typing_speed":100,"backing_speed":80,"starting_delay":500,"backing_delay":1500,"loop":true,"smart_backspace":true},"text_color":{"light":"#fff","dark":"#d1d1b6"},"text_style":{"title_size":"2.8rem","subtitle_size":"1.5rem","line_height":1.2},"custom_font":{"enable":false,"family":null,"url":null},"social_links":{"enable":false,"style":"default","links":{"github":null,"instagram":null,"zhihu":null,"twitter":null,"email":null},"qrs":{"weixin":null}}},"plugins":{"feed":{"enable":false},"aplayer":{"enable":false,"type":"fixed","audios":[{"name":null,"artist":null,"url":null,"cover":null,"lrc":null}]},"mermaid":{"enable":false,"version":"9.3.0"}},"version":"2.6.4","navbar":{"auto_hide":false,"color":{"left":"#f78736","right":"#367df7","transparency":35},"width":{"home":"1200px","pages":"1000px"},"links":{"Home":{"path":"/","icon":"fa-regular fa-house"},"GitHub":{"path":"https://github.com/YuZeZhang","icon":"fa-brands fa-github"},"CSDN":{"path":"https://blog.csdn.net/weixin_57301463","icon":"fa-solid fa-rocket-launch"}},"search":{"enable":true,"preload":true},"tags":{"Tags":{"icon":"fa-solid fa-tags","path":"/tags/"}},"Categories":{"path":"/categories/","icon":"fa-solid fa-folder"}},"page_templates":{"friends_column":2,"tags_style":"blur"},"home":{"sidebar":{"enable":true,"position":"left","first_item":"menu","announcement":null,"show_on_mobile":true,"links":{"Archives":{"path":"/archives","icon":"fa-regular fa-archive"},"Tags":{"path":"/tags","icon":"fa-regular fa-tags"},"Categories":{"path":"/categories","icon":"fa-regular fa-folder"}}},"article_date_format":"auto","categories":{"enable":true,"limit":3},"tags":{"enable":true,"limit":3}},"footerStart":"2022/8/17 11:45:14"};
+    window.lang_ago = {"second":"%s 秒前","minute":"%s 分钟前","hour":"%s 小时前","day":"%s 天前","week":"%s 周前","month":"%s 个月前","year":"%s 年前"};
+    window.data = {"masonry":false};
+  </script>
+    
+    <!--- Fontawesome Part-->
+    
+<link rel="stylesheet" href="/fontawesome/fontawesome.min.css">
+
+    
+<link rel="stylesheet" href="/fontawesome/brands.min.css">
+
+    
+<link rel="stylesheet" href="/fontawesome/solid.min.css">
+
+    
+<link rel="stylesheet" href="/fontawesome/regular.min.css">
+
+    
+        
+<link rel="stylesheet" href="/fontawesome/thin.min.css">
+
+    
+    
+        
+<link rel="stylesheet" href="/fontawesome/light.min.css">
+
+    
+    
+        
+<link rel="stylesheet" href="/fontawesome/duotone.min.css">
+
+    
+    
+        
+<link rel="stylesheet" href="/fontawesome/sharp-solid.min.css">
+
+    
+<meta name="generator" content="Hexo 7.2.0"></head>
+
+
+<body>
+<div class="progress-bar-container">
+    
+        <span class="scroll-progress-bar"></span>
+    
+
+    
+        <span class="pjax-progress-bar"></span>
+<!--        <span class="swup-progress-icon">-->
+<!--            <i class="fa-solid fa-circle-notch fa-spin"></i>-->
+<!--        </span>-->
+    
+</div>
+
+
+
+    <style>
+    :root {
+        --preloader-background-color: #fff;
+        --preloader-text-color: #000;
+    }
+
+    @media (prefers-color-scheme: dark) {
+        :root {
+            --preloader-background-color: #202124;
+            --preloader-text-color: #fff;
+        }
+    }
+
+    @media (prefers-color-scheme: light) {
+        :root {
+            --preloader-background-color: #fff;
+            --preloader-text-color: #000;
+        }
+    }
+
+    @media (max-width: 600px) {
+        .ml13 {
+            font-size: 2.6rem !important; /* Adjust this value as needed */
+        }
+    }
+
+    .preloader {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem; /* Tailwind 'gap-4' is 1rem */
+        align-items: center;
+        justify-content: center;
+        position: fixed;
+        padding: 12px;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh; /* 'h-screen' is 100% of the viewport height */
+        background-color: var(--preloader-background-color);
+        z-index: 1100; /* 'z-[1100]' sets the z-index */
+        transition: opacity 0.2s ease-in-out;
+    }
+
+    .ml13 {
+        font-size: 3.2rem;
+        /* text-transform: uppercase; */
+        color: var(--preloader-text-color);
+        letter-spacing: -1px;
+        font-weight: 500;
+        font-family: 'Chillax-Variable', sans-serif;
+        text-align: center;
+    }
+
+    .ml13 .word {
+        display: inline-flex;
+        flex-wrap: wrap;
+        white-space: nowrap;
+    }
+
+    .ml13 .letter {
+        display: inline-block;
+        line-height: 1em;
+    }
+</style>
+
+<div class="preloader">
+    <h2 class="ml13">
+        Welcome to Yuyang&#39;s Blog
+    </h2>
+    <script>
+        var textWrapper = document.querySelector('.ml13');
+        // Split text into words
+        var words = textWrapper.textContent.trim().split(' ');
+
+        // Clear the existing content
+        textWrapper.innerHTML = '';
+
+        // Wrap each word and its letters in spans
+        words.forEach(function(word) {
+            var wordSpan = document.createElement('span');
+            wordSpan.classList.add('word');
+            wordSpan.innerHTML = word.replace(/\S/g, "<span class='letter'>$&</span>");
+            textWrapper.appendChild(wordSpan);
+            textWrapper.appendChild(document.createTextNode(' ')); // Add space between words
+        });
+
+        var animation = anime.timeline({loop: true})
+            .add({
+                targets: '.ml13 .letter',
+                translateY: [40,0],
+                translateZ: 0,
+                opacity: [0,1],
+                filter: ['blur(5px)', 'blur(0px)'], // Starting from blurred to unblurred
+                easing: "easeOutExpo",
+                duration: 1400,
+                delay: (el, i) => 300 + 30 * i,
+            }).add({
+                targets: '.ml13 .letter',
+                translateY: [0,-40],
+                opacity: [1,0],
+                filter: ['blur(0px)', 'blur(5px)'], // Ending from unblurred to blurred
+                easing: "easeInExpo",
+                duration: 1200,
+                delay: (el, i) => 100 + 30 * i,
+                complete: function() {
+                    hidePreloader(); // Call hidePreloader after the animation completes
+                }
+            });
+
+        let themeStatus = JSON.parse(localStorage.getItem('REDEFINE-THEME-STATUS'))?.isDark;
+
+        // If the theme status is not found in local storage, check the preferred color scheme
+        if (themeStatus === undefined || themeStatus === null) {
+            if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+                themeStatus = 'dark';
+            } else {
+                themeStatus = 'light';
+            }
+        }
+
+        // Now you can use the themeStatus variable in your code
+        if (themeStatus) {
+            document.documentElement.style.setProperty('--preloader-background-color', '#202124');
+            document.documentElement.style.setProperty('--preloader-text-color', '#fff');
+        } else {
+            document.documentElement.style.setProperty('--preloader-background-color', '#fff');
+            document.documentElement.style.setProperty('--preloader-text-color', '#000');
+        }
+
+        window.addEventListener('load', function () {
+            setTimeout(hidePreloader, 5000); // Call hidePreloader after 5000 milliseconds if not already called by animation
+        });
+
+        function hidePreloader() {
+            var preloader = document.querySelector('.preloader');
+            preloader.style.opacity = '0';
+            setTimeout(function () {
+                preloader.style.display = 'none';
+            }, 200);
+        }
+    </script>
+</div>
+
+<main class="page-container" id="swup">
+
+    
+
+    <div class="main-content-container">
+
+
+        <div class="main-content-header">
+            <header class="navbar-container px-6 md:px-12">
+
+    <div class="navbar-content ">
+        <div class="left">
+            
+            <a class="logo-title" href="/">
+                
+                Welcome to Yuyang&#39;s Blog
+                
+            </a>
+        </div>
+
+        <div class="right">
+            <!-- PC -->
+            <div class="desktop">
+                <ul class="navbar-list">
+                    
+                        
+                            
+
+                            <li class="navbar-item">
+                                <!-- Menu -->
+                                <a class=""
+                                   href="/"
+                                        >
+                                    <i class="fa-regular fa-house fa-fw"></i>
+                                    首页
+                                    
+                                </a>
+
+                                <!-- Submenu -->
+                                
+                            </li>
+                    
+                        
+                            
+
+                            <li class="navbar-item">
+                                <!-- Menu -->
+                                <a class=""
+                                   href="https://github.com/YuZeZhang"
+                                        >
+                                    <i class="fa-brands fa-github fa-fw"></i>
+                                    GITHUB
+                                    
+                                </a>
+
+                                <!-- Submenu -->
+                                
+                            </li>
+                    
+                        
+                            
+
+                            <li class="navbar-item">
+                                <!-- Menu -->
+                                <a class=""
+                                   target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_57301463"
+                                        >
+                                    <i class="fa-solid fa-rocket-launch fa-fw"></i>
+                                    CSDN
+                                    
+                                </a>
+
+                                <!-- Submenu -->
+                                
+                            </li>
+                    
+                    
+                        <li class="navbar-item search search-popup-trigger">
+                            <i class="fa-solid fa-magnifying-glass"></i>
+                        </li>
+                    
+                </ul>
+            </div>
+            <!-- Mobile -->
+            <div class="mobile">
+                
+                    <div class="icon-item search search-popup-trigger"><i class="fa-solid fa-magnifying-glass"></i>
+                    </div>
+                
+                <div class="icon-item navbar-bar">
+                    <div class="navbar-bar-middle"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Mobile sheet -->
+    <div class="navbar-drawer h-screen w-full absolute top-0 left-0 bg-background-color flex flex-col justify-between">
+        <ul class="drawer-navbar-list flex flex-col px-4 justify-center items-start">
+            
+                
+                    
+
+                    <li class="drawer-navbar-item text-base my-1.5 flex flex-col w-full">
+                        
+                        <a class="py-1.5 px-2 flex flex-row items-center justify-between gap-1 hover:!text-primary active:!text-primary text-2xl font-semibold group border-b border-border-color hover:border-primary w-full "
+                           href="/"
+                        >
+                            <span>
+                                首页
+                            </span>
+                            
+                                <i class="fa-regular fa-house fa-sm fa-fw"></i>
+                            
+                        </a>
+                        
+
+                        
+                    </li>
+            
+                
+                    
+
+                    <li class="drawer-navbar-item text-base my-1.5 flex flex-col w-full">
+                        
+                        <a class="py-1.5 px-2 flex flex-row items-center justify-between gap-1 hover:!text-primary active:!text-primary text-2xl font-semibold group border-b border-border-color hover:border-primary w-full "
+                           href="https://github.com/YuZeZhang"
+                        >
+                            <span>
+                                GITHUB
+                            </span>
+                            
+                                <i class="fa-brands fa-github fa-sm fa-fw"></i>
+                            
+                        </a>
+                        
+
+                        
+                    </li>
+            
+                
+                    
+
+                    <li class="drawer-navbar-item text-base my-1.5 flex flex-col w-full">
+                        
+                        <a class="py-1.5 px-2 flex flex-row items-center justify-between gap-1 hover:!text-primary active:!text-primary text-2xl font-semibold group border-b border-border-color hover:border-primary w-full "
+                           target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_57301463"
+                        >
+                            <span>
+                                CSDN
+                            </span>
+                            
+                                <i class="fa-solid fa-rocket-launch fa-sm fa-fw"></i>
+                            
+                        </a>
+                        
+
+                        
+                    </li>
+            
+
+            
+            
+                
+                    
+                    <li class="drawer-navbar-item text-base my-1.5 flex flex-col w-full">
+                        <a class="py-1.5 px-2 flex flex-row items-center justify-between gap-1 hover:!text-primary active:!text-primary text-2xl font-semibold group border-b border-border-color hover:border-primary w-full active"
+                           href="/archives"
+                        >
+                            <span>Archives</span>
+                            <i class="fa-regular fa-archive fa-sm fa-fw"></i>
+                        </a>
+                    </li>
+                
+                    
+                    <li class="drawer-navbar-item text-base my-1.5 flex flex-col w-full">
+                        <a class="py-1.5 px-2 flex flex-row items-center justify-between gap-1 hover:!text-primary active:!text-primary text-2xl font-semibold group border-b border-border-color hover:border-primary w-full active"
+                           href="/tags"
+                        >
+                            <span>Tags</span>
+                            <i class="fa-regular fa-tags fa-sm fa-fw"></i>
+                        </a>
+                    </li>
+                
+                    
+                    <li class="drawer-navbar-item text-base my-1.5 flex flex-col w-full">
+                        <a class="py-1.5 px-2 flex flex-row items-center justify-between gap-1 hover:!text-primary active:!text-primary text-2xl font-semibold group border-b border-border-color hover:border-primary w-full active"
+                           href="/categories"
+                        >
+                            <span>Categories</span>
+                            <i class="fa-regular fa-folder fa-sm fa-fw"></i>
+                        </a>
+                    </li>
+                
+            
+        </ul>
+
+        <div class="statistics flex justify-around my-2.5">
+    <a class="item tag-count-item flex flex-col justify-center items-center w-20" href="/tags">
+        <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">3</div>
+        <div class="label text-third-text-color text-sm">标签</div>
+    </a>
+    <a class="item tag-count-item flex flex-col justify-center items-center w-20" href="/categories">
+        <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">2</div>
+        <div class="label text-third-text-color text-sm">分类</div>
+    </a>
+    <a class="item tag-count-item flex flex-col justify-center items-center w-20" href="/archives">
+        <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">187</div>
+        <div class="label text-third-text-color text-sm">文章</div>
+    </a>
+</div>
+    </div>
+
+    <div class="window-mask"></div>
+
+</header>
+
+
+        </div>
+
+        <div class="main-content-body">
+
+            
+
+            <div class="main-content">
+
+                
+                    <div class="post-page-container flex relative justify-between box-border w-full h-full">
+    <div class="article-content-container">
+
+        <div class="article-title relative w-full">
+            
+                
+                
+                <img src="https://raw.githubusercontent.com/YuZeZhang/myImgslib/main/202503072239946.jpeg" alt="2025-04-15 日报 Day157" class="w-full h-60 sm:h-72 md:h-80 object-cover sm:rounded-t-large dark:brightness-75"/>
+                
+                <div class="w-full flex items-center absolute bottom-0 justify-start">
+                    <h1 class="article-title-cover text-center mx-6 my-6 text-second-text-color bg-background-color-transparent px-4 py-3 text-3xl sm:text-4xl md:text-5xl font-semibold backdrop-blur-lg rounded-xl border border-border-color ">2025-04-15 日报 Day157</h1>
+                </div>
+            
+            </div>
+
+        
+            <div class="article-header flex flex-row gap-2 items-center px-2 sm:px-6 md:px-8">
+                <div class="avatar w-[46px] h-[46px] flex-shrink-0 rounded-medium border border-border-color p-[1px]">
+                    <img src="https://raw.githubusercontent.com/YuZeZhang/myImgslib/main/202406232019880.png">
+                </div>
+                <div class="info flex flex-col justify-between">
+                    <div class="author flex items-center">
+                        <span class="name text-default-text-color text-lg font-semibold">Yuyang</span>
+                        
+                            <span class="author-label ml-1.5 text-xs px-2 py-0.5 rounded-small text-third-text-color border border-shadow-color-1">前端小白🥬</span>
+                        
+                    </div>
+                    <div class="meta-info">
+                        <div class="article-meta-info">
+    <span class="article-date article-meta-item">
+        <i class="fa-regular fa-pen-fancy"></i>&nbsp;
+        <span class="desktop">2025-04-15</span>
+        <span class="mobile">2025-04-15</span>
+        <span class="hover-info">创建</span>
+    </span>
+    
+        <span class="article-date article-meta-item">
+            <i class="fa-regular fa-wrench"></i>&nbsp;
+            <span class="desktop">2025-06-06 19:02:25</span>
+            <span class="mobile">2025-06-06 19:02:25</span>
+            <span class="hover-info">更新</span>
+        </span>
+    
+
+    
+        <span class="article-categories article-meta-item">
+            <i class="fa-regular fa-folders"></i>&nbsp;
+            <ul>
+                
+                
+                    
+                        
+                        <li>
+                            <a href="/categories/journal/">journal</a>&nbsp;
+                        </li>
+                    
+                    
+                
+            </ul>
+        </span>
+    
+    
+        <span class="article-tags article-meta-item">
+            <i class="fa-regular fa-tags"></i>&nbsp;
+            <ul>
+                
+                    <li>
+                        <a href="/tags/journal/">journal</a>&nbsp;
+                    </li>
+                
+            </ul>
+        </span>
+    
+
+    
+    
+    
+    
+        <span class="article-pv article-meta-item">
+            <i class="fa-regular fa-eye"></i>&nbsp;<span id="busuanzi_value_page_pv"></span>
+        </span>
+    
+</div>
+
+                    </div>
+                </div>
+            </div>
+        
+
+        
+
+
+        <div class="article-content markdown-body px-2 sm:px-6 md:px-8 pb-8">
+            
+  <div class="note-large red">
+    <div class="notel-title rounded-t-lg p-3 font-bold text-lg flex flex-row gap-2 items-center">
+      <p>今日的鸡汤</p>
+
+    </div>
+    <div class="notel-content">
+      <p>将生活嚼得有滋有味，把日子过得活色生香，往往靠的不只是嘴，还要有一颗浸透人间烟火的心。</p>
+
+    </div>
+  </div>
+
+<h3 id="今日学习内容"><a href="#今日学习内容" class="headerlink" title="今日学习内容"></a>今日学习内容</h3><p>1、JS 红皮书 P718-734 第二十四章：网络请求与远程资源</p>
+<h3 id="今日笔记"><a href="#今日笔记" class="headerlink" title="今日笔记"></a>今日笔记</h3><p>1、进度事件: Progress Events 是 W3C 的工作草案，定义了客户端服务器端通信。这些事件最初只针对 XHR，现在也推广到了其他类似的 API。有以下 6 个进度相关的事件。<br> loadstart：在接收到响应的第一个字节时触发。<br> progress：在接收响应期间反复触发。<br> error：在请求出错时触发。<br> abort：在调用 abort()终止连接时触发。<br> load：在成功接收完响应时触发。<br> loadend：在通信完成时，且在 error、abort 或 load 之后触发。<br>每次请求都会首先触发 loadstart 事件，之后是一个或多个 progress 事件，接着是 error、abort或 load 中的一个，最后以 loadend 事件结束。这些事件大部分都很好理解，但其中有两个需要说明一下。</p>
+<ul>
+<li>load事件: 最终，增加了一个 load 事件用于替代readystatechange 事件。load 事件在响应接收完成后立即触发，这样就不用检查 readyState 属性了。onload 事件处理程序会收到一个 event 对象，其 target 属性设置为 XHR 实例，在这个实例上可以访问所有 XHR 对象属性和方法。不过，并不是所有浏览器都实现了这个事件的 event 对象。考虑到跨浏览器兼容，还是需要像下面这样使用 XHR 对象变量：</li>
+<li>progress 事件: Mozilla 在 XHR 对象上另一个创新是 progress 事件，在浏览器接收数据期间，这个事件会反复触发。每次触发时，onprogress 事件处理程序都会收到 event 对象，其 target 属性是 XHR 对象，且包含 3 个额外属性：lengthComputable、position 和 totalSize。其中，lengthComputable 是一个布尔值，表示进度信息是否可用；position 是接收到的字节数；totalSize 是响应的 ContentLength 头部定义的总字节数。有了这些信息，就可以给用户提供进度条了。以下代码演示了如何向用户展示进度：<div class="highlight-container" data-rel="Javascript"><figure class="iseeu highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> xhr = <span class="keyword">new</span> <span class="title class_">XMLHttpRequest</span>(); </span><br><span class="line">xhr.<span class="property">onload</span> = <span class="keyword">function</span>(<span class="params">event</span>) &#123; </span><br><span class="line"> <span class="keyword">if</span> ((xhr.<span class="property">status</span> &gt;= <span class="number">200</span> &amp;&amp; xhr.<span class="property">status</span> &lt; <span class="number">300</span>) || </span><br><span class="line"> xhr.<span class="property">status</span> == <span class="number">304</span>) &#123; </span><br><span class="line"> <span class="title function_">alert</span>(xhr.<span class="property">responseText</span>); </span><br><span class="line"> &#125; <span class="keyword">else</span> &#123; </span><br><span class="line"> <span class="title function_">alert</span>(<span class="string">&quot;Request was unsuccessful: &quot;</span> + xhr.<span class="property">status</span>); </span><br><span class="line"> &#125; </span><br><span class="line">&#125;; </span><br><span class="line">xhr.<span class="property">onprogress</span> = <span class="keyword">function</span>(<span class="params">event</span>) &#123; </span><br><span class="line"> <span class="keyword">let</span> divStatus = <span class="variable language_">document</span>.<span class="title function_">getElementById</span>(<span class="string">&quot;status&quot;</span>); </span><br><span class="line"> <span class="keyword">if</span> (event.<span class="property">lengthComputable</span>) &#123; </span><br><span class="line"> divStatus.<span class="property">innerHTML</span> = <span class="string">&quot;Received &quot;</span> + event.<span class="property">position</span> + <span class="string">&quot; of &quot;</span> + </span><br><span class="line"> event.<span class="property">totalSize</span> + </span><br><span class="line"><span class="string">&quot; bytes&quot;</span>; </span><br><span class="line"> &#125; </span><br><span class="line">&#125;; </span><br><span class="line">xhr.<span class="title function_">open</span>(<span class="string">&quot;get&quot;</span>, <span class="string">&quot;altevents.php&quot;</span>, <span class="literal">true</span>); </span><br><span class="line">xhr.<span class="title function_">send</span>(<span class="literal">null</span>);</span><br></pre></td></tr></table></figure></div>
+为了保证正确执行，必须在调用 open()之前添加 onprogress 事件处理程序。在前面的例子中，每次触发 progress 事件都会更新 HTML 元素中的信息。假设响应有 Content-Length 头部，就可以利用这些信息计算出已经收到响应的百分比。<br>2、跨源资源共享: 通过 XHR 进行 Ajax 通信的一个主要限制是跨源安全策略。默认情况下，XHR 只能访问与发起请求的页面在同一个域内的资源。这个安全限制可以防止某些恶意行为。不过，浏览器也需要支持合法跨源访问的能力。<br>跨源资源共享（CORS，Cross-Origin Resource Sharing）定义了浏览器与服务器如何实现跨源通信。CORS 背后的基本思路就是使用自定义的 HTTP 头部允许浏览器和服务器相互了解，以确实请求或响应应该成功还是失败。<br>对于简单的请求，比如 GET 或 POST 请求，没有自定义头部，而且请求体是 text&#x2F;plain 类型，这样的请求在发送时会有一个额外的头部叫 Origin。Origin 头部包含发送请求的页面的源（协议、域名和端口），以便服务器确定是否为其提供响应。下面是 Origin 头部的一个示例：<br>Origin: <a class="link"   target="_blank" rel="noopener" href="http://www.nczonline.net/" >http://www.nczonline.net <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a><br>如果服务器决定响应请求，那么应该发送 Access-Control-Allow-Origin 头部，包含相同的源；<br>或者如果资源是公开的，那么就包含”*”。比如：<br>Access-Control-Allow-Origin: <a class="link"   target="_blank" rel="noopener" href="http://www.nczonline.net/" >http://www.nczonline.net <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a><br>如果没有这个头部，或者有但源不匹配，则表明不会响应浏览器请求。否则，服务器就会处理这个请求。注意，无论请求还是响应都不会包含 cookie 信息。<br>现代浏览器通过 XMLHttpRequest 对象原生支持 CORS。在尝试访问不同源的资源时，这个行为会被自动触发。要向不同域的源发送请求，可以使用标准 XHR对象并给 open()方法传入一个绝对 URL，比如：<br>let xhr &#x3D; new XMLHttpRequest();<br>xhr.onreadystatechange &#x3D; function() {<br> if (xhr.readyState &#x3D;&#x3D; 4) {<br> if ((xhr.status &gt;&#x3D; 200 &amp;&amp; xhr.status &lt; 300) || xhr.status &#x3D;&#x3D; 304) {<br> alert(xhr.responseText);<br> } else {<br> alert(“Request was unsuccessful: “ + xhr.status);<br> }<br> }<br>};<br>xhr.open(“get”, “<a class="link"   target="_blank" rel="noopener" href="http://www.somewhere-else.com/page/" >http://www.somewhere-else.com/page/ <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a>“, true);<br>xhr.send(null);<br>跨域 XHR 对象允许访问 status 和 statusText 属性，也允许同步请求。出于安全考虑，跨域 XHR对象也施加了一些额外限制。<br> 不能使用 setRequestHeader()设置自定义头部。<br> 不能发送和接收 cookie。<br> getAllResponseHeaders()方法始终返回空字符串。<br>因为无论同域还是跨域请求都使用同一个接口，所以最好在访问本地资源时使用相对 URL，在访问远程资源时使用绝对 URL。这样可以更明确地区分使用场景，同时避免出现访问本地资源时出现头部或cookie 信息访问受限的问题。</li>
+<li>预检请求: CORS 通过一种叫预检请求（preflighted request）的服务器验证机制，允许使用自定义头部、除 GET和 POST 之外的方法，以及不同请求体内容类型。在要发送涉及上述某种高级选项的请求时，会先向服务器发送一个“预检”请求。这个请求使用 OPTIONS 方法发送并包含以下头部。<br> Origin：与简单请求相同。<br> Access-Control-Request-Method：请求希望使用的方法。<br> Access-Control-Request-Headers：（可选）要使用的逗号分隔的自定义头部列表。<br>下面是一个假设的 POST 请求，包含自定义的 NCZ 头部：<br>Origin: <a class="link"   target="_blank" rel="noopener" href="http://www.nczonline.net/" >http://www.nczonline.net <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a><br>Access-Control-Request-Method: POST<br>Access-Control-Request-Headers: NCZ<br>在这个请求发送后，服务器可以确定是否允许这种类型的请求。服务器会通过在响应中发送如下头部与浏览器沟通这些信息。<br> Access-Control-Allow-Origin：与简单请求相同。<br> Access-Control-Allow-Methods：允许的方法（逗号分隔的列表）。<br> Access-Control-Allow-Headers：服务器允许的头部（逗号分隔的列表）。<br> Access-Control-Max-Age：缓存预检请求的秒数。<br>例如：<br>Access-Control-Allow-Origin: <a class="link"   target="_blank" rel="noopener" href="http://www.nczonline.net/" >http://www.nczonline.net <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a><br>Access-Control-Allow-Methods: POST, GET<br>Access-Control-Allow-Headers: NCZ<br>Access-Control-Max-Age: 1728000<br>预检请求返回后，结果会按响应指定的时间缓存一段时间。换句话说，只有第一次发送这种类型的请求时才会多发送一次额外的 HTTP 请求。</li>
+<li>凭据请求: 默认情况下，跨源请求不提供凭据（cookie、HTTP 认证和客户端 SSL 证书）。可以通过将withCredentials 属性设置为 true 来表明请求会发送凭据。如果服务器允许带凭据的请求，那么可以在响应中包含如下 HTTP 头部：<br>Access-Control-Allow-Credentials: true<br>如果发送了凭据请求而服务器返回的响应中没有这个头部，则浏览器不会把响应交给 JavaScript（responseText 是空字符串，status 是 0，onerror()被调用）。注意，服务器也可以在预检请求的响应中发送这个 HTTP 头部，以表明这个源允许发送凭据请求。<br>3、替代性跨域技术: CORS 出现之前，实现跨源 Ajax 通信是有点麻烦的。开发者需要依赖能够执行跨源请求的 DOM 特性，在不使用 XHR 对象情况下发送某种类型的请求。虽然 CORS 目前已经得到广泛支持，但这些技术仍然没有过时，因为它们不需要修改服务器。</li>
+<li>图片探测: 图片探测是利用<img>标签实现跨域通信的最早的一种技术。任何页面都可以跨域加载图片而不必担心限制，因此这也是在线广告跟踪的主要方式。可以动态创建图片，然后通过它们的 onload 和onerror 事件处理程序得知何时收到响应。<br>这种动态创建图片的技术经常用于图片探测（image pings）。图片探测是与服务器之间简单、跨域、单向的通信。数据通过查询字符串发送，响应可以随意设置，不过一般是位图图片或值为 204 的状态码。浏览器通过图片探测拿不到任何数据，但可以通过监听 onload 和 onerror 事件知道什么时候能接收到响应。下面看一个例子：<br>let img &#x3D; new Image();<br>img.onload &#x3D; img.onerror &#x3D; function() {<br> alert(“Done!”);<br>};<br>img.src &#x3D; “<a class="link"   target="_blank" rel="noopener" href="http://www.example.com/test?name=Nicholas" >http://www.example.com/test?name=Nicholas <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a>“;<br>这个例子创建了一个新的 Image 实例，然后为它的 onload 和 onerror 事件处理程序添加了同一个函数。这样可以确保请求完成时无论什么响应都会收到通知。设置完 src 属性之后请求就开始了，这个例子向服务器发送了一个 name 值。<br>图片探测频繁用于跟踪用户在页面上的点击操作或动态显示广告。当然，图片探测的缺点是只能发送 GET 请求和无法获取服务器响应的内容。这也是只能利用图片探测实现浏览器与服务器单向通信的原因。</li>
+<li>JSONP: JSONP 是“JSON with padding”的简写，是在 Web 服务上流行的一种 JSON 变体。JSONP 看起来跟 JSON 一样，只是会被包在一个函数调用里，比如：<br>callback({ “name”: “Nicholas” });<br>JSONP 格式包含两个部分：回调和数据。回调是在页面接收到响应之后应该调用的函数，通常回调函数的名称是通过请求来动态指定的。而数据就是作为参数传给回调函数的 JSON 数据。下面是一个典型的 JSONP 请求：<br><a class="link"   target="_blank" rel="noopener" href="http://freegeoip.net/json/?callback=handleResponse" >http://freegeoip.net/json/?callback=handleResponse <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a><br>这个 JSONP 请求的 URL 是一个地理位置服务。JSONP 服务通常支持以查询字符串形式指定回调函数的名称。比如这个例子就把回调函数的名字指定为 handleResponse()。<br>JSONP 调用是通过动态创建<script>元素并为 src 属性指定跨域 URL 实现的。此时的<script>与<img>元素类似，能够不受限制地从其他域加载资源。因为 JSONP 是有效的 JavaScript，所以 JSONP响应在被加载完成之后会立即执行。比如下面这个例子：<br>function handleResponse(response) {<br> console.log(<code>   You&#39;re at IP address $&#123;response.ip&#125;, which is in   $&#123;response.city&#125;, $&#123;response.region_name&#125;</code>);<br>}<br>let script = document.createElement("script");<br>script.src = "<a class="link"   target="_blank" rel="noopener" href="http://freegeoip.net/json/?callback=handleResponse" >http://freegeoip.net/json/?callback=handleResponse <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a>";<br>document.body.insertBefore(script, document.body.firstChild);<br>JSONP 由于其简单易用，在开发者中非常流行。相比于图片探测，使用 JSONP 可以直接访问响应，实现浏览器与服务器的双向通信。不过 JSONP 也有一些缺点。<br>首先，JSONP 是从不同的域拉取可执行代码。如果这个域并不可信，则可能在响应中加入恶意内容。此时除了完全删除 JSONP 没有其他办法。在使用不受控的 Web 服务时，一定要保证是可以信任的。<br>第二个缺点是不好确定 JSONP 请求是否失败。虽然 HTML5 规定了<script>元素的 onerror 事件处理程序，但还没有被任何浏览器实现。为此，开发者经常使用计时器来决定是否放弃等待响应。这种方式并不准确，毕竟不同用户的网络连接速度和带宽是不一样的。<br>4、Fetch API: Fetch API 能够执行 XMLHttpRequest 对象的所有任务，但更容易使用，接口也更现代化，能够在Web 工作线程等现代 Web 工具中使用。XMLHttpRequest 可以选择异步，而 Fetch API 则必须是异步。<br>Fetch API 本身是使用 JavaScript 请求资源的优秀工具，同时这个 API 也能够应用在服务线程（service worker）中，提供拦截、重定向和修改通过 fetch()生成的请求接口</li>
+<li>基本用法: fetch()方法是暴露在全局作用域中的，包括主页面执行线程、模块和工作线程。调用这个方法，浏览器就会向给定 URL 发送请求。<br>分派请求: fetch()只有一个必需的参数 input。多数情况下，这个参数是要获取资源的 URL。这个方法返回一个期约：<br>let r = fetch('/bar');<br>console.log(r); // Promise <pending><br>URL 的格式（相对路径、绝对路径等）的解释与 XHR 对象一样。请求完成、资源可用时，期约会解决为一个 Response 对象。这个对象是 API 的封装，可以通过它取得相应资源。<br>读取响应: 读取响应内容的最简单方式是取得纯文本格式的内容，这要用到 text()方法。这个方法返回一个期约，会解决为取得资源的完整内容：<br>处理状态吗和请求失败: Fetch API 支持通过 Response 的 status（状态码）和 statusText（状态文本）属性检查响应状态。成功获取响应的请求通常会产生值为 200 的状态码，请求不存在的资源通常会产生值为 404 的状态码，请求的 URL 如果抛出服务器错误会产生值为 500 的状态码。违反 CORS、无网络连接、HTTPS 错配及其他浏览器/网络策略问题都会导致期约被拒绝。<br>自定义选项: 只使用 URL 时，fetch()会发送 GET 请求，只包含最低限度的请求头。要进一步配置如何发送请求，需要传入可选的第二个参数 init 对象。</li>
+<li>常见Fetch请求模式: 与 XMLHttpRequest 一样，fetch()既可以发送数据也可以接收数据。使用 init 对象参数，可以配置 fetch()在请求体中发送各种序列化的数据。<br>发送JSON数据: 可以像下面这样发送简单 JSON 字符串：<div class="highlight-container" data-rel="Js"><figure class="iseeu highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> payload = <span class="title class_">JSON</span>.<span class="title function_">stringify</span>(&#123; </span><br><span class="line"> <span class="attr">foo</span>: <span class="string">&#x27;bar&#x27;</span> </span><br><span class="line">&#125;); </span><br><span class="line"><span class="keyword">let</span> jsonHeaders = <span class="keyword">new</span> <span class="title class_">Headers</span>(&#123; </span><br><span class="line"> <span class="string">&#x27;Content-Type&#x27;</span>: <span class="string">&#x27;application/json&#x27;</span> </span><br><span class="line">&#125;); </span><br><span class="line"><span class="title function_">fetch</span>(<span class="string">&#x27;/send-me-json&#x27;</span>, &#123; </span><br><span class="line"> <span class="attr">method</span>: <span class="string">&#x27;POST&#x27;</span>, <span class="comment">// 发送请求体时必须使用一种 HTTP 方法</span></span><br><span class="line"> <span class="attr">body</span>: payload, </span><br><span class="line"> <span class="attr">headers</span>: jsonHeaders </span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure></div>
+在请求体中发送参数: 因为请求体支持任意字符串值，所以可以通过它发送请求参数：<div class="highlight-container" data-rel="Js"><figure class="iseeu highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> payload = <span class="string">&#x27;foo=bar&amp;baz=qux&#x27;</span>; </span><br><span class="line"><span class="keyword">let</span> paramHeaders = <span class="keyword">new</span> <span class="title class_">Headers</span>(&#123; </span><br><span class="line"> <span class="string">&#x27;Content-Type&#x27;</span>: <span class="string">&#x27;application/x-www-form-urlencoded; charset=UTF-8&#x27;</span> </span><br><span class="line">&#125;);</span><br><span class="line"><span class="title function_">fetch</span>(<span class="string">&#x27;/send-me-params&#x27;</span>, &#123; </span><br><span class="line"> <span class="attr">method</span>: <span class="string">&#x27;POST&#x27;</span>, <span class="comment">// 发送请求体时必须使用一种 HTTP 方法</span></span><br><span class="line"> <span class="attr">body</span>: payload, </span><br><span class="line"> <span class="attr">headers</span>: paramHeaders </span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure></div>
+发送文件: 因为请求体支持 FormData 实现，所以 fetch()也可以序列化并发送文件字段中的文件：<div class="highlight-container" data-rel="Js"><figure class="iseeu highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> imageFormData = <span class="keyword">new</span> <span class="title class_">FormData</span>(); </span><br><span class="line"><span class="keyword">let</span> imageInput = <span class="variable language_">document</span>.<span class="title function_">querySelector</span>(<span class="string">&quot;input[type=&#x27;file&#x27;]&quot;</span>); </span><br><span class="line">imageFormData.<span class="title function_">append</span>(<span class="string">&#x27;image&#x27;</span>, imageInput.<span class="property">files</span>[<span class="number">0</span>]); </span><br><span class="line"><span class="title function_">fetch</span>(<span class="string">&#x27;/img-upload&#x27;</span>, &#123; </span><br><span class="line"> <span class="attr">method</span>: <span class="string">&#x27;POST&#x27;</span>, </span><br><span class="line"> <span class="attr">body</span>: imageFormData </span><br><span class="line">&#125;);</span><br><span class="line"><span class="comment">// 这个 fetch()实现可以支持多个文件：</span></span><br><span class="line"><span class="keyword">let</span> imageFormData = <span class="keyword">new</span> <span class="title class_">FormData</span>(); </span><br><span class="line"><span class="keyword">let</span> imageInput = <span class="variable language_">document</span>.<span class="title function_">querySelector</span>(<span class="string">&quot;input[type=&#x27;file&#x27;][multiple]&quot;</span>); </span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; imageInput.<span class="property">files</span>.<span class="property">length</span>; ++i) &#123; </span><br><span class="line"> imageFormData.<span class="title function_">append</span>(<span class="string">&#x27;image&#x27;</span>, imageInput.<span class="property">files</span>[i]); </span><br><span class="line">&#125;</span><br><span class="line"><span class="title function_">fetch</span>(<span class="string">&#x27;/img-upload&#x27;</span>, &#123; </span><br><span class="line"> <span class="attr">method</span>: <span class="string">&#x27;POST&#x27;</span>, </span><br><span class="line"> <span class="attr">body</span>: imageFormData </span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure></div>
+加载Blob文件: Fetch API也能提供 Blob 类型的响应，而 Blob 又可以兼容多种浏览器 API。一种常见的做法是明确将图片文件加载到内存，然后将其添加到 HTML图片元素。为此，可以使用响应对象上暴露的 blob()方法。这个方法返回一个期约，解决为一个 Blob 的实例。然后，可以将这个实例传给 URL.createObjectUrl()以生成可以添加给图片元素 src 属性的值：<br>const imageElement = document.querySelector('img');<br>fetch('my-image.png')<br> .then((response) => response.blob())<br> .then((blob) => {<br> imageElement.src = URL.createObjectURL(blob);<br> });<br>发送跨域请求: 从不同的源请求资源，响应要包含 CORS 头部才能保证浏览器收到响应。没有这些头部，跨源请求会失败并抛出错误。<br>fetch('//cross-origin.com');<br>// TypeError: Failed to fetch<br>// No 'Access-Control-Allow-Origin' header is present on the requested resource.<br>中断请求: Fetch API 支持通过 AbortController/AbortSignal 对中断请求。调用 AbortController. abort()会中断所有网络传输，特别适合希望停止传输大型负载的情况。中断进行中的 fetch()请求会导致包含错误的拒绝。<br>let abortController = new AbortController();<br>fetch('wikipedia.zip', { signal: abortController.signal })<br> .catch(() => console.log('aborted!');<br>// 10 毫秒后中断请求<br>setTimeout(() => abortController.abort(), 10);<br>// 已经中断</li>
+<li>Headers对象: Headers 对象是所有外发请求和入站响应头部的容器。每个外发的 Request 实例都包含一个空的Headers 实例，可以通过 Request.prototype.headers 访问，每个入站 Response 实例也可以通过Response.prototype.headers 访问包含着响应头部的 Headers 对象。这两个属性都是可修改属性。另外，使用 new Headers()也可以创建一个新实例。<br>Headers与Map的相似之处: HTTP 头部本质上是序列化后的键/值对，它们的 JavaScript 表示则是中间接口。Headers 与 Map 类型都有 get()、set()、has()和 delete()等实例方法，如下面的代码所示：<div class="highlight-container" data-rel="Js"><figure class="iseeu highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> h = <span class="keyword">new</span> <span class="title class_">Headers</span>(); </span><br><span class="line"><span class="keyword">let</span> m = <span class="keyword">new</span> <span class="title class_">Map</span>(); </span><br><span class="line"><span class="comment">// 设置键</span></span><br><span class="line">h.<span class="title function_">set</span>(<span class="string">&#x27;foo&#x27;</span>, <span class="string">&#x27;bar&#x27;</span>); </span><br><span class="line">m.<span class="title function_">set</span>(<span class="string">&#x27;foo&#x27;</span>, <span class="string">&#x27;bar&#x27;</span>); </span><br><span class="line"><span class="comment">// 检查键</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(h.<span class="title function_">has</span>(<span class="string">&#x27;foo&#x27;</span>)); <span class="comment">// true </span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(m.<span class="title function_">has</span>(<span class="string">&#x27;foo&#x27;</span>)); <span class="comment">// true </span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(h.<span class="title function_">has</span>(<span class="string">&#x27;qux&#x27;</span>)); <span class="comment">// false </span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(m.<span class="title function_">has</span>(<span class="string">&#x27;qux&#x27;</span>)); <span class="comment">// false </span></span><br><span class="line"><span class="comment">// 获取值</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(h.<span class="title function_">get</span>(<span class="string">&#x27;foo&#x27;</span>)); <span class="comment">// bar </span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(m.<span class="title function_">get</span>(<span class="string">&#x27;foo&#x27;</span>)); <span class="comment">// bar </span></span><br><span class="line"><span class="comment">// 更新值</span></span><br><span class="line">h.<span class="title function_">set</span>(<span class="string">&#x27;foo&#x27;</span>, <span class="string">&#x27;baz&#x27;</span>); </span><br><span class="line">m.<span class="title function_">set</span>(<span class="string">&#x27;foo&#x27;</span>, <span class="string">&#x27;baz&#x27;</span>);</span><br><span class="line"><span class="comment">// 取得更新的值</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(h.<span class="title function_">get</span>(<span class="string">&#x27;foo&#x27;</span>)); <span class="comment">// baz </span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(m.<span class="title function_">get</span>(<span class="string">&#x27;foo&#x27;</span>)); <span class="comment">// baz </span></span><br><span class="line"><span class="comment">// 删除值</span></span><br><span class="line">h.<span class="title function_">delete</span>(<span class="string">&#x27;foo&#x27;</span>); </span><br><span class="line">m.<span class="title function_">delete</span>(<span class="string">&#x27;foo&#x27;</span>); </span><br><span class="line"><span class="comment">// 确定值已经删除</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(h.<span class="title function_">get</span>(<span class="string">&#x27;foo&#x27;</span>)); <span class="comment">// undefined </span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(m.<span class="title function_">get</span>(<span class="string">&#x27;foo&#x27;</span>)); <span class="comment">// undefined</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// Headers 和 Map 都可以使用一个可迭代对象来初始化，比如：</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> seed = [[<span class="string">&#x27;foo&#x27;</span>, <span class="string">&#x27;bar&#x27;</span>]]; </span><br><span class="line"><span class="keyword">let</span> h = <span class="keyword">new</span> <span class="title class_">Headers</span>(seed); </span><br><span class="line"><span class="keyword">let</span> m = <span class="keyword">new</span> <span class="title class_">Map</span>(seed); </span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(h.<span class="title function_">get</span>(<span class="string">&#x27;foo&#x27;</span>)); <span class="comment">// bar </span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(m.<span class="title function_">get</span>(<span class="string">&#x27;foo&#x27;</span>)); <span class="comment">// bar</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 而且，它们也都有相同的 keys()、values()和 entries()迭代器接口：</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> seed = [[<span class="string">&#x27;foo&#x27;</span>, <span class="string">&#x27;bar&#x27;</span>], [<span class="string">&#x27;baz&#x27;</span>, <span class="string">&#x27;qux&#x27;</span>]]; </span><br><span class="line"><span class="keyword">let</span> h = <span class="keyword">new</span> <span class="title class_">Headers</span>(seed); </span><br><span class="line"><span class="keyword">let</span> m = <span class="keyword">new</span> <span class="title class_">Map</span>(seed); </span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(...h.<span class="title function_">keys</span>()); <span class="comment">// foo, baz </span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(...m.<span class="title function_">keys</span>()); <span class="comment">// foo, baz </span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(...h.<span class="title function_">values</span>()); <span class="comment">// bar, qux </span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(...m.<span class="title function_">values</span>()); <span class="comment">// bar, qux </span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(...h.<span class="title function_">entries</span>()); <span class="comment">// [&#x27;foo&#x27;, &#x27;bar&#x27;], [&#x27;baz&#x27;, &#x27;qux&#x27;] </span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(...m.<span class="title function_">entries</span>()); <span class="comment">// [&#x27;foo&#x27;, &#x27;bar&#x27;], [&#x27;baz&#x27;, &#x27;qux&#x27;]</span></span><br></pre></td></tr></table></figure></div>
+Headers独有的特性: Headers 并不是与 Map 处处都一样。在初始化 Headers 对象时，也可以使用键/值对形式的对象，而 Map 则不可以：<br>let seed = {foo: 'bar'};<br>let h = new Headers(seed);<br>console.log(h.get('foo')); // bar<br>let m = new Map(seed);<br>// TypeError: object is not iterable<br>一个 HTTP 头部字段可以有多个值，而 Headers 对象通过 append()方法支持添加多个值。在Headers 实例中还不存在的头部上调用 append()方法相当于调用 set()。后续调用会以逗号为分隔符拼接多个值：<br>let h = new Headers();<br>h.append('foo', 'bar');<br>console.log(h.get('foo')); // "bar"<br>h.append('foo', 'baz');<br>console.log(h.get('foo')); // "bar, baz"<br>头部护卫: 某些情况下，并非所有 HTTP 头部都可以被客户端修改，而 Headers 对象使用护卫来防止不被允许的修改。不同的护卫设置会改变 set()、append()和 delete()的行为。违反护卫限制会抛出TypeError。</li>
+<li>Request对象: 顾名思义，Request 对象是获取资源请求的接口。这个接口暴露了请求的相关信息，也暴露了使用请求体的不同方式。<br>创建Request对象: 可以通过构造函数初始化 Request 对象。为此需要传入一个 input 参数，一般是 URL：<br>let r = new Request('<a class="link"   target="_blank" rel="noopener" href="https://foo.com/" >https://foo.com <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a>');<br>console.log(r);<br>// Request {...}<br>Request 构造函数也接收第二个参数——一个 init 对象。这个 init 对象与前面介绍的 fetch()的 init 对象一样。没有在 init 对象中涉及的值则会使用默认值：<div class="highlight-container" data-rel="Js"><figure class="iseeu highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 用所有默认值创建 Request 对象</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="keyword">new</span> <span class="title class_">Request</span>(<span class="string">&#x27;&#x27;</span>)); </span><br><span class="line"><span class="comment">// Request &#123; </span></span><br><span class="line"><span class="comment">// bodyUsed: false </span></span><br><span class="line"><span class="comment">// cache: &quot;default&quot; </span></span><br><span class="line"><span class="comment">// credentials: &quot;same-origin&quot; </span></span><br><span class="line"><span class="comment">// destination: &quot;&quot; </span></span><br><span class="line"><span class="comment">// headers: Headers &#123;&#125;</span></span><br><span class="line"><span class="comment">// integrity: &quot;&quot; </span></span><br><span class="line"><span class="comment">// keepalive: false </span></span><br><span class="line"><span class="comment">// method: &quot;GET&quot; </span></span><br><span class="line"><span class="comment">// mode: &quot;cors&quot; </span></span><br><span class="line"><span class="comment">// redirect: &quot;follow&quot; </span></span><br><span class="line"><span class="comment">// referrer: &quot;about:client&quot; </span></span><br><span class="line"><span class="comment">// referrerPolicy: &quot;&quot; </span></span><br><span class="line"><span class="comment">// signal: AbortSignal &#123;aborted: false, onabort: null&#125; </span></span><br><span class="line"><span class="comment">// url: &quot;&lt;current URL&gt;&quot; </span></span><br><span class="line"><span class="comment">// &#125; </span></span><br><span class="line"><span class="comment">// 用指定的初始值创建 Request 对象</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="keyword">new</span> <span class="title class_">Request</span>(<span class="string">&#x27;https://foo.com&#x27;</span>, </span><br><span class="line"> &#123; <span class="attr">method</span>: <span class="string">&#x27;POST&#x27;</span> &#125;)); </span><br><span class="line"><span class="comment">// Request &#123; </span></span><br><span class="line"><span class="comment">// bodyUsed: false </span></span><br><span class="line"><span class="comment">// cache: &quot;default&quot; </span></span><br><span class="line"><span class="comment">// credentials: &quot;same-origin&quot; </span></span><br><span class="line"><span class="comment">// destination: &quot;&quot; </span></span><br><span class="line"><span class="comment">// headers: Headers &#123;&#125; </span></span><br><span class="line"><span class="comment">// integrity: &quot;&quot; </span></span><br><span class="line"><span class="comment">// keepalive: false </span></span><br><span class="line"><span class="comment">// method: &quot;POST&quot;</span></span><br><span class="line"><span class="comment">// mode: &quot;cors&quot; </span></span><br><span class="line"><span class="comment">// redirect: &quot;follow&quot; </span></span><br><span class="line"><span class="comment">// referrer: &quot;about:client&quot; </span></span><br><span class="line"><span class="comment">// referrerPolicy: &quot;&quot; </span></span><br><span class="line"><span class="comment">// signal: AbortSignal &#123;aborted: false, onabort: null&#125; </span></span><br><span class="line"><span class="comment">// url: &quot;https://foo.com/&quot;</span></span><br><span class="line"><span class="comment">// &#125;</span></span><br></pre></td></tr></table></figure></div>
+克隆Request对象: Fetch API 提供了两种不太一样的方式用于创建 Request 对象的副本：使用 Request 构造函数和使用 clone()方法。<br>在fetch()中使用Request对象: fetch()和 Request 构造函数拥有相同的函数签名并不是巧合。在调用 fetch()时，可以传入已经创建好的 Request 实例而不是 URL。</li>
+</ul>
+
+        </div>
+
+        
+
+        
+            <ul class="post-tags-box text-lg mt-1.5 flex-wrap justify-center flex md:hidden">
+                
+                    <li class="tag-item mx-0.5">
+                        <a href="/tags/journal/">#journal</a>&nbsp;
+                    </li>
+                
+            </ul>
+        
+
+        
+
+        
+            <div class="article-nav my-8 flex justify-between items-center px-2 sm:px-6 md:px-8">
+                
+                    <div class="article-prev border-border-color shadow-redefine-flat shadow-shadow-color-2 rounded-medium px-4 py-2 hover:shadow-redefine-flat-hover hover:shadow-shadow-color-2">
+                        <a class="prev"
+                        rel="prev"
+                        href="/undefined/2025-04-16/"
+                        >
+                            <span class="left arrow-icon flex justify-center items-center">
+                                <i class="fa-solid fa-chevron-left"></i>
+                            </span>
+                            <span class="title flex justify-center items-center">
+                                <span class="post-nav-title-item">2025-04-16 日报 Day158</span>
+                                <span class="post-nav-item">上一篇</span>
+                            </span>
+                        </a>
+                    </div>
+                
+                
+                    <div class="article-next border-border-color shadow-redefine-flat shadow-shadow-color-2 rounded-medium px-4 py-2 hover:shadow-redefine-flat-hover hover:shadow-shadow-color-2">
+                        <a class="next"
+                        rel="next"
+                        href="/undefined/2025-04-14/"
+                        >
+                            <span class="title flex justify-center items-center">
+                                <span class="post-nav-title-item">2025-04-14 日报 Day156</span>
+                                <span class="post-nav-item">下一篇</span>
+                            </span>
+                            <span class="right arrow-icon flex justify-center items-center">
+                                <i class="fa-solid fa-chevron-right"></i>
+                            </span>
+                        </a>
+                    </div>
+                
+            </div>
+        
+
+
+        
+    </div>
+
+    
+        <div class="toc-content-container">
+            <div class="post-toc-wrap">
+    <div class="post-toc">
+        <div class="toc-title">此页目录</div>
+        <div class="page-title">2025-04-15 日报 Day157</div>
+        <ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BB%8A%E6%97%A5%E5%AD%A6%E4%B9%A0%E5%86%85%E5%AE%B9"><span class="nav-text">今日学习内容</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BB%8A%E6%97%A5%E7%AC%94%E8%AE%B0"><span class="nav-text">今日笔记</span></a></li></ol>
+
+    </div>
+</div>
+        </div>
+    
+</div>
+
+
+
+                
+
+            </div>
+
+            
+
+        </div>
+
+        <div class="main-content-footer">
+            <footer class="footer mt-5 py-5 h-auto text-base text-third-text-color relative border-t-2 border-t-border-color">
+    <div class="info-container py-3 text-center">
+        
+        <div class="text-center">
+            &copy;
+            
+              <span>2022</span>
+              -
+            
+            2025&nbsp;&nbsp;<i class="fa-solid fa-heart fa-beat" style="--fa-animation-duration: 0.5s; color: #f54545"></i>&nbsp;&nbsp;<a href="/">Yuyang</a>
+            
+                
+                <p class="post-count space-x-0.5">
+                    <span>
+                        共 187 篇文章
+                    </span>
+                    
+                </p>
+            
+        </div>
+        
+            <script data-swup-reload-script src="https://cn.vercount.one/js"></script>
+            <div class="relative text-center lg:absolute lg:right-[20px] lg:top-1/2 lg:-translate-y-1/2 lg:text-right">
+                
+                    <span id="busuanzi_container_site_uv" class="lg:!block">
+                        <span class="text-sm">访问人数</span>
+                        <span id="busuanzi_value_site_uv"></span>
+                    </span>
+                
+                
+                    <span id="busuanzi_container_site_pv" class="lg:!block">
+                        <span class="text-sm">总访问量</span>
+                        <span id="busuanzi_value_site_pv"></span>
+                    </span>
+                
+            </div>
+        
+        <div class="relative text-center lg:absolute lg:left-[20px] lg:top-1/2 lg:-translate-y-1/2 lg:text-left">
+            <span class="lg:block text-sm">由 <?xml version="1.0" encoding="utf-8"?><!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"><svg class="relative top-[2px] inline-block align-baseline" version="1.1" id="圖層_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="1rem" height="1rem" viewBox="0 0 512 512" enable-background="new 0 0 512 512" xml:space="preserve"><path fill="#0E83CD" d="M256.4,25.8l-200,115.5L56,371.5l199.6,114.7l200-115.5l0.4-230.2L256.4,25.8z M349,354.6l-18.4,10.7l-18.6-11V275H200v79.6l-18.4,10.7l-18.6-11v-197l18.5-10.6l18.5,10.8V237h112v-79.6l18.5-10.6l18.5,10.8V354.6z"/></svg><a target="_blank" class="text-base" href="https://hexo.io">Hexo</a> 驱动</span>
+            <span class="text-sm lg:block">主题&nbsp;<a class="text-base" target="_blank" href="https://github.com/EvanNotFound/hexo-theme-redefine">Redefine v2.6.4</a></span>
+        </div>
+        
+        
+        
+        
+        
+    </div>  
+</footer>
+        </div>
+    </div>
+
+    
+        <div class="post-tools">
+            <div class="post-tools-container">
+    <ul class="article-tools-list">
+        <!-- TOC aside toggle -->
+        
+            <li class="right-bottom-tools page-aside-toggle">
+                <i class="fa-regular fa-outdent"></i>
+            </li>
+        
+
+        <!-- go comment -->
+        
+    </ul>
+</div>
+
+        </div>
+    
+
+    <div class="right-side-tools-container">
+        <div class="side-tools-container">
+    <ul class="hidden-tools-list">
+        <li class="right-bottom-tools tool-font-adjust-plus flex justify-center items-center">
+            <i class="fa-regular fa-magnifying-glass-plus"></i>
+        </li>
+
+        <li class="right-bottom-tools tool-font-adjust-minus flex justify-center items-center">
+            <i class="fa-regular fa-magnifying-glass-minus"></i>
+        </li>
+
+        <li class="right-bottom-tools tool-dark-light-toggle flex justify-center items-center">
+            <i class="fa-regular fa-moon"></i>
+        </li>
+
+        <!-- rss -->
+        
+
+        
+
+        <li class="right-bottom-tools tool-scroll-to-bottom flex justify-center items-center">
+            <i class="fa-regular fa-arrow-down"></i>
+        </li>
+    </ul>
+
+    <ul class="visible-tools-list">
+        <li class="right-bottom-tools toggle-tools-list flex justify-center items-center">
+            <i class="fa-regular fa-cog fa-spin"></i>
+        </li>
+        
+            <li class="right-bottom-tools tool-scroll-to-top flex justify-center items-center">
+                <i class="arrow-up fas fa-arrow-up"></i>
+                <span class="percent"></span>
+            </li>
+        
+        
+    </ul>
+</div>
+
+    </div>
+
+    <div class="image-viewer-container">
+    <img src="">
+</div>
+
+
+    
+        <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+          <span class="search-input-field-pre">
+            <i class="fa-solid fa-keyboard"></i>
+          </span>
+            <div class="search-input-container">
+                <input autocomplete="off"
+                       autocorrect="off"
+                       autocapitalize="off"
+                       placeholder="搜索..."
+                       spellcheck="false"
+                       type="search"
+                       class="search-input"
+                >
+            </div>
+            <span class="popup-btn-close">
+                <i class="fa-solid fa-times"></i>
+            </span>
+        </div>
+        <div id="search-result">
+            <div id="no-result">
+                <i class="fa-solid fa-spinner fa-spin-pulse fa-5x fa-fw"></i>
+            </div>
+        </div>
+    </div>
+</div>
+
+    
+
+</main>
+
+
+    
+<script src="/js/libs/Swup.min.js"></script>
+
+<script src="/js/libs/SwupSlideTheme.min.js"></script>
+
+<script src="/js/libs/SwupScriptsPlugin.min.js"></script>
+
+<script src="/js/libs/SwupProgressPlugin.min.js"></script>
+
+<script src="/js/libs/SwupScrollPlugin.min.js"></script>
+
+<script src="/js/libs/SwupPreloadPlugin.min.js"></script>
+
+<script>
+    const swup = new Swup({
+        plugins: [
+            new SwupScriptsPlugin({
+                optin: true,
+            }),
+            new SwupProgressPlugin(),
+            new SwupScrollPlugin({
+                offset: 80,
+            }),
+            new SwupSlideTheme({
+                mainElement: ".main-content-body",
+            }),
+            new SwupPreloadPlugin(),
+        ],
+        containers: ["#swup"],
+    });
+</script>
+
+
+
+
+
+
+
+<script src="/js/tools/imageViewer.js" type="module"></script>
+
+<script src="/js/utils.js" type="module"></script>
+
+<script src="/js/main.js" type="module"></script>
+
+<script src="/js/layouts/navbarShrink.js" type="module"></script>
+
+<script src="/js/tools/scrollTopBottom.js" type="module"></script>
+
+<script src="/js/tools/lightDarkSwitch.js" type="module"></script>
+
+<script src="/js/layouts/categoryList.js" type="module"></script>
+
+
+
+    
+<script src="/js/tools/localSearch.js" type="module"></script>
+
+
+
+
+    
+<script src="/js/tools/codeBlock.js" type="module"></script>
+
+
+
+
+    
+<script src="/js/layouts/lazyload.js" type="module"></script>
+
+
+
+
+
+
+  
+<script src="/js/libs/Typed.min.js"></script>
+
+  
+<script src="/js/plugins/typed.js" type="module"></script>
+
+
+
+
+
+
+
+
+
+<div class="post-scripts" data-swup-reload-script>
+    
+        
+<script src="/js/tools/tocToggle.js" type="module"></script>
+
+<script src="/js/layouts/toc.js" type="module"></script>
+
+<script src="/js/plugins/tabs.js" type="module"></script>
+
+    
+</div>
+
+
+</body>
+</html>
