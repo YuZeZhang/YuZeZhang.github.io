@@ -18,15 +18,15 @@
     <meta name="googlebot" content="index,follow">
     <meta name="revisit-after" content="1 days">
     
-        <meta name="description" content="今日的鸡汤                  和格局远大的人在一起，你的眼里就不会只有鸡毛蒜皮； 和自律向上的人在一起，你也会不由自主想要改变自己；和乐观豁达的人在一起，平凡的生活也能富有情趣。           今日学习内容1、JS 红皮书 P751- 第二十五章：客户端存储 今日笔记1、客户端存储: 随着 Web 应用程序的出现，直接在客户端存储用户信息的需求也">
+        <meta name="description" content="今日的鸡汤                  和格局远大的人在一起，你的眼里就不会只有鸡毛蒜皮； 和自律向上的人在一起，你也会不由自主想要改变自己；和乐观豁达的人在一起，平凡的生活也能富有情趣。           今日学习内容1、JS 红皮书 P751-758 第二十五章：客户端存储 今日笔记1、客户端存储: 随着 Web 应用程序的出现，直接在客户端存储用户信息的">
 <meta property="og:type" content="article">
 <meta property="og:title" content="2025-04-17 日报 Day159">
 <meta property="og:url" content="https://github.com/YuZeZhang/YuZeZhang.github.io/undefined/2025-04-17/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="今日的鸡汤                  和格局远大的人在一起，你的眼里就不会只有鸡毛蒜皮； 和自律向上的人在一起，你也会不由自主想要改变自己；和乐观豁达的人在一起，平凡的生活也能富有情趣。           今日学习内容1、JS 红皮书 P751- 第二十五章：客户端存储 今日笔记1、客户端存储: 随着 Web 应用程序的出现，直接在客户端存储用户信息的需求也">
+<meta property="og:description" content="今日的鸡汤                  和格局远大的人在一起，你的眼里就不会只有鸡毛蒜皮； 和自律向上的人在一起，你也会不由自主想要改变自己；和乐观豁达的人在一起，平凡的生活也能富有情趣。           今日学习内容1、JS 红皮书 P751-758 第二十五章：客户端存储 今日笔记1、客户端存储: 随着 Web 应用程序的出现，直接在客户端存储用户信息的">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2025-04-16T16:00:00.000Z">
-<meta property="article:modified_time" content="2025-06-07T15:53:37.347Z">
+<meta property="article:modified_time" content="2025-06-08T15:55:20.504Z">
 <meta property="article:author" content="Yuyang">
 <meta property="article:tag" content="journal">
 <meta name="twitter:card" content="summary">
@@ -550,8 +550,8 @@
     
         <span class="article-date article-meta-item">
             <i class="fa-regular fa-wrench"></i>&nbsp;
-            <span class="desktop">2025-06-07 23:53:37</span>
-            <span class="mobile">2025-06-07 23:53:37</span>
+            <span class="desktop">2025-06-08 23:55:20</span>
+            <span class="mobile">2025-06-08 23:55:20</span>
             <span class="hover-info">更新</span>
         </span>
     
@@ -617,7 +617,7 @@
     </div>
   </div>
 
-<h3 id="今日学习内容"><a href="#今日学习内容" class="headerlink" title="今日学习内容"></a>今日学习内容</h3><p>1、JS 红皮书 P751- 第二十五章：客户端存储</p>
+<h3 id="今日学习内容"><a href="#今日学习内容" class="headerlink" title="今日学习内容"></a>今日学习内容</h3><p>1、JS 红皮书 P751-758 第二十五章：客户端存储</p>
 <h3 id="今日笔记"><a href="#今日笔记" class="headerlink" title="今日笔记"></a>今日笔记</h3><p>1、客户端存储: 随着 Web 应用程序的出现，直接在客户端存储用户信息的需求也随之出现。这背后的想法是合理的：与特定用户相关的信息应该保存在用户的机器上。无论是登录信息、个人偏好，还是其他数据，Web 应用程序提供者都需要有办法把它们保存在客户端。对该问题的第一个解决方案就是 cookie，cookie 由古老的网景公司发明，由一份名为 Persistent Client State: HTTP Cookies 的规范定义。今天，cookie 只是在客户端存储数据的一个选项。<br>2、cookie: HTTP cookie 通常也叫作 cookie，最初用于在客户端存储会话信息。这个规范要求服务器在响应 HTTP 请求时，通过发送 Set-Cookie HTTP 头部包含会话信息。例如，下面是包含这个头部的一个 HTTP 响应：<br>HTTP&#x2F;1.1 200 OK<br>Content-type: text&#x2F;html<br>Set-Cookie: name&#x3D;value<br>Other-header: other-header-value<br>这个 HTTP 响应会设置一个名为”name”，值为”value”的 cookie。名和值在发送时都会经过 URL 编码。浏览器会存储这些会话信息，并在之后的每个请求中都会通过 HTTP 头部 cookie 再将它们发回服务器，比如：<br>GET &#x2F;index.jsl HTTP&#x2F;1.1<br>Cookie: name&#x3D;value<br>Other-header: other-header-value<br>这些发送回服务器的额外信息可用于唯一标识发送请求的客户端</p>
 <ul>
 <li>限制: cookie 是与特定域绑定的。设置 cookie 后，它会与请求一起发送到创建它的域。这个限制能保证 cookie 中存储的信息只对被认可的接收者开放，不被其他域访问。<br>因为 cookie 存储在客户端机器上，所以为保证它不会被恶意利用，浏览器会施加限制。同时，cookie 也不会占用太多磁盘空间。</li>
@@ -630,6 +630,9 @@
 <li>子 cookie:<br>为绕过浏览器对每个域 cookie 数的限制，有些开发者提出了子 cookie 的概念。子 cookie 是在单个<br>cookie 存储的小块数据，本质上是使用 cookie 的值在单个 cookie 中存储多个名&#x2F;值对。最常用的子 cookie<br>模式如下：<br>name1&#x3D;value1&amp;name2&#x3D;value2&amp;name3&#x3D;value3&amp;name4&#x3D;value4&amp;name5&#x3D;value5<br>子 cookie 的格式类似于查询字符串。这些值可以存储为单个 cookie，而不用单独存储为自己的名&#x2F;值对。结果就是网站或 Web 应用程序能够在单域 cookie 数限制下存储更多的结构化数据。<br>要操作子 cookie，就需要再添加一些辅助方法。解析和序列化子 cookie 的方式不一样，且因为对子 cookie 的使用而变得更复杂。比如，要取得某个子 cookie，就需要先取得 cookie，然后在解码值之前需要先像下面这样找到子 cookie：</li>
 </ul>
 <div class="highlight-container" data-rel="Javascript"><figure class="iseeu highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">SubCookieUtil</span> &#123;</span><br><span class="line">  <span class="keyword">static</span> <span class="title function_">get</span>(<span class="params">name, subName</span>) &#123;</span><br><span class="line">    <span class="keyword">let</span> subCookies = <span class="title class_">SubCookieUtil</span>.<span class="title function_">getAll</span>(name);</span><br><span class="line">    <span class="keyword">return</span> subCookies ? subCookies[subName] : <span class="literal">null</span>;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">static</span> <span class="title function_">getAll</span>(<span class="params">name</span>) &#123;</span><br><span class="line">    <span class="keyword">let</span> cookieName = <span class="built_in">encodeURIComponent</span>(name) + <span class="string">&quot;=&quot;</span>,</span><br><span class="line">      cookieStart = <span class="variable language_">document</span>.<span class="property">cookie</span>.<span class="title function_">indexOf</span>(cookieName),</span><br><span class="line">      cookieValue = <span class="literal">null</span>,</span><br><span class="line">      cookieEnd,</span><br><span class="line">      subCookies,</span><br><span class="line">      parts,</span><br><span class="line">      result = &#123;&#125;;</span><br><span class="line">    <span class="keyword">if</span> (cookieStart &gt; -<span class="number">1</span>) &#123;</span><br><span class="line">      cookieEnd = <span class="variable language_">document</span>.<span class="property">cookie</span>.<span class="title function_">indexOf</span>(<span class="string">&quot;;&quot;</span>, cookieStart);</span><br><span class="line">      <span class="keyword">if</span> (cookieEnd == -<span class="number">1</span>) &#123;</span><br><span class="line">        cookieEnd = <span class="variable language_">document</span>.<span class="property">cookie</span>.<span class="property">length</span>;</span><br><span class="line">      &#125;</span><br><span class="line">      cookieValue = <span class="variable language_">document</span>.<span class="property">cookie</span>.<span class="title function_">substring</span>(</span><br><span class="line">        cookieStart + cookieName.<span class="property">length</span>,</span><br><span class="line">        cookieEnd</span><br><span class="line">      );</span><br><span class="line">      <span class="keyword">if</span> (cookieValue.<span class="property">length</span> &gt; <span class="number">0</span>) &#123;</span><br><span class="line">        subCookies = cookieValue.<span class="title function_">split</span>(<span class="string">&quot;&amp;&quot;</span>);</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>, len = subCookies.<span class="property">length</span>; i &lt; len; i++) &#123;</span><br><span class="line">          parts = subCookies[i].<span class="title function_">split</span>(<span class="string">&quot;=&quot;</span>);</span><br><span class="line">          result[<span class="built_in">decodeURIComponent</span>(parts[<span class="number">0</span>])] = <span class="built_in">decodeURIComponent</span>(parts[<span class="number">1</span>]);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> result;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">null</span>;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="comment">// 省略其他代码</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+<ul>
+<li>使用cookie的注意事项: 还有一种叫作 HTTP-only 的 cookie。HTTP-only 可以在浏览器设置，也可以在服务器设置，但只能在服务器上读取，这是因为 JavaScript 无法取得这种 cookie 的值。<br>因为所有 cookie 都会作为请求头部由浏览器发送给服务器，所以在 cookie 中保存大量信息可能会影响特定域浏览器请求的性能。保存的 cookie 越大，请求完成的时间就越长。即使浏览器对 cookie 大小有限制，最好还是尽可能只通过 cookie 保存必要信息，以避免性能问题。对 cookie 的限制及其特性决定了 cookie 并不是存储大量数据的理想方式。因此，其他客户端存储技术出现了。</li>
+</ul>
 
         </div>
 
