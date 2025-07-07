@@ -18,15 +18,15 @@
     <meta name="googlebot" content="index,follow">
     <meta name="revisit-after" content="1 days">
     
-        <meta name="description" content="今日的鸡汤                  巨大的用户群体绝不仅意味着金山银山，还意味着责任如山。           今日学习内容1、https:&#x2F;&#x2F;www.youtube.com&#x2F;watch?v&#x3D;EVFZazcxAbo&amp;t&#x3D;4112s  今日笔记Commit阶段工作流简析">
+        <meta name="description" content="今日的鸡汤                  巨大的用户群体绝不仅意味着金山银山，还意味着责任如山。           今日学习内容1、https:&#x2F;&#x2F;www.youtube.com&#x2F;watch?v&#x3D;EVFZazcxAbo&amp;t&#x3D;4112s  今日笔记Commit阶段工作流简析  before mutation阶段，这个阶段DOM节点还没有被渲染到界面上去 m">
 <meta property="og:type" content="article">
 <meta property="og:title" content="2025-05-15 日报 Day187">
 <meta property="og:url" content="https://github.com/YuZeZhang/YuZeZhang.github.io/undefined/2025-05-15/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="今日的鸡汤                  巨大的用户群体绝不仅意味着金山银山，还意味着责任如山。           今日学习内容1、https:&#x2F;&#x2F;www.youtube.com&#x2F;watch?v&#x3D;EVFZazcxAbo&amp;t&#x3D;4112s  今日笔记Commit阶段工作流简析">
+<meta property="og:description" content="今日的鸡汤                  巨大的用户群体绝不仅意味着金山银山，还意味着责任如山。           今日学习内容1、https:&#x2F;&#x2F;www.youtube.com&#x2F;watch?v&#x3D;EVFZazcxAbo&amp;t&#x3D;4112s  今日笔记Commit阶段工作流简析  before mutation阶段，这个阶段DOM节点还没有被渲染到界面上去 m">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2025-05-14T16:00:00.000Z">
-<meta property="article:modified_time" content="2025-07-06T12:32:27.605Z">
+<meta property="article:modified_time" content="2025-07-06T16:51:13.410Z">
 <meta property="article:author" content="Yuyang">
 <meta property="article:tag" content="journal">
 <meta name="twitter:card" content="summary">
@@ -550,8 +550,8 @@
     
         <span class="article-date article-meta-item">
             <i class="fa-regular fa-wrench"></i>&nbsp;
-            <span class="desktop">2025-07-06 20:32:27</span>
-            <span class="mobile">2025-07-06 20:32:27</span>
+            <span class="desktop">2025-07-07 00:51:13</span>
+            <span class="mobile">2025-07-07 00:51:13</span>
             <span class="hover-info">更新</span>
         </span>
     
@@ -619,7 +619,27 @@
 
 <h3 id="今日学习内容"><a href="#今日学习内容" class="headerlink" title="今日学习内容"></a>今日学习内容</h3><p>1、<a class="link"   target="_blank" rel="noopener" href="https://www.youtube.com/watch?v=EVFZazcxAbo&t=4112s" >https://www.youtube.com/watch?v=EVFZazcxAbo&amp;t=4112s <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
 <h3 id="今日笔记"><a href="#今日笔记" class="headerlink" title="今日笔记"></a>今日笔记</h3><p>Commit阶段工作流简析</p>
-
+<ul>
+<li>before mutation阶段，这个阶段DOM节点还没有被渲染到界面上去</li>
+<li>mutation，这个阶段负责DOM节点的渲染</li>
+<li>layout，这个阶段处理DOM渲染完毕之后的收尾逻辑<br>它还会把fiberRoot的current指针指向workInProgress Fiber树</li>
+</ul>
+<p>performSyncWorkOnRoot<br>workLoopSync<br>performUnitOfWork<br>beginWork<br>completeWork<br>completeUnitOfWork<br>reconcileChildFibers</p>
+<p>concurrent模式（异步渲染）下的“时间切片”和“优先级”实现</p>
+<p>“双缓存”模式<br>在React中双缓冲模式能够帮我们较大限度地实现Fiber节点的复用从而减少性能方面的开销</p>
+<p>completeWork的工作原理：<br>current树与workInProgress树可以对标“双缓存”模式下的两套缓冲数据：<br>当current树呈现在用户眼前时，所有的更新都会由workInProgress树来承接<br>workInProgress树将在内存里完成改变</p>
+<p>时间切片关键代码片段:</p>
+<div class="highlight-container" data-rel="Js"><figure class="iseeu highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">workLoopConcurrent</span>(<span class="params"></span>) &#123;</span><br><span class="line">  <span class="keyword">while</span> (workInProgress !== <span class="literal">null</span> &amp;&amp; !<span class="title function_">shouldYield</span>()) &#123;</span><br><span class="line">    <span class="title function_">performUnitOfWork</span>(workInProgress);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+<p>shouldYield() 是 时间切片的核心判断条件。</p>
+<div class="highlight-container" data-rel="Js"><figure class="iseeu highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">shouldYieldToHost</span>(<span class="params"></span>) &#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="title function_">getCurrentTime</span>() &gt;= deadline;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+<p>deadline 是当前帧的截止时间（由 requestAnimationFrame 或 MessageChannel 推动），当当前时间超过 deadline，就会返回 true，中断渲染，让出主线程。<br>[开始构建 Fiber 树]<br>        ↓<br>[workLoopConcurrent]<br>        ↓<br>while (workInProgress &amp;&amp; !shouldYield()) {<br>        ↓<br>  performUnitOfWork(unit)<br>}<br>        ↓<br>[如果 shouldYield() &#x3D;&#x3D;&#x3D; true]<br>        → 让出主线程<br>        → 等下一帧继续（通过 MessageChannel 触发 flushWork）</p>
+<p>优先级调度：</p>
+<ul>
+<li>通过调用unstable_scheduleCallback来发起调度</li>
+<li>结合任务的优先级信息为其执行不同的调度逻辑</li>
+</ul>
+<p>源码解析：</p>
+<div class="highlight-container" data-rel="Js"><figure class="iseeu highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">unstable_scheduleCallback</span>(<span class="params">priorityLevel, callback, options</span>)&#123;</span><br><span class="line">    <span class="comment">// 获取当前时间</span></span><br><span class="line">    <span class="keyword">var</span> currentTime = <span class="built_in">exports</span>.<span class="title function_">unstable_now</span>();</span><br><span class="line">    <span class="comment">// 声明startTime,startTime是任务的预期开始时间</span></span><br><span class="line">    <span class="keyword">var</span> startTime;</span><br><span class="line"></span><br><span class="line">    </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
         </div>
 
         
