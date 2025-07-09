@@ -31,8 +31,9 @@
 <meta property="og:image" content="https://raw.githubusercontent.com/YuZeZhang/myImgslib/main/202507082155384.png">
 <meta property="og:image" content="https://raw.githubusercontent.com/YuZeZhang/myImgslib/main/202507082201006.png">
 <meta property="og:image" content="https://raw.githubusercontent.com/YuZeZhang/myImgslib/main/202507082350960.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/YuZeZhang/myImgslib/main/202507090020432.png">
 <meta property="article:published_time" content="2025-05-15T16:00:00.000Z">
-<meta property="article:modified_time" content="2025-07-08T15:57:45.791Z">
+<meta property="article:modified_time" content="2025-07-08T16:21:41.310Z">
 <meta property="article:author" content="Yuyang">
 <meta property="article:tag" content="journal">
 <meta name="twitter:card" content="summary">
@@ -499,7 +500,7 @@
         <div class="label text-third-text-color text-sm">分类</div>
     </a>
     <a class="item tag-count-item flex flex-col justify-center items-center w-20" href="/archives">
-        <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">216</div>
+        <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">217</div>
         <div class="label text-third-text-color text-sm">文章</div>
     </a>
 </div>
@@ -557,8 +558,8 @@
     
         <span class="article-date article-meta-item">
             <i class="fa-regular fa-wrench"></i>&nbsp;
-            <span class="desktop">2025-07-08 23:57:45</span>
-            <span class="mobile">2025-07-08 23:57:45</span>
+            <span class="desktop">2025-07-09 00:21:41</span>
+            <span class="mobile">2025-07-09 00:21:41</span>
             <span class="hover-info">更新</span>
         </span>
     
@@ -682,6 +683,14 @@
                       alt="image-20250708235047831"
                 ></p>
 <p>模拟事件在捕获阶段的传播顺序，收集捕获阶段相关的节点实例与回调函数<br>path数组中子节点在前，祖先节点在后<br>其实就是从父节点往下遍历子节点直至遍历到目标节点的过程这个遍历顺序和事件在捕获阶段的传播顺序一致</p>
+<p>模拟事件在冒泡阶段的传播顺序，收集冒泡阶段相关的节点实例与回调函数<br>唯一的区别是对path数组的倒序遍历变成啦正序遍历</p>
+<p>正序遍历自然模拟的就是冒泡阶段的事件传播顺序<br>若该节点上对应当前事件的冒泡回调不为空<br>那么节点实例和事件回调同样会分别被收集到SyntheticEvent._dispatchInstances和SyntheticEvent._dispatchListeners中去</p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://raw.githubusercontent.com/YuZeZhang/myImgslib/main/202507090020432.png"
+                      alt="image-20250709002044929"
+                ></p>
 
         </div>
 
@@ -701,6 +710,21 @@
 
         
             <div class="article-nav my-8 flex justify-between items-center px-2 sm:px-6 md:px-8">
+                
+                    <div class="article-prev border-border-color shadow-redefine-flat shadow-shadow-color-2 rounded-medium px-4 py-2 hover:shadow-redefine-flat-hover hover:shadow-shadow-color-2">
+                        <a class="prev"
+                        rel="prev"
+                        href="/undefined/2025-05-17/"
+                        >
+                            <span class="left arrow-icon flex justify-center items-center">
+                                <i class="fa-solid fa-chevron-left"></i>
+                            </span>
+                            <span class="title flex justify-center items-center">
+                                <span class="post-nav-title-item">2025-05-17 日报 Day189</span>
+                                <span class="post-nav-item">上一篇</span>
+                            </span>
+                        </a>
+                    </div>
                 
                 
                     <div class="article-next border-border-color shadow-redefine-flat shadow-shadow-color-2 rounded-medium px-4 py-2 hover:shadow-redefine-flat-hover hover:shadow-shadow-color-2">
@@ -764,7 +788,7 @@
                 
                 <p class="post-count space-x-0.5">
                     <span>
-                        共 216 篇文章
+                        共 217 篇文章
                     </span>
                     
                 </p>
