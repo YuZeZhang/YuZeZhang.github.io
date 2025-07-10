@@ -26,8 +26,10 @@
 <meta property="og:description" content="今日的鸡汤                  平凡铸就伟大，英雄来自人民。每一份伟大的成就，无不立足于平凡的岗位和工作；每一段不凡的人生，无不依托于平凡的日积月累。           今日学习内容1、https:&#x2F;&#x2F;www.youtube.com&#x2F;watch?v&#x3D;EVFZazcxAbo&amp;t&#x3D;4112s  今日笔记Redux背后的架构思想-认识Flux架构Re">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://raw.githubusercontent.com/YuZeZhang/myImgslib/main/202507090855194.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/YuZeZhang/myImgslib/main/202507100010302.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/YuZeZhang/myImgslib/main/202507100011833.png">
 <meta property="article:published_time" content="2025-05-16T16:00:00.000Z">
-<meta property="article:modified_time" content="2025-07-09T15:27:55.230Z">
+<meta property="article:modified_time" content="2025-07-09T16:15:05.885Z">
 <meta property="article:author" content="Yuyang">
 <meta property="article:tag" content="journal">
 <meta name="twitter:card" content="summary">
@@ -494,7 +496,7 @@
         <div class="label text-third-text-color text-sm">分类</div>
     </a>
     <a class="item tag-count-item flex flex-col justify-center items-center w-20" href="/archives">
-        <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">217</div>
+        <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">218</div>
         <div class="label text-third-text-color text-sm">文章</div>
     </a>
 </div>
@@ -552,8 +554,8 @@
     
         <span class="article-date article-meta-item">
             <i class="fa-regular fa-wrench"></i>&nbsp;
-            <span class="desktop">2025-07-09 23:27:55</span>
-            <span class="mobile">2025-07-09 23:27:55</span>
+            <span class="desktop">2025-07-10 00:15:05</span>
+            <span class="mobile">2025-07-10 00:15:05</span>
             <span class="hover-info">更新</span>
         </span>
     
@@ -642,49 +644,20 @@
 </ul>
 <div class="highlight-container" data-rel="Js"><figure class="iseeu highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 引入redux</span></span><br><span class="line"><span class="keyword">import</span> &#123; createStore &#125; <span class="keyword">from</span> <span class="string">&#x27;redux&#x27;</span></span><br><span class="line"><span class="comment">// 创建store</span></span><br><span class="line"><span class="keyword">const</span> store = <span class="title function_">createStore</span>(</span><br><span class="line">    reducer,</span><br><span class="line">    initial_state,</span><br><span class="line">    <span class="title function_">applyMiddleware</span>(middleware1， middleware2， ....)</span><br><span class="line">)</span><br></pre></td></tr></table></figure></div>
 
-<pre><code class="js">function createStore(reducer, preloadedState, enhancer)&#123;
-    // 这里处理的是没有设定初始状态的情况，也就是第一个参数和第二个参数都传function的情况
-    if (typeof preloadedState === &#39;function&#39; &amp;&amp; typeof enhancer === &#39;undefined&#39;) &#123;
-        // 此时第二个参数会被认为是enhancer（中间件）
-        enhancer = preloadedState;
-        preloadedState = undefined;
-    &#125;
+<div class="highlight-container" data-rel="Js"><figure class="iseeu highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">createStore</span>(<span class="params">reducer, preloadedState, enhancer</span>)&#123;</span><br><span class="line">    <span class="comment">// 这里处理的是没有设定初始状态的情况，也就是第一个参数和第二个参数都传function的情况</span></span><br><span class="line">    <span class="keyword">if</span> (<span class="keyword">typeof</span> preloadedState === <span class="string">&#x27;function&#x27;</span> &amp;&amp; <span class="keyword">typeof</span> enhancer === <span class="string">&#x27;undefined&#x27;</span>) &#123;</span><br><span class="line">        <span class="comment">// 此时第二个参数会被认为是enhancer（中间件）</span></span><br><span class="line">        enhancer = preloadedState;</span><br><span class="line">        preloadedState = <span class="literal">undefined</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 当enhancer不为空时，便会将原来的createStore作为参数传入到enhancer中</span></span><br><span class="line">    <span class="keyword">if</span> (<span class="keyword">typeof</span> enhancer !== <span class="string">&#x27;undefined&#x27;</span>) &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="title function_">enhancer</span>(createStore)(reducer, preloadedState);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 记录当前的reducer，因为replaceReducer会修改reducer的内容</span></span><br><span class="line">    <span class="keyword">let</span> currentReducer = reducer;</span><br><span class="line">    <span class="comment">// 记录当前的state</span></span><br><span class="line">    <span class="keyword">let</span> currentState = preloadedState;</span><br><span class="line">    <span class="comment">// 声明listeners数组，这个数组用于记录在subscribe中订阅的事件</span></span><br><span class="line">    <span class="keyword">let</span> currentListeners = [];</span><br><span class="line">    <span class="comment">// nextListeners是currentListener的快照</span></span><br><span class="line">    <span class="keyword">let</span> nextListeners = currentListeners;</span><br><span class="line">    <span class="comment">// 该变量用于记录当前是否正在进行dispatch</span></span><br><span class="line">    <span class="keyword">let</span> isDispatching = <span class="literal">false</span>;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 该方法用于确认快照是currentListeners的副本，而不是currentListeners本身</span></span><br><span class="line">    <span class="keyword">function</span> <span class="title function_">ensureCanMutateNextListeners</span>(<span class="params"></span>) &#123;</span><br><span class="line">        <span class="keyword">if</span> (nextListeners === currentListeners) &#123;</span><br><span class="line">            nextListeners = currentListeners.<span class="title function_">slice</span>();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 我们通过调用getState来获取当前的状态</span></span><br><span class="line">    <span class="keyword">function</span> <span class="title function_">getState</span>(<span class="params"></span>) &#123;</span><br><span class="line">        <span class="keyword">return</span> currentState;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// subscribe订阅方法，它将会定义dispatch最后执行的listeners数组的内容</span></span><br><span class="line">    <span class="keyword">function</span> <span class="title function_">subscribe</span>(<span class="params">listener</span>)&#123;</span><br><span class="line">        <span class="comment">// 校验listener的类型</span></span><br><span class="line">        <span class="keyword">if</span>(<span class="keyword">typeof</span> listener !== <span class="string">&#x27;function&#x27;</span>) &#123;</span><br><span class="line">            <span class="keyword">throw</span> <span class="keyword">new</span> <span class="title class_">Error</span>(<span class="string">&#x27;Listener must be a function&#x27;</span>);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">// 禁止在reducer中调用subscribe</span></span><br><span class="line">        <span class="keyword">if</span>(isDispatching) &#123;</span><br><span class="line">            <span class="keyword">throw</span> <span class="keyword">new</span> <span class="title class_">Error</span>(<span class="string">&#x27;You may not call store.subscribe() while the reducer is executing. The reducer has already received the state as an argument. Pass it down from the top reducer instead of subscribing.&#x27;</span>);</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 该变量用于防止调用多次unsubscribe函数</span></span><br><span class="line">        <span class="keyword">let</span> isSubscribed = <span class="literal">true</span>;</span><br><span class="line">        <span class="comment">// 确保nextListeners是currentListeners的副本</span></span><br><span class="line">        <span class="title function_">ensureCanMutateNextListeners</span>();</span><br><span class="line">        <span class="comment">// 注册监听函数</span></span><br><span class="line">        nextListeners.<span class="title function_">push</span>(listener);</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 返回取消订阅当前listener的方法</span></span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">function</span> <span class="title function_">unsubscribe</span>(<span class="params"></span>)&#123;</span><br><span class="line">            <span class="keyword">if</span>(!isSubscribed) &#123;</span><br><span class="line">                <span class="keyword">return</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            isSubscribed = <span class="literal">false</span>;</span><br><span class="line">            <span class="title function_">ensureCanMutateNextListeners</span>();</span><br><span class="line">            <span class="keyword">const</span> index = nextListeners.<span class="title function_">indexOf</span>(listener);</span><br><span class="line">            <span class="comment">// 将当前的listener从nextListeners数组中删除</span></span><br><span class="line">            nextListeners.<span class="title function_">splice</span>(index, <span class="number">1</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 定义dispatch方法，用于派发action</span></span><br><span class="line">    <span class="keyword">function</span> <span class="title function_">dispatch</span>(<span class="params">action</span>) &#123;</span><br><span class="line">        <span class="comment">// 校验action的类型</span></span><br><span class="line">        <span class="keyword">if</span>(!<span class="title function_">isPlainObject</span>(action)) &#123;</span><br><span class="line">            <span class="keyword">throw</span> <span class="keyword">new</span> <span class="title class_">Error</span>(<span class="string">&#x27;Actions must be plain objects. Use custom middleware for async actions.&#x27;</span>);</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 约束action中必须有type属性作为action的唯一标识</span></span><br><span class="line">        <span class="keyword">if</span>(<span class="keyword">typeof</span> action.<span class="property">type</span> === <span class="string">&#x27;undefined&#x27;</span>) &#123;</span><br><span class="line">            <span class="keyword">throw</span> <span class="keyword">new</span> <span class="title class_">Error</span>(<span class="string">&#x27;Actions may not have an undefined &quot;type&quot; property. Have you misspelled a constant?&#x27;</span>);</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 若当前已经位于dispatch的流程中，则不允许再度发起dispatch(禁止套娃)</span></span><br><span class="line">        <span class="keyword">if</span>(isDispatching) &#123;</span><br><span class="line">            <span class="keyword">throw</span> <span class="keyword">new</span> <span class="title class_">Error</span>(<span class="string">&#x27;Reducers may not dispatch actions.&#x27;</span>);</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">try</span>&#123;</span><br><span class="line">            <span class="comment">// 执行reducer前，先“上锁”，标记当前已经存在dispatch执行流程</span></span><br><span class="line">            isDispatching = <span class="literal">true</span>;</span><br><span class="line">            <span class="comment">// 执行reducer，获取新的state</span></span><br><span class="line">            currentState = <span class="title function_">currentReducer</span>(currentState, action);</span><br><span class="line">        &#125;<span class="keyword">finally</span>&#123;</span><br><span class="line">            <span class="comment">// 执行结束后，把“锁”打开，允许再次进行dispatch</span></span><br><span class="line">            isDispatching = <span class="literal">false</span>;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 触发订阅</span></span><br><span class="line">        <span class="keyword">const</span> listeners = currentListeners = nextListeners;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; listeners.<span class="property">length</span>; i++)&#123;</span><br><span class="line">            <span class="keyword">const</span> listener = listeners[i];</span><br><span class="line">            <span class="title function_">listener</span>();</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> action;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// replaceReducer可以更改当前的reducer</span></span><br><span class="line">    <span class="keyword">function</span> <span class="title function_">replaceReducer</span>(<span class="params">nextReducer</span>) &#123;</span><br><span class="line">        currentReducer = nextReducer;</span><br><span class="line">        <span class="title function_">dispatch</span>(&#123; <span class="attr">type</span>: <span class="title class_">ActionTypes</span>.<span class="property">REPLACE</span> &#125;);</span><br><span class="line">        <span class="keyword">return</span> store;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 初始化state，当派发一个type为ActionTypes.INIT的action时，reducer会返回初始状态</span></span><br><span class="line">    <span class="title function_">dispatch</span>(&#123; <span class="attr">type</span>: <span class="title class_">ActionTypes</span>.<span class="property">INIT</span> &#125;);</span><br><span class="line"></span><br><span class="line">    <span class="comment">// observable方法可以忽略，它在redux内部使用，开发者一般不会直接接触</span></span><br><span class="line">    <span class="keyword">function</span> <span class="title function_">observable</span>(<span class="params"></span>) &#123;</span><br><span class="line">        <span class="comment">// observable方法的实现</span></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> &#123;</span><br><span class="line">        dispatch,</span><br><span class="line">        subscribe,</span><br><span class="line">        getState,</span><br><span class="line">        replaceReducer,</span><br><span class="line">        [$$observable]: observable</span><br><span class="line">    &#125; </span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure></div>
 
-    // 当enhancer不为空时，便会将原来的createStore作为参数传入到enhancer中
-    if (typeof enhancer !== &#39;undefined&#39;) &#123;
-        return enhancer(createStore)(reducer, preloadedState);
-    &#125;
-
-    // 记录当前的reducer，因为replaceReducer会修改reducer的内容
-    let currentReducer = reducer;
-    // 记录当前的state
-    let currentState = preloadedState;
-    // 声明listeners数组，这个数组用于记录在subscribe中订阅的事件
-    let currentListeners = [];
-    // nextListeners是currentListener的快照
-    let nextListeners = currentListeners;
-    // 该变量用于记录当前是否正在进行dispatch
-    let isDispatching = false;
-
-    // 该方法用于确认快照是currentListeners的副本，而不是currentListeners本身
-    function ensureCanMutateNextListeners() &#123;
-        if (nextListeners === currentListeners) &#123;
-            nextListeners = currentListeners.slice();
-        &#125;
-    &#125;
-
-    // 我们通过调用getState来获取当前的状态
-    function getState() &#123;
-        return currentState;
-    &#125;
-
-    // subscribe订阅方法，它将会定义dispatch最后执行的listeners数组的内容
-    function subscribe(listener)&#123;
-        
-    &#125;
-
-&#125;
-</code></pre>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://raw.githubusercontent.com/YuZeZhang/myImgslib/main/202507100010302.png"
+                      alt="image-20250710001052929"
+                ></p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://raw.githubusercontent.com/YuZeZhang/myImgslib/main/202507100011833.png"
+                      alt="image-20250710001151896"
+                ></p>
 
         </div>
 
@@ -704,6 +677,21 @@
 
         
             <div class="article-nav my-8 flex justify-between items-center px-2 sm:px-6 md:px-8">
+                
+                    <div class="article-prev border-border-color shadow-redefine-flat shadow-shadow-color-2 rounded-medium px-4 py-2 hover:shadow-redefine-flat-hover hover:shadow-shadow-color-2">
+                        <a class="prev"
+                        rel="prev"
+                        href="/undefined/2025-05-18/"
+                        >
+                            <span class="left arrow-icon flex justify-center items-center">
+                                <i class="fa-solid fa-chevron-left"></i>
+                            </span>
+                            <span class="title flex justify-center items-center">
+                                <span class="post-nav-title-item">2025-05-18 日报 Day190</span>
+                                <span class="post-nav-item">上一篇</span>
+                            </span>
+                        </a>
+                    </div>
                 
                 
                     <div class="article-next border-border-color shadow-redefine-flat shadow-shadow-color-2 rounded-medium px-4 py-2 hover:shadow-redefine-flat-hover hover:shadow-shadow-color-2">
@@ -767,7 +755,7 @@
                 
                 <p class="post-count space-x-0.5">
                     <span>
-                        共 217 篇文章
+                        共 218 篇文章
                     </span>
                     
                 </p>
